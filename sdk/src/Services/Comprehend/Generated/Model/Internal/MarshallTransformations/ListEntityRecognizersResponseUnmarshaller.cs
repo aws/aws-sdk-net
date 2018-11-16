@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartEntitiesDetectionJob operation
+    /// Response Unmarshaller for ListEntityRecognizers operation
     /// </summary>  
-    public class StartEntitiesDetectionJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListEntityRecognizersResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartEntitiesDetectionJobResponse response = new StartEntitiesDetectionJobResponse();
+            ListEntityRecognizersResponse response = new ListEntityRecognizersResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("JobId", targetDepth))
+                if (context.TestExpression("EntityRecognizerPropertiesList", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<EntityRecognizerProperties, EntityRecognizerPropertiesUnmarshaller>(EntityRecognizerPropertiesUnmarshaller.Instance);
+                    response.EntityRecognizerPropertiesList = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("JobStatus", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobStatus = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,17 +82,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             {
                 return new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidFilterException"))
+            {
+                return new InvalidFilterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceUnavailableException"))
-            {
-                return new ResourceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {
@@ -101,9 +97,9 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             return new AmazonComprehendException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static StartEntitiesDetectionJobResponseUnmarshaller _instance = new StartEntitiesDetectionJobResponseUnmarshaller();        
+        private static ListEntityRecognizersResponseUnmarshaller _instance = new ListEntityRecognizersResponseUnmarshaller();        
 
-        internal static StartEntitiesDetectionJobResponseUnmarshaller GetInstance()
+        internal static ListEntityRecognizersResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +107,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartEntitiesDetectionJobResponseUnmarshaller Instance
+        public static ListEntityRecognizersResponseUnmarshaller Instance
         {
             get
             {

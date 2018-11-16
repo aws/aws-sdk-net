@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartEntitiesDetectionJob Request Marshaller
+    /// CreateEntityRecognizer Request Marshaller
     /// </summary>       
-    public class StartEntitiesDetectionJobRequestMarshaller : IMarshaller<IRequest, StartEntitiesDetectionJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateEntityRecognizerRequestMarshaller : IMarshaller<IRequest, CreateEntityRecognizerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartEntitiesDetectionJobRequest)input);
+            return this.Marshall((CreateEntityRecognizerRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartEntitiesDetectionJobRequest publicRequest)
+        public IRequest Marshall(CreateEntityRecognizerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Comprehend");
-            string target = "Comprehend_20171127.StartEntitiesDetectionJob";
+            string target = "Comprehend_20171127.CreateEntityRecognizer";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -84,27 +84,15 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DataAccessRoleArn);
                 }
 
-                if(publicRequest.IsSetEntityRecognizerArn())
-                {
-                    context.Writer.WritePropertyName("EntityRecognizerArn");
-                    context.Writer.Write(publicRequest.EntityRecognizerArn);
-                }
-
                 if(publicRequest.IsSetInputDataConfig())
                 {
                     context.Writer.WritePropertyName("InputDataConfig");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = InputDataConfigMarshaller.Instance;
+                    var marshaller = EntityRecognizerInputDataConfigMarshaller.Instance;
                     marshaller.Marshall(publicRequest.InputDataConfig, context);
 
                     context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
                 }
 
                 if(publicRequest.IsSetLanguageCode())
@@ -113,15 +101,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.LanguageCode);
                 }
 
-                if(publicRequest.IsSetOutputDataConfig())
+                if(publicRequest.IsSetRecognizerName())
                 {
-                    context.Writer.WritePropertyName("OutputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("RecognizerName");
+                    context.Writer.Write(publicRequest.RecognizerName);
                 }
 
         
@@ -133,9 +116,9 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartEntitiesDetectionJobRequestMarshaller _instance = new StartEntitiesDetectionJobRequestMarshaller();        
+        private static CreateEntityRecognizerRequestMarshaller _instance = new CreateEntityRecognizerRequestMarshaller();        
 
-        internal static StartEntitiesDetectionJobRequestMarshaller GetInstance()
+        internal static CreateEntityRecognizerRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +126,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartEntitiesDetectionJobRequestMarshaller Instance
+        public static CreateEntityRecognizerRequestMarshaller Instance
         {
             get
             {

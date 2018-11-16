@@ -4004,7 +4004,6 @@
           },
           "EntityRecognizerArn": {
             "type": "string",
-            "internalonly": true,
             "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
             "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by\n    the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity\n    recognition job.</para>\n      ",
             "documentation": "\n         <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be used by\n    the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only used for a custom entity\n    recognition job.</p>\n      ",
@@ -4109,12 +4108,40 @@
               "min_length": 1
             }
           },
+          "zonbookDocumentation": "\n         <para>The specified resource ARN was not found. Check the ARN and try your request again.</para>\n      ",
+          "documentation": "\n         <p>The specified resource ARN was not found. Check the ARN and try your request again.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "String",
+              "documentation": null,
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <para>The specified resource is not available. Check to see if the resource is in\n      the <code>TRAINED</code> state and try your request again.</para>\n      ",
+          "documentation": "\n         <p>The specified resource is not available. Check to see if the resource is in\n      the <code>TRAINED</code> state and try your request again.</p>\n      ",
+          "shape_name": "ResourceUnavailableException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "String",
+              "documentation": null,
+              "min_length": 1
+            }
+          },
           "zonbookDocumentation": "\n         <simpara>An internal server error occurred. Retry your request.</simpara>\n      ",
           "documentation": "\n         <p>An internal server error occurred. Retry your request.</p>\n      ",
           "shape_name": "InternalServerException"
         }
       ],
-      "documentation": "\n         <p>Starts an asynchronous entity detection job for a collection of documents. Use the  operation to track the status of a job.</p>\n    \n      "
+      "documentation": "\n         <p>Starts an asynchronous entity detection job for a collection of documents. Use the  operation to track the status of a job.</p>\n         <p>This API can be used for either standard entity detection or custom entity recognition. In order \n    to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code> must be used\n    in order to provide access to the recognizer being used to detect the custom entity.</p>\n      "
     },
     "DescribeEntitiesDetectionJob": {
       "name": "DescribeEntitiesDetectionJob",
@@ -4193,7 +4220,6 @@
               },
               "EntityRecognizerArn": {
                 "type": "string",
-                "internalonly": true,
                 "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
                 "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) that identifies the entity recognizer.</para>\n      ",
                 "documentation": "\n         <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>\n      ",
@@ -4466,7 +4492,6 @@
                 },
                 "EntityRecognizerArn": {
                   "type": "string",
-                  "internalonly": true,
                   "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
                   "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) that identifies the entity recognizer.</para>\n      ",
                   "documentation": "\n         <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>\n      ",
@@ -5484,8 +5509,8 @@
               "it",
               "pt"
             ],
-            "zonbookDocumentation": "\n         <para>The language of the input documents. You can create a document classifier in any of the languages\n      supported by Amazon Comprehend. However, all\n      documents must be in the same language.</para>\n      ",
-            "documentation": "\n         <p>The language of the input documents. You can create a document classifier in any of the languages\n      supported by Amazon Comprehend. However, all\n      documents must be in the same language.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The language of the input documents. You can specify English (\"en\") or Spanish (\"es\"). All\n      documents must be in the same language.</para>\n      ",
+            "documentation": "\n         <p>The language of the input documents. You can specify English (\"en\") or Spanish (\"es\"). All\n      documents must be in the same language.</p>\n      ",
             "required": true,
             "shape_name": "LanguageCode"
           }
@@ -5594,7 +5619,7 @@
           "shape_name": "InternalServerException"
         }
       ],
-      "documentation": "\n         <p>Creates a new document classifier that you can use to categorize documents. To create a\n      classifier you provide a set of training documents that are labeled with the categories that you\n      want to use. After the classifier is trained you can use it to categorize a set of unlabeled\n      documents into those categories. </p>\n      "
+      "documentation": "\n         <p>Creates a new document classifier that you can use to categorize documents. To create a\n      classifier you provide a set of training documents that labeled with the categories that you\n      want to use. After the classifier is trained you can use it to categorize a set of labeled\n      documents into the categories. </p>\n      "
     },
     "DeleteDocumentClassifier": {
       "name": "DeleteDocumentClassifier",
@@ -7005,17 +7030,19 @@
           "RecognizerName": {
             "type": "string",
             "pattern": "^[a-zA-Z0-9](-*[a-zA-Z0-9])*",
+            "zonbookDocumentation": "\n         <para>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. \n      Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</para>\n      ",
+            "documentation": "\n         <p>The name given to the newly created recognizer. Recognizer names can be a maximum of 256 characters. \n      Alphanumeric characters, hyphens (-) and underscores (_) are allowed. The name must be unique in the account/region.</p>\n      ",
             "required": true,
             "shape_name": "ComprehendArnName",
-            "documentation": null,
             "max_length": 63
           },
           "DataAccessRoleArn": {
             "type": "string",
             "pattern": "arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read access to your input data.</p>\n      ",
             "required": true,
             "shape_name": "IamRoleArn",
-            "documentation": null,
             "min_length": 20,
             "max_length": 2048
           },
@@ -7099,17 +7126,18 @@
                 "shape_name": "EntityRecognizerEntityList"
               }
             },
-            "zonbookDocumentation": "\n         <para>Specifies the format and location of the input data.</para>\n      ",
-            "documentation": "\n         <p>Specifies the format and location of the input data.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Specifies the format and location of the input data. The S3 bucket containing the input data must\n    be located in the same region as the entity recognizer being created. </para>\n      ",
+            "documentation": "\n         <p>Specifies the format and location of the input data. The S3 bucket containing the input data must\n    be located in the same region as the entity recognizer being created. </p>\n      ",
             "required": true,
             "shape_name": "EntityRecognizerInputDataConfig"
           },
           "ClientRequestToken": {
             "type": "string",
             "pattern": "^[a-zA-Z0-9-]+$",
+            "zonbookDocumentation": "\n         <para> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend\n      generates one.</para>\n      ",
+            "documentation": "\n         <p> A unique identifier for the request. If you don't set the client request token, Amazon Comprehend\n      generates one.</p>\n      ",
             "idempotencyToken": true,
             "shape_name": "ClientRequestTokenString",
-            "documentation": null,
             "min_length": 1,
             "max_length": 64
           },
@@ -7123,9 +7151,10 @@
               "it",
               "pt"
             ],
+            "zonbookDocumentation": "\n         <para> The language of the input documents. All documents must be in the same language. Only English (\"en\") is currently supported. </para>\n      ",
+            "documentation": "\n         <p> The language of the input documents. All documents must be in the same language. Only English (\"en\") is currently supported. </p>\n      ",
             "required": true,
-            "shape_name": "LanguageCode",
-            "documentation": null
+            "shape_name": "LanguageCode"
           }
         },
         "shape_name": "CreateEntityRecognizerRequest",
@@ -7136,7 +7165,6 @@
         "members": {
           "EntityRecognizerArn": {
             "type": "string",
-            "internalonly": true,
             "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
             "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) that identifies the entity recognizer.</para>\n      ",
             "documentation": "\n         <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>\n      ",
@@ -7233,7 +7261,7 @@
           "shape_name": "InternalServerException"
         }
       ],
-      "documentation": null
+      "documentation": "\n         <p>Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is \n      submitted, you can check job status using the  API. </p>\n      "
     },
     "DeleteEntityRecognizer": {
       "name": "DeleteEntityRecognizer",
@@ -7242,7 +7270,6 @@
         "members": {
           "EntityRecognizerArn": {
             "type": "string",
-            "internalonly": true,
             "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
             "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) that identifies the entity recognizer.</para>\n      ",
             "documentation": "\n         <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>\n      ",
@@ -7347,7 +7374,7 @@
           "shape_name": "InternalServerException"
         }
       ],
-      "documentation": null
+      "documentation": "\n         <p>Deletes an entity recognizer.</p>\n         <p>Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be\n      deleted. If an active inference job is using the model, a <code>ResourceInUseException</code> will be\n    returned.</p>\n         <p>This is an asynchronous action that puts the recognizer into a DELETING state, and it is then removed by\n      a background job. Once removed, the recognizer disappears from your account and is no longer available for use. </p>\n      "
     },
     "DescribeEntityRecognizer": {
       "name": "DescribeEntityRecognizer",
@@ -7356,7 +7383,6 @@
         "members": {
           "EntityRecognizerArn": {
             "type": "string",
-            "internalonly": true,
             "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
             "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) that identifies the entity recognizer.</para>\n      ",
             "documentation": "\n         <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>\n      ",
@@ -7376,7 +7402,6 @@
             "members": {
               "EntityRecognizerArn": {
                 "type": "string",
-                "internalonly": true,
                 "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
                 "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) that identifies the entity recognizer.</para>\n      ",
                 "documentation": "\n         <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>\n      ",
@@ -7600,8 +7625,8 @@
                 "max_length": 2048
               }
             },
-            "zonbookDocumentation": "\n         <para>Describes information about an entity recognizer.</para>\n      ",
-            "documentation": "\n         <p>Describes information about an entity recognizer.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Describes information associated with an entity recognizer.</para>\n      ",
+            "documentation": "\n         <p>Describes information associated with an entity recognizer.</p>\n      ",
             "shape_name": "EntityRecognizerProperties"
           }
         },
@@ -7666,7 +7691,7 @@
           "shape_name": "InternalServerException"
         }
       ],
-      "documentation": null
+      "documentation": "\n         <p>Provides details about an entity recognizer including status, S3 buckets containing \n      training data, recognizer metadata, metrics, and so on.</p>\n      "
     },
     "ListEntityRecognizers": {
       "name": "ListEntityRecognizers",
@@ -7702,20 +7727,22 @@
                 "shape_name": "Timestamp"
               }
             },
-            "zonbookDocumentation": "\n         <para>Provides information for filtering a list of entity recognizers. You can only specify\n      one filtering parameter in a request. For more information, see the <xref linkend=\"API_ListEntityRecognizers\"/> operation./&gt;</para>\n      ",
-            "documentation": "\n         <p>Provides information for filtering a list of entity recognizers. You can only specify\n      one filtering parameter in a request. For more information, see the  operation./&gt;</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</para>\n      ",
+            "documentation": "\n         <p>Filters the list of entities returned. You can filter on <code>Status</code>, <code>SubmitTimeBefore</code>, or <code>SubmitTimeAfter</code>. You can only set one filter at a time.</p>\n      ",
             "shape_name": "EntityRecognizerFilter"
           },
           "NextToken": {
             "type": "string",
+            "zonbookDocumentation": "\n         <para>Identifies the next page of results to return.</para>\n      ",
+            "documentation": "\n         <p>Identifies the next page of results to return.</p>\n      ",
             "shape_name": "String",
-            "documentation": null,
             "min_length": 1
           },
           "MaxResults": {
             "type": "integer",
+            "zonbookDocumentation": "\n         <para> The maximum number of results to return on each page. The default is 100.</para>\n      ",
+            "documentation": "\n         <p> The maximum number of results to return on each page. The default is 100.</p>\n      ",
             "shape_name": "MaxResultsInteger",
-            "documentation": null,
             "min_length": 1,
             "max_length": 500
           }
@@ -7728,14 +7755,14 @@
         "members": {
           "EntityRecognizerPropertiesList": {
             "type": "list",
+            "zonbookDocumentation": "\n         <para>The list of properties of an entity recognizer.</para>\n      ",
+            "documentation": "\n         <p>The list of properties of an entity recognizer.</p>\n      ",
             "shape_name": "EntityRecognizerPropertiesList",
-            "documentation": null,
             "members": {
               "type": "structure",
               "members": {
                 "EntityRecognizerArn": {
                   "type": "string",
-                  "internalonly": true,
                   "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
                   "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) that identifies the entity recognizer.</para>\n      ",
                   "documentation": "\n         <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>\n      ",
@@ -7966,8 +7993,9 @@
           },
           "NextToken": {
             "type": "string",
+            "zonbookDocumentation": "\n         <para>Identifies the next page of results to return.</para>\n      ",
+            "documentation": "\n         <p>Identifies the next page of results to return.</p>\n      ",
             "shape_name": "String",
-            "documentation": null,
             "min_length": 1
           }
         },
@@ -8032,7 +8060,7 @@
           "shape_name": "InternalServerException"
         }
       ],
-      "documentation": null
+      "documentation": "\n         <p>Gets a list of the properties of all entity recognizers that you created, including recognizers currently\n      in training. Allows \n      you to filter the list of recognizers based on criteria such as status and submission time. This \n      call returns up to 500 entity recognizers in the list, with a default number of 100 \n      recognizers in the list.</p>\n         <p>The results of this list are not in any particular order. Please get the list and sort \n      locally if needed.</p>\n      "
     },
     "StopTrainingEntityRecognizer": {
       "name": "StopTrainingEntityRecognizer",
@@ -8041,7 +8069,6 @@
         "members": {
           "EntityRecognizerArn": {
             "type": "string",
-            "internalonly": true,
             "pattern": "arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*",
             "required": true,
             "shape_name": "EntityRecognizerArn",

@@ -437,6 +437,38 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  CreateEntityRecognizer
+
+        internal virtual CreateEntityRecognizerResponse CreateEntityRecognizer(CreateEntityRecognizerRequest request)
+        {
+            var marshaller = CreateEntityRecognizerRequestMarshaller.Instance;
+            var unmarshaller = CreateEntityRecognizerResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEntityRecognizerRequest,CreateEntityRecognizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEntityRecognizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntityRecognizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
+        public virtual Task<CreateEntityRecognizerResponse> CreateEntityRecognizerAsync(CreateEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateEntityRecognizerRequestMarshaller.Instance;
+            var unmarshaller = CreateEntityRecognizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEntityRecognizerRequest,CreateEntityRecognizerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDocumentClassifier
 
         internal virtual DeleteDocumentClassifierResponse DeleteDocumentClassifier(DeleteDocumentClassifierRequest request)
@@ -464,6 +496,38 @@ namespace Amazon.Comprehend
             var unmarshaller = DeleteDocumentClassifierResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDocumentClassifierRequest,DeleteDocumentClassifierResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEntityRecognizer
+
+        internal virtual DeleteEntityRecognizerResponse DeleteEntityRecognizer(DeleteEntityRecognizerRequest request)
+        {
+            var marshaller = DeleteEntityRecognizerRequestMarshaller.Instance;
+            var unmarshaller = DeleteEntityRecognizerResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEntityRecognizerRequest,DeleteEntityRecognizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEntityRecognizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntityRecognizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer">REST API Reference for DeleteEntityRecognizer Operation</seealso>
+        public virtual Task<DeleteEntityRecognizerResponse> DeleteEntityRecognizerAsync(DeleteEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteEntityRecognizerRequestMarshaller.Instance;
+            var unmarshaller = DeleteEntityRecognizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEntityRecognizerRequest,DeleteEntityRecognizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -592,6 +656,38 @@ namespace Amazon.Comprehend
             var unmarshaller = DescribeEntitiesDetectionJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEntitiesDetectionJobRequest,DescribeEntitiesDetectionJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeEntityRecognizer
+
+        internal virtual DescribeEntityRecognizerResponse DescribeEntityRecognizer(DescribeEntityRecognizerRequest request)
+        {
+            var marshaller = DescribeEntityRecognizerRequestMarshaller.Instance;
+            var unmarshaller = DescribeEntityRecognizerResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeEntityRecognizerRequest,DescribeEntityRecognizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEntityRecognizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntityRecognizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer">REST API Reference for DescribeEntityRecognizer Operation</seealso>
+        public virtual Task<DescribeEntityRecognizerResponse> DescribeEntityRecognizerAsync(DescribeEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeEntityRecognizerRequestMarshaller.Instance;
+            var unmarshaller = DescribeEntityRecognizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeEntityRecognizerRequest,DescribeEntityRecognizerResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -976,6 +1072,38 @@ namespace Amazon.Comprehend
             var unmarshaller = ListEntitiesDetectionJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListEntitiesDetectionJobsRequest,ListEntitiesDetectionJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEntityRecognizers
+
+        internal virtual ListEntityRecognizersResponse ListEntityRecognizers(ListEntityRecognizersRequest request)
+        {
+            var marshaller = ListEntityRecognizersRequestMarshaller.Instance;
+            var unmarshaller = ListEntityRecognizersResponseUnmarshaller.Instance;
+
+            return Invoke<ListEntityRecognizersRequest,ListEntityRecognizersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntityRecognizers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityRecognizers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers">REST API Reference for ListEntityRecognizers Operation</seealso>
+        public virtual Task<ListEntityRecognizersResponse> ListEntityRecognizersAsync(ListEntityRecognizersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListEntityRecognizersRequestMarshaller.Instance;
+            var unmarshaller = ListEntityRecognizersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEntityRecognizersRequest,ListEntityRecognizersResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

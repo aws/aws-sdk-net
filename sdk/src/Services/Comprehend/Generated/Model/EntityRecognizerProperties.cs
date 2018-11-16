@@ -28,27 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Provides information about an entities detection job.
+    /// Describes information about an entity recognizer.
     /// </summary>
-    public partial class EntitiesDetectionJobProperties
+    public partial class EntityRecognizerProperties
     {
         private string _dataAccessRoleArn;
         private DateTime? _endTime;
         private string _entityRecognizerArn;
-        private InputDataConfig _inputDataConfig;
-        private string _jobId;
-        private string _jobName;
-        private JobStatus _jobStatus;
+        private EntityRecognizerInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
         private string _message;
-        private OutputDataConfig _outputDataConfig;
+        private EntityRecognizerMetadata _recognizerMetadata;
+        private ModelStatus _status;
         private DateTime? _submitTime;
+        private DateTime? _trainingEndTime;
+        private DateTime? _trainingStartTime;
 
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
-        /// data.
+        ///  The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that
+        /// grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
         public string DataAccessRoleArn
@@ -66,7 +66,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The time that the entities detection job completed
+        /// The time that the recognizer creation completed.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -102,11 +102,10 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// The input data configuration that you supplied when you created the entities detection
-        /// job.
+        /// The input data properties of an entity recognizer.
         /// </para>
         /// </summary>
-        public InputDataConfig InputDataConfig
+        public EntityRecognizerInputDataConfig InputDataConfig
         {
             get { return this._inputDataConfig; }
             set { this._inputDataConfig = value; }
@@ -119,64 +118,10 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobId. 
-        /// <para>
-        /// The identifier assigned to the entities detection job.
-        /// </para>
-        /// </summary>
-        public string JobId
-        {
-            get { return this._jobId; }
-            set { this._jobId = value; }
-        }
-
-        // Check to see if JobId property is set
-        internal bool IsSetJobId()
-        {
-            return this._jobId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property JobName. 
-        /// <para>
-        /// The name that you assigned the entities detection job.
-        /// </para>
-        /// </summary>
-        public string JobName
-        {
-            get { return this._jobName; }
-            set { this._jobName = value; }
-        }
-
-        // Check to see if JobName property is set
-        internal bool IsSetJobName()
-        {
-            return this._jobName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property JobStatus. 
-        /// <para>
-        /// The current status of the entities detection job. If the status is <code>FAILED</code>,
-        /// the <code>Message</code> field shows the reason for the failure.
-        /// </para>
-        /// </summary>
-        public JobStatus JobStatus
-        {
-            get { return this._jobStatus; }
-            set { this._jobStatus = value; }
-        }
-
-        // Check to see if JobStatus property is set
-        internal bool IsSetJobStatus()
-        {
-            return this._jobStatus != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code of the input documents.
+        ///  The language of the input documents. All documents must be in the same language.
+        /// Only English ("en") is currently supported.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -194,7 +139,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A description of the status of a job.
+        ///  A description of the status of the recognizer.
         /// </para>
         /// </summary>
         public string Message
@@ -210,28 +155,45 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputDataConfig. 
+        /// Gets and sets the property RecognizerMetadata. 
         /// <para>
-        /// The output data configuration that you supplied when you created the entities detection
-        /// job. 
+        ///  Provides information about an entity recognizer.
         /// </para>
         /// </summary>
-        public OutputDataConfig OutputDataConfig
+        public EntityRecognizerMetadata RecognizerMetadata
         {
-            get { return this._outputDataConfig; }
-            set { this._outputDataConfig = value; }
+            get { return this._recognizerMetadata; }
+            set { this._recognizerMetadata = value; }
         }
 
-        // Check to see if OutputDataConfig property is set
-        internal bool IsSetOutputDataConfig()
+        // Check to see if RecognizerMetadata property is set
+        internal bool IsSetRecognizerMetadata()
         {
-            return this._outputDataConfig != null;
+            return this._recognizerMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Provides the status of the entity recognizer.
+        /// </para>
+        /// </summary>
+        public ModelStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>
         /// Gets and sets the property SubmitTime. 
         /// <para>
-        /// The time that the entities detection job was submitted for processing.
+        /// The time that the recognizer was submitted for processing.
         /// </para>
         /// </summary>
         public DateTime SubmitTime
@@ -244,6 +206,42 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetSubmitTime()
         {
             return this._submitTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingEndTime. 
+        /// <para>
+        /// The time that training of the entity recognizer was completed.
+        /// </para>
+        /// </summary>
+        public DateTime TrainingEndTime
+        {
+            get { return this._trainingEndTime.GetValueOrDefault(); }
+            set { this._trainingEndTime = value; }
+        }
+
+        // Check to see if TrainingEndTime property is set
+        internal bool IsSetTrainingEndTime()
+        {
+            return this._trainingEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingStartTime. 
+        /// <para>
+        /// The time that training of the entity recognizer started.
+        /// </para>
+        /// </summary>
+        public DateTime TrainingStartTime
+        {
+            get { return this._trainingStartTime.GetValueOrDefault(); }
+            set { this._trainingStartTime = value; }
+        }
+
+        // Check to see if TrainingStartTime property is set
+        internal bool IsSetTrainingStartTime()
+        {
+            return this._trainingStartTime.HasValue; 
         }
 
     }

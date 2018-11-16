@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EntitiesDetectionJobProperties Object
+    /// Response Unmarshaller for EntityRecognizerProperties Object
     /// </summary>  
-    public class EntitiesDetectionJobPropertiesUnmarshaller : IUnmarshaller<EntitiesDetectionJobProperties, XmlUnmarshallerContext>, IUnmarshaller<EntitiesDetectionJobProperties, JsonUnmarshallerContext>
+    public class EntityRecognizerPropertiesUnmarshaller : IUnmarshaller<EntityRecognizerProperties, XmlUnmarshallerContext>, IUnmarshaller<EntityRecognizerProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        EntitiesDetectionJobProperties IUnmarshaller<EntitiesDetectionJobProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EntityRecognizerProperties IUnmarshaller<EntityRecognizerProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,13 +53,13 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public EntitiesDetectionJobProperties Unmarshall(JsonUnmarshallerContext context)
+        public EntityRecognizerProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            EntitiesDetectionJobProperties unmarshalledObject = new EntitiesDetectionJobProperties();
+            EntityRecognizerProperties unmarshalledObject = new EntityRecognizerProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
@@ -84,26 +84,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("InputDataConfig", targetDepth))
                 {
-                    var unmarshaller = InputDataConfigUnmarshaller.Instance;
+                    var unmarshaller = EntityRecognizerInputDataConfigUnmarshaller.Instance;
                     unmarshalledObject.InputDataConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LanguageCode", targetDepth))
@@ -118,10 +100,16 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.Message = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OutputDataConfig", targetDepth))
+                if (context.TestExpression("RecognizerMetadata", targetDepth))
                 {
-                    var unmarshaller = OutputDataConfigUnmarshaller.Instance;
-                    unmarshalledObject.OutputDataConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EntityRecognizerMetadataUnmarshaller.Instance;
+                    unmarshalledObject.RecognizerMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SubmitTime", targetDepth))
@@ -130,18 +118,30 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubmitTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrainingEndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.TrainingEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrainingStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.TrainingStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static EntitiesDetectionJobPropertiesUnmarshaller _instance = new EntitiesDetectionJobPropertiesUnmarshaller();        
+        private static EntityRecognizerPropertiesUnmarshaller _instance = new EntityRecognizerPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EntitiesDetectionJobPropertiesUnmarshaller Instance
+        public static EntityRecognizerPropertiesUnmarshaller Instance
         {
             get
             {

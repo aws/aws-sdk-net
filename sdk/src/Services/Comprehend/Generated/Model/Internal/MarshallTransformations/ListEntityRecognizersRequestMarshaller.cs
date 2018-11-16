@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartEntitiesDetectionJob Request Marshaller
+    /// ListEntityRecognizers Request Marshaller
     /// </summary>       
-    public class StartEntitiesDetectionJobRequestMarshaller : IMarshaller<IRequest, StartEntitiesDetectionJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListEntityRecognizersRequestMarshaller : IMarshaller<IRequest, ListEntityRecognizersRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartEntitiesDetectionJobRequest)input);
+            return this.Marshall((ListEntityRecognizersRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartEntitiesDetectionJobRequest publicRequest)
+        public IRequest Marshall(ListEntityRecognizersRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Comprehend");
-            string target = "Comprehend_20171127.StartEntitiesDetectionJob";
+            string target = "Comprehend_20171127.ListEntityRecognizers";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,61 +67,27 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
+                if(publicRequest.IsSetFilter())
                 {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetDataAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("DataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DataAccessRoleArn);
-                }
-
-                if(publicRequest.IsSetEntityRecognizerArn())
-                {
-                    context.Writer.WritePropertyName("EntityRecognizerArn");
-                    context.Writer.Write(publicRequest.EntityRecognizerArn);
-                }
-
-                if(publicRequest.IsSetInputDataConfig())
-                {
-                    context.Writer.WritePropertyName("InputDataConfig");
+                    context.Writer.WritePropertyName("Filter");
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = InputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputDataConfig, context);
+                    var marshaller = EntityRecognizerFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filter, context);
 
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetJobName())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetLanguageCode())
+                if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
-                }
-
-                if(publicRequest.IsSetOutputDataConfig())
-                {
-                    context.Writer.WritePropertyName("OutputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WritePropertyName("NextToken");
+                    context.Writer.Write(publicRequest.NextToken);
                 }
 
         
@@ -133,9 +99,9 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartEntitiesDetectionJobRequestMarshaller _instance = new StartEntitiesDetectionJobRequestMarshaller();        
+        private static ListEntityRecognizersRequestMarshaller _instance = new ListEntityRecognizersRequestMarshaller();        
 
-        internal static StartEntitiesDetectionJobRequestMarshaller GetInstance()
+        internal static ListEntityRecognizersRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +109,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartEntitiesDetectionJobRequestMarshaller Instance
+        public static ListEntityRecognizersRequestMarshaller Instance
         {
             get
             {

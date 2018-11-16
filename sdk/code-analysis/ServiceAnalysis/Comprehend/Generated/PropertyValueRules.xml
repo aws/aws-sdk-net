@@ -23,9 +23,36 @@
     <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.CreateEntityRecognizerRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.CreateEntityRecognizerRequest.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.CreateEntityRecognizerRequest.RecognizerName</property>
+    <max>63</max>
+    <pattern>^[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.CreateEntityRecognizerResponse.EntityRecognizerArn</property>
+    <max>256</max>
+    <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.DeleteDocumentClassifierRequest.DocumentClassifierArn</property>
     <max>256</max>
     <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.DeleteEntityRecognizerRequest.EntityRecognizerArn</property>
+    <max>256</max>
+    <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.DescribeDocumentClassificationJobRequest.JobId</property>
@@ -49,6 +76,11 @@
     <min>1</min>
     <max>32</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.DescribeEntityRecognizerRequest.EntityRecognizerArn</property>
+    <max>256</max>
+    <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.DescribeKeyPhrasesDetectionJobRequest.JobId</property>
@@ -138,6 +170,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.ListEntitiesDetectionJobsResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListEntityRecognizersRequest.MaxResults</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListEntityRecognizersRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.ListEntityRecognizersResponse.NextToken</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -243,6 +288,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StartEntitiesDetectionJobRequest.EntityRecognizerArn</property>
+    <max>256</max>
+    <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.StartEntitiesDetectionJobRequest.JobName</property>
@@ -479,6 +529,11 @@
     <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.EntitiesDetectionJobProperties.EntityRecognizerArn</property>
+    <max>256</max>
+    <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.EntitiesDetectionJobProperties.JobId</property>
     <min>1</min>
     <max>32</max>
@@ -493,6 +548,37 @@
   <property-value-rule>
     <property>Amazon.Comprehend.Model.Entity.Text</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EntityRecognizerAnnotations.S3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EntityRecognizerDocuments.S3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EntityRecognizerEntityList.S3Uri</property>
+    <max>1024</max>
+    <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EntityRecognizerProperties.DataAccessRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EntityRecognizerProperties.EntityRecognizerArn</property>
+    <max>256</max>
+    <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.EntityTypesListItem.Type</property>
+    <max>64</max>
+    <pattern>[_A-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Comprehend.Model.InputDataConfig.S3Uri</property>

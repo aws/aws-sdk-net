@@ -272,9 +272,9 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates a new document classifier that you can use to categorize documents. To create
-        /// a classifier you provide a set of training documents that are labeled with the categories
+        /// a classifier you provide a set of training documents that labeled with the categories
         /// that you want to use. After the classifier is trained you can use it to categorize
-        /// a set of unlabeled documents into those categories.
+        /// a set of labeled documents into the categories.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocumentClassifier service method.</param>
         /// 
@@ -315,6 +315,55 @@ namespace Amazon.Comprehend
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
         Task<CreateDocumentClassifierResponse> CreateDocumentClassifierAsync(CreateDocumentClassifierRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateEntityRecognizer
+
+
+        /// <summary>
+        /// Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code>
+        /// request is submitted, you can check job status using the API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntityRecognizer service method.</param>
+        /// 
+        /// <returns>The response from the CreateEntityRecognizer service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
+        /// perform cleanup, and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
+        CreateEntityRecognizerResponse CreateEntityRecognizer(CreateEntityRecognizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEntityRecognizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEntityRecognizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEntityRecognizer">REST API Reference for CreateEntityRecognizer Operation</seealso>
+        Task<CreateEntityRecognizerResponse> CreateEntityRecognizerAsync(CreateEntityRecognizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -374,6 +423,65 @@ namespace Amazon.Comprehend
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier">REST API Reference for DeleteDocumentClassifier Operation</seealso>
         Task<DeleteDocumentClassifierResponse> DeleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteEntityRecognizer
+
+
+        /// <summary>
+        /// Deletes an entity recognizer.
+        /// 
+        ///  
+        /// <para>
+        /// Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted.
+        /// If an active inference job is using the model, a <code>ResourceInUseException</code>
+        /// will be returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is an asynchronous action that puts the recognizer into a DELETING state, and
+        /// it is then removed by a background job. Once removed, the recognizer disappears from
+        /// your account and is no longer available for use. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntityRecognizer service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEntityRecognizer service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer">REST API Reference for DeleteEntityRecognizer Operation</seealso>
+        DeleteEntityRecognizerResponse DeleteEntityRecognizer(DeleteEntityRecognizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEntityRecognizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEntityRecognizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteEntityRecognizer">REST API Reference for DeleteEntityRecognizer Operation</seealso>
+        Task<DeleteEntityRecognizerResponse> DeleteEntityRecognizerAsync(DeleteEntityRecognizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -533,6 +641,46 @@ namespace Amazon.Comprehend
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntitiesDetectionJob">REST API Reference for DescribeEntitiesDetectionJob Operation</seealso>
         Task<DescribeEntitiesDetectionJobResponse> DescribeEntitiesDetectionJobAsync(DescribeEntitiesDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeEntityRecognizer
+
+
+        /// <summary>
+        /// Provides details about an entity recognizer including status, S3 buckets containing
+        /// training data, recognizer metadata, metrics, and so on.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntityRecognizer service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEntityRecognizer service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer">REST API Reference for DescribeEntityRecognizer Operation</seealso>
+        DescribeEntityRecognizerResponse DescribeEntityRecognizer(DescribeEntityRecognizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEntityRecognizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEntityRecognizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEntityRecognizer">REST API Reference for DescribeEntityRecognizer Operation</seealso>
+        Task<DescribeEntityRecognizerResponse> DescribeEntityRecognizerAsync(DescribeEntityRecognizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1021,6 +1169,55 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListEntityRecognizers
+
+
+        /// <summary>
+        /// Gets a list of the properties of all entity recognizers that you created, including
+        /// recognizers currently in training. Allows you to filter the list of recognizers based
+        /// on criteria such as status and submission time. This call returns up to 500 entity
+        /// recognizers in the list, with a default number of 100 recognizers in the list.
+        /// 
+        ///  
+        /// <para>
+        /// The results of this list are not in any particular order. Please get the list and
+        /// sort locally if needed.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityRecognizers service method.</param>
+        /// 
+        /// <returns>The response from the ListEntityRecognizers service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
+        /// is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers">REST API Reference for ListEntityRecognizers Operation</seealso>
+        ListEntityRecognizersResponse ListEntityRecognizers(ListEntityRecognizersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEntityRecognizers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEntityRecognizers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEntityRecognizers">REST API Reference for ListEntityRecognizers Operation</seealso>
+        Task<ListEntityRecognizersResponse> ListEntityRecognizersAsync(ListEntityRecognizersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListKeyPhrasesDetectionJobs
 
 
@@ -1228,6 +1425,14 @@ namespace Amazon.Comprehend
         /// <summary>
         /// Starts an asynchronous entity detection job for a collection of documents. Use the
         /// operation to track the status of a job.
+        /// 
+        ///  
+        /// <para>
+        /// This API can be used for either standard entity detection or custom entity recognition.
+        /// In order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code>
+        /// must be used in order to provide access to the recognizer being used to detect the
+        /// custom entity.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartEntitiesDetectionJob service method.</param>
         /// 
@@ -1237,6 +1442,13 @@ namespace Amazon.Comprehend
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.

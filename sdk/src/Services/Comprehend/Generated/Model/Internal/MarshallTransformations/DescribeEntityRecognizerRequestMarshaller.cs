@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartEntitiesDetectionJob Request Marshaller
+    /// DescribeEntityRecognizer Request Marshaller
     /// </summary>       
-    public class StartEntitiesDetectionJobRequestMarshaller : IMarshaller<IRequest, StartEntitiesDetectionJobRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeEntityRecognizerRequestMarshaller : IMarshaller<IRequest, DescribeEntityRecognizerRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartEntitiesDetectionJobRequest)input);
+            return this.Marshall((DescribeEntityRecognizerRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartEntitiesDetectionJobRequest publicRequest)
+        public IRequest Marshall(DescribeEntityRecognizerRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Comprehend");
-            string target = "Comprehend_20171127.StartEntitiesDetectionJob";
+            string target = "Comprehend_20171127.DescribeEntityRecognizer";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,61 +67,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetClientRequestToken())
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(publicRequest.ClientRequestToken);
-                }
-
-                else if(!(publicRequest.IsSetClientRequestToken()))
-                {
-                    context.Writer.WritePropertyName("ClientRequestToken");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetDataAccessRoleArn())
-                {
-                    context.Writer.WritePropertyName("DataAccessRoleArn");
-                    context.Writer.Write(publicRequest.DataAccessRoleArn);
-                }
-
                 if(publicRequest.IsSetEntityRecognizerArn())
                 {
                     context.Writer.WritePropertyName("EntityRecognizerArn");
                     context.Writer.Write(publicRequest.EntityRecognizerArn);
-                }
-
-                if(publicRequest.IsSetInputDataConfig())
-                {
-                    context.Writer.WritePropertyName("InputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = InputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetJobName())
-                {
-                    context.Writer.WritePropertyName("JobName");
-                    context.Writer.Write(publicRequest.JobName);
-                }
-
-                if(publicRequest.IsSetLanguageCode())
-                {
-                    context.Writer.WritePropertyName("LanguageCode");
-                    context.Writer.Write(publicRequest.LanguageCode);
-                }
-
-                if(publicRequest.IsSetOutputDataConfig())
-                {
-                    context.Writer.WritePropertyName("OutputDataConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = OutputDataConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                    context.Writer.WriteObjectEnd();
                 }
 
         
@@ -133,9 +82,9 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartEntitiesDetectionJobRequestMarshaller _instance = new StartEntitiesDetectionJobRequestMarshaller();        
+        private static DescribeEntityRecognizerRequestMarshaller _instance = new DescribeEntityRecognizerRequestMarshaller();        
 
-        internal static StartEntitiesDetectionJobRequestMarshaller GetInstance()
+        internal static DescribeEntityRecognizerRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +92,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartEntitiesDetectionJobRequestMarshaller Instance
+        public static DescribeEntityRecognizerRequestMarshaller Instance
         {
             get
             {

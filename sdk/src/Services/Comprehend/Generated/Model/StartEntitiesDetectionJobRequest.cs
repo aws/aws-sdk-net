@@ -31,11 +31,20 @@ namespace Amazon.Comprehend.Model
     /// Container for the parameters to the StartEntitiesDetectionJob operation.
     /// Starts an asynchronous entity detection job for a collection of documents. Use the
     /// operation to track the status of a job.
+    /// 
+    ///  
+    /// <para>
+    /// This API can be used for either standard entity detection or custom entity recognition.
+    /// In order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code>
+    /// must be used in order to provide access to the recognizer being used to detect the
+    /// custom entity.
+    /// </para>
     /// </summary>
     public partial class StartEntitiesDetectionJobRequest : AmazonComprehendRequest
     {
         private string _clientRequestToken;
         private string _dataAccessRoleArn;
+        private string _entityRecognizerArn;
         private InputDataConfig _inputDataConfig;
         private string _jobName;
         private LanguageCode _languageCode;
@@ -78,6 +87,26 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetDataAccessRoleArn()
         {
             return this._dataAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntityRecognizerArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be
+        /// used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only
+        /// used for a custom entity recognition job.
+        /// </para>
+        /// </summary>
+        public string EntityRecognizerArn
+        {
+            get { return this._entityRecognizerArn; }
+            set { this._entityRecognizerArn = value; }
+        }
+
+        // Check to see if EntityRecognizerArn property is set
+        internal bool IsSetEntityRecognizerArn()
+        {
+            return this._entityRecognizerArn != null;
         }
 
         /// <summary>

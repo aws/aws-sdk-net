@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartEntitiesDetectionJob operation
+    /// Response Unmarshaller for DeleteEntityRecognizer operation
     /// </summary>  
-    public class StartEntitiesDetectionJobResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteEntityRecognizerResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,25 +45,8 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartEntitiesDetectionJobResponse response = new StartEntitiesDetectionJobResponse();
+            DeleteEntityRecognizerResponse response = new DeleteEntityRecognizerResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("JobId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("JobStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -86,6 +69,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             {
                 return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
+            {
+                return new ResourceInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
             {
                 return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -101,9 +88,9 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             return new AmazonComprehendException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static StartEntitiesDetectionJobResponseUnmarshaller _instance = new StartEntitiesDetectionJobResponseUnmarshaller();        
+        private static DeleteEntityRecognizerResponseUnmarshaller _instance = new DeleteEntityRecognizerResponseUnmarshaller();        
 
-        internal static StartEntitiesDetectionJobResponseUnmarshaller GetInstance()
+        internal static DeleteEntityRecognizerResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +98,7 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartEntitiesDetectionJobResponseUnmarshaller Instance
+        public static DeleteEntityRecognizerResponseUnmarshaller Instance
         {
             get
             {
