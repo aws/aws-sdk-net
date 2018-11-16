@@ -78,7 +78,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// An exit code of 0 indicates success, and a non-zero exit code indicates failure. For
+        /// An exit code of 0 indicates success, and non-zero exit code indicates failure. For
         /// more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a>.

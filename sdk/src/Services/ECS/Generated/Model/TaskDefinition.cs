@@ -37,8 +37,10 @@ namespace Amazon.ECS.Model
         private string _cpu;
         private string _executionRoleArn;
         private string _family;
+        private IpcMode _ipcMode;
         private string _memory;
         private NetworkMode _networkMode;
+        private PidMode _pidMode;
         private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
         private List<Attribute> _requiresAttributes = new List<Attribute>();
         private List<string> _requiresCompatibilities = new List<string>();
@@ -173,12 +175,69 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpcMode. 
+        /// <para>
+        /// The IPC resource namespace to use for the containers in the task. The valid values
+        /// are <code>host</code>, <code>task</code>, or <code>none</code>. If <code>host</code>
+        /// is specified, then all containers within the tasks that specified the <code>host</code>
+        /// IPC mode on the same container instance share the same IPC resources with the host
+        /// Amazon EC2 instance. If <code>task</code> is specified, all containers within the
+        /// specified task share the same IPC resources. If <code>none</code> is specified, then
+        /// IPC resources within the containers of a task are private and not shared with other
+        /// containers in a task or on the container instance. If no value is specified, then
+        /// the IPC resource namespace sharing depends on the Docker daemon setting on the container
+        /// instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
+        /// settings</a> in the <i>Docker run reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>host</code> IPC mode is used, be aware that there is a heightened risk
+        /// of undesired IPC namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+        /// security</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are setting namespaced kernel parameters using <code>systemControls</code>
+        /// for the containers in the task, the following will apply to your IPC resource namespace.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+        /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For tasks that use the <code>host</code> IPC mode, IPC namespace related <code>systemControls</code>
+        /// are not supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For tasks that use the <code>task</code> IPC mode, IPC namespace related <code>systemControls</code>
+        /// will apply to all containers within a task.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers or tasks using the Fargate
+        /// launch type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public IpcMode IpcMode
+        {
+            get { return this._ipcMode; }
+            set { this._ipcMode = value; }
+        }
+
+        // Check to see if IpcMode property is set
+        internal bool IsSetIpcMode()
+        {
+            return this._ipcMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The amount (in MiB) of memory used by the task. If you are using the EC2 launch type,
-        /// this field is optional and any value can be used. If you are using the Fargate launch
-        /// type, this field is required and you must use one of the following values, which determines
-        /// your range of valid values for the <code>cpu</code> parameter:
+        /// The amount (in MiB) of memory used by the task. If using the EC2 launch type, this
+        /// field is optional and any value can be used. If using the Fargate launch type, this
+        /// field is required and you must use one of the following values, which determines your
+        /// range of valid values for the <code>cpu</code> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -227,7 +286,7 @@ namespace Amazon.ECS.Model
         /// The default Docker network mode is <code>bridge</code>. If you are using the Fargate
         /// launch type, the <code>awsvpc</code> network mode is required. If you are using the
         /// EC2 launch type, any network mode can be used. If the network mode is set to <code>none</code>,
-        /// you can't specify port mappings in your container definitions, and the task's containers
+        /// you cannot specify port mappings in your container definitions, and the tasks containers
         /// do not have external connectivity. The <code>host</code> and <code>awsvpc</code> network
         /// modes offer the highest networking performance for containers because they use the
         /// EC2 network stack instead of the virtualized network stack provided by the <code>bridge</code>
@@ -243,19 +302,19 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If the network mode is <code>awsvpc</code>, the task is allocated an elastic network
-        /// interface, and you must specify a <a>NetworkConfiguration</a> when you create a service
-        /// or run a task with the task definition. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// interface, and you must specify a <a>NetworkConfiguration</a> value when you create
+        /// a service or run a task with the task definition. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// Networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, only the Amazon ECS-optimized AMI, other Amazon Linux variants with the
-        /// <code>ecs-init</code> package, or AWS Fargate infrastructure support the <code>awsvpc</code>
-        /// network mode. 
+        /// Currently, only Amazon ECS-optimized AMIs, other Amazon Linux variants with the <code>ecs-init</code>
+        /// package, or AWS Fargate infrastructure support the <code>awsvpc</code> network mode.
+        /// 
         /// </para>
         ///  </note> 
         /// <para>
-        /// If the network mode is <code>host</code>, you can't run multiple instantiations of
+        /// If the network mode is <code>host</code>, you cannot run multiple instantiations of
         /// the same task on a single container instance when port mappings are used.
         /// </para>
         ///  
@@ -281,6 +340,43 @@ namespace Amazon.ECS.Model
         internal bool IsSetNetworkMode()
         {
             return this._networkMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PidMode. 
+        /// <para>
+        /// The process namespace to use for the containers in the task. The valid values are
+        /// <code>host</code> or <code>task</code>. If <code>host</code> is specified, then all
+        /// containers within the tasks that specified the <code>host</code> PID mode on the same
+        /// container instance share the same IPC resources with the host Amazon EC2 instance.
+        /// If <code>task</code> is specified, all containers within the specified task share
+        /// the same process namespace. If no value is specified, the default is a private namespace.
+        /// For more information, see <a href="https://docs.docker.com/engine/reference/run/#pid-settings---pid">PID
+        /// settings</a> in the <i>Docker run reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the <code>host</code> PID mode is used, be aware that there is a heightened risk
+        /// of undesired process namespace expose. For more information, see <a href="https://docs.docker.com/engine/security/security/">Docker
+        /// security</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for Windows containers or tasks using the Fargate
+        /// launch type.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public PidMode PidMode
+        {
+            get { return this._pidMode; }
+            set { this._pidMode = value; }
+        }
+
+        // Check to see if PidMode property is set
+        internal bool IsSetPidMode()
+        {
+            return this._pidMode != null;
         }
 
         /// <summary>

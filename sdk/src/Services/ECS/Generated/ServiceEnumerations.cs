@@ -549,6 +549,60 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type IpcMode.
+    /// </summary>
+    public class IpcMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Host for IpcMode
+        /// </summary>
+        public static readonly IpcMode Host = new IpcMode("host");
+        /// <summary>
+        /// Constant None for IpcMode
+        /// </summary>
+        public static readonly IpcMode None = new IpcMode("none");
+        /// <summary>
+        /// Constant Task for IpcMode
+        /// </summary>
+        public static readonly IpcMode Task = new IpcMode("task");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpcMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpcMode FindValue(string value)
+        {
+            return FindValue<IpcMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpcMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LaunchType.
     /// </summary>
     public class LaunchType : ConstantClass
@@ -720,6 +774,56 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PidMode.
+    /// </summary>
+    public class PidMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Host for PidMode
+        /// </summary>
+        public static readonly PidMode Host = new PidMode("host");
+        /// <summary>
+        /// Constant Task for PidMode
+        /// </summary>
+        public static readonly PidMode Task = new PidMode("task");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PidMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PidMode FindValue(string value)
+        {
+            return FindValue<PidMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PidMode(string value)
         {
             return FindValue(value);
         }

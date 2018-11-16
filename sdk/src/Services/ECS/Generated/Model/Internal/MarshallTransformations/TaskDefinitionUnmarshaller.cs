@@ -94,6 +94,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Family = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipcMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpcMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("memory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NetworkMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pidMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PidMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("placementConstraints", targetDepth))

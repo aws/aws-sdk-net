@@ -101,6 +101,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Family);
                 }
 
+                if(publicRequest.IsSetIpcMode())
+                {
+                    context.Writer.WritePropertyName("ipcMode");
+                    context.Writer.Write(publicRequest.IpcMode);
+                }
+
                 if(publicRequest.IsSetMemory())
                 {
                     context.Writer.WritePropertyName("memory");
@@ -111,6 +117,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("networkMode");
                     context.Writer.Write(publicRequest.NetworkMode);
+                }
+
+                if(publicRequest.IsSetPidMode())
+                {
+                    context.Writer.WritePropertyName("pidMode");
+                    context.Writer.Write(publicRequest.PidMode);
                 }
 
                 if(publicRequest.IsSetPlacementConstraints())
