@@ -405,6 +405,134 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  CreateDocumentClassifier
+
+        internal virtual CreateDocumentClassifierResponse CreateDocumentClassifier(CreateDocumentClassifierRequest request)
+        {
+            var marshaller = CreateDocumentClassifierRequestMarshaller.Instance;
+            var unmarshaller = CreateDocumentClassifierResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDocumentClassifierRequest,CreateDocumentClassifierResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentClassifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentClassifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
+        public virtual Task<CreateDocumentClassifierResponse> CreateDocumentClassifierAsync(CreateDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateDocumentClassifierRequestMarshaller.Instance;
+            var unmarshaller = CreateDocumentClassifierResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDocumentClassifierRequest,CreateDocumentClassifierResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteDocumentClassifier
+
+        internal virtual DeleteDocumentClassifierResponse DeleteDocumentClassifier(DeleteDocumentClassifierRequest request)
+        {
+            var marshaller = DeleteDocumentClassifierRequestMarshaller.Instance;
+            var unmarshaller = DeleteDocumentClassifierResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDocumentClassifierRequest,DeleteDocumentClassifierResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentClassifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentClassifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier">REST API Reference for DeleteDocumentClassifier Operation</seealso>
+        public virtual Task<DeleteDocumentClassifierResponse> DeleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteDocumentClassifierRequestMarshaller.Instance;
+            var unmarshaller = DeleteDocumentClassifierResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDocumentClassifierRequest,DeleteDocumentClassifierResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDocumentClassificationJob
+
+        internal virtual DescribeDocumentClassificationJobResponse DescribeDocumentClassificationJob(DescribeDocumentClassificationJobRequest request)
+        {
+            var marshaller = DescribeDocumentClassificationJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeDocumentClassificationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDocumentClassificationJobRequest,DescribeDocumentClassificationJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDocumentClassificationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentClassificationJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob">REST API Reference for DescribeDocumentClassificationJob Operation</seealso>
+        public virtual Task<DescribeDocumentClassificationJobResponse> DescribeDocumentClassificationJobAsync(DescribeDocumentClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeDocumentClassificationJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeDocumentClassificationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDocumentClassificationJobRequest,DescribeDocumentClassificationJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeDocumentClassifier
+
+        internal virtual DescribeDocumentClassifierResponse DescribeDocumentClassifier(DescribeDocumentClassifierRequest request)
+        {
+            var marshaller = DescribeDocumentClassifierRequestMarshaller.Instance;
+            var unmarshaller = DescribeDocumentClassifierResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDocumentClassifierRequest,DescribeDocumentClassifierResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDocumentClassifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentClassifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier">REST API Reference for DescribeDocumentClassifier Operation</seealso>
+        public virtual Task<DescribeDocumentClassifierResponse> DescribeDocumentClassifierAsync(DescribeDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeDocumentClassifierRequestMarshaller.Instance;
+            var unmarshaller = DescribeDocumentClassifierResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDocumentClassifierRequest,DescribeDocumentClassifierResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDominantLanguageDetectionJob
 
         internal virtual DescribeDominantLanguageDetectionJobResponse DescribeDominantLanguageDetectionJob(DescribeDominantLanguageDetectionJobRequest request)
@@ -725,6 +853,70 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListDocumentClassificationJobs
+
+        internal virtual ListDocumentClassificationJobsResponse ListDocumentClassificationJobs(ListDocumentClassificationJobsRequest request)
+        {
+            var marshaller = ListDocumentClassificationJobsRequestMarshaller.Instance;
+            var unmarshaller = ListDocumentClassificationJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDocumentClassificationJobsRequest,ListDocumentClassificationJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDocumentClassificationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassificationJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs">REST API Reference for ListDocumentClassificationJobs Operation</seealso>
+        public virtual Task<ListDocumentClassificationJobsResponse> ListDocumentClassificationJobsAsync(ListDocumentClassificationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListDocumentClassificationJobsRequestMarshaller.Instance;
+            var unmarshaller = ListDocumentClassificationJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDocumentClassificationJobsRequest,ListDocumentClassificationJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDocumentClassifiers
+
+        internal virtual ListDocumentClassifiersResponse ListDocumentClassifiers(ListDocumentClassifiersRequest request)
+        {
+            var marshaller = ListDocumentClassifiersRequestMarshaller.Instance;
+            var unmarshaller = ListDocumentClassifiersResponseUnmarshaller.Instance;
+
+            return Invoke<ListDocumentClassifiersRequest,ListDocumentClassifiersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDocumentClassifiers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassifiers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers">REST API Reference for ListDocumentClassifiers Operation</seealso>
+        public virtual Task<ListDocumentClassifiersResponse> ListDocumentClassifiersAsync(ListDocumentClassifiersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListDocumentClassifiersRequestMarshaller.Instance;
+            var unmarshaller = ListDocumentClassifiersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDocumentClassifiersRequest,ListDocumentClassifiersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListDominantLanguageDetectionJobs
 
         internal virtual ListDominantLanguageDetectionJobsResponse ListDominantLanguageDetectionJobs(ListDominantLanguageDetectionJobsRequest request)
@@ -880,6 +1072,38 @@ namespace Amazon.Comprehend
             var unmarshaller = ListTopicsDetectionJobsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTopicsDetectionJobsRequest,ListTopicsDetectionJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartDocumentClassificationJob
+
+        internal virtual StartDocumentClassificationJobResponse StartDocumentClassificationJob(StartDocumentClassificationJobRequest request)
+        {
+            var marshaller = StartDocumentClassificationJobRequestMarshaller.Instance;
+            var unmarshaller = StartDocumentClassificationJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartDocumentClassificationJobRequest,StartDocumentClassificationJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDocumentClassificationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDocumentClassificationJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">REST API Reference for StartDocumentClassificationJob Operation</seealso>
+        public virtual Task<StartDocumentClassificationJobResponse> StartDocumentClassificationJobAsync(StartDocumentClassificationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartDocumentClassificationJobRequestMarshaller.Instance;
+            var unmarshaller = StartDocumentClassificationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDocumentClassificationJobRequest,StartDocumentClassificationJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

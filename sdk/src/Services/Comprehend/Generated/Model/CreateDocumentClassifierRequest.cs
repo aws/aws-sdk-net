@@ -28,18 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartEntitiesDetectionJob operation.
-    /// Starts an asynchronous entity detection job for a collection of documents. Use the
-    /// operation to track the status of a job.
+    /// Container for the parameters to the CreateDocumentClassifier operation.
+    /// Creates a new document classifier that you can use to categorize documents. To create
+    /// a classifier you provide a set of training documents that are labeled with the categories
+    /// that you want to use. After the classifier is trained you can use it to categorize
+    /// a set of unlabeled documents into those categories.
     /// </summary>
-    public partial class StartEntitiesDetectionJobRequest : AmazonComprehendRequest
+    public partial class CreateDocumentClassifierRequest : AmazonComprehendRequest
     {
         private string _clientRequestToken;
         private string _dataAccessRoleArn;
-        private InputDataConfig _inputDataConfig;
-        private string _jobName;
+        private string _documentClassifierName;
+        private DocumentClassifierInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
-        private OutputDataConfig _outputDataConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -63,9 +64,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data. For more information,
-        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.
+        /// The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that
+        /// grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
         public string DataAccessRoleArn
@@ -81,12 +81,30 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentClassifierName. 
+        /// <para>
+        /// The name of the document classifier.
+        /// </para>
+        /// </summary>
+        public string DocumentClassifierName
+        {
+            get { return this._documentClassifierName; }
+            set { this._documentClassifierName = value; }
+        }
+
+        // Check to see if DocumentClassifierName property is set
+        internal bool IsSetDocumentClassifierName()
+        {
+            return this._documentClassifierName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// Specifies the format and location of the input data for the job.
         /// </para>
         /// </summary>
-        public InputDataConfig InputDataConfig
+        public DocumentClassifierInputDataConfig InputDataConfig
         {
             get { return this._inputDataConfig; }
             set { this._inputDataConfig = value; }
@@ -99,31 +117,11 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
-        /// Gets and sets the property JobName. 
-        /// <para>
-        /// The identifier of the job.
-        /// </para>
-        /// </summary>
-        public string JobName
-        {
-            get { return this._jobName; }
-            set { this._jobName = value; }
-        }
-
-        // Check to see if JobName property is set
-        internal bool IsSetJobName()
-        {
-            return this._jobName != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language of the input documents. All documents must be in the same language. You
-        /// can specify any of the languages supported by Amazon Comprehend: English ("en"), Spanish
-        /// ("es"), French ("fr"), German ("de"), Italian ("it"), or Portuguese ("pt"). If custom
-        /// entities recognition is used, this parameter is ignored and the language used for
-        /// training the model is used instead.
+        /// The language of the input documents. You can create a document classifier in any of
+        /// the languages supported by Amazon Comprehend. However, all documents must be in the
+        /// same language.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -136,24 +134,6 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetLanguageCode()
         {
             return this._languageCode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OutputDataConfig. 
-        /// <para>
-        /// Specifies where to send the output files.
-        /// </para>
-        /// </summary>
-        public OutputDataConfig OutputDataConfig
-        {
-            get { return this._outputDataConfig; }
-            set { this._outputDataConfig = value; }
-        }
-
-        // Check to see if OutputDataConfig property is set
-        internal bool IsSetOutputDataConfig()
-        {
-            return this._outputDataConfig != null;
         }
 
     }

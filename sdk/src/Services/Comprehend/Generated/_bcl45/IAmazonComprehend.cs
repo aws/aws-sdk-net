@@ -106,10 +106,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all APIs except
-        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
-        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
-        /// languages. For a list of languages, see <a>how-languages</a>
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectEntities">REST API Reference for BatchDetectEntities Operation</seealso>
         BatchDetectEntitiesResponse BatchDetectEntities(BatchDetectEntitiesRequest request);
@@ -152,10 +151,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all APIs except
-        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
-        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
-        /// languages. For a list of languages, see <a>how-languages</a>
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectKeyPhrases">REST API Reference for BatchDetectKeyPhrases Operation</seealso>
         BatchDetectKeyPhrasesResponse BatchDetectKeyPhrases(BatchDetectKeyPhrasesRequest request);
@@ -200,10 +198,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all APIs except
-        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
-        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
-        /// languages. For a list of languages, see <a>how-languages</a>
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSentiment">REST API Reference for BatchDetectSentiment Operation</seealso>
         BatchDetectSentimentResponse BatchDetectSentiment(BatchDetectSentimentRequest request);
@@ -248,10 +245,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all APIs except
-        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
-        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
-        /// languages. For a list of languages, see <a>how-languages</a>
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         BatchDetectSyntaxResponse BatchDetectSyntax(BatchDetectSyntaxRequest request);
@@ -268,6 +264,195 @@ namespace Amazon.Comprehend
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/BatchDetectSyntax">REST API Reference for BatchDetectSyntax Operation</seealso>
         Task<BatchDetectSyntaxResponse> BatchDetectSyntaxAsync(BatchDetectSyntaxRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateDocumentClassifier
+
+
+        /// <summary>
+        /// Creates a new document classifier that you can use to categorize documents. To create
+        /// a classifier you provide a set of training documents that are labeled with the categories
+        /// that you want to use. After the classifier is trained you can use it to categorize
+        /// a set of unlabeled documents into those categories.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentClassifier service method.</param>
+        /// 
+        /// <returns>The response from the CreateDocumentClassifier service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceLimitExceededException">
+        /// The maximum number of recognizers per account has been exceeded. Review the recognizers,
+        /// perform cleanup, and then try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
+        CreateDocumentClassifierResponse CreateDocumentClassifier(CreateDocumentClassifierRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDocumentClassifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDocumentClassifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">REST API Reference for CreateDocumentClassifier Operation</seealso>
+        Task<CreateDocumentClassifierResponse> CreateDocumentClassifierAsync(CreateDocumentClassifierRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteDocumentClassifier
+
+
+        /// <summary>
+        /// Deletes a previously created document classifier
+        /// 
+        ///  
+        /// <para>
+        /// Only those classifiers that are in terminated states (IN_ERROR, TRAINED) will be deleted.
+        /// If an active inference job is using the model, a <code>ResourceInUseException</code>
+        /// will be returned.
+        /// </para>
+        ///  
+        /// <para>
+        /// This is an asynchronous action that puts the classifier into a DELETING state, and
+        /// it is then removed by a background job. Once removed, the classifier disappears from
+        /// your account and is no longer available for use. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentClassifier service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDocumentClassifier service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified name is already in use. Use a different name and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier">REST API Reference for DeleteDocumentClassifier Operation</seealso>
+        DeleteDocumentClassifierResponse DeleteDocumentClassifier(DeleteDocumentClassifierRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDocumentClassifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDocumentClassifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteDocumentClassifier">REST API Reference for DeleteDocumentClassifier Operation</seealso>
+        Task<DeleteDocumentClassifierResponse> DeleteDocumentClassifierAsync(DeleteDocumentClassifierRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDocumentClassificationJob
+
+
+        /// <summary>
+        /// Gets the properties associated with a document classification job. Use this operation
+        /// to get the status of a classification job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentClassificationJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDocumentClassificationJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.JobNotFoundException">
+        /// The specified job was not found. Check the job ID and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob">REST API Reference for DescribeDocumentClassificationJob Operation</seealso>
+        DescribeDocumentClassificationJobResponse DescribeDocumentClassificationJob(DescribeDocumentClassificationJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDocumentClassificationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentClassificationJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassificationJob">REST API Reference for DescribeDocumentClassificationJob Operation</seealso>
+        Task<DescribeDocumentClassificationJobResponse> DescribeDocumentClassificationJobAsync(DescribeDocumentClassificationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDocumentClassifier
+
+
+        /// <summary>
+        /// Gets the properties associated with a document classifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentClassifier service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDocumentClassifier service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier">REST API Reference for DescribeDocumentClassifier Operation</seealso>
+        DescribeDocumentClassifierResponse DescribeDocumentClassifier(DescribeDocumentClassifierRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDocumentClassifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDocumentClassifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDocumentClassifier">REST API Reference for DescribeDocumentClassifier Operation</seealso>
+        Task<DescribeDocumentClassifierResponse> DescribeDocumentClassifierAsync(DescribeDocumentClassifierRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -529,10 +714,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all APIs except
-        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
-        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
-        /// languages. For a list of languages, see <a>how-languages</a>
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectEntities">REST API Reference for DetectEntities Operation</seealso>
         DetectEntitiesResponse DetectEntities(DetectEntitiesRequest request);
@@ -571,10 +755,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all APIs except
-        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
-        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
-        /// languages. For a list of languages, see <a>how-languages</a>
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectKeyPhrases">REST API Reference for DetectKeyPhrases Operation</seealso>
         DetectKeyPhrasesResponse DetectKeyPhrases(DetectKeyPhrasesRequest request);
@@ -614,10 +797,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all APIs except
-        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
-        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
-        /// languages. For a list of languages, see <a>how-languages</a>
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSentiment">REST API Reference for DetectSentiment Operation</seealso>
         DetectSentimentResponse DetectSentiment(DetectSentimentRequest request);
@@ -657,10 +839,9 @@ namespace Amazon.Comprehend
         /// The size of the input text exceeds the limit. Use a smaller document.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.UnsupportedLanguageException">
-        /// Amazon Comprehend can't process the language of the input text. For all APIs except
-        /// <code>DetectDominantLanguage</code>, Amazon Comprehend accepts only English or Spanish
-        /// text. For the <code>DetectDominantLanguage</code> API, Amazon Comprehend detects 100
-        /// languages. For a list of languages, see <a>how-languages</a>
+        /// Amazon Comprehend can't process the language of the input text. For all custom entity
+        /// recognition APIs (such as <code>CreateEntityRecognizer</code>), only English is accepted.
+        /// For most other APIs, Amazon Comprehend accepts only English or Spanish text.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectSyntax">REST API Reference for DetectSyntax Operation</seealso>
         DetectSyntaxResponse DetectSyntax(DetectSyntaxRequest request);
@@ -680,6 +861,86 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  ListDocumentClassificationJobs
+
+
+        /// <summary>
+        /// Gets a list of the documentation classification jobs that you have submitted.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassificationJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListDocumentClassificationJobs service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
+        /// is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs">REST API Reference for ListDocumentClassificationJobs Operation</seealso>
+        ListDocumentClassificationJobsResponse ListDocumentClassificationJobs(ListDocumentClassificationJobsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDocumentClassificationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassificationJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassificationJobs">REST API Reference for ListDocumentClassificationJobs Operation</seealso>
+        Task<ListDocumentClassificationJobsResponse> ListDocumentClassificationJobsAsync(ListDocumentClassificationJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListDocumentClassifiers
+
+
+        /// <summary>
+        /// Gets a list of the document classifiers that you have created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassifiers service method.</param>
+        /// 
+        /// <returns>The response from the ListDocumentClassifiers service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
+        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
+        /// is invalid. Specify a different filter.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers">REST API Reference for ListDocumentClassifiers Operation</seealso>
+        ListDocumentClassifiersResponse ListDocumentClassifiers(ListDocumentClassifiersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDocumentClassifiers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDocumentClassifiers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifiers">REST API Reference for ListDocumentClassifiers Operation</seealso>
+        Task<ListDocumentClassifiersResponse> ListDocumentClassifiersAsync(ListDocumentClassifiersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListDominantLanguageDetectionJobs
 
 
@@ -693,8 +954,8 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
-        /// Specify a different filter.
+        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
+        /// is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -733,8 +994,8 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
-        /// Specify a different filter.
+        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
+        /// is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -773,8 +1034,8 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
-        /// Specify a different filter.
+        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
+        /// is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -813,8 +1074,8 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
-        /// Specify a different filter.
+        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
+        /// is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -853,8 +1114,8 @@ namespace Amazon.Comprehend
         /// An internal server error occurred. Retry your request.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidFilterException">
-        /// The filter specified for the <code>ListTopicDetectionJobs</code> operation is invalid.
-        /// Specify a different filter.
+        /// The filter specified for the <code>ListDocumentClassificationJobs</code> operation
+        /// is invalid. Specify a different filter.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
         /// The request is invalid.
@@ -877,6 +1138,50 @@ namespace Amazon.Comprehend
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListTopicsDetectionJobs">REST API Reference for ListTopicsDetectionJobs Operation</seealso>
         Task<ListTopicsDetectionJobsResponse> ListTopicsDetectionJobsAsync(ListTopicsDetectionJobsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartDocumentClassificationJob
+
+
+        /// <summary>
+        /// Starts an asynchronous document classification job. Use the operation to track the
+        /// progress of the job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDocumentClassificationJob service method.</param>
+        /// 
+        /// <returns>The response from the StartDocumentClassificationJob service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceUnavailableException">
+        /// The specified resource is not available. Check to see if the resource is in the <code>TRAINED</code>
+        /// state and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">REST API Reference for StartDocumentClassificationJob Operation</seealso>
+        StartDocumentClassificationJobResponse StartDocumentClassificationJob(StartDocumentClassificationJobRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartDocumentClassificationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartDocumentClassificationJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartDocumentClassificationJob">REST API Reference for StartDocumentClassificationJob Operation</seealso>
+        Task<StartDocumentClassificationJobResponse> StartDocumentClassificationJobAsync(StartDocumentClassificationJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

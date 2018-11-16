@@ -285,6 +285,68 @@ namespace Amazon.Comprehend
 
 
     /// <summary>
+    /// Constants used for properties of type ModelStatus.
+    /// </summary>
+    public class ModelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus DELETING = new ModelStatus("DELETING");
+        /// <summary>
+        /// Constant IN_ERROR for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus IN_ERROR = new ModelStatus("IN_ERROR");
+        /// <summary>
+        /// Constant SUBMITTED for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus SUBMITTED = new ModelStatus("SUBMITTED");
+        /// <summary>
+        /// Constant TRAINED for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus TRAINED = new ModelStatus("TRAINED");
+        /// <summary>
+        /// Constant TRAINING for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus TRAINING = new ModelStatus("TRAINING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ModelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ModelStatus FindValue(string value)
+        {
+            return FindValue<ModelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ModelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PartOfSpeechTagType.
     /// </summary>
     public class PartOfSpeechTagType : ConstantClass
@@ -306,6 +368,10 @@ namespace Amazon.Comprehend
         /// Constant AUX for PartOfSpeechTagType
         /// </summary>
         public static readonly PartOfSpeechTagType AUX = new PartOfSpeechTagType("AUX");
+        /// <summary>
+        /// Constant CCONJ for PartOfSpeechTagType
+        /// </summary>
+        public static readonly PartOfSpeechTagType CCONJ = new PartOfSpeechTagType("CCONJ");
         /// <summary>
         /// Constant CONJ for PartOfSpeechTagType
         /// </summary>

@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// This is the response object from the StartEntitiesDetectionJob operation.
+    /// This is the response object from the StartDocumentClassificationJob operation.
     /// </summary>
-    public partial class StartEntitiesDetectionJobResponse : AmazonWebServiceResponse
+    public partial class StartDocumentClassificationJobResponse : AmazonWebServiceResponse
     {
         private string _jobId;
         private JobStatus _jobStatus;
@@ -38,7 +38,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier generated for the job. To get the status of job, use this identifier
+        /// The identifier generated for the job. To get the status of the job, use this identifier
         /// with the operation.
         /// </para>
         /// </summary>
@@ -57,11 +57,11 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The status of the job. 
+        /// The status of the job:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// SUBMITTED - The job has been received and is queued for processing.
+        /// SUBMITTED - The job has been received and queued for processing.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FAILED - The job did not complete. To get details, use the operation.
+        /// FAILED - The job did not complete. For details, use the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>

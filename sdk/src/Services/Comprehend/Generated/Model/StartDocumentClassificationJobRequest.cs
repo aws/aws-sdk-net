@@ -28,23 +28,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Container for the parameters to the StartEntitiesDetectionJob operation.
-    /// Starts an asynchronous entity detection job for a collection of documents. Use the
-    /// operation to track the status of a job.
+    /// Container for the parameters to the StartDocumentClassificationJob operation.
+    /// Starts an asynchronous document classification job. Use the operation to track the
+    /// progress of the job.
     /// </summary>
-    public partial class StartEntitiesDetectionJobRequest : AmazonComprehendRequest
+    public partial class StartDocumentClassificationJobRequest : AmazonComprehendRequest
     {
         private string _clientRequestToken;
         private string _dataAccessRoleArn;
+        private string _documentClassifierArn;
         private InputDataConfig _inputDataConfig;
         private string _jobName;
-        private LanguageCode _languageCode;
         private OutputDataConfig _outputDataConfig;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique identifier for the request. If you don't set the client request token, Amazon
+        /// A unique identifier for the request. If you do not set the client request token, Amazon
         /// Comprehend generates one.
         /// </para>
         /// </summary>
@@ -64,8 +64,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data. For more information,
-        /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions">https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions</a>.
+        /// that grants Amazon Comprehend read access to your input data.
         /// </para>
         /// </summary>
         public string DataAccessRoleArn
@@ -78,6 +77,24 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetDataAccessRoleArn()
         {
             return this._dataAccessRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentClassifierArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the document classifier to use to process the job.
+        /// </para>
+        /// </summary>
+        public string DocumentClassifierArn
+        {
+            get { return this._documentClassifierArn; }
+            set { this._documentClassifierArn = value; }
+        }
+
+        // Check to see if DocumentClassifierArn property is set
+        internal bool IsSetDocumentClassifierArn()
+        {
+            return this._documentClassifierArn != null;
         }
 
         /// <summary>
@@ -114,28 +131,6 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LanguageCode. 
-        /// <para>
-        /// The language of the input documents. All documents must be in the same language. You
-        /// can specify any of the languages supported by Amazon Comprehend: English ("en"), Spanish
-        /// ("es"), French ("fr"), German ("de"), Italian ("it"), or Portuguese ("pt"). If custom
-        /// entities recognition is used, this parameter is ignored and the language used for
-        /// training the model is used instead.
-        /// </para>
-        /// </summary>
-        public LanguageCode LanguageCode
-        {
-            get { return this._languageCode; }
-            set { this._languageCode = value; }
-        }
-
-        // Check to see if LanguageCode property is set
-        internal bool IsSetLanguageCode()
-        {
-            return this._languageCode != null;
         }
 
         /// <summary>
