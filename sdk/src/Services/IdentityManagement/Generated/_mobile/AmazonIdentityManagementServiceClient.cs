@@ -3770,6 +3770,38 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListRoleTags
+
+        internal virtual ListRoleTagsResponse ListRoleTags(ListRoleTagsRequest request)
+        {
+            var marshaller = ListRoleTagsRequestMarshaller.Instance;
+            var unmarshaller = ListRoleTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRoleTagsRequest,ListRoleTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRoleTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRoleTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoleTags">REST API Reference for ListRoleTags Operation</seealso>
+        public virtual Task<ListRoleTagsResponse> ListRoleTagsAsync(ListRoleTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListRoleTagsRequestMarshaller.Instance;
+            var unmarshaller = ListRoleTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRoleTagsRequest,ListRoleTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSAMLProviders
 
         internal virtual ListSAMLProvidersResponse ListSAMLProviders()
@@ -4124,6 +4156,38 @@ namespace Amazon.IdentityManagement
             var unmarshaller = ListUsersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListUsersRequest,ListUsersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUserTags
+
+        internal virtual ListUserTagsResponse ListUserTags(ListUserTagsRequest request)
+        {
+            var marshaller = ListUserTagsRequestMarshaller.Instance;
+            var unmarshaller = ListUserTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListUserTagsRequest,ListUserTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserTags">REST API Reference for ListUserTags Operation</seealso>
+        public virtual Task<ListUserTagsResponse> ListUserTagsAsync(ListUserTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListUserTagsRequestMarshaller.Instance;
+            var unmarshaller = ListUserTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUserTagsRequest,ListUserTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4600,6 +4664,134 @@ namespace Amazon.IdentityManagement
             var unmarshaller = SimulatePrincipalPolicyResponseUnmarshaller.Instance;
 
             return InvokeAsync<SimulatePrincipalPolicyRequest,SimulatePrincipalPolicyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagRole
+
+        internal virtual TagRoleResponse TagRole(TagRoleRequest request)
+        {
+            var marshaller = TagRoleRequestMarshaller.Instance;
+            var unmarshaller = TagRoleResponseUnmarshaller.Instance;
+
+            return Invoke<TagRoleRequest,TagRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagRole">REST API Reference for TagRole Operation</seealso>
+        public virtual Task<TagRoleResponse> TagRoleAsync(TagRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = TagRoleRequestMarshaller.Instance;
+            var unmarshaller = TagRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagRoleRequest,TagRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TagUser
+
+        internal virtual TagUserResponse TagUser(TagUserRequest request)
+        {
+            var marshaller = TagUserRequestMarshaller.Instance;
+            var unmarshaller = TagUserResponseUnmarshaller.Instance;
+
+            return Invoke<TagUserRequest,TagUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagUser">REST API Reference for TagUser Operation</seealso>
+        public virtual Task<TagUserResponse> TagUserAsync(TagUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = TagUserRequestMarshaller.Instance;
+            var unmarshaller = TagUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TagUserRequest,TagUserResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagRole
+
+        internal virtual UntagRoleResponse UntagRole(UntagRoleRequest request)
+        {
+            var marshaller = UntagRoleRequestMarshaller.Instance;
+            var unmarshaller = UntagRoleResponseUnmarshaller.Instance;
+
+            return Invoke<UntagRoleRequest,UntagRoleResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagRole operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagRole">REST API Reference for UntagRole Operation</seealso>
+        public virtual Task<UntagRoleResponse> UntagRoleAsync(UntagRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UntagRoleRequestMarshaller.Instance;
+            var unmarshaller = UntagRoleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagRoleRequest,UntagRoleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UntagUser
+
+        internal virtual UntagUserResponse UntagUser(UntagUserRequest request)
+        {
+            var marshaller = UntagUserRequestMarshaller.Instance;
+            var unmarshaller = UntagUserResponseUnmarshaller.Instance;
+
+            return Invoke<UntagUserRequest,UntagUserResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagUser operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagUser">REST API Reference for UntagUser Operation</seealso>
+        public virtual Task<UntagUserResponse> UntagUserAsync(UntagUserRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UntagUserRequestMarshaller.Instance;
+            var unmarshaller = UntagUserResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UntagUserRequest,UntagUserResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

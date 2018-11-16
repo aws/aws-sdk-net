@@ -724,6 +724,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListRoleTags(Amazon.IdentityManagement.Model.ListRoleTagsRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListRoleTags(Amazon.IdentityManagement.Model.ListRoleTagsRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListRoleTagsRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListRoleTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to list the tags attached to a role.
+                </para>
+                <code
+                    title="To list the tags attached to an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-list-the-tags-attached-to-an-iam-role-1506719238376" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListSigningCertificates(Amazon.IdentityManagement.Model.ListSigningCertificatesRequest)" />
             <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListSigningCertificates(Amazon.IdentityManagement.Model.ListSigningCertificatesRequest)" />
             <member name="T:Amazon.IdentityManagement.Model.ListSigningCertificatesRequest" />
@@ -757,6 +776,25 @@
                     title="To list IAM users"
                     source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
                     region="9edfbd73-03d8-4d8a-9a79-76c85e8c8298" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListUserTags(Amazon.IdentityManagement.Model.ListUserTagsRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListUserTags(Amazon.IdentityManagement.Model.ListUserTagsRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListUserTagsRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListUserTagsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to list the tags attached to a user.
+                </para>
+                <code
+                    title="To list the tags attached to an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-list-the-tags-attached-to-an-iam-user-1506719473186" />
             </example>
         </value>
     </doc>
@@ -871,6 +909,82 @@
                     title="To remove a user from an IAM group"
                     source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
                     region="fb54d5b4-0caf-41d8-af0e-10a84413f174" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.TagRole(Amazon.IdentityManagement.Model.TagRoleRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.TagRole(Amazon.IdentityManagement.Model.TagRoleRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.TagRoleRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.TagRoleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to add tags to an existing role.
+                </para>
+                <code
+                    title="To add a tag key and value to an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-add-a-tag-key-and-value-to-an-iam-role-1506718791513" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.TagUser(Amazon.IdentityManagement.Model.TagUserRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.TagUser(Amazon.IdentityManagement.Model.TagUserRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.TagUserRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.TagUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to add tags to an existing user.
+                </para>
+                <code
+                    title="To add a tag key and value to an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-add-a-tag-key-and-value-to-an-iam-user-1506719044227" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UntagRole(Amazon.IdentityManagement.Model.UntagRoleRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UntagRole(Amazon.IdentityManagement.Model.UntagRoleRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UntagRoleRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UntagRoleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to remove a tag with the key 'Dept' from a role named 'taggedrole'.
+                </para>
+                <code
+                    title="To remove a tag from an IAM role"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-remove-a-tag-from-an-iam-role-1506719589943" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.UntagUser(Amazon.IdentityManagement.Model.UntagUserRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.UntagUser(Amazon.IdentityManagement.Model.UntagUserRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.UntagUserRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.UntagUserResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example shows how to remove tags that are attached to a user named 'anika'.
+                </para>
+                <code
+                    title="To remove a tag from an IAM user"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="to-remove-a-tag-from-an-iam-user-1506719725554" />
             </example>
         </value>
     </doc>

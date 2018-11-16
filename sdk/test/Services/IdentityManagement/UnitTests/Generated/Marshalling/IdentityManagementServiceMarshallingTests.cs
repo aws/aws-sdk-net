@@ -2005,6 +2005,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void ListRoleTagsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListRoleTags");
+
+            var request = InstantiateClassGenerator.Execute<ListRoleTagsRequest>();
+            var marshaller = new ListRoleTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListRoleTagsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListRoleTagsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void ListSAMLProvidersMarshallTest()
         {
             var operation = service_model.FindOperation("ListSAMLProviders");
@@ -2164,6 +2188,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListUsersResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListUsersResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void ListUserTagsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListUserTags");
+
+            var request = InstantiateClassGenerator.Execute<ListUserTagsRequest>();
+            var marshaller = new ListUserTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListUserTagsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListUserTagsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -2451,6 +2499,82 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var response = SimulatePrincipalPolicyResponseUnmarshaller.Instance.Unmarshall(context)
                 as SimulatePrincipalPolicyResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void TagRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagRole");
+
+            var request = InstantiateClassGenerator.Execute<TagRoleRequest>();
+            var marshaller = new TagRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void TagUserMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagUser");
+
+            var request = InstantiateClassGenerator.Execute<TagUserRequest>();
+            var marshaller = new TagUserRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void UntagRoleMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagRole");
+
+            var request = InstantiateClassGenerator.Execute<UntagRoleRequest>();
+            var marshaller = new UntagRoleRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void UntagUserMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagUser");
+
+            var request = InstantiateClassGenerator.Execute<UntagUserRequest>();
+            var marshaller = new UntagUserRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
         }
 
         

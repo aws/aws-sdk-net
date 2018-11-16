@@ -55,6 +55,7 @@ namespace Amazon.IdentityManagement.Model
         private DateTime? _passwordLastUsed;
         private string _path;
         private AttachedPermissionsBoundary _permissionsBoundary;
+        private List<Tag> _tags = new List<Tag>();
         private string _userId;
         private string _userName;
 
@@ -203,6 +204,26 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetPermissionsBoundary()
         {
             return this._permissionsBoundary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that are associated with the specified user. For more information about
+        /// tagging, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM Identities</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

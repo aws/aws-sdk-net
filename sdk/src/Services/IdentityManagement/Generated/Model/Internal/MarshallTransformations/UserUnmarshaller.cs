@@ -84,6 +84,13 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.PermissionsBoundary = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("Tags/member", targetDepth))
+                    {
+                        var unmarshaller = TagUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Tags.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("UserId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

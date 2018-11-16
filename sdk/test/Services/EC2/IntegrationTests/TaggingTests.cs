@@ -34,9 +34,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                 Client.CreateTags(new CreateTagsRequest
                 {
                     Resources = new List<string> { vpcId },
-                    Tags = new List<Tag>
+                    Tags = new List<Amazon.EC2.Model.Tag>
                 {
-                    new Tag(tagName, "")
+                    new Amazon.EC2.Model.Tag(tagName, "")
                 }
                 });
 
@@ -56,7 +56,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                 Assert.IsTrue(string.IsNullOrEmpty(newTag.Value));
 
                 var tags = tagDescriptions
-                    .Select(td => new Tag(td.Key, td.Value ?? ""))
+                    .Select(td => new Amazon.EC2.Model.Tag(td.Key, td.Value ?? ""))
                     .ToList();
                 Client.CreateTags(new CreateTagsRequest
                 {
@@ -65,7 +65,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.EC2
                 });
 
                 tags = tagDescriptions
-                    .Select(td => new Tag(td.Key, td.Value))
+                    .Select(td => new Amazon.EC2.Model.Tag(td.Key, td.Value))
                     .ToList();
                 Client.CreateTags(new CreateTagsRequest
                 {

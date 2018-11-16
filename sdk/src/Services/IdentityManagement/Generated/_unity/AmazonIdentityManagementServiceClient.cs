@@ -3342,6 +3342,34 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListRoleTags
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListRoleTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListRoleTags operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoleTags">REST API Reference for ListRoleTags Operation</seealso>
+        public virtual void ListRoleTagsAsync(ListRoleTagsRequest request, AmazonServiceCallback<ListRoleTagsRequest, ListRoleTagsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = ListRoleTagsRequestMarshaller.Instance;
+            var unmarshaller = ListRoleTagsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListRoleTagsRequest,ListRoleTagsResponse> responseObject 
+                            = new AmazonServiceResult<ListRoleTagsRequest,ListRoleTagsResponse>((ListRoleTagsRequest)req, (ListRoleTagsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListRoleTagsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  ListSAMLProviders
 
         /// <summary>
@@ -3665,6 +3693,34 @@ namespace Amazon.IdentityManagement
                         callback(responseObject); 
                 };
             BeginInvoke<ListUsersRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListUserTags
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUserTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUserTags operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserTags">REST API Reference for ListUserTags Operation</seealso>
+        public virtual void ListUserTagsAsync(ListUserTagsRequest request, AmazonServiceCallback<ListUserTagsRequest, ListUserTagsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = ListUserTagsRequestMarshaller.Instance;
+            var unmarshaller = ListUserTagsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListUserTagsRequest,ListUserTagsResponse> responseObject 
+                            = new AmazonServiceResult<ListUserTagsRequest,ListUserTagsResponse>((ListUserTagsRequest)req, (ListUserTagsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListUserTagsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -4084,6 +4140,118 @@ namespace Amazon.IdentityManagement
                         callback(responseObject); 
                 };
             BeginInvoke<SimulatePrincipalPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  TagRole
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagRole operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagRole">REST API Reference for TagRole Operation</seealso>
+        public virtual void TagRoleAsync(TagRoleRequest request, AmazonServiceCallback<TagRoleRequest, TagRoleResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = TagRoleRequestMarshaller.Instance;
+            var unmarshaller = TagRoleResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<TagRoleRequest,TagRoleResponse> responseObject 
+                            = new AmazonServiceResult<TagRoleRequest,TagRoleResponse>((TagRoleRequest)req, (TagRoleResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<TagRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  TagUser
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagUser operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagUser">REST API Reference for TagUser Operation</seealso>
+        public virtual void TagUserAsync(TagUserRequest request, AmazonServiceCallback<TagUserRequest, TagUserResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = TagUserRequestMarshaller.Instance;
+            var unmarshaller = TagUserResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<TagUserRequest,TagUserResponse> responseObject 
+                            = new AmazonServiceResult<TagUserRequest,TagUserResponse>((TagUserRequest)req, (TagUserResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<TagUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UntagRole
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagRole operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagRole operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagRole">REST API Reference for UntagRole Operation</seealso>
+        public virtual void UntagRoleAsync(UntagRoleRequest request, AmazonServiceCallback<UntagRoleRequest, UntagRoleResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = UntagRoleRequestMarshaller.Instance;
+            var unmarshaller = UntagRoleResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UntagRoleRequest,UntagRoleResponse> responseObject 
+                            = new AmazonServiceResult<UntagRoleRequest,UntagRoleResponse>((UntagRoleRequest)req, (UntagRoleResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UntagRoleRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  UntagUser
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagUser operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagUser operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagUser">REST API Reference for UntagUser Operation</seealso>
+        public virtual void UntagUserAsync(UntagUserRequest request, AmazonServiceCallback<UntagUserRequest, UntagUserResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = UntagUserRequestMarshaller.Instance;
+            var unmarshaller = UntagUserResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<UntagUserRequest,UntagUserResponse> responseObject 
+                            = new AmazonServiceResult<UntagUserRequest,UntagUserResponse>((UntagUserRequest)req, (UntagUserResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<UntagUserRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

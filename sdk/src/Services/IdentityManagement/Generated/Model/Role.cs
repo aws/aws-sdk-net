@@ -42,6 +42,7 @@ namespace Amazon.IdentityManagement.Model
         private AttachedPermissionsBoundary _permissionsBoundary;
         private string _roleId;
         private string _roleName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -216,6 +217,26 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetRoleName()
         {
             return this._roleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags that are attached to the specified role. For more information about
+        /// tagging, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging
+        /// IAM Identities</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

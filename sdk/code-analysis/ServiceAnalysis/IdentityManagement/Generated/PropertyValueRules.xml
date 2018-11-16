@@ -1121,6 +1121,29 @@
     <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListRoleTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListRoleTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListRoleTagsRequest.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListRoleTagsResponse.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListServerCertificatesRequest.Marker</property>
     <min>1</min>
     <max>320</max>
@@ -1237,6 +1260,29 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListUsersResponse.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListUserTagsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListUserTagsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListUserTagsRequest.UserName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListUserTagsResponse.Marker</property>
     <min>1</min>
     <max>320</max>
     <pattern>[\u0020-\u00FF]+</pattern>
@@ -1493,6 +1539,30 @@
     <min>1</min>
     <max>320</max>
     <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.TagRoleRequest.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.TagUserRequest.UserName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UntagRoleRequest.RoleName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.UntagUserRequest.UserName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateAccessKeyRequest.AccessKeyId</property>
@@ -2225,6 +2295,18 @@
     <min>1</min>
     <max>64</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.Tag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.User.Arn</property>

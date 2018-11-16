@@ -30,9 +30,9 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
                 await Client.CreateTagsAsync(new CreateTagsRequest
                 {
                     Resources = new List<string> { vpcId },
-                    Tags = new List<Tag>
+                    Tags = new List<Amazon.EC2.Model.Tag>
                     {
-                        new Tag(tagName, "")
+                        new Amazon.EC2.Model.Tag(tagName, "")
                     }
                 });
 
@@ -52,7 +52,7 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
                 Assert.True(string.IsNullOrEmpty(newTag.Value));
 
                 var tags = tagDescriptions
-                    .Select(td => new Tag(td.Key, td.Value ?? ""))
+                    .Select(td => new Amazon.EC2.Model.Tag(td.Key, td.Value ?? ""))
                     .ToList();
                 await Client.CreateTagsAsync(new CreateTagsRequest
                 {
@@ -61,7 +61,7 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
                 });
 
                 tags = tagDescriptions
-                    .Select(td => new Tag(td.Key, td.Value))
+                    .Select(td => new Amazon.EC2.Model.Tag(td.Key, td.Value))
                     .ToList();
                 await Client.CreateTagsAsync(new CreateTagsRequest
                 {

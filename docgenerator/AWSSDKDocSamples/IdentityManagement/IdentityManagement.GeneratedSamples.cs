@@ -541,6 +541,21 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
+        public void IdentityManagementServiceListRoleTags()
+        {
+            #region to-list-the-tags-attached-to-an-iam-role-1506719238376
+
+            var response = client.ListRoleTags(new ListRoleTagsRequest 
+            {
+                RoleName = "taggedrole1"
+            });
+
+            bool isTruncated = response.IsTruncated;
+            List<Tag> tags = response.Tags;
+
+            #endregion
+        }
+
         public void IdentityManagementServiceListSigningCertificates()
         {
             #region b4c10256-4fc9-457e-b3fd-4a110d4d73dc
@@ -564,6 +579,21 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             });
 
             List<User> users = response.Users;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceListUserTags()
+        {
+            #region to-list-the-tags-attached-to-an-iam-user-1506719473186
+
+            var response = client.ListUserTags(new ListUserTagsRequest 
+            {
+                UserName = "anika"
+            });
+
+            bool isTruncated = response.IsTruncated;
+            List<Tag> tags = response.Tags;
 
             #endregion
         }
@@ -648,6 +678,84 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             {
                 GroupName = "Admins",
                 UserName = "Bob"
+            });
+
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceTagRole()
+        {
+            #region to-add-a-tag-key-and-value-to-an-iam-role-1506718791513
+
+            var response = client.TagRole(new TagRoleRequest 
+            {
+                RoleName = "taggedrole",
+                Tags = new List<Tag> {
+                    new Tag {
+                        Key = "Dept",
+                        Value = "Accounting"
+                    },
+                    new Tag {
+                        Key = "CostCenter",
+                        Value = "12345"
+                    }
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceTagUser()
+        {
+            #region to-add-a-tag-key-and-value-to-an-iam-user-1506719044227
+
+            var response = client.TagUser(new TagUserRequest 
+            {
+                Tags = new List<Tag> {
+                    new Tag {
+                        Key = "Dept",
+                        Value = "Accounting"
+                    },
+                    new Tag {
+                        Key = "CostCenter",
+                        Value = "12345"
+                    }
+                },
+                UserName = "anika"
+            });
+
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceUntagRole()
+        {
+            #region to-remove-a-tag-from-an-iam-role-1506719589943
+
+            var response = client.UntagRole(new UntagRoleRequest 
+            {
+                RoleName = "taggedrole",
+                TagKeys = new List<string> {
+                    "Dept"
+                }
+            });
+
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceUntagUser()
+        {
+            #region to-remove-a-tag-from-an-iam-user-1506719725554
+
+            var response = client.UntagUser(new UntagUserRequest 
+            {
+                TagKeys = new List<string> {
+                    "Dept"
+                },
+                UserName = "anika"
             });
 
 
