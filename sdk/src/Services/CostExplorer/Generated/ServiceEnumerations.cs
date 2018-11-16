@@ -413,6 +413,76 @@ namespace Amazon.CostExplorer
 
 
     /// <summary>
+    /// Constants used for properties of type Metric.
+    /// </summary>
+    public class Metric : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AMORTIZED_COST for Metric
+        /// </summary>
+        public static readonly Metric AMORTIZED_COST = new Metric("AMORTIZED_COST");
+        /// <summary>
+        /// Constant BLENDED_COST for Metric
+        /// </summary>
+        public static readonly Metric BLENDED_COST = new Metric("BLENDED_COST");
+        /// <summary>
+        /// Constant NET_AMORTIZED_COST for Metric
+        /// </summary>
+        public static readonly Metric NET_AMORTIZED_COST = new Metric("NET_AMORTIZED_COST");
+        /// <summary>
+        /// Constant NET_UNBLENDED_COST for Metric
+        /// </summary>
+        public static readonly Metric NET_UNBLENDED_COST = new Metric("NET_UNBLENDED_COST");
+        /// <summary>
+        /// Constant NORMALIZED_USAGE_AMOUNT for Metric
+        /// </summary>
+        public static readonly Metric NORMALIZED_USAGE_AMOUNT = new Metric("NORMALIZED_USAGE_AMOUNT");
+        /// <summary>
+        /// Constant UNBLENDED_COST for Metric
+        /// </summary>
+        public static readonly Metric UNBLENDED_COST = new Metric("UNBLENDED_COST");
+        /// <summary>
+        /// Constant USAGE_QUANTITY for Metric
+        /// </summary>
+        public static readonly Metric USAGE_QUANTITY = new Metric("USAGE_QUANTITY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Metric(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Metric FindValue(string value)
+        {
+            return FindValue<Metric>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Metric(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OfferingClass.
     /// </summary>
     public class OfferingClass : ConstantClass

@@ -319,6 +319,52 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetCostForecast
+
+
+        /// <summary>
+        /// Retrieves a forecast for how much Amazon Web Services predicts that you will spend
+        /// over the forecast time period that you select, based on your past costs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostForecast service method.</param>
+        /// 
+        /// <returns>The response from the GetCostForecast service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
+        public virtual GetCostForecastResponse GetCostForecast(GetCostForecastRequest request)
+        {
+            var marshaller = GetCostForecastRequestMarshaller.Instance;
+            var unmarshaller = GetCostForecastResponseUnmarshaller.Instance;
+
+            return Invoke<GetCostForecastRequest,GetCostForecastResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCostForecast operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCostForecast operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
+        public virtual Task<GetCostForecastResponse> GetCostForecastAsync(GetCostForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetCostForecastRequestMarshaller.Instance;
+            var unmarshaller = GetCostForecastResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCostForecastRequest,GetCostForecastResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetDimensionValues
 
 

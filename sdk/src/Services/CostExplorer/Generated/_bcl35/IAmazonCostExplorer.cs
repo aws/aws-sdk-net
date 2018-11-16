@@ -118,6 +118,53 @@ namespace Amazon.CostExplorer
 
         #endregion
         
+        #region  GetCostForecast
+
+
+        /// <summary>
+        /// Retrieves a forecast for how much Amazon Web Services predicts that you will spend
+        /// over the forecast time period that you select, based on your past costs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCostForecast service method.</param>
+        /// 
+        /// <returns>The response from the GetCostForecast service method, as returned by CostExplorer.</returns>
+        /// <exception cref="Amazon.CostExplorer.Model.DataUnavailableException">
+        /// The requested data is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.CostExplorer.Model.LimitExceededException">
+        /// You made too many calls in a short period of time. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
+        GetCostForecastResponse GetCostForecast(GetCostForecastRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCostForecast operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCostForecast operation on AmazonCostExplorerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCostForecast
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
+        IAsyncResult BeginGetCostForecast(GetCostForecastRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCostForecast operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCostForecast.</param>
+        /// 
+        /// <returns>Returns a  GetCostForecastResult from CostExplorer.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">REST API Reference for GetCostForecast Operation</seealso>
+        GetCostForecastResponse EndGetCostForecast(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetDimensionValues
 
 
