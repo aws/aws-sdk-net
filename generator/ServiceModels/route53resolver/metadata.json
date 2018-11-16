@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This is the first release of the Amazon Route 53 Resolver API. Customers now have the ability to create and manage Amazon Route 53 Resolver endpoints and Amazon Route 53 Resolver rules.",
+  "generate-client-constructors": true
+}
