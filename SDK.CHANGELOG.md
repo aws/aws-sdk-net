@@ -1,3 +1,8 @@
+### 3.3.409.1 (2018-11-16 04:28 UTC)
+* Core 3.3.29.12
+	* Fix bug with calling CognitoIdentityProvider's SignUp operation with temporary credentials. Add support for endpoint hostPrefix. Add slash encoding support for identifier values within service resource paths.
+	* All services packages updated to require new Core
+
 ### 3.3.409.0 (2018-11-16 00:41 UTC)
 * CodeBuild (3.3.18.0)
 	* Adding queue phase and configurable queue timeout to CodeBuild.
