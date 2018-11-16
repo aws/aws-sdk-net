@@ -60,7 +60,7 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             string uriResourcePath = "/detector/{detectorId}/threatintelset";
             if (!publicRequest.IsSetDetectorId())
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
-            uriResourcePath = uriResourcePath.Replace("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
+            uriResourcePath = uriResourcePath.Replace("{detectorId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DetectorId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

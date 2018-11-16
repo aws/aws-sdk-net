@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             string uriResourcePath = "/prod/offerings/{offeringId}/purchase";
             if (!publicRequest.IsSetOfferingId())
                 throw new AmazonMediaLiveException("Request object does not have required field OfferingId set");
-            uriResourcePath = uriResourcePath.Replace("{offeringId}", StringUtils.FromString(publicRequest.OfferingId));
+            uriResourcePath = uriResourcePath.Replace("{offeringId}", StringUtils.FromStringWithSlashEncoding(publicRequest.OfferingId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

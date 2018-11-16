@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             string uriResourcePath = "/prod/channels/{channelId}/start";
             if (!publicRequest.IsSetChannelId())
                 throw new AmazonMediaLiveException("Request object does not have required field ChannelId set");
-            uriResourcePath = uriResourcePath.Replace("{channelId}", StringUtils.FromString(publicRequest.ChannelId));
+            uriResourcePath = uriResourcePath.Replace("{channelId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ChannelId));
             request.ResourcePath = uriResourcePath;
 
             return request;

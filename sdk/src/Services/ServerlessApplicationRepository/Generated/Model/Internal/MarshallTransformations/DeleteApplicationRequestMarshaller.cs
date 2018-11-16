@@ -60,7 +60,7 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             string uriResourcePath = "/applications/{applicationId}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
+            uriResourcePath = uriResourcePath.Replace("{applicationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
             request.ResourcePath = uriResourcePath;
 
             return request;

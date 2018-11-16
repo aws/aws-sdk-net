@@ -61,7 +61,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2017-08-29/tags/{arn}";
             if (!publicRequest.IsSetArn())
                 throw new AmazonMediaConvertException("Request object does not have required field Arn set");
-            uriResourcePath = uriResourcePath.Replace("{arn}", StringUtils.FromString(publicRequest.Arn));
+            uriResourcePath = uriResourcePath.Replace("{arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.Arn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

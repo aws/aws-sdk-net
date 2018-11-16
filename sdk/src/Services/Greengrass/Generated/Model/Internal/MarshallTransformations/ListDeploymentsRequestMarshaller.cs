@@ -60,7 +60,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/groups/{GroupId}/deployments";
             if (!publicRequest.IsSetGroupId())
                 throw new AmazonGreengrassException("Request object does not have required field GroupId set");
-            uriResourcePath = uriResourcePath.Replace("{GroupId}", StringUtils.FromString(publicRequest.GroupId));
+            uriResourcePath = uriResourcePath.Replace("{GroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.GroupId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromString(publicRequest.MaxResults));

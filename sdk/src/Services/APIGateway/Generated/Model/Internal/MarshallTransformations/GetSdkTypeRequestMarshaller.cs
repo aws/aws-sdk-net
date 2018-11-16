@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             string uriResourcePath = "/sdktypes/{sdktype_id}";
             if (!publicRequest.IsSetId())
                 throw new AmazonAPIGatewayException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{sdktype_id}", StringUtils.FromString(publicRequest.Id));
+            uriResourcePath = uriResourcePath.Replace("{sdktype_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
 
             return request;

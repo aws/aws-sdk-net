@@ -62,7 +62,7 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/email/configuration-sets/{ConfigurationSetName}";
             if (!publicRequest.IsSetConfigurationSetName())
                 throw new AmazonPinpointEmailException("Request object does not have required field ConfigurationSetName set");
-            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromString(publicRequest.ConfigurationSetName));
+            uriResourcePath = uriResourcePath.Replace("{ConfigurationSetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ConfigurationSetName));
             request.ResourcePath = uriResourcePath;
 
             return request;

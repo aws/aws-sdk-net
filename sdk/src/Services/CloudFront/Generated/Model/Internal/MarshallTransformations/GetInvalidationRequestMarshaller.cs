@@ -59,10 +59,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2018-06-18/distribution/{DistributionId}/invalidation/{Id}";
             if (!publicRequest.IsSetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
-            uriResourcePath = uriResourcePath.Replace("{DistributionId}", StringUtils.FromString(publicRequest.DistributionId));
+            uriResourcePath = uriResourcePath.Replace("{DistributionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DistributionId));
             if (!publicRequest.IsSetId())
                 throw new AmazonCloudFrontException("Request object does not have required field Id set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.Id));
+            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.Id));
             request.ResourcePath = uriResourcePath;
 
 

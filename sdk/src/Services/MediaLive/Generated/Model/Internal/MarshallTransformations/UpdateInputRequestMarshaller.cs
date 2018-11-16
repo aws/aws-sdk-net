@@ -61,7 +61,7 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             string uriResourcePath = "/prod/inputs/{inputId}";
             if (!publicRequest.IsSetInputId())
                 throw new AmazonMediaLiveException("Request object does not have required field InputId set");
-            uriResourcePath = uriResourcePath.Replace("{inputId}", StringUtils.FromString(publicRequest.InputId));
+            uriResourcePath = uriResourcePath.Replace("{inputId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InputId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

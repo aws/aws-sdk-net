@@ -90,9 +90,23 @@ namespace Amazon.Runtime.Internal
 
         public static Uri DetermineEndpoint(IClientConfig config, IRequest request)
         {
-            return request.AlternateEndpoint != null
-                 ? new Uri(ClientConfig.GetUrl(request.AlternateEndpoint, config.RegionEndpointServiceName, config.UseHttp, config.UseDualstackEndpoint))
-                 : new Uri(config.DetermineServiceURL());
+            Uri endpoint = request.AlternateEndpoint != null
+                ? new Uri(ClientConfig.GetUrl(request.AlternateEndpoint, config.RegionEndpointServiceName, config.UseHttp, config.UseDualstackEndpoint))
+                : new Uri(config.DetermineServiceURL());
+
+            return InjectHostPrefix(config, request, endpoint);
+        }
+
+        private static Uri InjectHostPrefix(IClientConfig config, IRequest request, Uri endpoint)
+        {
+            if (config.DisableHostPrefixInjection || string.IsNullOrEmpty(request.HostPrefix))
+            {
+                return endpoint;
+            }
+
+            var hostPrefixUri = new UriBuilder(endpoint);
+            hostPrefixUri.Host = request.HostPrefix + hostPrefixUri.Host;            
+            return hostPrefixUri.Uri;
         }
     }
 }

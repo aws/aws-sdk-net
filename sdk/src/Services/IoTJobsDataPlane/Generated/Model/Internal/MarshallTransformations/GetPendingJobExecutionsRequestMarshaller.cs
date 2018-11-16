@@ -60,7 +60,7 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
             string uriResourcePath = "/things/{thingName}/jobs";
             if (!publicRequest.IsSetThingName())
                 throw new AmazonIoTJobsDataPlaneException("Request object does not have required field ThingName set");
-            uriResourcePath = uriResourcePath.Replace("{thingName}", StringUtils.FromString(publicRequest.ThingName));
+            uriResourcePath = uriResourcePath.Replace("{thingName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ThingName));
             request.ResourcePath = uriResourcePath;
 
             return request;

@@ -44,6 +44,7 @@ namespace Amazon.Util
 
         private const char SlashChar = '/';
         private const string Slash = "/";
+        private const string EncodedSlash = "%2F";
 
         internal const int DefaultMaxRetry = 3;
         private const int DefaultConnectionLimit = 50;
@@ -321,7 +322,7 @@ namespace Amazon.Util
                 // For everything else URL pre encode the resource path segments.
                 if (!S3Uri.IsS3Uri(endpoint))
                 {
-                    encodedSegments = encodedSegments.Select(segment => UrlEncode(segment, true));
+                    encodedSegments = encodedSegments.Select(segment => ProtectEncodedSlashUrlEncode(segment, true));
                     pathWasPreEncoded = true;
                 }
             }
@@ -832,7 +833,56 @@ namespace Amazon.Util
 
             return encoded.ToString();
         }
+                
+        internal static string UrlEncodeSlash(string data)
+        {
+            if (string.IsNullOrEmpty(data))
+            {
+                return data;
+            }
 
+            return data.Replace("/", EncodedSlash);
+        }
+
+        /// <summary>
+        /// URL encodes a string per the specified RFC with the exception of preserving the encoding of previously encoded slashes.
+        /// If the path property is specified, the accepted path characters {/+:} are not encoded. 
+        /// </summary>
+        /// <param name="data">The string to encode</param>
+        /// <param name="path">Whether the string is a URL path or not</param>
+        /// <returns>The encoded string with any previously encoded %2F preserved</returns>
+        public static string ProtectEncodedSlashUrlEncode(string data, bool path)
+        {
+            if (string.IsNullOrEmpty(data))
+            {
+                return data;
+            }
+
+            var index = 0;                                    
+            var sb = new StringBuilder();
+            var findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
+            while (findIndex != -1)
+            {
+                sb.Append(UrlEncode(data.Substring(index, findIndex - index), path));
+                sb.Append(EncodedSlash);
+                index = findIndex + EncodedSlash.Length;
+                findIndex = data.IndexOf(EncodedSlash, index, StringComparison.OrdinalIgnoreCase);
+            }            
+
+            //If encoded slash was not found return the original data
+            if(index == 0)
+            {
+                return UrlEncode(data, path);
+            }
+
+            if(data.Length > index)
+            {
+                sb.Append(UrlEncode(data.Substring(index), path));
+            }
+            
+            return sb.ToString();
+        }
+        
         public static void Sleep(TimeSpan ts)
         {
             Sleep((int)ts.TotalMilliseconds);

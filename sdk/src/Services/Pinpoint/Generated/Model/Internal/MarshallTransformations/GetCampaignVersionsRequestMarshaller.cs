@@ -60,10 +60,10 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/apps/{application-id}/campaigns/{campaign-id}/versions";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
+            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
             if (!publicRequest.IsSetCampaignId())
                 throw new AmazonPinpointException("Request object does not have required field CampaignId set");
-            uriResourcePath = uriResourcePath.Replace("{campaign-id}", StringUtils.FromString(publicRequest.CampaignId));
+            uriResourcePath = uriResourcePath.Replace("{campaign-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.CampaignId));
             
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("page-size", StringUtils.FromString(publicRequest.PageSize));

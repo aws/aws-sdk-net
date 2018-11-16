@@ -61,7 +61,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2017-03-31/tags/{ARN}";
             if (!publicRequest.IsSetResource())
                 throw new AmazonLambdaException("Request object does not have required field Resource set");
-            uriResourcePath = uriResourcePath.Replace("{ARN}", StringUtils.FromString(publicRequest.Resource));
+            uriResourcePath = uriResourcePath.Replace("{ARN}", StringUtils.FromStringWithSlashEncoding(publicRequest.Resource));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

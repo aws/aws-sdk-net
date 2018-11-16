@@ -60,10 +60,10 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/apps/{application-id}/segments/{segment-id}/jobs/import";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
+            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
             if (!publicRequest.IsSetSegmentId())
                 throw new AmazonPinpointException("Request object does not have required field SegmentId set");
-            uriResourcePath = uriResourcePath.Replace("{segment-id}", StringUtils.FromString(publicRequest.SegmentId));
+            uriResourcePath = uriResourcePath.Replace("{segment-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.SegmentId));
             
             if (publicRequest.IsSetPageSize())
                 request.Parameters.Add("page-size", StringUtils.FromString(publicRequest.PageSize));

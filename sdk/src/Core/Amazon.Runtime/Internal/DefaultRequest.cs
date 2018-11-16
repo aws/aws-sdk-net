@@ -50,7 +50,7 @@ namespace Amazon.Runtime.Internal
         bool useQueryString = false;
         string requestName;
         string canonicalResource;
-        RegionEndpoint alternateRegion;
+        RegionEndpoint alternateRegion;        
         long originalStreamLength;
 
         /// <summary>
@@ -68,6 +68,7 @@ namespace Amazon.Runtime.Internal
             this.originalRequest = request;
             this.requestName = this.originalRequest.GetType().Name;
             this.UseSigV4 = ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)this.originalRequest).UseSigV4;
+            this.HostPrefix = string.Empty;
 
             parametersCollection = new ParameterCollection();
             parametersFacade = new ParametersDictionaryFacade(parametersCollection);
@@ -339,6 +340,11 @@ namespace Amazon.Runtime.Internal
                 this.alternateRegion = value;
             }
         }
+
+        /// <summary>
+        /// Host prefix value to prepend to the endpoint for this request, if any.
+        /// </summary>
+        public string HostPrefix { get; set; }
 
         /// <summary>
         /// Gets and sets the Suppress404Exceptions property. If true then 404s return back from AWS will not cause an exception and 

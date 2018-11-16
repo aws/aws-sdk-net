@@ -60,7 +60,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             string uriResourcePath = "/signing-jobs/{jobId}";
             if (!publicRequest.IsSetJobId())
                 throw new AmazonSignerException("Request object does not have required field JobId set");
-            uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            uriResourcePath = uriResourcePath.Replace("{jobId}", StringUtils.FromStringWithSlashEncoding(publicRequest.JobId));
             request.ResourcePath = uriResourcePath;
 
             return request;

@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+    #line 1 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
     public partial class BaseMarshaller : Generators.BaseGenerator
     {
@@ -33,7 +33,7 @@ namespace ServiceClientGenerator.Generators.Marshallers
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 8 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 8 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     // Adds the neccesary namespaces for the marshaller
 protected void AddCommonUsingStatements()
@@ -43,7 +43,7 @@ protected void AddCommonUsingStatements()
         #line default
         #line hidden
         
-        #line 12 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 12 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.Globalization;\r\nus" +
         "ing System.IO;\r\nusing System.Text;\r\nusing System.Xml.Serialization;\r\n\r\nusing ");
 
@@ -51,14 +51,14 @@ this.Write("using System;\r\nusing System.Collections.Generic;\r\nusing System.G
         #line default
         #line hidden
         
-        #line 20 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 20 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
 
         
         #line default
         #line hidden
         
-        #line 20 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 20 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r\nusing Amazon.Runt" +
         "ime.Internal.Transform;\r\nusing Amazon.Runtime.Internal.Util;\r\n");
 
@@ -66,7 +66,7 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 25 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 25 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
     }
 
@@ -74,7 +74,7 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 29 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 29 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 	// Only applicable for rest-json and rest-xml
     // Generates code to add members to the header of the request
@@ -88,42 +88,42 @@ this.Write(".Model;\r\nusing Amazon.Runtime;\r\nusing Amazon.Runtime.Internal;\r
         #line default
         #line hidden
         
-        #line 37 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 37 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\r\n\t\t\tif(");
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 38 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 38 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 38 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 38 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 38 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 39 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 39 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             if (member.CustomMarshallerTransformation != null)
             {
@@ -132,70 +132,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 42 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 42 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 43 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 43 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 44 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 44 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
             }
             else if (member.IsJsonValue)
@@ -205,56 +205,56 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 48 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 48 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = Convert.ToBase64String(Encoding.UTF8.GetBytes(");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 49 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 49 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 50 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 50 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
             }
             else
@@ -271,70 +271,70 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 61 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 61 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 62 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 62 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 63 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 63 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 					
 				}
 				else
@@ -344,56 +344,56 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 67 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 67 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Headers[\"");
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\"] = ");
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 68 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 68 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 69 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 69 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 				}
 		    }
@@ -418,98 +418,98 @@ this.Write(";\r\n");
         #line default
         #line hidden
         
-        #line 88 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 88 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? ");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 89 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 89 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".TrimStart(\'/\')) : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 90 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 90 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else
@@ -519,98 +519,98 @@ this.Write(".TrimStart(\'/\')) : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 94 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 94 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("() ? ");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshallerWithSlashEncoder));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 95 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 95 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(") : string.Empty);\r\n");
 
         
         #line default
         #line hidden
         
-        #line 96 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 96 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 
@@ -622,70 +622,70 @@ this.Write(") : string.Empty);\r\n");
         #line default
         #line hidden
         
-        #line 102 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 102 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            if (!");
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 103 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 103 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n                throw new ");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 104 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 104 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(\"Request object does not have required field ");
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 104 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 104 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 104 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(" set\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 105 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 105 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 			if(isGreedy)
 				{
@@ -694,70 +694,70 @@ this.Write(" set\");\r\n");
         #line default
         #line hidden
         
-        #line 108 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 108 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 109 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 109 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".TrimStart(\'/\')));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 110 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 110 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
 				else
@@ -767,70 +767,70 @@ this.Write(".TrimStart(\'/\')));\r\n");
         #line default
         #line hidden
         
-        #line 114 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 114 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\turiResourcePath = uriResourcePath.Replace(\"");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(marshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshallerWithSlashEncoder));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 115 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 115 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 116 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 116 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 				}
             }
@@ -844,28 +844,28 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 124 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 124 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\tstring uriResourcePath = \"");
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 125 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(operation.RequestUri));
 
         
         #line default
         #line hidden
         
-        #line 125 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 125 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\";\r\n");
 
         
         #line default
         #line hidden
         
-        #line 126 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 126 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
 		foreach(var staticQueryParam in operation.StaticQueryParameters)
 		{
@@ -876,42 +876,42 @@ this.Write("\";\r\n");
         #line default
         #line hidden
         
-        #line 131 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 131 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 132 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 132 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", \"");
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 132 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Value));
 
         
         #line default
         #line hidden
         
-        #line 132 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 132 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 133 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 133 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 			}
 			else
@@ -921,28 +921,28 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 137 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 137 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\trequest.AddSubResource(\"");
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 138 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(staticQueryParam.Key));
 
         
         #line default
         #line hidden
         
-        #line 138 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 138 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 139 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 139 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 						
 			}
 		}
@@ -962,42 +962,42 @@ this.Write("\");\r\n");
         #line default
         #line hidden
         
-        #line 153 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 153 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\r\n\t\t\tif (");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 154 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 154 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".IsSet");
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 154 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 154 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 154 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("())\r\n");
 
         
         #line default
         #line hidden
         
-        #line 155 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 155 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 if (member.CustomMarshallerTransformation != null)
                 {
@@ -1006,70 +1006,70 @@ this.Write("())\r\n");
         #line default
         #line hidden
         
-        #line 158 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 158 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.CustomMarshallerTransformation));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 159 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 159 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 160 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 160 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
         
                 }
                 else if (member.IsMap)
@@ -1085,35 +1085,35 @@ this.Write("));\r\n");
         #line default
         #line hidden
         
-        #line 170 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 170 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("            {\r\n                foreach(var kvp in ");
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 172 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 172 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 172 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 172 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 172 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(")\r\n                {\r\n                    request.Parameters.Add(kvp.Key, kvp.Val" +
         "ue);\r\n                }\r\n            }\r\n");
 
@@ -1121,7 +1121,7 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
         #line default
         #line hidden
         
-        #line 177 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 177 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else if (member.IsList)
@@ -1137,56 +1137,56 @@ this.Write(")\r\n                {\r\n                    request.Parameters.Add
         #line default
         #line hidden
         
-        #line 187 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 187 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("                request.ParameterCollection.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 188 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 188 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(");\r\n");
 
         
         #line default
         #line hidden
         
-        #line 189 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 189 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 
                 }
                 else
@@ -1196,74 +1196,273 @@ this.Write(");\r\n");
         #line default
         #line hidden
         
-        #line 193 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 193 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\t\t\t\trequest.Parameters.Add(\"");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.MarshallLocationName));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("\", ");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("(");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(".");
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
 
         
         #line default
         #line hidden
         
-        #line 194 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 194 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 this.Write("));\r\n");
 
         
         #line default
         #line hidden
         
-        #line 195 "C:\data\dev\sdk\AWSDotNetPublicReadOnly.datetimeformat\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+        #line 195 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
 			
 				}
 			}
 		}
+	}
+
+    // Only applicable for rest-json and rest-xml
+    // Generates code to add the operation's hostPrefixMembers to the request's HostPrefix
+	protected void ProcessEndpointHostPrefixMembers(string variableName, Operation operation)
+	{
+        if(operation.RequestHostPrefixMembers.Count() > 0)
+        {
+
+        
+        #line default
+        #line hidden
+        
+        #line 207 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\r\n            var hostPrefixLabels = new\r\n            {\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 211 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
+            foreach(var member in operation.RequestHostPrefixMembers)
+            {
+                
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("                ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(" = ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PrimitiveMarshaller));
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("(");
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(variableName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(".");
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 215 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("),\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 216 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
+            }     
+
+        
+        #line default
+        #line hidden
+        
+        #line 218 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("            };\r\n\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 221 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
+            foreach(var member in operation.RequestHostPrefixMembers)
+            {
+
+        
+        #line default
+        #line hidden
+        
+        #line 224 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("            if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.");
+
+        
+        #line default
+        #line hidden
+        
+        #line 225 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 225 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("))\r\n                throw new ");
+
+        
+        #line default
+        #line hidden
+        
+        #line 226 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.BaseException));
+
+        
+        #line default
+        #line hidden
+        
+        #line 226 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("(\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 226 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
+
+        
+        #line default
+        #line hidden
+        
+        #line 226 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(" can only contain alphanumeric characters and dashes and must be between 1 and 63" +
+        " characters long.\");\t\t\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 227 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
+            }     
+        }
+
+        
+        #line default
+        #line hidden
+        
+        #line 230 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("            \r\n            request.HostPrefix = $\"");
+
+        
+        #line default
+        #line hidden
+        
+        #line 231 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write(this.ToStringHelper.ToStringWithCulture(operation.EndpointHostPrefix.Replace("{", "{hostPrefixLabels.")));
+
+        
+        #line default
+        #line hidden
+        
+        #line 231 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+this.Write("\";\r\n");
+
+        
+        #line default
+        #line hidden
+        
+        #line 232 "C:\Dev\worktrees\CoHPreSEnc\generator\ServiceClientGeneratorLib\Generators\Marshallers\BaseMarshaller.tt"
+
 	}
 
         

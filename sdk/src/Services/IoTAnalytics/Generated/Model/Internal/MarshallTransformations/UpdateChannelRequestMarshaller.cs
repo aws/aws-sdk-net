@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             string uriResourcePath = "/channels/{channelName}";
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field ChannelName set");
-            uriResourcePath = uriResourcePath.Replace("{channelName}", StringUtils.FromString(publicRequest.ChannelName));
+            uriResourcePath = uriResourcePath.Replace("{channelName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ChannelName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

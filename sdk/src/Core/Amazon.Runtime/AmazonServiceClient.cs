@@ -515,7 +515,7 @@ namespace Amazon.Runtime
                     "Target resource path [{0}] has bidirectional characters, which are not supported" +
                     "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
 
-            var parameterizedPath = string.Concat(AWSSDKUtils.UrlEncode(resourcePath, true), sb);
+            var parameterizedPath = string.Concat(AWSSDKUtils.ProtectEncodedSlashUrlEncode(resourcePath, true), sb);
             var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
             var uri = hasSlash
                 ? new Uri(url.AbsoluteUri + parameterizedPath)

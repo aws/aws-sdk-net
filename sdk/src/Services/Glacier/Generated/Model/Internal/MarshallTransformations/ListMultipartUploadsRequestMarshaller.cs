@@ -58,10 +58,10 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads";
-            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId) : string.Empty);
             if (!publicRequest.IsSetVaultName())
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
-            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.VaultName));
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", Amazon.Runtime.Internal.Util.StringUtils.FromInt(publicRequest.Limit));

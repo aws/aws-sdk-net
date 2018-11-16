@@ -61,7 +61,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             string uriResourcePath = "/signing-profiles/{profileName}";
             if (!publicRequest.IsSetProfileName())
                 throw new AmazonSignerException("Request object does not have required field ProfileName set");
-            uriResourcePath = uriResourcePath.Replace("{profileName}", StringUtils.FromString(publicRequest.ProfileName));
+            uriResourcePath = uriResourcePath.Replace("{profileName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProfileName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

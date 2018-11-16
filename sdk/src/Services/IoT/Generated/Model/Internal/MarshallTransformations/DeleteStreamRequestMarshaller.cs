@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/streams/{streamId}";
             if (!publicRequest.IsSetStreamId())
                 throw new AmazonIoTException("Request object does not have required field StreamId set");
-            uriResourcePath = uriResourcePath.Replace("{streamId}", StringUtils.FromString(publicRequest.StreamId));
+            uriResourcePath = uriResourcePath.Replace("{streamId}", StringUtils.FromStringWithSlashEncoding(publicRequest.StreamId));
             request.ResourcePath = uriResourcePath;
 
             return request;

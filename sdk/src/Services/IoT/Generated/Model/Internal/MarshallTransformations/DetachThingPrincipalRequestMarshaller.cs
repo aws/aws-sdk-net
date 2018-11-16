@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/things/{thingName}/principals";
             if (!publicRequest.IsSetThingName())
                 throw new AmazonIoTException("Request object does not have required field ThingName set");
-            uriResourcePath = uriResourcePath.Replace("{thingName}", StringUtils.FromString(publicRequest.ThingName));
+            uriResourcePath = uriResourcePath.Replace("{thingName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ThingName));
             request.ResourcePath = uriResourcePath;
         
             if(publicRequest.IsSetPrincipal())

@@ -58,13 +58,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.HttpMethod = "DELETE";
 
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/archives/{archiveId}";
-            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId) : string.Empty);
             if (!publicRequest.IsSetArchiveId())
                 throw new AmazonGlacierException("Request object does not have required field ArchiveId set");
-            uriResourcePath = uriResourcePath.Replace("{archiveId}", StringUtils.FromString(publicRequest.ArchiveId));
+            uriResourcePath = uriResourcePath.Replace("{archiveId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ArchiveId));
             if (!publicRequest.IsSetVaultName())
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
-            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.VaultName));
             request.ResourcePath = uriResourcePath;
 
             return request;

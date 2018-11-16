@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/thing-registration-tasks/{taskId}";
             if (!publicRequest.IsSetTaskId())
                 throw new AmazonIoTException("Request object does not have required field TaskId set");
-            uriResourcePath = uriResourcePath.Replace("{taskId}", StringUtils.FromString(publicRequest.TaskId));
+            uriResourcePath = uriResourcePath.Replace("{taskId}", StringUtils.FromStringWithSlashEncoding(publicRequest.TaskId));
             request.ResourcePath = uriResourcePath;
 
             return request;

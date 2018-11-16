@@ -60,13 +60,13 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             string uriResourcePath = "/restapis/{restapi_id}/stages/{stage_name}/sdks/{sdk_type}";
             if (!publicRequest.IsSetRestApiId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
+            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.RestApiId));
             if (!publicRequest.IsSetSdkType())
                 throw new AmazonAPIGatewayException("Request object does not have required field SdkType set");
-            uriResourcePath = uriResourcePath.Replace("{sdk_type}", StringUtils.FromString(publicRequest.SdkType));
+            uriResourcePath = uriResourcePath.Replace("{sdk_type}", StringUtils.FromStringWithSlashEncoding(publicRequest.SdkType));
             if (!publicRequest.IsSetStageName())
                 throw new AmazonAPIGatewayException("Request object does not have required field StageName set");
-            uriResourcePath = uriResourcePath.Replace("{stage_name}", StringUtils.FromString(publicRequest.StageName));
+            uriResourcePath = uriResourcePath.Replace("{stage_name}", StringUtils.FromStringWithSlashEncoding(publicRequest.StageName));
             
             if (publicRequest.IsSetParameters())
             {

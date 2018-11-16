@@ -60,7 +60,7 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             string uriResourcePath = "/identitypools/{IdentityPoolId}";
             if (!publicRequest.IsSetIdentityPoolId())
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
-            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
+            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IdentityPoolId));
             request.ResourcePath = uriResourcePath;
 
             return request;

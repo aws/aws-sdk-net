@@ -61,7 +61,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/definition/loggers/{LoggerDefinitionId}/versions";
             if (!publicRequest.IsSetLoggerDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field LoggerDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{LoggerDefinitionId}", StringUtils.FromString(publicRequest.LoggerDefinitionId));
+            uriResourcePath = uriResourcePath.Replace("{LoggerDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.LoggerDefinitionId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

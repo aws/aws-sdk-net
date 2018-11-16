@@ -198,6 +198,15 @@ namespace Amazon.Runtime.Internal
         }
 
         /// <summary>
+        /// Host prefix value to prepend to the endpoint for this request, if any. 
+        /// </summary>
+        string HostPrefix
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
         /// Gets and sets the Suppress404Exceptions property. If true then 404s return back from AWS will not cause an exception and 
         /// an empty response object will be returned.
         /// </summary>

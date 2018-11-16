@@ -61,10 +61,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             string uriResourcePath = "/restapis/{restapi_id}/models/{model_name}";
             if (!publicRequest.IsSetModelName())
                 throw new AmazonAPIGatewayException("Request object does not have required field ModelName set");
-            uriResourcePath = uriResourcePath.Replace("{model_name}", StringUtils.FromString(publicRequest.ModelName));
+            uriResourcePath = uriResourcePath.Replace("{model_name}", StringUtils.FromStringWithSlashEncoding(publicRequest.ModelName));
             if (!publicRequest.IsSetRestApiId())
                 throw new AmazonAPIGatewayException("Request object does not have required field RestApiId set");
-            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromString(publicRequest.RestApiId));
+            uriResourcePath = uriResourcePath.Replace("{restapi_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.RestApiId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

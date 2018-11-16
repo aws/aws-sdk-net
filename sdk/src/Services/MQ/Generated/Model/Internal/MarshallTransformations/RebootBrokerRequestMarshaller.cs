@@ -61,7 +61,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/brokers/{broker-id}/reboot";
             if (!publicRequest.IsSetBrokerId())
                 throw new AmazonMQException("Request object does not have required field BrokerId set");
-            uriResourcePath = uriResourcePath.Replace("{broker-id}", StringUtils.FromString(publicRequest.BrokerId));
+            uriResourcePath = uriResourcePath.Replace("{broker-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.BrokerId));
             request.ResourcePath = uriResourcePath;
 
             return request;

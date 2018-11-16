@@ -60,7 +60,7 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             string uriResourcePath = "/bundles/{bundleId}";
             if (!publicRequest.IsSetBundleId())
                 throw new AmazonMobileException("Request object does not have required field BundleId set");
-            uriResourcePath = uriResourcePath.Replace("{bundleId}", StringUtils.FromString(publicRequest.BundleId));
+            uriResourcePath = uriResourcePath.Replace("{bundleId}", StringUtils.FromStringWithSlashEncoding(publicRequest.BundleId));
             request.ResourcePath = uriResourcePath;
 
             return request;

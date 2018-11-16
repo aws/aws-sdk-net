@@ -61,10 +61,10 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/apis/{apiId}/datasources/{name}";
             if (!publicRequest.IsSetApiId())
                 throw new AmazonAppSyncException("Request object does not have required field ApiId set");
-            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromString(publicRequest.ApiId));
+            uriResourcePath = uriResourcePath.Replace("{apiId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApiId));
             if (!publicRequest.IsSetName())
                 throw new AmazonAppSyncException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromString(publicRequest.Name));
+            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

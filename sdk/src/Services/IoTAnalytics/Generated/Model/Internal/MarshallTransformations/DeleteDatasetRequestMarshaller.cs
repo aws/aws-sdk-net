@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             string uriResourcePath = "/datasets/{datasetName}";
             if (!publicRequest.IsSetDatasetName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatasetName set");
-            uriResourcePath = uriResourcePath.Replace("{datasetName}", StringUtils.FromString(publicRequest.DatasetName));
+            uriResourcePath = uriResourcePath.Replace("{datasetName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DatasetName));
             request.ResourcePath = uriResourcePath;
 
             return request;

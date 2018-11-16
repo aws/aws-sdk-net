@@ -61,7 +61,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/definition/subscriptions/{SubscriptionDefinitionId}/versions";
             if (!publicRequest.IsSetSubscriptionDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field SubscriptionDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{SubscriptionDefinitionId}", StringUtils.FromString(publicRequest.SubscriptionDefinitionId));
+            uriResourcePath = uriResourcePath.Replace("{SubscriptionDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.SubscriptionDefinitionId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

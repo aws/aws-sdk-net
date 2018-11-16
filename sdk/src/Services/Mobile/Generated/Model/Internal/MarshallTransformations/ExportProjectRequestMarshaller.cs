@@ -61,7 +61,7 @@ namespace Amazon.Mobile.Model.Internal.MarshallTransformations
             string uriResourcePath = "/exports/{projectId}";
             if (!publicRequest.IsSetProjectId())
                 throw new AmazonMobileException("Request object does not have required field ProjectId set");
-            uriResourcePath = uriResourcePath.Replace("{projectId}", StringUtils.FromString(publicRequest.ProjectId));
+            uriResourcePath = uriResourcePath.Replace("{projectId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProjectId));
             request.ResourcePath = uriResourcePath;
 
             return request;

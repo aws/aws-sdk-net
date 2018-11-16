@@ -60,7 +60,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/groups/{GroupId}/certificateauthorities/configuration/expiry";
             if (!publicRequest.IsSetGroupId())
                 throw new AmazonGreengrassException("Request object does not have required field GroupId set");
-            uriResourcePath = uriResourcePath.Replace("{GroupId}", StringUtils.FromString(publicRequest.GroupId));
+            uriResourcePath = uriResourcePath.Replace("{GroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.GroupId));
             request.ResourcePath = uriResourcePath;
 
             return request;

@@ -61,7 +61,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             string uriResourcePath = "/devices/{deviceId}/unclaim";
             if (!publicRequest.IsSetDeviceId())
                 throw new AmazonIoT1ClickDevicesServiceException("Request object does not have required field DeviceId set");
-            uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
+            uriResourcePath = uriResourcePath.Replace("{deviceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceId));
             request.ResourcePath = uriResourcePath;
 
             return request;

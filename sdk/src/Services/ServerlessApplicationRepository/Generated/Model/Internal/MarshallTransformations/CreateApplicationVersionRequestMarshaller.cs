@@ -61,10 +61,10 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             string uriResourcePath = "/applications/{applicationId}/versions/{semanticVersion}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
+            uriResourcePath = uriResourcePath.Replace("{applicationId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
             if (!publicRequest.IsSetSemanticVersion())
                 throw new AmazonServerlessApplicationRepositoryException("Request object does not have required field SemanticVersion set");
-            uriResourcePath = uriResourcePath.Replace("{semanticVersion}", StringUtils.FromString(publicRequest.SemanticVersion));
+            uriResourcePath = uriResourcePath.Replace("{semanticVersion}", StringUtils.FromStringWithSlashEncoding(publicRequest.SemanticVersion));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

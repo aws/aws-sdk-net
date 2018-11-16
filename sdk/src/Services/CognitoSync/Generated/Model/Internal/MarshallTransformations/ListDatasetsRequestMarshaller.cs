@@ -60,10 +60,10 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
             string uriResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets";
             if (!publicRequest.IsSetIdentityId())
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityId set");
-            uriResourcePath = uriResourcePath.Replace("{IdentityId}", StringUtils.FromString(publicRequest.IdentityId));
+            uriResourcePath = uriResourcePath.Replace("{IdentityId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IdentityId));
             if (!publicRequest.IsSetIdentityPoolId())
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
-            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
+            uriResourcePath = uriResourcePath.Replace("{IdentityPoolId}", StringUtils.FromStringWithSlashEncoding(publicRequest.IdentityPoolId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

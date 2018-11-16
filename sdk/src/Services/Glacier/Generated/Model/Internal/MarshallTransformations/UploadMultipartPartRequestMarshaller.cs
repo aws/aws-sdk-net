@@ -59,13 +59,13 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             string uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads/{uploadId}";
-            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromString(publicRequest.AccountId) : string.Empty);
+            uriResourcePath = uriResourcePath.Replace("{accountId}", publicRequest.IsSetAccountId() ? StringUtils.FromStringWithSlashEncoding(publicRequest.AccountId) : string.Empty);
             if (!publicRequest.IsSetUploadId())
                 throw new AmazonGlacierException("Request object does not have required field UploadId set");
-            uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromString(publicRequest.UploadId));
+            uriResourcePath = uriResourcePath.Replace("{uploadId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UploadId));
             if (!publicRequest.IsSetVaultName())
                 throw new AmazonGlacierException("Request object does not have required field VaultName set");
-            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromString(publicRequest.VaultName));
+            uriResourcePath = uriResourcePath.Replace("{vaultName}", StringUtils.FromStringWithSlashEncoding(publicRequest.VaultName));
             request.ResourcePath = uriResourcePath;
             request.ContentStream =  publicRequest.Body ?? new MemoryStream();
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =  

@@ -60,7 +60,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             string uriResourcePath = "/playbackConfiguration/{Name}";
             if (!publicRequest.IsSetName())
                 throw new AmazonMediaTailorException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{Name}", StringUtils.FromString(publicRequest.Name));
+            uriResourcePath = uriResourcePath.Replace("{Name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
             request.ResourcePath = uriResourcePath;
 
             return request;

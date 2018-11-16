@@ -60,10 +60,10 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             string uriResourcePath = "/usageplans/{usageplanId}/keys/{keyId}";
             if (!publicRequest.IsSetKeyId())
                 throw new AmazonAPIGatewayException("Request object does not have required field KeyId set");
-            uriResourcePath = uriResourcePath.Replace("{keyId}", StringUtils.FromString(publicRequest.KeyId));
+            uriResourcePath = uriResourcePath.Replace("{keyId}", StringUtils.FromStringWithSlashEncoding(publicRequest.KeyId));
             if (!publicRequest.IsSetUsagePlanId())
                 throw new AmazonAPIGatewayException("Request object does not have required field UsagePlanId set");
-            uriResourcePath = uriResourcePath.Replace("{usageplanId}", StringUtils.FromString(publicRequest.UsagePlanId));
+            uriResourcePath = uriResourcePath.Replace("{usageplanId}", StringUtils.FromStringWithSlashEncoding(publicRequest.UsagePlanId));
             request.ResourcePath = uriResourcePath;
 
             return request;

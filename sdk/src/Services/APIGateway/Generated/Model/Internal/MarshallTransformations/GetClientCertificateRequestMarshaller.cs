@@ -60,7 +60,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             string uriResourcePath = "/clientcertificates/{clientcertificate_id}";
             if (!publicRequest.IsSetClientCertificateId())
                 throw new AmazonAPIGatewayException("Request object does not have required field ClientCertificateId set");
-            uriResourcePath = uriResourcePath.Replace("{clientcertificate_id}", StringUtils.FromString(publicRequest.ClientCertificateId));
+            uriResourcePath = uriResourcePath.Replace("{clientcertificate_id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ClientCertificateId));
             request.ResourcePath = uriResourcePath;
 
             return request;

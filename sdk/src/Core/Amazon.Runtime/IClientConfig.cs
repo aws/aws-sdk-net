@@ -224,6 +224,16 @@ namespace Amazon.Runtime
         /// </summary>
         TimeSpan ClockOffset { get; }
 
+        /// <summary>
+        /// Gets the DisableHostPrefixInjection flag. If true, host prefix injection will be disabled for this client, the default value of this flag is false. 
+        /// Host prefix injection prefixes the service endpoint with request members from APIs which use this feature. 
+        /// Example: for a hostPrefix of "foo-name." and a endpoint of "service.region.amazonaws.com" the default behavior is to
+        /// prefix the endpoint with the hostPrefix resulting in a final endpoint of "foo-name.service.region.amazonaws.com". Setting 
+        /// DisableHostPrefixInjection to true will disable hostPrefix injection resulting in a final endpoint of
+        /// "service.region.amazonaws.com" regardless of the value of hostPrefix. E.g. You may want to disable host prefix injection for testing against a local mock endpoint.
+        /// </summary>
+        bool DisableHostPrefixInjection { get; }
+
 #if BCL
         /// <summary>
         /// Gets the TCP keep-alive values to use for service requests. Enabling TCP keep-alive sends periodic TCP keep-alive probe packets, to prevent disconnection due to 

@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/otaUpdates/{otaUpdateId}";
             if (!publicRequest.IsSetOtaUpdateId())
                 throw new AmazonIoTException("Request object does not have required field OtaUpdateId set");
-            uriResourcePath = uriResourcePath.Replace("{otaUpdateId}", StringUtils.FromString(publicRequest.OtaUpdateId));
+            uriResourcePath = uriResourcePath.Replace("{otaUpdateId}", StringUtils.FromStringWithSlashEncoding(publicRequest.OtaUpdateId));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

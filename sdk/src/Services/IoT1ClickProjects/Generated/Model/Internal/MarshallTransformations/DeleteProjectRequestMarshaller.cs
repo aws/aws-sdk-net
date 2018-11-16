@@ -60,7 +60,7 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
             string uriResourcePath = "/projects/{projectName}";
             if (!publicRequest.IsSetProjectName())
                 throw new AmazonIoT1ClickProjectsException("Request object does not have required field ProjectName set");
-            uriResourcePath = uriResourcePath.Replace("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
+            uriResourcePath = uriResourcePath.Replace("{projectName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ProjectName));
             request.ResourcePath = uriResourcePath;
 
             return request;

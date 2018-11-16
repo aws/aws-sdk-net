@@ -60,7 +60,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/definition/devices/{DeviceDefinitionId}";
             if (!publicRequest.IsSetDeviceDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field DeviceDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionId}", StringUtils.FromString(publicRequest.DeviceDefinitionId));
+            uriResourcePath = uriResourcePath.Replace("{DeviceDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DeviceDefinitionId));
             request.ResourcePath = uriResourcePath;
 
             return request;

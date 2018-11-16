@@ -60,10 +60,10 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             string uriResourcePath = "/api/v1/resources/{ResourceId}/permissions/{PrincipalId}";
             if (!publicRequest.IsSetPrincipalId())
                 throw new AmazonWorkDocsException("Request object does not have required field PrincipalId set");
-            uriResourcePath = uriResourcePath.Replace("{PrincipalId}", StringUtils.FromString(publicRequest.PrincipalId));
+            uriResourcePath = uriResourcePath.Replace("{PrincipalId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PrincipalId));
             if (!publicRequest.IsSetResourceId())
                 throw new AmazonWorkDocsException("Request object does not have required field ResourceId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
+            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceId));
             
             if (publicRequest.IsSetPrincipalType())
                 request.Parameters.Add("type", StringUtils.FromString(publicRequest.PrincipalType));

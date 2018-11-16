@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/rules/{ruleName}";
             if (!publicRequest.IsSetRuleName())
                 throw new AmazonIoTException("Request object does not have required field RuleName set");
-            uriResourcePath = uriResourcePath.Replace("{ruleName}", StringUtils.FromString(publicRequest.RuleName));
+            uriResourcePath = uriResourcePath.Replace("{ruleName}", StringUtils.FromStringWithSlashEncoding(publicRequest.RuleName));
             request.ResourcePath = uriResourcePath;
 
             return request;

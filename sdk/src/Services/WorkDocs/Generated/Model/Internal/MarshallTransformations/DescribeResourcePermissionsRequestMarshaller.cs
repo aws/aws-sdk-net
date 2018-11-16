@@ -60,7 +60,7 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             string uriResourcePath = "/api/v1/resources/{ResourceId}/permissions";
             if (!publicRequest.IsSetResourceId())
                 throw new AmazonWorkDocsException("Request object does not have required field ResourceId set");
-            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromString(publicRequest.ResourceId));
+            uriResourcePath = uriResourcePath.Replace("{ResourceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceId));
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));

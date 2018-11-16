@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             string uriResourcePath = "/datastores/{datastoreName}";
             if (!publicRequest.IsSetDatastoreName())
                 throw new AmazonIoTAnalyticsException("Request object does not have required field DatastoreName set");
-            uriResourcePath = uriResourcePath.Replace("{datastoreName}", StringUtils.FromString(publicRequest.DatastoreName));
+            uriResourcePath = uriResourcePath.Replace("{datastoreName}", StringUtils.FromStringWithSlashEncoding(publicRequest.DatastoreName));
             
             if (publicRequest.IsSetIncludeStatistics())
                 request.Parameters.Add("includeStatistics", StringUtils.FromBool(publicRequest.IncludeStatistics));

@@ -60,7 +60,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             string uriResourcePath = "/user/federate/{InstanceId}";
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
-            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InstanceId));
             request.ResourcePath = uriResourcePath;
 
             return request;

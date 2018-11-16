@@ -60,7 +60,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/thing-types/{thingTypeName}";
             if (!publicRequest.IsSetThingTypeName())
                 throw new AmazonIoTException("Request object does not have required field ThingTypeName set");
-            uriResourcePath = uriResourcePath.Replace("{thingTypeName}", StringUtils.FromString(publicRequest.ThingTypeName));
+            uriResourcePath = uriResourcePath.Replace("{thingTypeName}", StringUtils.FromStringWithSlashEncoding(publicRequest.ThingTypeName));
             request.ResourcePath = uriResourcePath;
 
             return request;

@@ -61,7 +61,7 @@ namespace Amazon.ResourceGroups.Model.Internal.MarshallTransformations
             string uriResourcePath = "/groups/{GroupName}";
             if (!publicRequest.IsSetGroupName())
                 throw new AmazonResourceGroupsException("Request object does not have required field GroupName set");
-            uriResourcePath = uriResourcePath.Replace("{GroupName}", StringUtils.FromString(publicRequest.GroupName));
+            uriResourcePath = uriResourcePath.Replace("{GroupName}", StringUtils.FromStringWithSlashEncoding(publicRequest.GroupName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

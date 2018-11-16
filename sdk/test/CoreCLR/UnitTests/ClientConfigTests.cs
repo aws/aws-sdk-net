@@ -45,7 +45,8 @@ namespace UnitTests
             "ReadWriteTimeout",
             "CorrectedUtcNow",
             "ClockOffset",
-            "HttpClientFactory"
+            "HttpClientFactory",
+            "DisableHostPrefixInjection"
         };
 
         [Fact]

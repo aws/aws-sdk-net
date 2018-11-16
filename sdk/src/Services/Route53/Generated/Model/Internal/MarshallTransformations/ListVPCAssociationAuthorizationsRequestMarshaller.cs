@@ -59,7 +59,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2013-04-01/hostedzone/{Id}/authorizevpcassociation";
             if (!publicRequest.IsSetHostedZoneId())
                 throw new AmazonRoute53Exception("Request object does not have required field HostedZoneId set");
-            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromString(publicRequest.HostedZoneId));
+            uriResourcePath = uriResourcePath.Replace("{Id}", StringUtils.FromStringWithSlashEncoding(publicRequest.HostedZoneId));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nexttoken", StringUtils.FromString(publicRequest.NextToken));

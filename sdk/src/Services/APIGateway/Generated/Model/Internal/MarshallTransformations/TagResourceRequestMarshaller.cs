@@ -61,7 +61,7 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             string uriResourcePath = "/tags/{resource_arn}";
             if (!publicRequest.IsSetResourceArn())
                 throw new AmazonAPIGatewayException("Request object does not have required field ResourceArn set");
-            uriResourcePath = uriResourcePath.Replace("{resource_arn}", StringUtils.FromString(publicRequest.ResourceArn));
+            uriResourcePath = uriResourcePath.Replace("{resource_arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

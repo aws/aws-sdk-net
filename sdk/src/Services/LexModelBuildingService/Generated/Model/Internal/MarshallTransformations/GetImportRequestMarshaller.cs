@@ -60,7 +60,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             string uriResourcePath = "/imports/{importId}";
             if (!publicRequest.IsSetImportId())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field ImportId set");
-            uriResourcePath = uriResourcePath.Replace("{importId}", StringUtils.FromString(publicRequest.ImportId));
+            uriResourcePath = uriResourcePath.Replace("{importId}", StringUtils.FromStringWithSlashEncoding(publicRequest.ImportId));
             request.ResourcePath = uriResourcePath;
 
             return request;

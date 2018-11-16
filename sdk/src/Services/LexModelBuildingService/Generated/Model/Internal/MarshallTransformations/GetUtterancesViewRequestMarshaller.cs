@@ -61,7 +61,7 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             request.AddSubResource("view", "aggregation");
             if (!publicRequest.IsSetBotName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field BotName set");
-            uriResourcePath = uriResourcePath.Replace("{botname}", StringUtils.FromString(publicRequest.BotName));
+            uriResourcePath = uriResourcePath.Replace("{botname}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotName));
             
             if (publicRequest.IsSetBotVersions())
                 request.ParameterCollection.Add("bot_versions", publicRequest.BotVersions);

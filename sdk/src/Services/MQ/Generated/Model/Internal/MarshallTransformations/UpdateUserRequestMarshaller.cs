@@ -61,10 +61,10 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/brokers/{broker-id}/users/{username}";
             if (!publicRequest.IsSetBrokerId())
                 throw new AmazonMQException("Request object does not have required field BrokerId set");
-            uriResourcePath = uriResourcePath.Replace("{broker-id}", StringUtils.FromString(publicRequest.BrokerId));
+            uriResourcePath = uriResourcePath.Replace("{broker-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.BrokerId));
             if (!publicRequest.IsSetUsername())
                 throw new AmazonMQException("Request object does not have required field Username set");
-            uriResourcePath = uriResourcePath.Replace("{username}", StringUtils.FromString(publicRequest.Username));
+            uriResourcePath = uriResourcePath.Replace("{username}", StringUtils.FromStringWithSlashEncoding(publicRequest.Username));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

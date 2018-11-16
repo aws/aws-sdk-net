@@ -60,7 +60,7 @@ namespace Amazon.Signer.Model.Internal.MarshallTransformations
             string uriResourcePath = "/signing-platforms/{platformId}";
             if (!publicRequest.IsSetPlatformId())
                 throw new AmazonSignerException("Request object does not have required field PlatformId set");
-            uriResourcePath = uriResourcePath.Replace("{platformId}", StringUtils.FromString(publicRequest.PlatformId));
+            uriResourcePath = uriResourcePath.Replace("{platformId}", StringUtils.FromStringWithSlashEncoding(publicRequest.PlatformId));
             request.ResourcePath = uriResourcePath;
 
             return request;

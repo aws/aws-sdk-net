@@ -61,10 +61,10 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             string uriResourcePath = "/detector/{detectorId}/filter/{filterName}";
             if (!publicRequest.IsSetDetectorId())
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
-            uriResourcePath = uriResourcePath.Replace("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
+            uriResourcePath = uriResourcePath.Replace("{detectorId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DetectorId));
             if (!publicRequest.IsSetFilterName())
                 throw new AmazonGuardDutyException("Request object does not have required field FilterName set");
-            uriResourcePath = uriResourcePath.Replace("{filterName}", StringUtils.FromString(publicRequest.FilterName));
+            uriResourcePath = uriResourcePath.Replace("{filterName}", StringUtils.FromStringWithSlashEncoding(publicRequest.FilterName));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {

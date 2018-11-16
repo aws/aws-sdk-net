@@ -60,10 +60,10 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             string uriResourcePath = "/user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}";
             if (!publicRequest.IsSetHierarchyGroupId())
                 throw new AmazonConnectException("Request object does not have required field HierarchyGroupId set");
-            uriResourcePath = uriResourcePath.Replace("{HierarchyGroupId}", StringUtils.FromString(publicRequest.HierarchyGroupId));
+            uriResourcePath = uriResourcePath.Replace("{HierarchyGroupId}", StringUtils.FromStringWithSlashEncoding(publicRequest.HierarchyGroupId));
             if (!publicRequest.IsSetInstanceId())
                 throw new AmazonConnectException("Request object does not have required field InstanceId set");
-            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromString(publicRequest.InstanceId));
+            uriResourcePath = uriResourcePath.Replace("{InstanceId}", StringUtils.FromStringWithSlashEncoding(publicRequest.InstanceId));
             request.ResourcePath = uriResourcePath;
 
             return request;

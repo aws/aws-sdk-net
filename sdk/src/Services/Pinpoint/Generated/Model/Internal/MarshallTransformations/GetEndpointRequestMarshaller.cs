@@ -60,10 +60,10 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             string uriResourcePath = "/v1/apps/{application-id}/endpoints/{endpoint-id}";
             if (!publicRequest.IsSetApplicationId())
                 throw new AmazonPinpointException("Request object does not have required field ApplicationId set");
-            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromString(publicRequest.ApplicationId));
+            uriResourcePath = uriResourcePath.Replace("{application-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.ApplicationId));
             if (!publicRequest.IsSetEndpointId())
                 throw new AmazonPinpointException("Request object does not have required field EndpointId set");
-            uriResourcePath = uriResourcePath.Replace("{endpoint-id}", StringUtils.FromString(publicRequest.EndpointId));
+            uriResourcePath = uriResourcePath.Replace("{endpoint-id}", StringUtils.FromStringWithSlashEncoding(publicRequest.EndpointId));
             request.ResourcePath = uriResourcePath;
 
             return request;

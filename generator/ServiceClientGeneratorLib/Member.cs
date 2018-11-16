@@ -20,6 +20,7 @@ namespace ServiceClientGenerator
         public const string JsonValueKey = "jsonvalue";
         public const string DeprecatedKey = "deprecated";
         public const string DeprecatedMessageKey = "deprecatedMessage";
+        public const string HostLabelKey = "hostLabel";
 
         private const string UnhandledTypeDecimalErrorMessage = "Unhandled type 'decimal' : using .net's decimal type for modeled decimal type may result in loss of data.  decimal type members should explicitly opt-in via shape customization.";
 
@@ -348,6 +349,23 @@ namespace ServiceClientGenerator
 
                 // Default to Body if location is not specified.
                 return MarshallLocation.Body;
+            }
+        }
+
+        /// <summary>
+        /// The hostLabel of the shape
+        /// </summary>
+        public bool IsHostLabel
+        {
+            get
+            {
+                if (data[HostLabelKey] != null)
+                {
+                    return (bool)data[HostLabelKey];
+                }
+
+                // Default to false (not a hostLabel) if hostLabel is not specified.
+                return false;
             }
         }
 
@@ -978,6 +996,24 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Returns the marshaller method to use in the generated marshaller code for a
+        /// member of primitive type with slash encoding.
+        /// </summary>
+        public string PrimitiveMarshallerWithSlashEncoder
+        {
+            get
+            {
+                string marshallerMethod = PrimitiveMarshaller;                
+                if (this.GetPrimitiveType().Equals("String", StringComparison.InvariantCulture))
+                {
+                    marshallerMethod = marshallerMethod.Replace("StringUtils.FromString", "StringUtils.FromStringWithSlashEncoding");
+                }
+
+                return marshallerMethod;
+            }
+        }
+                
         /// <summary>
         /// Creates a representation of the member as a string using the member name
         /// </summary>

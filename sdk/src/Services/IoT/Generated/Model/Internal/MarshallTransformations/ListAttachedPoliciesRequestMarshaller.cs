@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             string uriResourcePath = "/attached-policies/{target}";
             if (!publicRequest.IsSetTarget())
                 throw new AmazonIoTException("Request object does not have required field Target set");
-            uriResourcePath = uriResourcePath.Replace("{target}", StringUtils.FromString(publicRequest.Target));
+            uriResourcePath = uriResourcePath.Replace("{target}", StringUtils.FromStringWithSlashEncoding(publicRequest.Target));
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("marker", StringUtils.FromString(publicRequest.Marker));

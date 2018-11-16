@@ -60,10 +60,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2015-03-31/functions/{FunctionName}/policy/{StatementId}";
             if (!publicRequest.IsSetFunctionName())
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
+            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionName));
             if (!publicRequest.IsSetStatementId())
                 throw new AmazonLambdaException("Request object does not have required field StatementId set");
-            uriResourcePath = uriResourcePath.Replace("{StatementId}", StringUtils.FromString(publicRequest.StatementId));
+            uriResourcePath = uriResourcePath.Replace("{StatementId}", StringUtils.FromStringWithSlashEncoding(publicRequest.StatementId));
             
             if (publicRequest.IsSetQualifier())
                 request.Parameters.Add("Qualifier", StringUtils.FromString(publicRequest.Qualifier));

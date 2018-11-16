@@ -60,10 +60,10 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             string uriResourcePath = "/bots/{botName}/aliases/{name}";
             if (!publicRequest.IsSetBotName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field BotName set");
-            uriResourcePath = uriResourcePath.Replace("{botName}", StringUtils.FromString(publicRequest.BotName));
+            uriResourcePath = uriResourcePath.Replace("{botName}", StringUtils.FromStringWithSlashEncoding(publicRequest.BotName));
             if (!publicRequest.IsSetName())
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromString(publicRequest.Name));
+            uriResourcePath = uriResourcePath.Replace("{name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
             request.ResourcePath = uriResourcePath;
 
             return request;

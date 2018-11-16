@@ -60,7 +60,7 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             string uriResourcePath = "/greengrass/definition/cores/{CoreDefinitionId}/versions";
             if (!publicRequest.IsSetCoreDefinitionId())
                 throw new AmazonGreengrassException("Request object does not have required field CoreDefinitionId set");
-            uriResourcePath = uriResourcePath.Replace("{CoreDefinitionId}", StringUtils.FromString(publicRequest.CoreDefinitionId));
+            uriResourcePath = uriResourcePath.Replace("{CoreDefinitionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.CoreDefinitionId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("MaxResults", StringUtils.FromString(publicRequest.MaxResults));

@@ -60,10 +60,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2015-03-31/functions/{FunctionName}/aliases/{Name}";
             if (!publicRequest.IsSetFunctionName())
                 throw new AmazonLambdaException("Request object does not have required field FunctionName set");
-            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromString(publicRequest.FunctionName));
+            uriResourcePath = uriResourcePath.Replace("{FunctionName}", StringUtils.FromStringWithSlashEncoding(publicRequest.FunctionName));
             if (!publicRequest.IsSetName())
                 throw new AmazonLambdaException("Request object does not have required field Name set");
-            uriResourcePath = uriResourcePath.Replace("{Name}", StringUtils.FromString(publicRequest.Name));
+            uriResourcePath = uriResourcePath.Replace("{Name}", StringUtils.FromStringWithSlashEncoding(publicRequest.Name));
             request.ResourcePath = uriResourcePath;
 
             return request;

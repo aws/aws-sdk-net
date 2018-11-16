@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             string uriResourcePath = "/2018-06-18/distributionsByWebACLId/{WebACLId}";
             if (!publicRequest.IsSetWebACLId())
                 throw new AmazonCloudFrontException("Request object does not have required field WebACLId set");
-            uriResourcePath = uriResourcePath.Replace("{WebACLId}", StringUtils.FromString(publicRequest.WebACLId));
+            uriResourcePath = uriResourcePath.Replace("{WebACLId}", StringUtils.FromStringWithSlashEncoding(publicRequest.WebACLId));
             
             if (publicRequest.IsSetMarker())
                 request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
