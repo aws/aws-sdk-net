@@ -37,6 +37,7 @@ namespace Amazon.DirectConnect.Model
         private int? _asn;
         private string _authKey;
         private string _awsDeviceV2;
+        private string _bgpPeerId;
         private BGPPeerState _bgpPeerState;
         private BGPStatus _bgpStatus;
         private string _customerAddress;
@@ -129,6 +130,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAwsDeviceV2()
         {
             return this._awsDeviceV2 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BgpPeerId. 
+        /// <para>
+        /// The ID of the BGP peer.
+        /// </para>
+        /// </summary>
+        public string BgpPeerId
+        {
+            get { return this._bgpPeerId; }
+            set { this._bgpPeerId = value; }
+        }
+
+        // Check to see if BgpPeerId property is set
+        internal bool IsSetBgpPeerId()
+        {
+            return this._bgpPeerId != null;
         }
 
         /// <summary>

@@ -100,6 +100,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hasLogicalRedundancy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HasLogicalRedundancy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jumboFrameCapable", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

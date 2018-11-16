@@ -435,6 +435,60 @@ namespace Amazon.DirectConnect
 
 
     /// <summary>
+    /// Constants used for properties of type HasLogicalRedundancy.
+    /// </summary>
+    public class HasLogicalRedundancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant No for HasLogicalRedundancy
+        /// </summary>
+        public static readonly HasLogicalRedundancy No = new HasLogicalRedundancy("no");
+        /// <summary>
+        /// Constant Unknown for HasLogicalRedundancy
+        /// </summary>
+        public static readonly HasLogicalRedundancy Unknown = new HasLogicalRedundancy("unknown");
+        /// <summary>
+        /// Constant Yes for HasLogicalRedundancy
+        /// </summary>
+        public static readonly HasLogicalRedundancy Yes = new HasLogicalRedundancy("yes");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HasLogicalRedundancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HasLogicalRedundancy FindValue(string value)
+        {
+            return FindValue<HasLogicalRedundancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HasLogicalRedundancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InterconnectState.
     /// </summary>
     public class InterconnectState : ConstantClass

@@ -69,6 +69,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.Bandwidth = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hasLogicalRedundancy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.HasLogicalRedundancy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("interconnectId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

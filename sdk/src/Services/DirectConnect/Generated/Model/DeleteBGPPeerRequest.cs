@@ -29,8 +29,8 @@ namespace Amazon.DirectConnect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBGPPeer operation.
-    /// Deletes the BGP peer on the specified virtual interface with the specified customer
-    /// address and ASN.
+    /// Deletes the specified BGP peer on the specified virtual interface with the specified
+    /// customer address and ASN.
     /// 
     ///  
     /// <para>
@@ -40,6 +40,7 @@ namespace Amazon.DirectConnect.Model
     public partial class DeleteBGPPeerRequest : AmazonDirectConnectRequest
     {
         private int? _asn;
+        private string _bgpPeerId;
         private string _customerAddress;
         private string _virtualInterfaceId;
 
@@ -59,6 +60,24 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetAsn()
         {
             return this._asn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BgpPeerId. 
+        /// <para>
+        /// The ID of the BGP peer.
+        /// </para>
+        /// </summary>
+        public string BgpPeerId
+        {
+            get { return this._bgpPeerId; }
+            set { this._bgpPeerId = value; }
+        }
+
+        // Check to see if BgpPeerId property is set
+        internal bool IsSetBgpPeerId()
+        {
+            return this._bgpPeerId != null;
         }
 
         /// <summary>

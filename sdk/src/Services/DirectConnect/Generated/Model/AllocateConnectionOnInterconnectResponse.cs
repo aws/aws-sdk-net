@@ -38,6 +38,7 @@ namespace Amazon.DirectConnect.Model
         private string _connectionId;
         private string _connectionName;
         private ConnectionState _connectionState;
+        private HasLogicalRedundancy _hasLogicalRedundancy;
         private bool? _jumboFrameCapable;
         private string _lagId;
         private DateTime? _loaIssueTime;
@@ -191,6 +192,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetConnectionState()
         {
             return this._connectionState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasLogicalRedundancy. 
+        /// <para>
+        /// Indicates whether the connection supports a secondary BGP peer in the same address
+        /// family (IPv4/IPv6).
+        /// </para>
+        /// </summary>
+        public HasLogicalRedundancy HasLogicalRedundancy
+        {
+            get { return this._hasLogicalRedundancy; }
+            set { this._hasLogicalRedundancy = value; }
+        }
+
+        // Check to see if HasLogicalRedundancy property is set
+        internal bool IsSetHasLogicalRedundancy()
+        {
+            return this._hasLogicalRedundancy != null;
         }
 
         /// <summary>

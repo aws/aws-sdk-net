@@ -35,6 +35,7 @@ namespace Amazon.DirectConnect.Model
         private string _awsDevice;
         private string _awsDeviceV2;
         private string _bandwidth;
+        private HasLogicalRedundancy _hasLogicalRedundancy;
         private string _interconnectId;
         private string _interconnectName;
         private InterconnectState _interconnectState;
@@ -96,6 +97,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetBandwidth()
         {
             return this._bandwidth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasLogicalRedundancy. 
+        /// <para>
+        /// Indicates whether the interconnect supports a secondary BGP in the same address family
+        /// (IPv4/IPv6).
+        /// </para>
+        /// </summary>
+        public HasLogicalRedundancy HasLogicalRedundancy
+        {
+            get { return this._hasLogicalRedundancy; }
+            set { this._hasLogicalRedundancy = value; }
+        }
+
+        // Check to see if HasLogicalRedundancy property is set
+        internal bool IsSetHasLogicalRedundancy()
+        {
+            return this._hasLogicalRedundancy != null;
         }
 
         /// <summary>

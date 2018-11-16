@@ -37,6 +37,7 @@ namespace Amazon.DirectConnect.Model
         private string _awsDeviceV2;
         private List<Connection> _connections = new List<Connection>();
         private string _connectionsBandwidth;
+        private HasLogicalRedundancy _hasLogicalRedundancy;
         private bool? _jumboFrameCapable;
         private string _lagId;
         private string _lagName;
@@ -136,6 +137,25 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetConnectionsBandwidth()
         {
             return this._connectionsBandwidth != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HasLogicalRedundancy. 
+        /// <para>
+        /// Indicates whether the LAG supports a secondary BGP peer in the same address family
+        /// (IPv4/IPv6).
+        /// </para>
+        /// </summary>
+        public HasLogicalRedundancy HasLogicalRedundancy
+        {
+            get { return this._hasLogicalRedundancy; }
+            set { this._hasLogicalRedundancy = value; }
+        }
+
+        // Check to see if HasLogicalRedundancy property is set
+        internal bool IsSetHasLogicalRedundancy()
+        {
+            return this._hasLogicalRedundancy != null;
         }
 
         /// <summary>

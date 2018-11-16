@@ -283,6 +283,17 @@
             "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
             "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
             "shape_name": "AwsDeviceV2"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -439,6 +450,17 @@
                   "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
                   "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
                   "shape_name": "AwsDeviceV2"
+                },
+                "hasLogicalRedundancy": {
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+                  "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+                  "shape_name": "HasLogicalRedundancy"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -593,6 +615,17 @@
             "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
             "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
             "shape_name": "AwsDeviceV2"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -880,6 +913,12 @@
             "members": {
               "type": "structure",
               "members": {
+                "bgpPeerId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                  "shape_name": "BGPPeerId"
+                },
                 "asn": {
                   "type": "integer",
                   "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
@@ -1249,6 +1288,12 @@
             "members": {
               "type": "structure",
               "members": {
+                "bgpPeerId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                  "shape_name": "BGPPeerId"
+                },
                 "asn": {
                   "type": "integer",
                   "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
@@ -1553,6 +1598,12 @@
                   "members": {
                     "type": "structure",
                     "members": {
+                      "bgpPeerId": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                        "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                        "shape_name": "BGPPeerId"
+                      },
                       "asn": {
                         "type": "integer",
                         "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
@@ -1855,6 +1906,12 @@
             "members": {
               "type": "structure",
               "members": {
+                "bgpPeerId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                  "shape_name": "BGPPeerId"
+                },
                 "asn": {
                   "type": "integer",
                   "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
@@ -2286,6 +2343,12 @@
             "members": {
               "type": "structure",
               "members": {
+                "bgpPeerId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                  "shape_name": "BGPPeerId"
+                },
                 "asn": {
                   "type": "integer",
                   "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
@@ -2662,6 +2725,12 @@
             "members": {
               "type": "structure",
               "members": {
+                "bgpPeerId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                  "shape_name": "BGPPeerId"
+                },
                 "asn": {
                   "type": "integer",
                   "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
@@ -3041,6 +3110,17 @@
             "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
             "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
             "shape_name": "AwsDeviceV2"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about an interconnect.</para>\n      ",
@@ -3177,6 +3257,17 @@
                   "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
                   "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
                   "shape_name": "AwsDeviceV2"
+                },
+                "hasLogicalRedundancy": {
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</para>\n      ",
+                  "documentation": "\n         <p>Indicates whether the interconnect supports a secondary BGP in the same address family (IPv4/IPv6).</p>\n      ",
+                  "shape_name": "HasLogicalRedundancy"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about an interconnect.</para>\n      ",
@@ -3672,6 +3763,17 @@
                   "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
                   "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
                   "shape_name": "AwsDeviceV2"
+                },
+                "hasLogicalRedundancy": {
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+                  "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+                  "shape_name": "HasLogicalRedundancy"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -3854,6 +3956,17 @@
             "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
             "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
             "shape_name": "AwsDeviceV2"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -4031,6 +4144,17 @@
             "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
             "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
             "shape_name": "AwsDeviceV2"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -4188,6 +4312,17 @@
                   "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
                   "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
                   "shape_name": "AwsDeviceV2"
+                },
+                "hasLogicalRedundancy": {
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+                  "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+                  "shape_name": "HasLogicalRedundancy"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -4349,6 +4484,17 @@
             "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
             "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
             "shape_name": "AwsDeviceV2"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -4957,6 +5103,12 @@
                 "members": {
                   "type": "structure",
                   "members": {
+                    "bgpPeerId": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                      "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                      "shape_name": "BGPPeerId"
+                    },
                     "asn": {
                       "type": "integer",
                       "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
@@ -5075,7 +5227,7 @@
           "shape_name": "DirectConnectClientException"
         }
       ],
-      "documentation": "\n         <p>Creates a BGP peer on the specified virtual interface.</p>\n         <p>The BGP peer cannot be in the same address family (IPv4/IPv6) of an existing BGP peer on the virtual interface.</p>\n         <p>You must create a BGP peer for the corresponding address family in order to access AWS resources that also use that address family.</p>\n         <p>When creating a IPv6 BGP peer, omit the Amazon address and customer address. IPv6 addresses are automatically assigned from\n      the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.</p>\n         <p>For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the virtual interface.</p>\n      "
+      "documentation": "\n         <p>Creates a BGP peer on the specified virtual interface.</p>\n         <p>You must create a BGP peer for the corresponding address family (IPv4/IPv6) in order to access AWS resources that also use that address family.</p>\n         <p>If logical redundancy is not supported by the connection, interconnect, or LAG, the BGP peer cannot \n      be in the same address family as an existing BGP peer on the virtual interface.</p>\n         <p>When creating a IPv6 BGP peer, omit the Amazon address and customer address. IPv6 addresses are automatically assigned from\n      the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.</p>\n         <p>For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the virtual interface.</p>\n      "
     },
     "DeleteBGPPeer": {
       "name": "DeleteBGPPeer",
@@ -5099,6 +5251,12 @@
             "zonbookDocumentation": "\n         <para>The IP address assigned to the customer interface.</para>\n      ",
             "documentation": "\n         <p>The IP address assigned to the customer interface.</p>\n      ",
             "shape_name": "CustomerAddress"
+          },
+          "bgpPeerId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+            "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+            "shape_name": "BGPPeerId"
           }
         },
         "shape_name": "DeleteBGPPeerRequest",
@@ -5266,6 +5424,12 @@
                 "members": {
                   "type": "structure",
                   "members": {
+                    "bgpPeerId": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                      "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                      "shape_name": "BGPPeerId"
+                    },
                     "asn": {
                       "type": "integer",
                       "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
@@ -5384,7 +5548,7 @@
           "shape_name": "DirectConnectClientException"
         }
       ],
-      "documentation": "\n         <p>Deletes the BGP peer on the specified virtual interface with the specified customer address and ASN.</p>\n         <p>You cannot delete the last BGP peer from a virtual interface.</p>\n      "
+      "documentation": "\n         <p>Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.</p>\n         <p>You cannot delete the last BGP peer from a virtual interface.</p>\n      "
     },
     "CreateLag": {
       "name": "CreateLag",
@@ -5609,6 +5773,17 @@
                   "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
                   "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
                   "shape_name": "AwsDeviceV2"
+                },
+                "hasLogicalRedundancy": {
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+                  "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+                  "shape_name": "HasLogicalRedundancy"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -5627,6 +5802,17 @@
             "zonbookDocumentation": "\n         <para>Indicates whether jumbo frames (9001 MTU) are supported.</para>\n      ",
             "documentation": "\n         <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>\n      ",
             "shape_name": "JumboFrameCapable"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about a link aggregation group (LAG).</para>\n      ",
@@ -5866,6 +6052,17 @@
                         "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
                         "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
                         "shape_name": "AwsDeviceV2"
+                      },
+                      "hasLogicalRedundancy": {
+                        "type": "string",
+                        "enum": [
+                          "unknown",
+                          "yes",
+                          "no"
+                        ],
+                        "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+                        "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+                        "shape_name": "HasLogicalRedundancy"
                       }
                     },
                     "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -5884,6 +6081,17 @@
                   "zonbookDocumentation": "\n         <para>Indicates whether jumbo frames (9001 MTU) are supported.</para>\n      ",
                   "documentation": "\n         <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>\n      ",
                   "shape_name": "JumboFrameCapable"
+                },
+                "hasLogicalRedundancy": {
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+                  "documentation": "\n         <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+                  "shape_name": "HasLogicalRedundancy"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about a link aggregation group (LAG).</para>\n      ",
@@ -6133,6 +6341,17 @@
                   "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
                   "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
                   "shape_name": "AwsDeviceV2"
+                },
+                "hasLogicalRedundancy": {
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+                  "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+                  "shape_name": "HasLogicalRedundancy"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -6151,6 +6370,17 @@
             "zonbookDocumentation": "\n         <para>Indicates whether jumbo frames (9001 MTU) are supported.</para>\n      ",
             "documentation": "\n         <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>\n      ",
             "shape_name": "JumboFrameCapable"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about a link aggregation group (LAG).</para>\n      ",
@@ -6383,6 +6613,17 @@
                   "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
                   "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
                   "shape_name": "AwsDeviceV2"
+                },
+                "hasLogicalRedundancy": {
+                  "type": "string",
+                  "enum": [
+                    "unknown",
+                    "yes",
+                    "no"
+                  ],
+                  "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+                  "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+                  "shape_name": "HasLogicalRedundancy"
                 }
               },
               "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -6401,6 +6642,17 @@
             "zonbookDocumentation": "\n         <para>Indicates whether jumbo frames (9001 MTU) are supported.</para>\n      ",
             "documentation": "\n         <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>\n      ",
             "shape_name": "JumboFrameCapable"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the LAG supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about a link aggregation group (LAG).</para>\n      ",
@@ -6557,6 +6809,17 @@
             "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
             "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
             "shape_name": "AwsDeviceV2"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -6713,6 +6976,17 @@
             "zonbookDocumentation": "\n         <para>The Direct Connect endpoint on which the physical connection terminates.</para>\n      ",
             "documentation": "\n         <p>The Direct Connect endpoint on which the physical connection terminates.</p>\n      ",
             "shape_name": "AwsDeviceV2"
+          },
+          "hasLogicalRedundancy": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "yes",
+              "no"
+            ],
+            "zonbookDocumentation": "\n         <para>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</para>\n      ",
+            "documentation": "\n         <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>\n      ",
+            "shape_name": "HasLogicalRedundancy"
           }
         },
         "zonbookDocumentation": "\n         <para>Information about an AWS Direct Connect connection.</para>\n      ",
@@ -6931,6 +7205,12 @@
             "members": {
               "type": "structure",
               "members": {
+                "bgpPeerId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The ID of the BGP peer.</para>\n      ",
+                  "documentation": "\n         <p>The ID of the BGP peer.</p>\n      ",
+                  "shape_name": "BGPPeerId"
+                },
                 "asn": {
                   "type": "integer",
                   "zonbookDocumentation": "\n         <para>The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.</para>\n      ",
