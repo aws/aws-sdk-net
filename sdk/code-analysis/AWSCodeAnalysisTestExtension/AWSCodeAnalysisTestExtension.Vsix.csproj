@@ -504,6 +504,10 @@
       <Project>{9329CB2C-3AFF-4AFC-BDE5-638A24A81952}</Project>
       <Name>AWSSDK.Pricing.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/RAM/AWSSDK.RAM.CodeAnalysis.csproj">
+      <Project>{3CDA8299-5AC6-4DA8-A32E-52791DD71C0B}</Project>
+      <Name>AWSSDK.RAM.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/RDS/AWSSDK.RDS.CodeAnalysis.csproj">
       <Project>{B3C3F105-ECCC-43C7-BD16-11E15487264C}</Project>
       <Name>AWSSDK.RDS.CodeAnalysis</Name>
@@ -532,9 +536,17 @@
       <Project>{B4543C79-2B90-4F7E-80E5-1AA21DFE4D76}</Project>
       <Name>AWSSDK.Route53Domains.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Route53Resolver/AWSSDK.Route53Resolver.CodeAnalysis.csproj">
+      <Project>{F80D6EC3-A8DB-4247-B0FA-EE79753EE772}</Project>
+      <Name>AWSSDK.Route53Resolver.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/S3/AWSSDK.S3.CodeAnalysis.csproj">
       <Project>{0C220F39-8A25-4CB2-A379-BCDF01AB0D81}</Project>
       <Name>AWSSDK.S3.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/S3Control/AWSSDK.S3Control.CodeAnalysis.csproj">
+      <Project>{41A62157-5A63-49D4-BAC9-6E1F26A0D9B4}</Project>
+      <Name>AWSSDK.S3Control.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SageMaker/AWSSDK.SageMaker.CodeAnalysis.csproj">
       <Project>{E8EDED5F-2A50-4A47-AD39-0EF0A996327E}</Project>

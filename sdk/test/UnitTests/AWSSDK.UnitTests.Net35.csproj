@@ -148,6 +148,7 @@
     <ProjectReference Include="..\..\src\Services\PinpointSMSVoice\AWSSDK.PinpointSMSVoice.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Pricing\AWSSDK.Pricing.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\RAM\AWSSDK.RAM.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Rekognition\AWSSDK.Rekognition.Net35.csproj"/>
@@ -155,7 +156,9 @@
     <ProjectReference Include="..\..\src\Services\ResourceGroupsTaggingAPI\AWSSDK.ResourceGroupsTaggingAPI.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Route53Resolver\AWSSDK.Route53Resolver.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\S3\AWSSDK.S3.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\S3Control\AWSSDK.S3Control.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SageMaker\AWSSDK.SageMaker.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SageMakerRuntime\AWSSDK.SageMakerRuntime.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.Net35.csproj"/>

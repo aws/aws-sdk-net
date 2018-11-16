@@ -132,8 +132,10 @@
       <Directory>$(ProjectDir)/src/Services/pi/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pinpoint/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pinpointemail/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/pinpointsmsvoice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/polly/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/pricing/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/ram/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/redshift/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/rekognition/bin/Release/net45/</Directory>
@@ -141,7 +143,9 @@
       <Directory>$(ProjectDir)/src/Services/resourcegroupstaggingapi/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53domains/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/route53resolver/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/s3/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/s3control/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemaker/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemakerruntime/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/secretsmanager/bin/Release/net45/</Directory>
@@ -281,8 +285,10 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.PI.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pinpoint.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.PinpointEmail.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.PinpointSMSVoice.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Polly.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Pricing.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RAM.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Rekognition.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -290,7 +296,9 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ResourceGroupsTaggingAPI.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53Domains.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53Resolver.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.S3.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.S3Control.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SageMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SageMakerRuntime.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.SecretsManager.dll" Analyze="True" AnalyzeAllChildren="True" />
