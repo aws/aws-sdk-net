@@ -208,7 +208,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Settings for the task, such as target metadata settings. For a complete list of task
         /// settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-        /// Settings for AWS Database Migration Service Tasks</a>.
+        /// Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database Migration
+        /// User Guide.</i> 
         /// </para>
         /// </summary>
         public string ReplicationTaskSettings

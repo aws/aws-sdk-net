@@ -101,6 +101,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetElasticsearchSettings())
+                {
+                    context.Writer.WritePropertyName("ElasticsearchSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ElasticsearchSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ElasticsearchSettings, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEndpointIdentifier())
                 {
                     context.Writer.WritePropertyName("EndpointIdentifier");
@@ -129,6 +140,17 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ExtraConnectionAttributes");
                     context.Writer.Write(publicRequest.ExtraConnectionAttributes);
+                }
+
+                if(publicRequest.IsSetKinesisSettings())
+                {
+                    context.Writer.WritePropertyName("KinesisSettings");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KinesisSettingsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.KinesisSettings, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetKmsKeyId())

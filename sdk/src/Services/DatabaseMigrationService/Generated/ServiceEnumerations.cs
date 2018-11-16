@@ -237,6 +237,52 @@ namespace Amazon.DatabaseMigrationService
 
 
     /// <summary>
+    /// Constants used for properties of type MessageFormatValue.
+    /// </summary>
+    public class MessageFormatValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Json for MessageFormatValue
+        /// </summary>
+        public static readonly MessageFormatValue Json = new MessageFormatValue("json");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MessageFormatValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MessageFormatValue FindValue(string value)
+        {
+            return FindValue<MessageFormatValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MessageFormatValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MigrationTypeValue.
     /// </summary>
     public class MigrationTypeValue : ConstantClass

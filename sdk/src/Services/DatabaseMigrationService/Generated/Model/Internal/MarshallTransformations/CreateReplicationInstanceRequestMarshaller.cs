@@ -85,6 +85,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AvailabilityZone);
                 }
 
+                if(publicRequest.IsSetDnsNameServers())
+                {
+                    context.Writer.WritePropertyName("DnsNameServers");
+                    context.Writer.Write(publicRequest.DnsNameServers);
+                }
+
                 if(publicRequest.IsSetEngineVersion())
                 {
                     context.Writer.WritePropertyName("EngineVersion");

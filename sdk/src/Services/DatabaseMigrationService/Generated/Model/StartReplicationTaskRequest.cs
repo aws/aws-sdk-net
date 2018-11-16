@@ -33,8 +33,9 @@ namespace Amazon.DatabaseMigrationService.Model
     /// 
     ///  
     /// <para>
-    /// For more information about AWS DMS tasks, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">
-    /// Working with Migration Tasks </a> 
+    /// For more information about AWS DMS tasks, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+    /// with Migration Tasks </a> in the <i>AWS Database Migration Service User Guide.</i>
+    /// 
     /// </para>
     /// </summary>
     public partial class StartReplicationTaskRequest : AmazonDatabaseMigrationServiceRequest

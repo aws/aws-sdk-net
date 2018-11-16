@@ -47,9 +47,9 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
-    /// Working with Events and Notifications </a> in the AWS Database MIgration Service User
-    /// Guide.
+    /// For more information about AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+    /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
+    /// 
     /// </para>
     /// </summary>
     public partial class CreateEventSubscriptionRequest : AmazonDatabaseMigrationServiceRequest
@@ -65,8 +65,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///  A Boolean value; set to <b>true</b> to activate the subscription, or set to <b>false</b>
-        /// to create the subscription but not activate it. 
+        ///  A Boolean value; set to <code>true</code> to activate the subscription, or set to
+        /// <code>false</code> to create the subscription but not activate it. 
         /// </para>
         /// </summary>
         public bool Enabled
@@ -85,10 +85,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EventCategories. 
         /// <para>
         ///  A list of event categories for a source type that you want to subscribe to. You can
-        /// see a list of the categories for a given source type by calling the <b>DescribeEventCategories</b>
-        /// action or in the topic <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
-        /// Working with Events and Notifications</a> in the AWS Database Migration Service User
-        /// Guide. 
+        /// see a list of the categories for a given source type by calling the <code>DescribeEventCategories</code>
+        /// action or in the topic <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         public List<string> EventCategories

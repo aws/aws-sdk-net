@@ -36,6 +36,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _databaseName;
         private DmsTransferSettings _dmsTransferSettings;
         private DynamoDbSettings _dynamoDbSettings;
+        private ElasticsearchSettings _elasticsearchSettings;
         private string _endpointArn;
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
@@ -44,6 +45,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _externalId;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private KinesisSettings _kinesisSettings;
         private string _kmsKeyId;
         private MongoDbSettings _mongoDbSettings;
         private int? _port;
@@ -93,37 +95,36 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DmsTransferSettings. 
         /// <para>
-        ///  The settings in JSON format for the DMS Transfer type source endpoint. 
+        /// The settings in JSON format for the DMS transfer type of source endpoint. 
         /// </para>
         ///  
         /// <para>
-        /// Attributes include:
+        /// Possible attributes include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.
+        ///  <code>serviceAccessRoleArn</code> - The IAM role that has permission to access the
+        /// Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// bucketName - The name of the S3 bucket to use.
+        ///  <code>bucketName</code> - The name of the S3 bucket to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// compressionType - An optional parameter to use GZIP to compress the target files.
-        /// Set to NONE (the default) or do not use to leave the files uncompressed.
+        ///  <code>compressionType</code> - An optional parameter to use GZIP to compress the
+        /// target files. To use GZIP, set this value to <code>NONE</code> (the default). To keep
+        /// the files uncompressed, don't use this value. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+        /// Shorthand syntax for these attributes is as follows: <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// JSON syntax:
-        /// </para>
-        ///  
-        /// <para>
-        ///  { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip"
-        /// } 
+        /// JSON syntax for these attributes is as follows: <code>{ "ServiceAccessRoleArn": "string",
+        /// "BucketName": "string", "CompressionType": "none"|"gzip" } </code> 
         /// </para>
         /// </summary>
         public DmsTransferSettings DmsTransferSettings
@@ -155,6 +156,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDynamoDbSettings()
         {
             return this._dynamoDbSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticsearchSettings. 
+        /// <para>
+        /// The settings for the Elasticsearch source endpoint. For more information, see the
+        /// <code>ElasticsearchSettings</code> structure.
+        /// </para>
+        /// </summary>
+        public ElasticsearchSettings ElasticsearchSettings
+        {
+            get { return this._elasticsearchSettings; }
+            set { this._elasticsearchSettings = value; }
+        }
+
+        // Check to see if ElasticsearchSettings property is set
+        internal bool IsSetElasticsearchSettings()
+        {
+            return this._elasticsearchSettings != null;
         }
 
         /// <summary>
@@ -309,12 +329,32 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KinesisSettings. 
+        /// <para>
+        /// The settings for the Amazon Kinesis source endpoint. For more information, see the
+        /// <code>KinesisSettings</code> structure.
+        /// </para>
+        /// </summary>
+        public KinesisSettings KinesisSettings
+        {
+            get { return this._kinesisSettings; }
+            set { this._kinesisSettings = value; }
+        }
+
+        // Check to see if KinesisSettings property is set
+        internal bool IsSetKinesisSettings()
+        {
+            return this._kinesisSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier that will be used to encrypt the connection parameters. If
-        /// you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your
-        /// default encryption key. AWS KMS creates the default encryption key for your AWS account.
-        /// Your AWS account has a different default encryption key for each AWS region.
+        /// The AWS KMS key identifier that is used to encrypt the content on the replication
+        /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
+        /// AWS DMS uses your default encryption key. AWS KMS creates the default encryption key
+        /// for your AWS account. Your AWS account has a different default encryption key for
+        /// each AWS Region.
         /// </para>
         /// </summary>
         public string KmsKeyId

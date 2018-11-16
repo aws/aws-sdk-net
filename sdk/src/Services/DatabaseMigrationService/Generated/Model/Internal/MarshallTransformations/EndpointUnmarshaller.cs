@@ -88,6 +88,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DynamoDbSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ElasticsearchSettings", targetDepth))
+                {
+                    var unmarshaller = ElasticsearchSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ElasticsearchSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExtraConnectionAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("KinesisSettings", targetDepth))
+                {
+                    var unmarshaller = KinesisSettingsUnmarshaller.Instance;
+                    unmarshalledObject.KinesisSettings = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("KmsKeyId", targetDepth))

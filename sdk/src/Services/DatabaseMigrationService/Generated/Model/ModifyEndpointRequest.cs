@@ -37,12 +37,14 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _databaseName;
         private DmsTransferSettings _dmsTransferSettings;
         private DynamoDbSettings _dynamoDbSettings;
+        private ElasticsearchSettings _elasticsearchSettings;
         private string _endpointArn;
         private string _endpointIdentifier;
         private ReplicationEndpointTypeValue _endpointType;
         private string _engineName;
         private string _externalTableDefinition;
         private string _extraConnectionAttributes;
+        private KinesisSettings _kinesisSettings;
         private MongoDbSettings _mongoDbSettings;
         private string _password;
         private int? _port;
@@ -91,11 +93,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DmsTransferSettings. 
         /// <para>
-        ///  The settings in JSON format for the DMS Transfer type source endpoint. 
+        /// The settings in JSON format for the DMS transfer type of source endpoint. 
         /// </para>
         ///  
         /// <para>
-        /// Attributes include:
+        /// Attributes include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -140,10 +142,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DynamoDbSettings. 
         /// <para>
         /// Settings in JSON format for the target Amazon DynamoDB endpoint. For more information
-        /// about the available settings, see the <b>Using Object Mapping to Migrate Data to DynamoDB</b>
-        /// section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
-        /// Using an Amazon DynamoDB Database as a Target for AWS Database Migration Service</a>.
-        /// 
+        /// about the available settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+        /// Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration Service
+        /// User Guide.</i> 
         /// </para>
         /// </summary>
         public DynamoDbSettings DynamoDbSettings
@@ -156,6 +157,27 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetDynamoDbSettings()
         {
             return this._dynamoDbSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticsearchSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Elasticsearch endpoint. For more information
+        /// about the available settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+        /// Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in the
+        /// <i>AWS Database Migration User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public ElasticsearchSettings ElasticsearchSettings
+        {
+            get { return this._elasticsearchSettings; }
+            set { this._elasticsearchSettings = value; }
+        }
+
+        // Check to see if ElasticsearchSettings property is set
+        internal bool IsSetElasticsearchSettings()
+        {
+            return this._elasticsearchSettings != null;
         }
 
         /// <summary>
@@ -272,12 +294,33 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KinesisSettings. 
+        /// <para>
+        /// Settings in JSON format for the target Amazon Kinesis Data Streams endpoint. For more
+        /// information about the available settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+        /// ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the <i>AWS
+        /// Database Migration User Guide.</i> 
+        /// </para>
+        /// </summary>
+        public KinesisSettings KinesisSettings
+        {
+            get { return this._kinesisSettings; }
+            set { this._kinesisSettings = value; }
+        }
+
+        // Check to see if KinesisSettings property is set
+        internal bool IsSetKinesisSettings()
+        {
+            return this._kinesisSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MongoDbSettings. 
         /// <para>
         /// Settings in JSON format for the source MongoDB endpoint. For more information about
-        /// the available settings, see the <b>Configuration Properties When Using MongoDB as
-        /// a Source for AWS Database Migration Service</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-        /// Using Amazon S3 as a Target for AWS Database Migration Service</a>. 
+        /// the available settings, see the configuration properties section in <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+        /// Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS Database
+        /// Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public MongoDbSettings MongoDbSettings
@@ -331,9 +374,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property S3Settings. 
         /// <para>
-        /// Settings in JSON format for the target S3 endpoint. For more information about the
-        /// available settings, see the <b>Extra Connection Attributes</b> section at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
-        /// Using Amazon S3 as a Target for AWS Database Migration Service</a>. 
+        /// Settings in JSON format for the target Amazon S3 endpoint. For more information about
+        /// the available settings, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+        /// Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the <i>AWS
+        /// Database Migration Service User Guide.</i> 
         /// </para>
         /// </summary>
         public S3Settings S3Settings

@@ -48,8 +48,9 @@ namespace Amazon.DatabaseMigrationService
     /// </para>
     ///  
     /// <para>
-    /// For more information about AWS DMS, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">
-    /// What Is AWS Database Migration Service? </a> 
+    /// For more information about AWS DMS, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What
+    /// Is AWS Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
+    /// 
     /// </para>
     /// </summary>
     public partial class AmazonDatabaseMigrationServiceClient : AmazonServiceClient, IAmazonDatabaseMigrationService
@@ -374,9 +375,9 @@ namespace Amazon.DatabaseMigrationService
         /// </para>
         ///  
         /// <para>
-        /// For more information about AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
-        /// Working with Events and Notifications </a> in the AWS Database MIgration Service User
-        /// Guide.
+        /// For more information about AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEventSubscription service method.</param>
@@ -1113,9 +1114,8 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists categories for all event source types, or, if specified, for a specified source
-        /// type. You can see a list of the event categories and source types in <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
-        /// Working with Events and Notifications </a> in the AWS Database Migration Service User
-        /// Guide.
+        /// type. You can see a list of the event categories and source types in <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// with Events and Notifications</a> in the <i>AWS Database Migration Service User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventCategories service method.</param>
         /// 
@@ -1155,8 +1155,8 @@ namespace Amazon.DatabaseMigrationService
 
         /// <summary>
         /// Lists events for a given source identifier and source type. You can also specify
-        /// a start and end time. For more information on AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">
-        /// Working with Events and Notifications </a>.
+        /// a start and end time. For more information on AWS DMS events, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+        /// with Events and Notifications</a> in the <i>AWS Database Migration User Guide.</i>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
         /// 
@@ -1968,8 +1968,8 @@ namespace Amazon.DatabaseMigrationService
         /// </para>
         ///  
         /// <para>
-        /// For more information about AWS DMS tasks, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">
-        /// Working with Migration Tasks </a> 
+        /// For more information about AWS DMS tasks, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+        /// with Migration Tasks</a> in the <i>AWS Database Migration Service User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReplicationTask service method.</param>
@@ -2211,8 +2211,9 @@ namespace Amazon.DatabaseMigrationService
         /// 
         ///  
         /// <para>
-        /// For more information about AWS DMS tasks, see the AWS DMS user guide at <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">
-        /// Working with Migration Tasks </a> 
+        /// For more information about AWS DMS tasks, see <a href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+        /// with Migration Tasks </a> in the <i>AWS Database Migration Service User Guide.</i>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartReplicationTask service method.</param>

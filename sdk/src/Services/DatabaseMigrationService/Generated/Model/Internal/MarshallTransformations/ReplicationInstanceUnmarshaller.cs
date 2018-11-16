@@ -82,6 +82,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DnsNameServers", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DnsNameServers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EngineVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
