@@ -32,7 +32,7 @@ namespace Amazon.WorkSpaces
     /// Amazon WorkSpaces Service 
     /// <para>
     /// Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows
-    /// desktops for your users.
+    /// and Amazon Linux desktops for your users.
     /// </para>
     /// </summary>
     public partial interface IAmazonWorkSpaces : IAmazonService, IDisposable
@@ -432,6 +432,144 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeleteWorkspaceImage
+
+
+        /// <summary>
+        /// Deletes the specified image from your account. To delete an image, you must first
+        /// delete any bundles that are associated with the image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">REST API Reference for DeleteWorkspaceImage Operation</seealso>
+        DeleteWorkspaceImageResponse DeleteWorkspaceImage(DeleteWorkspaceImageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceImage operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteWorkspaceImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">REST API Reference for DeleteWorkspaceImage Operation</seealso>
+        IAsyncResult BeginDeleteWorkspaceImage(DeleteWorkspaceImageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteWorkspaceImage.</param>
+        /// 
+        /// <returns>Returns a  DeleteWorkspaceImageResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">REST API Reference for DeleteWorkspaceImage Operation</seealso>
+        DeleteWorkspaceImageResponse EndDeleteWorkspaceImage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAccount
+
+
+        /// <summary>
+        /// Retrieves a list that describes the configuration of bring your own license (BYOL)
+        /// for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccount service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccount service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
+        DescribeAccountResponse DescribeAccount(DescribeAccountRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccount operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
+        IAsyncResult BeginDescribeAccount(DescribeAccountRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccount.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
+        DescribeAccountResponse EndDescribeAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeAccountModifications
+
+
+        /// <summary>
+        /// Retrieves a list that describes modifications to the configuration of bring your own
+        /// license (BYOL) for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountModifications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountModifications service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">REST API Reference for DescribeAccountModifications Operation</seealso>
+        DescribeAccountModificationsResponse DescribeAccountModifications(DescribeAccountModificationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountModifications operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAccountModifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">REST API Reference for DescribeAccountModifications Operation</seealso>
+        IAsyncResult BeginDescribeAccountModifications(DescribeAccountModificationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAccountModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAccountModifications.</param>
+        /// 
+        /// <returns>Returns a  DescribeAccountModificationsResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">REST API Reference for DescribeAccountModifications Operation</seealso>
+        DescribeAccountModificationsResponse EndDescribeAccountModifications(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeIpGroups
 
 
@@ -525,7 +663,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the available WorkSpace bundles.
+        /// Retrieves a list that describes the available WorkSpace bundles.
         /// 
         ///  
         /// <para>
@@ -541,7 +679,7 @@ namespace Amazon.WorkSpaces
         DescribeWorkspaceBundlesResponse DescribeWorkspaceBundles();
 
         /// <summary>
-        /// Describes the available WorkSpace bundles.
+        /// Retrieves a list that describes the available WorkSpace bundles.
         /// 
         ///  
         /// <para>
@@ -641,6 +779,50 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeWorkspaceImages
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more specified images, if the image identifiers
+        /// are provided. Otherwise, all images in the account are described.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceImages service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages">REST API Reference for DescribeWorkspaceImages Operation</seealso>
+        DescribeWorkspaceImagesResponse DescribeWorkspaceImages(DescribeWorkspaceImagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspaceImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImages operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeWorkspaceImages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages">REST API Reference for DescribeWorkspaceImages Operation</seealso>
+        IAsyncResult BeginDescribeWorkspaceImages(DescribeWorkspaceImagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeWorkspaceImages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeWorkspaceImages.</param>
+        /// 
+        /// <returns>Returns a  DescribeWorkspaceImagesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages">REST API Reference for DescribeWorkspaceImages Operation</seealso>
+        DescribeWorkspaceImagesResponse EndDescribeWorkspaceImages(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeWorkspaces
 
 
@@ -649,8 +831,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
-        /// only one filter at a time.
+        /// You can filter the results by using the bundle identifier, directory identifier, or
+        /// owner, but you can specify only one filter at a time.
         /// </para>
         /// </summary>
         /// 
@@ -669,8 +851,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
-        /// only one filter at a time.
+        /// You can filter the results by using the bundle identifier, directory identifier, or
+        /// owner, but you can specify only one filter at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaces service method.</param>
@@ -805,6 +987,173 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  DisassociateIpGroupsResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DisassociateIpGroups">REST API Reference for DisassociateIpGroups Operation</seealso>
         DisassociateIpGroupsResponse EndDisassociateIpGroups(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ImportWorkspaceImage
+
+
+        /// <summary>
+        /// Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image
+        /// into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
+        /// your AWS account, and you must own the image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the ImportWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
+        ImportWorkspaceImageResponse ImportWorkspaceImage(ImportWorkspaceImageRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportWorkspaceImage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
+        IAsyncResult BeginImportWorkspaceImage(ImportWorkspaceImageRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportWorkspaceImage.</param>
+        /// 
+        /// <returns>Returns a  ImportWorkspaceImageResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
+        ImportWorkspaceImageResponse EndImportWorkspaceImage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAvailableManagementCidrRanges
+
+
+        /// <summary>
+        /// Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can
+        /// use for the network management interface when you enable bring your own license (BYOL).
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// The management network interface is connected to a secure Amazon WorkSpaces management
+        /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
+        /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagementCidrRanges service method.</param>
+        /// 
+        /// <returns>The response from the ListAvailableManagementCidrRanges service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">REST API Reference for ListAvailableManagementCidrRanges Operation</seealso>
+        ListAvailableManagementCidrRangesResponse ListAvailableManagementCidrRanges(ListAvailableManagementCidrRangesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAvailableManagementCidrRanges operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagementCidrRanges operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAvailableManagementCidrRanges
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">REST API Reference for ListAvailableManagementCidrRanges Operation</seealso>
+        IAsyncResult BeginListAvailableManagementCidrRanges(ListAvailableManagementCidrRangesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAvailableManagementCidrRanges operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAvailableManagementCidrRanges.</param>
+        /// 
+        /// <returns>Returns a  ListAvailableManagementCidrRangesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">REST API Reference for ListAvailableManagementCidrRanges Operation</seealso>
+        ListAvailableManagementCidrRangesResponse EndListAvailableManagementCidrRanges(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyAccount
+
+
+        /// <summary>
+        /// Modifies the configuration of bring your own license (BYOL) for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAccount service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAccount service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
+        ModifyAccountResponse ModifyAccount(ModifyAccountRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAccount operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
+        IAsyncResult BeginModifyAccount(ModifyAccountRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyAccount.</param>
+        /// 
+        /// <returns>Returns a  ModifyAccountResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
+        ModifyAccountResponse EndModifyAccount(IAsyncResult asyncResult);
 
         #endregion
         

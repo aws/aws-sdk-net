@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about the root volume for a WorkSpace bundle.
+    /// Describes the root volume for a WorkSpace bundle.
     /// </summary>
     public partial class RootStorage
     {

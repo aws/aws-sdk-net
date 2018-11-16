@@ -40,7 +40,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the group.
+        /// The identifier of the group.
         /// </para>
         /// </summary>
         public string GroupId

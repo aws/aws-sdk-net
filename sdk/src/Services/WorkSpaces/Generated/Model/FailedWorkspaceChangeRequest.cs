@@ -28,9 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a WorkSpace that could not be rebooted (<a>RebootWorkspaces</a>),
-    /// rebuilt (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started
-    /// (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>).
+    /// Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt
+    /// (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>),
+    /// or stopped (<a>StopWorkspaces</a>).
     /// </summary>
     public partial class FailedWorkspaceChangeRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code.
+        /// The error code that is returned if the WorkSpace cannot be rebooted.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -59,7 +59,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The textual error message.
+        /// The text of the error message that is returned if the WorkSpace cannot be rebooted.
         /// </para>
         /// </summary>
         public string ErrorMessage

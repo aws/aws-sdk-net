@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a WorkSpace bundle.
+    /// Describes a WorkSpace bundle.
     /// </summary>
     public partial class WorkspaceBundle
     {

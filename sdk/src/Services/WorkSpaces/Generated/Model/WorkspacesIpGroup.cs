@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about an IP access control group.
+    /// Describes an IP access control group.
     /// </summary>
     public partial class WorkspacesIpGroup
     {
@@ -58,7 +58,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the group.
+        /// The identifier of the group.
         /// </para>
         /// </summary>
         public string GroupId

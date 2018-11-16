@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a rule for an IP access control group.
+    /// Describes a rule for an IP access control group.
     /// </summary>
     public partial class IpRuleItem
     {

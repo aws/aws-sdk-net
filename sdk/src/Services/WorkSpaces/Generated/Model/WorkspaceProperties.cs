@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a WorkSpace.
+    /// Describes a WorkSpace.
     /// </summary>
     public partial class WorkspaceProperties
     {

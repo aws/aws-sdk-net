@@ -38,7 +38,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
+        /// The identifier of the WorkSpace. To find this ID, use <a>DescribeWorkspaces</a>.
         /// </para>
         /// </summary>
         public string ResourceId

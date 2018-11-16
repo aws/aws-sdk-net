@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about defaults used to create a WorkSpace.
+    /// Describes the default values used to create a WorkSpace.
     /// </summary>
     public partial class DefaultWorkspaceCreationProperties
     {
@@ -95,7 +95,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property EnableWorkDocs. 
         /// <para>
-        /// Indicates whether the directory is enabled for Amazon WorkDocs.
+        /// Specifies whether the directory is enabled for Amazon WorkDocs.
         /// </para>
         /// </summary>
         public bool EnableWorkDocs
@@ -113,7 +113,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserEnabledAsLocalAdministrator. 
         /// <para>
-        /// Indicates whether the WorkSpace user is an administrator on the WorkSpace.
+        /// Specifies whether the WorkSpace user is an administrator on the WorkSpace.
         /// </para>
         /// </summary>
         public bool UserEnabledAsLocalAdministrator

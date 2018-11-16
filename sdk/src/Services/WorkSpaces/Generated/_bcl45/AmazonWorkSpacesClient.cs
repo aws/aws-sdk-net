@@ -40,7 +40,7 @@ namespace Amazon.WorkSpaces
     /// Amazon WorkSpaces Service 
     /// <para>
     /// Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows
-    /// desktops for your users.
+    /// and Amazon Linux desktops for your users.
     /// </para>
     /// </summary>
     public partial class AmazonWorkSpacesClient : AmazonServiceClient, IAmazonWorkSpaces
@@ -627,6 +627,141 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DeleteWorkspaceImage
+
+
+        /// <summary>
+        /// Deletes the specified image from your account. To delete an image, you must first
+        /// delete any bundles that are associated with the image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the DeleteWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAssociatedException">
+        /// The resource is associated with a directory.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">REST API Reference for DeleteWorkspaceImage Operation</seealso>
+        public virtual DeleteWorkspaceImageResponse DeleteWorkspaceImage(DeleteWorkspaceImageRequest request)
+        {
+            var marshaller = DeleteWorkspaceImageRequestMarshaller.Instance;
+            var unmarshaller = DeleteWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkspaceImageRequest,DeleteWorkspaceImageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkspaceImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeleteWorkspaceImage">REST API Reference for DeleteWorkspaceImage Operation</seealso>
+        public virtual Task<DeleteWorkspaceImageResponse> DeleteWorkspaceImageAsync(DeleteWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteWorkspaceImageRequestMarshaller.Instance;
+            var unmarshaller = DeleteWorkspaceImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkspaceImageRequest,DeleteWorkspaceImageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccount
+
+
+        /// <summary>
+        /// Retrieves a list that describes the configuration of bring your own license (BYOL)
+        /// for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccount service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccount service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
+        public virtual DescribeAccountResponse DescribeAccount(DescribeAccountRequest request)
+        {
+            var marshaller = DescribeAccountRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountRequest,DescribeAccountResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">REST API Reference for DescribeAccount Operation</seealso>
+        public virtual Task<DescribeAccountResponse> DescribeAccountAsync(DescribeAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAccountRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAccountRequest,DescribeAccountResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAccountModifications
+
+
+        /// <summary>
+        /// Retrieves a list that describes modifications to the configuration of bring your own
+        /// license (BYOL) for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountModifications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountModifications service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">REST API Reference for DescribeAccountModifications Operation</seealso>
+        public virtual DescribeAccountModificationsResponse DescribeAccountModifications(DescribeAccountModificationsRequest request)
+        {
+            var marshaller = DescribeAccountModificationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountModificationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAccountModificationsRequest,DescribeAccountModificationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAccountModifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountModifications operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">REST API Reference for DescribeAccountModifications Operation</seealso>
+        public virtual Task<DescribeAccountModificationsResponse> DescribeAccountModificationsAsync(DescribeAccountModificationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAccountModificationsRequestMarshaller.Instance;
+            var unmarshaller = DescribeAccountModificationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAccountModificationsRequest,DescribeAccountModificationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeIpGroups
 
 
@@ -718,7 +853,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the available WorkSpace bundles.
+        /// Retrieves a list that describes the available WorkSpace bundles.
         /// 
         ///  
         /// <para>
@@ -739,7 +874,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the available WorkSpace bundles.
+        /// Retrieves a list that describes the available WorkSpace bundles.
         /// 
         ///  
         /// <para>
@@ -763,7 +898,7 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
-        /// Describes the available WorkSpace bundles.
+        /// Retrieves a list that describes the available WorkSpace bundles.
         /// 
         ///  
         /// <para>
@@ -886,6 +1021,49 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeWorkspaceImages
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more specified images, if the image identifiers
+        /// are provided. Otherwise, all images in the account are described.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeWorkspaceImages service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages">REST API Reference for DescribeWorkspaceImages Operation</seealso>
+        public virtual DescribeWorkspaceImagesResponse DescribeWorkspaceImages(DescribeWorkspaceImagesRequest request)
+        {
+            var marshaller = DescribeWorkspaceImagesRequestMarshaller.Instance;
+            var unmarshaller = DescribeWorkspaceImagesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkspaceImagesRequest,DescribeWorkspaceImagesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkspaceImages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaceImages operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImages">REST API Reference for DescribeWorkspaceImages Operation</seealso>
+        public virtual Task<DescribeWorkspaceImagesResponse> DescribeWorkspaceImagesAsync(DescribeWorkspaceImagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeWorkspaceImagesRequestMarshaller.Instance;
+            var unmarshaller = DescribeWorkspaceImagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorkspaceImagesRequest,DescribeWorkspaceImagesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeWorkspaces
 
 
@@ -894,8 +1072,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
-        /// only one filter at a time.
+        /// You can filter the results by using the bundle identifier, directory identifier, or
+        /// owner, but you can specify only one filter at a time.
         /// </para>
         /// </summary>
         /// 
@@ -919,8 +1097,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
-        /// only one filter at a time.
+        /// You can filter the results by using the bundle identifier, directory identifier, or
+        /// owner, but you can specify only one filter at a time.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspaces service method.</param>
@@ -947,8 +1125,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You can filter the results using bundle ID, directory ID, or owner, but you can specify
-        /// only one filter at a time.
+        /// You can filter the results by using the bundle identifier, directory identifier, or
+        /// owner, but you can specify only one filter at a time.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1078,6 +1256,170 @@ namespace Amazon.WorkSpaces
             var unmarshaller = DisassociateIpGroupsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateIpGroupsRequest,DisassociateIpGroupsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportWorkspaceImage
+
+
+        /// <summary>
+        /// Imports the specified Windows 7 or Windows 10 bring your own license (BYOL) image
+        /// into Amazon WorkSpaces. The image must be an already licensed EC2 image that is in
+        /// your AWS account, and you must own the image.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage service method.</param>
+        /// 
+        /// <returns>The response from the ImportWorkspaceImage service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.OperationNotSupportedException">
+        /// This operation is not supported.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceAlreadyExistsException">
+        /// The specified resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceLimitExceededException">
+        /// Your resource limits have been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
+        public virtual ImportWorkspaceImageResponse ImportWorkspaceImage(ImportWorkspaceImageRequest request)
+        {
+            var marshaller = ImportWorkspaceImageRequestMarshaller.Instance;
+            var unmarshaller = ImportWorkspaceImageResponseUnmarshaller.Instance;
+
+            return Invoke<ImportWorkspaceImageRequest,ImportWorkspaceImageResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportWorkspaceImage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportWorkspaceImage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ImportWorkspaceImage">REST API Reference for ImportWorkspaceImage Operation</seealso>
+        public virtual Task<ImportWorkspaceImageResponse> ImportWorkspaceImageAsync(ImportWorkspaceImageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ImportWorkspaceImageRequestMarshaller.Instance;
+            var unmarshaller = ImportWorkspaceImageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportWorkspaceImageRequest,ImportWorkspaceImageResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAvailableManagementCidrRanges
+
+
+        /// <summary>
+        /// Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can
+        /// use for the network management interface when you enable bring your own license (BYOL).
+        /// 
+        /// 
+        ///  
+        /// <para>
+        /// The management network interface is connected to a secure Amazon WorkSpaces management
+        /// network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces
+        /// clients, and to allow Amazon WorkSpaces to manage the WorkSpace.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagementCidrRanges service method.</param>
+        /// 
+        /// <returns>The response from the ListAvailableManagementCidrRanges service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">REST API Reference for ListAvailableManagementCidrRanges Operation</seealso>
+        public virtual ListAvailableManagementCidrRangesResponse ListAvailableManagementCidrRanges(ListAvailableManagementCidrRangesRequest request)
+        {
+            var marshaller = ListAvailableManagementCidrRangesRequestMarshaller.Instance;
+            var unmarshaller = ListAvailableManagementCidrRangesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAvailableManagementCidrRangesRequest,ListAvailableManagementCidrRangesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAvailableManagementCidrRanges operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAvailableManagementCidrRanges operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ListAvailableManagementCidrRanges">REST API Reference for ListAvailableManagementCidrRanges Operation</seealso>
+        public virtual Task<ListAvailableManagementCidrRangesResponse> ListAvailableManagementCidrRangesAsync(ListAvailableManagementCidrRangesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListAvailableManagementCidrRangesRequestMarshaller.Instance;
+            var unmarshaller = ListAvailableManagementCidrRangesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAvailableManagementCidrRangesRequest,ListAvailableManagementCidrRangesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyAccount
+
+
+        /// <summary>
+        /// Modifies the configuration of bring your own license (BYOL) for the specified account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAccount service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAccount service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidResourceStateException">
+        /// The state of the resource is not valid for this operation.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceUnavailableException">
+        /// The specified resource is not available.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
+        public virtual ModifyAccountResponse ModifyAccount(ModifyAccountRequest request)
+        {
+            var marshaller = ModifyAccountRequestMarshaller.Instance;
+            var unmarshaller = ModifyAccountResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyAccountRequest,ModifyAccountResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAccount operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
+        public virtual Task<ModifyAccountResponse> ModifyAccountAsync(ModifyAccountRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyAccountRequestMarshaller.Instance;
+            var unmarshaller = ModifyAccountResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyAccountRequest,ModifyAccountResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

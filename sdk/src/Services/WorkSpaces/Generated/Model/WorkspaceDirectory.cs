@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about an AWS Directory Service directory for use with Amazon WorkSpaces.
+    /// Describes an AWS Directory Service directory that is used with Amazon WorkSpaces.
     /// </summary>
     public partial class WorkspaceDirectory
     {

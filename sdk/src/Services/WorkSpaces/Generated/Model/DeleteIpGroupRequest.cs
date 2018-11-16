@@ -43,7 +43,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the IP access control group.
+        /// The identifier of the IP access control group.
         /// </para>
         /// </summary>
         public string GroupId

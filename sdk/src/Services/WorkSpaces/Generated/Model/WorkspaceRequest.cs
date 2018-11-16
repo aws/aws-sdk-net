@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information used to create a WorkSpace.
+    /// Describes the information used to create a WorkSpace.
     /// </summary>
     public partial class WorkspaceRequest
     {

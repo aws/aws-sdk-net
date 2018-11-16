@@ -39,7 +39,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The ID of the directory.
+        /// The identifier of the directory.
         /// </para>
         /// </summary>
         public string DirectoryId
@@ -57,7 +57,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property GroupIds. 
         /// <para>
-        /// The IDs of one or more IP access control groups.
+        /// The identifiers of one or more IP access control groups.
         /// </para>
         /// </summary>
         public List<string> GroupIds

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information used to reboot a WorkSpace.
+    /// Describes the information used to reboot a WorkSpace.
     /// </summary>
     public partial class RebootRequest
     {
@@ -37,7 +37,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the WorkSpace.
+        /// The identifier of the WorkSpace.
         /// </para>
         /// </summary>
         public string WorkspaceId

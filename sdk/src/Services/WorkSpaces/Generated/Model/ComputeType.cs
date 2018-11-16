@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about the compute type.
+    /// Describes the compute type.
     /// </summary>
     public partial class ComputeType
     {

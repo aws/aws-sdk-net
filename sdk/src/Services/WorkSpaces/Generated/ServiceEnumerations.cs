@@ -149,6 +149,156 @@ namespace Amazon.WorkSpaces
 
 
     /// <summary>
+    /// Constants used for properties of type DedicatedTenancyModificationStateEnum.
+    /// </summary>
+    public class DedicatedTenancyModificationStateEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for DedicatedTenancyModificationStateEnum
+        /// </summary>
+        public static readonly DedicatedTenancyModificationStateEnum COMPLETED = new DedicatedTenancyModificationStateEnum("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for DedicatedTenancyModificationStateEnum
+        /// </summary>
+        public static readonly DedicatedTenancyModificationStateEnum FAILED = new DedicatedTenancyModificationStateEnum("FAILED");
+        /// <summary>
+        /// Constant PENDING for DedicatedTenancyModificationStateEnum
+        /// </summary>
+        public static readonly DedicatedTenancyModificationStateEnum PENDING = new DedicatedTenancyModificationStateEnum("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DedicatedTenancyModificationStateEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DedicatedTenancyModificationStateEnum FindValue(string value)
+        {
+            return FindValue<DedicatedTenancyModificationStateEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DedicatedTenancyModificationStateEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DedicatedTenancySupportEnum.
+    /// </summary>
+    public class DedicatedTenancySupportEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENABLED for DedicatedTenancySupportEnum
+        /// </summary>
+        public static readonly DedicatedTenancySupportEnum ENABLED = new DedicatedTenancySupportEnum("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DedicatedTenancySupportEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DedicatedTenancySupportEnum FindValue(string value)
+        {
+            return FindValue<DedicatedTenancySupportEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DedicatedTenancySupportEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DedicatedTenancySupportResultEnum.
+    /// </summary>
+    public class DedicatedTenancySupportResultEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DedicatedTenancySupportResultEnum
+        /// </summary>
+        public static readonly DedicatedTenancySupportResultEnum DISABLED = new DedicatedTenancySupportResultEnum("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DedicatedTenancySupportResultEnum
+        /// </summary>
+        public static readonly DedicatedTenancySupportResultEnum ENABLED = new DedicatedTenancySupportResultEnum("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DedicatedTenancySupportResultEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DedicatedTenancySupportResultEnum FindValue(string value)
+        {
+            return FindValue<DedicatedTenancySupportResultEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DedicatedTenancySupportResultEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ModificationResourceEnum.
     /// </summary>
     public class ModificationResourceEnum : ConstantClass
@@ -246,6 +396,56 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ModificationStateEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OperatingSystemType.
+    /// </summary>
+    public class OperatingSystemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINUX for OperatingSystemType
+        /// </summary>
+        public static readonly OperatingSystemType LINUX = new OperatingSystemType("LINUX");
+        /// <summary>
+        /// Constant WINDOWS for OperatingSystemType
+        /// </summary>
+        public static readonly OperatingSystemType WINDOWS = new OperatingSystemType("WINDOWS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperatingSystemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperatingSystemType FindValue(string value)
+        {
+            return FindValue<OperatingSystemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperatingSystemType(string value)
         {
             return FindValue(value);
         }
@@ -458,6 +658,164 @@ namespace Amazon.WorkSpaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WorkspaceDirectoryType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkspaceImageIngestionProcess.
+    /// </summary>
+    public class WorkspaceImageIngestionProcess : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYOL_GRAPHICS for WorkspaceImageIngestionProcess
+        /// </summary>
+        public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICS = new WorkspaceImageIngestionProcess("BYOL_GRAPHICS");
+        /// <summary>
+        /// Constant BYOL_GRAPHICSPRO for WorkspaceImageIngestionProcess
+        /// </summary>
+        public static readonly WorkspaceImageIngestionProcess BYOL_GRAPHICSPRO = new WorkspaceImageIngestionProcess("BYOL_GRAPHICSPRO");
+        /// <summary>
+        /// Constant BYOL_REGULAR for WorkspaceImageIngestionProcess
+        /// </summary>
+        public static readonly WorkspaceImageIngestionProcess BYOL_REGULAR = new WorkspaceImageIngestionProcess("BYOL_REGULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspaceImageIngestionProcess(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceImageIngestionProcess FindValue(string value)
+        {
+            return FindValue<WorkspaceImageIngestionProcess>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceImageIngestionProcess(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkspaceImageRequiredTenancy.
+    /// </summary>
+    public class WorkspaceImageRequiredTenancy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEDICATED for WorkspaceImageRequiredTenancy
+        /// </summary>
+        public static readonly WorkspaceImageRequiredTenancy DEDICATED = new WorkspaceImageRequiredTenancy("DEDICATED");
+        /// <summary>
+        /// Constant DEFAULT for WorkspaceImageRequiredTenancy
+        /// </summary>
+        public static readonly WorkspaceImageRequiredTenancy DEFAULT = new WorkspaceImageRequiredTenancy("DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspaceImageRequiredTenancy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceImageRequiredTenancy FindValue(string value)
+        {
+            return FindValue<WorkspaceImageRequiredTenancy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceImageRequiredTenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WorkspaceImageState.
+    /// </summary>
+    public class WorkspaceImageState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for WorkspaceImageState
+        /// </summary>
+        public static readonly WorkspaceImageState AVAILABLE = new WorkspaceImageState("AVAILABLE");
+        /// <summary>
+        /// Constant ERROR for WorkspaceImageState
+        /// </summary>
+        public static readonly WorkspaceImageState ERROR = new WorkspaceImageState("ERROR");
+        /// <summary>
+        /// Constant PENDING for WorkspaceImageState
+        /// </summary>
+        public static readonly WorkspaceImageState PENDING = new WorkspaceImageState("PENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WorkspaceImageState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WorkspaceImageState FindValue(string value)
+        {
+            return FindValue<WorkspaceImageState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WorkspaceImageState(string value)
         {
             return FindValue(value);
         }

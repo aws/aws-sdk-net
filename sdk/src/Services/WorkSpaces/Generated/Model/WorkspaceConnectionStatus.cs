@@ -59,7 +59,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ConnectionStateCheckTimestamp. 
         /// <para>
-        /// The timestamp of the connection state check.
+        /// The timestamp of the connection status check.
         /// </para>
         /// </summary>
         public DateTime ConnectionStateCheckTimestamp
@@ -95,7 +95,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The ID of the WorkSpace.
+        /// The identifier of the WorkSpace.
         /// </para>
         /// </summary>
         public string WorkspaceId

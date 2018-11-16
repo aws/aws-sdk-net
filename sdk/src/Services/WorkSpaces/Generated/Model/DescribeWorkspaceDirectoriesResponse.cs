@@ -56,9 +56,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next set of results, or null if there are no more
-        /// results available. This token is valid for one day and must be used within that time
-        /// frame.
+        /// The token to use to retrieve the next set of results, or null if no more results are
+        /// available.
         /// </para>
         /// </summary>
         public string NextToken

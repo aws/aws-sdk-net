@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a WorkSpace modification.
+    /// Describes a WorkSpace modification.
     /// </summary>
     public partial class ModificationState
     {

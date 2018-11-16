@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a tag.
+    /// Describes a tag.
     /// </summary>
     public partial class Tag
     {

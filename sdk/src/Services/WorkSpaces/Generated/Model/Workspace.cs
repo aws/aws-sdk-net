@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about a WorkSpace.
+    /// Describes a WorkSpace.
     /// </summary>
     public partial class Workspace
     {
@@ -105,7 +105,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// If the WorkSpace could not be created, contains the error code.
+        /// The error code that is returned if the WorkSpace cannot be created.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -123,8 +123,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// If the WorkSpace could not be created, contains a textual error message that describes
-        /// the failure.
+        /// The text of the error message that is returned if the WorkSpace cannot be created.
         /// </para>
         /// </summary>
         public string ErrorMessage
