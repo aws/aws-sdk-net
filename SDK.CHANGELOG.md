@@ -1,3 +1,15 @@
+### 3.3.410.0 (2018-11-16 21:18 UTC)
+* Comprehend (3.3.5.0)
+	* Amazon Comprehend Custom Entities automatically trains entity recognition models using your entities and noun-based phrases. 
+* CostExplorer (3.3.8.0)
+	* This release introduces a new operation called GetCostForecast operation, which allows you to programmatically access AWS Cost Explorer's forecasting engine and is now generally available.
+* ECS (3.3.20.0)
+	* This release of Amazon Elastic Container Service (Amazon ECS) introduces support for additional Docker flags as Task Definition parameters. Customers can now configure their ECS Tasks to use pidMode (pid) and ipcMode (ipc) Docker flags.
+* SimpleSystemsManagement (3.3.36.0)
+	* AWS Systems Manager Automation now allows you to execute and manage Automation workflows across multiple accounts and regions. 
+* WorkSpaces (3.3.4.0)
+	* Added new Bring Your Own License (BYOL) automation APIs. With the new APIs, you can list available management CIDR ranges for dedicated tenancy, enable your account for BYOL, describe BYOL status of your account, and import BYOL images. Added new APIs to also describe and delete WorkSpaces images. 
+
 ### 3.3.409.1 (2018-11-16 04:28 UTC)
 * Core 3.3.29.12
 	* Fix bug with calling CognitoIdentityProvider's SignUp operation with temporary credentials. Add support for endpoint hostPrefix. Add slash encoding support for identifier values within service resource paths.

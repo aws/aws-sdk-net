@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.409.1",
+    "ProductVersion" : "3.3.410.0",
     "CoreVersion"    : "3.3.29.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -159,7 +159,7 @@
             "InPreview"               : false
         },
         "ECS"               : {
-            "Version" : "3.3.19.1",
+            "Version" : "3.3.20.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -369,7 +369,7 @@
             "InPreview"               : false
         },
         "SimpleSystemsManagement"   : {
-            "Version" : "3.3.35.12",
+            "Version" : "3.3.36.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -385,7 +385,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.3.3.15",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -857,7 +857,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.3.7.6",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -961,7 +961,7 @@
             "InPreview"               : false
         },
         "Comprehend"                      : {
-            "Version" : "3.3.4.1",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
