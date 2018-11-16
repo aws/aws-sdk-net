@@ -1062,9 +1062,9 @@
               },
               "DbiResourceId": {
                 "type": "string",
-                "internalonly": true,
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</para>\n      ",
+                "documentation": "\n        <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB snapshot.\n      </simpara>\n         <simpara>This data type is used as a response element \n          in the <xref linkend=\"DescribeDBSnapshots\"/> action.\n      </simpara>\n      ",
@@ -1866,6 +1866,7 @@
           "type": "structure",
           "members": {
           },
+          "internalonly": true,
           "shape_name": "BackupPolicyAlreadyExistsFault",
           "documentation": null
         },
@@ -1873,6 +1874,7 @@
           "type": "structure",
           "members": {
           },
+          "internalonly": true,
           "shape_name": "BackupPolicyQuotaExceededFault",
           "documentation": null
         },
@@ -1880,6 +1882,7 @@
           "type": "structure",
           "members": {
           },
+          "internalonly": true,
           "shape_name": "InvalidBackupPolicyFault",
           "documentation": null
         }
@@ -2130,6 +2133,18 @@
             "zonbookDocumentation": "\n        <para>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </para>\n      ",
             "documentation": "\n        <p>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </p>\n      ",
             "shape_name": "BooleanOptional"
+          },
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "internalonly": true,
+            "shape_name": "String",
+            "documentation": null
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -2605,6 +2620,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -3615,6 +3660,12 @@
             "internalonly": true,
             "shape_name": "String",
             "documentation": null
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -4438,6 +4489,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -4596,6 +4653,8 @@
           "type": "structure",
           "members": {
           },
+          "deprecatedMessage": "Please avoid using this fault",
+          "deprecated": true,
           "shape_name": "BackupPolicyNotFoundFault",
           "documentation": null
         }
@@ -4811,6 +4870,12 @@
             "zonbookDocumentation": "\n        <para>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</ulink>.\n        </para>\n      ",
             "documentation": "\n        <p>Indicates if the DB instance should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n            For more information, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html\">\n                Deleting a DB Instance</a>.\n        </p>\n      ",
             "shape_name": "BooleanOptional"
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
           }
         },
         "shape_name": "CreateDBInstanceReadReplicaMessage",
@@ -5633,6 +5698,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -6346,9 +6417,9 @@
               },
               "DbiResourceId": {
                 "type": "string",
-                "internalonly": true,
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</para>\n      ",
+                "documentation": "\n        <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB snapshot.\n      </simpara>\n         <simpara>This data type is used as a response element \n          in the <xref linkend=\"DescribeDBSnapshots\"/> action.\n      </simpara>\n      ",
@@ -7178,6 +7249,8 @@
           "type": "structure",
           "members": {
           },
+          "deprecatedMessage": "Please avoid using this fault",
+          "deprecated": true,
           "shape_name": "BackupPolicyNotFoundFault",
           "documentation": null
         },
@@ -7185,6 +7258,7 @@
           "type": "structure",
           "members": {
           },
+          "internalonly": true,
           "shape_name": "BackupPolicyInUseFault",
           "documentation": null
         }
@@ -7689,6 +7763,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -8094,21 +8198,21 @@
           },
           "SkipFinalSnapshot": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>\n            Determines whether a final DB snapshot is created before the DB instance is deleted. \n            If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code> \n      is specified, a DB snapshot \n            is created before the DB instance is deleted.\n        </simpara>\n         <simpara>Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to \"true\".</simpara>\n         <simpara>Specify <code>true</code> when deleting a Read Replica.</simpara>\n         <note>\n            <simpara>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <code>false</code>.</simpara>\n         </note>\n         <simpara>Default: <code>false</code>\n         </simpara>\n      ",
-            "documentation": "\n         <p>\n            Determines whether a final DB snapshot is created before the DB instance is deleted. \n            If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code> \n      is specified, a DB snapshot \n            is created before the DB instance is deleted.\n        </p>\n         <p>Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore', or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter is set to \"true\".</p>\n         <p>Specify <code>true</code> when deleting a Read Replica.</p>\n         <note>\n            <p>The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is <code>false</code>.</p>\n         </note>\n         <p>Default: <code>false</code>\n         </p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>\n            A value that indicates whether a final DB snapshot is created before the DB instance is deleted. \n            If <code>true</code> is specified, no DB snapshot is created. If <code>false</code> \n            is specified, a DB snapshot is created before the DB instance is deleted.\n        </simpara>\n         <simpara>When a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, \n          you can only delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</simpara>\n         <simpara>Specify <code>true</code> when deleting a Read Replica.</simpara>\n         <note>\n            <simpara>The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code> is <code>false</code>.</simpara>\n         </note>\n         <simpara>Default: <code>false</code>\n         </simpara>\n      ",
+            "documentation": "\n         <p>\n            A value that indicates whether a final DB snapshot is created before the DB instance is deleted. \n            If <code>true</code> is specified, no DB snapshot is created. If <code>false</code> \n            is specified, a DB snapshot is created before the DB instance is deleted.\n        </p>\n         <p>When a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, or <code>incompatible-network</code>, \n          you can only delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>\n         <p>Specify <code>true</code> when deleting a Read Replica.</p>\n         <note>\n            <p>The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code> is <code>false</code>.</p>\n         </note>\n         <p>Default: <code>false</code>\n         </p>\n      ",
             "shape_name": "Boolean"
           },
           "FinalDBSnapshotIdentifier": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>\n        The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot\n        is set to <code>false</code>.\n        </simpara>\n         <note>\n            <simpara>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</simpara>\n         </note>\n         <simpara>Constraints:</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Must be 1 to 255 letters or numbers.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>First character must be a letter</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Can't end with a hyphen or contain two consecutive hyphens</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Can't be specified when deleting a Read Replica.</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
-            "documentation": "\n         <p>\n        The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot\n        is set to <code>false</code>.\n        </p>\n         <note>\n            <p>Specifying this parameter and also setting the SkipFinalShapshot parameter to true results in an error.</p>\n         </note>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must be 1 to 255 letters or numbers.</p>\n            </li>\n            <li>\n               <p>First character must be a letter</p>\n            </li>\n            <li>\n               <p>Can't end with a hyphen or contain two consecutive hyphens</p>\n            </li>\n            <li>\n               <p>Can't be specified when deleting a Read Replica.</p>\n            </li>\n         </ul>\n      ",
+            "zonbookDocumentation": "\n         <simpara> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when\n                <code>SkipFinalSnapshot</code> is set to <code>false</code>. </simpara>\n         <note>\n            <simpara>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to\n                    <code>true</code> results in an error.</simpara>\n         </note>\n         <simpara>Constraints:</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Must be 1 to 255 letters or numbers.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>First character must be a letter.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Can't end with a hyphen or contain two consecutive hyphens.</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Can't be specified when deleting a Read Replica.</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when\n                <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p>\n         <note>\n            <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter to\n                    <code>true</code> results in an error.</p>\n         </note>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must be 1 to 255 letters or numbers.</p>\n            </li>\n            <li>\n               <p>First character must be a letter.</p>\n            </li>\n            <li>\n               <p>Can't end with a hyphen or contain two consecutive hyphens.</p>\n            </li>\n            <li>\n               <p>Can't be specified when deleting a Read Replica.</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "String"
           },
           "DeleteAutomatedBackups": {
             "type": "boolean",
-            "internalonly": true,
-            "shape_name": "BooleanOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n\t        <simpara>A value that indicates whether to remove automated backups immediately after the DB\n            instance is deleted. This parameter isn't case-sensitive. This parameter defaults\n            to <code>true</code>.</simpara>\n      ",
+            "documentation": "\n\t        <p>A value that indicates whether to remove automated backups immediately after the DB\n            instance is deleted. This parameter isn't case-sensitive. This parameter defaults\n            to <code>true</code>.</p>\n      ",
+            "shape_name": "BooleanOptional"
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -8932,6 +9036,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -8981,6 +9091,14 @@
           "zonbookDocumentation": "\n        <para>The requested operation can't be performed while the cluster is in this state.</para>\n      ",
           "documentation": "\n        <p>The requested operation can't be performed while the cluster is in this state.</p>\n      ",
           "shape_name": "InvalidDBClusterStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The quota for retained automated backups was exceeded. This prevents you\n            from retaining any additional automated backups. The retained automated backups \n            quota is the same as your DB Instance quota.</simpara>\n      ",
+          "documentation": "\n        <p>The quota for retained automated backups was exceeded. This prevents you\n            from retaining any additional automated backups. The retained automated backups \n            quota is the same as your DB Instance quota.</p>\n      ",
+          "shape_name": "DBInstanceAutomatedBackupQuotaExceededFault"
         }
       ],
       "documentation": "\n         <p>The DeleteDBInstance action deletes a previously provisioned DB instance. \n          When you delete a DB instance, all automated backups for that instance are deleted and can't be recovered. \n          Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code> are not deleted.</p>\n         <p>\n        If you request a final DB snapshot \n        the status of the Amazon RDS DB instance is <code>deleting</code> until the DB snapshot is created. The API action <code>DescribeDBInstance</code>\n        is used to monitor the status of this operation. The action can't be canceled or reverted once submitted.\n        </p>\n         <p>Note that when a DB instance is in a failure state and has a status of <code>failed</code>, <code>incompatible-restore</code>, \n          or <code>incompatible-network</code>, you can only delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>\n\n         <p>If the specified DB instance is part of an Amazon Aurora DB cluster, you can't delete the DB instance if both of the following\n      conditions are true:</p>\n         <ul>\n            <li>\n               <p>The DB cluster is a Read Replica of another Amazon Aurora DB cluster.</p>\n            </li>\n            <li>\n               <p>The DB instance is the only instance in the DB cluster.</p>\n            </li>\n         </ul>\n         <p>To delete a DB instance in this case, first call the <a>PromoteReadReplicaDBCluster</a> API action to\n      promote the DB cluster so it's no longer a Read Replica. After the promotion completes, then call the <code>DeleteDBInstance</code>\n      API action to delete the final instance in the DB cluster.</p>\n\n      \n      "
@@ -8992,13 +9110,15 @@
         "members": {
           "DbiResourceId": {
             "type": "string",
+            "zonbookDocumentation": "\n\t        <simpara>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</simpara>\n\t     ",
+            "documentation": "\n\t        <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>\n\t     ",
             "required": true,
-            "shape_name": "String",
-            "documentation": null
+            "shape_name": "String"
           }
         },
-        "shape_name": "DeleteDBInstanceAutomatedBackupMessage",
-        "documentation": null
+        "zonbookDocumentation": "\n\t\t       <simpara>Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code> operation. </simpara>\n\t     ",
+        "documentation": "\n\t\t       <p>Parameter input for the <code>DeleteDBInstanceAutomatedBackup</code> operation. </p>\n\t     ",
+        "shape_name": "DeleteDBInstanceAutomatedBackupMessage"
       },
       "output": {
         "shape_name": "DBInstanceAutomatedBackupWrapper",
@@ -9009,135 +9129,161 @@
             "members": {
               "DBInstanceArn": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The Amazon Resource Name (ARN) for the automated backup.</para>\n      ",
+                "documentation": "\n        <p>The Amazon Resource Name (ARN) for the automated backup.</p>\n      ",
+                "shape_name": "String"
               },
               "DbiResourceId": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</para>\n      ",
+                "documentation": "\n        <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>\n      ",
+                "shape_name": "String"
               },
               "Region": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The AWS Region associated with the automated backup.</para>\n      ",
+                "documentation": "\n        <p>The AWS Region associated with the automated backup.</p>\n      ",
+                "shape_name": "String"
               },
               "DBInstanceIdentifier": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The customer id of the instance that is/was associated with the automated backup.\n        </para>\n      ",
+                "documentation": "\n        <p>The customer id of the instance that is/was associated with the automated backup.\n        </p>\n      ",
+                "shape_name": "String"
               },
               "RestoreWindow": {
                 "type": "structure",
                 "members": {
                   "EarliestTime": {
                     "type": "timestamp",
-                    "shape_name": "TStamp",
-                    "documentation": null
+                    "zonbookDocumentation": "\n        <para>The earliest time you can restore an instance to.</para>\n      ",
+                    "documentation": "\n        <p>The earliest time you can restore an instance to.</p>\n      ",
+                    "shape_name": "TStamp"
                   },
                   "LatestTime": {
                     "type": "timestamp",
-                    "shape_name": "TStamp",
-                    "documentation": null
+                    "zonbookDocumentation": "\n        <para>The latest time you can restore an instance to.</para>\n      ",
+                    "documentation": "\n        <p>The latest time you can restore an instance to.</p>\n      ",
+                    "shape_name": "TStamp"
                   }
                 },
-                "shape_name": "RestoreWindow",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Earliest and latest time an instance can be restored to.</para>\n\n      ",
+                "documentation": "\n        <p>Earliest and latest time an instance can be restored to.</p>\n\n      ",
+                "shape_name": "RestoreWindow"
               },
               "AllocatedStorage": {
                 "type": "integer",
-                "shape_name": "Integer",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Specifies the allocated storage size in gibibytes (GiB).</para>\n      ",
+                "documentation": "\n        <p>Specifies the allocated storage size in gibibytes (GiB).</p>\n      ",
+                "shape_name": "Integer"
               },
               "Status": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Provides a list of status information for an automated backup:</para>\n        <itemizedlist>\n            <listitem>\n               <para>\n                  <code>active</code> - automated backups for current instances</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>retained</code> - automated backups for deleted instances</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>creating</code> - automated backups that are waiting\n                for the first automated snapshot to be available.</para>\n            </listitem>\n        </itemizedlist>\n      ",
+                "documentation": "\n        <p>Provides a list of status information for an automated backup:</p>\n        <ul>\n            <li>\n               <p>\n                  <code>active</code> - automated backups for current instances</p>\n            </li>\n            <li>\n               <p>\n                  <code>retained</code> - automated backups for deleted instances</p>\n            </li>\n            <li>\n               <p>\n                  <code>creating</code> - automated backups that are waiting\n                for the first automated snapshot to be available.</p>\n            </li>\n         </ul>\n      ",
+                "shape_name": "String"
               },
               "Port": {
                 "type": "integer",
-                "shape_name": "Integer",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The port number that the automated backup used for connections.</para>\n        <para>Default: Inherits from the source DB instance</para>\n        <para>Valid Values: <code>1150-65535</code>\n         </para>\n      ",
+                "documentation": "\n        <p>The port number that the automated backup used for connections.</p>\n        <p>Default: Inherits from the source DB instance</p>\n        <p>Valid Values: <code>1150-65535</code>\n         </p>\n      ",
+                "shape_name": "Integer"
               },
               "AvailabilityZone": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The Availability Zone that the automated backup was created in. For information on\n            AWS Regions and Availability Zones, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html\">Regions\n                and Availability Zones</ulink>.</para>\n      ",
+                "documentation": "\n        <p>The Availability Zone that the automated backup was created in. For information on\n            AWS Regions and Availability Zones, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html\">Regions\n                and Availability Zones</a>.</p>\n      ",
+                "shape_name": "String"
               },
               "VpcId": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Provides the VPC ID associated with the DB instance</para>\n      ",
+                "documentation": "\n        <p>Provides the VPC ID associated with the DB instance</p>\n      ",
+                "shape_name": "String"
               },
               "InstanceCreateTime": {
                 "type": "timestamp",
-                "shape_name": "TStamp",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Provides the date and time that the DB instance was created.\n        </para>\n      ",
+                "documentation": "\n        <p>Provides the date and time that the DB instance was created.\n        </p>\n      ",
+                "shape_name": "TStamp"
               },
               "MasterUsername": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The license model of an automated backup.</para>\n      ",
+                "documentation": "\n        <p>The license model of an automated backup.</p>\n      ",
+                "shape_name": "String"
               },
               "Engine": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The name of the database engine for this automated backup.</para>\n      ",
+                "documentation": "\n        <p>The name of the database engine for this automated backup.</p>\n      ",
+                "shape_name": "String"
               },
               "EngineVersion": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The version of the database engine for the automated backup.</para>\n      ",
+                "documentation": "\n        <p>The version of the database engine for the automated backup.</p>\n      ",
+                "shape_name": "String"
               },
               "LicenseModel": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>License model information for the automated backup.</para>\n      ",
+                "documentation": "\n        <p>License model information for the automated backup.</p>\n      ",
+                "shape_name": "String"
               },
               "Iops": {
                 "type": "integer",
-                "shape_name": "IntegerOptional",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The IOPS (I/O operations per second) value for the automated backup. </para>\n      ",
+                "documentation": "\n        <p>The IOPS (I/O operations per second) value for the automated backup. </p>\n      ",
+                "shape_name": "IntegerOptional"
               },
               "OptionGroupName": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The option group the automated backup is associated with. \n            If omitted, the default option group for the engine specified is used.</para>\n      ",
+                "documentation": "\n        <p>The option group the automated backup is associated with. \n            If omitted, the default option group for the engine specified is used.</p>\n      ",
+                "shape_name": "String"
               },
               "TdeCredentialArn": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The ARN from the key store with which the automated backup is associated for TDE encryption.</para>\n      ",
+                "documentation": "\n        <p>The ARN from the key store with which the automated backup is associated for TDE encryption.</p>\n      ",
+                "shape_name": "String"
               },
               "Encrypted": {
                 "type": "boolean",
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Specifies whether the automated backup is encrypted.</para>\n      ",
+                "documentation": "\n        <p>Specifies whether the automated backup is encrypted.</p>\n      ",
+                "shape_name": "Boolean"
               },
               "StorageType": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>Specifies the storage type associated with the automated backup.</para>\n      ",
+                "documentation": "\n        <p>Specifies the storage type associated with the automated backup.</p>\n      ",
+                "shape_name": "String"
               },
               "KmsKeyId": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The AWS KMS key ID for an automated backup. \n            The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </para>\n      ",
+                "documentation": "\n        <p>The AWS KMS key ID for an automated backup. \n            The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>\n      ",
+                "shape_name": "String"
               },
               "Timezone": {
                 "type": "string",
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty.\n            <code>Timezone</code> content appears only for Microsoft SQL Server DB instances \n            that were created with a time zone specified.</para>\n      ",
+                "documentation": "\n        <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty.\n            <code>Timezone</code> content appears only for Microsoft SQL Server DB instances \n            that were created with a time zone specified.</p>\n      ",
+                "shape_name": "String"
               },
               "IAMDatabaseAuthenticationEnabled": {
                 "type": "boolean",
-                "shape_name": "Boolean",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, \n            and otherwise false.</para>\n      ",
+                "documentation": "\n        <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, \n            and otherwise false.</p>\n      ",
+                "shape_name": "Boolean"
               }
             },
+            "zonbookDocumentation": "\n        <para>An automated backup of a DB instance. It it consists of\n            system backups, transaction logs, and the database instance properties that\n            existed at the time you deleted the source instance. </para>\n      ",
+            "documentation": "\n        <p>An automated backup of a DB instance. It it consists of\n            system backups, transaction logs, and the database instance properties that\n            existed at the time you deleted the source instance. </p>\n      ",
             "wrapper": true,
-            "shape_name": "DBInstanceAutomatedBackup",
-            "documentation": null
+            "shape_name": "DBInstanceAutomatedBackup"
           }
         }
       },
@@ -9146,18 +9292,20 @@
           "type": "structure",
           "members": {
           },
-          "shape_name": "InvalidDBInstanceAutomatedBackupStateFault",
-          "documentation": null
+          "zonbookDocumentation": "\n    \t    <simpara>The automated backup is in an invalid state. \n    \t    For example, this automated backup is associated with an active instance. </simpara>\n      ",
+          "documentation": "\n    \t    <p>The automated backup is in an invalid state. \n    \t    For example, this automated backup is associated with an active instance. </p>\n      ",
+          "shape_name": "InvalidDBInstanceAutomatedBackupStateFault"
         },
         {
           "type": "structure",
           "members": {
           },
-          "shape_name": "DBInstanceAutomatedBackupNotFoundFault",
-          "documentation": null
+          "zonbookDocumentation": "\n    \t    <para>No automated backup for this DB instance was found.</para>\n      ",
+          "documentation": "\n    \t    <p>No automated backup for this DB instance was found.</p>\n      ",
+          "shape_name": "DBInstanceAutomatedBackupNotFoundFault"
         }
       ],
-      "documentation": null
+      "documentation": "\n\t        <p>Deletes automated backups based on the source instance's <code>DbiResourceId</code>\n            value or the restorable instance's resource ID.</p>\n \t\n      "
     },
     "DeleteDBParameterGroup": {
       "name": "DeleteDBParameterGroup",
@@ -9195,7 +9343,7 @@
           "shape_name": "DBParameterGroupNotFoundFault"
         }
       ],
-      "documentation": "\n         <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be associated with any DB instances.</p>\n      \n      "
+      "documentation": "\n         <p>Deletes a specified DB parameter group. The DB parameter group to be deleted can't be associated with any DB instances.</p>\n      \n      "
     },
     "DeleteDBSecurityGroup": {
       "name": "DeleteDBSecurityGroup",
@@ -9242,8 +9390,8 @@
         "members": {
           "DBSnapshotIdentifier": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The DBSnapshot identifier.</simpara>\n         <simpara>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</simpara>\n      ",
-            "documentation": "\n         <p>The DBSnapshot identifier.</p>\n         <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The DB snapshot identifier.</simpara>\n         <simpara>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</simpara>\n      ",
+            "documentation": "\n         <p>The DB snapshot identifier.</p>\n         <p>Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</p>\n      ",
             "required": true,
             "shape_name": "String"
           }
@@ -9450,9 +9598,9 @@
               },
               "DbiResourceId": {
                 "type": "string",
-                "internalonly": true,
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</para>\n      ",
+                "documentation": "\n        <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB snapshot.\n      </simpara>\n         <simpara>This data type is used as a response element \n          in the <xref linkend=\"DescribeDBSnapshots\"/> action.\n      </simpara>\n      ",
@@ -9480,7 +9628,7 @@
           "shape_name": "DBSnapshotNotFoundFault"
         }
       ],
-      "documentation": "\n         <p>Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.</p>\n         <note>\n            <p>The DBSnapshot must be in the <code>available</code> state to be\n        deleted.</p>\n         </note>\n      \n      "
+      "documentation": "\n         <p>Deletes a DB snapshot. If the snapshot is being copied, the copy operation is\n            terminated.</p>\n         <note>\n            <p>The DB snapshot must be in the <code>available</code> state to be deleted.</p>\n         </note>\n      \n      "
     },
     "DeleteDBSubnetGroup": {
       "name": "DeleteDBSubnetGroup",
@@ -9847,6 +9995,8 @@
           "type": "structure",
           "members": {
           },
+          "deprecatedMessage": "Please avoid using this fault",
+          "deprecated": true,
           "shape_name": "BackupPolicyNotFoundFault",
           "documentation": null
         }
@@ -10536,6 +10686,36 @@
                   "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                   "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                   "shape_name": "Boolean"
+                },
+                "HttpEndpointEnabled": {
+                  "type": "boolean",
+                  "internalonly": true,
+                  "shape_name": "Boolean",
+                  "documentation": null
+                },
+                "DBActivityStreamStatus": {
+                  "type": "string",
+                  "enum": [
+                    "stopped",
+                    "starting-sync",
+                    "started-sync",
+                    "stopping"
+                  ],
+                  "internalonly": true,
+                  "shape_name": "DBActivityStreamStatus",
+                  "documentation": null
+                },
+                "DBActivityStreamKmsKeyId": {
+                  "type": "string",
+                  "internalonly": true,
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "DBActivityStreamKinesisStreamName": {
+                  "type": "string",
+                  "internalonly": true,
+                  "shape_name": "String",
+                  "documentation": null
                 }
               },
               "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -12727,6 +12907,12 @@
                   "internalonly": true,
                   "shape_name": "String",
                   "documentation": null
+                },
+                "HttpEndpointEnabled": {
+                  "type": "boolean",
+                  "internalonly": true,
+                  "shape_name": "Boolean",
+                  "documentation": null
                 }
               },
               "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -12760,18 +12946,21 @@
         "members": {
           "DbiResourceId": {
             "type": "string",
-            "shape_name": "String",
-            "documentation": null
+            "zonbookDocumentation": "\n\t\t       <simpara>The resource ID of the DB instance that is the source of \n\t\t    the automated backup. This parameter isn't case-sensitive. </simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The resource ID of the DB instance that is the source of \n\t\t    the automated backup. This parameter isn't case-sensitive. </p>\n\t     ",
+            "shape_name": "String"
           },
           "DBInstanceIdentifier": {
             "type": "string",
-            "shape_name": "String",
-            "documentation": null
+            "zonbookDocumentation": "\n\t\t       <simpara>(Optional) The user-supplied instance identifier. If this parameter is specified, it must\n            match the identifier of an existing DB instance. It returns information from the\n            specific DB instance' automated backup. This parameter isn't case-sensitive. </simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>(Optional) The user-supplied instance identifier. If this parameter is specified, it must\n            match the identifier of an existing DB instance. It returns information from the\n            specific DB instance' automated backup. This parameter isn't case-sensitive. </p>\n\t     ",
+            "shape_name": "String"
           },
           "Filters": {
             "type": "list",
+            "zonbookDocumentation": "\n\t\t       <simpara>A filter that specifies which resources to return based on status.</simpara>\n\t\t       <simpara>Supported filters are the following:</simpara>\n\t\t       <itemizedlist>\n\t\t\t         <listitem>\n\t\t\t\t           <simpara>\n\t\t\t\t\t             <code>status</code>\n\t\t\t\t           </simpara>\n\t\t\t            <itemizedlist>\n\t\t\t               <listitem>\n                     <simpara>\n                        <code>active</code> - automated backups for current instances</simpara>\n                  </listitem>\n\t\t\t               <listitem>\n                     <simpara>\n                        <code>retained</code> - automated backups for deleted instances</simpara>\n                  </listitem>\n\t\t\t               <listitem>\n                     <simpara>\n                        <code>creating</code> - automated backups that are waiting\n\t\t\t        for the first automated snapshot to be available</simpara>\n                  </listitem>\n\t\t\t            </itemizedlist>\n\t\t\t         </listitem> \n\t\t          <listitem>\n               <simpara>\n\t\t                <code>db-instance-id</code> - Accepts DB instance identifiers and \n\t\t        Amazon Resource Names (ARNs) for DB instances. The results list includes only information about\n\t\t        the DB instance automated backupss identified by these ARNs.</simpara>\n\t\t          </listitem>    \n\t\t          <listitem>\n               <simpara>\n\t\t                <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB \n\t\t        Amazon Resource Names (ARNs) for DB instances. The results list includes only information about\n\t\t        the DB instance resources identified by these ARNs.</simpara>\n\t\t          </listitem>\n\t\t       </itemizedlist>\n\t\t       <simpara>Returns all resources by default. The status for each resource is specified in the response.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>A filter that specifies which resources to return based on status.</p>\n\t\t       <p>Supported filters are the following:</p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>\n\t\t\t\t\t             <code>status</code>\n\t\t\t\t           </p>\n\t\t\t            <ul>\n                  <li>\n                     <p>\n                        <code>active</code> - automated backups for current instances</p>\n                  </li>\n                  <li>\n                     <p>\n                        <code>retained</code> - automated backups for deleted instances</p>\n                  </li>\n                  <li>\n                     <p>\n                        <code>creating</code> - automated backups that are waiting\n\t\t\t        for the first automated snapshot to be available</p>\n                  </li>\n               </ul>\n\t\t\t         </li>\n            <li>\n               <p>\n\t\t                <code>db-instance-id</code> - Accepts DB instance identifiers and \n\t\t        Amazon Resource Names (ARNs) for DB instances. The results list includes only information about\n\t\t        the DB instance automated backupss identified by these ARNs.</p>\n\t\t          </li>\n            <li>\n               <p>\n\t\t                <code>dbi-resource-id</code> - Accepts DB instance resource identifiers and DB \n\t\t        Amazon Resource Names (ARNs) for DB instances. The results list includes only information about\n\t\t        the DB instance resources identified by these ARNs.</p>\n\t\t          </li>\n         </ul>\n\t\t       <p>Returns all resources by default. The status for each resource is specified in the response.</p>\n\t     ",
             "shape_name": "FilterList",
-            "documentation": null,
             "members": {
               "type": "structure",
               "members": {
@@ -12804,181 +12993,214 @@
           },
           "MaxRecords": {
             "type": "integer",
-            "shape_name": "IntegerOptional",
-            "documentation": null
+            "zonbookDocumentation": "\n\t\t       <simpara>The maximum number of records to include in the response. If more records exist than the specified \n\t\t\t<code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining \n\t\t\tresults can be retrieved.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The maximum number of records to include in the response. If more records exist than the specified \n\t\t\t<code>MaxRecords</code> value, a pagination token called a marker is included in the response so that the remaining \n\t\t\tresults can be retrieved.</p>\n\t     ",
+            "shape_name": "IntegerOptional"
           },
           "Marker": {
             "type": "string",
-            "shape_name": "String",
-            "documentation": null
+            "zonbookDocumentation": "\n\t\t       <simpara>The pagination token provided in the previous request. If this parameter is specified the response \n\t\t\tincludes only records beyond the marker, up to <code>MaxRecords</code>.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The pagination token provided in the previous request. If this parameter is specified the response \n\t\t\tincludes only records beyond the marker, up to <code>MaxRecords</code>.</p>\n\t     ",
+            "shape_name": "String"
           }
         },
-        "shape_name": "DescribeDBInstanceAutomatedBackupsMessage",
-        "documentation": null
+        "zonbookDocumentation": "\n\t\t       <simpara>Parameter input for DescribeDBInstanceAutomatedBackups. </simpara>\n\t     ",
+        "documentation": "\n\t\t       <p>Parameter input for DescribeDBInstanceAutomatedBackups. </p>\n\t     ",
+        "shape_name": "DescribeDBInstanceAutomatedBackupsMessage"
       },
       "output": {
         "type": "structure",
         "members": {
           "Marker": {
             "type": "string",
-            "shape_name": "String",
-            "documentation": null
+            "zonbookDocumentation": "\n        <simpara>\n            An optional pagination token provided by a previous request.\n            If this parameter is specified, the response includes\n            only records beyond the marker,\n            up to the value specified by <code>MaxRecords</code> .\n        </simpara>\n      ",
+            "documentation": "\n        <p>\n            An optional pagination token provided by a previous request.\n            If this parameter is specified, the response includes\n            only records beyond the marker,\n            up to the value specified by <code>MaxRecords</code> .\n        </p>\n      ",
+            "shape_name": "String"
           },
           "DBInstanceAutomatedBackups": {
             "type": "list",
+            "zonbookDocumentation": "\n        <simpara>\n            A list of <xref linkend=\"DBInstanceAutomatedBackup\"/> instances.\n        </simpara>\n      ",
+            "documentation": "\n        <p>\n            A list of <a>DBInstanceAutomatedBackup</a> instances.\n        </p>\n      ",
             "shape_name": "DBInstanceAutomatedBackupList",
-            "documentation": null,
             "members": {
               "type": "structure",
               "members": {
                 "DBInstanceArn": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The Amazon Resource Name (ARN) for the automated backup.</para>\n      ",
+                  "documentation": "\n        <p>The Amazon Resource Name (ARN) for the automated backup.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "DbiResourceId": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</para>\n      ",
+                  "documentation": "\n        <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "Region": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The AWS Region associated with the automated backup.</para>\n      ",
+                  "documentation": "\n        <p>The AWS Region associated with the automated backup.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "DBInstanceIdentifier": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The customer id of the instance that is/was associated with the automated backup.\n        </para>\n      ",
+                  "documentation": "\n        <p>The customer id of the instance that is/was associated with the automated backup.\n        </p>\n      ",
+                  "shape_name": "String"
                 },
                 "RestoreWindow": {
                   "type": "structure",
                   "members": {
                     "EarliestTime": {
                       "type": "timestamp",
-                      "shape_name": "TStamp",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <para>The earliest time you can restore an instance to.</para>\n      ",
+                      "documentation": "\n        <p>The earliest time you can restore an instance to.</p>\n      ",
+                      "shape_name": "TStamp"
                     },
                     "LatestTime": {
                       "type": "timestamp",
-                      "shape_name": "TStamp",
-                      "documentation": null
+                      "zonbookDocumentation": "\n        <para>The latest time you can restore an instance to.</para>\n      ",
+                      "documentation": "\n        <p>The latest time you can restore an instance to.</p>\n      ",
+                      "shape_name": "TStamp"
                     }
                   },
-                  "shape_name": "RestoreWindow",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Earliest and latest time an instance can be restored to.</para>\n\n      ",
+                  "documentation": "\n        <p>Earliest and latest time an instance can be restored to.</p>\n\n      ",
+                  "shape_name": "RestoreWindow"
                 },
                 "AllocatedStorage": {
                   "type": "integer",
-                  "shape_name": "Integer",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Specifies the allocated storage size in gibibytes (GiB).</para>\n      ",
+                  "documentation": "\n        <p>Specifies the allocated storage size in gibibytes (GiB).</p>\n      ",
+                  "shape_name": "Integer"
                 },
                 "Status": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Provides a list of status information for an automated backup:</para>\n        <itemizedlist>\n            <listitem>\n               <para>\n                  <code>active</code> - automated backups for current instances</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>retained</code> - automated backups for deleted instances</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <code>creating</code> - automated backups that are waiting\n                for the first automated snapshot to be available.</para>\n            </listitem>\n        </itemizedlist>\n      ",
+                  "documentation": "\n        <p>Provides a list of status information for an automated backup:</p>\n        <ul>\n            <li>\n               <p>\n                  <code>active</code> - automated backups for current instances</p>\n            </li>\n            <li>\n               <p>\n                  <code>retained</code> - automated backups for deleted instances</p>\n            </li>\n            <li>\n               <p>\n                  <code>creating</code> - automated backups that are waiting\n                for the first automated snapshot to be available.</p>\n            </li>\n         </ul>\n      ",
+                  "shape_name": "String"
                 },
                 "Port": {
                   "type": "integer",
-                  "shape_name": "Integer",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The port number that the automated backup used for connections.</para>\n        <para>Default: Inherits from the source DB instance</para>\n        <para>Valid Values: <code>1150-65535</code>\n         </para>\n      ",
+                  "documentation": "\n        <p>The port number that the automated backup used for connections.</p>\n        <p>Default: Inherits from the source DB instance</p>\n        <p>Valid Values: <code>1150-65535</code>\n         </p>\n      ",
+                  "shape_name": "Integer"
                 },
                 "AvailabilityZone": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The Availability Zone that the automated backup was created in. For information on\n            AWS Regions and Availability Zones, see \n            <ulink type=\"documentation\" url=\"AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html\">Regions\n                and Availability Zones</ulink>.</para>\n      ",
+                  "documentation": "\n        <p>The Availability Zone that the automated backup was created in. For information on\n            AWS Regions and Availability Zones, see \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html\">Regions\n                and Availability Zones</a>.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "VpcId": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Provides the VPC ID associated with the DB instance</para>\n      ",
+                  "documentation": "\n        <p>Provides the VPC ID associated with the DB instance</p>\n      ",
+                  "shape_name": "String"
                 },
                 "InstanceCreateTime": {
                   "type": "timestamp",
-                  "shape_name": "TStamp",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Provides the date and time that the DB instance was created.\n        </para>\n      ",
+                  "documentation": "\n        <p>Provides the date and time that the DB instance was created.\n        </p>\n      ",
+                  "shape_name": "TStamp"
                 },
                 "MasterUsername": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The license model of an automated backup.</para>\n      ",
+                  "documentation": "\n        <p>The license model of an automated backup.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "Engine": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The name of the database engine for this automated backup.</para>\n      ",
+                  "documentation": "\n        <p>The name of the database engine for this automated backup.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "EngineVersion": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The version of the database engine for the automated backup.</para>\n      ",
+                  "documentation": "\n        <p>The version of the database engine for the automated backup.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "LicenseModel": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>License model information for the automated backup.</para>\n      ",
+                  "documentation": "\n        <p>License model information for the automated backup.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "Iops": {
                   "type": "integer",
-                  "shape_name": "IntegerOptional",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The IOPS (I/O operations per second) value for the automated backup. </para>\n      ",
+                  "documentation": "\n        <p>The IOPS (I/O operations per second) value for the automated backup. </p>\n      ",
+                  "shape_name": "IntegerOptional"
                 },
                 "OptionGroupName": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The option group the automated backup is associated with. \n            If omitted, the default option group for the engine specified is used.</para>\n      ",
+                  "documentation": "\n        <p>The option group the automated backup is associated with. \n            If omitted, the default option group for the engine specified is used.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "TdeCredentialArn": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The ARN from the key store with which the automated backup is associated for TDE encryption.</para>\n      ",
+                  "documentation": "\n        <p>The ARN from the key store with which the automated backup is associated for TDE encryption.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "Encrypted": {
                   "type": "boolean",
-                  "shape_name": "Boolean",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Specifies whether the automated backup is encrypted.</para>\n      ",
+                  "documentation": "\n        <p>Specifies whether the automated backup is encrypted.</p>\n      ",
+                  "shape_name": "Boolean"
                 },
                 "StorageType": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>Specifies the storage type associated with the automated backup.</para>\n      ",
+                  "documentation": "\n        <p>Specifies the storage type associated with the automated backup.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "KmsKeyId": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The AWS KMS key ID for an automated backup. \n            The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </para>\n      ",
+                  "documentation": "\n        <p>The AWS KMS key ID for an automated backup. \n            The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. </p>\n      ",
+                  "shape_name": "String"
                 },
                 "Timezone": {
                   "type": "string",
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty.\n            <code>Timezone</code> content appears only for Microsoft SQL Server DB instances \n            that were created with a time zone specified.</para>\n      ",
+                  "documentation": "\n        <p>The time zone of the automated backup. In most cases, the <code>Timezone</code> element is empty.\n            <code>Timezone</code> content appears only for Microsoft SQL Server DB instances \n            that were created with a time zone specified.</p>\n      ",
+                  "shape_name": "String"
                 },
                 "IAMDatabaseAuthenticationEnabled": {
                   "type": "boolean",
-                  "shape_name": "Boolean",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, \n            and otherwise false.</para>\n      ",
+                  "documentation": "\n        <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, \n            and otherwise false.</p>\n      ",
+                  "shape_name": "Boolean"
                 }
               },
+              "zonbookDocumentation": "\n        <para>An automated backup of a DB instance. It it consists of\n            system backups, transaction logs, and the database instance properties that\n            existed at the time you deleted the source instance. </para>\n      ",
+              "documentation": "\n        <p>An automated backup of a DB instance. It it consists of\n            system backups, transaction logs, and the database instance properties that\n            existed at the time you deleted the source instance. </p>\n      ",
               "wrapper": true,
               "shape_name": "DBInstanceAutomatedBackup",
-              "documentation": null,
               "xmlname": "DBInstanceAutomatedBackup"
             }
           }
         },
-        "shape_name": "DBInstanceAutomatedBackupMessage",
-        "documentation": null
+        "zonbookDocumentation": "\n        <simpara>\n            Contains the result of a successful invocation of the <xref linkend=\"DescribeDBInstanceAutomatedBackups\"/> action.\n        </simpara>\n      ",
+        "documentation": "\n        <p>\n            Contains the result of a successful invocation of the <a>DescribeDBInstanceAutomatedBackups</a> action.\n        </p>\n      ",
+        "shape_name": "DBInstanceAutomatedBackupMessage"
       },
       "errors": [
         {
           "type": "structure",
           "members": {
           },
-          "shape_name": "DBInstanceAutomatedBackupNotFoundFault",
-          "documentation": null
+          "zonbookDocumentation": "\n    \t    <para>No automated backup for this DB instance was found.</para>\n      ",
+          "documentation": "\n    \t    <p>No automated backup for this DB instance was found.</p>\n      ",
+          "shape_name": "DBInstanceAutomatedBackupNotFoundFault"
         }
       ],
-      "documentation": null
+      "documentation": "\n\t        <p>Displays backups for both current and deleted\n            instances. For example, use this operation to\n            find details about automated backups for previously deleted instances. Current instances\n            with retention periods greater than zero (0) are returned for both the \n            <code>DescribeDBInstanceAutomatedBackups</code> and\n            <code>DescribeDBInstances</code> operations.</p>\n\t        <p>All parameters are optional.</p>\n\t\n      "
     },
     "DescribeDBLogFiles": {
       "name": "DescribeDBLogFiles",
@@ -13720,9 +13942,9 @@
           },
           "DbiResourceId": {
             "type": "string",
-            "internalonly": true,
-            "shape_name": "String",
-            "documentation": null
+            "zonbookDocumentation": "\n         <simpara>A specific DB resource ID to describe.</simpara>\n      ",
+            "documentation": "\n         <p>A specific DB resource ID to describe.</p>\n      ",
+            "shape_name": "String"
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -13937,9 +14159,9 @@
                 },
                 "DbiResourceId": {
                   "type": "string",
-                  "internalonly": true,
-                  "shape_name": "String",
-                  "documentation": null
+                  "zonbookDocumentation": "\n        <para>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</para>\n      ",
+                  "documentation": "\n        <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>\n      ",
+                  "shape_name": "String"
                 }
               },
               "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB snapshot.\n      </simpara>\n         <simpara>This data type is used as a response element \n          in the <xref linkend=\"DescribeDBSnapshots\"/> action.\n      </simpara>\n      ",
@@ -14220,6 +14442,12 @@
             "zonbookDocumentation": "\n        <simpara>If this parameter is specified \n            and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, \n            the response includes a list of supported time zones for each engine version.\n        </simpara>\n      ",
             "documentation": "\n        <p>If this parameter is specified \n            and the requested engine supports the <code>TimeZone</code> parameter for <code>CreateDBInstance</code>, \n            the response includes a list of supported time zones for each engine version.\n        </p>\n      ",
             "shape_name": "BooleanOptional"
+          },
+          "IncludeAll": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
           }
         },
         "shape_name": "DescribeDBEngineVersionsMessage",
@@ -14482,6 +14710,12 @@
                     "shape_name": "String",
                     "documentation": null
                   }
+                },
+                "Status": {
+                  "type": "string",
+                  "internalonly": true,
+                  "shape_name": "String",
+                  "documentation": null
                 }
               },
               "zonbookDocumentation": "\n         <simpara>\n            This data type is used as a response element in the action <xref linkend=\"DescribeDBEngineVersions\"/>.\n        </simpara>\n      ",
@@ -17621,6 +17855,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -18348,6 +18612,12 @@
             "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
             "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
             "shape_name": "BooleanOptional"
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -18823,6 +19093,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -19641,6 +19941,12 @@
             "documentation": null
           },
           "RemoveBackupPolicy": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "EnableHttpEndpoint": {
             "type": "boolean",
             "internalonly": true,
             "shape_name": "BooleanOptional",
@@ -20468,6 +20774,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -20610,6 +20922,8 @@
           "type": "structure",
           "members": {
           },
+          "deprecatedMessage": "Please avoid using this fault",
+          "deprecated": true,
           "shape_name": "BackupPolicyNotFoundFault",
           "documentation": null
         }
@@ -21114,9 +21428,9 @@
               },
               "DbiResourceId": {
                 "type": "string",
-                "internalonly": true,
-                "shape_name": "String",
-                "documentation": null
+                "zonbookDocumentation": "\n        <para>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</para>\n      ",
+                "documentation": "\n        <p>The identifier for the source DB instance, which can't be changed and which is unique to an AWS Region.</p>\n      ",
+                "shape_name": "String"
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB snapshot.\n      </simpara>\n         <simpara>This data type is used as a response element \n          in the <xref linkend=\"DescribeDBSnapshots\"/> action.\n      </simpara>\n      ",
@@ -23008,6 +23322,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -23523,6 +23843,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -24603,6 +24953,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -25446,6 +25802,12 @@
             "zonbookDocumentation": "\n        <para>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </para>\n      ",
             "documentation": "\n        <p>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </p>\n      ",
             "shape_name": "BooleanOptional"
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
           }
         },
         "shape_name": "RestoreDBClusterFromS3Message",
@@ -25920,6 +26282,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -26222,6 +26614,12 @@
             "zonbookDocumentation": "\n        <para>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </para>\n      ",
             "documentation": "\n        <p>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </p>\n      ",
             "shape_name": "BooleanOptional"
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -26697,6 +27095,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -27021,6 +27449,12 @@
             "zonbookDocumentation": "\n        <para>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </para>\n      ",
             "documentation": "\n        <p>Indicates if the DB cluster should have deletion protection enabled.\n            The database can't be deleted when this value is set to true. The default is false.\n        </p>\n      ",
             "shape_name": "BooleanOptional"
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
+            "documentation": null
           }
         },
         "zonbookDocumentation": "\n         <simpara/>\n      ",
@@ -27496,6 +27930,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -27889,6 +28353,12 @@
             "type": "string",
             "internalonly": true,
             "shape_name": "String",
+            "documentation": null
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
             "documentation": null
           }
         },
@@ -28713,6 +29183,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -28879,6 +29355,8 @@
           "type": "structure",
           "members": {
           },
+          "deprecatedMessage": "Please avoid using this fault",
+          "deprecated": true,
           "shape_name": "BackupPolicyNotFoundFault",
           "documentation": null
         }
@@ -29218,6 +29696,12 @@
             "type": "string",
             "internalonly": true,
             "shape_name": "String",
+            "documentation": null
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
             "documentation": null
           }
         },
@@ -30041,6 +30525,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -30183,6 +30673,8 @@
           "type": "structure",
           "members": {
           },
+          "deprecatedMessage": "Please avoid using this fault",
+          "deprecated": true,
           "shape_name": "BackupPolicyNotFoundFault",
           "documentation": null
         }
@@ -30198,7 +30690,6 @@
             "type": "string",
             "zonbookDocumentation": "\n         <simpara>The identifier of the source DB instance from which to restore.</simpara>\n         <simpara>Constraints:</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Must match the identifier of an existing DB instance.</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
             "documentation": "\n         <p>The identifier of the source DB instance from which to restore.</p>\n         <p>Constraints:</p>\n         <ul>\n            <li>\n               <p>Must match the identifier of an existing DB instance.</p>\n            </li>\n         </ul>\n      ",
-            "required": true,
             "shape_name": "String"
           },
           "TargetDBInstanceIdentifier": {
@@ -30398,7 +30889,7 @@
           },
           "ProcessorFeatures": {
             "type": "list",
-            "zonbookDocumentation": "\n        <para>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</para>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</simpara>\n      ",
             "documentation": "\n        <p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.</p>\n      ",
             "shape_name": "ProcessorFeatureList",
             "members": {
@@ -30425,7 +30916,7 @@
           },
           "UseDefaultProcessorFeatures": {
             "type": "boolean",
-            "zonbookDocumentation": "\n        <para>A value that specifies that the DB instance class of the DB instance uses its default processor features.</para>\n      ",
+            "zonbookDocumentation": "\n        <simpara>A value that specifies that the DB instance class of the DB instance uses its default processor features.</simpara>\n      ",
             "documentation": "\n        <p>A value that specifies that the DB instance class of the DB instance uses its default processor features.</p>\n      ",
             "shape_name": "BooleanOptional"
           },
@@ -30443,14 +30934,20 @@
           },
           "SourceDbiResourceId": {
             "type": "string",
-            "internalonly": true,
-            "shape_name": "String",
-            "documentation": null
+            "zonbookDocumentation": "\n        <simpara>The resource ID of the source DB instance from which to restore.</simpara>\n      ",
+            "documentation": "\n        <p>The resource ID of the source DB instance from which to restore.</p>\n      ",
+            "shape_name": "String"
           },
           "BackupPolicyName": {
             "type": "string",
             "internalonly": true,
             "shape_name": "String",
+            "documentation": null
+          },
+          "EnableHttpEndpoint": {
+            "type": "boolean",
+            "internalonly": true,
+            "shape_name": "BooleanOptional",
             "documentation": null
           }
         },
@@ -31275,6 +31772,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -31441,6 +31944,15 @@
           "type": "structure",
           "members": {
           },
+          "deprecatedMessage": "Please avoid using this fault",
+          "deprecated": true,
+          "shape_name": "BackupPolicyNotFoundFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
           "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBParameterGroupName</emphasis> doesn't refer to an\n        existing DB parameter group.\n        </simpara>\n      ",
           "documentation": "\n        <p>\n            <i>DBParameterGroupName</i> doesn't refer to an\n        existing DB parameter group.\n        </p>\n      ",
           "shape_name": "DBParameterGroupNotFoundFault"
@@ -31449,8 +31961,9 @@
           "type": "structure",
           "members": {
           },
-          "shape_name": "BackupPolicyNotFoundFault",
-          "documentation": null
+          "zonbookDocumentation": "\n    \t    <para>No automated backup for this DB instance was found.</para>\n      ",
+          "documentation": "\n    \t    <p>No automated backup for this DB instance was found.</p>\n      ",
+          "shape_name": "DBInstanceAutomatedBackupNotFoundFault"
         }
       ],
       "documentation": "\n         <p>Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time identified by the LatestRestorableTime property. You can restore to a point up to the number of days specified by the BackupRetentionPeriod property.</p>\n\t        <p>The target database is created with most of the original configuration, but in a\n            system-selected Availability Zone, with the default security group, the default subnet\n            group, and the default DB parameter group. By default, the new DB instance is created as\n            a single-AZ deployment except when the instance is a SQL Server instance that has an\n            option group that is associated with mirroring; in this case, the instance becomes a\n            mirrored deployment and not a single-AZ deployment.</p>\n         <note>\n            <p>This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use <a>RestoreDBClusterToPointInTime</a>.</p>\n         </note>\n      \n      \n      "
@@ -31634,6 +32147,213 @@
         }
       ],
       "documentation": "\n         <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).</p>\n      \n      "
+    },
+    "StartDBActivityStream": {
+      "name": "StartDBActivityStream",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ResourceArn": {
+            "type": "string",
+            "required": true,
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Mode": {
+            "type": "string",
+            "enum": [
+              "sync"
+            ],
+            "required": true,
+            "shape_name": "DBActivityStreamMode",
+            "documentation": null
+          },
+          "KmsKeyId": {
+            "type": "string",
+            "required": true,
+            "shape_name": "String",
+            "documentation": null
+          },
+          "ApplyImmediately": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          }
+        },
+        "shape_name": "StartDBActivityStreamRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "KmsKeyId": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "KinesisStreamName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Status": {
+            "type": "string",
+            "enum": [
+              "stopped",
+              "starting-sync",
+              "started-sync",
+              "stopping"
+            ],
+            "shape_name": "DBActivityStreamStatus",
+            "documentation": null
+          }
+        },
+        "shape_name": "StartDBActivityStreamResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
+          "shape_name": "InvalidDBInstanceStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <para>The requested operation can't be performed while the cluster is in this state.</para>\n      ",
+          "documentation": "\n        <p>The requested operation can't be performed while the cluster is in this state.</p>\n      ",
+          "shape_name": "InvalidDBClusterStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified resource ID was not found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified resource ID was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBClusterIdentifier</emphasis> doesn't refer to an existing DB cluster.\n        </simpara>\n      ",
+          "documentation": "\n        <p>\n            <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.\n        </p>\n      ",
+          "shape_name": "DBClusterNotFoundFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBInstanceIdentifier</emphasis> doesn't refer to an existing DB instance.\n        </simpara>\n      ",
+          "documentation": "\n        <p>\n            <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.\n        </p>\n      ",
+          "shape_name": "DBInstanceNotFoundFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>An error occurred accessing an AWS KMS key.</simpara>\n      ",
+          "documentation": "\n        <p>An error occurred accessing an AWS KMS key.</p>\n      ",
+          "shape_name": "KMSKeyNotAccessibleFault"
+        }
+      ],
+      "documentation": null
+    },
+    "StopDBActivityStream": {
+      "name": "StopDBActivityStream",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ResourceArn": {
+            "type": "string",
+            "required": true,
+            "shape_name": "String",
+            "documentation": null
+          },
+          "ApplyImmediately": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          }
+        },
+        "shape_name": "StopDBActivityStreamRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "KmsKeyId": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "KinesisStreamName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Status": {
+            "type": "string",
+            "enum": [
+              "stopped",
+              "starting-sync",
+              "started-sync",
+              "stopping"
+            ],
+            "shape_name": "DBActivityStreamStatus",
+            "documentation": null
+          }
+        },
+        "shape_name": "StopDBActivityStreamResponse",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The DB instance isn't in a valid state.</simpara>\n      ",
+          "documentation": "\n        <p>The DB instance isn't in a valid state.</p>\n      ",
+          "shape_name": "InvalidDBInstanceStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <para>The requested operation can't be performed while the cluster is in this state.</para>\n      ",
+          "documentation": "\n        <p>The requested operation can't be performed while the cluster is in this state.</p>\n      ",
+          "shape_name": "InvalidDBClusterStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>The specified resource ID was not found.</simpara>\n      ",
+          "documentation": "\n        <p>The specified resource ID was not found.</p>\n      ",
+          "shape_name": "ResourceNotFoundFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBClusterIdentifier</emphasis> doesn't refer to an existing DB cluster.\n        </simpara>\n      ",
+          "documentation": "\n        <p>\n            <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.\n        </p>\n      ",
+          "shape_name": "DBClusterNotFoundFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBInstanceIdentifier</emphasis> doesn't refer to an existing DB instance.\n        </simpara>\n      ",
+          "documentation": "\n        <p>\n            <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.\n        </p>\n      ",
+          "shape_name": "DBInstanceNotFoundFault"
+        }
+      ],
+      "documentation": null
     },
     "StopDBCluster": {
       "name": "StopDBCluster",
@@ -32120,6 +32840,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -32996,6 +33746,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -33534,6 +34290,36 @@
                 "zonbookDocumentation": "\n        <para>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </para>\n      ",
                 "documentation": "\n        <p>Indicates if the DB cluster has deletion protection enabled.\n            The database can't be deleted when this value is set to true.\n        </p>\n      ",
                 "shape_name": "Boolean"
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
+              },
+              "DBActivityStreamStatus": {
+                "type": "string",
+                "enum": [
+                  "stopped",
+                  "starting-sync",
+                  "started-sync",
+                  "stopping"
+                ],
+                "internalonly": true,
+                "shape_name": "DBActivityStreamStatus",
+                "documentation": null
+              },
+              "DBActivityStreamKmsKeyId": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
+              },
+              "DBActivityStreamKinesisStreamName": {
+                "type": "string",
+                "internalonly": true,
+                "shape_name": "String",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <para>Contains the details of an Amazon Aurora DB cluster.\n      </para>\n         <para>This data type is used as a response element in the <xref linkend=\"DescribeDBClusters\"/>,\n        <xref linkend=\"StopDBCluster\"/>, and <xref linkend=\"StartDBCluster\"/> actions.\n      </para>\n      ",
@@ -34404,6 +35190,12 @@
                 "internalonly": true,
                 "shape_name": "String",
                 "documentation": null
+              },
+              "HttpEndpointEnabled": {
+                "type": "boolean",
+                "internalonly": true,
+                "shape_name": "Boolean",
+                "documentation": null
               }
             },
             "zonbookDocumentation": "\n         <simpara>Contains the details of an Amazon RDS DB instance.\n      </simpara>\n         <simpara>This data type is used as a response element in the <xref linkend=\"DescribeDBInstances\"/> action.\n      </simpara>\n      ",
@@ -34503,7 +35295,1023 @@
           "shape_name": "KMSKeyNotAccessibleFault"
         }
       ],
-      "documentation": "\n        <p>\n            Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the StopDBInstance action.\n        </p>\n        \n        <p>For more information, see  \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html\">\n                Starting an Amazon RDS DB Instance That Was Previously Stopped</a> in the \n            <i>Amazon RDS User Guide.</i>\n         </p>\n        \n        <note>\n            <p>\n            This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.\n            For Aurora DB clusters, use <a>StartDBCluster</a> instead.\n          </p>\n        </note>\n      "
+      "documentation": "\n        <p>\n            Starts an Amazon RDS DB instance that was stopped using the AWS console, the stop-db-instance AWS CLI command, or the StopDBInstance action.\n        </p>\n        \n        <p>For more information, see  \n            <a href=\"http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html\">\n                Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the \n            <i>Amazon RDS User Guide.</i>\n         </p>\n        \n        <note>\n            <p>\n            This command doesn't apply to Aurora MySQL and Aurora PostgreSQL.\n            For Aurora DB clusters, use <a>StartDBCluster</a> instead.\n          </p>\n        </note>\n      "
+    },
+    "CreateGlobalCluster": {
+      "name": "CreateGlobalCluster",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "SourceDBClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Engine": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "EngineVersion": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DeletionProtection": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "DatabaseName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "StorageEncrypted": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          }
+        },
+        "shape_name": "CreateGlobalClusterMessage",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterResourceId": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterArn": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Status": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Engine": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "EngineVersion": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DatabaseName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "StorageEncrypted": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "DeletionProtection": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "GlobalClusterMembers": {
+            "type": "list",
+            "shape_name": "GlobalClusterMemberList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "DBClusterArn": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Readers": {
+                  "type": "list",
+                  "shape_name": "ReadersArnList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "String",
+                    "documentation": null
+                  }
+                },
+                "IsWriter": {
+                  "type": "boolean",
+                  "shape_name": "Boolean",
+                  "documentation": null
+                }
+              },
+              "wrapper": true,
+              "shape_name": "GlobalClusterMember",
+              "documentation": null,
+              "xmlname": "GlobalClusterMember"
+            }
+          }
+        },
+        "shape_name": "GlobalCluster",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "GlobalClusterAlreadyExistsFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "GlobalClusterQuotaExceededFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <para>The requested operation can't be performed while the cluster is in this state.</para>\n      ",
+          "documentation": "\n        <p>The requested operation can't be performed while the cluster is in this state.</p>\n      ",
+          "shape_name": "InvalidDBClusterStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBClusterIdentifier</emphasis> doesn't refer to an existing DB cluster.\n        </simpara>\n      ",
+          "documentation": "\n        <p>\n            <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.\n        </p>\n      ",
+          "shape_name": "DBClusterNotFoundFault"
+        }
+      ],
+      "documentation": null
+    },
+    "ModifyGlobalCluster": {
+      "name": "ModifyGlobalCluster",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "NewGlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DeletionProtection": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          }
+        },
+        "shape_name": "ModifyGlobalClusterMessage",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterResourceId": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterArn": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Status": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Engine": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "EngineVersion": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DatabaseName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "StorageEncrypted": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "DeletionProtection": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "GlobalClusterMembers": {
+            "type": "list",
+            "shape_name": "GlobalClusterMemberList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "DBClusterArn": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Readers": {
+                  "type": "list",
+                  "shape_name": "ReadersArnList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "String",
+                    "documentation": null
+                  }
+                },
+                "IsWriter": {
+                  "type": "boolean",
+                  "shape_name": "Boolean",
+                  "documentation": null
+                }
+              },
+              "wrapper": true,
+              "shape_name": "GlobalClusterMember",
+              "documentation": null,
+              "xmlname": "GlobalClusterMember"
+            }
+          }
+        },
+        "shape_name": "GlobalCluster",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "GlobalClusterNotFoundFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "InvalidGlobalClusterStateFault",
+          "documentation": null
+        }
+      ],
+      "documentation": null
+    },
+    "DeleteGlobalCluster": {
+      "name": "DeleteGlobalCluster",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "required": true,
+            "shape_name": "String",
+            "documentation": null
+          }
+        },
+        "shape_name": "DeleteGlobalClusterMessage",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterResourceId": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterArn": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Status": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Engine": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "EngineVersion": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DatabaseName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "StorageEncrypted": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "DeletionProtection": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "GlobalClusterMembers": {
+            "type": "list",
+            "shape_name": "GlobalClusterMemberList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "DBClusterArn": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Readers": {
+                  "type": "list",
+                  "shape_name": "ReadersArnList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "String",
+                    "documentation": null
+                  }
+                },
+                "IsWriter": {
+                  "type": "boolean",
+                  "shape_name": "Boolean",
+                  "documentation": null
+                }
+              },
+              "wrapper": true,
+              "shape_name": "GlobalClusterMember",
+              "documentation": null,
+              "xmlname": "GlobalClusterMember"
+            }
+          }
+        },
+        "shape_name": "GlobalCluster",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "GlobalClusterNotFoundFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "InvalidGlobalClusterStateFault",
+          "documentation": null
+        }
+      ],
+      "documentation": null
+    },
+    "RemoveFromGlobalCluster": {
+      "name": "RemoveFromGlobalCluster",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DbClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          }
+        },
+        "shape_name": "RemoveFromGlobalClusterMessage",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterResourceId": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterArn": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Status": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Engine": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "EngineVersion": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DatabaseName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "StorageEncrypted": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "DeletionProtection": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "GlobalClusterMembers": {
+            "type": "list",
+            "shape_name": "GlobalClusterMemberList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "DBClusterArn": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Readers": {
+                  "type": "list",
+                  "shape_name": "ReadersArnList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "String",
+                    "documentation": null
+                  }
+                },
+                "IsWriter": {
+                  "type": "boolean",
+                  "shape_name": "Boolean",
+                  "documentation": null
+                }
+              },
+              "wrapper": true,
+              "shape_name": "GlobalClusterMember",
+              "documentation": null,
+              "xmlname": "GlobalClusterMember"
+            }
+          }
+        },
+        "shape_name": "GlobalCluster",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "GlobalClusterNotFoundFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "InvalidGlobalClusterStateFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBClusterIdentifier</emphasis> doesn't refer to an existing DB cluster.\n        </simpara>\n      ",
+          "documentation": "\n        <p>\n            <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.\n        </p>\n      ",
+          "shape_name": "DBClusterNotFoundFault"
+        }
+      ],
+      "documentation": null
+    },
+    "DescribeGlobalClusters": {
+      "name": "DescribeGlobalClusters",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Filters": {
+            "type": "list",
+            "shape_name": "FilterList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "Name": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n\n         <simpara>The name of the filter. Filter names are case-sensitive.</simpara>\n      ",
+                  "documentation": "\n\n         <p>The name of the filter. Filter names are case-sensitive.</p>\n      ",
+                  "required": true,
+                  "shape_name": "String"
+                },
+                "Values": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n         <simpara>One or more filter values. Filter values are case-sensitive.</simpara>\n      ",
+                  "documentation": "\n         <p>One or more filter values. Filter values are case-sensitive.</p>\n      ",
+                  "required": true,
+                  "shape_name": "FilterValueList",
+                  "members": {
+                    "type": "string",
+                    "shape_name": "String",
+                    "documentation": null,
+                    "xmlname": "Value"
+                  }
+                }
+              },
+              "zonbookDocumentation": "\n        <simpara>A filter name and value pair that is used to return a more specific list of results \n            from a describe operation. Filters can be used to match a set of resources by specific \n            criteria, such as IDs. The filters supported by a describe operation are documented \n            with the describe operation.</simpara>\n        <note>\n            <para>Currently, wildcards are not supported in filters.</para>\n        </note>\n        <simpara>The following actions can be filtered:</simpara>\n        <itemizedlist>\n            <listitem>\n               <simpara>\n                  <xref linkend=\"DescribeDBClusterBacktracks\"/>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <xref linkend=\"DescribeDBClusterEndpoints\"/>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <xref linkend=\"DescribeDBClusters\"/>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <xref linkend=\"DescribeDBInstances\"/>\n               </simpara>\n            </listitem>\n            <listitem>\n               <simpara>\n                  <xref linkend=\"DescribePendingMaintenanceActions\"/>\n               </simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+              "documentation": "\n        <p>A filter name and value pair that is used to return a more specific list of results \n            from a describe operation. Filters can be used to match a set of resources by specific \n            criteria, such as IDs. The filters supported by a describe operation are documented \n            with the describe operation.</p>\n        <note>\n            <p>Currently, wildcards are not supported in filters.</p>\n        </note>\n        <p>The following actions can be filtered:</p>\n        <ul>\n            <li>\n               <p>\n                  <a>DescribeDBClusterBacktracks</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>DescribeDBClusterEndpoints</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>DescribeDBClusters</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>DescribeDBInstances</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a>DescribePendingMaintenanceActions</a>\n               </p>\n            </li>\n         </ul>\n      ",
+              "shape_name": "Filter",
+              "xmlname": "Filter"
+            }
+          },
+          "MaxRecords": {
+            "type": "integer",
+            "shape_name": "IntegerOptional",
+            "documentation": null
+          },
+          "Marker": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          }
+        },
+        "shape_name": "DescribeGlobalClustersMessage",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Marker": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusters": {
+            "type": "list",
+            "shape_name": "GlobalClusterList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "GlobalClusterIdentifier": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "GlobalClusterResourceId": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "GlobalClusterArn": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Status": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Engine": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "EngineVersion": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "DatabaseName": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "StorageEncrypted": {
+                  "type": "boolean",
+                  "shape_name": "BooleanOptional",
+                  "documentation": null
+                },
+                "DeletionProtection": {
+                  "type": "boolean",
+                  "shape_name": "BooleanOptional",
+                  "documentation": null
+                },
+                "GlobalClusterMembers": {
+                  "type": "list",
+                  "shape_name": "GlobalClusterMemberList",
+                  "documentation": null,
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "DBClusterArn": {
+                        "type": "string",
+                        "shape_name": "String",
+                        "documentation": null
+                      },
+                      "Readers": {
+                        "type": "list",
+                        "shape_name": "ReadersArnList",
+                        "documentation": null,
+                        "members": {
+                          "type": "string",
+                          "shape_name": "String",
+                          "documentation": null
+                        }
+                      },
+                      "IsWriter": {
+                        "type": "boolean",
+                        "shape_name": "Boolean",
+                        "documentation": null
+                      }
+                    },
+                    "wrapper": true,
+                    "shape_name": "GlobalClusterMember",
+                    "documentation": null,
+                    "xmlname": "GlobalClusterMember"
+                  }
+                }
+              },
+              "shape_name": "GlobalCluster",
+              "documentation": null,
+              "xmlname": "GlobalClusterMember"
+            }
+          }
+        },
+        "shape_name": "GlobalClustersMessage",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "GlobalClusterNotFoundFault",
+          "documentation": null
+        }
+      ],
+      "documentation": null
+    },
+    "FailoverGlobalCluster": {
+      "name": "FailoverGlobalCluster",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "TargetDbClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "SourceDbClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          }
+        },
+        "shape_name": "FailoverGlobalClusterMessage",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterResourceId": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterArn": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Status": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Engine": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "EngineVersion": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DatabaseName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "StorageEncrypted": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "DeletionProtection": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "GlobalClusterMembers": {
+            "type": "list",
+            "shape_name": "GlobalClusterMemberList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "DBClusterArn": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Readers": {
+                  "type": "list",
+                  "shape_name": "ReadersArnList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "String",
+                    "documentation": null
+                  }
+                },
+                "IsWriter": {
+                  "type": "boolean",
+                  "shape_name": "Boolean",
+                  "documentation": null
+                }
+              },
+              "wrapper": true,
+              "shape_name": "GlobalClusterMember",
+              "documentation": null,
+              "xmlname": "GlobalClusterMember"
+            }
+          }
+        },
+        "shape_name": "GlobalCluster",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "GlobalClusterNotFoundFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "InvalidGlobalClusterStateFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <para>The requested operation can't be performed while the cluster is in this state.</para>\n      ",
+          "documentation": "\n        <p>The requested operation can't be performed while the cluster is in this state.</p>\n      ",
+          "shape_name": "InvalidDBClusterStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBClusterIdentifier</emphasis> doesn't refer to an existing DB cluster.\n        </simpara>\n      ",
+          "documentation": "\n        <p>\n            <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.\n        </p>\n      ",
+          "shape_name": "DBClusterNotFoundFault"
+        }
+      ],
+      "documentation": null
+    },
+    "SwitchoverGlobalCluster": {
+      "name": "SwitchoverGlobalCluster",
+      "input": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "TargetDbClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "SourceDbClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          }
+        },
+        "shape_name": "FailoverGlobalClusterMessage",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "GlobalClusterIdentifier": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterResourceId": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "GlobalClusterArn": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Status": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "Engine": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "EngineVersion": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "DatabaseName": {
+            "type": "string",
+            "shape_name": "String",
+            "documentation": null
+          },
+          "StorageEncrypted": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "DeletionProtection": {
+            "type": "boolean",
+            "shape_name": "BooleanOptional",
+            "documentation": null
+          },
+          "GlobalClusterMembers": {
+            "type": "list",
+            "shape_name": "GlobalClusterMemberList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "DBClusterArn": {
+                  "type": "string",
+                  "shape_name": "String",
+                  "documentation": null
+                },
+                "Readers": {
+                  "type": "list",
+                  "shape_name": "ReadersArnList",
+                  "documentation": null,
+                  "members": {
+                    "type": "string",
+                    "shape_name": "String",
+                    "documentation": null
+                  }
+                },
+                "IsWriter": {
+                  "type": "boolean",
+                  "shape_name": "Boolean",
+                  "documentation": null
+                }
+              },
+              "wrapper": true,
+              "shape_name": "GlobalClusterMember",
+              "documentation": null,
+              "xmlname": "GlobalClusterMember"
+            }
+          }
+        },
+        "shape_name": "GlobalCluster",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "GlobalClusterNotFoundFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "internalonly": true,
+          "shape_name": "InvalidGlobalClusterStateFault",
+          "documentation": null
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <para>The requested operation can't be performed while the cluster is in this state.</para>\n      ",
+          "documentation": "\n        <p>The requested operation can't be performed while the cluster is in this state.</p>\n      ",
+          "shape_name": "InvalidDBClusterStateFault"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n        <simpara>\n            <emphasis>DBClusterIdentifier</emphasis> doesn't refer to an existing DB cluster.\n        </simpara>\n      ",
+          "documentation": "\n        <p>\n            <i>DBClusterIdentifier</i> doesn't refer to an existing DB cluster.\n        </p>\n      ",
+          "shape_name": "DBClusterNotFoundFault"
+        }
+      ],
+      "documentation": null
     }
   }
 }

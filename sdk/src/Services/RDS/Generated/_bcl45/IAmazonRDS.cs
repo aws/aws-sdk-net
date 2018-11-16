@@ -1619,6 +1619,11 @@ namespace Amazon.RDS
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstance service method.</param>
         /// 
         /// <returns>The response from the DeleteDBInstance service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupQuotaExceededException">
+        /// The quota for retained automated backups was exceeded. This prevents you from retaining
+        /// any additional automated backups. The retained automated backups quota is the same
+        /// as your DB Instance quota.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
         /// </exception>
@@ -1652,12 +1657,47 @@ namespace Amazon.RDS
 
         #endregion
         
+        #region  DeleteDBInstanceAutomatedBackup
+
+
+        /// <summary>
+        /// Deletes automated backups based on the source instance's <code>DbiResourceId</code>
+        /// value or the restorable instance's resource ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstanceAutomatedBackup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDBInstanceAutomatedBackup service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupNotFoundException">
+        /// No automated backup for this DB instance was found.
+        /// </exception>
+        /// <exception cref="Amazon.RDS.Model.InvalidDBInstanceAutomatedBackupStateException">
+        /// The automated backup is in an invalid state. For example, this automated backup is
+        /// associated with an active instance.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">REST API Reference for DeleteDBInstanceAutomatedBackup Operation</seealso>
+        DeleteDBInstanceAutomatedBackupResponse DeleteDBInstanceAutomatedBackup(DeleteDBInstanceAutomatedBackupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDBInstanceAutomatedBackup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDBInstanceAutomatedBackup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">REST API Reference for DeleteDBInstanceAutomatedBackup Operation</seealso>
+        Task<DeleteDBInstanceAutomatedBackupResponse> DeleteDBInstanceAutomatedBackupAsync(DeleteDBInstanceAutomatedBackupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteDBParameterGroup
 
 
         /// <summary>
-        /// Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted can't be
-        /// associated with any DB instances.
+        /// Deletes a specified DB parameter group. The DB parameter group to be deleted can't
+        /// be associated with any DB instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBParameterGroup service method.</param>
         /// 
@@ -1731,11 +1771,11 @@ namespace Amazon.RDS
 
 
         /// <summary>
-        /// Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
+        /// Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.
         /// 
         ///  <note> 
         /// <para>
-        /// The DBSnapshot must be in the <code>available</code> state to be deleted.
+        /// The DB snapshot must be in the <code>available</code> state to be deleted.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2283,6 +2323,44 @@ namespace Amazon.RDS
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions">REST API Reference for DescribeDBEngineVersions Operation</seealso>
         Task<DescribeDBEngineVersionsResponse> DescribeDBEngineVersionsAsync(DescribeDBEngineVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeDBInstanceAutomatedBackups
+
+
+        /// <summary>
+        /// Displays backups for both current and deleted instances. For example, use this operation
+        /// to find details about automated backups for previously deleted instances. Current
+        /// instances with retention periods greater than zero (0) are returned for both the <code>DescribeDBInstanceAutomatedBackups</code>
+        /// and <code>DescribeDBInstances</code> operations.
+        /// 
+        ///  
+        /// <para>
+        /// All parameters are optional.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstanceAutomatedBackups service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDBInstanceAutomatedBackups service method, as returned by RDS.</returns>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupNotFoundException">
+        /// No automated backup for this DB instance was found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups">REST API Reference for DescribeDBInstanceAutomatedBackups Operation</seealso>
+        DescribeDBInstanceAutomatedBackupsResponse DescribeDBInstanceAutomatedBackups(DescribeDBInstanceAutomatedBackupsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDBInstanceAutomatedBackups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDBInstanceAutomatedBackups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups">REST API Reference for DescribeDBInstanceAutomatedBackups Operation</seealso>
+        Task<DescribeDBInstanceAutomatedBackupsResponse> DescribeDBInstanceAutomatedBackupsAsync(DescribeDBInstanceAutomatedBackupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5006,6 +5084,9 @@ namespace Amazon.RDS
         /// <exception cref="Amazon.RDS.Model.DBInstanceAlreadyExistsException">
         /// The user already has a DB instance with the given identifier.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.DBInstanceAutomatedBackupNotFoundException">
+        /// No automated backup for this DB instance was found.
+        /// </exception>
         /// <exception cref="Amazon.RDS.Model.DBInstanceNotFoundException">
         /// <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
         /// </exception>
@@ -5181,7 +5262,7 @@ namespace Amazon.RDS
         ///  
         /// <para>
         /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
-        /// Starting an Amazon RDS DB Instance That Was Previously Stopped</a> in the <i>Amazon
+        /// Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the <i>Amazon
         /// RDS User Guide.</i> 
         /// </para>
         ///  <note> 

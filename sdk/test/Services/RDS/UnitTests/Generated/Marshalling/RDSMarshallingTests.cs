@@ -701,6 +701,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void DeleteDBInstanceAutomatedBackupMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDBInstanceAutomatedBackup");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDBInstanceAutomatedBackupRequest>();
+            var marshaller = new DeleteDBInstanceAutomatedBackupRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DeleteDBInstanceAutomatedBackupResponseUnmarshaller.Instance.Unmarshall(context)
+                as DeleteDBInstanceAutomatedBackupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void DeleteDBParameterGroupMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteDBParameterGroup");
@@ -1056,6 +1080,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = DescribeDBEngineVersionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as DescribeDBEngineVersionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void DescribeDBInstanceAutomatedBackupsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeDBInstanceAutomatedBackups");
+
+            var request = InstantiateClassGenerator.Execute<DescribeDBInstanceAutomatedBackupsRequest>();
+            var marshaller = new DescribeDBInstanceAutomatedBackupsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = DescribeDBInstanceAutomatedBackupsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeDBInstanceAutomatedBackupsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

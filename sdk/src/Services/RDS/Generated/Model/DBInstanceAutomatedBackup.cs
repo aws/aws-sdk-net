@@ -28,22 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the details of an Amazon RDS DB snapshot. 
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used as a response element in the <a>DescribeDBSnapshots</a> action.
-    /// 
-    /// </para>
+    /// An automated backup of a DB instance. It it consists of system backups, transaction
+    /// logs, and the database instance properties that existed at the time you deleted the
+    /// source instance.
     /// </summary>
-    public partial class DBSnapshot
+    public partial class DBInstanceAutomatedBackup
     {
         private int? _allocatedStorage;
         private string _availabilityZone;
+        private string _dbInstanceArn;
         private string _dbInstanceIdentifier;
         private string _dbiResourceId;
-        private string _dbSnapshotArn;
-        private string _dbSnapshotIdentifier;
         private bool? _encrypted;
         private string _engine;
         private string _engineVersion;
@@ -54,13 +49,9 @@ namespace Amazon.RDS.Model
         private string _licenseModel;
         private string _masterUsername;
         private string _optionGroupName;
-        private int? _percentProgress;
         private int? _port;
-        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
-        private DateTime? _snapshotCreateTime;
-        private string _snapshotType;
-        private string _sourceDBSnapshotIdentifier;
-        private string _sourceRegion;
+        private string _region;
+        private RestoreWindow _restoreWindow;
         private string _status;
         private string _storageType;
         private string _tdeCredentialArn;
@@ -88,8 +79,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// Specifies the name of the Availability Zone the DB instance was located in at the
-        /// time of the DB snapshot.
+        /// The Availability Zone that the automated backup was created in. For information on
+        /// AWS Regions and Availability Zones, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+        /// and Availability Zones</a>.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -105,10 +97,28 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DBInstanceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) for the automated backup.
+        /// </para>
+        /// </summary>
+        public string DBInstanceArn
+        {
+            get { return this._dbInstanceArn; }
+            set { this._dbInstanceArn = value; }
+        }
+
+        // Check to see if DBInstanceArn property is set
+        internal bool IsSetDBInstanceArn()
+        {
+            return this._dbInstanceArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        /// Specifies the DB instance identifier of the DB instance this DB snapshot was created
-        /// from.
+        /// The customer id of the instance that is/was associated with the automated backup.
+        /// 
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -143,45 +153,9 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DBSnapshotArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) for the DB snapshot.
-        /// </para>
-        /// </summary>
-        public string DBSnapshotArn
-        {
-            get { return this._dbSnapshotArn; }
-            set { this._dbSnapshotArn = value; }
-        }
-
-        // Check to see if DBSnapshotArn property is set
-        internal bool IsSetDBSnapshotArn()
-        {
-            return this._dbSnapshotArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DBSnapshotIdentifier. 
-        /// <para>
-        /// Specifies the identifier for the DB snapshot.
-        /// </para>
-        /// </summary>
-        public string DBSnapshotIdentifier
-        {
-            get { return this._dbSnapshotIdentifier; }
-            set { this._dbSnapshotIdentifier = value; }
-        }
-
-        // Check to see if DBSnapshotIdentifier property is set
-        internal bool IsSetDBSnapshotIdentifier()
-        {
-            return this._dbSnapshotIdentifier != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// Specifies whether the DB snapshot is encrypted.
+        /// Specifies whether the automated backup is encrypted.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -199,7 +173,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the name of the database engine.
+        /// The name of the database engine for this automated backup.
         /// </para>
         /// </summary>
         public string Engine
@@ -217,7 +191,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// Specifies the version of the database engine.
+        /// The version of the database engine for the automated backup.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -254,7 +228,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property InstanceCreateTime. 
         /// <para>
-        /// Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+        /// Provides the date and time that the DB instance was created. 
         /// </para>
         /// </summary>
         public DateTime InstanceCreateTime
@@ -272,8 +246,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance
-        /// at the time of the snapshot.
+        /// The IOPS (I/O operations per second) value for the automated backup. 
         /// </para>
         /// </summary>
         public int Iops
@@ -291,8 +264,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB
-        /// snapshot. 
+        /// The AWS KMS key ID for an automated backup. The KMS key ID is the Amazon Resource
+        /// Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key. 
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -310,7 +283,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property LicenseModel. 
         /// <para>
-        /// License model information for the restored DB instance.
+        /// License model information for the automated backup.
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -328,7 +301,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// Provides the master username for the DB snapshot.
+        /// The license model of an automated backup.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -346,7 +319,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OptionGroupName. 
         /// <para>
-        /// Provides the option group name for the DB snapshot.
+        /// The option group the automated backup is associated with. If omitted, the default
+        /// option group for the engine specified is used.
         /// </para>
         /// </summary>
         public string OptionGroupName
@@ -362,27 +336,17 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PercentProgress. 
-        /// <para>
-        /// The percentage of the estimated data that has been transferred.
-        /// </para>
-        /// </summary>
-        public int PercentProgress
-        {
-            get { return this._percentProgress.GetValueOrDefault(); }
-            set { this._percentProgress = value; }
-        }
-
-        // Check to see if PercentProgress property is set
-        internal bool IsSetPercentProgress()
-        {
-            return this._percentProgress.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Specifies the port that the database engine was listening on at the time of the snapshot.
+        /// The port number that the automated backup used for connections.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: Inherits from the source DB instance
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <code>1150-65535</code> 
         /// </para>
         /// </summary>
         public int Port
@@ -398,102 +362,60 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProcessorFeatures. 
+        /// Gets and sets the property Region. 
         /// <para>
-        /// The number of CPU cores and the number of threads per core for the DB instance class
-        /// of the DB instance when the DB snapshot was created.
+        /// The AWS Region associated with the automated backup.
         /// </para>
         /// </summary>
-        public List<ProcessorFeature> ProcessorFeatures
+        public string Region
         {
-            get { return this._processorFeatures; }
-            set { this._processorFeatures = value; }
+            get { return this._region; }
+            set { this._region = value; }
         }
 
-        // Check to see if ProcessorFeatures property is set
-        internal bool IsSetProcessorFeatures()
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
         {
-            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+            return this._region != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SnapshotCreateTime. 
+        /// Gets and sets the property RestoreWindow. 
         /// <para>
-        /// Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+        /// Earliest and latest time an instance can be restored to.
         /// </para>
         /// </summary>
-        public DateTime SnapshotCreateTime
+        public RestoreWindow RestoreWindow
         {
-            get { return this._snapshotCreateTime.GetValueOrDefault(); }
-            set { this._snapshotCreateTime = value; }
+            get { return this._restoreWindow; }
+            set { this._restoreWindow = value; }
         }
 
-        // Check to see if SnapshotCreateTime property is set
-        internal bool IsSetSnapshotCreateTime()
+        // Check to see if RestoreWindow property is set
+        internal bool IsSetRestoreWindow()
         {
-            return this._snapshotCreateTime.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property SnapshotType. 
-        /// <para>
-        /// Provides the type of the DB snapshot.
-        /// </para>
-        /// </summary>
-        public string SnapshotType
-        {
-            get { return this._snapshotType; }
-            set { this._snapshotType = value; }
-        }
-
-        // Check to see if SnapshotType property is set
-        internal bool IsSetSnapshotType()
-        {
-            return this._snapshotType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceDBSnapshotIdentifier. 
-        /// <para>
-        /// The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It
-        /// only has value in case of cross-customer or cross-region copy.
-        /// </para>
-        /// </summary>
-        public string SourceDBSnapshotIdentifier
-        {
-            get { return this._sourceDBSnapshotIdentifier; }
-            set { this._sourceDBSnapshotIdentifier = value; }
-        }
-
-        // Check to see if SourceDBSnapshotIdentifier property is set
-        internal bool IsSetSourceDBSnapshotIdentifier()
-        {
-            return this._sourceDBSnapshotIdentifier != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceRegion. 
-        /// <para>
-        /// The AWS Region that the DB snapshot was created in or copied from.
-        /// </para>
-        /// </summary>
-        public string SourceRegion
-        {
-            get { return this._sourceRegion; }
-            set { this._sourceRegion = value; }
-        }
-
-        // Check to see if SourceRegion property is set
-        internal bool IsSetSourceRegion()
-        {
-            return this._sourceRegion != null;
+            return this._restoreWindow != null;
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies the status of this DB snapshot.
+        /// Provides a list of status information for an automated backup:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>active</code> - automated backups for current instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>retained</code> - automated backups for deleted instances
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>creating</code> - automated backups that are waiting for the first automated
+        /// snapshot to be available.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {
@@ -510,7 +432,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type associated with DB snapshot.
+        /// Specifies the storage type associated with the automated backup.
         /// </para>
         /// </summary>
         public string StorageType
@@ -528,7 +450,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TdeCredentialArn. 
         /// <para>
-        /// The ARN from the key store with which to associate the instance for TDE encryption.
+        /// The ARN from the key store with which the automated backup is associated for TDE encryption.
         /// </para>
         /// </summary>
         public string TdeCredentialArn
@@ -546,9 +468,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element
-        /// is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft
-        /// SQL Server DB instances that were created with a time zone specified. 
+        /// The time zone of the automated backup. In most cases, the <code>Timezone</code> element
+        /// is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
+        /// that were created with a time zone specified.
         /// </para>
         /// </summary>
         public string Timezone
@@ -566,7 +488,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// Provides the VPC ID associated with the DB snapshot.
+        /// Provides the VPC ID associated with the DB instance
         /// </para>
         /// </summary>
         public string VpcId

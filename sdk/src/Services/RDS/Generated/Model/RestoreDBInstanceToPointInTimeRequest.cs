@@ -73,6 +73,7 @@ namespace Amazon.RDS.Model
         private bool? _publiclyAccessible;
         private DateTime? _restoreTimeUtc;
         private string _sourceDBInstanceIdentifier;
+        private string _sourceDbiResourceId;
         private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private string _targetDBInstanceIdentifier;
@@ -704,6 +705,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSourceDBInstanceIdentifier()
         {
             return this._sourceDBInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDbiResourceId. 
+        /// <para>
+        /// The resource ID of the source DB instance from which to restore.
+        /// </para>
+        /// </summary>
+        public string SourceDbiResourceId
+        {
+            get { return this._sourceDbiResourceId; }
+            set { this._sourceDbiResourceId = value; }
+        }
+
+        // Check to see if SourceDbiResourceId property is set
+        internal bool IsSetSourceDbiResourceId()
+        {
+            return this._sourceDbiResourceId != null;
         }
 
         /// <summary>

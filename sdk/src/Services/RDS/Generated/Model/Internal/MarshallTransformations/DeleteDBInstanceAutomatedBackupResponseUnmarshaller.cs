@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteDBInstance operation
+    /// Response Unmarshaller for DeleteDBInstanceAutomatedBackup operation
     /// </summary>  
-    public class DeleteDBInstanceResponseUnmarshaller : XmlResponseUnmarshaller
+    public class DeleteDBInstanceAutomatedBackupResponseUnmarshaller : XmlResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            DeleteDBInstanceResponse response = new DeleteDBInstanceResponse();
+            DeleteDBInstanceAutomatedBackupResponse response = new DeleteDBInstanceAutomatedBackupResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement)
                 {                    
-                    if(context.TestExpression("DeleteDBInstanceResult", 2))
+                    if(context.TestExpression("DeleteDBInstanceAutomatedBackupResult", 2))
                     {
                         UnmarshallResult(context, response);                        
                         continue;
@@ -67,7 +67,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
             return response;
         }
 
-        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteDBInstanceResponse response)
+        private static void UnmarshallResult(XmlUnmarshallerContext context, DeleteDBInstanceAutomatedBackupResponse response)
         {
             
             int originalDepth = context.CurrentDepth;
@@ -81,10 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("DBInstance", targetDepth))
+                    if (context.TestExpression("DBInstanceAutomatedBackup", targetDepth))
                     {
-                        var unmarshaller = DBInstanceUnmarshaller.Instance;
-                        response.DBInstance = unmarshaller.Unmarshall(context);
+                        var unmarshaller = DBInstanceAutomatedBackupUnmarshaller.Instance;
+                        response.DBInstanceAutomatedBackup = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -104,35 +104,19 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceAutomatedBackupQuotaExceeded"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceAutomatedBackupNotFound"))
             {
-                return new DBInstanceAutomatedBackupQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new DBInstanceAutomatedBackupNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceAutomatedBackupState"))
             {
-                return new DBInstanceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DBSnapshotAlreadyExists"))
-            {
-                return new DBSnapshotAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBClusterStateFault"))
-            {
-                return new InvalidDBClusterStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDBInstanceState"))
-            {
-                return new InvalidDBInstanceStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SnapshotQuotaExceeded"))
-            {
-                return new SnapshotQuotaExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidDBInstanceAutomatedBackupStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonRDSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static DeleteDBInstanceResponseUnmarshaller _instance = new DeleteDBInstanceResponseUnmarshaller();        
+        private static DeleteDBInstanceAutomatedBackupResponseUnmarshaller _instance = new DeleteDBInstanceAutomatedBackupResponseUnmarshaller();        
 
-        internal static DeleteDBInstanceResponseUnmarshaller GetInstance()
+        internal static DeleteDBInstanceAutomatedBackupResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -140,7 +124,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDBInstanceResponseUnmarshaller Instance
+        public static DeleteDBInstanceAutomatedBackupResponseUnmarshaller Instance
         {
             get
             {

@@ -163,6 +163,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(publicRequest.SourceDBInstanceIdentifier));
                 }
+                if(publicRequest.IsSetSourceDbiResourceId())
+                {
+                    request.Parameters.Add("SourceDbiResourceId", StringUtils.FromString(publicRequest.SourceDbiResourceId));
+                }
                 if(publicRequest.IsSetStorageType())
                 {
                     request.Parameters.Add("StorageType", StringUtils.FromString(publicRequest.StorageType));

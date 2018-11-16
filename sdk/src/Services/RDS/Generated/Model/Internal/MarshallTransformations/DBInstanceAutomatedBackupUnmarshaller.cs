@@ -32,18 +32,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DBSnapshot Object
+    /// Response Unmarshaller for DBInstanceAutomatedBackup Object
     /// </summary>  
-    public class DBSnapshotUnmarshaller : IUnmarshaller<DBSnapshot, XmlUnmarshallerContext>, IUnmarshaller<DBSnapshot, JsonUnmarshallerContext>
+    public class DBInstanceAutomatedBackupUnmarshaller : IUnmarshaller<DBInstanceAutomatedBackup, XmlUnmarshallerContext>, IUnmarshaller<DBInstanceAutomatedBackup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DBSnapshot Unmarshall(XmlUnmarshallerContext context)
+        public DBInstanceAutomatedBackup Unmarshall(XmlUnmarshallerContext context)
         {
-            DBSnapshot unmarshalledObject = new DBSnapshot();
+            DBInstanceAutomatedBackup unmarshalledObject = new DBInstanceAutomatedBackup();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -66,6 +66,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("DBInstanceArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DBInstanceArn = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("DBInstanceIdentifier", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -76,18 +82,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DbiResourceId = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DBSnapshotArn", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBSnapshotArn = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DBSnapshotIdentifier", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DBSnapshotIdentifier = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Encrypted", targetDepth))
@@ -150,47 +144,22 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.OptionGroupName = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("PercentProgress", targetDepth))
-                    {
-                        var unmarshaller = IntUnmarshaller.Instance;
-                        unmarshalledObject.PercentProgress = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("Port", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.Port = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("ProcessorFeatures/ProcessorFeature", targetDepth))
-                    {
-                        var unmarshaller = ProcessorFeatureUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ProcessorFeatures.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotCreateTime", targetDepth))
-                    {
-                        var unmarshaller = DateTimeUnmarshaller.Instance;
-                        unmarshalledObject.SnapshotCreateTime = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SnapshotType", targetDepth))
+                    if (context.TestExpression("Region", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SnapshotType = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Region = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("SourceDBSnapshotIdentifier", targetDepth))
+                    if (context.TestExpression("RestoreWindow", targetDepth))
                     {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SourceDBSnapshotIdentifier = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("SourceRegion", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.SourceRegion = unmarshaller.Unmarshall(context);
+                        var unmarshaller = RestoreWindowUnmarshaller.Instance;
+                        unmarshalledObject.RestoreWindow = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Status", targetDepth))
@@ -238,18 +207,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DBSnapshot Unmarshall(JsonUnmarshallerContext context)
+        public DBInstanceAutomatedBackup Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
         }
 
 
-        private static DBSnapshotUnmarshaller _instance = new DBSnapshotUnmarshaller();        
+        private static DBInstanceAutomatedBackupUnmarshaller _instance = new DBInstanceAutomatedBackupUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DBSnapshotUnmarshaller Instance
+        public static DBInstanceAutomatedBackupUnmarshaller Instance
         {
             get
             {

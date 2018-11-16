@@ -34,6 +34,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeDBSnapshotsRequest : AmazonRDSRequest
     {
         private string _dbInstanceIdentifier;
+        private string _dbiResourceId;
         private string _dbSnapshotIdentifier;
         private List<Filter> _filters = new List<Filter>();
         private bool? _includePublic;
@@ -74,6 +75,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetDBInstanceIdentifier()
         {
             return this._dbInstanceIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbiResourceId. 
+        /// <para>
+        /// A specific DB resource ID to describe.
+        /// </para>
+        /// </summary>
+        public string DbiResourceId
+        {
+            get { return this._dbiResourceId; }
+            set { this._dbiResourceId = value; }
+        }
+
+        // Check to see if DbiResourceId property is set
+        internal bool IsSetDbiResourceId()
+        {
+            return this._dbiResourceId != null;
         }
 
         /// <summary>

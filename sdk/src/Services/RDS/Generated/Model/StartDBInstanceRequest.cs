@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
-    /// Starting an Amazon RDS DB Instance That Was Previously Stopped</a> in the <i>Amazon
+    /// Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the <i>Amazon
     /// RDS User Guide.</i> 
     /// </para>
     ///  <note> 

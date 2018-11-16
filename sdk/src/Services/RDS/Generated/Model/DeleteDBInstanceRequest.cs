@@ -71,6 +71,7 @@ namespace Amazon.RDS.Model
     public partial class DeleteDBInstanceRequest : AmazonRDSRequest
     {
         private string _dbInstanceIdentifier;
+        private bool? _deleteAutomatedBackups;
         private string _finalDBSnapshotIdentifier;
         private bool? _skipFinalSnapshot;
 
@@ -117,15 +118,35 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeleteAutomatedBackups. 
+        /// <para>
+        /// A value that indicates whether to remove automated backups immediately after the DB
+        /// instance is deleted. This parameter isn't case-sensitive. This parameter defaults
+        /// to <code>true</code>.
+        /// </para>
+        /// </summary>
+        public bool DeleteAutomatedBackups
+        {
+            get { return this._deleteAutomatedBackups.GetValueOrDefault(); }
+            set { this._deleteAutomatedBackups = value; }
+        }
+
+        // Check to see if DeleteAutomatedBackups property is set
+        internal bool IsSetDeleteAutomatedBackups()
+        {
+            return this._deleteAutomatedBackups.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
-        ///  The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is
-        /// set to <code>false</code>. 
+        ///  The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when <code>SkipFinalSnapshot</code>
+        /// is set to <code>false</code>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// Specifying this parameter and also setting the SkipFinalShapshot parameter to true
-        /// results in an error.
+        /// Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter
+        /// to <code>true</code> results in an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -137,11 +158,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// First character must be a letter
+        /// First character must be a letter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't end with a hyphen or contain two consecutive hyphens
+        /// Can't end with a hyphen or contain two consecutive hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -164,15 +185,15 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
-        ///  Determines whether a final DB snapshot is created before the DB instance is deleted.
-        /// If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code>
+        ///  A value that indicates whether a final DB snapshot is created before the DB instance
+        /// is deleted. If <code>true</code> is specified, no DB snapshot is created. If <code>false</code>
         /// is specified, a DB snapshot is created before the DB instance is deleted. 
         /// </para>
         ///  
         /// <para>
-        /// Note that when a DB instance is in a failure state and has a status of 'failed', 'incompatible-restore',
-        /// or 'incompatible-network', it can only be deleted when the SkipFinalSnapshot parameter
-        /// is set to "true".
+        /// When a DB instance is in a failure state and has a status of <code>failed</code>,
+        /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
+        /// delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
         /// </para>
         ///  
         /// <para>
@@ -180,8 +201,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is
-        /// <code>false</code>.
+        /// The <code>FinalDBSnapshotIdentifier</code> parameter must be specified if <code>SkipFinalSnapshot</code>
+        /// is <code>false</code>.
         /// </para>
         ///  </note> 
         /// <para>

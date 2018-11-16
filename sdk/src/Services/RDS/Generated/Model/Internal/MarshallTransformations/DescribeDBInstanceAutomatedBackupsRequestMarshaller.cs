@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DescribeDBSnapshots Request Marshaller
+    /// DescribeDBInstanceAutomatedBackups Request Marshaller
     /// </summary>       
-    public class DescribeDBSnapshotsRequestMarshaller : IMarshaller<IRequest, DescribeDBSnapshotsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeDBInstanceAutomatedBackupsRequestMarshaller : IMarshaller<IRequest, DescribeDBInstanceAutomatedBackupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DescribeDBSnapshotsRequest)input);
+            return this.Marshall((DescribeDBInstanceAutomatedBackupsRequest)input);
         }
     
         /// <summary>
@@ -50,10 +50,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DescribeDBSnapshotsRequest publicRequest)
+        public IRequest Marshall(DescribeDBInstanceAutomatedBackupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
-            request.Parameters.Add("Action", "DescribeDBSnapshots");
+            request.Parameters.Add("Action", "DescribeDBInstanceAutomatedBackups");
             request.Parameters.Add("Version", "2014-10-31");
 
             if(publicRequest != null)
@@ -65,10 +65,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetDbiResourceId())
                 {
                     request.Parameters.Add("DbiResourceId", StringUtils.FromString(publicRequest.DbiResourceId));
-                }
-                if(publicRequest.IsSetDBSnapshotIdentifier())
-                {
-                    request.Parameters.Add("DBSnapshotIdentifier", StringUtils.FromString(publicRequest.DBSnapshotIdentifier));
                 }
                 if(publicRequest.IsSetFilters())
                 {
@@ -91,14 +87,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
-                if(publicRequest.IsSetIncludePublic())
-                {
-                    request.Parameters.Add("IncludePublic", StringUtils.FromBool(publicRequest.IncludePublic));
-                }
-                if(publicRequest.IsSetIncludeShared())
-                {
-                    request.Parameters.Add("IncludeShared", StringUtils.FromBool(publicRequest.IncludeShared));
-                }
                 if(publicRequest.IsSetMarker())
                 {
                     request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
@@ -107,16 +95,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
-                if(publicRequest.IsSetSnapshotType())
-                {
-                    request.Parameters.Add("SnapshotType", StringUtils.FromString(publicRequest.SnapshotType));
-                }
             }
             return request;
         }
-                    private static DescribeDBSnapshotsRequestMarshaller _instance = new DescribeDBSnapshotsRequestMarshaller();        
+                    private static DescribeDBInstanceAutomatedBackupsRequestMarshaller _instance = new DescribeDBInstanceAutomatedBackupsRequestMarshaller();        
 
-        internal static DescribeDBSnapshotsRequestMarshaller GetInstance()
+        internal static DescribeDBInstanceAutomatedBackupsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -124,7 +108,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeDBSnapshotsRequestMarshaller Instance
+        public static DescribeDBInstanceAutomatedBackupsRequestMarshaller Instance
         {
             get
             {

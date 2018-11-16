@@ -29,11 +29,11 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBSnapshot operation.
-    /// Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is terminated.
+    /// Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.
     /// 
     ///  <note> 
     /// <para>
-    /// The DBSnapshot must be in the <code>available</code> state to be deleted.
+    /// The DB snapshot must be in the <code>available</code> state to be deleted.
     /// </para>
     ///  </note>
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Instantiates DeleteDBSnapshotRequest with the parameterized properties
         /// </summary>
-        /// <param name="dbSnapshotIdentifier">The DBSnapshot identifier. Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</param>
+        /// <param name="dbSnapshotIdentifier">The DB snapshot identifier. Constraints: Must be the name of an existing DB snapshot in the <code>available</code> state.</param>
         public DeleteDBSnapshotRequest(string dbSnapshotIdentifier)
         {
             _dbSnapshotIdentifier = dbSnapshotIdentifier;
@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshotIdentifier. 
         /// <para>
-        /// The DBSnapshot identifier.
+        /// The DB snapshot identifier.
         /// </para>
         ///  
         /// <para>

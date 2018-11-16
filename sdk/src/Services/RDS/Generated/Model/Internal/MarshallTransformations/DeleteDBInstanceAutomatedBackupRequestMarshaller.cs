@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteDBInstance Request Marshaller
+    /// DeleteDBInstanceAutomatedBackup Request Marshaller
     /// </summary>       
-    public class DeleteDBInstanceRequestMarshaller : IMarshaller<IRequest, DeleteDBInstanceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteDBInstanceAutomatedBackupRequestMarshaller : IMarshaller<IRequest, DeleteDBInstanceAutomatedBackupRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteDBInstanceRequest)input);
+            return this.Marshall((DeleteDBInstanceAutomatedBackupRequest)input);
         }
     
         /// <summary>
@@ -50,36 +50,24 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteDBInstanceRequest publicRequest)
+        public IRequest Marshall(DeleteDBInstanceAutomatedBackupRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RDS");
-            request.Parameters.Add("Action", "DeleteDBInstance");
+            request.Parameters.Add("Action", "DeleteDBInstanceAutomatedBackup");
             request.Parameters.Add("Version", "2014-10-31");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetDBInstanceIdentifier())
+                if(publicRequest.IsSetDbiResourceId())
                 {
-                    request.Parameters.Add("DBInstanceIdentifier", StringUtils.FromString(publicRequest.DBInstanceIdentifier));
-                }
-                if(publicRequest.IsSetDeleteAutomatedBackups())
-                {
-                    request.Parameters.Add("DeleteAutomatedBackups", StringUtils.FromBool(publicRequest.DeleteAutomatedBackups));
-                }
-                if(publicRequest.IsSetFinalDBSnapshotIdentifier())
-                {
-                    request.Parameters.Add("FinalDBSnapshotIdentifier", StringUtils.FromString(publicRequest.FinalDBSnapshotIdentifier));
-                }
-                if(publicRequest.IsSetSkipFinalSnapshot())
-                {
-                    request.Parameters.Add("SkipFinalSnapshot", StringUtils.FromBool(publicRequest.SkipFinalSnapshot));
+                    request.Parameters.Add("DbiResourceId", StringUtils.FromString(publicRequest.DbiResourceId));
                 }
             }
             return request;
         }
-                    private static DeleteDBInstanceRequestMarshaller _instance = new DeleteDBInstanceRequestMarshaller();        
+                    private static DeleteDBInstanceAutomatedBackupRequestMarshaller _instance = new DeleteDBInstanceAutomatedBackupRequestMarshaller();        
 
-        internal static DeleteDBInstanceRequestMarshaller GetInstance()
+        internal static DeleteDBInstanceAutomatedBackupRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +75,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDBInstanceRequestMarshaller Instance
+        public static DeleteDBInstanceAutomatedBackupRequestMarshaller Instance
         {
             get
             {
