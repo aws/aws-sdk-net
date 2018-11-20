@@ -298,6 +298,10 @@ namespace Amazon.S3
         /// Specifies that the S3 Bucket should use US-WEST-2 locality.
         /// </summary>
         public static readonly S3Region USW2 = new S3Region("us-west-2");
+		/// <summary>
+        /// Specifies that the S3 Bucket should use US-GOV-EAST-1 locality.
+        /// </summary>
+        public static readonly S3Region GOVE1 = new S3Region("us-gov-east-1");
         /// <summary>
         /// Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
         /// </summary>
