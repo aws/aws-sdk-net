@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpekeKeyProvider Object
+    /// Response Unmarshaller for MotionImageInserter Object
     /// </summary>  
-    public class SpekeKeyProviderUnmarshaller : IUnmarshaller<SpekeKeyProvider, XmlUnmarshallerContext>, IUnmarshaller<SpekeKeyProvider, JsonUnmarshallerContext>
+    public class MotionImageInserterUnmarshaller : IUnmarshaller<MotionImageInserter, XmlUnmarshallerContext>, IUnmarshaller<MotionImageInserter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SpekeKeyProvider IUnmarshaller<SpekeKeyProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MotionImageInserter IUnmarshaller<MotionImageInserter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,51 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpekeKeyProvider Unmarshall(JsonUnmarshallerContext context)
+        public MotionImageInserter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SpekeKeyProvider unmarshalledObject = new SpekeKeyProvider();
+            MotionImageInserter unmarshalledObject = new MotionImageInserter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("certificateArn", targetDepth))
+                if (context.TestExpression("framerate", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = MotionImageInsertionFramerateUnmarshaller.Instance;
+                    unmarshalledObject.Framerate = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("input", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Input = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("systemIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SystemIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
+                if (context.TestExpression("insertionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InsertionMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("offset", targetDepth))
+                {
+                    var unmarshaller = MotionImageInsertionOffsetUnmarshaller.Instance;
+                    unmarshalledObject.Offset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("playback", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Playback = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("startTime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static SpekeKeyProviderUnmarshaller _instance = new SpekeKeyProviderUnmarshaller();        
+        private static MotionImageInserterUnmarshaller _instance = new MotionImageInserterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpekeKeyProviderUnmarshaller Instance
+        public static MotionImageInserterUnmarshaller Instance
         {
             get
             {

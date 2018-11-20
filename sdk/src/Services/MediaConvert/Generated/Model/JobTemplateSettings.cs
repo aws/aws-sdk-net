@@ -36,6 +36,7 @@ namespace Amazon.MediaConvert.Model
         private int? _adAvailOffset;
         private AvailBlanking _availBlanking;
         private List<InputTemplate> _inputs = new List<InputTemplate>();
+        private MotionImageInserter _motionImageInserter;
         private NielsenConfiguration _nielsenConfiguration;
         private List<OutputGroup> _outputGroups = new List<OutputGroup>();
         private TimecodeConfig _timecodeConfig;
@@ -89,6 +90,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetInputs()
         {
             return this._inputs != null && this._inputs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MotionImageInserter. Overlay motion graphics on top of
+        /// your video. The motion graphics that you specify here appear on all outputs in all
+        /// output groups.
+        /// </summary>
+        public MotionImageInserter MotionImageInserter
+        {
+            get { return this._motionImageInserter; }
+            set { this._motionImageInserter = value; }
+        }
+
+        // Check to see if MotionImageInserter property is set
+        internal bool IsSetMotionImageInserter()
+        {
+            return this._motionImageInserter != null;
         }
 
         /// <summary>

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpekeKeyProvider Object
+    /// Response Unmarshaller for MotionImageInsertionFramerate Object
     /// </summary>  
-    public class SpekeKeyProviderUnmarshaller : IUnmarshaller<SpekeKeyProvider, XmlUnmarshallerContext>, IUnmarshaller<SpekeKeyProvider, JsonUnmarshallerContext>
+    public class MotionImageInsertionFramerateUnmarshaller : IUnmarshaller<MotionImageInsertionFramerate, XmlUnmarshallerContext>, IUnmarshaller<MotionImageInsertionFramerate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SpekeKeyProvider IUnmarshaller<SpekeKeyProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MotionImageInsertionFramerate IUnmarshaller<MotionImageInsertionFramerate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpekeKeyProvider Unmarshall(JsonUnmarshallerContext context)
+        public MotionImageInsertionFramerate Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SpekeKeyProvider unmarshalledObject = new SpekeKeyProvider();
+            MotionImageInsertionFramerate unmarshalledObject = new MotionImageInsertionFramerate();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("certificateArn", targetDepth))
+                if (context.TestExpression("framerateDenominator", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("framerateNumerator", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("systemIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SystemIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static SpekeKeyProviderUnmarshaller _instance = new SpekeKeyProviderUnmarshaller();        
+        private static MotionImageInsertionFramerateUnmarshaller _instance = new MotionImageInsertionFramerateUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpekeKeyProviderUnmarshaller Instance
+        public static MotionImageInsertionFramerateUnmarshaller Instance
         {
             get
             {

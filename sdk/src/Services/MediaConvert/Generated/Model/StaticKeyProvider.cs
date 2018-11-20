@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Settings for use with a SPEKE key provider.
+    /// Use these settings to set up encryption with a static key provider.
     /// </summary>
     public partial class StaticKeyProvider
     {

@@ -28,29 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Enable the Image inserter (ImageInserter) feature to include a graphic overlay on
-    /// your video. Enable or disable this feature for each input or output individually.
-    /// This setting is disabled by default.
+    /// This is the response object from the DisassociateCertificate operation.
     /// </summary>
-    public partial class ImageInserter
+    public partial class DisassociateCertificateResponse : AmazonWebServiceResponse
     {
-        private List<InsertableImage> _insertableImages = new List<InsertableImage>();
-
-        /// <summary>
-        /// Gets and sets the property InsertableImages. Specify the images that you want to overlay
-        /// on your video. The images must be PNG or TGA files.
-        /// </summary>
-        public List<InsertableImage> InsertableImages
-        {
-            get { return this._insertableImages; }
-            set { this._insertableImages = value; }
-        }
-
-        // Check to see if InsertableImages property is set
-        internal bool IsSetInsertableImages()
-        {
-            return this._insertableImages != null && this._insertableImages.Count > 0; 
-        }
 
     }
 }

@@ -36,10 +36,12 @@ namespace Amazon.MediaConvert.Model
         private Dictionary<string, AudioSelector> _audioSelectors = new Dictionary<string, AudioSelector>();
         private Dictionary<string, CaptionSelector> _captionSelectors = new Dictionary<string, CaptionSelector>();
         private InputDeblockFilter _deblockFilter;
+        private InputDecryptionSettings _decryptionSettings;
         private InputDenoiseFilter _denoiseFilter;
         private string _fileInput;
         private InputFilterEnable _filterEnable;
         private int? _filterStrength;
+        private ImageInserter _imageInserter;
         private List<InputClipping> _inputClippings = new List<InputClipping>();
         private int? _programNumber;
         private InputPsiControl _psiControl;
@@ -113,6 +115,22 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DecryptionSettings. If the input file is encrypted, decryption
+        /// settings to decrypt the media file
+        /// </summary>
+        public InputDecryptionSettings DecryptionSettings
+        {
+            get { return this._decryptionSettings; }
+            set { this._decryptionSettings = value; }
+        }
+
+        // Check to see if DecryptionSettings property is set
+        internal bool IsSetDecryptionSettings()
+        {
+            return this._decryptionSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DenoiseFilter.
         /// </summary>
         public InputDenoiseFilter DenoiseFilter
@@ -174,6 +192,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFilterStrength()
         {
             return this._filterStrength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageInserter. Enable the Image inserter (ImageInserter)
+        /// feature to include a graphic overlay on your video. Enable or disable this feature
+        /// for each input individually. This setting is disabled by default.
+        /// </summary>
+        public ImageInserter ImageInserter
+        {
+            get { return this._imageInserter; }
+            set { this._imageInserter = value; }
+        }
+
+        // Check to see if ImageInserter property is set
+        internal bool IsSetImageInserter()
+        {
+            return this._imageInserter != null;
         }
 
         /// <summary>

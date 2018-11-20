@@ -88,6 +88,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeblockFilter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("decryptionSettings", targetDepth))
+                {
+                    var unmarshaller = InputDecryptionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.DecryptionSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("denoiseFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +116,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("imageInserter", targetDepth))
+                {
+                    var unmarshaller = ImageInserterUnmarshaller.Instance;
+                    unmarshalledObject.ImageInserter = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("inputClippings", targetDepth))

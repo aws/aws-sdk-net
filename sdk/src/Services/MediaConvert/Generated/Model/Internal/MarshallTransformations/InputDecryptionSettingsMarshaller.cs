@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SpekeKeyProvider Marshaller
+    /// InputDecryptionSettings Marshaller
     /// </summary>       
-    public class SpekeKeyProviderMarshaller : IRequestMarshaller<SpekeKeyProvider, JsonMarshallerContext> 
+    public class InputDecryptionSettingsMarshaller : IRequestMarshaller<InputDecryptionSettings, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,30 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SpekeKeyProvider requestObject, JsonMarshallerContext context)
+        public void Marshall(InputDecryptionSettings requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCertificateArn())
+            if(requestObject.IsSetDecryptionMode())
             {
-                context.Writer.WritePropertyName("certificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WritePropertyName("decryptionMode");
+                context.Writer.Write(requestObject.DecryptionMode);
             }
 
-            if(requestObject.IsSetResourceId())
+            if(requestObject.IsSetEncryptedDecryptionKey())
             {
-                context.Writer.WritePropertyName("resourceId");
-                context.Writer.Write(requestObject.ResourceId);
+                context.Writer.WritePropertyName("encryptedDecryptionKey");
+                context.Writer.Write(requestObject.EncryptedDecryptionKey);
             }
 
-            if(requestObject.IsSetSystemIds())
+            if(requestObject.IsSetInitializationVector())
             {
-                context.Writer.WritePropertyName("systemIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectSystemIdsListValue in requestObject.SystemIds)
-                {
-                        context.Writer.Write(requestObjectSystemIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("initializationVector");
+                context.Writer.Write(requestObject.InitializationVector);
             }
 
-            if(requestObject.IsSetUrl())
+            if(requestObject.IsSetKmsKeyRegion())
             {
-                context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WritePropertyName("kmsKeyRegion");
+                context.Writer.Write(requestObject.KmsKeyRegion);
             }
 
         }
@@ -79,7 +74,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SpekeKeyProviderMarshaller Instance = new SpekeKeyProviderMarshaller();
+        public readonly static InputDecryptionSettingsMarshaller Instance = new InputDecryptionSettingsMarshaller();
 
     }
 }

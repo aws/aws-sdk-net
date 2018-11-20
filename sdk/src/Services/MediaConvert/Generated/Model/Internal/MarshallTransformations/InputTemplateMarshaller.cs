@@ -126,6 +126,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FilterStrength);
             }
 
+            if(requestObject.IsSetImageInserter())
+            {
+                context.Writer.WritePropertyName("imageInserter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImageInserterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImageInserter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputClippings())
             {
                 context.Writer.WritePropertyName("inputClippings");

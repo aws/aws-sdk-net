@@ -1671,9 +1671,21 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly CaptionDestinationType EMBEDDED = new CaptionDestinationType("EMBEDDED");
         /// <summary>
+        /// Constant EMBEDDED_PLUS_SCTE20 for CaptionDestinationType
+        /// </summary>
+        public static readonly CaptionDestinationType EMBEDDED_PLUS_SCTE20 = new CaptionDestinationType("EMBEDDED_PLUS_SCTE20");
+        /// <summary>
         /// Constant SCC for CaptionDestinationType
         /// </summary>
         public static readonly CaptionDestinationType SCC = new CaptionDestinationType("SCC");
+        /// <summary>
+        /// Constant SCTE20_PLUS_EMBEDDED for CaptionDestinationType
+        /// </summary>
+        public static readonly CaptionDestinationType SCTE20_PLUS_EMBEDDED = new CaptionDestinationType("SCTE20_PLUS_EMBEDDED");
+        /// <summary>
+        /// Constant SMI for CaptionDestinationType
+        /// </summary>
+        public static readonly CaptionDestinationType SMI = new CaptionDestinationType("SMI");
         /// <summary>
         /// Constant SRT for CaptionDestinationType
         /// </summary>
@@ -1752,6 +1764,14 @@ namespace Amazon.MediaConvert
         /// Constant SCC for CaptionSourceType
         /// </summary>
         public static readonly CaptionSourceType SCC = new CaptionSourceType("SCC");
+        /// <summary>
+        /// Constant SCTE20 for CaptionSourceType
+        /// </summary>
+        public static readonly CaptionSourceType SCTE20 = new CaptionSourceType("SCTE20");
+        /// <summary>
+        /// Constant SMI for CaptionSourceType
+        /// </summary>
+        public static readonly CaptionSourceType SMI = new CaptionSourceType("SMI");
         /// <summary>
         /// Constant SRT for CaptionSourceType
         /// </summary>
@@ -2842,6 +2862,60 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DashIsoWriteSegmentTimelineInRepresentation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DecryptionMode.
+    /// </summary>
+    public class DecryptionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AES_CBC for DecryptionMode
+        /// </summary>
+        public static readonly DecryptionMode AES_CBC = new DecryptionMode("AES_CBC");
+        /// <summary>
+        /// Constant AES_CTR for DecryptionMode
+        /// </summary>
+        public static readonly DecryptionMode AES_CTR = new DecryptionMode("AES_CTR");
+        /// <summary>
+        /// Constant AES_GCM for DecryptionMode
+        /// </summary>
+        public static readonly DecryptionMode AES_GCM = new DecryptionMode("AES_GCM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DecryptionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DecryptionMode FindValue(string value)
+        {
+            return FindValue<DecryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DecryptionMode(string value)
         {
             return FindValue(value);
         }
@@ -9702,6 +9776,106 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator M3u8Scte35Source(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MotionImageInsertionMode.
+    /// </summary>
+    public class MotionImageInsertionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MOV for MotionImageInsertionMode
+        /// </summary>
+        public static readonly MotionImageInsertionMode MOV = new MotionImageInsertionMode("MOV");
+        /// <summary>
+        /// Constant PNG for MotionImageInsertionMode
+        /// </summary>
+        public static readonly MotionImageInsertionMode PNG = new MotionImageInsertionMode("PNG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MotionImageInsertionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MotionImageInsertionMode FindValue(string value)
+        {
+            return FindValue<MotionImageInsertionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MotionImageInsertionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MotionImagePlayback.
+    /// </summary>
+    public class MotionImagePlayback : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONCE for MotionImagePlayback
+        /// </summary>
+        public static readonly MotionImagePlayback ONCE = new MotionImagePlayback("ONCE");
+        /// <summary>
+        /// Constant REPEAT for MotionImagePlayback
+        /// </summary>
+        public static readonly MotionImagePlayback REPEAT = new MotionImagePlayback("REPEAT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MotionImagePlayback(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MotionImagePlayback FindValue(string value)
+        {
+            return FindValue<MotionImagePlayback>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MotionImagePlayback(string value)
         {
             return FindValue(value);
         }

@@ -32,9 +32,27 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class SpekeKeyProvider
     {
+        private string _certificateArn;
         private string _resourceId;
         private List<string> _systemIds = new List<string>();
         private string _url;
+
+        /// <summary>
+        /// Gets and sets the property CertificateArn. Optional AWS Certificate Manager ARN for
+        /// a certificate to send to the keyprovider. The certificate holds a key used by the
+        /// keyprovider to encrypt the keys in its response.
+        /// </summary>
+        public string CertificateArn
+        {
+            get { return this._certificateArn; }
+            set { this._certificateArn = value; }
+        }
+
+        // Check to see if CertificateArn property is set
+        internal bool IsSetCertificateArn()
+        {
+            return this._certificateArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. The SPEKE-compliant server uses Resource ID

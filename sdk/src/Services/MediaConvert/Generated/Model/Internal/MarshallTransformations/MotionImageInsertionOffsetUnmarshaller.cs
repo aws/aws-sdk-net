@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SpekeKeyProvider Object
+    /// Response Unmarshaller for MotionImageInsertionOffset Object
     /// </summary>  
-    public class SpekeKeyProviderUnmarshaller : IUnmarshaller<SpekeKeyProvider, XmlUnmarshallerContext>, IUnmarshaller<SpekeKeyProvider, JsonUnmarshallerContext>
+    public class MotionImageInsertionOffsetUnmarshaller : IUnmarshaller<MotionImageInsertionOffset, XmlUnmarshallerContext>, IUnmarshaller<MotionImageInsertionOffset, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        SpekeKeyProvider IUnmarshaller<SpekeKeyProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MotionImageInsertionOffset IUnmarshaller<MotionImageInsertionOffset, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public SpekeKeyProvider Unmarshall(JsonUnmarshallerContext context)
+        public MotionImageInsertionOffset Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            SpekeKeyProvider unmarshalledObject = new SpekeKeyProvider();
+            MotionImageInsertionOffset unmarshalledObject = new MotionImageInsertionOffset();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("certificateArn", targetDepth))
+                if (context.TestExpression("imageX", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ImageX = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("imageY", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("systemIds", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SystemIds = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("url", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ImageY = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static SpekeKeyProviderUnmarshaller _instance = new SpekeKeyProviderUnmarshaller();        
+        private static MotionImageInsertionOffsetUnmarshaller _instance = new MotionImageInsertionOffsetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SpekeKeyProviderUnmarshaller Instance
+        public static MotionImageInsertionOffsetUnmarshaller Instance
         {
             get
             {

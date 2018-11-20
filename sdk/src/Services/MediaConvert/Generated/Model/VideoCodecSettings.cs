@@ -45,7 +45,8 @@ namespace Amazon.MediaConvert.Model
         private ProresSettings _proresSettings;
 
         /// <summary>
-        /// Gets and sets the property Codec.
+        /// Gets and sets the property Codec. Specifies the video codec. This must be equal to
+        /// one of the enum values defined by the object  VideoCodec.
         /// </summary>
         public VideoCodec Codec
         {

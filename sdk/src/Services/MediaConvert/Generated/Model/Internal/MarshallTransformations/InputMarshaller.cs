@@ -108,6 +108,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DeblockFilter);
             }
 
+            if(requestObject.IsSetDecryptionSettings())
+            {
+                context.Writer.WritePropertyName("decryptionSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InputDecryptionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DecryptionSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetDenoiseFilter())
             {
                 context.Writer.WritePropertyName("denoiseFilter");
@@ -130,6 +141,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("filterStrength");
                 context.Writer.Write(requestObject.FilterStrength);
+            }
+
+            if(requestObject.IsSetImageInserter())
+            {
+                context.Writer.WritePropertyName("imageInserter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ImageInserterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ImageInserter, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetInputClippings())

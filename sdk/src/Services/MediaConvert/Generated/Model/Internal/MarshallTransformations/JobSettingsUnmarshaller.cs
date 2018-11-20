@@ -82,6 +82,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("motionImageInserter", targetDepth))
+                {
+                    var unmarshaller = MotionImageInserterUnmarshaller.Instance;
+                    unmarshalledObject.MotionImageInserter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nielsenConfiguration", targetDepth))
                 {
                     var unmarshaller = NielsenConfigurationUnmarshaller.Instance;

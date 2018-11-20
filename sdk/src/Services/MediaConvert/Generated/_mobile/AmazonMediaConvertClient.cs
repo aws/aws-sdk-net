@@ -242,6 +242,38 @@ namespace Amazon.MediaConvert
         #endregion
 
         
+        #region  AssociateCertificate
+
+        internal virtual AssociateCertificateResponse AssociateCertificate(AssociateCertificateRequest request)
+        {
+            var marshaller = AssociateCertificateRequestMarshaller.Instance;
+            var unmarshaller = AssociateCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateCertificateRequest,AssociateCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate">REST API Reference for AssociateCertificate Operation</seealso>
+        public virtual Task<AssociateCertificateResponse> AssociateCertificateAsync(AssociateCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AssociateCertificateRequestMarshaller.Instance;
+            var unmarshaller = AssociateCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateCertificateRequest,AssociateCertificateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelJob
 
         internal virtual CancelJobResponse CancelJob(CancelJobRequest request)
@@ -525,6 +557,38 @@ namespace Amazon.MediaConvert
             var unmarshaller = DescribeEndpointsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeEndpointsRequest,DescribeEndpointsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateCertificate
+
+        internal virtual DisassociateCertificateResponse DisassociateCertificate(DisassociateCertificateRequest request)
+        {
+            var marshaller = DisassociateCertificateRequestMarshaller.Instance;
+            var unmarshaller = DisassociateCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateCertificateRequest,DisassociateCertificateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateCertificate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateCertificate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate">REST API Reference for DisassociateCertificate Operation</seealso>
+        public virtual Task<DisassociateCertificateResponse> DisassociateCertificateAsync(DisassociateCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisassociateCertificateRequestMarshaller.Instance;
+            var unmarshaller = DisassociateCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateCertificateRequest,DisassociateCertificateResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

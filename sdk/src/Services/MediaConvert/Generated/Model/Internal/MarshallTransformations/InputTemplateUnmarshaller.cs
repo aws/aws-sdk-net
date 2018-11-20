@@ -106,6 +106,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterStrength = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imageInserter", targetDepth))
+                {
+                    var unmarshaller = ImageInserterUnmarshaller.Instance;
+                    unmarshalledObject.ImageInserter = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputClippings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<InputClipping, InputClippingUnmarshaller>(InputClippingUnmarshaller.Instance);

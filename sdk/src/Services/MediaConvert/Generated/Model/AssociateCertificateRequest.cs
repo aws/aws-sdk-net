@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Enable the Image inserter (ImageInserter) feature to include a graphic overlay on
-    /// your video. Enable or disable this feature for each input or output individually.
-    /// This setting is disabled by default.
+    /// Container for the parameters to the AssociateCertificate operation.
+    /// Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental
+    /// MediaConvert.
     /// </summary>
-    public partial class ImageInserter
+    public partial class AssociateCertificateRequest : AmazonMediaConvertRequest
     {
-        private List<InsertableImage> _insertableImages = new List<InsertableImage>();
+        private string _arn;
 
         /// <summary>
-        /// Gets and sets the property InsertableImages. Specify the images that you want to overlay
-        /// on your video. The images must be PNG or TGA files.
+        /// Gets and sets the property Arn. The ARN of the ACM certificate that you want to associate
+        /// with your MediaConvert resource.
         /// </summary>
-        public List<InsertableImage> InsertableImages
+        public string Arn
         {
-            get { return this._insertableImages; }
-            set { this._insertableImages = value; }
+            get { return this._arn; }
+            set { this._arn = value; }
         }
 
-        // Check to see if InsertableImages property is set
-        internal bool IsSetInsertableImages()
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
         {
-            return this._insertableImages != null && this._insertableImages.Count > 0; 
+            return this._arn != null;
         }
 
     }

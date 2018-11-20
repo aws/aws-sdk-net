@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SpekeKeyProvider Marshaller
+    /// MotionImageInsertionFramerate Marshaller
     /// </summary>       
-    public class SpekeKeyProviderMarshaller : IRequestMarshaller<SpekeKeyProvider, JsonMarshallerContext> 
+    public class MotionImageInsertionFramerateMarshaller : IRequestMarshaller<MotionImageInsertionFramerate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,35 +43,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SpekeKeyProvider requestObject, JsonMarshallerContext context)
+        public void Marshall(MotionImageInsertionFramerate requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCertificateArn())
+            if(requestObject.IsSetFramerateDenominator())
             {
-                context.Writer.WritePropertyName("certificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WritePropertyName("framerateDenominator");
+                context.Writer.Write(requestObject.FramerateDenominator);
             }
 
-            if(requestObject.IsSetResourceId())
+            if(requestObject.IsSetFramerateNumerator())
             {
-                context.Writer.WritePropertyName("resourceId");
-                context.Writer.Write(requestObject.ResourceId);
-            }
-
-            if(requestObject.IsSetSystemIds())
-            {
-                context.Writer.WritePropertyName("systemIds");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectSystemIdsListValue in requestObject.SystemIds)
-                {
-                        context.Writer.Write(requestObjectSystemIdsListValue);
-                }
-                context.Writer.WriteArrayEnd();
-            }
-
-            if(requestObject.IsSetUrl())
-            {
-                context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WritePropertyName("framerateNumerator");
+                context.Writer.Write(requestObject.FramerateNumerator);
             }
 
         }
@@ -79,7 +62,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static SpekeKeyProviderMarshaller Instance = new SpekeKeyProviderMarshaller();
+        public readonly static MotionImageInsertionFramerateMarshaller Instance = new MotionImageInsertionFramerateMarshaller();
 
     }
 }

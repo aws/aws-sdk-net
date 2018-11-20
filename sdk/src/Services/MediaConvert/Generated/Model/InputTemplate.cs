@@ -39,6 +39,7 @@ namespace Amazon.MediaConvert.Model
         private InputDenoiseFilter _denoiseFilter;
         private InputFilterEnable _filterEnable;
         private int? _filterStrength;
+        private ImageInserter _imageInserter;
         private List<InputClipping> _inputClippings = new List<InputClipping>();
         private int? _programNumber;
         private InputPsiControl _psiControl;
@@ -156,6 +157,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFilterStrength()
         {
             return this._filterStrength.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageInserter. Enable the Image inserter (ImageInserter)
+        /// feature to include a graphic overlay on your video. Enable or disable this feature
+        /// for each input individually. This setting is disabled by default.
+        /// </summary>
+        public ImageInserter ImageInserter
+        {
+            get { return this._imageInserter; }
+            set { this._imageInserter = value; }
+        }
+
+        // Check to see if ImageInserter property is set
+        internal bool IsSetImageInserter()
+        {
+            return this._imageInserter != null;
         }
 
         /// <summary>
