@@ -33,13 +33,35 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class DescribeActivitiesRequest : AmazonWorkDocsRequest
     {
+        private string _activityTypes;
         private string _authenticationToken;
         private DateTime? _endTimeUtc;
+        private bool? _includeIndirectActivities;
         private int? _limit;
         private string _marker;
         private string _organizationId;
+        private string _resourceId;
         private DateTime? _startTimeUtc;
         private string _userId;
+
+        /// <summary>
+        /// Gets and sets the property ActivityTypes. 
+        /// <para>
+        /// Specifies which activity types to include in the response. If this field is left empty,
+        /// all activity types are returned.
+        /// </para>
+        /// </summary>
+        public string ActivityTypes
+        {
+            get { return this._activityTypes; }
+            set { this._activityTypes = value; }
+        }
+
+        // Check to see if ActivityTypes property is set
+        internal bool IsSetActivityTypes()
+        {
+            return this._activityTypes != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
@@ -77,6 +99,27 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetEndTimeUtc()
         {
             return this._endTimeUtc.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeIndirectActivities. 
+        /// <para>
+        /// Includes indirect activities. An indirect activity results from a direct activity
+        /// performed on a parent resource. For example, sharing a parent folder (the direct activity)
+        /// shares all of the subfolders and documents within the parent folder (the indirect
+        /// activity).
+        /// </para>
+        /// </summary>
+        public bool IncludeIndirectActivities
+        {
+            get { return this._includeIndirectActivities.GetValueOrDefault(); }
+            set { this._includeIndirectActivities = value; }
+        }
+
+        // Check to see if IncludeIndirectActivities property is set
+        internal bool IsSetIncludeIndirectActivities()
+        {
+            return this._includeIndirectActivities.HasValue; 
         }
 
         /// <summary>
@@ -132,6 +175,24 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetOrganizationId()
         {
             return this._organizationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// The document or folder ID for which to describe activity types.
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
         }
 
         /// <summary>

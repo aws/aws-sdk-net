@@ -32,11 +32,30 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class ShareResult
     {
+        private string _inviteePrincipalId;
         private string _principalId;
         private RoleType _role;
         private string _shareId;
         private ShareStatusType _status;
         private string _statusMessage;
+
+        /// <summary>
+        /// Gets and sets the property InviteePrincipalId. 
+        /// <para>
+        /// The ID of the invited user.
+        /// </para>
+        /// </summary>
+        public string InviteePrincipalId
+        {
+            get { return this._inviteePrincipalId; }
+            set { this._inviteePrincipalId = value; }
+        }
+
+        // Check to see if InviteePrincipalId property is set
+        internal bool IsSetInviteePrincipalId()
+        {
+            return this._inviteePrincipalId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PrincipalId. 

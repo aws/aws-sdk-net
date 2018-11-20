@@ -29,13 +29,13 @@ namespace Amazon.WorkDocs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNotificationSubscription operation.
-    /// Configure WorkDocs to use Amazon SNS notifications.
+    /// Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a
+    /// confirmation message, and must confirm the subscription.
     /// 
     ///  
     /// <para>
-    /// The endpoint receives a confirmation message, and must confirm the subscription. For
-    /// more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm
-    /// the Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+    /// For more information, see <a href="http://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+    /// to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateNotificationSubscriptionRequest : AmazonWorkDocsRequest

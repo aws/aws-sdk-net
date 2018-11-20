@@ -461,6 +461,9 @@ namespace Amazon.WorkDocs
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidCommentOperationException">
+        /// The requested operation is not allowed on the specified comment object.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
         /// The specified document version is not in the INITIALIZED state.
         /// </exception>
@@ -574,6 +577,9 @@ namespace Amazon.WorkDocs
         /// <param name="request">Container for the necessary parameters to execute the CreateFolder service method.</param>
         /// 
         /// <returns>The response from the CreateFolder service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityAlreadyExistsException">
         /// The resource already exists.
         /// </exception>
@@ -691,13 +697,13 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Configure WorkDocs to use Amazon SNS notifications.
+        /// Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a
+        /// confirmation message, and must confirm the subscription.
         /// 
         ///  
         /// <para>
-        /// The endpoint receives a confirmation message, and must confirm the subscription. For
-        /// more information, see <a href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm
-        /// the Subscription</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.
+        /// For more information, see <a href="http://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+        /// to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNotificationSubscription service method.</param>
@@ -985,6 +991,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
         /// The resource hierarchy is changing.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
         /// The resource does not exist.
         /// </exception>
@@ -1046,6 +1055,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
         /// The resource hierarchy is changing.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
         /// The resource does not exist.
         /// </exception>
@@ -1104,12 +1116,18 @@ namespace Amazon.WorkDocs
         /// <param name="request">Container for the necessary parameters to execute the DeleteFolderContents service method.</param>
         /// 
         /// <returns>The response from the DeleteFolderContents service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
         /// The resource does not exist.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ProhibitedStateException">
+        /// The specified document version is not in the INITIALIZED state.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -1559,7 +1577,8 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Describes the groups specified by query.
+        /// Describes the groups specified by the query. Groups are defined by the underlying
+        /// Active Directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroups service method.</param>
         /// 
@@ -1715,6 +1734,13 @@ namespace Amazon.WorkDocs
         /// <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders
         /// and <code>RecycleBin</code> is the root of recycled items. This is not a valid action
         /// for SigV4 (administrative API) clients.
+        /// 
+        ///  
+        /// <para>
+        /// This action requires an authentication token. To get an authentication token, register
+        /// an application with Amazon WorkDocs. For more information, see <a href="http://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+        /// and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRootFolders service method.</param>
         /// 
@@ -1782,12 +1808,19 @@ namespace Amazon.WorkDocs
         /// <param name="request">Container for the necessary parameters to execute the DescribeUsers service method.</param>
         /// 
         /// <returns>The response from the DescribeUsers service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.EntityNotExistsException">
+        /// The resource does not exist.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
         /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
         /// the control of the organization is failing, such as a connected Active Directory.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
         /// The pagination marker or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.RequestedEntityTooLargeException">
+        /// The response is too large to return. The request must include a filter to reduce the
+        /// size of the response.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
         /// One or more of the dependencies is unavailable.
@@ -2193,6 +2226,62 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  GetResources
+
+
+        /// <summary>
+        /// Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code>
+        /// supported is <code>SHARED_WITH_ME</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResources service method.</param>
+        /// 
+        /// <returns>The response from the GetResources service method, as returned by WorkDocs.</returns>
+        /// <exception cref="Amazon.WorkDocs.Model.FailedDependencyException">
+        /// The AWS Directory Service cannot reach an on-premises instance. Or a dependency under
+        /// the control of the organization is failing, such as a connected Active Directory.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.InvalidArgumentException">
+        /// The pagination marker or limit fields are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ServiceUnavailableException">
+        /// One or more of the dependencies is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedOperationException">
+        /// The operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.UnauthorizedResourceAccessException">
+        /// The caller does not have access to perform the action on the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources">REST API Reference for GetResources Operation</seealso>
+        public virtual GetResourcesResponse GetResources(GetResourcesRequest request)
+        {
+            var marshaller = GetResourcesRequestMarshaller.Instance;
+            var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcesRequest,GetResourcesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResources operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources">REST API Reference for GetResources Operation</seealso>
+        public virtual Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetResourcesRequestMarshaller.Instance;
+            var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcesRequest,GetResourcesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  InitiateDocumentVersionUpload
 
 
@@ -2396,6 +2485,9 @@ namespace Amazon.WorkDocs
         /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
         /// The resource hierarchy is changing.
         /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
+        /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityAlreadyExistsException">
         /// The resource already exists.
         /// </exception>
@@ -2534,6 +2626,9 @@ namespace Amazon.WorkDocs
         /// <returns>The response from the UpdateFolder service method, as returned by WorkDocs.</returns>
         /// <exception cref="Amazon.WorkDocs.Model.ConcurrentModificationException">
         /// The resource hierarchy is changing.
+        /// </exception>
+        /// <exception cref="Amazon.WorkDocs.Model.ConflictingOperationException">
+        /// Another operation is in progress on the resource that conflicts with the current operation.
         /// </exception>
         /// <exception cref="Amazon.WorkDocs.Model.EntityAlreadyExistsException">
         /// The resource already exists.

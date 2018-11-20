@@ -59,8 +59,14 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 
             string uriResourcePath = "/api/v1/activities";
             
+            if (publicRequest.IsSetActivityTypes())
+                request.Parameters.Add("activityTypes", StringUtils.FromString(publicRequest.ActivityTypes));
+            
             if (publicRequest.IsSetEndTimeUtc())
                 request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+            
+            if (publicRequest.IsSetIncludeIndirectActivities())
+                request.Parameters.Add("includeIndirectActivities", StringUtils.FromBool(publicRequest.IncludeIndirectActivities));
             
             if (publicRequest.IsSetLimit())
                 request.Parameters.Add("limit", StringUtils.FromInt(publicRequest.Limit));
@@ -70,6 +76,9 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetOrganizationId())
                 request.Parameters.Add("organizationId", StringUtils.FromString(publicRequest.OrganizationId));
+            
+            if (publicRequest.IsSetResourceId())
+                request.Parameters.Add("resourceId", StringUtils.FromString(publicRequest.ResourceId));
             
             if (publicRequest.IsSetStartTimeUtc())
                 request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));

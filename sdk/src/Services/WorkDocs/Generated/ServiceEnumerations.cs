@@ -103,9 +103,17 @@ namespace Amazon.WorkDocs
         /// </summary>
         public static readonly ActivityType DOCUMENT_VERSION_DELETED = new ActivityType("DOCUMENT_VERSION_DELETED");
         /// <summary>
+        /// Constant DOCUMENT_VERSION_DOWNLOADED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_VERSION_DOWNLOADED = new ActivityType("DOCUMENT_VERSION_DOWNLOADED");
+        /// <summary>
         /// Constant DOCUMENT_VERSION_UPLOADED for ActivityType
         /// </summary>
         public static readonly ActivityType DOCUMENT_VERSION_UPLOADED = new ActivityType("DOCUMENT_VERSION_UPLOADED");
+        /// <summary>
+        /// Constant DOCUMENT_VERSION_VIEWED for ActivityType
+        /// </summary>
+        public static readonly ActivityType DOCUMENT_VERSION_VIEWED = new ActivityType("DOCUMENT_VERSION_VIEWED");
         /// <summary>
         /// Constant FOLDER_CREATED for ActivityType
         /// </summary>
@@ -790,6 +798,52 @@ namespace Amazon.WorkDocs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrincipalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceCollectionType.
+    /// </summary>
+    public class ResourceCollectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHARED_WITH_ME for ResourceCollectionType
+        /// </summary>
+        public static readonly ResourceCollectionType SHARED_WITH_ME = new ResourceCollectionType("SHARED_WITH_ME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceCollectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCollectionType FindValue(string value)
+        {
+            return FindValue<ResourceCollectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCollectionType(string value)
         {
             return FindValue(value);
         }

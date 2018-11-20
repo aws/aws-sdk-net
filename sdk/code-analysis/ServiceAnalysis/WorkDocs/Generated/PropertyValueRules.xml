@@ -292,6 +292,12 @@
     <pattern>[&amp;\w+-.@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.ActivityTypes</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\w,]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.AuthenticationToken</property>
     <min>1</min>
     <max>8199</max>
@@ -309,6 +315,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.OrganizationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.DescribeActivitiesRequest.ResourceId</property>
     <min>1</min>
     <max>256</max>
     <pattern>[&amp;\w+-.@]+</pattern>
@@ -684,6 +696,32 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetResourcesRequest.AuthenticationToken</property>
+    <min>1</min>
+    <max>8199</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetResourcesRequest.Limit</property>
+    <min>1</min>
+    <max>999</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetResourcesRequest.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetResourcesRequest.UserId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.GetResourcesResponse.Marker</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WorkDocs.Model.InitiateDocumentVersionUploadRequest.AuthenticationToken</property>
     <min>1</min>
     <max>8199</max>
@@ -1013,6 +1051,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkDocs.Model.SharePrincipal.Id</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[&amp;\w+-.@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WorkDocs.Model.ShareResult.InviteePrincipalId</property>
     <min>1</min>
     <max>256</max>
     <pattern>[&amp;\w+-.@]+</pattern>

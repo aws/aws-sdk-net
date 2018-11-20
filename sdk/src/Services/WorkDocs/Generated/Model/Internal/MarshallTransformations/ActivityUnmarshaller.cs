@@ -76,6 +76,12 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                     unmarshalledObject.Initiator = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsIndirectActivity", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsIndirectActivity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OrganizationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

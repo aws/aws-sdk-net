@@ -1334,6 +1334,38 @@ namespace Amazon.WorkDocs
 
         #endregion
         
+        #region  GetResources
+
+        internal virtual GetResourcesResponse GetResources(GetResourcesRequest request)
+        {
+            var marshaller = GetResourcesRequestMarshaller.Instance;
+            var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcesRequest,GetResourcesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetResources operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources">REST API Reference for GetResources Operation</seealso>
+        public virtual Task<GetResourcesResponse> GetResourcesAsync(GetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetResourcesRequestMarshaller.Instance;
+            var unmarshaller = GetResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcesRequest,GetResourcesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  InitiateDocumentVersionUpload
 
         internal virtual InitiateDocumentVersionUploadResponse InitiateDocumentVersionUpload(InitiateDocumentVersionUploadRequest request)

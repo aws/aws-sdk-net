@@ -33,6 +33,13 @@ namespace Amazon.WorkDocs.Model
     /// <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders
     /// and <code>RecycleBin</code> is the root of recycled items. This is not a valid action
     /// for SigV4 (administrative API) clients.
+    /// 
+    ///  
+    /// <para>
+    /// This action requires an authentication token. To get an authentication token, register
+    /// an application with Amazon WorkDocs. For more information, see <a href="http://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+    /// and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class DescribeRootFoldersRequest : AmazonWorkDocsRequest
     {

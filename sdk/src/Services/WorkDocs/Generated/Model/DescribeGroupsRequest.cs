@@ -29,7 +29,8 @@ namespace Amazon.WorkDocs.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGroups operation.
-    /// Describes the groups specified by query.
+    /// Describes the groups specified by the query. Groups are defined by the underlying
+    /// Active Directory.
     /// </summary>
     public partial class DescribeGroupsRequest : AmazonWorkDocsRequest
     {

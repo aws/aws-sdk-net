@@ -34,6 +34,7 @@ namespace Amazon.WorkDocs.Model
     {
         private CommentMetadata _commentMetadata;
         private UserMetadata _initiator;
+        private bool? _isIndirectActivity;
         private string _organizationId;
         private ResourceMetadata _originalParent;
         private Participants _participants;
@@ -76,6 +77,27 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetInitiator()
         {
             return this._initiator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsIndirectActivity. 
+        /// <para>
+        /// Indicates whether an activity is indirect or direct. An indirect activity results
+        /// from a direct activity performed on a parent resource. For example, sharing a parent
+        /// folder (the direct activity) shares all of the subfolders and documents within the
+        /// parent folder (the indirect activity).
+        /// </para>
+        /// </summary>
+        public bool IsIndirectActivity
+        {
+            get { return this._isIndirectActivity.GetValueOrDefault(); }
+            set { this._isIndirectActivity = value; }
+        }
+
+        // Check to see if IsIndirectActivity property is set
+        internal bool IsSetIsIndirectActivity()
+        {
+            return this._isIndirectActivity.HasValue; 
         }
 
         /// <summary>

@@ -84,6 +84,10 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             {
                 return new FailedDependencyException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCommentOperationException"))
+            {
+                return new InvalidCommentOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ProhibitedStateException"))
             {
                 return new ProhibitedStateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
