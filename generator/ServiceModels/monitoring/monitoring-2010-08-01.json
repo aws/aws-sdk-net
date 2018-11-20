@@ -189,8 +189,8 @@
                 },
                 "StorageResolution": {
                   "type": "integer",
-                  "zonbookDocumentation": "\n\t\t\n\n\t\t       <simpara>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with \n\t\t\tsub-minute resolution down to one second.\n\t\tSetting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available\n\t\tonly for custom metrics. For more information about high-resolution metrics, \n\t\t\tsee <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics\">High-Resolution Metrics</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.\n\t\t</simpara>\n\t        <simpara>This field is optional, if you do not specify it the default of 60 is used.</simpara>\n\t     ",
-                  "documentation": "\n\t\t\n\n\t\t       <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with \n\t\t\tsub-minute resolution down to one second.\n\t\tSetting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available\n\t\tonly for custom metrics. For more information about high-resolution metrics, \n\t\t\tsee <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics\">High-Resolution Metrics</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.\n\t\t</p>\n\t        <p>This field is optional, if you do not specify it the default of 60 is used.</p>\n\t     ",
+                  "zonbookDocumentation": "\n\t\n\n\t\t       <simpara>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with \n\t\t\tsub-minute resolution down to one second.\n\t\tSetting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available\n\t\tonly for custom metrics. For more information about high-resolution metrics, \n\t\t\tsee <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics\">High-Resolution Metrics</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.\n\t\t</simpara>\n\t        <simpara>This field is optional, if you do not specify it the default of 60 is used.</simpara>\n\t     ",
+                  "documentation": "\n\t\n\n\t\t       <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with \n\t\t\tsub-minute resolution down to one second.\n\t\tSetting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available\n\t\tonly for custom metrics. For more information about high-resolution metrics, \n\t\t\tsee <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics\">High-Resolution Metrics</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.\n\t\t</p>\n\t        <p>This field is optional, if you do not specify it the default of 60 is used.</p>\n\t     ",
                   "shape_name": "StorageResolution",
                   "min_length": 1
                 }
@@ -266,7 +266,7 @@
           ]
         }
       ],
-      "documentation": "\n\t\t       <p>Publishes metric data to Amazon CloudWatch. CloudWatch associates\n\t\t\tthe data with the specified metric. If the specified metric does not exist,\n\t\t\tCloudWatch creates the metric. When CloudWatch creates a metric, it can\n\t\t\ttake up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p>\n\t\t       <p>You can publish either individual data points in the <code>Value</code> field, or \n\t\tarrays of values and the number of times each value occurred during the period by using the \n\t\t<code>Values</code> and <code>Counts</code> fields in the <code>MetricDatum</code> structure. Using\n\t\tthe <code>Values</code> and <code>Counts</code> method enables you to publish up to 150 values per metric\n\t\t\twith one <code>PutMetricData</code> request, and\n\t\tsupports retrieving percentile statistics on this data.</p>\n\t\t       <p>Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests. You can \n\t\t\tsend a payload compressed by gzip. Each request\n\t\tis also limited to no more than 20 different metrics.</p>\n\t\t       <p>Although the <code>Value</code> parameter accepts numbers of type\n\t\t\t<code>Double</code>, CloudWatch rejects values that are either too small\n\t\t\tor too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base\n\t\t\t10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity,\n\t\t\t-Infinity) are not supported.</p>\n\t\t       <p>You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information about specifying dimensions, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html\">Publishing Metrics</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\n\t\t       <p>Data points with time stamps from 24 hours ago or longer can take at least 48\n\t\t\thours to become available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time they \n\t\t\tare submitted.</p>\n\t\t       <p>CloudWatch needs raw data points to calculate percentile statistics. These raw data points\n\t\t\tcould be published individually or as part of <code>Values</code> \n\t\t\tand <code>Counts</code> arrays. If you publish \n\t\t\tdata using statistic sets in the <code>StatisticValues</code> field instead, you can only retrieve \n\t\t\tpercentile statistics for this data if one of the following conditions is true:</p>\n\t\t\t      <ul>\n            <li>\n               <p>The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>,\n\t\t\t\t\t<code>Max</code>, and <code>Sum</code> are all equal.</p>\n            </li>\n            <li>\n               <p>The <code>Min</code> and\n\t\t\t\t\t<code>Max</code> are equal, and <code>Sum</code> is equal to <code>Min</code> \n\t\t\t\t\tmultiplied by <code>SampleCount</code>.</p>\n            </li>\n         </ul>\t\t\t\t\t\n\t\t\t\n\n\t\t\n\n\t     "
+      "documentation": "\n\t\t       <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates\n\t\t\tthe data points with the specified metric. If the specified metric does not exist,\n\t\t\tCloudWatch creates the metric. When CloudWatch creates a metric, it can\n\t\t\ttake up to fifteen minutes for the metric to appear in calls to <a>ListMetrics</a>.</p>\n\n\t\t       <p>You can publish either individual data points in the <code>Value</code> field, or \n\t\tarrays of values and the number of times each value occurred during the period by using the \n\t\t<code>Values</code> and <code>Counts</code> fields in the <code>MetricDatum</code> structure. Using\n\t\tthe <code>Values</code> and <code>Counts</code> method enables you to publish up to 150 values per metric\n\t\t\twith one <code>PutMetricData</code> request, and\n\t\tsupports retrieving percentile statistics on this data.</p>\n\t\t       <p>Each <code>PutMetricData</code> request is limited to 40 KB in size for HTTP POST requests. You can \n\t\t\tsend a payload compressed by gzip. Each request\n\t\tis also limited to no more than 20 different metrics.</p>\n\t\t       <p>Although the <code>Value</code> parameter accepts numbers of type\n\t\t\t<code>Double</code>, CloudWatch rejects values that are either too small\n\t\t\tor too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base\n\t\t\t10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN, +Infinity,\n\t\t\t-Infinity) are not supported.</p>\n\t\t       <p>You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information about specifying dimensions, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html\">Publishing Metrics</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\n\t\t       <p>Data points with time stamps from 24 hours ago or longer can take at least 48\n\t\t\thours to become available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time they \n\t\t\tare submitted.</p>\n\t\t       <p>CloudWatch needs raw data points to calculate percentile statistics. If you publish \n\t\t\tdata using a statistic set instead, you can only retrieve \n\t\t\tpercentile statistics for this data if one of the following conditions is true:</p>\n\t\t\t      <ul>\n            <li>\n               <p>The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>,\n\t\t\t\t\t<code>Max</code>, and <code>Sum</code> are all equal.</p>\n            </li>\n            <li>\n               <p>The <code>Min</code> and\n\t\t\t\t\t<code>Max</code> are equal, and <code>Sum</code> is equal to <code>Min</code> \n\t\t\t\t\tmultiplied by <code>SampleCount</code>.</p>\n            </li>\n         </ul>\t\t\t\t\t\n\t\t\t\n\n\t\t\n\n\t     "
     },
     "GetMetricData": {
       "name": "GetMetricData",
@@ -278,8 +278,8 @@
             "members": {
               "Id": {
                 "type": "string",
-                "zonbookDocumentation": "\n\t\t       <para>A short name used to tie this structure to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</para>\n\t     ",
-                "documentation": "\n\t\t       <p>A short name used to tie this structure to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</p>\n\t     ",
+                "zonbookDocumentation": "\n\t\t       <para>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</para>\n\t     ",
+                "documentation": "\n\t\t       <p>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</p>\n\t     ",
                 "required": true,
                 "shape_name": "MetricId",
                 "min_length": 1,
@@ -302,8 +302,8 @@
                       },
                       "MetricName": {
                         "type": "string",
-                        "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric.</simpara>\n\t     ",
-                        "documentation": "\n\t\t       <p>The name of the metric.</p>\n\t     ",
+                        "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric. This is a required field.</simpara>\n\t     ",
+                        "documentation": "\n\t\t       <p>The name of the metric. This is a required field.</p>\n\t     ",
                         "shape_name": "MetricName",
                         "min_length": 1,
                         "max_length": 255
@@ -358,8 +358,8 @@
                   },
                   "Period": {
                     "type": "integer",
-                    "zonbookDocumentation": "\n\t\t       <para>The period to use when retrieving the metric.</para>\n\t     ",
-                    "documentation": "\n\t\t       <p>The period to use when retrieving the metric.</p>\n\t     ",
+                    "zonbookDocumentation": "\n\t\t       <para>The period, in seconds, to use when retrieving the metric.</para>\n\t     ",
+                    "documentation": "\n\t\t       <p>The period, in seconds, to use when retrieving the metric.</p>\n\t     ",
                     "required": true,
                     "shape_name": "Period",
                     "min_length": 1
@@ -407,14 +407,14 @@
                     "shape_name": "StandardUnit"
                   }
                 },
-                "zonbookDocumentation": "\n\t\t       <para>The metric to be returned, along with statistics, period, and units. Use this parameter only if this structure is performing a data retrieval \n\t\t\tand not performing a math expression on the returned data.</para>\n\t\t       <para>Within one MetricDataQuery structure, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
-                "documentation": "\n\t\t       <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this structure is performing a data retrieval \n\t\t\tand not performing a math expression on the returned data.</p>\n\t\t       <p>Within one MetricDataQuery structure, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                "zonbookDocumentation": "\n\t\t       <para>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</para>\n\t\t       <para>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                "documentation": "\n\t\t       <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</p>\n\t\t       <p>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
                 "shape_name": "MetricStat"
               },
               "Expression": {
                 "type": "string",
-                "zonbookDocumentation": "\n\t\t       <para>The math expression to be performed on the returned data, if this structure is performing a math expression. For more information about metric math expressions, see \n\t\t\t<ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.</para>\n\t\t       <para>Within one MetricDataQuery structure, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
-                "documentation": "\n\t\t       <p>The math expression to be performed on the returned data, if this structure is performing a math expression. For more information about metric math expressions, see \n\t\t\t<a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\t\t       <p>Within one MetricDataQuery structure, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                "zonbookDocumentation": "\n\t\t       <para>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.</para>\n\t\t       <para>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                "documentation": "\n\t\t       <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\t\t       <p>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
                 "shape_name": "MetricExpression",
                 "min_length": 1,
                 "max_length": 1024
@@ -427,13 +427,13 @@
               },
               "ReturnData": {
                 "type": "boolean",
-                "zonbookDocumentation": "\n\t\t       <para>Indicates whether to return the time stamps and raw data values of this metric. If you are performing this call just to \n\t\t\tdo math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of \n\t\t\t<code>True</code> is used.</para>\n\t     ",
-                "documentation": "\n\t\t       <p>Indicates whether to return the time stamps and raw data values of this metric. If you are performing this call just to \n\t\t\tdo math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of \n\t\t\t<code>True</code> is used.</p>\n\t     ",
+                "zonbookDocumentation": "\n\t\t       <para>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</para>\n\t\t\n\t     ",
+                "documentation": "\n\t\t       <p>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>\n\t\t\n\t     ",
                 "shape_name": "ReturnData"
               }
             },
-            "zonbookDocumentation": "\n\t\t       <para>This structure indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</para>\n\t     ",
-            "documentation": "\n\t\t       <p>This structure indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <para>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</para>\n\t\t       <para>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the <emphasis>Amazon CloudWatch User\n\t\t\t\tGuide</emphasis>.</para>\n\n\t\t       <para>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</p>\n\t\t       <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User\n\t\t\t\tGuide</i>.</p>\n\n\t\t       <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>\n\t     ",
             "internalonly": true,
             "shape_name": "MetricDataQuery"
           },
@@ -448,8 +448,8 @@
               "members": {
                 "Id": {
                   "type": "string",
-                  "zonbookDocumentation": "\n\t\t       <para>A short name used to tie this structure to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</para>\n\t     ",
-                  "documentation": "\n\t\t       <p>A short name used to tie this structure to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</p>\n\t     ",
+                  "zonbookDocumentation": "\n\t\t       <para>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</p>\n\t     ",
                   "required": true,
                   "shape_name": "MetricId",
                   "min_length": 1,
@@ -472,8 +472,8 @@
                         },
                         "MetricName": {
                           "type": "string",
-                          "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric.</simpara>\n\t     ",
-                          "documentation": "\n\t\t       <p>The name of the metric.</p>\n\t     ",
+                          "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric. This is a required field.</simpara>\n\t     ",
+                          "documentation": "\n\t\t       <p>The name of the metric. This is a required field.</p>\n\t     ",
                           "shape_name": "MetricName",
                           "min_length": 1,
                           "max_length": 255
@@ -528,8 +528,8 @@
                     },
                     "Period": {
                       "type": "integer",
-                      "zonbookDocumentation": "\n\t\t       <para>The period to use when retrieving the metric.</para>\n\t     ",
-                      "documentation": "\n\t\t       <p>The period to use when retrieving the metric.</p>\n\t     ",
+                      "zonbookDocumentation": "\n\t\t       <para>The period, in seconds, to use when retrieving the metric.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The period, in seconds, to use when retrieving the metric.</p>\n\t     ",
                       "required": true,
                       "shape_name": "Period",
                       "min_length": 1
@@ -577,14 +577,14 @@
                       "shape_name": "StandardUnit"
                     }
                   },
-                  "zonbookDocumentation": "\n\t\t       <para>The metric to be returned, along with statistics, period, and units. Use this parameter only if this structure is performing a data retrieval \n\t\t\tand not performing a math expression on the returned data.</para>\n\t\t       <para>Within one MetricDataQuery structure, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
-                  "documentation": "\n\t\t       <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this structure is performing a data retrieval \n\t\t\tand not performing a math expression on the returned data.</p>\n\t\t       <p>Within one MetricDataQuery structure, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                  "zonbookDocumentation": "\n\t\t       <para>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</para>\n\t\t       <para>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</p>\n\t\t       <p>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
                   "shape_name": "MetricStat"
                 },
                 "Expression": {
                   "type": "string",
-                  "zonbookDocumentation": "\n\t\t       <para>The math expression to be performed on the returned data, if this structure is performing a math expression. For more information about metric math expressions, see \n\t\t\t<ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.</para>\n\t\t       <para>Within one MetricDataQuery structure, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
-                  "documentation": "\n\t\t       <p>The math expression to be performed on the returned data, if this structure is performing a math expression. For more information about metric math expressions, see \n\t\t\t<a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\t\t       <p>Within one MetricDataQuery structure, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                  "zonbookDocumentation": "\n\t\t       <para>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.</para>\n\t\t       <para>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\t\t       <p>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
                   "shape_name": "MetricExpression",
                   "min_length": 1,
                   "max_length": 1024
@@ -597,13 +597,13 @@
                 },
                 "ReturnData": {
                   "type": "boolean",
-                  "zonbookDocumentation": "\n\t\t       <para>Indicates whether to return the time stamps and raw data values of this metric. If you are performing this call just to \n\t\t\tdo math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of \n\t\t\t<code>True</code> is used.</para>\n\t     ",
-                  "documentation": "\n\t\t       <p>Indicates whether to return the time stamps and raw data values of this metric. If you are performing this call just to \n\t\t\tdo math expressions and do not also need the raw data returned, you can specify <code>False</code>. If you omit this, the default of \n\t\t\t<code>True</code> is used.</p>\n\t     ",
+                  "zonbookDocumentation": "\n\t\t       <para>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</para>\n\t\t\n\t     ",
+                  "documentation": "\n\t\t       <p>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>\n\t\t\n\t     ",
                   "shape_name": "ReturnData"
                 }
               },
-              "zonbookDocumentation": "\n\t\t       <para>This structure indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</para>\n\t     ",
-              "documentation": "\n\t\t       <p>This structure indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</p>\n\t     ",
+              "zonbookDocumentation": "\n\t\t       <para>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</para>\n\t\t       <para>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the <emphasis>Amazon CloudWatch User\n\t\t\t\tGuide</emphasis>.</para>\n\n\t\t       <para>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</para>\n\t     ",
+              "documentation": "\n\t\t       <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</p>\n\t\t       <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User\n\t\t\t\tGuide</i>.</p>\n\n\t\t       <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>\n\t     ",
               "shape_name": "MetricDataQuery"
             }
           },
@@ -676,8 +676,8 @@
                 },
                 "Timestamps": {
                   "type": "list",
-                  "zonbookDocumentation": "\n\t\t       <para>The time stamps for the data points, formatted in Unix timestamp format. The number of time\n\t\t\tstamps always matches the number of values and the value for Timestamps[x] is\n\t\t\tValues[x].</para>\n\t     ",
-                  "documentation": "\n\t\t       <p>The time stamps for the data points, formatted in Unix timestamp format. The number of time\n\t\t\tstamps always matches the number of values and the value for Timestamps[x] is\n\t\t\tValues[x].</p>\n\t     ",
+                  "zonbookDocumentation": "\n\t\t       <para>The timestamps for the data points, formatted in Unix timestamp format. The number of\n\t\t\ttimestamps always matches the number of values and the value for Timestamps[x] is\n\t\t\tValues[x].</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The timestamps for the data points, formatted in Unix timestamp format. The number of\n\t\t\ttimestamps always matches the number of values and the value for Timestamps[x] is\n\t\t\tValues[x].</p>\n\t     ",
                   "shape_name": "Timestamps",
                   "members": {
                     "type": "timestamp",
@@ -687,8 +687,8 @@
                 },
                 "Values": {
                   "type": "list",
-                  "zonbookDocumentation": "\n\t\t       <para>The data points for the metric corresponding to <code>Timestamps</code>. The number of\n\t\t\tvalues always matches the number of time stamps and the time stamp for Values[x] is\n\t\t\tTimestamps[x].</para>\n\t     ",
-                  "documentation": "\n\t\t       <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of\n\t\t\tvalues always matches the number of time stamps and the time stamp for Values[x] is\n\t\t\tTimestamps[x].</p>\n\t     ",
+                  "zonbookDocumentation": "\n\t\t       <para>The data points for the metric corresponding to <code>Timestamps</code>. The number of\n\t\t\tvalues always matches the number of timestamps and the timestamp for Values[x] is\n\t\t\tTimestamps[x].</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of\n\t\t\tvalues always matches the number of timestamps and the timestamp for Values[x] is\n\t\t\tTimestamps[x].</p>\n\t     ",
                   "shape_name": "DatapointValues",
                   "members": {
                     "type": "double",
@@ -734,8 +734,8 @@
                   }
                 }
               },
-              "zonbookDocumentation": "\n\t\t       <para>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures\n\t\tincludes the data points for that metric, along with the time stamps of those data points and other identifying information.</para>\n\t     ",
-              "documentation": "\n\t\t       <p>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures\n\t\tincludes the data points for that metric, along with the time stamps of those data points and other identifying information.</p>\n\t     ",
+              "zonbookDocumentation": "\n\t\t       <para>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code>\n\t\t\tstructures. Each of these structures includes the data points for that metric, along\n\t\t\twith the timestamps of those data points and other identifying information.</para>\n\t     ",
+              "documentation": "\n\t\t       <p>A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code>\n\t\t\tstructures. Each of these structures includes the data points for that metric, along\n\t\t\twith the timestamps of those data points and other identifying information.</p>\n\t     ",
               "shape_name": "MetricDataResult"
             }
           },
@@ -1203,8 +1203,8 @@
                 },
                 "MetricName": {
                   "type": "string",
-                  "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric.</simpara>\n\t     ",
-                  "documentation": "\n\t\t       <p>The name of the metric.</p>\n\t     ",
+                  "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric. This is a required field.</simpara>\n\t     ",
+                  "documentation": "\n\t\t       <p>The name of the metric. This is a required field.</p>\n\t     ",
                   "shape_name": "MetricName",
                   "min_length": 1,
                   "max_length": 255
@@ -2341,8 +2341,8 @@
                       },
                       "StorageResolution": {
                         "type": "integer",
-                        "zonbookDocumentation": "\n\t\t\n\n\t\t       <simpara>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with \n\t\t\tsub-minute resolution down to one second.\n\t\tSetting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available\n\t\tonly for custom metrics. For more information about high-resolution metrics, \n\t\t\tsee <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics\">High-Resolution Metrics</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.\n\t\t</simpara>\n\t        <simpara>This field is optional, if you do not specify it the default of 60 is used.</simpara>\n\t     ",
-                        "documentation": "\n\t\t\n\n\t\t       <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with \n\t\t\tsub-minute resolution down to one second.\n\t\tSetting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available\n\t\tonly for custom metrics. For more information about high-resolution metrics, \n\t\t\tsee <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics\">High-Resolution Metrics</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.\n\t\t</p>\n\t        <p>This field is optional, if you do not specify it the default of 60 is used.</p>\n\t     ",
+                        "zonbookDocumentation": "\n\t\n\n\t\t       <simpara>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with \n\t\t\tsub-minute resolution down to one second.\n\t\tSetting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available\n\t\tonly for custom metrics. For more information about high-resolution metrics, \n\t\t\tsee <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics\">High-Resolution Metrics</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.\n\t\t</simpara>\n\t        <simpara>This field is optional, if you do not specify it the default of 60 is used.</simpara>\n\t     ",
+                        "documentation": "\n\t\n\n\t\t       <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with \n\t\t\tsub-minute resolution down to one second.\n\t\tSetting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available\n\t\tonly for custom metrics. For more information about high-resolution metrics, \n\t\t\tsee <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics\">High-Resolution Metrics</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.\n\t\t</p>\n\t        <p>This field is optional, if you do not specify it the default of 60 is used.</p>\n\t     ",
                         "shape_name": "StorageResolution",
                         "min_length": 1
                       }
@@ -2518,8 +2518,8 @@
         "members": {
           "AlarmName": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The name for the alarm. This name must be unique within the AWS account.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>The name for the alarm. This name must be unique within the AWS account.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The name for the alarm. This name must be unique within your AWS account.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The name for the alarm. This name must be unique within your AWS account.</p>\n\t     ",
             "required": true,
             "shape_name": "AlarmName",
             "min_length": 1,
@@ -2535,14 +2535,14 @@
           },
           "ActionsEnabled": {
             "type": "boolean",
-            "zonbookDocumentation": "\n\t\t       <simpara>Indicates whether actions should be executed during any changes to the alarm state.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>Indicates whether actions should be executed during any changes to the alarm state.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <simpara>Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>Indicates whether actions should be executed during any changes to the alarm state. The default is TRUE.</p>\n\t     ",
             "shape_name": "ActionsEnabled"
           },
           "OKActions": {
             "type": "list",
-            "zonbookDocumentation": "\n\t\t       <simpara>The actions to execute when this alarm transitions to an <code>OK</code> state\n\t\t\tfrom any other state. Each action is specified as an Amazon Resource Name (ARN).</simpara>\n\n\t\t       <simpara>Valid Values: <code>arn:aws:automate:<emphasis>region</emphasis>:ec2:stop</code> | \n\t\t\t<code>arn:aws:automate:<emphasis>region</emphasis>:ec2:terminate</code> | \n\t\t\t<code>arn:aws:automate:<emphasis>region</emphasis>:ec2:recover</code> |\n\t\t\t<code>arn:aws:sns:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:<emphasis>sns-topic-name</emphasis>\n            </code> |\n\t\t\t<code>arn:aws:autoscaling:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:scalingPolicy:<emphasis>policy-id</emphasis>autoScalingGroupName/<emphasis>group-friendly-name</emphasis>:policyName/<emphasis>policy-friendly-name</emphasis>\n            </code>\n         </simpara>\n\n\t\t       <simpara>Valid Values (for use with IAM roles):\n\t\t\t<code>arn:aws:swf:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |\n\t\t\t\t<code>arn:aws:swf:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |\n\t\t\t\t<code>arn:aws:swf:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>\n         </simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>The actions to execute when this alarm transitions to an <code>OK</code> state\n\t\t\tfrom any other state. Each action is specified as an Amazon Resource Name (ARN).</p>\n\n\t\t       <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | \n\t\t\t<code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | \n\t\t\t<code>arn:aws:automate:<i>region</i>:ec2:recover</code> |\n\t\t\t<code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>\n            </code> |\n\t\t\t<code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>\n            </code>\n         </p>\n\n\t\t       <p>Valid Values (for use with IAM roles):\n\t\t\t<code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |\n\t\t\t\t<code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |\n\t\t\t\t<code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>\n         </p>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The actions to execute when this alarm transitions to an <code>OK</code> state\n\t\t\tfrom any other state. Each action is specified as an Amazon Resource Name (ARN).</simpara>\n\n\t\t       <simpara>Valid Values: <code>arn:aws:automate:<emphasis>region</emphasis>:ec2:stop</code> | \n\t\t\t<code>arn:aws:automate:<emphasis>region</emphasis>:ec2:terminate</code> | \n\t\t\t<code>arn:aws:automate:<emphasis>region</emphasis>:ec2:recover</code> |\n\t\t\t<code>arn:aws:automate:<emphasis>region</emphasis>:ec2:reboot</code> |\n\t\t\t<code>arn:aws:sns:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:<emphasis>sns-topic-name</emphasis>\n            </code> |\n\t\t\t<code>arn:aws:autoscaling:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:scalingPolicy:<emphasis>policy-id</emphasis>autoScalingGroupName/<emphasis>group-friendly-name</emphasis>:policyName/<emphasis>policy-friendly-name</emphasis>\n            </code>\n         </simpara>\n\n\t\t       <simpara>Valid Values (for use with IAM roles):\n\t\t\t<code>arn:aws:swf:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |\n\t\t\t\t<code>arn:aws:swf:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |\n\t\t\t\t<code>arn:aws:swf:<emphasis>region</emphasis>:<emphasis>account-id</emphasis>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>\n         </simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The actions to execute when this alarm transitions to an <code>OK</code> state\n\t\t\tfrom any other state. Each action is specified as an Amazon Resource Name (ARN).</p>\n\n\t\t       <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | \n\t\t\t<code>arn:aws:automate:<i>region</i>:ec2:terminate</code> | \n\t\t\t<code>arn:aws:automate:<i>region</i>:ec2:recover</code> |\n\t\t\t<code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |\n\t\t\t<code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>\n            </code> |\n\t\t\t<code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>\n            </code>\n         </p>\n\n\t\t       <p>Valid Values (for use with IAM roles):\n\t\t\t<code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |\n\t\t\t\t<code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |\n\t\t\t\t<code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>\n         </p>\n\t     ",
             "shape_name": "ResourceList",
             "max_length": 5,
             "members": {
@@ -2583,9 +2583,8 @@
           },
           "MetricName": {
             "type": "string",
-            "zonbookDocumentation": "\n\t\t       <simpara>The name for the metric associated with the alarm.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>The name for the metric associated with the alarm.</p>\n\t     ",
-            "required": true,
+            "zonbookDocumentation": "\n\t\t       <simpara>The name for the metric associated with the alarm.</simpara>\n\t\t       <simpara>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the \n\t\t\t<code>Dimensions</code>, <code>Period</code>,\n\t\t\t<code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify \n\t\tall this information in the <code>Metrics</code> array.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The name for the metric associated with the alarm.</p>\n\t\t       <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the \n\t\t\t<code>Dimensions</code>, <code>Period</code>,\n\t\t\t<code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify \n\t\tall this information in the <code>Metrics</code> array.</p>\n\t     ",
             "shape_name": "MetricName",
             "min_length": 1,
             "max_length": 255
@@ -2593,9 +2592,8 @@
           "Namespace": {
             "type": "string",
             "pattern": "[^:].*",
-            "zonbookDocumentation": "\n\t\t       <simpara>The namespace for the metric associated with the alarm.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>The namespace for the metric associated with the alarm.</p>\n\t     ",
-            "required": true,
+            "zonbookDocumentation": "\n\t\t       <simpara>The namespace for the metric associated specified in <code>MetricName</code>.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>\n\t     ",
             "shape_name": "Namespace",
             "min_length": 1,
             "max_length": 255
@@ -2609,21 +2607,21 @@
               "Minimum",
               "Maximum"
             ],
-            "zonbookDocumentation": "\n\t\t       <simpara>The statistic for the metric associated with the alarm, other than percentile.\n\t\t    For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must \n\t\tspecify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>The statistic for the metric associated with the alarm, other than percentile.\n\t\t    For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>, you must \n\t\tspecify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The statistic for the metric specified in <code>MetricName</code>, other than percentile.\n\t\t    For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify \n\t\t\ta <code>MetricName</code>, you must \n\t\tspecify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile.\n\t\t    For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify \n\t\t\ta <code>MetricName</code>, you must \n\t\tspecify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>\n\t     ",
             "shape_name": "Statistic"
           },
           "ExtendedStatistic": {
             "type": "string",
             "pattern": "p(\\d{1,2}(\\.\\d{0,2})?|100)",
-            "zonbookDocumentation": "\n\t\t       <simpara>The percentile statistic for the metric associated with the alarm. Specify a value \n\t\t\tbetween p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must \n\t\t\tspecify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>The percentile statistic for the metric associated with the alarm. Specify a value \n\t\t\tbetween p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must \n\t\t\tspecify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value \n\t\t\tbetween p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify \n\t\t\ta <code>MetricName</code>, you must \n\t\t\tspecify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value \n\t\t\tbetween p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify \n\t\t\ta <code>MetricName</code>, you must \n\t\t\tspecify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>\n\t     ",
             "shape_name": "ExtendedStatistic"
           },
           "Dimensions": {
             "type": "list",
-            "zonbookDocumentation": "\n\t\t       <simpara>The dimensions for the metric associated with the alarm.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>The dimensions for the metric associated with the alarm.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The dimensions for the metric specified in <code>MetricName</code>.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The dimensions for the metric specified in <code>MetricName</code>.</p>\n\t     ",
             "shape_name": "Dimensions",
             "max_length": 10,
             "members": {
@@ -2659,9 +2657,8 @@
           },
           "Period": {
             "type": "integer",
-            "zonbookDocumentation": "\n\n\t\t       <simpara>The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple of 60.</simpara>\n\t\t       <simpara>Be sure to specify 10 or 30 only for metrics that are stored by a\n\t\t\t\t<code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you\n\t\t\tspecify a period of 10 or 30 for a metric that does not have sub-minute resolution, the\n\t\t\talarm still attempts to gather data at the period rate that you specify. In this case,\n\t\t\tit does not receive data for the attempts that do not correspond to a one-minute data\n\t\t\tresolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or\n\t\t\t30 also sets this alarm as a high-resolution alarm, which has a higher charge than other\n\t\t\talarms. For more information about pricing, see <ulink url=\"https://aws.amazon.com/cloudwatch/pricing/\">Amazon CloudWatch\n\t\t\tPricing</ulink>.</simpara>\n\t\t       <simpara>An alarm's total current evaluation period can\n\t\tbe no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</simpara>\n\n\t     ",
-            "documentation": "\n\n\t\t       <p>The period, in seconds, over which the specified statistic is applied. Valid values are 10, 30, and any multiple of 60.</p>\n\t\t       <p>Be sure to specify 10 or 30 only for metrics that are stored by a\n\t\t\t\t<code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you\n\t\t\tspecify a period of 10 or 30 for a metric that does not have sub-minute resolution, the\n\t\t\talarm still attempts to gather data at the period rate that you specify. In this case,\n\t\t\tit does not receive data for the attempts that do not correspond to a one-minute data\n\t\t\tresolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or\n\t\t\t30 also sets this alarm as a high-resolution alarm, which has a higher charge than other\n\t\t\talarms. For more information about pricing, see <a href=\"https://aws.amazon.com/cloudwatch/pricing/\">Amazon CloudWatch\n\t\t\tPricing</a>.</p>\n\t\t       <p>An alarm's total current evaluation period can\n\t\tbe no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>\n\n\t     ",
-            "required": true,
+            "zonbookDocumentation": "\n\n\t\t       <simpara>The length, in seconds, used each time the metric specified in <code>MetricName</code> is\n\t\t\tevaluated. Valid values are 10, 30, and any multiple of 60.</simpara>\n\t\t       <simpara>Be sure to specify 10 or 30 only for metrics that are stored by a\n\t\t\t\t<code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you\n\t\t\tspecify a period of 10 or 30 for a metric that does not have sub-minute resolution, the\n\t\t\talarm still attempts to gather data at the period rate that you specify. In this case,\n\t\t\tit does not receive data for the attempts that do not correspond to a one-minute data\n\t\t\tresolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or\n\t\t\t30 also sets this alarm as a high-resolution alarm, which has a higher charge than other\n\t\t\talarms. For more information about pricing, see <ulink url=\"https://aws.amazon.com/cloudwatch/pricing/\">Amazon CloudWatch\n\t\t\tPricing</ulink>.</simpara>\n\t\t       <simpara>An alarm's total current evaluation period can\n\t\tbe no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</simpara>\n\n\t     ",
+            "documentation": "\n\n\t\t       <p>The length, in seconds, used each time the metric specified in <code>MetricName</code> is\n\t\t\tevaluated. Valid values are 10, 30, and any multiple of 60.</p>\n\t\t       <p>Be sure to specify 10 or 30 only for metrics that are stored by a\n\t\t\t\t<code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you\n\t\t\tspecify a period of 10 or 30 for a metric that does not have sub-minute resolution, the\n\t\t\talarm still attempts to gather data at the period rate that you specify. In this case,\n\t\t\tit does not receive data for the attempts that do not correspond to a one-minute data\n\t\t\tresolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or\n\t\t\t30 also sets this alarm as a high-resolution alarm, which has a higher charge than other\n\t\t\talarms. For more information about pricing, see <a href=\"https://aws.amazon.com/cloudwatch/pricing/\">Amazon CloudWatch\n\t\t\tPricing</a>.</p>\n\t\t       <p>An alarm's total current evaluation period can\n\t\tbe no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>\n\n\t     ",
             "shape_name": "Period",
             "min_length": 1
           },
@@ -2702,8 +2699,8 @@
           },
           "EvaluationPeriods": {
             "type": "integer",
-            "zonbookDocumentation": "\n\t\t       <simpara>The number of periods over which data is compared to the specified\n\t\t\tthreshold. If you are setting an alarm which requires that a number of consecutive data points be breaching to trigger the alarm,\n\t\tthis value specifies that number. If you are setting an \"M out of N\" alarm, this value is the N.</simpara>\n\t\t       <simpara>An alarm's total current evaluation period can\n\t\t\tbe no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</simpara>\n\t     ",
-            "documentation": "\n\t\t       <p>The number of periods over which data is compared to the specified\n\t\t\tthreshold. If you are setting an alarm which requires that a number of consecutive data points be breaching to trigger the alarm,\n\t\tthis value specifies that number. If you are setting an \"M out of N\" alarm, this value is the N.</p>\n\t\t       <p>An alarm's total current evaluation period can\n\t\t\tbe no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>\n\t     ",
+            "zonbookDocumentation": "\n\t\t       <simpara>The number of periods over which data is compared to the specified threshold. If you are\n\t\t\tsetting an alarm that requires that a number of consecutive data points be breaching to\n\t\t\ttrigger the alarm, this value specifies that number. If you are setting an \"M out of N\"\n\t\t\talarm, this value is the N.</simpara>\n\t\t       <simpara>An alarm's total current evaluation period can\n\t\t\tbe no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</simpara>\n\t     ",
+            "documentation": "\n\t\t       <p>The number of periods over which data is compared to the specified threshold. If you are\n\t\t\tsetting an alarm that requires that a number of consecutive data points be breaching to\n\t\t\ttrigger the alarm, this value specifies that number. If you are setting an \"M out of N\"\n\t\t\talarm, this value is the N.</p>\n\t\t       <p>An alarm's total current evaluation period can\n\t\t\tbe no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>\n\t     ",
             "required": true,
             "shape_name": "EvaluationPeriods",
             "min_length": 1
@@ -2750,6 +2747,175 @@
             "shape_name": "EvaluateLowSampleCountPercentile",
             "min_length": 1,
             "max_length": 255
+          },
+          "Metrics": {
+            "type": "list",
+            "zonbookDocumentation": "\n\t\t       <para>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a \n\t\tmetric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</para>\n\t\t       <para>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,\n\t\t\t<code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. \n\t\t\tInstead, you retrieve\n\t\tthe metrics you are using in your math expression as part of the <code>Metrics</code> array.</para>\n\t     ",
+            "documentation": "\n\t\t       <p>An array of <code>MetricDataQuery</code> structures that enable you to create an alarm based on the result of a \n\t\tmetric math expression. Each item in the <code>Metrics</code> array either retrieves a metric or performs a math expression.</p>\n\t\t       <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>,\n\t\t\t<code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. \n\t\t\tInstead, you retrieve\n\t\tthe metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>\n\t     ",
+            "shape_name": "MetricDataQueries",
+            "members": {
+              "type": "structure",
+              "members": {
+                "Id": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n\t\t       <para>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</p>\n\t     ",
+                  "required": true,
+                  "shape_name": "MetricId",
+                  "min_length": 1,
+                  "max_length": 255
+                },
+                "MetricStat": {
+                  "type": "structure",
+                  "members": {
+                    "Metric": {
+                      "type": "structure",
+                      "members": {
+                        "Namespace": {
+                          "type": "string",
+                          "pattern": "[^:].*",
+                          "zonbookDocumentation": "\n\t\t       <simpara>The namespace of the metric.</simpara>\n\t     ",
+                          "documentation": "\n\t\t       <p>The namespace of the metric.</p>\n\t     ",
+                          "shape_name": "Namespace",
+                          "min_length": 1,
+                          "max_length": 255
+                        },
+                        "MetricName": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric. This is a required field.</simpara>\n\t     ",
+                          "documentation": "\n\t\t       <p>The name of the metric. This is a required field.</p>\n\t     ",
+                          "shape_name": "MetricName",
+                          "min_length": 1,
+                          "max_length": 255
+                        },
+                        "Dimensions": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n\t\t       <simpara>The dimensions for the metric.</simpara>\n\t     ",
+                          "documentation": "\n\t\t       <p>The dimensions for the metric.</p>\n\t     ",
+                          "shape_name": "Dimensions",
+                          "max_length": 10,
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "Name": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n\t\t       <simpara>The name of the dimension.</simpara>\n\t     ",
+                                "documentation": "\n\t\t       <p>The name of the dimension.</p>\n\t     ",
+                                "required": true,
+                                "shape_name": "DimensionName",
+                                "min_length": 1,
+                                "max_length": 255
+                              },
+                              "Value": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n\t\t       <simpara>The value representing the dimension measurement.</simpara>\n\t     ",
+                                "documentation": "\n\t\t       <p>The value representing the dimension measurement.</p>\n\t     ",
+                                "required": true,
+                                "shape_name": "DimensionValue",
+                                "min_length": 1,
+                                "max_length": 255
+                              }
+                            },
+                            "zonbookDocumentation": "\n\t\t       <simpara>Expands the identity of a metric.</simpara>\n\t     ",
+                            "documentation": "\n\t\t       <p>Expands the identity of a metric.</p>\n\t     ",
+                            "shape_name": "Dimension",
+                            "member_order": [
+                              "Name",
+                              "Value"
+                            ]
+                          }
+                        }
+                      },
+                      "zonbookDocumentation": "\n\t\t       <para>The metric to return, including the metric name, namespace, and dimensions.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The metric to return, including the metric name, namespace, and dimensions.</p>\n\t     ",
+                      "required": true,
+                      "shape_name": "Metric",
+                      "member_order": [
+                        "Namespace",
+                        "MetricName",
+                        "Dimensions"
+                      ]
+                    },
+                    "Period": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n\t\t       <para>The period, in seconds, to use when retrieving the metric.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The period, in seconds, to use when retrieving the metric.</p>\n\t     ",
+                      "required": true,
+                      "shape_name": "Period",
+                      "min_length": 1
+                    },
+                    "Stat": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n\t\t       <para>The statistic to return. It can include any CloudWatch statistic or extended statistic.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>\n\t     ",
+                      "required": true,
+                      "shape_name": "Stat"
+                    },
+                    "Unit": {
+                      "type": "string",
+                      "enum": [
+                        "Seconds",
+                        "Microseconds",
+                        "Milliseconds",
+                        "Bytes",
+                        "Kilobytes",
+                        "Megabytes",
+                        "Gigabytes",
+                        "Terabytes",
+                        "Bits",
+                        "Kilobits",
+                        "Megabits",
+                        "Gigabits",
+                        "Terabits",
+                        "Percent",
+                        "Count",
+                        "Bytes/Second",
+                        "Kilobytes/Second",
+                        "Megabytes/Second",
+                        "Gigabytes/Second",
+                        "Terabytes/Second",
+                        "Bits/Second",
+                        "Kilobits/Second",
+                        "Megabits/Second",
+                        "Gigabits/Second",
+                        "Terabits/Second",
+                        "Count/Second",
+                        "None"
+                      ],
+                      "zonbookDocumentation": "\n\t\t       <para>The unit to use for the returned data points.</para>\n\t     ",
+                      "documentation": "\n\t\t       <p>The unit to use for the returned data points.</p>\n\t     ",
+                      "shape_name": "StandardUnit"
+                    }
+                  },
+                  "zonbookDocumentation": "\n\t\t       <para>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</para>\n\t\t       <para>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</p>\n\t\t       <p>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                  "shape_name": "MetricStat"
+                },
+                "Expression": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n\t\t       <para>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.</para>\n\t\t       <para>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\t\t       <p>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                  "shape_name": "MetricExpression",
+                  "min_length": 1,
+                  "max_length": 1024
+                },
+                "Label": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n\t\t       <para>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know\n\t\t\twhat the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch \n\t\t\tgenerates a default.</para>\n\t     ",
+                  "documentation": "\n\t\t       <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know\n\t\t\twhat the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch \n\t\t\tgenerates a default.</p>\n\t     ",
+                  "shape_name": "MetricLabel"
+                },
+                "ReturnData": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n\t\t       <para>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</para>\n\t\t\n\t     ",
+                  "documentation": "\n\t\t       <p>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>\n\t\t\n\t     ",
+                  "shape_name": "ReturnData"
+                }
+              },
+              "zonbookDocumentation": "\n\t\t       <para>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</para>\n\t\t       <para>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the <emphasis>Amazon CloudWatch User\n\t\t\t\tGuide</emphasis>.</para>\n\n\t\t       <para>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</para>\n\t     ",
+              "documentation": "\n\t\t       <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</p>\n\t\t       <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User\n\t\t\t\tGuide</i>.</p>\n\n\t\t       <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>\n\t     ",
+              "shape_name": "MetricDataQuery"
+            }
           }
         },
         "shape_name": "PutMetricAlarmInput",
@@ -2774,7 +2940,7 @@
           "shape_name": "LimitExceededFault"
         }
       ],
-      "documentation": "\n\t\t       <p>Creates or updates an alarm and associates it with the specified metric.\n\t\t\tOptionally, this operation can associate one or more Amazon SNS resources with the alarm.</p>\n\t\t       <p>When this operation creates an alarm, the alarm state is immediately set to\n\t\t\t<code>INSUFFICIENT_DATA</code>. The alarm is evaluated and its state is set\n\t\t\tappropriately. Any actions associated with the state are then executed.</p>\n\t\t       <p>When you update an existing alarm, its state is left unchanged, but the\n\t\t\tupdate completely overwrites the previous configuration of the alarm.</p>\n\n\t\t       <p>If you are an IAM user, you must have \n\t\t\tAmazon EC2 permissions for some operations:</p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>\n                  <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>ec2:DescribeInstanceStatus</code> and\n\t\t\t\t\t<code>ec2:DescribeInstances</code> for all alarms on EC2 instance\n\t\t\t\t\tstatus metrics</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>ec2:StopInstances</code> for alarms with stop actions</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>ec2:TerminateInstances</code> for alarms with terminate\n\t\t\t\t\tactions</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>ec2:DescribeInstanceRecoveryAttribute</code> and\n\t\t\t\t\t<code>ec2:RecoverInstances</code> for alarms with recover actions</p>\n\t\t\t         </li>\n         </ul>\n\n\t\t       <p>If you have read/write permissions for Amazon CloudWatch but not for Amazon\n\t\t\tEC2, you can still create an alarm, but the stop or terminate actions are not\n\t\t\tperformed. However, if you are later granted the required permissions, the alarm \n\t\t\tactions that you created earlier are performed.</p>\n\t\t       <p>If you are using an IAM role (for example, an EC2 instance profile), you cannot\n\t\t\tstop or terminate the instance using alarm actions. However, you can still see the\n\t\t\talarm state and perform any other actions such as Amazon SNS notifications or Auto Scaling \n\t\t\tpolicies.</p>\n\t\t       <p>If you are using temporary security credentials granted using AWS STS, you cannot stop or terminate an EC2 instance using\n\t\t\talarm actions.</p>\n\t\t       <p>The first time you create an alarm in the \n\t\t\tAWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch\n\t\t\tcreates the necessary service-linked role for you. The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.\n\t\t\tFor more information about service-linked roles, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role\">AWS service-linked role</a>.</p>\n\t\t\t\n\t     "
+      "documentation": "\n\t\t       <p>Creates or updates an alarm and associates it with the specified metric or metric math expression.</p>\n\t\t       <p>When this operation creates an alarm, the alarm state is immediately set to\n\t\t\t<code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set\n\t\t\tappropriately. Any actions associated with the new state are then executed.</p>\n\t\t       <p>When you update an existing alarm, its state is left unchanged, but the\n\t\t\tupdate completely overwrites the previous configuration of the alarm.</p>\n\n\t\t       <p>If you are an IAM user, you must have \n\t\t\tAmazon EC2 permissions for some alarm operations:</p>\n\t\t       <ul>\n            <li>\n\t\t\t\t           <p>\n                  <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>ec2:DescribeInstanceStatus</code> and\n\t\t\t\t\t<code>ec2:DescribeInstances</code> for all alarms on EC2 instance\n\t\t\t\t\tstatus metrics</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>ec2:StopInstances</code> for alarms with stop actions</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>ec2:TerminateInstances</code> for alarms with terminate\n\t\t\t\t\tactions</p>\n\t\t\t         </li>\n            <li>\n\t\t\t\t           <p>\n                  <code>ec2:DescribeInstanceRecoveryAttribute</code> and\n\t\t\t\t\t<code>ec2:RecoverInstances</code> for alarms with recover actions</p>\n\t\t\t         </li>\n         </ul>\n\n\t\t       <p>If you have read/write permissions for Amazon CloudWatch but not for Amazon\n\t\t\tEC2, you can still create an alarm, but the stop or terminate actions are not\n\t\t\tperformed. However, if you are later granted the required permissions, the alarm \n\t\t\tactions that you created earlier are performed.</p>\n\t\t       <p>If you are using an IAM role (for example, an EC2 instance profile), you cannot\n\t\t\tstop or terminate the instance using alarm actions. However, you can still see the\n\t\t\talarm state and perform any other actions such as Amazon SNS notifications or Auto Scaling \n\t\t\tpolicies.</p>\n\t\t       <p>If you are using temporary security credentials granted using AWS STS, you cannot stop or terminate an EC2 instance using\n\t\t\talarm actions.</p>\n\t\t       <p>The first time you create an alarm in the \n\t\t\tAWS Management Console, the CLI, or by using the PutMetricAlarm API, CloudWatch\n\t\t\tcreates the necessary service-linked role for you. The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.\n\t\t\tFor more information, see <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role\">AWS service-linked role</a>.</p>\n\t\t\t\n\t\t\t\n\t\t\n\t\t\t\n\t\t\t\n\t     "
     },
     "SetAlarmState": {
       "name": "SetAlarmState",
@@ -3271,6 +3437,175 @@
                   "shape_name": "EvaluateLowSampleCountPercentile",
                   "min_length": 1,
                   "max_length": 255
+                },
+                "Metrics": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n\t\t       <para/>\n\t     ",
+                  "documentation": "\n\t\t       <p/>\n\t     ",
+                  "shape_name": "MetricDataQueries",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Id": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n\t\t       <para>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</para>\n\t     ",
+                        "documentation": "\n\t\t       <p>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</p>\n\t     ",
+                        "required": true,
+                        "shape_name": "MetricId",
+                        "min_length": 1,
+                        "max_length": 255
+                      },
+                      "MetricStat": {
+                        "type": "structure",
+                        "members": {
+                          "Metric": {
+                            "type": "structure",
+                            "members": {
+                              "Namespace": {
+                                "type": "string",
+                                "pattern": "[^:].*",
+                                "zonbookDocumentation": "\n\t\t       <simpara>The namespace of the metric.</simpara>\n\t     ",
+                                "documentation": "\n\t\t       <p>The namespace of the metric.</p>\n\t     ",
+                                "shape_name": "Namespace",
+                                "min_length": 1,
+                                "max_length": 255
+                              },
+                              "MetricName": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric. This is a required field.</simpara>\n\t     ",
+                                "documentation": "\n\t\t       <p>The name of the metric. This is a required field.</p>\n\t     ",
+                                "shape_name": "MetricName",
+                                "min_length": 1,
+                                "max_length": 255
+                              },
+                              "Dimensions": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n\t\t       <simpara>The dimensions for the metric.</simpara>\n\t     ",
+                                "documentation": "\n\t\t       <p>The dimensions for the metric.</p>\n\t     ",
+                                "shape_name": "Dimensions",
+                                "max_length": 10,
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "Name": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n\t\t       <simpara>The name of the dimension.</simpara>\n\t     ",
+                                      "documentation": "\n\t\t       <p>The name of the dimension.</p>\n\t     ",
+                                      "required": true,
+                                      "shape_name": "DimensionName",
+                                      "min_length": 1,
+                                      "max_length": 255
+                                    },
+                                    "Value": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n\t\t       <simpara>The value representing the dimension measurement.</simpara>\n\t     ",
+                                      "documentation": "\n\t\t       <p>The value representing the dimension measurement.</p>\n\t     ",
+                                      "required": true,
+                                      "shape_name": "DimensionValue",
+                                      "min_length": 1,
+                                      "max_length": 255
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n\t\t       <simpara>Expands the identity of a metric.</simpara>\n\t     ",
+                                  "documentation": "\n\t\t       <p>Expands the identity of a metric.</p>\n\t     ",
+                                  "shape_name": "Dimension",
+                                  "member_order": [
+                                    "Name",
+                                    "Value"
+                                  ]
+                                }
+                              }
+                            },
+                            "zonbookDocumentation": "\n\t\t       <para>The metric to return, including the metric name, namespace, and dimensions.</para>\n\t     ",
+                            "documentation": "\n\t\t       <p>The metric to return, including the metric name, namespace, and dimensions.</p>\n\t     ",
+                            "required": true,
+                            "shape_name": "Metric",
+                            "member_order": [
+                              "Namespace",
+                              "MetricName",
+                              "Dimensions"
+                            ]
+                          },
+                          "Period": {
+                            "type": "integer",
+                            "zonbookDocumentation": "\n\t\t       <para>The period, in seconds, to use when retrieving the metric.</para>\n\t     ",
+                            "documentation": "\n\t\t       <p>The period, in seconds, to use when retrieving the metric.</p>\n\t     ",
+                            "required": true,
+                            "shape_name": "Period",
+                            "min_length": 1
+                          },
+                          "Stat": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n\t\t       <para>The statistic to return. It can include any CloudWatch statistic or extended statistic.</para>\n\t     ",
+                            "documentation": "\n\t\t       <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>\n\t     ",
+                            "required": true,
+                            "shape_name": "Stat"
+                          },
+                          "Unit": {
+                            "type": "string",
+                            "enum": [
+                              "Seconds",
+                              "Microseconds",
+                              "Milliseconds",
+                              "Bytes",
+                              "Kilobytes",
+                              "Megabytes",
+                              "Gigabytes",
+                              "Terabytes",
+                              "Bits",
+                              "Kilobits",
+                              "Megabits",
+                              "Gigabits",
+                              "Terabits",
+                              "Percent",
+                              "Count",
+                              "Bytes/Second",
+                              "Kilobytes/Second",
+                              "Megabytes/Second",
+                              "Gigabytes/Second",
+                              "Terabytes/Second",
+                              "Bits/Second",
+                              "Kilobits/Second",
+                              "Megabits/Second",
+                              "Gigabits/Second",
+                              "Terabits/Second",
+                              "Count/Second",
+                              "None"
+                            ],
+                            "zonbookDocumentation": "\n\t\t       <para>The unit to use for the returned data points.</para>\n\t     ",
+                            "documentation": "\n\t\t       <p>The unit to use for the returned data points.</p>\n\t     ",
+                            "shape_name": "StandardUnit"
+                          }
+                        },
+                        "zonbookDocumentation": "\n\t\t       <para>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</para>\n\t\t       <para>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                        "documentation": "\n\t\t       <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</p>\n\t\t       <p>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                        "shape_name": "MetricStat"
+                      },
+                      "Expression": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n\t\t       <para>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.</para>\n\t\t       <para>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                        "documentation": "\n\t\t       <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\t\t       <p>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                        "shape_name": "MetricExpression",
+                        "min_length": 1,
+                        "max_length": 1024
+                      },
+                      "Label": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n\t\t       <para>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know\n\t\t\twhat the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch \n\t\t\tgenerates a default.</para>\n\t     ",
+                        "documentation": "\n\t\t       <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know\n\t\t\twhat the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch \n\t\t\tgenerates a default.</p>\n\t     ",
+                        "shape_name": "MetricLabel"
+                      },
+                      "ReturnData": {
+                        "type": "boolean",
+                        "zonbookDocumentation": "\n\t\t       <para>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</para>\n\t\t\n\t     ",
+                        "documentation": "\n\t\t       <p>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>\n\t\t\n\t     ",
+                        "shape_name": "ReturnData"
+                      }
+                    },
+                    "zonbookDocumentation": "\n\t\t       <para>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</para>\n\t\t       <para>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the <emphasis>Amazon CloudWatch User\n\t\t\t\tGuide</emphasis>.</para>\n\n\t\t       <para>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</para>\n\t     ",
+                    "documentation": "\n\t\t       <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</p>\n\t\t       <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User\n\t\t\t\tGuide</i>.</p>\n\n\t\t       <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>\n\t     ",
+                    "shape_name": "MetricDataQuery"
+                  }
                 }
               },
               "zonbookDocumentation": "\n\t\t       <simpara>Represents an alarm.</simpara>\n\t     ",
@@ -3301,7 +3636,8 @@
                 "ExtendedStatistic",
                 "TreatMissingData",
                 "EvaluateLowSampleCountPercentile",
-                "DatapointsToAlarm"
+                "DatapointsToAlarm",
+                "Metrics"
               ]
             }
           },
@@ -3749,6 +4085,175 @@
                   "shape_name": "EvaluateLowSampleCountPercentile",
                   "min_length": 1,
                   "max_length": 255
+                },
+                "Metrics": {
+                  "type": "list",
+                  "zonbookDocumentation": "\n\t\t       <para/>\n\t     ",
+                  "documentation": "\n\t\t       <p/>\n\t     ",
+                  "shape_name": "MetricDataQueries",
+                  "members": {
+                    "type": "structure",
+                    "members": {
+                      "Id": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n\t\t       <para>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</para>\n\t     ",
+                        "documentation": "\n\t\t       <p>A short name used to tie this object to the results in the response. This name must be\n\t\t\tunique within a single call to <code>GetMetricData</code>. If you are performing math\n\t\t\texpressions on this set of data, this name represents that data and can serve as a\n\t\t\tvariable in the mathematical expression. The valid characters are letters, numbers, and\n\t\t\tunderscore. The first character must be a lowercase letter.</p>\n\t     ",
+                        "required": true,
+                        "shape_name": "MetricId",
+                        "min_length": 1,
+                        "max_length": 255
+                      },
+                      "MetricStat": {
+                        "type": "structure",
+                        "members": {
+                          "Metric": {
+                            "type": "structure",
+                            "members": {
+                              "Namespace": {
+                                "type": "string",
+                                "pattern": "[^:].*",
+                                "zonbookDocumentation": "\n\t\t       <simpara>The namespace of the metric.</simpara>\n\t     ",
+                                "documentation": "\n\t\t       <p>The namespace of the metric.</p>\n\t     ",
+                                "shape_name": "Namespace",
+                                "min_length": 1,
+                                "max_length": 255
+                              },
+                              "MetricName": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n\t\t       <simpara>The name of the metric. This is a required field.</simpara>\n\t     ",
+                                "documentation": "\n\t\t       <p>The name of the metric. This is a required field.</p>\n\t     ",
+                                "shape_name": "MetricName",
+                                "min_length": 1,
+                                "max_length": 255
+                              },
+                              "Dimensions": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n\t\t       <simpara>The dimensions for the metric.</simpara>\n\t     ",
+                                "documentation": "\n\t\t       <p>The dimensions for the metric.</p>\n\t     ",
+                                "shape_name": "Dimensions",
+                                "max_length": 10,
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "Name": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n\t\t       <simpara>The name of the dimension.</simpara>\n\t     ",
+                                      "documentation": "\n\t\t       <p>The name of the dimension.</p>\n\t     ",
+                                      "required": true,
+                                      "shape_name": "DimensionName",
+                                      "min_length": 1,
+                                      "max_length": 255
+                                    },
+                                    "Value": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n\t\t       <simpara>The value representing the dimension measurement.</simpara>\n\t     ",
+                                      "documentation": "\n\t\t       <p>The value representing the dimension measurement.</p>\n\t     ",
+                                      "required": true,
+                                      "shape_name": "DimensionValue",
+                                      "min_length": 1,
+                                      "max_length": 255
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n\t\t       <simpara>Expands the identity of a metric.</simpara>\n\t     ",
+                                  "documentation": "\n\t\t       <p>Expands the identity of a metric.</p>\n\t     ",
+                                  "shape_name": "Dimension",
+                                  "member_order": [
+                                    "Name",
+                                    "Value"
+                                  ]
+                                }
+                              }
+                            },
+                            "zonbookDocumentation": "\n\t\t       <para>The metric to return, including the metric name, namespace, and dimensions.</para>\n\t     ",
+                            "documentation": "\n\t\t       <p>The metric to return, including the metric name, namespace, and dimensions.</p>\n\t     ",
+                            "required": true,
+                            "shape_name": "Metric",
+                            "member_order": [
+                              "Namespace",
+                              "MetricName",
+                              "Dimensions"
+                            ]
+                          },
+                          "Period": {
+                            "type": "integer",
+                            "zonbookDocumentation": "\n\t\t       <para>The period, in seconds, to use when retrieving the metric.</para>\n\t     ",
+                            "documentation": "\n\t\t       <p>The period, in seconds, to use when retrieving the metric.</p>\n\t     ",
+                            "required": true,
+                            "shape_name": "Period",
+                            "min_length": 1
+                          },
+                          "Stat": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n\t\t       <para>The statistic to return. It can include any CloudWatch statistic or extended statistic.</para>\n\t     ",
+                            "documentation": "\n\t\t       <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>\n\t     ",
+                            "required": true,
+                            "shape_name": "Stat"
+                          },
+                          "Unit": {
+                            "type": "string",
+                            "enum": [
+                              "Seconds",
+                              "Microseconds",
+                              "Milliseconds",
+                              "Bytes",
+                              "Kilobytes",
+                              "Megabytes",
+                              "Gigabytes",
+                              "Terabytes",
+                              "Bits",
+                              "Kilobits",
+                              "Megabits",
+                              "Gigabits",
+                              "Terabits",
+                              "Percent",
+                              "Count",
+                              "Bytes/Second",
+                              "Kilobytes/Second",
+                              "Megabytes/Second",
+                              "Gigabytes/Second",
+                              "Terabytes/Second",
+                              "Bits/Second",
+                              "Kilobits/Second",
+                              "Megabits/Second",
+                              "Gigabits/Second",
+                              "Terabits/Second",
+                              "Count/Second",
+                              "None"
+                            ],
+                            "zonbookDocumentation": "\n\t\t       <para>The unit to use for the returned data points.</para>\n\t     ",
+                            "documentation": "\n\t\t       <p>The unit to use for the returned data points.</p>\n\t     ",
+                            "shape_name": "StandardUnit"
+                          }
+                        },
+                        "zonbookDocumentation": "\n\t\t       <para>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</para>\n\t\t       <para>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                        "documentation": "\n\t\t       <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric \n\t\t\tand not performing a math expression on returned data.</p>\n\t\t       <p>Within one MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                        "shape_name": "MetricStat"
+                      },
+                      "Expression": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n\t\t       <para>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the\n\t\t\t<emphasis>Amazon CloudWatch User Guide</emphasis>.</para>\n\t\t       <para>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</para>\n\t     ",
+                        "documentation": "\n\t\t       <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression\n\t\t\tcan use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other \n\t\t\texpressions to use the result of those expressions. For more information about metric math expressions, see \n\t\t\t<a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the\n\t\t\t<i>Amazon CloudWatch User Guide</i>.</p>\n\t\t       <p>Within each MetricDataQuery object, you must specify either \n\t\t\t<code>Expression</code> or <code>MetricStat</code> but not both.</p>\n\t     ",
+                        "shape_name": "MetricExpression",
+                        "min_length": 1,
+                        "max_length": 1024
+                      },
+                      "Label": {
+                        "type": "string",
+                        "zonbookDocumentation": "\n\t\t       <para>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know\n\t\t\twhat the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch \n\t\t\tgenerates a default.</para>\n\t     ",
+                        "documentation": "\n\t\t       <p>A human-readable label for this metric or expression. This is especially useful if this is an expression, so that you know\n\t\t\twhat the value represents. If the metric or expression is shown in a CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch \n\t\t\tgenerates a default.</p>\n\t     ",
+                        "shape_name": "MetricLabel"
+                      },
+                      "ReturnData": {
+                        "type": "boolean",
+                        "zonbookDocumentation": "\n\t\t       <para>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</para>\n\t\t\n\t     ",
+                        "documentation": "\n\t\t       <p>When used in <code>GetMetricData</code>, this option indicates whether to return the\n\t\t\ttimestamps and raw data values of this metric. If you are performing this call just to\n\t\t\tdo math expressions and do not also need the raw data returned, you can specify\n\t\t\t\t<code>False</code>. If you omit this, the default of <code>True</code> is\n\t\t\tused.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all \n\t\tother metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>\n\t\t\n\t     ",
+                        "shape_name": "ReturnData"
+                      }
+                    },
+                    "zonbookDocumentation": "\n\t\t       <para>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</para>\n\t\t       <para>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</para>\n\t\t       <para>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <ulink type=\"documentation\" url=\"AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</ulink> in the <emphasis>Amazon CloudWatch User\n\t\t\t\tGuide</emphasis>.</para>\n\n\t\t       <para>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</para>\n\t     ",
+                    "documentation": "\n\t\t       <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported\n\t\t\tuse of this structure is different for those two operations.</p>\n\t\t       <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving\n\t\t\ta batch set of data for one metric, or is performing a math expression on metric data. A\n\t\t\tsingle <code>GetMetricData</code> call can include up to 100 <code>MetricDataQuery</code>\n\t\t\tstructures.</p>\n\t\t       <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a\n\t\t\tmetric math expression. Each <code>MetricDataQuery</code> in the array specifies either\n\t\t\ta metric to retrieve, or a math expression to be performed on retrieved metrics. A\n\t\t\tsingle <code>PutMetricAlarm</code> call can include up to 20\n\t\t\t\t<code>MetricDataQuery</code> structures in the array. The 20 structures can include\n\t\t\tas many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a\n\t\t\tmetric, and as many as 10 structures that contain the <code>Expression</code> parameter\n\t\t\tto perform a math expression. Any expression used in a <code>PutMetricAlarm</code>\n\t\t\toperation must return a single time series. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax\">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User\n\t\t\t\tGuide</i>.</p>\n\n\t\t       <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>\n\t\t\toperation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>\n\t     ",
+                    "shape_name": "MetricDataQuery"
+                  }
                 }
               },
               "zonbookDocumentation": "\n\t\t       <simpara>Represents an alarm.</simpara>\n\t     ",
@@ -3779,7 +4284,8 @@
                 "ExtendedStatistic",
                 "TreatMissingData",
                 "EvaluateLowSampleCountPercentile",
-                "DatapointsToAlarm"
+                "DatapointsToAlarm",
+                "Metrics"
               ]
             }
           }

@@ -949,14 +949,14 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Creates or updates an alarm and associates it with the specified metric. Optionally,
-        /// this operation can associate one or more Amazon SNS resources with the alarm.
+        /// Creates or updates an alarm and associates it with the specified metric or metric
+        /// math expression.
         /// 
         ///  
         /// <para>
         /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
-        /// The alarm is evaluated and its state is set appropriately. Any actions associated
-        /// with the state are then executed.
+        /// The alarm is then evaluated and its state is set appropriately. Any actions associated
+        /// with the new state are then executed.
         /// </para>
         ///  
         /// <para>
@@ -965,7 +965,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// If you are an IAM user, you must have Amazon EC2 permissions for some operations:
+        /// If you are an IAM user, you must have Amazon EC2 permissions for some alarm operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1013,7 +1013,7 @@ namespace Amazon.CloudWatch
         /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
         /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
         /// The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.
-        /// For more information about service-linked roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+        /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
         /// service-linked role</a>.
         /// </para>
         /// </summary>
@@ -1058,10 +1058,10 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Publishes metric data to Amazon CloudWatch. CloudWatch associates the data with the
-        /// specified metric. If the specified metric does not exist, CloudWatch creates the metric.
-        /// When CloudWatch creates a metric, it can take up to fifteen minutes for the metric
-        /// to appear in calls to <a>ListMetrics</a>.
+        /// Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data
+        /// points with the specified metric. If the specified metric does not exist, CloudWatch
+        /// creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes
+        /// for the metric to appear in calls to <a>ListMetrics</a>.
         /// 
         ///  
         /// <para>
@@ -1099,11 +1099,9 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// CloudWatch needs raw data points to calculate percentile statistics. These raw data
-        /// points could be published individually or as part of <code>Values</code> and <code>Counts</code>
-        /// arrays. If you publish data using statistic sets in the <code>StatisticValues</code>
-        /// field instead, you can only retrieve percentile statistics for this data if one of
-        /// the following conditions is true:
+        /// CloudWatch needs raw data points to calculate percentile statistics. If you publish
+        /// data using a statistic set instead, you can only retrieve percentile statistics for
+        /// this data if one of the following conditions is true:
         /// </para>
         ///  <ul> <li> 
         /// <para>

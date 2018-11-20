@@ -59,7 +59,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The period to use when retrieving the metric.
+        /// The period, in seconds, to use when retrieving the metric.
         /// </para>
         /// </summary>
         public int Period

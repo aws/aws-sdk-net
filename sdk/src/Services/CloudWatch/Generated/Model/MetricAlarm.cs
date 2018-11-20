@@ -46,6 +46,7 @@ namespace Amazon.CloudWatch.Model
         private string _extendedStatistic;
         private List<string> _insufficientDataActions = new List<string>();
         private string _metricName;
+        private List<MetricDataQuery> _metrics = new List<MetricDataQuery>();
         private string _awsNamespace;
         private List<string> _okActions = new List<string>();
         private int? _period;
@@ -315,6 +316,21 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetMetricName()
         {
             return this._metricName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metrics.
+        /// </summary>
+        public List<MetricDataQuery> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && this._metrics.Count > 0; 
         }
 
         /// <summary>

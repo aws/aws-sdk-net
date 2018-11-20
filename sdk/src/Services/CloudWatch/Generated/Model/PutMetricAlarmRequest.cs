@@ -29,14 +29,14 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the PutMetricAlarm operation.
-    /// Creates or updates an alarm and associates it with the specified metric. Optionally,
-    /// this operation can associate one or more Amazon SNS resources with the alarm.
+    /// Creates or updates an alarm and associates it with the specified metric or metric
+    /// math expression.
     /// 
     ///  
     /// <para>
     /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
-    /// The alarm is evaluated and its state is set appropriately. Any actions associated
-    /// with the state are then executed.
+    /// The alarm is then evaluated and its state is set appropriately. Any actions associated
+    /// with the new state are then executed.
     /// </para>
     ///  
     /// <para>
@@ -45,7 +45,7 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// If you are an IAM user, you must have Amazon EC2 permissions for some operations:
+    /// If you are an IAM user, you must have Amazon EC2 permissions for some alarm operations:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -93,7 +93,7 @@ namespace Amazon.CloudWatch.Model
     /// The first time you create an alarm in the AWS Management Console, the CLI, or by using
     /// the PutMetricAlarm API, CloudWatch creates the necessary service-linked role for you.
     /// The service-linked role is called <code>AWSServiceRoleForCloudWatchEvents</code>.
-    /// For more information about service-linked roles, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+    /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
     /// service-linked role</a>.
     /// </para>
     /// </summary>
@@ -111,6 +111,7 @@ namespace Amazon.CloudWatch.Model
         private string _extendedStatistic;
         private List<string> _insufficientDataActions = new List<string>();
         private string _metricName;
+        private List<MetricDataQuery> _metrics = new List<MetricDataQuery>();
         private string _awsNamespace;
         private List<string> _okActions = new List<string>();
         private int? _period;
@@ -123,6 +124,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property ActionsEnabled. 
         /// <para>
         /// Indicates whether actions should be executed during any changes to the alarm state.
+        /// The default is TRUE.
         /// </para>
         /// </summary>
         public bool ActionsEnabled
@@ -191,7 +193,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmName. 
         /// <para>
-        /// The name for the alarm. This name must be unique within the AWS account.
+        /// The name for the alarm. This name must be unique within your AWS account.
         /// </para>
         /// </summary>
         public string AlarmName
@@ -249,7 +251,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The dimensions for the metric associated with the alarm.
+        /// The dimensions for the metric specified in <code>MetricName</code>.
         /// </para>
         /// </summary>
         public List<Dimension> Dimensions
@@ -295,7 +297,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property EvaluationPeriods. 
         /// <para>
         /// The number of periods over which data is compared to the specified threshold. If you
-        /// are setting an alarm which requires that a number of consecutive data points be breaching
+        /// are setting an alarm that requires that a number of consecutive data points be breaching
         /// to trigger the alarm, this value specifies that number. If you are setting an "M out
         /// of N" alarm, this value is the N.
         /// </para>
@@ -320,9 +322,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ExtendedStatistic. 
         /// <para>
-        /// The percentile statistic for the metric associated with the alarm. Specify a value
-        /// between p0.0 and p100. When you call <code>PutMetricAlarm</code>, you must specify
-        /// either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.
+        /// The percentile statistic for the metric specified in <code>MetricName</code>. Specify
+        /// a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify
+        /// a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
+        /// but not both.
         /// </para>
         /// </summary>
         public string ExtendedStatistic
@@ -375,6 +378,13 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// The name for the metric associated with the alarm.
         /// </para>
+        ///  
+        /// <para>
+        /// If you are creating an alarm based on a math expression, you cannot specify this parameter,
+        /// or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+        /// <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you
+        /// specify all this information in the <code>Metrics</code> array.
+        /// </para>
         /// </summary>
         public string MetricName
         {
@@ -389,9 +399,37 @@ namespace Amazon.CloudWatch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metrics. 
+        /// <para>
+        /// An array of <code>MetricDataQuery</code> structures that enable you to create an alarm
+        /// based on the result of a metric math expression. Each item in the <code>Metrics</code>
+        /// array either retrieves a metric or performs a math expression.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+        /// <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>,
+        /// or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
+        /// same operation. Instead, you retrieve the metrics you are using in your math expression
+        /// as part of the <code>Metrics</code> array.
+        /// </para>
+        /// </summary>
+        public List<MetricDataQuery> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && this._metrics.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace for the metric associated with the alarm.
+        /// The namespace for the metric associated specified in <code>MetricName</code>.
         /// </para>
         /// </summary>
         public string Namespace
@@ -415,8 +453,9 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code> | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code>
-        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
+        /// | <code>arn:aws:automate:<i>region</i>:ec2:recover</code> | <code>arn:aws:automate:<i>region</i>:ec2:reboot</code>
+        /// | <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
+        /// | <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
         /// </code> 
         /// </para>
         ///  
@@ -442,8 +481,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The period, in seconds, over which the specified statistic is applied. Valid values
-        /// are 10, 30, and any multiple of 60.
+        /// The length, in seconds, used each time the metric specified in <code>MetricName</code>
+        /// is evaluated. Valid values are 10, 30, and any multiple of 60.
         /// </para>
         ///  
         /// <para>
@@ -478,10 +517,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The statistic for the metric associated with the alarm, other than percentile. For
-        /// percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>,
-        /// you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code>
-        /// but not both.
+        /// The statistic for the metric specified in <code>MetricName</code>, other than percentile.
+        /// For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code>
+        /// and specify a <code>MetricName</code>, you must specify either <code>Statistic</code>
+        /// or <code>ExtendedStatistic,</code> but not both.
         /// </para>
         /// </summary>
         public Statistic Statistic

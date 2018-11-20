@@ -57,7 +57,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// The name of the metric.
+        /// The name of the metric. This is a required field.
         /// </para>
         /// </summary>
         public string MetricName
