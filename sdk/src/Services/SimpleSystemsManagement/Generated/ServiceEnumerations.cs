@@ -373,6 +373,98 @@ namespace Amazon.SimpleSystemsManagement
 
 
     /// <summary>
+    /// Constants used for properties of type AttachmentHashType.
+    /// </summary>
+    public class AttachmentHashType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Sha256 for AttachmentHashType
+        /// </summary>
+        public static readonly AttachmentHashType Sha256 = new AttachmentHashType("Sha256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentHashType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentHashType FindValue(string value)
+        {
+            return FindValue<AttachmentHashType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentHashType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AttachmentsSourceKey.
+    /// </summary>
+    public class AttachmentsSourceKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SourceUrl for AttachmentsSourceKey
+        /// </summary>
+        public static readonly AttachmentsSourceKey SourceUrl = new AttachmentsSourceKey("SourceUrl");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentsSourceKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentsSourceKey FindValue(string value)
+        {
+            return FindValue<AttachmentsSourceKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentsSourceKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutomationExecutionFilterKey.
     /// </summary>
     public class AutomationExecutionFilterKey : ConstantClass
@@ -1397,6 +1489,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly DocumentStatus Deleting = new DocumentStatus("Deleting");
         /// <summary>
+        /// Constant Failed for DocumentStatus
+        /// </summary>
+        public static readonly DocumentStatus Failed = new DocumentStatus("Failed");
+        /// <summary>
         /// Constant Updating for DocumentStatus
         /// </summary>
         public static readonly DocumentStatus Updating = new DocumentStatus("Updating");
@@ -1450,6 +1546,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant Command for DocumentType
         /// </summary>
         public static readonly DocumentType Command = new DocumentType("Command");
+        /// <summary>
+        /// Constant Package for DocumentType
+        /// </summary>
+        public static readonly DocumentType Package = new DocumentType("Package");
         /// <summary>
         /// Constant Policy for DocumentType
         /// </summary>

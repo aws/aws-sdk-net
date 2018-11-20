@@ -39,11 +39,13 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
+        private List<AttachmentsSource> _attachments = new List<AttachmentsSource>();
         private string _content;
         private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _name;
         private string _targetType;
+        private string _versionName;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -59,6 +61,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         {
             _name = name;
             _content = content;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// A list of key and value pairs that describe attachments to a version of a document.
+        /// </para>
+        /// </summary>
+        public List<AttachmentsSource> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && this._attachments.Count > 0; 
         }
 
         /// <summary>
@@ -101,8 +121,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentType. 
         /// <para>
-        /// The type of document to create. Valid document types include: Policy, Automation,
-        /// and Command.
+        /// The type of document to create. Valid document types include: <code>Command</code>,
+        /// <code>Policy</code>, <code>Automation</code>, <code>Session</code>, and <code>Package</code>.
         /// </para>
         /// </summary>
         public DocumentType DocumentType
@@ -174,6 +194,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargetType()
         {
             return this._targetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// An optional field specifying the version of the artifact you are creating with the
+        /// document. For example, "Release 12, Update 6". This value is unique across all versions
+        /// of a document, and cannot be changed.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

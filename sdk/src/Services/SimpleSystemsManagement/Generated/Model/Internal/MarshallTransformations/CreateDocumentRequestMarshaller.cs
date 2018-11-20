@@ -67,6 +67,22 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttachments())
+                {
+                    context.Writer.WritePropertyName("Attachments");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = AttachmentsSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAttachmentsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetContent())
                 {
                     context.Writer.WritePropertyName("Content");
@@ -95,6 +111,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("TargetType");
                     context.Writer.Write(publicRequest.TargetType);
+                }
+
+                if(publicRequest.IsSetVersionName())
+                {
+                    context.Writer.WritePropertyName("VersionName");
+                    context.Writer.Write(publicRequest.VersionName);
                 }
 
         

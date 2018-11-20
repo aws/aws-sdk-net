@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DocumentDefaultVersionDescription Object
+    /// Response Unmarshaller for AttachmentInformation Object
     /// </summary>  
-    public class DocumentDefaultVersionDescriptionUnmarshaller : IUnmarshaller<DocumentDefaultVersionDescription, XmlUnmarshallerContext>, IUnmarshaller<DocumentDefaultVersionDescription, JsonUnmarshallerContext>
+    public class AttachmentInformationUnmarshaller : IUnmarshaller<AttachmentInformation, XmlUnmarshallerContext>, IUnmarshaller<AttachmentInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DocumentDefaultVersionDescription IUnmarshaller<DocumentDefaultVersionDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AttachmentInformation IUnmarshaller<AttachmentInformation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,29 +53,17 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DocumentDefaultVersionDescription Unmarshall(JsonUnmarshallerContext context)
+        public AttachmentInformation Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DocumentDefaultVersionDescription unmarshalledObject = new DocumentDefaultVersionDescription();
+            AttachmentInformation unmarshalledObject = new AttachmentInformation();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DefaultVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DefaultVersionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultVersionName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,12 +76,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
 
 
-        private static DocumentDefaultVersionDescriptionUnmarshaller _instance = new DocumentDefaultVersionDescriptionUnmarshaller();        
+        private static AttachmentInformationUnmarshaller _instance = new AttachmentInformationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DocumentDefaultVersionDescriptionUnmarshaller Instance
+        public static AttachmentInformationUnmarshaller Instance
         {
             get
             {

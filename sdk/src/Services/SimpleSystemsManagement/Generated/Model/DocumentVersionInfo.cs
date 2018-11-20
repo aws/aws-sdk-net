@@ -37,6 +37,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _documentVersion;
         private bool? _isDefaultVersion;
         private string _name;
+        private DocumentStatus _status;
+        private string _statusInformation;
+        private string _versionName;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -126,6 +129,65 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+        /// <code>Failed</code>, and <code>Deleting</code>.
+        /// </para>
+        /// </summary>
+        public DocumentStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusInformation. 
+        /// <para>
+        /// A message returned by AWS Systems Manager that explains the <code>Status</code> value.
+        /// For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code>
+        /// message, "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket
+        /// is correct."
+        /// </para>
+        /// </summary>
+        public string StatusInformation
+        {
+            get { return this._statusInformation; }
+            set { this._statusInformation = value; }
+        }
+
+        // Check to see if StatusInformation property is set
+        internal bool IsSetStatusInformation()
+        {
+            return this._statusInformation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// The version of the artifact associated with the document. For example, "Release 12,
+        /// Update 6". This value is unique across all versions of a document, and cannot be changed.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

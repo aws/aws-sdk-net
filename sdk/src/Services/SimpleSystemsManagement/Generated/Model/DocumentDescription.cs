@@ -32,6 +32,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DocumentDescription
     {
+        private List<AttachmentInformation> _attachmentsInformation = new List<AttachmentInformation>();
         private DateTime? _createdDate;
         private string _defaultVersion;
         private string _description;
@@ -48,8 +49,28 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _schemaVersion;
         private string _sha1;
         private DocumentStatus _status;
+        private string _statusInformation;
         private List<Tag> _tags = new List<Tag>();
         private string _targetType;
+        private string _versionName;
+
+        /// <summary>
+        /// Gets and sets the property AttachmentsInformation. 
+        /// <para>
+        /// Details about the document attachments, including names, locations, sizes, etc.
+        /// </para>
+        /// </summary>
+        public List<AttachmentInformation> AttachmentsInformation
+        {
+            get { return this._attachmentsInformation; }
+            set { this._attachmentsInformation = value; }
+        }
+
+        // Check to see if AttachmentsInformation property is set
+        internal bool IsSetAttachmentsInformation()
+        {
+            return this._attachmentsInformation != null && this._attachmentsInformation.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -126,7 +147,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentType. 
         /// <para>
-        /// The type of document. 
+        /// The type of document.
         /// </para>
         /// </summary>
         public DocumentType DocumentType
@@ -185,7 +206,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property HashType. 
         /// <para>
-        /// Sha256 or Sha1.
+        /// The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -350,6 +371,27 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StatusInformation. 
+        /// <para>
+        /// A message returned by AWS Systems Manager that explains the <code>Status</code> value.
+        /// For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code>
+        /// message, "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket
+        /// is correct."
+        /// </para>
+        /// </summary>
+        public string StatusInformation
+        {
+            get { return this._statusInformation; }
+            set { this._statusInformation = value; }
+        }
+
+        // Check to see if StatusInformation property is set
+        internal bool IsSetStatusInformation()
+        {
+            return this._statusInformation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags, or metadata, that have been applied to the document.
@@ -385,6 +427,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargetType()
         {
             return this._targetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// The version of the artifact associated with the document.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }

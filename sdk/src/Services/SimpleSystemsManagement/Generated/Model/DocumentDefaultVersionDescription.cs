@@ -33,6 +33,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DocumentDefaultVersionDescription
     {
         private string _defaultVersion;
+        private string _defaultVersionName;
         private string _name;
 
         /// <summary>
@@ -51,6 +52,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetDefaultVersion()
         {
             return this._defaultVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultVersionName. 
+        /// <para>
+        /// The default version of the artifact associated with the document.
+        /// </para>
+        /// </summary>
+        public string DefaultVersionName
+        {
+            get { return this._defaultVersionName; }
+            set { this._defaultVersionName = value; }
+        }
+
+        // Check to see if DefaultVersionName property is set
+        internal bool IsSetDefaultVersionName()
+        {
+            return this._defaultVersionName != null;
         }
 
         /// <summary>

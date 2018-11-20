@@ -93,6 +93,10 @@
     <pattern>^\/[\w\.\-\:\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateDocumentRequest.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateMaintenanceWindowRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -373,6 +377,10 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeDocumentRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DescribeDocumentRequest.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DescribeDocumentPermissionRequest.Name</property>
@@ -661,6 +669,10 @@
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDocumentRequest.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.Content</property>
     <min>1</min>
   </property-value-rule>
@@ -671,6 +683,10 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.Name</property>
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetDocumentResponse.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetInventoryRequest.MaxResults</property>
@@ -1450,6 +1466,10 @@
     <pattern>^\/[\w\.\-\:\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentDefaultVersionRequest.DocumentVersion</property>
     <pattern>(^[1-9][0-9]*$)</pattern>
   </property-value-rule>
@@ -1899,6 +1919,18 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AttachmentContent.Hash</property>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AttachmentContent.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AttachmentInformation.Name</property>
+    <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AutomationExecution.AutomationExecutionId</property>
     <min>36</min>
     <max>36</max>
@@ -2179,6 +2211,10 @@
     <pattern>([$]LATEST|[$]DEFAULT|^[1-9][0-9]*$)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDefaultVersionDescription.DefaultVersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentDefaultVersionDescription.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
   </property-value-rule>
@@ -2212,6 +2248,10 @@
     <pattern>^\/[\w\.\-\:\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentDescription.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentFilter.Value</property>
     <min>1</min>
   </property-value-rule>
@@ -2233,6 +2273,10 @@
     <pattern>^\/[\w\.\-\:\/]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentIdentifier.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentKeyValuesFilter.Key</property>
     <min>1</min>
     <max>128</max>
@@ -2244,6 +2288,10 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DocumentVersionInfo.Name</property>
     <pattern>^[a-zA-Z0-9_\-.]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DocumentVersionInfo.VersionName</property>
+    <pattern>^[a-zA-Z0-9_\-.]{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceAssociation.AssociationId</property>

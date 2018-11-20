@@ -51,6 +51,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AttachmentsContent", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AttachmentContent, AttachmentContentUnmarshaller>(AttachmentContentUnmarshaller.Instance);
+                    response.AttachmentsContent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Content", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +85,24 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StatusInformation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StatusInformation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("VersionName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VersionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

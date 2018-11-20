@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DocumentVersionInfo Object
+    /// Response Unmarshaller for AttachmentContent Object
     /// </summary>  
-    public class DocumentVersionInfoUnmarshaller : IUnmarshaller<DocumentVersionInfo, XmlUnmarshallerContext>, IUnmarshaller<DocumentVersionInfo, JsonUnmarshallerContext>
+    public class AttachmentContentUnmarshaller : IUnmarshaller<AttachmentContent, XmlUnmarshallerContext>, IUnmarshaller<AttachmentContent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DocumentVersionInfo IUnmarshaller<DocumentVersionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AttachmentContent IUnmarshaller<AttachmentContent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DocumentVersionInfo Unmarshall(JsonUnmarshallerContext context)
+        public AttachmentContent Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DocumentVersionInfo unmarshalledObject = new DocumentVersionInfo();
+            AttachmentContent unmarshalledObject = new AttachmentContent();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CreatedDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("DocumentFormat", targetDepth))
+                if (context.TestExpression("Hash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Hash = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DocumentVersion", targetDepth))
+                if (context.TestExpression("HashType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IsDefaultVersion", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.IsDefaultVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HashType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -94,22 +82,16 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Status", targetDepth))
+                if (context.TestExpression("Size", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.Size = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("StatusInformation", targetDepth))
+                if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusInformation = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("VersionName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +100,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
         }
 
 
-        private static DocumentVersionInfoUnmarshaller _instance = new DocumentVersionInfoUnmarshaller();        
+        private static AttachmentContentUnmarshaller _instance = new AttachmentContentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DocumentVersionInfoUnmarshaller Instance
+        public static AttachmentContentUnmarshaller Instance
         {
             get
             {

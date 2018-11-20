@@ -33,16 +33,36 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
+        private List<AttachmentsSource> _attachments = new List<AttachmentsSource>();
         private string _content;
         private DocumentFormat _documentFormat;
         private string _documentVersion;
         private string _name;
         private string _targetType;
+        private string _versionName;
+
+        /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// A list of key and value pairs that describe attachments to a version of a document.
+        /// </para>
+        /// </summary>
+        public List<AttachmentsSource> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && this._attachments.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content in a document that you want to update.
+        /// A valid JSON or YAML string.
         /// </para>
         /// </summary>
         public string Content
@@ -128,6 +148,26 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTargetType()
         {
             return this._targetType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionName. 
+        /// <para>
+        /// An optional field specifying the version of the artifact you are updating with the
+        /// document. For example, "Release 12, Update 6". This value is unique across all versions
+        /// of a document, and cannot be changed.
+        /// </para>
+        /// </summary>
+        public string VersionName
+        {
+            get { return this._versionName; }
+            set { this._versionName = value; }
+        }
+
+        // Check to see if VersionName property is set
+        internal bool IsSetVersionName()
+        {
+            return this._versionName != null;
         }
 
     }
