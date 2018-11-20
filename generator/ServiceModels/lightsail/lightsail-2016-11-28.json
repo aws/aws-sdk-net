@@ -234,7 +234,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -633,7 +643,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -1063,7 +1083,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -1492,7 +1522,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -1927,7 +1967,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -2600,7 +2650,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -2999,7 +3059,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -3404,7 +3474,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -4166,7 +4246,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -4911,7 +5001,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -6754,7 +6854,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -7153,7 +7263,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -7560,7 +7680,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -7959,7 +8089,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -10144,7 +10284,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -10543,7 +10693,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -10955,7 +11115,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -11367,7 +11537,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -11787,7 +11967,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -12663,7 +12853,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -13076,7 +13276,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -13483,7 +13693,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -14502,7 +14722,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -14901,7 +15131,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -16128,7 +16368,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -16527,7 +16777,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -16972,7 +17232,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -17402,7 +17672,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -17801,7 +18081,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -18991,7 +19281,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -19416,7 +19716,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -19815,7 +20125,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -21500,7 +21820,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -21926,7 +22256,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -22327,7 +22667,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -22874,7 +23224,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -23267,7 +23627,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -24606,7 +24976,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -24998,7 +25378,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -26254,7 +26644,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -26708,7 +27108,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -27158,7 +27568,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -27638,7 +28058,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -28104,7 +28534,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -28552,7 +28992,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -30048,7 +30498,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -31633,7 +32093,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -32032,7 +32502,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -32431,7 +32911,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -32837,7 +33327,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -34497,7 +34997,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -34896,7 +35406,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -36727,7 +37247,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -37112,7 +37642,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -38065,7 +38605,17 @@
                   "DetachDisk",
                   "CreateDiskSnapshot",
                   "DeleteDiskSnapshot",
-                  "CreateDiskFromSnapshot"
+                  "CreateDiskFromSnapshot",
+                  "CreateRelationalDatabase",
+                  "UpdateRelationalDatabase",
+                  "DeleteRelationalDatabase",
+                  "CreateRelationalDatabaseFromSnapshot",
+                  "CreateRelationalDatabaseSnapshot",
+                  "DeleteRelationalDatabaseSnapshot",
+                  "UpdateRelationalDatabaseParameters",
+                  "StartRelationalDatabase",
+                  "RebootRelationalDatabase",
+                  "StopRelationalDatabase"
                 ],
                 "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                 "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -38469,7 +39019,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -38879,7 +39439,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -39721,7 +40291,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -40129,7 +40709,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",
@@ -40174,251 +40764,6 @@
           }
         },
         "shape_name": "UntagResourceResult",
-        "documentation": null
-      },
-      "errors": [
-        {
-          "type": "structure",
-          "members": {
-            "code": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "docs": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "message": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "tip": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>A general service exception.</simpara>\n      ",
-          "documentation": "\n         <p>A general service exception.</p>\n      ",
-          "shape_name": "ServiceException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "code": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "docs": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "message": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "tip": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</simpara>\n         <note>\n            <simpara>Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region configuration to us-east-1 to create, view, or edit these resources.</simpara>\n         </note>\n      ",
-          "documentation": "\n         <p>Lightsail throws this exception when user input does not conform to the validation rules of an input field.</p>\n         <note>\n            <p>Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region configuration to us-east-1 to create, view, or edit these resources.</p>\n         </note>\n      ",
-          "shape_name": "InvalidInputException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "code": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "docs": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "message": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "tip": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>Lightsail throws this exception when it cannot find a resource.</simpara>\n      ",
-          "documentation": "\n         <p>Lightsail throws this exception when it cannot find a resource.</p>\n      ",
-          "shape_name": "NotFoundException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "code": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "docs": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "message": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "tip": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>Lightsail throws this exception when an operation fails to execute.</simpara>\n      ",
-          "documentation": "\n         <p>Lightsail throws this exception when an operation fails to execute.</p>\n      ",
-          "shape_name": "OperationFailureException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "code": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "docs": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "message": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "tip": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</simpara>\n      ",
-          "documentation": "\n         <p>Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to access a resource.</p>\n      ",
-          "shape_name": "AccessDeniedException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "code": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "docs": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "message": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "tip": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>Lightsail throws this exception when an account is still in the setup in progress state.</simpara>\n      ",
-          "documentation": "\n         <p>Lightsail throws this exception when an account is still in the setup in progress state.</p>\n      ",
-          "shape_name": "AccountSetupInProgressException"
-        },
-        {
-          "type": "structure",
-          "members": {
-            "code": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "docs": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "message": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            },
-            "tip": {
-              "type": "string",
-              "shape_name": "string",
-              "documentation": null
-            }
-          },
-          "zonbookDocumentation": "\n         <simpara>Lightsail throws this exception when the user has not been authenticated.</simpara>\n      ",
-          "documentation": "\n         <p>Lightsail throws this exception when the user has not been authenticated.</p>\n      ",
-          "shape_name": "UnauthenticatedException"
-        }
-      ],
-      "documentation": null
-    },
-    "GetTagsForResource": {
-      "name": "GetTagsForResource",
-      "input": {
-        "type": "structure",
-        "members": {
-          "resourceName": {
-            "type": "string",
-            "pattern": "\\w[\\w\\-]*\\w",
-            "required": true,
-            "shape_name": "ResourceName",
-            "documentation": null
-          }
-        },
-        "shape_name": "GetTagsForResourceRequest",
-        "documentation": null
-      },
-      "output": {
-        "type": "structure",
-        "members": {
-          "tags": {
-            "type": "list",
-            "shape_name": "TagList",
-            "documentation": null,
-            "members": {
-              "type": "structure",
-              "members": {
-                "key": {
-                  "type": "string",
-                  "shape_name": "TagKey",
-                  "documentation": null
-                },
-                "value": {
-                  "type": "string",
-                  "shape_name": "TagValue",
-                  "documentation": null
-                }
-              },
-              "shape_name": "Tag",
-              "documentation": null
-            }
-          }
-        },
-        "shape_name": "GetTagsForResourceResult",
         "documentation": null
       },
       "errors": [
@@ -41572,9 +41917,9 @@
                 "state": {
                   "type": "string",
                   "enum": [
-                    "started",
-                    "succeeded",
-                    "failed"
+                    "Started",
+                    "Succeeded",
+                    "Failed"
                   ],
                   "shape_name": "RecordState",
                   "documentation": null
@@ -41582,13 +41927,18 @@
                 "sourceInfo": {
                   "type": "structure",
                   "members": {
-                    "type": {
+                    "resourceType": {
                       "type": "string",
                       "enum": [
                         "InstanceSnapshot",
                         "DiskSnapshot"
                       ],
                       "shape_name": "ExportSnapshotRecordSourceType",
+                      "documentation": null
+                    },
+                    "createdAt": {
+                      "type": "timestamp",
+                      "shape_name": "IsoDate",
                       "documentation": null
                     },
                     "name": {
@@ -42015,9 +42365,9 @@
                 "state": {
                   "type": "string",
                   "enum": [
-                    "started",
-                    "succeeded",
-                    "failed"
+                    "Started",
+                    "Succeeded",
+                    "Failed"
                   ],
                   "shape_name": "RecordState",
                   "documentation": null
@@ -42029,7 +42379,7 @@
                   "members": {
                     "type": "structure",
                     "members": {
-                      "type": {
+                      "resourceType": {
                         "type": "string",
                         "enum": [
                           "ExportSnapshotRecord"
@@ -42474,7 +42824,17 @@
                     "DetachDisk",
                     "CreateDiskSnapshot",
                     "DeleteDiskSnapshot",
-                    "CreateDiskFromSnapshot"
+                    "CreateDiskFromSnapshot",
+                    "CreateRelationalDatabase",
+                    "UpdateRelationalDatabase",
+                    "DeleteRelationalDatabase",
+                    "CreateRelationalDatabaseFromSnapshot",
+                    "CreateRelationalDatabaseSnapshot",
+                    "DeleteRelationalDatabaseSnapshot",
+                    "UpdateRelationalDatabaseParameters",
+                    "StartRelationalDatabase",
+                    "RebootRelationalDatabase",
+                    "StopRelationalDatabase"
                   ],
                   "zonbookDocumentation": "\n         <simpara>The type of operation. </simpara>\n      ",
                   "documentation": "\n         <p>The type of operation. </p>\n      ",

@@ -1597,6 +1597,18 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType CreateLoadBalancerTlsCertificate = new OperationType("CreateLoadBalancerTlsCertificate");
         /// <summary>
+        /// Constant CreateRelationalDatabase for OperationType
+        /// </summary>
+        public static readonly OperationType CreateRelationalDatabase = new OperationType("CreateRelationalDatabase");
+        /// <summary>
+        /// Constant CreateRelationalDatabaseFromSnapshot for OperationType
+        /// </summary>
+        public static readonly OperationType CreateRelationalDatabaseFromSnapshot = new OperationType("CreateRelationalDatabaseFromSnapshot");
+        /// <summary>
+        /// Constant CreateRelationalDatabaseSnapshot for OperationType
+        /// </summary>
+        public static readonly OperationType CreateRelationalDatabaseSnapshot = new OperationType("CreateRelationalDatabaseSnapshot");
+        /// <summary>
         /// Constant DeleteDisk for OperationType
         /// </summary>
         public static readonly OperationType DeleteDisk = new OperationType("DeleteDisk");
@@ -1629,6 +1641,14 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType DeleteLoadBalancerTlsCertificate = new OperationType("DeleteLoadBalancerTlsCertificate");
         /// <summary>
+        /// Constant DeleteRelationalDatabase for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteRelationalDatabase = new OperationType("DeleteRelationalDatabase");
+        /// <summary>
+        /// Constant DeleteRelationalDatabaseSnapshot for OperationType
+        /// </summary>
+        public static readonly OperationType DeleteRelationalDatabaseSnapshot = new OperationType("DeleteRelationalDatabaseSnapshot");
+        /// <summary>
         /// Constant DetachDisk for OperationType
         /// </summary>
         public static readonly OperationType DetachDisk = new OperationType("DetachDisk");
@@ -1653,6 +1673,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType RebootInstance = new OperationType("RebootInstance");
         /// <summary>
+        /// Constant RebootRelationalDatabase for OperationType
+        /// </summary>
+        public static readonly OperationType RebootRelationalDatabase = new OperationType("RebootRelationalDatabase");
+        /// <summary>
         /// Constant ReleaseStaticIp for OperationType
         /// </summary>
         public static readonly OperationType ReleaseStaticIp = new OperationType("ReleaseStaticIp");
@@ -1661,9 +1685,17 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType StartInstance = new OperationType("StartInstance");
         /// <summary>
+        /// Constant StartRelationalDatabase for OperationType
+        /// </summary>
+        public static readonly OperationType StartRelationalDatabase = new OperationType("StartRelationalDatabase");
+        /// <summary>
         /// Constant StopInstance for OperationType
         /// </summary>
         public static readonly OperationType StopInstance = new OperationType("StopInstance");
+        /// <summary>
+        /// Constant StopRelationalDatabase for OperationType
+        /// </summary>
+        public static readonly OperationType StopRelationalDatabase = new OperationType("StopRelationalDatabase");
         /// <summary>
         /// Constant UpdateDomainEntry for OperationType
         /// </summary>
@@ -1672,6 +1704,14 @@ namespace Amazon.Lightsail
         /// Constant UpdateLoadBalancerAttribute for OperationType
         /// </summary>
         public static readonly OperationType UpdateLoadBalancerAttribute = new OperationType("UpdateLoadBalancerAttribute");
+        /// <summary>
+        /// Constant UpdateRelationalDatabase for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateRelationalDatabase = new OperationType("UpdateRelationalDatabase");
+        /// <summary>
+        /// Constant UpdateRelationalDatabaseParameters for OperationType
+        /// </summary>
+        public static readonly OperationType UpdateRelationalDatabaseParameters = new OperationType("UpdateRelationalDatabaseParameters");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
