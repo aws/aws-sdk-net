@@ -5799,6 +5799,18 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ResourceType DhcpOptions = new ResourceType("dhcp-options");
         /// <summary>
+        /// Constant ElasticIp for ResourceType
+        /// </summary>
+        public static readonly ResourceType ElasticIp = new ResourceType("elastic-ip");
+        /// <summary>
+        /// Constant Fleet for ResourceType
+        /// </summary>
+        public static readonly ResourceType Fleet = new ResourceType("fleet");
+        /// <summary>
+        /// Constant FpgaImage for ResourceType
+        /// </summary>
+        public static readonly ResourceType FpgaImage = new ResourceType("fpga-image");
+        /// <summary>
         /// Constant Image for ResourceType
         /// </summary>
         public static readonly ResourceType Image = new ResourceType("image");
@@ -5810,6 +5822,14 @@ namespace Amazon.EC2
         /// Constant InternetGateway for ResourceType
         /// </summary>
         public static readonly ResourceType InternetGateway = new ResourceType("internet-gateway");
+        /// <summary>
+        /// Constant LaunchTemplate for ResourceType
+        /// </summary>
+        public static readonly ResourceType LaunchTemplate = new ResourceType("launch-template");
+        /// <summary>
+        /// Constant Natgateway for ResourceType
+        /// </summary>
+        public static readonly ResourceType Natgateway = new ResourceType("natgateway");
         /// <summary>
         /// Constant NetworkAcl for ResourceType
         /// </summary>
@@ -5850,6 +5870,10 @@ namespace Amazon.EC2
         /// Constant Vpc for ResourceType
         /// </summary>
         public static readonly ResourceType Vpc = new ResourceType("vpc");
+        /// <summary>
+        /// Constant VpcPeeringConnection for ResourceType
+        /// </summary>
+        public static readonly ResourceType VpcPeeringConnection = new ResourceType("vpc-peering-connection");
         /// <summary>
         /// Constant VpnConnection for ResourceType
         /// </summary>

@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeAvailabilityZonesRequest : AmazonEC2Request
     {
         private List<Filter> _filters = new List<Filter>();
+        private List<string> _zoneIds = new List<string>();
         private List<string> _zoneNames = new List<string>();
 
         /// <summary>
@@ -66,6 +67,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>zone-id</code> - The ID of the Availability Zone (for example, <code>use1-az1</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>zone-name</code> - The name of the Availability Zone (for example, <code>us-east-1a</code>).
         /// </para>
         ///  </li> </ul>
@@ -80,6 +85,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneIds. 
+        /// <para>
+        /// The IDs of one or more Availability Zones.
+        /// </para>
+        /// </summary>
+        public List<string> ZoneIds
+        {
+            get { return this._zoneIds; }
+            set { this._zoneIds = value; }
+        }
+
+        // Check to see if ZoneIds property is set
+        internal bool IsSetZoneIds()
+        {
+            return this._zoneIds != null && this._zoneIds.Count > 0; 
         }
 
         /// <summary>

@@ -73,6 +73,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("zoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("zoneName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

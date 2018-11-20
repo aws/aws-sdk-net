@@ -15101,7 +15101,7 @@ namespace Amazon.EC2
         /// user. If you're using this action as the root user, then these settings apply to the
         /// entire account, unless an IAM user explicitly overrides these settings for themselves.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
-        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+        /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -16334,12 +16334,16 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the peered VPCs are in different accounts, each owner must initiate a separate
-        /// request to modify the peering connection options, depending on whether their VPC was
-        /// the requester or accepter for the VPC peering connection. If the peered VPCs are in
-        /// the same account, you can modify the requester and accepter options in the same request.
-        /// To confirm which VPC is the accepter and requester for a VPC peering connection, use
-        /// the <a>DescribeVpcPeeringConnections</a> command.
+        /// If the peered VPCs are in the same AWS account, you can enable DNS resolution for
+        /// queries from the local VPC. This ensures that queries from the local VPC resolve to
+        /// private IP addresses in the peer VPC. This option is not available if the peered VPCs
+        /// are in different AWS accounts or different regions. For peered VPCs in different AWS
+        /// accounts, each AWS account owner must initiate a separate request to modify the peering
+        /// connection options. For inter-region peering connections, you must use the region
+        /// for the requester VPC to modify the requester VPC peering options and the region for
+        /// the accepter VPC to modify the accepter VPC peering options. To verify which VPCs
+        /// are the accepter and the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
+        /// command.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVpcPeeringConnectionOptions service method.</param>

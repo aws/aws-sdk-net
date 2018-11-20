@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribeIdFormat.
+    /// This is the response object from the DescribeIdFormat operation.
     /// </summary>
     public partial class DescribeIdFormatResponse : AmazonWebServiceResponse
     {

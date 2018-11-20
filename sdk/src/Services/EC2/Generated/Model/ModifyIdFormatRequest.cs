@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
     /// user. If you're using this action as the root user, then these settings apply to the
     /// entire account, unless an IAM user explicitly overrides these settings for themselves.
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
-    /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. 
+    /// IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  
     /// <para>

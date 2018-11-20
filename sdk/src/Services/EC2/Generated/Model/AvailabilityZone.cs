@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
         private List<AvailabilityZoneMessage> _messages = new List<AvailabilityZoneMessage>();
         private string _regionName;
         private AvailabilityZoneState _state;
+        private string _zoneId;
         private string _zoneName;
 
         /// <summary>
@@ -89,6 +90,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone.
+        /// </para>
+        /// </summary>
+        public string ZoneId
+        {
+            get { return this._zoneId; }
+            set { this._zoneId = value; }
+        }
+
+        // Check to see if ZoneId property is set
+        internal bool IsSetZoneId()
+        {
+            return this._zoneId != null;
         }
 
         /// <summary>
