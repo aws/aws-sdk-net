@@ -100,6 +100,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     unmarshalledObject.IsMultiRegionTrail = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsOrganizationTrail", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IsOrganizationTrail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

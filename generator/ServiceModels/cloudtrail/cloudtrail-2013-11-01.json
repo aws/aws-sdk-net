@@ -79,6 +79,12 @@
             "zonbookDocumentation": "\n         <simpara>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The\n         value can be an alias name prefixed by \"alias/\", a fully specified ARN to an alias, a fully\n         specified ARN to a key, or a globally unique identifier.</simpara>\n         <simpara>Examples:</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>alias/MyAliasName</simpara>\n            </listitem>\n            <listitem>\n               <simpara>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</simpara>\n            </listitem>\n            <listitem>\n               <simpara>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</simpara>\n            </listitem>\n            <listitem>\n               <simpara>12345678-1234-1234-1234-123456789012</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
             "documentation": "\n         <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The\n         value can be an alias name prefixed by \"alias/\", a fully specified ARN to an alias, a fully\n         specified ARN to a key, or a globally unique identifier.</p>\n         <p>Examples:</p>\n         <ul>\n            <li>\n               <p>alias/MyAliasName</p>\n            </li>\n            <li>\n               <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>\n            </li>\n            <li>\n               <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>\n            </li>\n            <li>\n               <p>12345678-1234-1234-1234-123456789012</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "String"
+          },
+          "IsOrganizationTrail": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. \n      The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in \n      AWS Organizations.</para>\n      ",
+            "documentation": "\n         <p>Specifies whether the trail is created for all accounts in an organization in AWS Organizations, or only for the current AWS account. \n      The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in \n      AWS Organizations.</p>\n      ",
+            "shape_name": "Boolean"
           }
         },
         "zonbookDocumentation": "\n         <simpara>Specifies the settings for each trail.</simpara>\n      ",
@@ -160,6 +166,12 @@
             "zonbookDocumentation": "\n         <simpara>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the format:</simpara>\n         <simpara>\n            <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>\n         </simpara>\n      ",
             "documentation": "\n         <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the format:</p>\n         <p>\n            <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>\n         </p>\n      ",
             "shape_name": "String"
+          },
+          "IsOrganizationTrail": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Specifies whether the trail is an organization trail.</para>\n      ",
+            "documentation": "\n         <p>Specifies whether the trail is an organization trail.</p>\n      ",
+            "shape_name": "Boolean"
           }
         },
         "zonbookDocumentation": " \n      \n         <simpara>Returns the objects or data listed below if successful. Otherwise, returns an error.</simpara>\n      ",
@@ -335,6 +347,46 @@
           "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not permitted.</simpara>\n      ",
           "documentation": "\n         <p>This exception is thrown when the requested operation is not permitted.</p>\n      ",
           "shape_name": "OperationNotPermittedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information, \n         see <ulink url=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html\">Enabling Trusted Access with Other AWS Services</ulink>\n         and <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>. </para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information, \n         see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html\">Enabling Trusted Access with Other AWS Services</a>\n         and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>. </p>\n      ",
+          "shape_name": "CloudTrailAccessNotEnabledException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "InsufficientDependencyServiceAccessPermissionException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "NotOrganizationMasterAccountException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the request is made from an AWS account that is not a member of an organization. \n         To make this request, sign in using the credentials of an account that belongs to an organization.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the request is made from an AWS account that is not a member of an organization. \n         To make this request, sign in using the credentials of an account that belongs to an organization.</p>\n      ",
+          "shape_name": "OrganizationsNotInUseException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support\n         creating an organization trail. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support\n         creating an organization trail. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "OrganizationNotInAllFeaturesModeException"
         }
       ],
       "documentation": "\n         <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. A maximum of five trails can exist in a region, irrespective of the region in which they were created.</p>\n      "
@@ -404,6 +456,12 @@
             "zonbookDocumentation": "\n         <simpara>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The\n         value can be an alias name prefixed by \"alias/\", a fully specified ARN to an alias, a fully\n         specified ARN to a key, or a globally unique identifier.</simpara>\n         <simpara>Examples:</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>alias/MyAliasName</simpara>\n            </listitem>\n            <listitem>\n               <simpara>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</simpara>\n            </listitem>\n            <listitem>\n               <simpara>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</simpara>\n            </listitem>\n            <listitem>\n               <simpara>12345678-1234-1234-1234-123456789012</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
             "documentation": "\n         <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The\n         value can be an alias name prefixed by \"alias/\", a fully specified ARN to an alias, a fully\n         specified ARN to a key, or a globally unique identifier.</p>\n         <p>Examples:</p>\n         <ul>\n            <li>\n               <p>alias/MyAliasName</p>\n            </li>\n            <li>\n               <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p>\n            </li>\n            <li>\n               <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p>\n            </li>\n            <li>\n               <p>12345678-1234-1234-1234-123456789012</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "String"
+          },
+          "IsOrganizationTrail": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. \n         The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in \n         AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong\n         to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be \n         deleted from all member accounts in the organization.</para>\n      ",
+            "documentation": "\n         <p>Specifies whether the trail is applied to all accounts in an organization in AWS Organizations, or only for the current AWS account. \n         The default is false, and cannot be true unless the call is made on behalf of an AWS account that is the master account for an organization in \n         AWS Organizations. If the trail is not an organization trail and this is set to true, the trail will be created in all AWS accounts that belong\n         to the organization. If the trail is an organization trail and this is set to false, the trail will remain in the current AWS account but be \n         deleted from all member accounts in the organization.</p>\n      ",
+            "shape_name": "Boolean"
           }
         },
         "zonbookDocumentation": "\n         <simpara>Specifies settings to update for the trail.</simpara>\n      ",
@@ -485,6 +543,12 @@
             "zonbookDocumentation": "\n         <simpara>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the format:</simpara>\n      \n         <simpara>\n            <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>\n         </simpara>\n      ",
             "documentation": "\n         <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the format:</p>\n      \n         <p>\n            <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>\n         </p>\n      ",
             "shape_name": "String"
+          },
+          "IsOrganizationTrail": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <para>Specifies whether the trail is an organization trail.</para>\n      ",
+            "documentation": "\n         <p>Specifies whether the trail is an organization trail.</p>\n      ",
+            "shape_name": "Boolean"
           }
         },
         "zonbookDocumentation": "\n         <simpara>Returns the objects or data listed below if successful. Otherwise, returns an error.</simpara> \n      ",
@@ -660,6 +724,46 @@
           "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not permitted.</simpara>\n      ",
           "documentation": "\n         <p>This exception is thrown when the requested operation is not permitted.</p>\n      ",
           "shape_name": "OperationNotPermittedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information, \n         see <ulink url=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html\">Enabling Trusted Access with Other AWS Services</ulink>\n         and <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>. </para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when trusted access has not been enabled between AWS CloudTrail and AWS Organizations. For more information, \n         see <a href=\"https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html\">Enabling Trusted Access with Other AWS Services</a>\n         and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>. </p>\n      ",
+          "shape_name": "CloudTrailAccessNotEnabledException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "InsufficientDependencyServiceAccessPermissionException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the request is made from an AWS account that is not a member of an organization. \n         To make this request, sign in using the credentials of an account that belongs to an organization.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the request is made from an AWS account that is not a member of an organization. \n         To make this request, sign in using the credentials of an account that belongs to an organization.</p>\n      ",
+          "shape_name": "OrganizationsNotInUseException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "NotOrganizationMasterAccountException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support\n         creating an organization trail. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when AWS Organizations is not configured to support all features. All features must be enabled in AWS Organization to support\n         creating an organization trail. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "OrganizationNotInAllFeaturesModeException"
         }
       ],
       "documentation": "\n         <p>Updates the settings that specify delivery of log files. Changes to a trail do not require\n         stopping the CloudTrail service. Use this action to designate an existing bucket for log\n         delivery. If the existing bucket has previously been a target for CloudTrail log files,\n         an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the\n         region in which the trail was created; otherwise, an\n            <code>InvalidHomeRegionException</code> is thrown.</p>\n      "
@@ -713,6 +817,38 @@
           "zonbookDocumentation": "\n         <simpara>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</simpara>\n      ",
           "documentation": "\n         <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>\n      ",
           "shape_name": "InvalidHomeRegionException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not supported.</simpara>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the requested operation is not supported.</p>\n      ",
+          "shape_name": "UnsupportedOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not permitted.</simpara>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the requested operation is not permitted.</p>\n      ",
+          "shape_name": "OperationNotPermittedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "NotOrganizationMasterAccountException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "InsufficientDependencyServiceAccessPermissionException"
         }
       ],
       "documentation": "\n         <p>Deletes a trail. This operation must be called from the region in which the trail was\n         created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails\n         in other regions) of a trail that is enabled in all regions.</p>\n      "
@@ -766,6 +902,38 @@
           "zonbookDocumentation": "\n         <simpara>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</simpara>\n      ",
           "documentation": "\n         <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>\n      ",
           "shape_name": "InvalidHomeRegionException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not supported.</simpara>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the requested operation is not supported.</p>\n      ",
+          "shape_name": "UnsupportedOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not permitted.</simpara>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the requested operation is not permitted.</p>\n      ",
+          "shape_name": "OperationNotPermittedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "NotOrganizationMasterAccountException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "InsufficientDependencyServiceAccessPermissionException"
         }
       ],
       "documentation": "\n         <p>Starts the recording of AWS API calls and log file delivery for a trail. For a trail that is enabled in all regions, this operation must be called from the region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled in all regions.</p>\n      "
@@ -819,6 +987,38 @@
           "zonbookDocumentation": "\n         <simpara>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</simpara>\n      ",
           "documentation": "\n         <p>This exception is thrown when an operation is called on a trail from a region other than the region in which the trail was created.</p>\n      ",
           "shape_name": "InvalidHomeRegionException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not supported.</simpara>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the requested operation is not supported.</p>\n      ",
+          "shape_name": "UnsupportedOperationException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not permitted.</simpara>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the requested operation is not permitted.</p>\n      ",
+          "shape_name": "OperationNotPermittedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "NotOrganizationMasterAccountException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "InsufficientDependencyServiceAccessPermissionException"
         }
       ],
       "documentation": "\n         <p>Suspends the recording of AWS API calls and log file delivery for the specified trail.\n         Under most circumstances, there is no need to use this action. You can update a trail\n         without stopping it first. This action is the only way to stop recording. For a trail\n         enabled in all regions, this operation must be called from the region in which the trail\n         was created, or an <code>InvalidHomeRegionException</code> will occur. This operation\n         cannot be called on the shadow trails (replicated trails in other regions) of a trail\n         enabled in all regions.</p>\n      "
@@ -988,8 +1188,8 @@
           },
           "includeShadowTrails": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <simpara>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</simpara>\n      ",
-            "documentation": "\n         <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region. The default is true.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,\n         or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account\n         and region replication trails will not be returned. The default is true.</simpara>\n      ",
+            "documentation": "\n         <p>Specifies whether to include shadow trails in the response. A shadow trail is the replication in a region of a trail that was created in a different region,\n         or in the case of an organization trail, the replication of an organization trail in member accounts. If you do not include shadow trails, organization trails in a member account\n         and region replication trails will not be returned. The default is true.</p>\n      ",
             "shape_name": "Boolean"
           }
         },
@@ -1091,6 +1291,12 @@
                   "type": "boolean",
                   "zonbookDocumentation": "\n         <simpara>Specifies if the trail has custom event selectors.</simpara>\n      ",
                   "documentation": "\n         <p>Specifies if the trail has custom event selectors.</p>\n      ",
+                  "shape_name": "Boolean"
+                },
+                "IsOrganizationTrail": {
+                  "type": "boolean",
+                  "zonbookDocumentation": "\n         <para>Specifies whether the trail is an organization trail.</para>\n      ",
+                  "documentation": "\n         <p>Specifies whether the trail is an organization trail.</p>\n      ",
                   "shape_name": "Boolean"
                 }
               },
@@ -1240,6 +1446,14 @@
           "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not permitted.</simpara>\n      ",
           "documentation": "\n         <p>This exception is thrown when the requested operation is not permitted.</p>\n      ",
           "shape_name": "OperationNotPermittedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "NotOrganizationMasterAccountException"
         }
       ],
       "documentation": "\n         <p>Adds one or more tags to a trail, up to a limit of 50. Tags must be unique per trail. Overwrites an existing tag's value when a new value is specified for an existing tag key. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail that applies to all regions only from the region in which the trail was created (that is, from its home region).</p>\n      "
@@ -1501,6 +1715,14 @@
           "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not permitted.</simpara>\n      ",
           "documentation": "\n         <p>This exception is thrown when the requested operation is not permitted.</p>\n      ",
           "shape_name": "OperationNotPermittedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "NotOrganizationMasterAccountException"
         }
       ],
       "documentation": "\n         <p>Removes the specified tags from a trail.</p>\n      "
@@ -1604,14 +1826,14 @@
                 },
                 "ReadOnly": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <para>Information about whether the event is a write event or a read event. </para>\n      ",
-                  "documentation": "\n         <p>Information about whether the event is a write event or a read event. </p>\n      ",
+                  "zonbookDocumentation": "\n         <para>Information about whether the event is a write event or a read event. </para>\n         <note region=\"DCA\">\n            <para>This information is not available in the C2S Region.</para>\n         </note>\n         <note region=\"LCK\">\n            <para>This information is not available in the SC2S Region.</para>\n         </note>\n      ",
+                  "documentation": "\n         <p>Information about whether the event is a write event or a read event. </p>\n      \n      \n      ",
                   "shape_name": "String"
                 },
                 "AccessKeyId": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <para>The AWS access key ID that was used to sign the request. If the request was made \n         with temporary security credentials, this is the access key ID of the temporary credentials.</para>\n      ",
-                  "documentation": "\n         <p>The AWS access key ID that was used to sign the request. If the request was made \n         with temporary security credentials, this is the access key ID of the temporary credentials.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The AWS access key ID that was used to sign the request. If the request was made \n         with temporary security credentials, this is the access key ID of the temporary credentials.</para>\n         <note region=\"DCA\">\n            <para>This information is not available in the SC2S Region.</para>\n         </note>\n         <note region=\"LCK\">\n            <para/>\n         </note>\n      ",
+                  "documentation": "\n         <p>The AWS access key ID that was used to sign the request. If the request was made \n         with temporary security credentials, this is the access key ID of the temporary credentials.</p>\n      \n      \n      ",
                   "shape_name": "String"
                 },
                 "EventTime": {
@@ -2035,6 +2257,22 @@
           "zonbookDocumentation": "\n         <simpara>This exception is thrown when the requested operation is not permitted.</simpara>\n      ",
           "documentation": "\n         <p>This exception is thrown when the requested operation is not permitted.</p>\n      ",
           "shape_name": "OperationNotPermittedException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the AWS account making the request to create or update an organization trail is not the master account for an \n         organization in AWS Organizations. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "NotOrganizationMasterAccountException"
+        },
+        {
+          "type": "structure",
+          "members": {
+          },
+          "zonbookDocumentation": "\n         <para>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <ulink url=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</ulink>.</para>\n      ",
+          "documentation": "\n         <p>This exception is thrown when the IAM user or role that is used to create the organization trail is lacking one or more required permissions for \n         creating an organization trail in a required service. For more information, see \n         <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html\">Prepare For Creating a Trail For Your Organization</a>.</p>\n      ",
+          "shape_name": "InsufficientDependencyServiceAccessPermissionException"
         }
       ],
       "documentation": "\n         <p>Configures an event selector for your trail. \n         Use event selectors to further specify the management and data event settings for your trail. By\n         default, trails created without specific event selectors will be configured to log all read and \n         write management events, and no data events. </p>\n         <p>When an event occurs in your account, CloudTrail\n         evaluates the event selectors in all trails. For each trail, if the event matches any event\n         selector, the trail processes and logs the event. If the event doesn't match any event\n         selector, the trail doesn't log the event. </p>\n         <p>Example</p>\n         <ol>\n            <li>\n               <p>You create an event selector for a trail and specify that you want\n               write-only events.</p>\n            </li>\n            <li>\n               <p>The EC2 <code>GetConsoleOutput</code> and <code>RunInstances</code> API\n               operations occur in your account.</p>\n            </li>\n            <li>\n               <p>CloudTrail evaluates whether the events match your event\n               selectors.</p>\n            </li>\n            <li>\n               <p>The <code>RunInstances</code> is a write-only event and it matches your\n               event selector. The trail logs the event.</p>\n            </li>\n            <li>\n               <p>The <code>GetConsoleOutput</code> is a read-only event but it doesn't\n               match your event selector. The trail doesn't log the event.\n         </p>\n            </li>\n         </ol>\n         <p>The <code>PutEventSelectors</code> operation must be called from the region in which\n         the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is\n         thrown.</p>\n         <p>You can configure up to five event selectors for each trail. For more information, see <a href=\"http://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html\">Logging Data and Management Events for Trails\n      </a> and <a href=\"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html\">Limits in AWS CloudTrail</a> \n         in the <i>AWS CloudTrail User Guide</i>.</p>\n      "

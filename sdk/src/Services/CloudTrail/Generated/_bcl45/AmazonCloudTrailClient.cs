@@ -318,6 +318,12 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -375,8 +381,20 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the CreateTrail service method.</param>
         /// 
         /// <returns>The response from the CreateTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
+        /// This exception is thrown when trusted access has not been enabled between AWS CloudTrail
+        /// and AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other AWS Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
         /// Cannot set a CloudWatch Logs delivery for this region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// trail is lacking one or more required permissions for creating an organization trail
+        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
         /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
@@ -450,8 +468,25 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
+        /// This exception is thrown when AWS Organizations is not configured to support all features.
+        /// All features must be enabled in AWS Organization to support creating an organization
+        /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
+        /// This exception is thrown when the request is made from an AWS account that is not
+        /// a member of an organization. To make this request, sign in using the credentials of
+        /// an account that belongs to an organization.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.
@@ -506,6 +541,12 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail service method.</param>
         /// 
         /// <returns>The response from the DeleteTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// trail is lacking one or more required permissions for creating an organization trail
+        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
         /// This exception is thrown when an operation is called on a trail from a region other
         /// than the region in which the trail was created.
@@ -538,8 +579,20 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail">REST API Reference for DeleteTrail Operation</seealso>
         public virtual DeleteTrailResponse DeleteTrail(DeleteTrailRequest request)
@@ -1142,6 +1195,12 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
         /// 
         /// <returns>The response from the PutEventSelectors service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// trail is lacking one or more required permissions for creating an organization trail
+        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidEventSelectorsException">
         /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
         /// with a number of event selectors or data resources that is not valid. The combination
@@ -1202,6 +1261,12 @@ namespace Amazon.CloudTrail
         /// Not be in IP address format (for example, 192.168.5.4)
         /// </para>
         ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
@@ -1292,6 +1357,12 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -1346,6 +1417,12 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the StartLogging service method.</param>
         /// 
         /// <returns>The response from the StartLogging service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// trail is lacking one or more required permissions for creating an organization trail
+        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
         /// This exception is thrown when an operation is called on a trail from a region other
         /// than the region in which the trail was created.
@@ -1378,8 +1455,20 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartLogging">REST API Reference for StartLogging Operation</seealso>
         public virtual StartLoggingResponse StartLogging(StartLoggingRequest request)
@@ -1426,6 +1515,12 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the StopLogging service method.</param>
         /// 
         /// <returns>The response from the StopLogging service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// trail is lacking one or more required permissions for creating an organization trail
+        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
         /// This exception is thrown when an operation is called on a trail from a region other
         /// than the region in which the trail was created.
@@ -1458,8 +1553,20 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ul>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.TrailNotFoundException">
         /// This exception is thrown when the trail with the given name is not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopLogging">REST API Reference for StopLogging Operation</seealso>
         public virtual StopLoggingResponse StopLogging(StopLoggingRequest request)
@@ -1505,8 +1612,20 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method.</param>
         /// 
         /// <returns>The response from the UpdateTrail service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailAccessNotEnabledException">
+        /// This exception is thrown when trusted access has not been enabled between AWS CloudTrail
+        /// and AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+        /// Trusted Access with Other AWS Services</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
         /// Cannot set a CloudWatch Logs delivery for this region.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// trail is lacking one or more required permissions for creating an organization trail
+        /// in a required service. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientEncryptionPolicyException">
         /// This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
@@ -1581,8 +1700,25 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the KMS key does not exist, or when the S3 bucket and
         /// the KMS key are not in the same region.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the AWS account making the request to create or update
+        /// an organization trail is not the master account for an organization in AWS Organizations.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationNotInAllFeaturesModeException">
+        /// This exception is thrown when AWS Organizations is not configured to support all features.
+        /// All features must be enabled in AWS Organization to support creating an organization
+        /// trail. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OrganizationsNotInUseException">
+        /// This exception is thrown when the request is made from an AWS account that is not
+        /// a member of an organization. To make this request, sign in using the credentials of
+        /// an account that belongs to an organization.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.S3BucketDoesNotExistException">
         /// This exception is thrown when the specified S3 bucket does not exist.

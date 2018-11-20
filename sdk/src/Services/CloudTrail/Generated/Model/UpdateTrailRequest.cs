@@ -43,6 +43,7 @@ namespace Amazon.CloudTrail.Model
         private bool? _enableLogFileValidation;
         private bool? _includeGlobalServiceEvents;
         private bool? _isMultiRegionTrail;
+        private bool? _isOrganizationTrail;
         private string _kmsKeyId;
         private string _name;
         private string _s3BucketName;
@@ -157,6 +158,30 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIsMultiRegionTrail()
         {
             return this._isMultiRegionTrail.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsOrganizationTrail. 
+        /// <para>
+        /// Specifies whether the trail is applied to all accounts in an organization in AWS Organizations,
+        /// or only for the current AWS account. The default is false, and cannot be true unless
+        /// the call is made on behalf of an AWS account that is the master account for an organization
+        /// in AWS Organizations. If the trail is not an organization trail and this is set to
+        /// true, the trail will be created in all AWS accounts that belong to the organization.
+        /// If the trail is an organization trail and this is set to false, the trail will remain
+        /// in the current AWS account but be deleted from all member accounts in the organization.
+        /// </para>
+        /// </summary>
+        public bool IsOrganizationTrail
+        {
+            get { return this._isOrganizationTrail.GetValueOrDefault(); }
+            set { this._isOrganizationTrail = value; }
+        }
+
+        // Check to see if IsOrganizationTrail property is set
+        internal bool IsSetIsOrganizationTrail()
+        {
+            return this._isOrganizationTrail.HasValue; 
         }
 
         /// <summary>

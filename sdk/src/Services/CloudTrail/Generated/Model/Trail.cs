@@ -38,6 +38,7 @@ namespace Amazon.CloudTrail.Model
         private string _homeRegion;
         private bool? _includeGlobalServiceEvents;
         private bool? _isMultiRegionTrail;
+        private bool? _isOrganizationTrail;
         private string _kmsKeyId;
         private bool? _logFileValidationEnabled;
         private string _name;
@@ -156,6 +157,24 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetIsMultiRegionTrail()
         {
             return this._isMultiRegionTrail.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsOrganizationTrail. 
+        /// <para>
+        /// Specifies whether the trail is an organization trail.
+        /// </para>
+        /// </summary>
+        public bool IsOrganizationTrail
+        {
+            get { return this._isOrganizationTrail.GetValueOrDefault(); }
+            set { this._isOrganizationTrail = value; }
+        }
+
+        // Check to see if IsOrganizationTrail property is set
+        internal bool IsSetIsOrganizationTrail()
+        {
+            return this._isOrganizationTrail.HasValue; 
         }
 
         /// <summary>

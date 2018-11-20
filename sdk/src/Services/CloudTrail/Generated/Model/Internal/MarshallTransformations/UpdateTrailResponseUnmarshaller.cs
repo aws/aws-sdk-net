@@ -75,6 +75,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     response.IsMultiRegionTrail = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IsOrganizationTrail", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.IsOrganizationTrail = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -138,9 +144,17 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CloudTrailAccessNotEnabledException"))
+            {
+                return new CloudTrailAccessNotEnabledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("CloudWatchLogsDeliveryUnavailableException"))
             {
                 return new CloudWatchLogsDeliveryUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientDependencyServiceAccessPermissionException"))
+            {
+                return new InsufficientDependencyServiceAccessPermissionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientEncryptionPolicyException"))
             {
@@ -202,9 +216,21 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             {
                 return new KmsKeyNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NotOrganizationMasterAccountException"))
+            {
+                return new NotOrganizationMasterAccountException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
             {
                 return new OperationNotPermittedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OrganizationNotInAllFeaturesModeException"))
+            {
+                return new OrganizationNotInAllFeaturesModeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("OrganizationsNotInUseException"))
+            {
+                return new OrganizationsNotInUseException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("S3BucketDoesNotExistException"))
             {
