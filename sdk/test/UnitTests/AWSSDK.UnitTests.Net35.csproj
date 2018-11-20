@@ -150,6 +150,7 @@
     <ProjectReference Include="..\..\src\Services\Pricing\AWSSDK.Pricing.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\RAM\AWSSDK.RAM.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\RDSDataService\AWSSDK.RDSDataService.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Redshift\AWSSDK.Redshift.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Rekognition\AWSSDK.Rekognition.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ResourceGroups\AWSSDK.ResourceGroups.Net35.csproj"/>

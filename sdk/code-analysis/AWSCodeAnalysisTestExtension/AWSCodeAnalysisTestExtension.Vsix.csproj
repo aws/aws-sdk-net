@@ -512,6 +512,10 @@
       <Project>{B3C3F105-ECCC-43C7-BD16-11E15487264C}</Project>
       <Name>AWSSDK.RDS.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/RDSDataService/AWSSDK.RDSDataService.CodeAnalysis.csproj">
+      <Project>{D511FAEA-53BE-4A67-A00D-36C8C5D4B8FA}</Project>
+      <Name>AWSSDK.RDSDataService.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Redshift/AWSSDK.Redshift.CodeAnalysis.csproj">
       <Project>{5D839AEF-54F6-431D-BC37-681F7DF77C01}</Project>
       <Name>AWSSDK.Redshift.CodeAnalysis</Name>
