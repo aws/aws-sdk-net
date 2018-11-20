@@ -723,6 +723,7 @@
                   "java8",
                   "python2.7",
                   "python3.6",
+                  "python3.7",
                   "dotnetcore1.0",
                   "dotnetcore2.0",
                   "dotnetcore2.1",
@@ -1161,6 +1162,7 @@
               "java8",
               "python2.7",
               "python3.6",
+              "python3.7",
               "dotnetcore1.0",
               "dotnetcore2.0",
               "dotnetcore2.1",
@@ -1570,6 +1572,7 @@
                     "java8",
                     "python2.7",
                     "python3.6",
+                    "python3.7",
                     "dotnetcore1.0",
                     "dotnetcore2.0",
                     "dotnetcore2.1",
@@ -1906,6 +1909,7 @@
               "java8",
               "python2.7",
               "python3.6",
+              "python3.7",
               "dotnetcore1.0",
               "dotnetcore2.0",
               "dotnetcore2.1",
@@ -2160,6 +2164,7 @@
               "java8",
               "python2.7",
               "python3.6",
+              "python3.7",
               "dotnetcore1.0",
               "dotnetcore2.0",
               "dotnetcore2.1",
@@ -2621,6 +2626,7 @@
               "java8",
               "python2.7",
               "python3.6",
+              "python3.7",
               "dotnetcore1.0",
               "dotnetcore2.0",
               "dotnetcore2.1",
@@ -3107,6 +3113,7 @@
               "java8",
               "python2.7",
               "python3.6",
+              "python3.7",
               "dotnetcore1.0",
               "dotnetcore2.0",
               "dotnetcore2.1",
@@ -3196,6 +3203,7 @@
               "java8",
               "python2.7",
               "python3.6",
+              "python3.7",
               "dotnetcore1.0",
               "dotnetcore2.0",
               "dotnetcore2.1",
@@ -3721,16 +3729,16 @@
           "EventSourceArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)",
-            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the event source.</para>\n      ",
-            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the event source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the event source.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon Kinesis</emphasis> - The ARN of the data stream or a stream consumer.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon DynamoDB Streams</emphasis> - The ARN of the stream.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon Simple Queue Service</emphasis> - The ARN of the queue.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the event source.</p>\n         <ul>\n            <li>\n               <p>\n                  <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>\n            </li>\n         </ul>\n      ",
             "required": true,
             "shape_name": "Arn"
           },
           "FunctionName": {
             "type": "string",
             "pattern": "(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\\d{1}:)?(\\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
-            "zonbookDocumentation": " \n         <para>The name of the lambda function.</para>\n         <itemizedlist>\n            <title>Name formats</title>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function name</emphasis> - <code>MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Version or Alias ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Partial ARN</emphasis> - <code>123456789012:function:MyFunction</code>.</para>\n            </listitem>\n         </itemizedlist>\n         <para>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64\n      characters in length.</para> \n      ",
-            "documentation": " \n         <p>The name of the lambda function.</p>\n         <p class=\"title\">\n            <b>Name formats</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <b>Function name</b> - <code>MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>\n            </li>\n         </ul>\n         <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64\n      characters in length.</p> \n      ",
+            "zonbookDocumentation": "\n         <para>The name of the Lambda function.</para>\n         <itemizedlist>\n            <title>Name formats</title>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function name</emphasis> - <code>MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Version or Alias ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Partial ARN</emphasis> - <code>123456789012:function:MyFunction</code>.</para>\n            </listitem>\n         </itemizedlist>\n         <para>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64\n      characters in length.</para>\n      ",
+            "documentation": "\n         <p>The name of the Lambda function.</p>\n         <p class=\"title\">\n            <b>Name formats</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <b>Function name</b> - <code>MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>\n            </li>\n         </ul>\n         <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64\n      characters in length.</p>\n      ",
             "required": true,
             "shape_name": "FunctionName",
             "min_length": 1,
@@ -3738,14 +3746,14 @@
           },
           "Enabled": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <para>Set to false to disable the event source upon creation. </para>\n      ",
-            "documentation": "\n         <p>Set to false to disable the event source upon creation. </p>\n      ",
+            "zonbookDocumentation": "\n         <para>Disables the event source mapping to pause polling and invocation.</para>\n      ",
+            "documentation": "\n         <p>Disables the event source mapping to pause polling and invocation.</p>\n      ",
             "shape_name": "Enabled"
           },
           "BatchSize": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <para>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and\n      Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.</para>\n      ",
-            "documentation": "\n         <p>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and\n      Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The maximum number of items to retrieve in a single batch.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon Kinesis</emphasis> - Default 100. Max 10,000.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon DynamoDB Streams</emphasis> - Default 100. Max 1,000.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon Simple Queue Service</emphasis> - Default 10. Max 10.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The maximum number of items to retrieve in a single batch.</p>\n         <ul>\n            <li>\n               <p>\n                  <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Amazon Simple Queue Service</b> - Default 10. Max 10.</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "BatchSize",
             "min_length": 1,
             "max_length": 10000
@@ -3757,14 +3765,14 @@
               "LATEST",
               "AT_TIMESTAMP"
             ],
-            "zonbookDocumentation": "\n         <para>The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information,\n      see <ulink type=\"documentation\" url=\"kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">GetShardIterator</ulink> in the <emphasis>Amazon Kinesis API Reference Guide</emphasis> or <ulink type=\"documentation\" url=\"amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html\">GetShardIterator</ulink> in the <emphasis>Amazon DynamoDB API Reference Guide</emphasis>. The\n        <code>AT_TIMESTAMP</code> value is supported only for <ulink type=\"documentation\" url=\"streams/latest/dev/amazon-kinesis-streams.html\">Kinesis streams</ulink>. </para>\n      ",
-            "documentation": "\n         <p>The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information,\n      see <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">GetShardIterator</a> in the <i>Amazon Kinesis API Reference Guide</i> or <a href=\"http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html\">GetShardIterator</a> in the <i>Amazon DynamoDB API Reference Guide</i>. The\n        <code>AT_TIMESTAMP</code> value is supported only for <a href=\"http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html\">Kinesis streams</a>. </p>\n      ",
+            "zonbookDocumentation": "\n         <para>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams\n      sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</para>\n      ",
+            "documentation": "\n         <p>The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams\n      sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>\n      ",
             "shape_name": "EventSourcePosition"
           },
           "StartingPositionTimestamp": {
             "type": "timestamp",
-            "zonbookDocumentation": "\n         <para>The timestamp of the data record from which to start reading. Used with <ulink type=\"documentation\" url=\"kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</ulink> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator\n      returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator\n      returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <ulink type=\"documentation\" url=\"streams/latest/dev/amazon-kinesis-streams.html\">Kinesis streams</ulink>. </para>\n      ",
-            "documentation": "\n         <p>The timestamp of the data record from which to start reading. Used with <a href=\"http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType\">shard iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator\n      returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator\n      returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for <a href=\"http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html\">Kinesis streams</a>. </p>\n      ",
+            "zonbookDocumentation": "\n         <para>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to\n      start reading.</para>\n      ",
+            "documentation": "\n         <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to\n      start reading.</p>\n      ",
             "shape_name": "Date"
           }
         },
@@ -3776,14 +3784,14 @@
         "members": {
           "UUID": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The AWS Lambda assigned opaque identifier for the mapping.</para>\n      ",
-            "documentation": "\n         <p>The AWS Lambda assigned opaque identifier for the mapping.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The identifier of the event source mapping.</para>\n      ",
+            "documentation": "\n         <p>The identifier of the event source mapping.</p>\n      ",
             "shape_name": "String"
           },
           "BatchSize": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <para>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</para>\n      ",
-            "documentation": "\n         <p>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The maximum number of items to retrieve in a single batch.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of items to retrieve in a single batch.</p>\n      ",
             "shape_name": "BatchSize",
             "min_length": 1,
             "max_length": 10000
@@ -3791,44 +3799,44 @@
           "EventSourceArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)",
-            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</para>\n      ",
-            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the event source.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the event source.</p>\n      ",
             "shape_name": "Arn"
           },
           "FunctionArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
-            "zonbookDocumentation": "\n         <para>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</para>\n      ",
-            "documentation": "\n         <p>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The ARN of the Lambda function.</para>\n      ",
+            "documentation": "\n         <p>The ARN of the Lambda function.</p>\n      ",
             "shape_name": "FunctionArn"
           },
           "LastModified": {
             "type": "timestamp",
-            "zonbookDocumentation": "\n         <para>The UTC time string indicating the last time the event mapping was updated.</para>\n      ",
-            "documentation": "\n         <p>The UTC time string indicating the last time the event mapping was updated.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The date that the event source mapping was last updated, in Unix time seconds.</para>\n      ",
+            "documentation": "\n         <p>The date that the event source mapping was last updated, in Unix time seconds.</p>\n      ",
             "shape_name": "Date"
           },
           "LastProcessingResult": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</para>\n      ",
-            "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function.</para>\n      ",
+            "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function.</p>\n      ",
             "shape_name": "String"
           },
           "State": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</para>\n      ",
-            "documentation": "\n         <p>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</para>\n      ",
+            "documentation": "\n         <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</p>\n      ",
             "shape_name": "String"
           },
           "StateTransitionReason": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</para>\n      ",
-            "documentation": "\n         <p>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</para>\n      ",
+            "documentation": "\n         <p>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</p>\n      ",
             "shape_name": "String"
           }
         },
-        "zonbookDocumentation": "\n         <para>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</para>\n      ",
-        "documentation": "\n         <p>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</p>\n      ",
+        "zonbookDocumentation": "\n         <para>A mapping between an AWS resource and an AWS Lambda function. See <xref linkend=\"CreateEventSourceMapping\"/>\n      for details.</para>\n      ",
+        "documentation": "\n         <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a>\n      for details.</p>\n      ",
         "shape_name": "EventSourceMappingConfiguration"
       },
       "errors": [
@@ -3947,7 +3955,7 @@
           "shape_name": "ResourceNotFoundException"
         }
       ],
-      "documentation": "\n         <p>Identifies a poll-based event source for a Lambda function. It can be either an Amazon Kinesis or DynamoDB\n      stream. AWS Lambda invokes the specified function when records are posted to the event source.</p>\n         <p>This association between a poll-based source and a Lambda function is called the event source mapping.</p>\n         <p>You provide mapping information (for example, which stream or SQS queue to read from and which Lambda function\n      to invoke) in the request body.</p>\n         <p>Amazon Kinesis or DynamoDB stream event sources can be associated with multiple AWS Lambda functions and a\n      given Lambda function can be associated with multiple AWS event sources. For Amazon SQS, you can configure\n      multiple queues as event sources for a single Lambda function, but an SQS queue can be mapped only to a single\n      Lambda function.</p>\n         <p>You can configure an SQS queue in an account separate from your Lambda function's account. Also the queue\n      needs to reside in the same AWS region as your function. </p>\n         <p>If you are using versioning, you can specify a specific function version or an alias via the function name\n      parameter. For more information about versioning, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html\">AWS Lambda Function Versioning and Aliases</a>. </p>\n         <p>This operation requires permission for the <code>lambda:CreateEventSourceMapping</code> action.</p>\n      "
+      "documentation": "\n         <p>Creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source\n      and triggers the function.</p>\n         <p>For details about each event source type, see the following topics.</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html\">Using AWS Lambda with Amazon\n            Kinesis</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html\">Using AWS Lambda with Amazon\n          SQS</a>\n               </p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html\">Using AWS Lambda with Amazon\n            DynamoDB</a>\n               </p>\n            </li>\n         </ul>\n      "
     },
     "DeleteEventSourceMapping": {
       "name": "DeleteEventSourceMapping",
@@ -3961,8 +3969,8 @@
         "members": {
           "UUID": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The event source mapping ID.</para>\n      ",
-            "documentation": "\n         <p>The event source mapping ID.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The identifier of the event source mapping.</para>\n      ",
+            "documentation": "\n         <p>The identifier of the event source mapping.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "String"
@@ -3976,14 +3984,14 @@
         "members": {
           "UUID": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The AWS Lambda assigned opaque identifier for the mapping.</para>\n      ",
-            "documentation": "\n         <p>The AWS Lambda assigned opaque identifier for the mapping.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The identifier of the event source mapping.</para>\n      ",
+            "documentation": "\n         <p>The identifier of the event source mapping.</p>\n      ",
             "shape_name": "String"
           },
           "BatchSize": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <para>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</para>\n      ",
-            "documentation": "\n         <p>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The maximum number of items to retrieve in a single batch.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of items to retrieve in a single batch.</p>\n      ",
             "shape_name": "BatchSize",
             "min_length": 1,
             "max_length": 10000
@@ -3991,44 +3999,44 @@
           "EventSourceArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)",
-            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</para>\n      ",
-            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the event source.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the event source.</p>\n      ",
             "shape_name": "Arn"
           },
           "FunctionArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
-            "zonbookDocumentation": "\n         <para>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</para>\n      ",
-            "documentation": "\n         <p>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The ARN of the Lambda function.</para>\n      ",
+            "documentation": "\n         <p>The ARN of the Lambda function.</p>\n      ",
             "shape_name": "FunctionArn"
           },
           "LastModified": {
             "type": "timestamp",
-            "zonbookDocumentation": "\n         <para>The UTC time string indicating the last time the event mapping was updated.</para>\n      ",
-            "documentation": "\n         <p>The UTC time string indicating the last time the event mapping was updated.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The date that the event source mapping was last updated, in Unix time seconds.</para>\n      ",
+            "documentation": "\n         <p>The date that the event source mapping was last updated, in Unix time seconds.</p>\n      ",
             "shape_name": "Date"
           },
           "LastProcessingResult": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</para>\n      ",
-            "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function.</para>\n      ",
+            "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function.</p>\n      ",
             "shape_name": "String"
           },
           "State": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</para>\n      ",
-            "documentation": "\n         <p>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</para>\n      ",
+            "documentation": "\n         <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</p>\n      ",
             "shape_name": "String"
           },
           "StateTransitionReason": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</para>\n      ",
-            "documentation": "\n         <p>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</para>\n      ",
+            "documentation": "\n         <p>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</p>\n      ",
             "shape_name": "String"
           }
         },
-        "zonbookDocumentation": "\n         <para>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</para>\n      ",
-        "documentation": "\n         <p>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</p>\n      ",
+        "zonbookDocumentation": "\n         <para>A mapping between an AWS resource and an AWS Lambda function. See <xref linkend=\"CreateEventSourceMapping\"/>\n      for details.</para>\n      ",
+        "documentation": "\n         <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a>\n      for details.</p>\n      ",
         "shape_name": "EventSourceMappingConfiguration"
       },
       "errors": [
@@ -4145,7 +4153,7 @@
           "shape_name": "ResourceInUseException"
         }
       ],
-      "documentation": "\n         <p>Removes an event source mapping. This means AWS Lambda will no longer invoke the function for events in the\n      associated source.</p>\n         <p>This operation requires permission for the <code>lambda:DeleteEventSourceMapping</code> action.</p>\n      "
+      "documentation": "\n         <p>Deletes an event source mapping.</p>\n      "
     },
     "UpdateEventSourceMapping": {
       "name": "UpdateEventSourceMapping",
@@ -4159,8 +4167,8 @@
         "members": {
           "UUID": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The event source mapping identifier.</para>\n      ",
-            "documentation": "\n         <p>The event source mapping identifier.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The identifier of the event source mapping.</para>\n      ",
+            "documentation": "\n         <p>The identifier of the event source mapping.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "String"
@@ -4168,22 +4176,22 @@
           "FunctionName": {
             "type": "string",
             "pattern": "(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\\d{1}:)?(\\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
-            "zonbookDocumentation": " \n         <para>The name of the lambda function.</para>\n         <itemizedlist>\n            <title>Name formats</title>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function name</emphasis> - <code>MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Version or Alias ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Partial ARN</emphasis> - <code>123456789012:function:MyFunction</code>.</para>\n            </listitem>\n         </itemizedlist>\n         <para>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64\n      characters in length.</para> \n      ",
-            "documentation": " \n         <p>The name of the lambda function.</p>\n         <p class=\"title\">\n            <b>Name formats</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <b>Function name</b> - <code>MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>\n            </li>\n         </ul>\n         <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64\n      characters in length.</p> \n      ",
+            "zonbookDocumentation": "\n         <para>The name of the Lambda function.</para>\n         <itemizedlist>\n            <title>Name formats</title>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function name</emphasis> - <code>MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Version or Alias ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Partial ARN</emphasis> - <code>123456789012:function:MyFunction</code>.</para>\n            </listitem>\n         </itemizedlist>\n         <para>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64\n      characters in length.</para>\n      ",
+            "documentation": "\n         <p>The name of the Lambda function.</p>\n         <p class=\"title\">\n            <b>Name formats</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <b>Function name</b> - <code>MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>\n            </li>\n         </ul>\n         <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64\n      characters in length.</p>\n      ",
             "shape_name": "FunctionName",
             "min_length": 1,
             "max_length": 140
           },
           "Enabled": {
             "type": "boolean",
-            "zonbookDocumentation": "\n         <para>Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the\n      stream.</para>\n      ",
-            "documentation": "\n         <p>Specifies whether AWS Lambda should actively poll the stream or not. If disabled, AWS Lambda will not poll the\n      stream.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>Disables the event source mapping to pause polling and invocation.</para>\n      ",
+            "documentation": "\n         <p>Disables the event source mapping to pause polling and invocation.</p>\n      ",
             "shape_name": "Enabled"
           },
           "BatchSize": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <para>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</para>\n      ",
-            "documentation": "\n         <p>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The maximum number of items to retrieve in a single batch.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon Kinesis</emphasis> - Default 100. Max 10,000.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon DynamoDB Streams</emphasis> - Default 100. Max 1,000.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon Simple Queue Service</emphasis> - Default 10. Max 10.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The maximum number of items to retrieve in a single batch.</p>\n         <ul>\n            <li>\n               <p>\n                  <b>Amazon Kinesis</b> - Default 100. Max 10,000.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Amazon Simple Queue Service</b> - Default 10. Max 10.</p>\n            </li>\n         </ul>\n      ",
             "shape_name": "BatchSize",
             "min_length": 1,
             "max_length": 10000
@@ -4197,14 +4205,14 @@
         "members": {
           "UUID": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The AWS Lambda assigned opaque identifier for the mapping.</para>\n      ",
-            "documentation": "\n         <p>The AWS Lambda assigned opaque identifier for the mapping.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The identifier of the event source mapping.</para>\n      ",
+            "documentation": "\n         <p>The identifier of the event source mapping.</p>\n      ",
             "shape_name": "String"
           },
           "BatchSize": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <para>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</para>\n      ",
-            "documentation": "\n         <p>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The maximum number of items to retrieve in a single batch.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of items to retrieve in a single batch.</p>\n      ",
             "shape_name": "BatchSize",
             "min_length": 1,
             "max_length": 10000
@@ -4212,44 +4220,44 @@
           "EventSourceArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)",
-            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</para>\n      ",
-            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the event source.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the event source.</p>\n      ",
             "shape_name": "Arn"
           },
           "FunctionArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
-            "zonbookDocumentation": "\n         <para>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</para>\n      ",
-            "documentation": "\n         <p>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The ARN of the Lambda function.</para>\n      ",
+            "documentation": "\n         <p>The ARN of the Lambda function.</p>\n      ",
             "shape_name": "FunctionArn"
           },
           "LastModified": {
             "type": "timestamp",
-            "zonbookDocumentation": "\n         <para>The UTC time string indicating the last time the event mapping was updated.</para>\n      ",
-            "documentation": "\n         <p>The UTC time string indicating the last time the event mapping was updated.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The date that the event source mapping was last updated, in Unix time seconds.</para>\n      ",
+            "documentation": "\n         <p>The date that the event source mapping was last updated, in Unix time seconds.</p>\n      ",
             "shape_name": "Date"
           },
           "LastProcessingResult": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</para>\n      ",
-            "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function.</para>\n      ",
+            "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function.</p>\n      ",
             "shape_name": "String"
           },
           "State": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</para>\n      ",
-            "documentation": "\n         <p>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</para>\n      ",
+            "documentation": "\n         <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</p>\n      ",
             "shape_name": "String"
           },
           "StateTransitionReason": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</para>\n      ",
-            "documentation": "\n         <p>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</para>\n      ",
+            "documentation": "\n         <p>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</p>\n      ",
             "shape_name": "String"
           }
         },
-        "zonbookDocumentation": "\n         <para>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</para>\n      ",
-        "documentation": "\n         <p>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</p>\n      ",
+        "zonbookDocumentation": "\n         <para>A mapping between an AWS resource and an AWS Lambda function. See <xref linkend=\"CreateEventSourceMapping\"/>\n      for details.</para>\n      ",
+        "documentation": "\n         <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a>\n      for details.</p>\n      ",
         "shape_name": "EventSourceMappingConfiguration"
       },
       "errors": [
@@ -4386,7 +4394,7 @@
           "shape_name": "ResourceInUseException"
         }
       ],
-      "documentation": "\n         <p>You can update an event source mapping. This is useful if you want to change the parameters of the existing\n      mapping without losing your position in the stream. You can change which function will receive the stream records,\n      but to change the stream itself, you must create a new mapping.</p>\n         <p>If you disable the event source mapping, AWS Lambda stops polling. If you enable again, it will resume polling\n      from the time it had stopped polling, so you don't lose processing of any records. However, if you delete event\n      source mapping and create it again, it will reset.</p>\n         <p>This operation requires permission for the <code>lambda:UpdateEventSourceMapping</code> action.</p>\n      "
+      "documentation": "\n         <p>Updates an event source mapping. You can change the function that AWS Lambda invokes, or pause invocation and\n      resume later from the same location.</p>\n      "
     },
     "GetEventSourceMapping": {
       "name": "GetEventSourceMapping",
@@ -4400,8 +4408,8 @@
         "members": {
           "UUID": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The AWS Lambda assigned ID of the event source mapping.</para>\n      ",
-            "documentation": "\n         <p>The AWS Lambda assigned ID of the event source mapping.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The identifier of the event source mapping.</para>\n      ",
+            "documentation": "\n         <p>The identifier of the event source mapping.</p>\n      ",
             "required": true,
             "location": "uri",
             "shape_name": "String"
@@ -4415,14 +4423,14 @@
         "members": {
           "UUID": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The AWS Lambda assigned opaque identifier for the mapping.</para>\n      ",
-            "documentation": "\n         <p>The AWS Lambda assigned opaque identifier for the mapping.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The identifier of the event source mapping.</para>\n      ",
+            "documentation": "\n         <p>The identifier of the event source mapping.</p>\n      ",
             "shape_name": "String"
           },
           "BatchSize": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <para>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</para>\n      ",
-            "documentation": "\n         <p>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The maximum number of items to retrieve in a single batch.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of items to retrieve in a single batch.</p>\n      ",
             "shape_name": "BatchSize",
             "min_length": 1,
             "max_length": 10000
@@ -4430,44 +4438,44 @@
           "EventSourceArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)",
-            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</para>\n      ",
-            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the event source.</para>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the event source.</p>\n      ",
             "shape_name": "Arn"
           },
           "FunctionArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
-            "zonbookDocumentation": "\n         <para>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</para>\n      ",
-            "documentation": "\n         <p>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The ARN of the Lambda function.</para>\n      ",
+            "documentation": "\n         <p>The ARN of the Lambda function.</p>\n      ",
             "shape_name": "FunctionArn"
           },
           "LastModified": {
             "type": "timestamp",
-            "zonbookDocumentation": "\n         <para>The UTC time string indicating the last time the event mapping was updated.</para>\n      ",
-            "documentation": "\n         <p>The UTC time string indicating the last time the event mapping was updated.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The date that the event source mapping was last updated, in Unix time seconds.</para>\n      ",
+            "documentation": "\n         <p>The date that the event source mapping was last updated, in Unix time seconds.</p>\n      ",
             "shape_name": "Date"
           },
           "LastProcessingResult": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</para>\n      ",
-            "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function.</para>\n      ",
+            "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function.</p>\n      ",
             "shape_name": "String"
           },
           "State": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</para>\n      ",
-            "documentation": "\n         <p>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</para>\n      ",
+            "documentation": "\n         <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</p>\n      ",
             "shape_name": "String"
           },
           "StateTransitionReason": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</para>\n      ",
-            "documentation": "\n         <p>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</para>\n      ",
+            "documentation": "\n         <p>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</p>\n      ",
             "shape_name": "String"
           }
         },
-        "zonbookDocumentation": "\n         <para>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</para>\n      ",
-        "documentation": "\n         <p>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</p>\n      ",
+        "zonbookDocumentation": "\n         <para>A mapping between an AWS resource and an AWS Lambda function. See <xref linkend=\"CreateEventSourceMapping\"/>\n      for details.</para>\n      ",
+        "documentation": "\n         <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a>\n      for details.</p>\n      ",
         "shape_name": "EventSourceMappingConfiguration"
       },
       "errors": [
@@ -4566,7 +4574,7 @@
           "shape_name": "TooManyRequestsException"
         }
       ],
-      "documentation": "\n         <p>Returns configuration information for the specified event source mapping (see <a>CreateEventSourceMapping</a>).</p>\n         <p>This operation requires permission for the <code>lambda:GetEventSourceMapping</code> action.</p>\n      "
+      "documentation": "\n         <p>Returns details about an event source mapping.</p>\n      "
     },
     "ListEventSourceMappings": {
       "name": "ListEventSourceMappings",
@@ -4581,16 +4589,16 @@
           "EventSourceArn": {
             "type": "string",
             "pattern": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)",
-            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)</para>\n      ",
-            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream. (This parameter is optional.)</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the event source.</para>\n         <itemizedlist>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon Kinesis</emphasis> - The ARN of the data stream or a stream consumer.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon DynamoDB Streams</emphasis> - The ARN of the stream.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Amazon Simple Queue Service</emphasis> - The ARN of the queue.</para>\n            </listitem>\n         </itemizedlist>\n      ",
+            "documentation": "\n         <p>The Amazon Resource Name (ARN) of the event source.</p>\n         <ul>\n            <li>\n               <p>\n                  <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Amazon DynamoDB Streams</b> - The ARN of the stream.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Amazon Simple Queue Service</b> - The ARN of the queue.</p>\n            </li>\n         </ul>\n      ",
             "location": "uri",
             "shape_name": "Arn"
           },
           "FunctionName": {
             "type": "string",
             "pattern": "(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\\d{1}:)?(\\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
-            "zonbookDocumentation": " \n         <para>The name of the lambda function.</para>\n         <itemizedlist>\n            <title>Name formats</title>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function name</emphasis> - <code>MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Version or Alias ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Partial ARN</emphasis> - <code>123456789012:function:MyFunction</code>.</para>\n            </listitem>\n         </itemizedlist>\n         <para>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64\n      characters in length.</para> \n      ",
-            "documentation": " \n         <p>The name of the lambda function.</p>\n         <p class=\"title\">\n            <b>Name formats</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <b>Function name</b> - <code>MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>\n            </li>\n         </ul>\n         <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64\n      characters in length.</p> \n      ",
+            "zonbookDocumentation": "\n         <para>The name of the Lambda function.</para>\n         <itemizedlist>\n            <title>Name formats</title>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function name</emphasis> - <code>MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Function ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Version or Alias ARN</emphasis> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</para>\n            </listitem>\n            <listitem>\n               <para>\n                  <emphasis role=\"bold\">Partial ARN</emphasis> - <code>123456789012:function:MyFunction</code>.</para>\n            </listitem>\n         </itemizedlist>\n         <para>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64\n      characters in length.</para>\n      ",
+            "documentation": "\n         <p>The name of the Lambda function.</p>\n         <p class=\"title\">\n            <b>Name formats</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <b>Function name</b> - <code>MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Version or Alias ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p>\n            </li>\n         </ul>\n         <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64\n      characters in length.</p>\n      ",
             "location": "uri",
             "shape_name": "FunctionName",
             "min_length": 1,
@@ -4598,15 +4606,15 @@
           },
           "Marker": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>\n      operation. If present, specifies to continue the list from where the returning call left off. </para>\n      ",
-            "documentation": "\n         <p>Optional string. An opaque pagination token returned from a previous <code>ListEventSourceMappings</code>\n      operation. If present, specifies to continue the list from where the returning call left off. </p>\n      ",
+            "zonbookDocumentation": "\n         <para>A pagination token returned by a previous call.</para>\n      ",
+            "documentation": "\n         <p>A pagination token returned by a previous call.</p>\n      ",
             "location": "uri",
             "shape_name": "String"
           },
           "MaxItems": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <para>Optional integer. Specifies the maximum number of event sources to return in response. This value must be\n      greater than 0.</para>\n      ",
-            "documentation": "\n         <p>Optional integer. Specifies the maximum number of event sources to return in response. This value must be\n      greater than 0.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>The maximum number of event source mappings to return.</para>\n      ",
+            "documentation": "\n         <p>The maximum number of event source mappings to return.</p>\n      ",
             "location": "uri",
             "shape_name": "MaxListItems",
             "min_length": 1,
@@ -4621,28 +4629,28 @@
         "members": {
           "NextMarker": {
             "type": "string",
-            "zonbookDocumentation": "\n         <para>A string, present if there are more event source mappings.</para>\n      ",
-            "documentation": "\n         <p>A string, present if there are more event source mappings.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>A pagination token that's returned when the response doesn't contain all event source mappings.</para>\n      ",
+            "documentation": "\n         <p>A pagination token that's returned when the response doesn't contain all event source mappings.</p>\n      ",
             "shape_name": "String"
           },
           "EventSourceMappings": {
             "type": "list",
-            "zonbookDocumentation": "\n         <para>An array of <code>EventSourceMappingConfiguration</code> objects.</para>\n      ",
-            "documentation": "\n         <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>\n      ",
+            "zonbookDocumentation": "\n         <para>A list of event source mappings.</para>\n      ",
+            "documentation": "\n         <p>A list of event source mappings.</p>\n      ",
             "shape_name": "EventSourceMappingsList",
             "members": {
               "type": "structure",
               "members": {
                 "UUID": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <para>The AWS Lambda assigned opaque identifier for the mapping.</para>\n      ",
-                  "documentation": "\n         <p>The AWS Lambda assigned opaque identifier for the mapping.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The identifier of the event source mapping.</para>\n      ",
+                  "documentation": "\n         <p>The identifier of the event source mapping.</p>\n      ",
                   "shape_name": "String"
                 },
                 "BatchSize": {
                   "type": "integer",
-                  "zonbookDocumentation": "\n         <para>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</para>\n      ",
-                  "documentation": "\n         <p>The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking\n      your function. Your function receives an event with all the retrieved records.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The maximum number of items to retrieve in a single batch.</para>\n      ",
+                  "documentation": "\n         <p>The maximum number of items to retrieve in a single batch.</p>\n      ",
                   "shape_name": "BatchSize",
                   "min_length": 1,
                   "max_length": 10000
@@ -4650,51 +4658,50 @@
                 "EventSourceArn": {
                   "type": "string",
                   "pattern": "arn:(aws[a-zA-Z0-9-]*):([a-zA-Z0-9\\-])+:([a-z]{2}(-gov)?-[a-z]+-\\d{1})?:(\\d{12})?:(.*)",
-                  "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</para>\n      ",
-                  "documentation": "\n         <p>The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The Amazon Resource Name (ARN) of the event source.</para>\n      ",
+                  "documentation": "\n         <p>The Amazon Resource Name (ARN) of the event source.</p>\n      ",
                   "shape_name": "Arn"
                 },
                 "FunctionArn": {
                   "type": "string",
                   "pattern": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
-                  "zonbookDocumentation": "\n         <para>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</para>\n      ",
-                  "documentation": "\n         <p>The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The ARN of the Lambda function.</para>\n      ",
+                  "documentation": "\n         <p>The ARN of the Lambda function.</p>\n      ",
                   "shape_name": "FunctionArn"
                 },
                 "LastModified": {
                   "type": "timestamp",
-                  "zonbookDocumentation": "\n         <para>The UTC time string indicating the last time the event mapping was updated.</para>\n      ",
-                  "documentation": "\n         <p>The UTC time string indicating the last time the event mapping was updated.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The date that the event source mapping was last updated, in Unix time seconds.</para>\n      ",
+                  "documentation": "\n         <p>The date that the event source mapping was last updated, in Unix time seconds.</p>\n      ",
                   "shape_name": "Date"
                 },
                 "LastProcessingResult": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</para>\n      ",
-                  "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue\n      is the event source.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The result of the last AWS Lambda invocation of your Lambda function.</para>\n      ",
+                  "documentation": "\n         <p>The result of the last AWS Lambda invocation of your Lambda function.</p>\n      ",
                   "shape_name": "String"
                 },
                 "State": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</para>\n      ",
-                  "documentation": "\n         <p>The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,\n        <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>, or\n        <code>Deleting</code>.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</para>\n      ",
+                  "documentation": "\n         <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,\n        <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,\n        <code>Updating</code>, or <code>Deleting</code>.</p>\n      ",
                   "shape_name": "String"
                 },
                 "StateTransitionReason": {
                   "type": "string",
-                  "zonbookDocumentation": "\n         <para>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</para>\n      ",
-                  "documentation": "\n         <p>The reason the event source mapping is in its current state. It is either user-requested or an AWS\n      Lambda-initiated state transition.</p>\n      ",
+                  "zonbookDocumentation": "\n         <para>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</para>\n      ",
+                  "documentation": "\n         <p>The cause of the last state change, either <code>User initiated</code> or <code>Lambda\n      initiated</code>.</p>\n      ",
                   "shape_name": "String"
                 }
               },
-              "zonbookDocumentation": "\n         <para>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</para>\n      ",
-              "documentation": "\n         <p>Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.</p>\n      ",
+              "zonbookDocumentation": "\n         <para>A mapping between an AWS resource and an AWS Lambda function. See <xref linkend=\"CreateEventSourceMapping\"/>\n      for details.</para>\n      ",
+              "documentation": "\n         <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a>\n      for details.</p>\n      ",
               "shape_name": "EventSourceMappingConfiguration"
             }
           }
         },
-        "zonbookDocumentation": "\n         <para>Contains a list of event sources (see <xref linkend=\"EventSourceMappingConfiguration\"/>)</para>\n      ",
-        "documentation": "\n         <p>Contains a list of event sources (see <a>EventSourceMappingConfiguration</a>)</p>\n      ",
-        "shape_name": "ListEventSourceMappingsResponse"
+        "shape_name": "ListEventSourceMappingsResponse",
+        "documentation": null
       },
       "errors": [
         {
@@ -4792,7 +4799,7 @@
           "shape_name": "TooManyRequestsException"
         }
       ],
-      "documentation": "\n         <p>Returns a list of event source mappings you created using the <code>CreateEventSourceMapping</code> (see <a>CreateEventSourceMapping</a>). </p>\n         <p>For each mapping, the API returns configuration information. You can optionally specify filters to retrieve\n      specific event source mappings.</p>\n         <p>This operation requires permission for the <code>lambda:ListEventSourceMappings</code> action.</p>\n      "
+      "documentation": "\n         <p>Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a\n      single event source.</p>\n      "
     },
     "AddPermission": {
       "name": "AddPermission",
@@ -5451,6 +5458,7 @@
               "java8",
               "python2.7",
               "python3.6",
+              "python3.7",
               "dotnetcore1.0",
               "dotnetcore2.0",
               "dotnetcore2.1",
@@ -5892,6 +5900,7 @@
                     "java8",
                     "python2.7",
                     "python3.6",
+                    "python3.7",
                     "dotnetcore1.0",
                     "dotnetcore2.0",
                     "dotnetcore2.1",
@@ -7517,8 +7526,8 @@
             "pattern": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
             "zonbookDocumentation": "\n         <para>The ARN (Amazon Resource Name) of the Lambda function. For more information, see <ulink type=\"documentation\" url=\"lambda/latest/dg/tagging.html\">Tagging Lambda Functions</ulink> in the <emphasis role=\"bold\">AWS Lambda\n        Developer Guide</emphasis>.</para>\n      ",
             "documentation": "\n         <p>The ARN (Amazon Resource Name) of the Lambda function. For more information, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/tagging.html\">Tagging Lambda Functions</a> in the <b>AWS Lambda\n        Developer Guide</b>.</p>\n      ",
-            "location": "uri",
             "required": true,
+            "location": "uri",
             "shape_name": "FunctionArn"
           },
           "Tags": {
@@ -7656,8 +7665,8 @@
             "pattern": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
             "zonbookDocumentation": "\n         <para>The ARN (Amazon Resource Name) of the function. For more information, see <ulink type=\"documentation\" url=\"lambda/latest/dg/tagging.html\">Tagging Lambda Functions</ulink> in the <emphasis role=\"bold\">AWS Lambda\n        Developer Guide</emphasis>.</para>\n      ",
             "documentation": "\n         <p>The ARN (Amazon Resource Name) of the function. For more information, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/tagging.html\">Tagging Lambda Functions</a> in the <b>AWS Lambda\n        Developer Guide</b>.</p>\n      ",
-            "location": "uri",
             "required": true,
+            "location": "uri",
             "shape_name": "FunctionArn"
           },
           "TagKeys": {
@@ -7790,8 +7799,8 @@
             "pattern": "arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:function:[a-zA-Z0-9-_]+(:(\\$LATEST|[a-zA-Z0-9-_]+))?",
             "zonbookDocumentation": "\n         <para>The ARN (Amazon Resource Name) of the function. For more information, see <ulink type=\"documentation\" url=\"lambda/latest/dg/tagging.html\">Tagging Lambda Functions</ulink> in the <emphasis role=\"bold\">AWS Lambda\n        Developer Guide</emphasis>.</para>\n      ",
             "documentation": "\n         <p>The ARN (Amazon Resource Name) of the function. For more information, see <a href=\"http://docs.aws.amazon.com/lambda/latest/dg/tagging.html\">Tagging Lambda Functions</a> in the <b>AWS Lambda\n        Developer Guide</b>.</p>\n      ",
-            "location": "uri",
             "required": true,
+            "location": "uri",
             "shape_name": "FunctionArn"
           }
         },

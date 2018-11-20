@@ -29,14 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEventSourceMapping operation.
-    /// Removes an event source mapping. This means AWS Lambda will no longer invoke the function
-    /// for events in the associated source.
-    /// 
-    ///  
-    /// <para>
-    /// This operation requires permission for the <code>lambda:DeleteEventSourceMapping</code>
-    /// action.
-    /// </para>
+    /// Deletes an event source mapping.
     /// </summary>
     public partial class DeleteEventSourceMappingRequest : AmazonLambdaRequest
     {
@@ -45,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property UUID. 
         /// <para>
-        /// The event source mapping ID.
+        /// The identifier of the event source mapping.
         /// </para>
         /// </summary>
         public string UUID

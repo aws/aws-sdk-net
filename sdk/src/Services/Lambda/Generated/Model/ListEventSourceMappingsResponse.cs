@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Contains a list of event sources (see <a>EventSourceMappingConfiguration</a>)
+    /// This is the response object from the ListEventSourceMappings operation.
     /// </summary>
     public partial class ListEventSourceMappingsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceMappings. 
         /// <para>
-        /// An array of <code>EventSourceMappingConfiguration</code> objects.
+        /// A list of event source mappings.
         /// </para>
         /// </summary>
         public List<EventSourceMappingConfiguration> EventSourceMappings
@@ -56,7 +56,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// A string, present if there are more event source mappings.
+        /// A pagination token that's returned when the response doesn't contain all event source
+        /// mappings.
         /// </para>
         /// </summary>
         public string NextMarker

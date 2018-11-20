@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Describes mapping between an Amazon Kinesis or DynamoDB stream and a Lambda function.
+    /// A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a>
+    /// for details.
     /// </summary>
     public partial class DeleteEventSourceMappingResponse : AmazonWebServiceResponse
     {
@@ -44,9 +45,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BatchSize. 
         /// <para>
-        /// The largest number of records that AWS Lambda will retrieve from your event source
-        /// at the time of invoking your function. Your function receives an event with all the
-        /// retrieved records.
+        /// The maximum number of items to retrieve in a single batch.
         /// </para>
         /// </summary>
         public int BatchSize
@@ -64,8 +63,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EventSourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the
-        /// source of events.
+        /// The Amazon Resource Name (ARN) of the event source.
         /// </para>
         /// </summary>
         public string EventSourceArn
@@ -83,7 +81,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
+        /// The ARN of the Lambda function.
         /// </para>
         /// </summary>
         public string FunctionArn
@@ -101,7 +99,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// The UTC time string indicating the last time the event mapping was updated.
+        /// The date that the event source mapping was last updated, in Unix time seconds.
         /// </para>
         /// </summary>
         public DateTime LastModified
@@ -119,8 +117,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LastProcessingResult. 
         /// <para>
-        /// The result of the last AWS Lambda invocation of your Lambda function. This value will
-        /// be null if an SQS queue is the event source.
+        /// The result of the last AWS Lambda invocation of your Lambda function.
         /// </para>
         /// </summary>
         public string LastProcessingResult
@@ -138,9 +135,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the event source mapping. It can be <code>Creating</code>, <code>Enabled</code>,
-        /// <code>Disabled</code>, <code>Enabling</code>, <code>Disabling</code>, <code>Updating</code>,
-        /// or <code>Deleting</code>.
+        /// The state of the event source mapping. It can be one of the following: <code>Creating</code>,
+        /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
+        /// <code>Updating</code>, or <code>Deleting</code>.
         /// </para>
         /// </summary>
         public string State
@@ -158,8 +155,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StateTransitionReason. 
         /// <para>
-        /// The reason the event source mapping is in its current state. It is either user-requested
-        /// or an AWS Lambda-initiated state transition.
+        /// The cause of the last state change, either <code>User initiated</code> or <code>Lambda
+        /// initiated</code>.
         /// </para>
         /// </summary>
         public string StateTransitionReason
@@ -177,7 +174,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property UUID. 
         /// <para>
-        /// The AWS Lambda assigned opaque identifier for the mapping.
+        /// The identifier of the event source mapping.
         /// </para>
         /// </summary>
         public string UUID

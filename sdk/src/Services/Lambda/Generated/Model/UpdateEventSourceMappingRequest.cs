@@ -29,23 +29,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateEventSourceMapping operation.
-    /// You can update an event source mapping. This is useful if you want to change the parameters
-    /// of the existing mapping without losing your position in the stream. You can change
-    /// which function will receive the stream records, but to change the stream itself, you
-    /// must create a new mapping.
-    /// 
-    ///  
-    /// <para>
-    /// If you disable the event source mapping, AWS Lambda stops polling. If you enable again,
-    /// it will resume polling from the time it had stopped polling, so you don't lose processing
-    /// of any records. However, if you delete event source mapping and create it again, it
-    /// will reset.
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation requires permission for the <code>lambda:UpdateEventSourceMapping</code>
-    /// action.
-    /// </para>
+    /// Updates an event source mapping. You can change the function that AWS Lambda invokes,
+    /// or pause invocation and resume later from the same location.
     /// </summary>
     public partial class UpdateEventSourceMappingRequest : AmazonLambdaRequest
     {
@@ -57,10 +42,21 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BatchSize. 
         /// <para>
-        /// The largest number of records that AWS Lambda will retrieve from your event source
-        /// at the time of invoking your function. Your function receives an event with all the
-        /// retrieved records.
+        /// The maximum number of items to retrieve in a single batch.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int BatchSize
         {
@@ -77,8 +73,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether AWS Lambda should actively poll the stream or not. If disabled,
-        /// AWS Lambda will not poll the stream.
+        /// Disables the event source mapping to pause polling and invocation.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -96,7 +91,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the lambda function.
+        /// The name of the Lambda function.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
@@ -119,7 +114,7 @@ namespace Amazon.Lambda.Model
         ///  </li> </ul> 
         /// <para>
         /// The length constraint applies only to the full ARN. If you specify only the function
-        /// name, it is limited to 64 characters in length.
+        /// name, it's limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -137,7 +132,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property UUID. 
         /// <para>
-        /// The event source mapping identifier.
+        /// The identifier of the event source mapping.
         /// </para>
         /// </summary>
         public string UUID

@@ -29,13 +29,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the GetEventSourceMapping operation.
-    /// Returns configuration information for the specified event source mapping (see <a>CreateEventSourceMapping</a>).
-    /// 
-    ///  
-    /// <para>
-    /// This operation requires permission for the <code>lambda:GetEventSourceMapping</code>
-    /// action.
-    /// </para>
+    /// Returns details about an event source mapping.
     /// </summary>
     public partial class GetEventSourceMappingRequest : AmazonLambdaRequest
     {
@@ -44,7 +38,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property UUID. 
         /// <para>
-        /// The AWS Lambda assigned ID of the event source mapping.
+        /// The identifier of the event source mapping.
         /// </para>
         /// </summary>
         public string UUID

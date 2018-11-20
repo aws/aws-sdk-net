@@ -29,43 +29,29 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEventSourceMapping operation.
-    /// Identifies a poll-based event source for a Lambda function. It can be either an Amazon
-    /// Kinesis or DynamoDB stream. AWS Lambda invokes the specified function when records
-    /// are posted to the event source.
+    /// Creates a mapping between an event source and an AWS Lambda function. Lambda reads
+    /// items from the event source and triggers the function.
     /// 
     ///  
     /// <para>
-    /// This association between a poll-based source and a Lambda function is called the event
-    /// source mapping.
+    /// For details about each event source type, see the following topics.
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// You provide mapping information (for example, which stream or SQS queue to read from
-    /// and which Lambda function to invoke) in the request body.
+    ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
+    /// Lambda with Amazon Kinesis</a> 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// Amazon Kinesis or DynamoDB stream event sources can be associated with multiple AWS
-    /// Lambda functions and a given Lambda function can be associated with multiple AWS event
-    /// sources. For Amazon SQS, you can configure multiple queues as event sources for a
-    /// single Lambda function, but an SQS queue can be mapped only to a single Lambda function.
+    ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda
+    /// with Amazon SQS</a> 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// You can configure an SQS queue in an account separate from your Lambda function's
-    /// account. Also the queue needs to reside in the same AWS region as your function. 
+    ///  <a href="http://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda
+    /// with Amazon DynamoDB</a> 
     /// </para>
-    ///  
-    /// <para>
-    /// If you are using versioning, you can specify a specific function version or an alias
-    /// via the function name parameter. For more information about versioning, see <a href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS
-    /// Lambda Function Versioning and Aliases</a>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// This operation requires permission for the <code>lambda:CreateEventSourceMapping</code>
-    /// action.
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateEventSourceMappingRequest : AmazonLambdaRequest
     {
@@ -79,11 +65,21 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BatchSize. 
         /// <para>
-        /// The largest number of records that AWS Lambda will retrieve from your event source
-        /// at the time of invoking your function. Your function receives an event with all the
-        /// retrieved records. The default for Amazon Kinesis and Amazon DynamoDB is 100 records.
-        /// Both the default and maximum for Amazon SQS are 10 messages.
+        /// The maximum number of items to retrieve in a single batch.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Amazon Kinesis</b> - Default 100. Max 10,000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon DynamoDB Streams</b> - Default 100. Max 1,000.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int BatchSize
         {
@@ -100,7 +96,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Set to false to disable the event source upon creation. 
+        /// Disables the event source mapping to pause polling and invocation.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -120,6 +116,19 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the event source.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Amazon Kinesis</b> - The ARN of the data stream or a stream consumer.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon DynamoDB Streams</b> - The ARN of the stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string EventSourceArn
         {
@@ -136,7 +145,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the lambda function.
+        /// The name of the Lambda function.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
@@ -159,7 +168,7 @@ namespace Amazon.Lambda.Model
         ///  </li> </ul> 
         /// <para>
         /// The length constraint applies only to the full ARN. If you specify only the function
-        /// name, it is limited to 64 characters in length.
+        /// name, it's limited to 64 characters in length.
         /// </para>
         /// </summary>
         public string FunctionName
@@ -177,12 +186,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StartingPosition. 
         /// <para>
-        /// The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading.
-        /// For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">GetShardIterator</a>
-        /// in the <i>Amazon Kinesis API Reference Guide</i> or <a href="http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html">GetShardIterator</a>
-        /// in the <i>Amazon DynamoDB API Reference Guide</i>. The <code>AT_TIMESTAMP</code> value
-        /// is supported only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
-        /// streams</a>. 
+        /// The position in a stream from which to start reading. Required for Amazon Kinesis
+        /// and Amazon DynamoDB Streams sources. <code>AT_TIMESTAMP</code> is only supported for
+        /// Amazon Kinesis streams.
         /// </para>
         /// </summary>
         public EventSourcePosition StartingPosition
@@ -200,12 +206,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StartingPositionTimestamp. 
         /// <para>
-        /// The timestamp of the data record from which to start reading. Used with <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType">shard
-        /// iterator type</a> AT_TIMESTAMP. If a record with this exact timestamp does not exist,
-        /// the iterator returned is for the next (later) record. If the timestamp is older than
-        /// the current trim horizon, the iterator returned is for the oldest untrimmed data record
-        /// (TRIM_HORIZON). Valid only for <a href="http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html">Kinesis
-        /// streams</a>. 
+        /// With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time
+        /// in seconds from which to start reading.
         /// </para>
         /// </summary>
         public DateTime StartingPositionTimestamp
