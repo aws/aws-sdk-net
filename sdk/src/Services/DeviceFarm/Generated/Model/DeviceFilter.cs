@@ -28,43 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDevices operation.
-    /// Gets information about unique device types.
+    /// Represents a device filter used to select a set of devices to be included in a test
+    /// run. This data structure is passed in as the "deviceSelectionConfiguration" parameter
+    /// to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
+    /// 
+    ///  
+    /// <para>
+    /// It is also passed in as the "filters" parameter to ListDevices. For an example of
+    /// the JSON request syntax, see <a>ListDevices</a>.
+    /// </para>
     /// </summary>
-    public partial class ListDevicesRequest : AmazonDeviceFarmRequest
+    public partial class DeviceFilter
     {
-        private string _arn;
-        private List<DeviceFilter> _filters = new List<DeviceFilter>();
-        private string _nextToken;
+        private DeviceFilterAttribute _attribute;
+        private DeviceFilterOperator _operator;
+        private List<string> _values = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Attribute. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the project.
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Filters. 
-        /// <para>
-        /// Used to select a set of devices. A filter is made up of an attribute, an operator,
-        /// and one or more values.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Attribute: The aspect of a device such as platform or model used as the selction criteria
-        /// in a device filter.
+        /// The aspect of a device such as platform or model used as the selection criteria in
+        /// a device filter.
         /// </para>
         ///  
         /// <para>
@@ -119,9 +103,24 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul>
+        /// </summary>
+        public DeviceFilterAttribute Attribute
+        {
+            get { return this._attribute; }
+            set { this._attribute = value; }
+        }
+
+        // Check to see if Attribute property is set
+        internal bool IsSetAttribute()
+        {
+            return this._attribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
         /// <para>
-        /// Operator: The filter operator.
+        /// The filter operator.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -141,9 +140,26 @@ namespace Amazon.DeviceFarm.Model
         /// The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators
         /// are also available for the OS_VERSION attribute.
         /// </para>
-        ///  </li> </ul> </li> <li> 
+        ///  </li> </ul>
+        /// </summary>
+        public DeviceFilterOperator Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Values. 
         /// <para>
-        /// Values: An array of one or more filter values.
+        /// An array of one or more filter values used in a device filter.
+        /// </para>
+        ///  <p class="title"> <b>Operator Values</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -153,42 +169,37 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// The other operators require an array with a single element.
         /// </para>
+        ///  </li> </ul> <p class="title"> <b>Attribute Values</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The PLATFORM attribute can be set to "ANDROID" or "IOS".
+        /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY",
-        /// or "TEMPORARY_NOT_AVAILABLE" as values.
+        /// The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY",
+        /// or "TEMPORARY_NOT_AVAILABLE".
         /// </para>
-        ///  </li> </ul> </li> </ul>
-        /// </summary>
-        public List<DeviceFilter> Filters
-        {
-            get { return this._filters; }
-            set { this._filters = value; }
-        }
-
-        // Check to see if Filters property is set
-        internal bool IsSetFilters()
-        {
-            return this._filters != null && this._filters.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property NextToken. 
+        ///  </li> <li> 
         /// <para>
-        /// An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.
+        /// The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        public string NextToken
+        public List<string> Values
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._values; }
+            set { this._values = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Values property is set
+        internal bool IsSetValues()
         {
-            return this._nextToken != null;
+            return this._values != null && this._values.Count > 0; 
         }
 
     }

@@ -29,7 +29,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSamples operation.
-    /// Gets information about samples, given an AWS Device Farm project ARN
+    /// Gets information about samples, given an AWS Device Farm job ARN.
     /// </summary>
     public partial class ListSamplesRequest : AmazonDeviceFarmRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the project for which you want to list samples.
+        /// The Amazon Resource Name (ARN) of the job used to list samples.
         /// </para>
         /// </summary>
         public string Arn

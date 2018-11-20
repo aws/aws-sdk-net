@@ -42,6 +42,7 @@ namespace Amazon.DeviceFarm.Model
         private CustomerArtifactPaths _customerArtifactPaths;
         private DeviceMinutes _deviceMinutes;
         private string _devicePoolArn;
+        private DeviceSelectionResult _deviceSelectionResult;
         private int? _eventCount;
         private int? _jobTimeoutMinutes;
         private string _locale;
@@ -225,6 +226,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDevicePoolArn()
         {
             return this._devicePoolArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeviceSelectionResult. 
+        /// <para>
+        /// The results of a device filter used to select the devices for a test run.
+        /// </para>
+        /// </summary>
+        public DeviceSelectionResult DeviceSelectionResult
+        {
+            get { return this._deviceSelectionResult; }
+            set { this._deviceSelectionResult = value; }
+        }
+
+        // Check to see if DeviceSelectionResult property is set
+        internal bool IsSetDeviceSelectionResult()
+        {
+            return this._deviceSelectionResult != null;
         }
 
         /// <summary>

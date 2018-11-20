@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents additional test settings.
+    /// Represents test settings. This data structure is passed in as the "test" parameter
+    /// to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>.
     /// </summary>
     public partial class ScheduleRunTest
     {
@@ -59,10 +60,19 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The test's parameters, such as the following test framework parameters and fixture
-        /// settings:
+        /// The test's parameters, such as test framework parameters and fixture settings. Parameters
+        /// are represented by name-value pairs of strings.
         /// </para>
         ///  
+        /// <para>
+        /// For all tests:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// app_performance_monitoring: Performance monitoring is enabled by default. Set this
+        /// parameter to "false" to disable it.
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For Calabash tests:
         /// </para>
@@ -81,17 +91,17 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// appium_version: The Appium version. Currently supported values are "1.4.16", "1.6.3",
-        /// "latest", and "default".
+        /// appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1",
+        /// "1.6.5", "latest", and "default".
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// “latest” will run the latest Appium version supported by Device Farm (1.6.3).
+        /// “latest” will run the latest Appium version supported by Device Farm (1.7.2).
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For “default”, Device Farm will choose a compatible version of Appium for the device.
-        /// The current behavior is to run 1.4.16 on Android devices and iOS 9 and earlier, 1.6.3
+        /// The current behavior is to run 1.7.2 on Android devices and iOS 9 and earlier, 1.7.2
         /// for iOS 10 and later.
         /// </para>
         ///  </li> <li> 

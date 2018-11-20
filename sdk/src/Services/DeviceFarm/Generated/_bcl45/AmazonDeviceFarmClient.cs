@@ -3140,7 +3140,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Gets information about samples, given an AWS Device Farm project ARN
+        /// Gets information about samples, given an AWS Device Farm job ARN.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSamples service method.</param>
         /// 

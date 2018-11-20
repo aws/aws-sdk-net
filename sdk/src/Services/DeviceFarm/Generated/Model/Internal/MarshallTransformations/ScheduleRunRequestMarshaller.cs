@@ -90,6 +90,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DevicePoolArn);
                 }
 
+                if(publicRequest.IsSetDeviceSelectionConfiguration())
+                {
+                    context.Writer.WritePropertyName("deviceSelectionConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DeviceSelectionConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DeviceSelectionConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExecutionConfiguration())
                 {
                     context.Writer.WritePropertyName("executionConfiguration");
