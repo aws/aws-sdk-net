@@ -68,6 +68,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAbortConfig())
+                {
+                    context.Writer.WritePropertyName("abortConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AbortConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AbortConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("description");
@@ -106,6 +117,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.PresignedUrlConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTags())
+                {
+                    context.Writer.WritePropertyName("tags");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetTargets())

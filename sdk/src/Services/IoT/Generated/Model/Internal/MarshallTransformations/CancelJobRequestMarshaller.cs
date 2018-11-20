@@ -77,6 +77,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Comment);
                 }
 
+                if(publicRequest.IsSetReasonCode())
+                {
+                    context.Writer.WritePropertyName("reasonCode");
+                    context.Writer.Write(publicRequest.ReasonCode);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

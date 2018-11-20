@@ -28,16 +28,46 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Thing indexing configuration.
+    /// The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing
+    /// Thing Indexing</a>.
     /// </summary>
     public partial class ThingIndexingConfiguration
     {
+        private ThingConnectivityIndexingMode _thingConnectivityIndexingMode;
         private ThingIndexingMode _thingIndexingMode;
+
+        /// <summary>
+        /// Gets and sets the property ThingConnectivityIndexingMode. 
+        /// <para>
+        /// Thing connectivity indexing mode. Valid values are: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// STATUS – Your thing index will contain connectivity status. In order to enable thing
+        /// connectivity indexing, thingIndexMode must not be set to OFF.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// OFF - Thing connectivity status indexing is disabled.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ThingConnectivityIndexingMode ThingConnectivityIndexingMode
+        {
+            get { return this._thingConnectivityIndexingMode; }
+            set { this._thingConnectivityIndexingMode = value; }
+        }
+
+        // Check to see if ThingConnectivityIndexingMode property is set
+        internal bool IsSetThingConnectivityIndexingMode()
+        {
+            return this._thingConnectivityIndexingMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ThingIndexingMode. 
         /// <para>
-        /// Thing indexing mode. Valid values are: 
+        /// Thing indexing mode. Valid values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>

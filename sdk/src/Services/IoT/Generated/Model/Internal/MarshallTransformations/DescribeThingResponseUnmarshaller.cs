@@ -57,6 +57,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.Attributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("billingGroupName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BillingGroupName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("defaultClientId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

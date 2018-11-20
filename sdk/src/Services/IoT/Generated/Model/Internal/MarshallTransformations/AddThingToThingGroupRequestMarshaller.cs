@@ -65,6 +65,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetOverrideDynamicGroups())
+                {
+                    context.Writer.WritePropertyName("overrideDynamicGroups");
+                    context.Writer.Write(publicRequest.OverrideDynamicGroups);
+                }
+
                 if(publicRequest.IsSetThingArn())
                 {
                     context.Writer.WritePropertyName("thingArn");

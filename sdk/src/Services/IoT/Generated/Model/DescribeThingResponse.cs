@@ -33,6 +33,7 @@ namespace Amazon.IoT.Model
     public partial class DescribeThingResponse : AmazonWebServiceResponse
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private string _billingGroupName;
         private string _defaultClientId;
         private string _thingArn;
         private string _thingId;
@@ -56,6 +57,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetAttributes()
         {
             return this._attributes != null && this._attributes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingGroupName. 
+        /// <para>
+        /// The name of the billing group the thing belongs to.
+        /// </para>
+        /// </summary>
+        public string BillingGroupName
+        {
+            get { return this._billingGroupName; }
+            set { this._billingGroupName = value; }
+        }
+
+        // Check to see if BillingGroupName property is set
+        internal bool IsSetBillingGroupName()
+        {
+            return this._billingGroupName != null;
         }
 
         /// <summary>

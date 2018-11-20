@@ -77,15 +77,25 @@ namespace Amazon.IoT.Model
         /// <para>
         /// Contains a value that specifies the type of indexing performed. Valid values are:
         /// </para>
-        ///  <ol> <li> 
+        ///  <ul> <li> 
         /// <para>
         /// REGISTRY – Your thing index will contain only registry data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// REGISTRY_AND_SHADOW - Your thing index will contain registry and shadow data.
+        /// REGISTRY_AND_SHADOW - Your thing index will contain registry data and shadow data.
         /// </para>
-        ///  </li> </ol>
+        ///  </li> <li> 
+        /// <para>
+        /// REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index will contain registry data and
+        /// thing connectivity status data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index will contain registry
+        /// data, shadow data, and thing connectivity status data.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Schema
         {

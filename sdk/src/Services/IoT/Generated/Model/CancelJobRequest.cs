@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
         private string _comment;
         private bool? _force;
         private string _jobId;
+        private string _reasonCode;
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -97,6 +98,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetJobId()
         {
             return this._jobId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReasonCode. 
+        /// <para>
+        /// (Optional)A reason code string that explains why the job was canceled.
+        /// </para>
+        /// </summary>
+        public string ReasonCode
+        {
+            get { return this._reasonCode; }
+            set { this._reasonCode = value; }
+        }
+
+        // Check to see if ReasonCode property is set
+        internal bool IsSetReasonCode()
+        {
+            return this._reasonCode != null;
         }
 
     }

@@ -30,6 +30,12 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the DetachThingPrincipal operation.
     /// Detaches the specified principal from the specified thing.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This call is asynchronous. It might take several seconds for the detachment to propagate.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DetachThingPrincipalRequest : AmazonIoTRequest
     {

@@ -45,6 +45,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ThingIndexingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetThingConnectivityIndexingMode())
+            {
+                context.Writer.WritePropertyName("thingConnectivityIndexingMode");
+                context.Writer.Write(requestObject.ThingConnectivityIndexingMode);
+            }
+
             if(requestObject.IsSetThingIndexingMode())
             {
                 context.Writer.WritePropertyName("thingIndexingMode");

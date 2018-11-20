@@ -32,12 +32,88 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DescribeThingGroupResponse : AmazonWebServiceResponse
     {
+        private string _indexName;
+        private string _queryString;
+        private string _queryVersion;
+        private DynamicGroupStatus _status;
         private string _thingGroupArn;
         private string _thingGroupId;
         private ThingGroupMetadata _thingGroupMetadata;
         private string _thingGroupName;
         private ThingGroupProperties _thingGroupProperties;
         private long? _version;
+
+        /// <summary>
+        /// Gets and sets the property IndexName. 
+        /// <para>
+        /// The dynamic thing group index name.
+        /// </para>
+        /// </summary>
+        public string IndexName
+        {
+            get { return this._indexName; }
+            set { this._indexName = value; }
+        }
+
+        // Check to see if IndexName property is set
+        internal bool IsSetIndexName()
+        {
+            return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryString. 
+        /// <para>
+        /// The dynamic thing group search query string.
+        /// </para>
+        /// </summary>
+        public string QueryString
+        {
+            get { return this._queryString; }
+            set { this._queryString = value; }
+        }
+
+        // Check to see if QueryString property is set
+        internal bool IsSetQueryString()
+        {
+            return this._queryString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryVersion. 
+        /// <para>
+        /// The dynamic thing group query version.
+        /// </para>
+        /// </summary>
+        public string QueryVersion
+        {
+            get { return this._queryVersion; }
+            set { this._queryVersion = value; }
+        }
+
+        // Check to see if QueryVersion property is set
+        internal bool IsSetQueryVersion()
+        {
+            return this._queryVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The dynamic thing group status.
+        /// </para>
+        /// </summary>
+        public DynamicGroupStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ThingGroupArn. 

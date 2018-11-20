@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
     public partial class CreateThingRequest : AmazonIoTRequest
     {
         private AttributePayload _attributePayload;
+        private string _billingGroupName;
         private string _thingName;
         private string _thingTypeName;
 
@@ -65,6 +66,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetAttributePayload()
         {
             return this._attributePayload != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingGroupName. 
+        /// <para>
+        /// The name of the billing group the thing will be added to.
+        /// </para>
+        /// </summary>
+        public string BillingGroupName
+        {
+            get { return this._billingGroupName; }
+            set { this._billingGroupName = value; }
+        }
+
+        // Check to see if BillingGroupName property is set
+        internal bool IsSetBillingGroupName()
+        {
+            return this._billingGroupName != null;
         }
 
         /// <summary>

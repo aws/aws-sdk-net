@@ -64,6 +64,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("abortConfig", targetDepth))
+                {
+                    var unmarshaller = AbortConfigUnmarshaller.Instance;
+                    unmarshalledObject.AbortConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("comment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PresignedUrlConfigUnmarshaller.Instance;
                     unmarshalledObject.PresignedUrlConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("reasonCode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReasonCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

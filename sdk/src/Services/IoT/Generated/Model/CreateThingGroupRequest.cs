@@ -41,6 +41,7 @@ namespace Amazon.IoT.Model
     public partial class CreateThingGroupRequest : AmazonIoTRequest
     {
         private string _parentGroupName;
+        private List<Tag> _tags = new List<Tag>();
         private string _thingGroupName;
         private ThingGroupProperties _thingGroupProperties;
 
@@ -60,6 +61,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetParentGroupName()
         {
             return this._parentGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage the thing group.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

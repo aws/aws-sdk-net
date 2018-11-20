@@ -7,6 +7,18 @@
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.AddThingToBillingGroupRequest.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AddThingToBillingGroupRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.AddThingToThingGroupRequest.ThingGroupName</property>
     <min>1</min>
     <max>128</max>
@@ -88,6 +100,10 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CancelJobRequest.ReasonCode</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CancelJobResponse.Description</property>
     <max>2028</max>
     <pattern>[^\p{C}]+</pattern>
@@ -129,6 +145,24 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateBillingGroupRequest.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateBillingGroupResponse.BillingGroupId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateBillingGroupResponse.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateCertificateFromCsrRequest.CertificateSigningRequest</property>
     <min>1</min>
   </property-value-rule>
@@ -142,6 +176,44 @@
     <property>Amazon.IoT.Model.CreateCertificateFromCsrResponse.CertificatePem</property>
     <min>1</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDynamicThingGroupRequest.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDynamicThingGroupRequest.QueryString</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDynamicThingGroupRequest.ThingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDynamicThingGroupResponse.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDynamicThingGroupResponse.QueryString</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDynamicThingGroupResponse.ThingGroupId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.CreateDynamicThingGroupResponse.ThingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CreateJobRequest.Description</property>
@@ -314,6 +386,12 @@
     <max>65535</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.CreateThingRequest.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.CreateThingRequest.ThingName</property>
     <min>1</min>
     <max>128</max>
@@ -380,6 +458,12 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteBillingGroupRequest.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DeleteCACertificateRequest.CertificateId</property>
     <min>64</min>
     <max>64</max>
@@ -390,6 +474,12 @@
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DeleteDynamicThingGroupRequest.ThingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DeleteJobRequest.JobId</property>
@@ -509,6 +599,24 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeBillingGroupRequest.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeBillingGroupResponse.BillingGroupId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeBillingGroupResponse.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DescribeCACertificateRequest.CertificateId</property>
     <min>64</min>
     <max>64</max>
@@ -606,6 +714,12 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeThingResponse.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.DescribeThingResponse.ThingName</property>
     <min>1</min>
     <max>128</max>
@@ -622,6 +736,16 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeThingGroupResponse.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.DescribeThingGroupResponse.QueryString</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.DescribeThingGroupResponse.ThingGroupId</property>
@@ -845,6 +969,17 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ListAuthorizersResponse.NextMarker</property>
     <pattern>[A-Za-z0-9+/]+={0,2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListBillingGroupsRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListBillingGroupsRequest.NamePrefixFilter</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.ListCACertificatesRequest.Marker</property>
@@ -1142,6 +1277,17 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ListThingsInBillingGroupRequest.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ListThingsInBillingGroupRequest.MaxResults</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ListThingsInThingGroupRequest.MaxResults</property>
     <min>1</min>
     <max>250</max>
@@ -1236,6 +1382,18 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.RejectCertificateTransferRequest.RejectReason</property>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RemoveThingFromBillingGroupRequest.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RemoveThingFromBillingGroupRequest.ThingName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RemoveThingFromThingGroupRequest.ThingGroupName</property>
@@ -1386,6 +1544,12 @@
     <pattern>[\w=,@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateBillingGroupRequest.BillingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.UpdateCACertificateRequest.CertificateId</property>
     <min>64</min>
     <max>64</max>
@@ -1396,6 +1560,33 @@
     <min>64</min>
     <max>64</max>
     <pattern>(0x)?[a-fA-F0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateDynamicThingGroupRequest.IndexName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateDynamicThingGroupRequest.QueryString</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateDynamicThingGroupRequest.ThingGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateJobRequest.Description</property>
+    <max>2028</max>
+    <pattern>[^\p{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.UpdateJobRequest.JobId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.UpdateRoleAliasRequest.CredentialDurationSeconds</property>
@@ -1506,6 +1697,14 @@
     <pattern>[a-zA-Z0-9:_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.AbortCriteria.MinNumberOfExecutedThings</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.AbortCriteria.ThresholdPercentage</property>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ActiveViolation.SecurityProfileName</property>
     <min>1</min>
     <max>128</max>
@@ -1577,6 +1776,10 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9:_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.BillingGroupProperties.BillingGroupDescription</property>
+    <max>2028</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.CACertificate.CertificateId</property>
@@ -1655,6 +1858,16 @@
     <pattern>https?://.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ExponentialRolloutRate.BaseRatePerMinute</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.ExponentialRolloutRate.IncrementFactor</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.FirehoseAction.Separator</property>
     <pattern>([\n\t])|(\r\n)|(,)</pattern>
   </property-value-rule>
@@ -1681,6 +1894,10 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.Job.ReasonCode</property>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.JobExecution.JobId</property>
     <min>1</min>
     <max>64</max>
@@ -1689,7 +1906,6 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.JobExecutionsRolloutConfig.MaximumPerMinute</property>
     <min>1</min>
-    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.JobExecutionSummaryForThing.JobId</property>
@@ -1783,6 +1999,14 @@
     <property>Amazon.IoT.Model.PresignedUrlConfig.RoleArn</property>
     <min>20</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RateIncreaseCriteria.NumberOfNotifiedThings</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.RateIncreaseCriteria.NumberOfSucceededThings</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.RegistrationConfig.RoleArn</property>

@@ -333,6 +333,71 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  AddThingToBillingGroup
+
+        /// <summary>
+        /// Adds a thing to a billing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddThingToBillingGroup service method.</param>
+        /// 
+        /// <returns>The response from the AddThingToBillingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToBillingGroup">REST API Reference for AddThingToBillingGroup Operation</seealso>
+        public virtual AddThingToBillingGroupResponse AddThingToBillingGroup(AddThingToBillingGroupRequest request)
+        {
+            var marshaller = AddThingToBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = AddThingToBillingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<AddThingToBillingGroupRequest,AddThingToBillingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddThingToBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddThingToBillingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAddThingToBillingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToBillingGroup">REST API Reference for AddThingToBillingGroup Operation</seealso>
+        public virtual IAsyncResult BeginAddThingToBillingGroup(AddThingToBillingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AddThingToBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = AddThingToBillingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AddThingToBillingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AddThingToBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAddThingToBillingGroup.</param>
+        /// 
+        /// <returns>Returns a  AddThingToBillingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/AddThingToBillingGroup">REST API Reference for AddThingToBillingGroup Operation</seealso>
+        public virtual AddThingToBillingGroupResponse EndAddThingToBillingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AddThingToBillingGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AddThingToThingGroup
 
         /// <summary>
@@ -1346,6 +1411,71 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  CreateBillingGroup
+
+        /// <summary>
+        /// Creates a billing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBillingGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateBillingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
+        public virtual CreateBillingGroupResponse CreateBillingGroup(CreateBillingGroupRequest request)
+        {
+            var marshaller = CreateBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateBillingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBillingGroupRequest,CreateBillingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBillingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBillingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateBillingGroup(CreateBillingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateBillingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateBillingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBillingGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateBillingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateBillingGroup">REST API Reference for CreateBillingGroup Operation</seealso>
+        public virtual CreateBillingGroupResponse EndCreateBillingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBillingGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateCertificateFromCsr
 
         /// <summary>
@@ -1673,6 +1803,80 @@ namespace Amazon.IoT
         public virtual CreateCertificateFromCsrResponse EndCreateCertificateFromCsr(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCertificateFromCsrResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDynamicThingGroup
+
+        /// <summary>
+        /// Creates a dynamic thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDynamicThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateDynamicThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceAlreadyExistsException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDynamicThingGroup">REST API Reference for CreateDynamicThingGroup Operation</seealso>
+        public virtual CreateDynamicThingGroupResponse CreateDynamicThingGroup(CreateDynamicThingGroupRequest request)
+        {
+            var marshaller = CreateDynamicThingGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateDynamicThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDynamicThingGroupRequest,CreateDynamicThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDynamicThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDynamicThingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDynamicThingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDynamicThingGroup">REST API Reference for CreateDynamicThingGroup Operation</seealso>
+        public virtual IAsyncResult BeginCreateDynamicThingGroup(CreateDynamicThingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateDynamicThingGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateDynamicThingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDynamicThingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDynamicThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDynamicThingGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateDynamicThingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateDynamicThingGroup">REST API Reference for CreateDynamicThingGroup Operation</seealso>
+        public virtual CreateDynamicThingGroupResponse EndCreateDynamicThingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDynamicThingGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -2809,6 +3013,10 @@ namespace Amazon.IoT
         /// <param name="request">Container for the necessary parameters to execute the CreateTopicRule service method.</param>
         /// 
         /// <returns>The response from the CreateTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalException">
         /// An unexpected error has occurred.
         /// </exception>
@@ -3005,6 +3213,72 @@ namespace Amazon.IoT
         public virtual DeleteAuthorizerResponse EndDeleteAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAuthorizerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBillingGroup
+
+        /// <summary>
+        /// Deletes the billing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBillingGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBillingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
+        public virtual DeleteBillingGroupResponse DeleteBillingGroup(DeleteBillingGroupRequest request)
+        {
+            var marshaller = DeleteBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteBillingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBillingGroupRequest,DeleteBillingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBillingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBillingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBillingGroup(DeleteBillingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteBillingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteBillingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBillingGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteBillingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteBillingGroup">REST API Reference for DeleteBillingGroup Operation</seealso>
+        public virtual DeleteBillingGroupResponse EndDeleteBillingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBillingGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -3211,6 +3485,72 @@ namespace Amazon.IoT
         public virtual DeleteCertificateResponse EndDeleteCertificate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteCertificateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDynamicThingGroup
+
+        /// <summary>
+        /// Deletes a dynamic thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDynamicThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDynamicThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDynamicThingGroup">REST API Reference for DeleteDynamicThingGroup Operation</seealso>
+        public virtual DeleteDynamicThingGroupResponse DeleteDynamicThingGroup(DeleteDynamicThingGroupRequest request)
+        {
+            var marshaller = DeleteDynamicThingGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteDynamicThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDynamicThingGroupRequest,DeleteDynamicThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDynamicThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDynamicThingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDynamicThingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDynamicThingGroup">REST API Reference for DeleteDynamicThingGroup Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDynamicThingGroup(DeleteDynamicThingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteDynamicThingGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteDynamicThingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteDynamicThingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDynamicThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDynamicThingGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteDynamicThingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeleteDynamicThingGroup">REST API Reference for DeleteDynamicThingGroup Operation</seealso>
+        public virtual DeleteDynamicThingGroupResponse EndDeleteDynamicThingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDynamicThingGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -4054,7 +4394,8 @@ namespace Amazon.IoT
         #region  DeleteThing
 
         /// <summary>
-        /// Deletes the specified thing.
+        /// Deletes the specified thing. Returns successfully with no error if the deletion is
+        /// successful or you specify a thing that doesn't exist.
         /// </summary>
         /// <param name="thingName">The name of the thing to delete.</param>
         /// 
@@ -4091,7 +4432,8 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes the specified thing.
+        /// Deletes the specified thing. Returns successfully with no error if the deletion is
+        /// successful or you specify a thing that doesn't exist.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteThing service method.</param>
         /// 
@@ -4232,7 +4574,7 @@ namespace Amazon.IoT
         #region  DeleteThingType
 
         /// <summary>
-        /// Deletes the specified thing type . You cannot delete a thing type if it has things
+        /// Deletes the specified thing type. You cannot delete a thing type if it has things
         /// associated with it. To delete a thing type, first mark it as deprecated by calling
         /// <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a>
         /// to change the thing type on any associated thing, and finally use <a>DeleteThingType</a>
@@ -4312,6 +4654,10 @@ namespace Amazon.IoT
         /// <param name="ruleName">The name of the rule.</param>
         /// 
         /// <returns>The response from the DeleteTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalException">
         /// An unexpected error has occurred.
         /// </exception>
@@ -4339,6 +4685,10 @@ namespace Amazon.IoT
         /// <param name="request">Container for the necessary parameters to execute the DeleteTopicRule service method.</param>
         /// 
         /// <returns>The response from the DeleteTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalException">
         /// An unexpected error has occurred.
         /// </exception>
@@ -4721,6 +5071,71 @@ namespace Amazon.IoT
         public virtual DescribeAuthorizerResponse EndDescribeAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeAuthorizerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeBillingGroup
+
+        /// <summary>
+        /// Returns information about a billing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBillingGroup service method.</param>
+        /// 
+        /// <returns>The response from the DescribeBillingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeBillingGroup">REST API Reference for DescribeBillingGroup Operation</seealso>
+        public virtual DescribeBillingGroupResponse DescribeBillingGroup(DescribeBillingGroupRequest request)
+        {
+            var marshaller = DescribeBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = DescribeBillingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeBillingGroupRequest,DescribeBillingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBillingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeBillingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeBillingGroup">REST API Reference for DescribeBillingGroup Operation</seealso>
+        public virtual IAsyncResult BeginDescribeBillingGroup(DescribeBillingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = DescribeBillingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeBillingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeBillingGroup.</param>
+        /// 
+        /// <returns>Returns a  DescribeBillingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeBillingGroup">REST API Reference for DescribeBillingGroup Operation</seealso>
+        public virtual DescribeBillingGroupResponse EndDescribeBillingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeBillingGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -6161,6 +6576,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Detaches the specified principal from the specified thing.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This call is asynchronous. It might take several seconds for the detachment to propagate.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="thingName">The name of the thing.</param>
         /// <param name="principal">If the principal is a certificate, this value must be ARN of the certificate. If the principal is an Amazon Cognito identity, this value must be the ID of the Amazon Cognito identity.</param>
@@ -6196,6 +6617,12 @@ namespace Amazon.IoT
 
         /// <summary>
         /// Detaches the specified principal from the specified thing.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This call is asynchronous. It might take several seconds for the detachment to propagate.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachThingPrincipal service method.</param>
         /// 
@@ -6271,6 +6698,10 @@ namespace Amazon.IoT
         /// <param name="request">Container for the necessary parameters to execute the DisableTopicRule service method.</param>
         /// 
         /// <returns>The response from the DisableTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalException">
         /// An unexpected error has occurred.
         /// </exception>
@@ -6336,6 +6767,10 @@ namespace Amazon.IoT
         /// <param name="request">Container for the necessary parameters to execute the EnableTopicRule service method.</param>
         /// 
         /// <returns>The response from the EnableTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalException">
         /// An unexpected error has occurred.
         /// </exception>
@@ -7502,6 +7937,71 @@ namespace Amazon.IoT
         public virtual ListAuthorizersResponse EndListAuthorizers(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAuthorizersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBillingGroups
+
+        /// <summary>
+        /// Lists the billing groups you have created.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBillingGroups service method.</param>
+        /// 
+        /// <returns>The response from the ListBillingGroups service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
+        public virtual ListBillingGroupsResponse ListBillingGroups(ListBillingGroupsRequest request)
+        {
+            var marshaller = ListBillingGroupsRequestMarshaller.Instance;
+            var unmarshaller = ListBillingGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListBillingGroupsRequest,ListBillingGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBillingGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBillingGroups operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBillingGroups
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
+        public virtual IAsyncResult BeginListBillingGroups(ListBillingGroupsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListBillingGroupsRequestMarshaller.Instance;
+            var unmarshaller = ListBillingGroupsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListBillingGroupsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBillingGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBillingGroups.</param>
+        /// 
+        /// <returns>Returns a  ListBillingGroupsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListBillingGroups">REST API Reference for ListBillingGroups Operation</seealso>
+        public virtual ListBillingGroupsResponse EndListBillingGroups(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBillingGroupsResponse>(asyncResult);
         }
 
         #endregion
@@ -8987,6 +9487,71 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  ListTagsForResource
+
+        /// <summary>
+        /// Lists the tags (metadata) you have assigned to the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request)
+        {
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsForResourceRequest,ListTagsForResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListTagsForResourceRequestMarshaller.Instance;
+            var unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListTagsForResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        public virtual ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListTagsForResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListTargetsForPolicy
 
         /// <summary>
@@ -9583,6 +10148,71 @@ namespace Amazon.IoT
         public virtual ListThingsResponse EndListThings(IAsyncResult asyncResult)
         {
             return EndInvoke<ListThingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListThingsInBillingGroup
+
+        /// <summary>
+        /// Lists the things you have added to the given billing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThingsInBillingGroup service method.</param>
+        /// 
+        /// <returns>The response from the ListThingsInBillingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInBillingGroup">REST API Reference for ListThingsInBillingGroup Operation</seealso>
+        public virtual ListThingsInBillingGroupResponse ListThingsInBillingGroup(ListThingsInBillingGroupRequest request)
+        {
+            var marshaller = ListThingsInBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = ListThingsInBillingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<ListThingsInBillingGroupRequest,ListThingsInBillingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListThingsInBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListThingsInBillingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListThingsInBillingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInBillingGroup">REST API Reference for ListThingsInBillingGroup Operation</seealso>
+        public virtual IAsyncResult BeginListThingsInBillingGroup(ListThingsInBillingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListThingsInBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = ListThingsInBillingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListThingsInBillingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListThingsInBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListThingsInBillingGroup.</param>
+        /// 
+        /// <returns>Returns a  ListThingsInBillingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListThingsInBillingGroup">REST API Reference for ListThingsInBillingGroup Operation</seealso>
+        public virtual ListThingsInBillingGroupResponse EndListThingsInBillingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListThingsInBillingGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -10310,6 +10940,71 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  RemoveThingFromBillingGroup
+
+        /// <summary>
+        /// Removes the given thing from the billing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromBillingGroup service method.</param>
+        /// 
+        /// <returns>The response from the RemoveThingFromBillingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">REST API Reference for RemoveThingFromBillingGroup Operation</seealso>
+        public virtual RemoveThingFromBillingGroupResponse RemoveThingFromBillingGroup(RemoveThingFromBillingGroupRequest request)
+        {
+            var marshaller = RemoveThingFromBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = RemoveThingFromBillingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveThingFromBillingGroupRequest,RemoveThingFromBillingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveThingFromBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveThingFromBillingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRemoveThingFromBillingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">REST API Reference for RemoveThingFromBillingGroup Operation</seealso>
+        public virtual IAsyncResult BeginRemoveThingFromBillingGroup(RemoveThingFromBillingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = RemoveThingFromBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = RemoveThingFromBillingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RemoveThingFromBillingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RemoveThingFromBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRemoveThingFromBillingGroup.</param>
+        /// 
+        /// <returns>Returns a  RemoveThingFromBillingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/RemoveThingFromBillingGroup">REST API Reference for RemoveThingFromBillingGroup Operation</seealso>
+        public virtual RemoveThingFromBillingGroupResponse EndRemoveThingFromBillingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RemoveThingFromBillingGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RemoveThingFromThingGroup
 
         /// <summary>
@@ -10385,6 +11080,10 @@ namespace Amazon.IoT
         /// <param name="request">Container for the necessary parameters to execute the ReplaceTopicRule service method.</param>
         /// 
         /// <returns>The response from the ReplaceTopicRule service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictingResourceUpdateException">
+        /// A conflicting resource update exception. This exception is thrown when two pending
+        /// updates cause a conflict.
+        /// </exception>
         /// <exception cref="Amazon.IoT.Model.InternalException">
         /// An unexpected error has occurred.
         /// </exception>
@@ -11100,6 +11799,75 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  TagResource
+
+        /// <summary>
+        /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
+        /// used to manage a resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.LimitExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse TagResource(TagResourceRequest request)
+        {
+            var marshaller = TagResourceRequestMarshaller.Instance;
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<TagResourceRequest,TagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = TagResourceRequestMarshaller.Instance;
+            var unmarshaller = TagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TagResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TagResource">REST API Reference for TagResource Operation</seealso>
+        public virtual TagResourceResponse EndTagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TestAuthorization
 
         /// <summary>
@@ -11410,6 +12178,71 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UntagResource
+
+        /// <summary>
+        /// Removes the given tags (metadata) from the resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
+        {
+            var marshaller = UntagResourceRequestMarshaller.Instance;
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UntagResourceRequest,UntagResourceResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UntagResourceRequestMarshaller.Instance;
+            var unmarshaller = UntagResourceResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UntagResourceRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateAccountAuditConfiguration
 
         /// <summary>
@@ -11543,6 +12376,75 @@ namespace Amazon.IoT
         public virtual UpdateAuthorizerResponse EndUpdateAuthorizer(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAuthorizerResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateBillingGroup
+
+        /// <summary>
+        /// Updates information about the billing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBillingGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBillingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
+        public virtual UpdateBillingGroupResponse UpdateBillingGroup(UpdateBillingGroupRequest request)
+        {
+            var marshaller = UpdateBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBillingGroupRequest,UpdateBillingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBillingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBillingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
+        public virtual IAsyncResult BeginUpdateBillingGroup(UpdateBillingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateBillingGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateBillingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateBillingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBillingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBillingGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateBillingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateBillingGroup">REST API Reference for UpdateBillingGroup Operation</seealso>
+        public virtual UpdateBillingGroupResponse EndUpdateBillingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateBillingGroupResponse>(asyncResult);
         }
 
         #endregion
@@ -11752,6 +12654,78 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  UpdateDynamicThingGroup
+
+        /// <summary>
+        /// Updates a dynamic thing group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDynamicThingGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateDynamicThingGroup service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalFailureException">
+        /// An unexpected error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidQueryException">
+        /// The query is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.VersionConflictException">
+        /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+        /// parameter does not match the latest version in the system.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDynamicThingGroup">REST API Reference for UpdateDynamicThingGroup Operation</seealso>
+        public virtual UpdateDynamicThingGroupResponse UpdateDynamicThingGroup(UpdateDynamicThingGroupRequest request)
+        {
+            var marshaller = UpdateDynamicThingGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateDynamicThingGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDynamicThingGroupRequest,UpdateDynamicThingGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateDynamicThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDynamicThingGroup operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDynamicThingGroup
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDynamicThingGroup">REST API Reference for UpdateDynamicThingGroup Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDynamicThingGroup(UpdateDynamicThingGroupRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateDynamicThingGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateDynamicThingGroupResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateDynamicThingGroupRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateDynamicThingGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDynamicThingGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateDynamicThingGroupResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateDynamicThingGroup">REST API Reference for UpdateDynamicThingGroup Operation</seealso>
+        public virtual UpdateDynamicThingGroupResponse EndUpdateDynamicThingGroup(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateDynamicThingGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateEventConfigurations
 
         /// <summary>
@@ -11878,6 +12852,71 @@ namespace Amazon.IoT
         public virtual UpdateIndexingConfigurationResponse EndUpdateIndexingConfiguration(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateIndexingConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateJob
+
+        /// <summary>
+        /// Updates supported fields of the specified job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJob service method.</param>
+        /// 
+        /// <returns>The response from the UpdateJob service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceUnavailableException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
+        public virtual UpdateJobResponse UpdateJob(UpdateJobRequest request)
+        {
+            var marshaller = UpdateJobRequestMarshaller.Instance;
+            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateJobRequest,UpdateJobResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateJob operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
+        public virtual IAsyncResult BeginUpdateJob(UpdateJobRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateJobRequestMarshaller.Instance;
+            var unmarshaller = UpdateJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateJobRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateJob.</param>
+        /// 
+        /// <returns>Returns a  UpdateJobResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdateJob">REST API Reference for UpdateJob Operation</seealso>
+        public virtual UpdateJobResponse EndUpdateJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateJobResponse>(asyncResult);
         }
 
         #endregion

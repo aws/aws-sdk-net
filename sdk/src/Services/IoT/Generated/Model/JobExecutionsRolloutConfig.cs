@@ -32,7 +32,27 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class JobExecutionsRolloutConfig
     {
+        private ExponentialRolloutRate _exponentialRate;
         private int? _maximumPerMinute;
+
+        /// <summary>
+        /// Gets and sets the property ExponentialRate. 
+        /// <para>
+        /// The rate of increase for a job rollout. This parameter allows you to define an exponential
+        /// rate for a job rollout.
+        /// </para>
+        /// </summary>
+        public ExponentialRolloutRate ExponentialRate
+        {
+            get { return this._exponentialRate; }
+            set { this._exponentialRate = value; }
+        }
+
+        // Check to see if ExponentialRate property is set
+        internal bool IsSetExponentialRate()
+        {
+            return this._exponentialRate != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaximumPerMinute. 

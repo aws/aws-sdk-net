@@ -64,6 +64,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("exponentialRate", targetDepth))
+                {
+                    var unmarshaller = ExponentialRolloutRateUnmarshaller.Instance;
+                    unmarshalledObject.ExponentialRate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maximumPerMinute", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

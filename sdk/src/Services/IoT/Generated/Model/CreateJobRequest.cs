@@ -33,15 +33,35 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class CreateJobRequest : AmazonIoTRequest
     {
+        private AbortConfig _abortConfig;
         private string _description;
         private string _document;
         private string _documentSource;
         private JobExecutionsRolloutConfig _jobExecutionsRolloutConfig;
         private string _jobId;
         private PresignedUrlConfig _presignedUrlConfig;
+        private List<Tag> _tags = new List<Tag>();
         private List<string> _targets = new List<string>();
         private TargetSelection _targetSelection;
         private TimeoutConfig _timeoutConfig;
+
+        /// <summary>
+        /// Gets and sets the property AbortConfig. 
+        /// <para>
+        /// Allows you to create criteria to abort a job.
+        /// </para>
+        /// </summary>
+        public AbortConfig AbortConfig
+        {
+            get { return this._abortConfig; }
+            set { this._abortConfig = value; }
+        }
+
+        // Check to see if AbortConfig property is set
+        internal bool IsSetAbortConfig()
+        {
+            return this._abortConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -66,6 +86,26 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The job document.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the job document resides in an S3 bucket, you must use a placeholder link when
+        /// specifying the document.
+        /// </para>
+        ///  
+        /// <para>
+        /// The placeholder link is of the following form:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket
+        /// to which you are linking.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string Document
         {
@@ -150,6 +190,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetPresignedUrlConfig()
         {
             return this._presignedUrlConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage the job.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

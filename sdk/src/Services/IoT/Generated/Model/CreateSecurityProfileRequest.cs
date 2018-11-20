@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private List<Behavior> _behaviors = new List<Behavior>();
         private string _securityProfileDescription;
         private string _securityProfileName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AlertTargets. 
@@ -109,6 +110,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetSecurityProfileName()
         {
             return this._securityProfileName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Metadata which can be used to manage the security profile.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

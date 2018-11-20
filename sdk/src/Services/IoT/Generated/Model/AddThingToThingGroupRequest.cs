@@ -33,10 +33,32 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class AddThingToThingGroupRequest : AmazonIoTRequest
     {
+        private bool? _overrideDynamicGroups;
         private string _thingArn;
         private string _thingGroupArn;
         private string _thingGroupName;
         private string _thingName;
+
+        /// <summary>
+        /// Gets and sets the property OverrideDynamicGroups. 
+        /// <para>
+        /// Override dynamic thing groups with static thing groups when 10-group limit is reached.
+        /// If a thing belongs to 10 thing groups, and one or more of those groups are dynamic
+        /// thing groups, adding a thing to a static group removes the thing from the last dynamic
+        /// group.
+        /// </para>
+        /// </summary>
+        public bool OverrideDynamicGroups
+        {
+            get { return this._overrideDynamicGroups.GetValueOrDefault(); }
+            set { this._overrideDynamicGroups = value; }
+        }
+
+        // Check to see if OverrideDynamicGroups property is set
+        internal bool IsSetOverrideDynamicGroups()
+        {
+            return this._overrideDynamicGroups.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ThingArn. 

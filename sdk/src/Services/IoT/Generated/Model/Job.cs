@@ -32,6 +32,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class Job
     {
+        private AbortConfig _abortConfig;
         private string _comment;
         private DateTime? _completedAt;
         private DateTime? _createdAt;
@@ -43,10 +44,29 @@ namespace Amazon.IoT.Model
         private JobProcessDetails _jobProcessDetails;
         private DateTime? _lastUpdatedAt;
         private PresignedUrlConfig _presignedUrlConfig;
+        private string _reasonCode;
         private JobStatus _status;
         private List<string> _targets = new List<string>();
         private TargetSelection _targetSelection;
         private TimeoutConfig _timeoutConfig;
+
+        /// <summary>
+        /// Gets and sets the property AbortConfig. 
+        /// <para>
+        /// Configuration for criteria to abort the job.
+        /// </para>
+        /// </summary>
+        public AbortConfig AbortConfig
+        {
+            get { return this._abortConfig; }
+            set { this._abortConfig = value; }
+        }
+
+        // Check to see if AbortConfig property is set
+        internal bool IsSetAbortConfig()
+        {
+            return this._abortConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -245,6 +265,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetPresignedUrlConfig()
         {
             return this._presignedUrlConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReasonCode. 
+        /// <para>
+        /// If the job was updated, provides the reason code for the update.
+        /// </para>
+        /// </summary>
+        public string ReasonCode
+        {
+            get { return this._reasonCode; }
+            set { this._reasonCode = value; }
+        }
+
+        // Check to see if ReasonCode property is set
+        internal bool IsSetReasonCode()
+        {
+            return this._reasonCode != null;
         }
 
         /// <summary>

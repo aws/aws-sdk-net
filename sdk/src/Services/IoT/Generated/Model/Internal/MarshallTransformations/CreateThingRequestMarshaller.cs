@@ -79,6 +79,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetBillingGroupName())
+                {
+                    context.Writer.WritePropertyName("billingGroupName");
+                    context.Writer.Write(publicRequest.BillingGroupName);
+                }
+
                 if(publicRequest.IsSetThingTypeName())
                 {
                     context.Writer.WritePropertyName("thingTypeName");

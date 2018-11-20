@@ -45,6 +45,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(JobExecutionsRolloutConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetExponentialRate())
+            {
+                context.Writer.WritePropertyName("exponentialRate");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ExponentialRolloutRateMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExponentialRate, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetMaximumPerMinute())
             {
                 context.Writer.WritePropertyName("maximumPerMinute");
