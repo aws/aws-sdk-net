@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.410.0",
+    "ProductVersion" : "3.3.411.0",
     "CoreVersion"    : "3.3.29.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -29,7 +29,7 @@
             "InPreview"               : false
         },
         "CloudFormation" : {
-            "Version" : "3.3.12.4",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -61,7 +61,7 @@
             "InPreview"               : false
         },
         "CloudTrail"        : {
-            "Version" : "3.3.3.16",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -69,7 +69,7 @@
             "InPreview"               : false
         },
         "ConfigService"     : {
-            "Version" : "3.3.21.9",
+            "Version" : "3.3.22.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -127,7 +127,7 @@
             "InPreview"               : false
         },
         "DeviceFarm"        : {
-            "Version" : "3.3.8.22",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.71.2",
+            "Version" : "3.3.72.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -241,7 +241,7 @@
             "InPreview"               : false
         },
         "Lambda"               : {
-            "Version" : "3.3.17.15",
+            "Version" : "3.3.18.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.35.1",
+            "Version" : "3.3.36.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -385,7 +385,7 @@
             "InPreview"               : false
         },
         "WorkSpaces"                : {
-            "Version" : "3.3.4.0",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.20.14",
+            "Version" : "3.3.21.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -617,7 +617,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.7.16",
+            "Version" : "3.3.7.17",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -705,7 +705,7 @@
             "InPreview"               : false
         },
         "Batch"                           : {
-            "Version" : "3.3.6.4",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -753,7 +753,7 @@
             "InPreview"               : false
         },
         "WorkDocs"                        : {
-            "Version" : "3.3.6.14",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -897,7 +897,7 @@
             "InPreview"               : false
         },
         "MediaConvert"                    : {
-            "Version" : "3.3.9.19",
+            "Version" : "3.3.10.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
