@@ -301,6 +301,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Polly is a service that turns text into lifelike speech, making it easy to develop applications that use high-quality speech to increase engagement and accessibility.
 * [AWSSDK.Pricing](https://www.nuget.org/packages/AWSSDK.Pricing/)
 	* We launched new service, Price List Service.
+* [AWSSDK.QuickSight](https://www.nuget.org/packages/AWSSDK.QuickSight/)
+	* Amazon QuickSight is a fully managed, serverless, cloud business intelligence system that allows you to extend data and insights to every user in your organization. The first release of APIs for Amazon QuickSight introduces embedding and user/group management capabilities. The get-dashboard-embed-url API allows you to obtain an authenticated dashboard URL that can be embedded in application domains whitelisted for QuickSight dashboard embedding. User APIs allow you to programmatically expand and manage your QuickSight deployments while group APIs allow easier permissions management for resources within QuickSight.
 * [AWSSDK.RAM](https://www.nuget.org/packages/AWSSDK.RAM/)
 	* New Service temporary synopsis, please replace it.
 * [AWSSDK.RDS](https://www.nuget.org/packages/AWSSDK.RDS/)

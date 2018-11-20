@@ -145,6 +145,7 @@
     <ProjectReference Include="..\..\src\Services\PinpointSMSVoice\AWSSDK.PinpointSMSVoice.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Polly\AWSSDK.Polly.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Pricing\AWSSDK.Pricing.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\QuickSight\AWSSDK.QuickSight.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\RAM\AWSSDK.RAM.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\RDS\AWSSDK.RDS.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\RDSDataService\AWSSDK.RDSDataService.Net45.csproj"/>

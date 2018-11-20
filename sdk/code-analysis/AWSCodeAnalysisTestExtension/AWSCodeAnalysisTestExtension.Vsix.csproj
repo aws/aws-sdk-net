@@ -504,6 +504,10 @@
       <Project>{9329CB2C-3AFF-4AFC-BDE5-638A24A81952}</Project>
       <Name>AWSSDK.Pricing.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/QuickSight/AWSSDK.QuickSight.CodeAnalysis.csproj">
+      <Project>{E715F370-3832-4FB7-B508-283A87F7F36F}</Project>
+      <Name>AWSSDK.QuickSight.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/RAM/AWSSDK.RAM.CodeAnalysis.csproj">
       <Project>{3CDA8299-5AC6-4DA8-A32E-52791DD71C0B}</Project>
       <Name>AWSSDK.RAM.CodeAnalysis</Name>

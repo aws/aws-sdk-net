@@ -135,8 +135,10 @@
       <Directory>$(ProjectDir)/src/Services/pinpointsmsvoice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/polly/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/pricing/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/quicksight/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/ram/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/rds/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/rdsdataservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/redshift/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/rekognition/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/resourcegroups/bin/Release/net35/</Directory>
@@ -288,8 +290,10 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.PinpointSMSVoice.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Polly.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Pricing.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.QuickSight.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.RAM.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.RDS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.RDSDataService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Redshift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Rekognition.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ResourceGroups.dll" Analyze="True" AnalyzeAllChildren="True" />
