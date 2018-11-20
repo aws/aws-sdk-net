@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents a condition for a device pool. It is passed in as the <code>rules</code>
-    /// parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.
+    /// Represents a condition for a device pool.
     /// </summary>
     public partial class Rule
     {
@@ -40,8 +39,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Attribute. 
         /// <para>
-        /// The rule's attribute. It is the aspect of a device such as platform or model used
-        /// as selection criteria to create or update a device pool.
+        /// The rule's stringified attribute. For example, specify the value as <code>"\"abc\""</code>.
         /// </para>
         ///  
         /// <para>
@@ -49,27 +47,23 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ARN: The Amazon Resource Name (ARN) of a device. For example, "arn:aws:devicefarm:us-west-2::device:12345Example".
+        /// ARN: The ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PLATFORM: The device platform. Valid values are "ANDROID" or "IOS".
+        /// FORM_FACTOR: The form factor (for example, phone or tablet).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FORM_FACTOR: The device form factor. Valid values are "PHONE" or "TABLET".
+        /// MANUFACTURER: The manufacturer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MANUFACTURER: The device manufacturer. For example, "Apple".
+        /// PLATFORM: The platform (for example, Android or iOS).
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -82,10 +76,6 @@ namespace Amazon.DeviceFarm.Model
         ///  </li> <li> 
         /// <para>
         /// INSTANCE_LABELS: The label of the device instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,18 +138,6 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The rule's value.
-        /// </para>
-        ///  
-        /// <para>
-        /// The value must be passed in as a string using escaped quotes.
-        /// </para>
-        ///  
-        /// <para>
-        /// For example:
-        /// </para>
-        ///  
-        /// <para>
-        /// "value": "\"ANDROID\""
         /// </para>
         /// </summary>
         public string Value

@@ -118,12 +118,6 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.DevicePoolArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("deviceSelectionResult", targetDepth))
-                {
-                    var unmarshaller = DeviceSelectionResultUnmarshaller.Instance;
-                    unmarshalledObject.DeviceSelectionResult = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("eventCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

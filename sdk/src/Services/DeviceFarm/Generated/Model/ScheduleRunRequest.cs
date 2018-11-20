@@ -36,7 +36,6 @@ namespace Amazon.DeviceFarm.Model
         private string _appArn;
         private ScheduleRunConfiguration _configuration;
         private string _devicePoolArn;
-        private DeviceSelectionConfiguration _deviceSelectionConfiguration;
         private ExecutionConfiguration _executionConfiguration;
         private string _name;
         private string _projectArn;
@@ -83,11 +82,6 @@ namespace Amazon.DeviceFarm.Model
         /// <para>
         /// The ARN of the device pool for the run to be scheduled.
         /// </para>
-        ///  
-        /// <para>
-        /// Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-        /// </b> are required in a request.
-        /// </para>
         /// </summary>
         public string DevicePoolArn
         {
@@ -99,30 +93,6 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDevicePoolArn()
         {
             return this._devicePoolArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DeviceSelectionConfiguration. 
-        /// <para>
-        /// The filter criteria used to dynamically select a set of devices for a test run, as
-        /// well as the maximum number of devices to be included in the run.
-        /// </para>
-        ///  
-        /// <para>
-        /// Either <b> <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-        /// </b> are required in a request.
-        /// </para>
-        /// </summary>
-        public DeviceSelectionConfiguration DeviceSelectionConfiguration
-        {
-            get { return this._deviceSelectionConfiguration; }
-            set { this._deviceSelectionConfiguration = value; }
-        }
-
-        // Check to see if DeviceSelectionConfiguration property is set
-        internal bool IsSetDeviceSelectionConfiguration()
-        {
-            return this._deviceSelectionConfiguration != null;
         }
 
         /// <summary>

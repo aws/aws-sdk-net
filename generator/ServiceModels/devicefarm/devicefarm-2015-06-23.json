@@ -215,8 +215,8 @@
                     "INSTANCE_LABELS",
                     "FLEET_TYPE"
                   ],
-                  "zonbookDocumentation": "\n        <simpara>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</simpara>\n        <para>Allowed values include:</para>\n        <itemizedlist>\n            <listitem>\n                <para>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</para>\n            </listitem>\n            <listitem>\n                <para>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>MANUFACTURER: The device manufacturer. For example, \"Apple\".</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</para>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_LABELS: The label of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                  "documentation": "\n        <p>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</simpara>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The ARN.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The form factor (for example, phone or tablet).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The manufacturer.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The platform (for example, Android or iOS).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                  "documentation": "\n        <p>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The ARN.</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The form factor (for example, phone or tablet).</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The manufacturer.</p>\n            </li>\n            <li>\n                <p>PLATFORM: The platform (for example, Android or iOS).</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n              <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n              <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n         </ul>\n      ",
                   "shape_name": "DeviceAttribute"
                 },
                 "operator": {
@@ -235,13 +235,13 @@
                 },
                 "value": {
                   "type": "string",
-                  "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n        <para>The value must be passed in as a string using escaped quotes.</para>\n        <para>For example:</para>\n        <para>\"value\": \"\\\"ANDROID\\\"\"</para>\n      ",
-                  "documentation": "\n        <p>The rule's value.</p>\n        <p>The value must be passed in as a string using escaped quotes.</p>\n        <p>For example:</p>\n        <p>\"value\": \"\\\"ANDROID\\\"\"</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n      ",
+                  "documentation": "\n        <p>The rule's value.</p>\n      ",
                   "shape_name": "String"
                 }
               },
-              "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <xref linkend=\"CreateDevicePool\"/> and <xref linkend=\"UpdateDevicePool\"/>.</simpara>\n      ",
-              "documentation": "\n        <p>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.</p>\n      ",
+              "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool.</simpara>\n      ",
+              "documentation": "\n        <p>Represents a condition for a device pool.</p>\n      ",
               "shape_name": "Rule"
             }
           }
@@ -311,8 +311,8 @@
                         "INSTANCE_LABELS",
                         "FLEET_TYPE"
                       ],
-                      "zonbookDocumentation": "\n        <simpara>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</simpara>\n        <para>Allowed values include:</para>\n        <itemizedlist>\n            <listitem>\n                <para>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</para>\n            </listitem>\n            <listitem>\n                <para>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>MANUFACTURER: The device manufacturer. For example, \"Apple\".</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</para>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_LABELS: The label of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                      "documentation": "\n        <p>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</simpara>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The ARN.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The form factor (for example, phone or tablet).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The manufacturer.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The platform (for example, Android or iOS).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                      "documentation": "\n        <p>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The ARN.</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The form factor (for example, phone or tablet).</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The manufacturer.</p>\n            </li>\n            <li>\n                <p>PLATFORM: The platform (for example, Android or iOS).</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n              <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n              <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n         </ul>\n      ",
                       "shape_name": "DeviceAttribute"
                     },
                     "operator": {
@@ -331,13 +331,13 @@
                     },
                     "value": {
                       "type": "string",
-                      "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n        <para>The value must be passed in as a string using escaped quotes.</para>\n        <para>For example:</para>\n        <para>\"value\": \"\\\"ANDROID\\\"\"</para>\n      ",
-                      "documentation": "\n        <p>The rule's value.</p>\n        <p>The value must be passed in as a string using escaped quotes.</p>\n        <p>For example:</p>\n        <p>\"value\": \"\\\"ANDROID\\\"\"</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n      ",
+                      "documentation": "\n        <p>The rule's value.</p>\n      ",
                       "shape_name": "String"
                     }
                   },
-                  "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <xref linkend=\"CreateDevicePool\"/> and <xref linkend=\"UpdateDevicePool\"/>.</simpara>\n      ",
-                  "documentation": "\n        <p>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Represents a condition for a device pool.</p>\n      ",
                   "shape_name": "Rule"
                 }
               }
@@ -1473,18 +1473,6 @@
                       "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                       "shape_name": "DeviceInstance"
                     }
-                  },
-                  "availability": {
-                    "type": "string",
-                    "enum": [
-                      "TEMPORARY_NOT_AVAILABLE",
-                      "BUSY",
-                      "AVAILABLE",
-                      "HIGHLY_AVAILABLE"
-                    ],
-                    "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                    "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                    "shape_name": "DeviceAvailability"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>The device (phone or tablet) used in the remote access session.</simpara>\n      ",
@@ -3170,18 +3158,6 @@
                   "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                   "shape_name": "DeviceInstance"
                 }
-              },
-              "availability": {
-                "type": "string",
-                "enum": [
-                  "TEMPORARY_NOT_AVAILABLE",
-                  "BUSY",
-                  "AVAILABLE",
-                  "HIGHLY_AVAILABLE"
-                ],
-                "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                "shape_name": "DeviceAvailability"
               }
             },
             "zonbookDocumentation": "\n        <simpara>An object containing information about the requested device.</simpara>\n      ",
@@ -3537,8 +3513,8 @@
                         "INSTANCE_LABELS",
                         "FLEET_TYPE"
                       ],
-                      "zonbookDocumentation": "\n        <simpara>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</simpara>\n        <para>Allowed values include:</para>\n        <itemizedlist>\n            <listitem>\n                <para>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</para>\n            </listitem>\n            <listitem>\n                <para>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>MANUFACTURER: The device manufacturer. For example, \"Apple\".</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</para>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_LABELS: The label of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                      "documentation": "\n        <p>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</simpara>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The ARN.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The form factor (for example, phone or tablet).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The manufacturer.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The platform (for example, Android or iOS).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                      "documentation": "\n        <p>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The ARN.</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The form factor (for example, phone or tablet).</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The manufacturer.</p>\n            </li>\n            <li>\n                <p>PLATFORM: The platform (for example, Android or iOS).</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n              <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n              <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n         </ul>\n      ",
                       "shape_name": "DeviceAttribute"
                     },
                     "operator": {
@@ -3557,13 +3533,13 @@
                     },
                     "value": {
                       "type": "string",
-                      "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n        <para>The value must be passed in as a string using escaped quotes.</para>\n        <para>For example:</para>\n        <para>\"value\": \"\\\"ANDROID\\\"\"</para>\n      ",
-                      "documentation": "\n        <p>The rule's value.</p>\n        <p>The value must be passed in as a string using escaped quotes.</p>\n        <p>For example:</p>\n        <p>\"value\": \"\\\"ANDROID\\\"\"</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n      ",
+                      "documentation": "\n        <p>The rule's value.</p>\n      ",
                       "shape_name": "String"
                     }
                   },
-                  "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <xref linkend=\"CreateDevicePool\"/> and <xref linkend=\"UpdateDevicePool\"/>.</simpara>\n      ",
-                  "documentation": "\n        <p>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Represents a condition for a device pool.</p>\n      ",
                   "shape_name": "Rule"
                 }
               }
@@ -4207,18 +4183,6 @@
                         "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                         "shape_name": "DeviceInstance"
                       }
-                    },
-                    "availability": {
-                      "type": "string",
-                      "enum": [
-                        "TEMPORARY_NOT_AVAILABLE",
-                        "BUSY",
-                        "AVAILABLE",
-                        "HIGHLY_AVAILABLE"
-                      ],
-                      "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                      "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                      "shape_name": "DeviceAvailability"
                     }
                   },
                   "zonbookDocumentation": "\n        <simpara>The device (phone or tablet) that you wish to return information about.</simpara>\n      ",
@@ -4557,18 +4521,6 @@
                         "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                         "shape_name": "DeviceInstance"
                       }
-                    },
-                    "availability": {
-                      "type": "string",
-                      "enum": [
-                        "TEMPORARY_NOT_AVAILABLE",
-                        "BUSY",
-                        "AVAILABLE",
-                        "HIGHLY_AVAILABLE"
-                      ],
-                      "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                      "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                      "shape_name": "DeviceAvailability"
                     }
                   },
                   "zonbookDocumentation": "\n        <simpara>The device (phone or tablet) that you wish to return information about.</simpara>\n      ",
@@ -5400,18 +5352,6 @@
                       "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                       "shape_name": "DeviceInstance"
                     }
-                  },
-                  "availability": {
-                    "type": "string",
-                    "enum": [
-                      "TEMPORARY_NOT_AVAILABLE",
-                      "BUSY",
-                      "AVAILABLE",
-                      "HIGHLY_AVAILABLE"
-                    ],
-                    "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                    "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                    "shape_name": "DeviceAvailability"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>The device (phone or tablet) used in the remote access session.</simpara>\n      ",
@@ -6048,18 +5988,6 @@
                       "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                       "shape_name": "DeviceInstance"
                     }
-                  },
-                  "availability": {
-                    "type": "string",
-                    "enum": [
-                      "TEMPORARY_NOT_AVAILABLE",
-                      "BUSY",
-                      "AVAILABLE",
-                      "HIGHLY_AVAILABLE"
-                    ],
-                    "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                    "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                    "shape_name": "DeviceAvailability"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>The device (phone or tablet).</simpara>\n      ",
@@ -7188,87 +7116,6 @@
                 "documentation": "\n        <p>The ARN of the YAML-formatted test specification for the run.</p>\n      ",
                 "shape_name": "AmazonResourceName",
                 "min_length": 32
-              },
-              "deviceSelectionResult": {
-                "type": "structure",
-                "members": {
-                  "filters": {
-                    "type": "list",
-                    "zonbookDocumentation": "\n        <para>The filters in a device selection result.</para>\n      ",
-                    "documentation": "\n        <p>The filters in a device selection result.</p>\n      ",
-                    "shape_name": "DeviceFilters",
-                    "members": {
-                      "type": "structure",
-                      "members": {
-                        "attribute": {
-                          "type": "string",
-                          "enum": [
-                            "ARN",
-                            "PLATFORM",
-                            "OS_VERSION",
-                            "MODEL",
-                            "AVAILABILITY",
-                            "FORM_FACTOR",
-                            "MANUFACTURER",
-                            "REMOTE_ACCESS_ENABLED",
-                            "REMOTE_DEBUG_ENABLED",
-                            "INSTANCE_ARN",
-                            "INSTANCE_LABELS",
-                            "FLEET_TYPE"
-                          ],
-                          "zonbookDocumentation": "\n        <para>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</para>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>OS_VERSION: The operating system version. For example, \"10.3.2\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MODEL: The device model. For example, \"iPad 5th Gen\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The device manufacturer. For example, \"Apple\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>OS_VERSION: The operating system version. For example, \"10.3.2\".</p>\n            </li>\n            <li>\n                <p>MODEL: The device model. For example, \"iPad 5th Gen\".</p>\n            </li>\n            <li>\n                <p>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterAttribute"
-                        },
-                        "operator": {
-                          "type": "string",
-                          "enum": [
-                            "EQUALS",
-                            "LESS_THAN",
-                            "LESS_THAN_OR_EQUALS",
-                            "GREATER_THAN",
-                            "GREATER_THAN_OR_EQUALS",
-                            "IN",
-                            "NOT_IN",
-                            "CONTAINS"
-                          ],
-                          "zonbookDocumentation": "\n        <para>The filter operator.</para>\n        <itemizedlist>\n            <listitem>\n                <para>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</para>\n            </listitem>\n            <listitem>\n                <para>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>The filter operator.</p>\n        <ul>\n            <li>\n                <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p>\n            </li>\n            <li>\n                <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p>\n            </li>\n            <li>\n                <p>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>\n            </li>\n            <li>\n                <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterOperator"
-                        },
-                        "values": {
-                          "type": "list",
-                          "zonbookDocumentation": "\n        <para>An array of one or more filter values used in a device filter.</para>\n        <itemizedlist>\n            <title>Operator Values</title>\n            <listitem>\n               <para>The IN and NOT operators can take a values array that has more than one element.</para>\n            </listitem>\n            <listitem>\n                <para>The other operators require an array with a single element.</para>\n            </listitem>\n        </itemizedlist>\n        <itemizedlist>\n            <title>Attribute Values</title>\n            <listitem>\n                <para>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</para>\n            </listitem>\n            <listitem>\n                <para>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>An array of one or more filter values used in a device filter.</p>\n        <p class=\"title\">\n            <b>Operator Values</b>\n         </p>\n         <ul>\n            <li>\n               <p>The IN and NOT operators can take a values array that has more than one element.</p>\n            </li>\n            <li>\n                <p>The other operators require an array with a single element.</p>\n            </li>\n         </ul>\n        <p class=\"title\">\n            <b>Attribute Values</b>\n         </p>\n         <ul>\n            <li>\n                <p>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterValues",
-                          "members": {
-                            "type": "string",
-                            "shape_name": "String",
-                            "documentation": null
-                          }
-                        }
-                      },
-                      "zonbookDocumentation": "\n        <para>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <xref linkend=\"ScheduleRun\"/>.</para>\n        <para>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <xref linkend=\"ListDevices\"/>.</para>\n      ",
-                      "documentation": "\n        <p>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p>\n        <p>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <a>ListDevices</a>.</p>\n      ",
-                      "shape_name": "DeviceFilter"
-                    }
-                  },
-                  "matchedDevicesCount": {
-                    "type": "integer",
-                    "zonbookDocumentation": "\n        <para>The number of devices that matched the device filter selection criteria.</para>\n      ",
-                    "documentation": "\n        <p>The number of devices that matched the device filter selection criteria.</p>\n      ",
-                    "shape_name": "Integer"
-                  },
-                  "maxDevices": {
-                    "type": "integer",
-                    "zonbookDocumentation": "\n        <para>The maximum number of devices to be selected by a device filter and included in a test run.</para>\n      ",
-                    "documentation": "\n        <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>\n      ",
-                    "shape_name": "Integer"
-                  }
-                },
-                "zonbookDocumentation": "\n        <para>The results of a device filter used to select the devices for a test run.</para>\n      ",
-                "documentation": "\n        <p>The results of a device filter used to select the devices for a test run.</p>\n      ",
-                "shape_name": "DeviceSelectionResult"
               }
             },
             "zonbookDocumentation": "\n        <simpara>The run you wish to get results from.</simpara>\n      ",
@@ -8669,67 +8516,6 @@
             "shape_name": "PaginationToken",
             "min_length": 4,
             "max_length": 1024
-          },
-          "filters": {
-            "type": "list",
-            "zonbookDocumentation": "\n        <para>Used to select a set of devices. A filter is made up of an\n            attribute, an operator, and one or more values.</para>\n        <itemizedlist>\n            <listitem>\n                <para>Attribute: The aspect of a device such as platform or model\n                    used as the selction criteria in a device filter.</para>\n                <para>Allowed values include:</para>\n                <itemizedlist>\n                    <listitem>\n                        <simpara>ARN: The Amazon Resource Name (ARN) of the device.\n                            For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>OS_VERSION: The operating system version. For example, \"10.3.2\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>MODEL: The device model. For example, \"iPad 5th Gen\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>AVAILABILITY: The current availability of the device.\n                            Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                            or \"TEMPORARY_NOT_AVAILABLE\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>FORM_FACTOR: The device form factor. Valid values are\n                            \"PHONE\" or \"TABLET\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>MANUFACTURER: The device manufacturer. For example, \"Apple\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                            access.</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                            debugging.</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</simpara>\n                    </listitem>\n                </itemizedlist>\n            </listitem>\n            <listitem>\n                <para>Operator: The filter operator.</para>\n                <itemizedlist>\n                    <listitem>\n                        <para>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</para>\n                    </listitem>\n                    <listitem>\n                        <para>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</para>\n                    </listitem>\n                    <listitem>\n                        <para>The IN and NOT_IN operators are available for the\n                            ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</para>\n                    </listitem>\n                    <listitem>\n                        <para>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                            operators are also available for the OS_VERSION attribute.</para>\n                    </listitem>\n                </itemizedlist>\n            </listitem>\n            <listitem>\n                <para>Values: An array of one or more filter values.</para>\n                <itemizedlist>\n                    <listitem>\n                        <para>The IN and NOT operators can take a values array that has more than one element.</para>\n                    </listitem>\n                    <listitem>\n                        <para>The other operators require an array with a single element.</para>\n                    </listitem>\n                    <listitem>\n                        <para>In a request, the AVAILABILITY attribute takes\n                            \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                            or \"TEMPORARY_NOT_AVAILABLE\" as values.</para>\n                    </listitem>\n                </itemizedlist>\n            </listitem>\n        </itemizedlist>\n      ",
-            "documentation": "\n        <p>Used to select a set of devices. A filter is made up of an\n            attribute, an operator, and one or more values.</p>\n        <ul>\n            <li>\n                <p>Attribute: The aspect of a device such as platform or model\n                    used as the selction criteria in a device filter.</p>\n                <p>Allowed values include:</p>\n                <ul>\n                  <li>\n                        <p>ARN: The Amazon Resource Name (ARN) of the device.\n                            For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n                    </li>\n                  <li>\n                        <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n                    </li>\n                  <li>\n                        <p>OS_VERSION: The operating system version. For example, \"10.3.2\".</p>\n                    </li>\n                  <li>\n                        <p>MODEL: The device model. For example, \"iPad 5th Gen\".</p>\n                    </li>\n                  <li>\n                        <p>AVAILABILITY: The current availability of the device.\n                            Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                            or \"TEMPORARY_NOT_AVAILABLE\".</p>\n                    </li>\n                  <li>\n                        <p>FORM_FACTOR: The device form factor. Valid values are\n                            \"PHONE\" or \"TABLET\".</p>\n                    </li>\n                  <li>\n                        <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n                    </li>\n                  <li>\n                        <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                            access.</p>\n                    </li>\n                  <li>\n                        <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                            debugging.</p>\n                    </li>\n                  <li>\n                        <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n                    </li>\n                  <li>\n                        <p>INSTANCE_LABELS: The label of the device instance.</p>\n                    </li>\n                  <li>\n                        <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n                    </li>\n               </ul>\n            </li>\n            <li>\n                <p>Operator: The filter operator.</p>\n                <ul>\n                  <li>\n                        <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p>\n                    </li>\n                  <li>\n                        <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p>\n                    </li>\n                  <li>\n                        <p>The IN and NOT_IN operators are available for the\n                            ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>\n                    </li>\n                  <li>\n                        <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                            operators are also available for the OS_VERSION attribute.</p>\n                    </li>\n               </ul>\n            </li>\n            <li>\n                <p>Values: An array of one or more filter values.</p>\n                <ul>\n                  <li>\n                        <p>The IN and NOT operators can take a values array that has more than one element.</p>\n                    </li>\n                  <li>\n                        <p>The other operators require an array with a single element.</p>\n                    </li>\n                  <li>\n                        <p>In a request, the AVAILABILITY attribute takes\n                            \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                            or \"TEMPORARY_NOT_AVAILABLE\" as values.</p>\n                    </li>\n               </ul>\n            </li>\n         </ul>\n      ",
-            "shape_name": "DeviceFilters",
-            "members": {
-              "type": "structure",
-              "members": {
-                "attribute": {
-                  "type": "string",
-                  "enum": [
-                    "ARN",
-                    "PLATFORM",
-                    "OS_VERSION",
-                    "MODEL",
-                    "AVAILABILITY",
-                    "FORM_FACTOR",
-                    "MANUFACTURER",
-                    "REMOTE_ACCESS_ENABLED",
-                    "REMOTE_DEBUG_ENABLED",
-                    "INSTANCE_ARN",
-                    "INSTANCE_LABELS",
-                    "FLEET_TYPE"
-                  ],
-                  "zonbookDocumentation": "\n        <para>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</para>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>OS_VERSION: The operating system version. For example, \"10.3.2\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MODEL: The device model. For example, \"iPad 5th Gen\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The device manufacturer. For example, \"Apple\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
-                  "documentation": "\n        <p>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>OS_VERSION: The operating system version. For example, \"10.3.2\".</p>\n            </li>\n            <li>\n                <p>MODEL: The device model. For example, \"iPad 5th Gen\".</p>\n            </li>\n            <li>\n                <p>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                  "shape_name": "DeviceFilterAttribute"
-                },
-                "operator": {
-                  "type": "string",
-                  "enum": [
-                    "EQUALS",
-                    "LESS_THAN",
-                    "LESS_THAN_OR_EQUALS",
-                    "GREATER_THAN",
-                    "GREATER_THAN_OR_EQUALS",
-                    "IN",
-                    "NOT_IN",
-                    "CONTAINS"
-                  ],
-                  "zonbookDocumentation": "\n        <para>The filter operator.</para>\n        <itemizedlist>\n            <listitem>\n                <para>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</para>\n            </listitem>\n            <listitem>\n                <para>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                  "documentation": "\n        <p>The filter operator.</p>\n        <ul>\n            <li>\n                <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p>\n            </li>\n            <li>\n                <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p>\n            </li>\n            <li>\n                <p>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>\n            </li>\n            <li>\n                <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</p>\n            </li>\n         </ul>\n      ",
-                  "shape_name": "DeviceFilterOperator"
-                },
-                "values": {
-                  "type": "list",
-                  "zonbookDocumentation": "\n        <para>An array of one or more filter values used in a device filter.</para>\n        <itemizedlist>\n            <title>Operator Values</title>\n            <listitem>\n               <para>The IN and NOT operators can take a values array that has more than one element.</para>\n            </listitem>\n            <listitem>\n                <para>The other operators require an array with a single element.</para>\n            </listitem>\n        </itemizedlist>\n        <itemizedlist>\n            <title>Attribute Values</title>\n            <listitem>\n                <para>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</para>\n            </listitem>\n            <listitem>\n                <para>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                  "documentation": "\n        <p>An array of one or more filter values used in a device filter.</p>\n        <p class=\"title\">\n            <b>Operator Values</b>\n         </p>\n         <ul>\n            <li>\n               <p>The IN and NOT operators can take a values array that has more than one element.</p>\n            </li>\n            <li>\n                <p>The other operators require an array with a single element.</p>\n            </li>\n         </ul>\n        <p class=\"title\">\n            <b>Attribute Values</b>\n         </p>\n         <ul>\n            <li>\n                <p>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                  "shape_name": "DeviceFilterValues",
-                  "members": {
-                    "type": "string",
-                    "shape_name": "String",
-                    "documentation": null
-                  }
-                }
-              },
-              "zonbookDocumentation": "\n        <para>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <xref linkend=\"ScheduleRun\"/>.</para>\n        <para>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <xref linkend=\"ListDevices\"/>.</para>\n      ",
-              "documentation": "\n        <p>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p>\n        <p>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <a>ListDevices</a>.</p>\n      ",
-              "shape_name": "DeviceFilter"
-            }
           }
         },
         "zonbookDocumentation": "\n        <simpara>Represents the result of a list devices request.</simpara>\n      ",
@@ -9016,18 +8802,6 @@
                     "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                     "shape_name": "DeviceInstance"
                   }
-                },
-                "availability": {
-                  "type": "string",
-                  "enum": [
-                    "TEMPORARY_NOT_AVAILABLE",
-                    "BUSY",
-                    "AVAILABLE",
-                    "HIGHLY_AVAILABLE"
-                  ],
-                  "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                  "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                  "shape_name": "DeviceAvailability"
                 }
               },
               "zonbookDocumentation": "\n        <simpara>Represents a device type that an app is tested against.</simpara>\n      ",
@@ -9435,8 +9209,8 @@
                           "INSTANCE_LABELS",
                           "FLEET_TYPE"
                         ],
-                        "zonbookDocumentation": "\n        <simpara>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</simpara>\n        <para>Allowed values include:</para>\n        <itemizedlist>\n            <listitem>\n                <para>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</para>\n            </listitem>\n            <listitem>\n                <para>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>MANUFACTURER: The device manufacturer. For example, \"Apple\".</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</para>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_LABELS: The label of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                        "documentation": "\n        <p>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
+                        "zonbookDocumentation": "\n        <simpara>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</simpara>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The ARN.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The form factor (for example, phone or tablet).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The manufacturer.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The platform (for example, Android or iOS).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                        "documentation": "\n        <p>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The ARN.</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The form factor (for example, phone or tablet).</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The manufacturer.</p>\n            </li>\n            <li>\n                <p>PLATFORM: The platform (for example, Android or iOS).</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n              <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n              <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n         </ul>\n      ",
                         "shape_name": "DeviceAttribute"
                       },
                       "operator": {
@@ -9455,13 +9229,13 @@
                       },
                       "value": {
                         "type": "string",
-                        "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n        <para>The value must be passed in as a string using escaped quotes.</para>\n        <para>For example:</para>\n        <para>\"value\": \"\\\"ANDROID\\\"\"</para>\n      ",
-                        "documentation": "\n        <p>The rule's value.</p>\n        <p>The value must be passed in as a string using escaped quotes.</p>\n        <p>For example:</p>\n        <p>\"value\": \"\\\"ANDROID\\\"\"</p>\n      ",
+                        "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n      ",
+                        "documentation": "\n        <p>The rule's value.</p>\n      ",
                         "shape_name": "String"
                       }
                     },
-                    "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <xref linkend=\"CreateDevicePool\"/> and <xref linkend=\"UpdateDevicePool\"/>.</simpara>\n      ",
-                    "documentation": "\n        <p>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.</p>\n      ",
+                    "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool.</simpara>\n      ",
+                    "documentation": "\n        <p>Represents a condition for a device pool.</p>\n      ",
                     "shape_name": "Rule"
                   }
                 }
@@ -10009,18 +9783,6 @@
                         "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                         "shape_name": "DeviceInstance"
                       }
-                    },
-                    "availability": {
-                      "type": "string",
-                      "enum": [
-                        "TEMPORARY_NOT_AVAILABLE",
-                        "BUSY",
-                        "AVAILABLE",
-                        "HIGHLY_AVAILABLE"
-                      ],
-                      "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                      "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                      "shape_name": "DeviceAvailability"
                     }
                   },
                   "zonbookDocumentation": "\n        <simpara>The device (phone or tablet).</simpara>\n      ",
@@ -11846,87 +11608,6 @@
                   "documentation": "\n        <p>The ARN of the YAML-formatted test specification for the run.</p>\n      ",
                   "shape_name": "AmazonResourceName",
                   "min_length": 32
-                },
-                "deviceSelectionResult": {
-                  "type": "structure",
-                  "members": {
-                    "filters": {
-                      "type": "list",
-                      "zonbookDocumentation": "\n        <para>The filters in a device selection result.</para>\n      ",
-                      "documentation": "\n        <p>The filters in a device selection result.</p>\n      ",
-                      "shape_name": "DeviceFilters",
-                      "members": {
-                        "type": "structure",
-                        "members": {
-                          "attribute": {
-                            "type": "string",
-                            "enum": [
-                              "ARN",
-                              "PLATFORM",
-                              "OS_VERSION",
-                              "MODEL",
-                              "AVAILABILITY",
-                              "FORM_FACTOR",
-                              "MANUFACTURER",
-                              "REMOTE_ACCESS_ENABLED",
-                              "REMOTE_DEBUG_ENABLED",
-                              "INSTANCE_ARN",
-                              "INSTANCE_LABELS",
-                              "FLEET_TYPE"
-                            ],
-                            "zonbookDocumentation": "\n        <para>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</para>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>OS_VERSION: The operating system version. For example, \"10.3.2\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MODEL: The device model. For example, \"iPad 5th Gen\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The device manufacturer. For example, \"Apple\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
-                            "documentation": "\n        <p>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>OS_VERSION: The operating system version. For example, \"10.3.2\".</p>\n            </li>\n            <li>\n                <p>MODEL: The device model. For example, \"iPad 5th Gen\".</p>\n            </li>\n            <li>\n                <p>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                            "shape_name": "DeviceFilterAttribute"
-                          },
-                          "operator": {
-                            "type": "string",
-                            "enum": [
-                              "EQUALS",
-                              "LESS_THAN",
-                              "LESS_THAN_OR_EQUALS",
-                              "GREATER_THAN",
-                              "GREATER_THAN_OR_EQUALS",
-                              "IN",
-                              "NOT_IN",
-                              "CONTAINS"
-                            ],
-                            "zonbookDocumentation": "\n        <para>The filter operator.</para>\n        <itemizedlist>\n            <listitem>\n                <para>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</para>\n            </listitem>\n            <listitem>\n                <para>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                            "documentation": "\n        <p>The filter operator.</p>\n        <ul>\n            <li>\n                <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p>\n            </li>\n            <li>\n                <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p>\n            </li>\n            <li>\n                <p>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>\n            </li>\n            <li>\n                <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</p>\n            </li>\n         </ul>\n      ",
-                            "shape_name": "DeviceFilterOperator"
-                          },
-                          "values": {
-                            "type": "list",
-                            "zonbookDocumentation": "\n        <para>An array of one or more filter values used in a device filter.</para>\n        <itemizedlist>\n            <title>Operator Values</title>\n            <listitem>\n               <para>The IN and NOT operators can take a values array that has more than one element.</para>\n            </listitem>\n            <listitem>\n                <para>The other operators require an array with a single element.</para>\n            </listitem>\n        </itemizedlist>\n        <itemizedlist>\n            <title>Attribute Values</title>\n            <listitem>\n                <para>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</para>\n            </listitem>\n            <listitem>\n                <para>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                            "documentation": "\n        <p>An array of one or more filter values used in a device filter.</p>\n        <p class=\"title\">\n            <b>Operator Values</b>\n         </p>\n         <ul>\n            <li>\n               <p>The IN and NOT operators can take a values array that has more than one element.</p>\n            </li>\n            <li>\n                <p>The other operators require an array with a single element.</p>\n            </li>\n         </ul>\n        <p class=\"title\">\n            <b>Attribute Values</b>\n         </p>\n         <ul>\n            <li>\n                <p>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                            "shape_name": "DeviceFilterValues",
-                            "members": {
-                              "type": "string",
-                              "shape_name": "String",
-                              "documentation": null
-                            }
-                          }
-                        },
-                        "zonbookDocumentation": "\n        <para>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <xref linkend=\"ScheduleRun\"/>.</para>\n        <para>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <xref linkend=\"ListDevices\"/>.</para>\n      ",
-                        "documentation": "\n        <p>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p>\n        <p>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <a>ListDevices</a>.</p>\n      ",
-                        "shape_name": "DeviceFilter"
-                      }
-                    },
-                    "matchedDevicesCount": {
-                      "type": "integer",
-                      "zonbookDocumentation": "\n        <para>The number of devices that matched the device filter selection criteria.</para>\n      ",
-                      "documentation": "\n        <p>The number of devices that matched the device filter selection criteria.</p>\n      ",
-                      "shape_name": "Integer"
-                    },
-                    "maxDevices": {
-                      "type": "integer",
-                      "zonbookDocumentation": "\n        <para>The maximum number of devices to be selected by a device filter and included in a test run.</para>\n      ",
-                      "documentation": "\n        <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>\n      ",
-                      "shape_name": "Integer"
-                    }
-                  },
-                  "zonbookDocumentation": "\n        <para>The results of a device filter used to select the devices for a test run.</para>\n      ",
-                  "documentation": "\n        <p>The results of a device filter used to select the devices for a test run.</p>\n      ",
-                  "shape_name": "DeviceSelectionResult"
                 }
               },
               "zonbookDocumentation": "\n        <simpara>Represents a test run on a set of devices with a given app package, test\n            parameters, etc.</simpara>\n      ",
@@ -12397,18 +12078,6 @@
                         "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                         "shape_name": "DeviceInstance"
                       }
-                    },
-                    "availability": {
-                      "type": "string",
-                      "enum": [
-                        "TEMPORARY_NOT_AVAILABLE",
-                        "BUSY",
-                        "AVAILABLE",
-                        "HIGHLY_AVAILABLE"
-                      ],
-                      "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                      "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                      "shape_name": "DeviceAvailability"
                     }
                   },
                   "zonbookDocumentation": "\n        <simpara>The device (phone or tablet) used in the remote access session.</simpara>\n      ",
@@ -13805,18 +13474,6 @@
                                 "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                                 "shape_name": "DeviceInstance"
                               }
-                            },
-                            "availability": {
-                              "type": "string",
-                              "enum": [
-                                "TEMPORARY_NOT_AVAILABLE",
-                                "BUSY",
-                                "AVAILABLE",
-                                "HIGHLY_AVAILABLE"
-                              ],
-                              "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                              "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                              "shape_name": "DeviceAvailability"
                             }
                           },
                           "zonbookDocumentation": "\n        <simpara>Information about the associated device.</simpara>\n      ",
@@ -14929,87 +14586,11 @@
           },
           "devicePoolArn": {
             "type": "string",
-            "zonbookDocumentation": "\n        <simpara>The ARN of the device pool for the run to be scheduled.</simpara>\n        <para>Either <emphasis role=\"bold\">\n               <code>devicePoolArn</code>\n            </emphasis> or\n            <emphasis role=\"bold\">\n               <code>deviceSelectionConfiguration</code>\n            </emphasis>\n            are required in a request.</para>\n      ",
-            "documentation": "\n        <p>The ARN of the device pool for the run to be scheduled.</p>\n        <p>Either <b>\n               <code>devicePoolArn</code>\n            </b> or\n            <b>\n               <code>deviceSelectionConfiguration</code>\n            </b>\n            are required in a request.</p>\n      ",
+            "zonbookDocumentation": "\n        <simpara>The ARN of the device pool for the run to be scheduled.</simpara>\n      ",
+            "documentation": "\n        <p>The ARN of the device pool for the run to be scheduled.</p>\n      ",
+            "required": true,
             "shape_name": "AmazonResourceName",
             "min_length": 32
-          },
-          "deviceSelectionConfiguration": {
-            "type": "structure",
-            "members": {
-              "filters": {
-                "type": "list",
-                "zonbookDocumentation": "\n        <para>Used to dynamically select a set of devices for a test run.\n            A filter is made up of an attribute, an operator, and one or more values.</para>\n        <itemizedlist>\n            <listitem>\n                <para>Attribute: The aspect of a device such as platform or model\n                    used as the selection criteria in a device filter.</para>\n                <para>Allowed values include:</para>\n                <itemizedlist>\n                    <listitem>\n                        <simpara>ARN: The Amazon Resource Name (ARN) of the device.\n                            For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>OS_VERSION: The operating system version. For example, \"10.3.2\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>MODEL: The device model. For example, \"iPad 5th Gen\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>AVAILABILITY: The current availability of the device.\n                            Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                            or \"TEMPORARY_NOT_AVAILABLE\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>FORM_FACTOR: The device form factor. Valid values are\n                            \"PHONE\" or \"TABLET\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>MANUFACTURER: The device manufacturer. For example, \"Apple\".</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                            access.</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                            debugging.</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n                    </listitem>\n                    <listitem>\n                        <simpara>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</simpara>\n                    </listitem>\n                </itemizedlist>\n            </listitem>\n            <listitem>\n                <para>Operator: The filter operator.</para>\n                <itemizedlist>\n                    <listitem>\n                        <para>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</para>\n                    </listitem>\n                    <listitem>\n                        <para>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</para>\n                    </listitem>\n                    <listitem>\n                        <para>The IN and NOT_IN operators are available for the\n                            ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</para>\n                    </listitem>\n                    <listitem>\n                        <para>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                            operators are also available for the OS_VERSION attribute.</para>\n                    </listitem>\n                </itemizedlist>\n            </listitem>\n            <listitem>\n                <para>Values: An array of one or more filter values.</para>\n                <itemizedlist>\n                    <listitem>\n                        <para>The IN and NOT operators can take a values array that has more than one element.</para>\n                    </listitem>\n                    <listitem>\n                        <para>The other operators require an array with a single element.</para>\n                    </listitem>\n                    <listitem>\n                        <para>In a request, the AVAILABILITY attribute takes\n                            \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                            or \"TEMPORARY_NOT_AVAILABLE\" as values.</para>\n                    </listitem>\n                </itemizedlist>\n            </listitem>\n        </itemizedlist>\n      ",
-                "documentation": "\n        <p>Used to dynamically select a set of devices for a test run.\n            A filter is made up of an attribute, an operator, and one or more values.</p>\n        <ul>\n            <li>\n                <p>Attribute: The aspect of a device such as platform or model\n                    used as the selection criteria in a device filter.</p>\n                <p>Allowed values include:</p>\n                <ul>\n                  <li>\n                        <p>ARN: The Amazon Resource Name (ARN) of the device.\n                            For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n                    </li>\n                  <li>\n                        <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n                    </li>\n                  <li>\n                        <p>OS_VERSION: The operating system version. For example, \"10.3.2\".</p>\n                    </li>\n                  <li>\n                        <p>MODEL: The device model. For example, \"iPad 5th Gen\".</p>\n                    </li>\n                  <li>\n                        <p>AVAILABILITY: The current availability of the device.\n                            Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                            or \"TEMPORARY_NOT_AVAILABLE\".</p>\n                    </li>\n                  <li>\n                        <p>FORM_FACTOR: The device form factor. Valid values are\n                            \"PHONE\" or \"TABLET\".</p>\n                    </li>\n                  <li>\n                        <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n                    </li>\n                  <li>\n                        <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                            access.</p>\n                    </li>\n                  <li>\n                        <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                            debugging.</p>\n                    </li>\n                  <li>\n                        <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n                    </li>\n                  <li>\n                        <p>INSTANCE_LABELS: The label of the device instance.</p>\n                    </li>\n                  <li>\n                        <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n                    </li>\n               </ul>\n            </li>\n            <li>\n                <p>Operator: The filter operator.</p>\n                <ul>\n                  <li>\n                        <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p>\n                    </li>\n                  <li>\n                        <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p>\n                    </li>\n                  <li>\n                        <p>The IN and NOT_IN operators are available for the\n                            ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>\n                    </li>\n                  <li>\n                        <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                            operators are also available for the OS_VERSION attribute.</p>\n                    </li>\n               </ul>\n            </li>\n            <li>\n                <p>Values: An array of one or more filter values.</p>\n                <ul>\n                  <li>\n                        <p>The IN and NOT operators can take a values array that has more than one element.</p>\n                    </li>\n                  <li>\n                        <p>The other operators require an array with a single element.</p>\n                    </li>\n                  <li>\n                        <p>In a request, the AVAILABILITY attribute takes\n                            \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                            or \"TEMPORARY_NOT_AVAILABLE\" as values.</p>\n                    </li>\n               </ul>\n            </li>\n         </ul>\n      ",
-                "required": true,
-                "shape_name": "DeviceFilters",
-                "members": {
-                  "type": "structure",
-                  "members": {
-                    "attribute": {
-                      "type": "string",
-                      "enum": [
-                        "ARN",
-                        "PLATFORM",
-                        "OS_VERSION",
-                        "MODEL",
-                        "AVAILABILITY",
-                        "FORM_FACTOR",
-                        "MANUFACTURER",
-                        "REMOTE_ACCESS_ENABLED",
-                        "REMOTE_DEBUG_ENABLED",
-                        "INSTANCE_ARN",
-                        "INSTANCE_LABELS",
-                        "FLEET_TYPE"
-                      ],
-                      "zonbookDocumentation": "\n        <para>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</para>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>OS_VERSION: The operating system version. For example, \"10.3.2\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MODEL: The device model. For example, \"iPad 5th Gen\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The device manufacturer. For example, \"Apple\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
-                      "documentation": "\n        <p>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>OS_VERSION: The operating system version. For example, \"10.3.2\".</p>\n            </li>\n            <li>\n                <p>MODEL: The device model. For example, \"iPad 5th Gen\".</p>\n            </li>\n            <li>\n                <p>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                      "shape_name": "DeviceFilterAttribute"
-                    },
-                    "operator": {
-                      "type": "string",
-                      "enum": [
-                        "EQUALS",
-                        "LESS_THAN",
-                        "LESS_THAN_OR_EQUALS",
-                        "GREATER_THAN",
-                        "GREATER_THAN_OR_EQUALS",
-                        "IN",
-                        "NOT_IN",
-                        "CONTAINS"
-                      ],
-                      "zonbookDocumentation": "\n        <para>The filter operator.</para>\n        <itemizedlist>\n            <listitem>\n                <para>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</para>\n            </listitem>\n            <listitem>\n                <para>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                      "documentation": "\n        <p>The filter operator.</p>\n        <ul>\n            <li>\n                <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p>\n            </li>\n            <li>\n                <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p>\n            </li>\n            <li>\n                <p>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>\n            </li>\n            <li>\n                <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</p>\n            </li>\n         </ul>\n      ",
-                      "shape_name": "DeviceFilterOperator"
-                    },
-                    "values": {
-                      "type": "list",
-                      "zonbookDocumentation": "\n        <para>An array of one or more filter values used in a device filter.</para>\n        <itemizedlist>\n            <title>Operator Values</title>\n            <listitem>\n               <para>The IN and NOT operators can take a values array that has more than one element.</para>\n            </listitem>\n            <listitem>\n                <para>The other operators require an array with a single element.</para>\n            </listitem>\n        </itemizedlist>\n        <itemizedlist>\n            <title>Attribute Values</title>\n            <listitem>\n                <para>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</para>\n            </listitem>\n            <listitem>\n                <para>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                      "documentation": "\n        <p>An array of one or more filter values used in a device filter.</p>\n        <p class=\"title\">\n            <b>Operator Values</b>\n         </p>\n         <ul>\n            <li>\n               <p>The IN and NOT operators can take a values array that has more than one element.</p>\n            </li>\n            <li>\n                <p>The other operators require an array with a single element.</p>\n            </li>\n         </ul>\n        <p class=\"title\">\n            <b>Attribute Values</b>\n         </p>\n         <ul>\n            <li>\n                <p>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                      "shape_name": "DeviceFilterValues",
-                      "members": {
-                        "type": "string",
-                        "shape_name": "String",
-                        "documentation": null
-                      }
-                    }
-                  },
-                  "zonbookDocumentation": "\n        <para>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <xref linkend=\"ScheduleRun\"/>.</para>\n        <para>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <xref linkend=\"ListDevices\"/>.</para>\n      ",
-                  "documentation": "\n        <p>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p>\n        <p>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <a>ListDevices</a>.</p>\n      ",
-                  "shape_name": "DeviceFilter"
-                }
-              },
-              "maxDevices": {
-                "type": "integer",
-                "zonbookDocumentation": "\n        <para>The maximum number of devices to be included in a test run.</para>\n      ",
-                "documentation": "\n        <p>The maximum number of devices to be included in a test run.</p>\n      ",
-                "required": true,
-                "shape_name": "Integer"
-              }
-            },
-            "zonbookDocumentation": "\n         <para>The filter criteria used to dynamically select a set of devices for a test run,\n           as well as the maximum number of devices to be included in the run.</para>\n        <para>Either <emphasis role=\"bold\">\n               <code>devicePoolArn</code>\n            </emphasis> or\n            <emphasis role=\"bold\">\n               <code>deviceSelectionConfiguration</code>\n            </emphasis>\n            are required in a request.</para>\n      ",
-            "documentation": "\n         <p>The filter criteria used to dynamically select a set of devices for a test run,\n           as well as the maximum number of devices to be included in the run.</p>\n        <p>Either <b>\n               <code>devicePoolArn</code>\n            </b> or\n            <b>\n               <code>deviceSelectionConfiguration</code>\n            </b>\n            are required in a request.</p>\n      ",
-            "shape_name": "DeviceSelectionConfiguration"
           },
           "name": {
             "type": "string",
@@ -15764,87 +15345,6 @@
                 "documentation": "\n        <p>The ARN of the YAML-formatted test specification for the run.</p>\n      ",
                 "shape_name": "AmazonResourceName",
                 "min_length": 32
-              },
-              "deviceSelectionResult": {
-                "type": "structure",
-                "members": {
-                  "filters": {
-                    "type": "list",
-                    "zonbookDocumentation": "\n        <para>The filters in a device selection result.</para>\n      ",
-                    "documentation": "\n        <p>The filters in a device selection result.</p>\n      ",
-                    "shape_name": "DeviceFilters",
-                    "members": {
-                      "type": "structure",
-                      "members": {
-                        "attribute": {
-                          "type": "string",
-                          "enum": [
-                            "ARN",
-                            "PLATFORM",
-                            "OS_VERSION",
-                            "MODEL",
-                            "AVAILABILITY",
-                            "FORM_FACTOR",
-                            "MANUFACTURER",
-                            "REMOTE_ACCESS_ENABLED",
-                            "REMOTE_DEBUG_ENABLED",
-                            "INSTANCE_ARN",
-                            "INSTANCE_LABELS",
-                            "FLEET_TYPE"
-                          ],
-                          "zonbookDocumentation": "\n        <para>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</para>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>OS_VERSION: The operating system version. For example, \"10.3.2\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MODEL: The device model. For example, \"iPad 5th Gen\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The device manufacturer. For example, \"Apple\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>OS_VERSION: The operating system version. For example, \"10.3.2\".</p>\n            </li>\n            <li>\n                <p>MODEL: The device model. For example, \"iPad 5th Gen\".</p>\n            </li>\n            <li>\n                <p>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterAttribute"
-                        },
-                        "operator": {
-                          "type": "string",
-                          "enum": [
-                            "EQUALS",
-                            "LESS_THAN",
-                            "LESS_THAN_OR_EQUALS",
-                            "GREATER_THAN",
-                            "GREATER_THAN_OR_EQUALS",
-                            "IN",
-                            "NOT_IN",
-                            "CONTAINS"
-                          ],
-                          "zonbookDocumentation": "\n        <para>The filter operator.</para>\n        <itemizedlist>\n            <listitem>\n                <para>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</para>\n            </listitem>\n            <listitem>\n                <para>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>The filter operator.</p>\n        <ul>\n            <li>\n                <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p>\n            </li>\n            <li>\n                <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p>\n            </li>\n            <li>\n                <p>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>\n            </li>\n            <li>\n                <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterOperator"
-                        },
-                        "values": {
-                          "type": "list",
-                          "zonbookDocumentation": "\n        <para>An array of one or more filter values used in a device filter.</para>\n        <itemizedlist>\n            <title>Operator Values</title>\n            <listitem>\n               <para>The IN and NOT operators can take a values array that has more than one element.</para>\n            </listitem>\n            <listitem>\n                <para>The other operators require an array with a single element.</para>\n            </listitem>\n        </itemizedlist>\n        <itemizedlist>\n            <title>Attribute Values</title>\n            <listitem>\n                <para>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</para>\n            </listitem>\n            <listitem>\n                <para>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>An array of one or more filter values used in a device filter.</p>\n        <p class=\"title\">\n            <b>Operator Values</b>\n         </p>\n         <ul>\n            <li>\n               <p>The IN and NOT operators can take a values array that has more than one element.</p>\n            </li>\n            <li>\n                <p>The other operators require an array with a single element.</p>\n            </li>\n         </ul>\n        <p class=\"title\">\n            <b>Attribute Values</b>\n         </p>\n         <ul>\n            <li>\n                <p>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterValues",
-                          "members": {
-                            "type": "string",
-                            "shape_name": "String",
-                            "documentation": null
-                          }
-                        }
-                      },
-                      "zonbookDocumentation": "\n        <para>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <xref linkend=\"ScheduleRun\"/>.</para>\n        <para>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <xref linkend=\"ListDevices\"/>.</para>\n      ",
-                      "documentation": "\n        <p>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p>\n        <p>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <a>ListDevices</a>.</p>\n      ",
-                      "shape_name": "DeviceFilter"
-                    }
-                  },
-                  "matchedDevicesCount": {
-                    "type": "integer",
-                    "zonbookDocumentation": "\n        <para>The number of devices that matched the device filter selection criteria.</para>\n      ",
-                    "documentation": "\n        <p>The number of devices that matched the device filter selection criteria.</p>\n      ",
-                    "shape_name": "Integer"
-                  },
-                  "maxDevices": {
-                    "type": "integer",
-                    "zonbookDocumentation": "\n        <para>The maximum number of devices to be selected by a device filter and included in a test run.</para>\n      ",
-                    "documentation": "\n        <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>\n      ",
-                    "shape_name": "Integer"
-                  }
-                },
-                "zonbookDocumentation": "\n        <para>The results of a device filter used to select the devices for a test run.</para>\n      ",
-                "documentation": "\n        <p>The results of a device filter used to select the devices for a test run.</p>\n      ",
-                "shape_name": "DeviceSelectionResult"
               }
             },
             "zonbookDocumentation": "\n        <simpara>Information about the scheduled run.</simpara>\n      ",
@@ -16430,87 +15930,6 @@
                 "documentation": "\n        <p>The ARN of the YAML-formatted test specification for the run.</p>\n      ",
                 "shape_name": "AmazonResourceName",
                 "min_length": 32
-              },
-              "deviceSelectionResult": {
-                "type": "structure",
-                "members": {
-                  "filters": {
-                    "type": "list",
-                    "zonbookDocumentation": "\n        <para>The filters in a device selection result.</para>\n      ",
-                    "documentation": "\n        <p>The filters in a device selection result.</p>\n      ",
-                    "shape_name": "DeviceFilters",
-                    "members": {
-                      "type": "structure",
-                      "members": {
-                        "attribute": {
-                          "type": "string",
-                          "enum": [
-                            "ARN",
-                            "PLATFORM",
-                            "OS_VERSION",
-                            "MODEL",
-                            "AVAILABILITY",
-                            "FORM_FACTOR",
-                            "MANUFACTURER",
-                            "REMOTE_ACCESS_ENABLED",
-                            "REMOTE_DEBUG_ENABLED",
-                            "INSTANCE_ARN",
-                            "INSTANCE_LABELS",
-                            "FLEET_TYPE"
-                          ],
-                          "zonbookDocumentation": "\n        <para>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</para>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>OS_VERSION: The operating system version. For example, \"10.3.2\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MODEL: The device model. For example, \"iPad 5th Gen\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The device manufacturer. For example, \"Apple\".</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>The aspect of a device such as platform or model used as\n            the selection criteria in a device filter.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of the device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>OS_VERSION: The operating system version. For example, \"10.3.2\".</p>\n            </li>\n            <li>\n                <p>MODEL: The device model. For example, \"iPad 5th Gen\".</p>\n            </li>\n            <li>\n                <p>AVAILABILITY: The current availability of the device.\n                    Valid values are \"AVAILABLE\", \"HIGHLY_AVAILABLE\", \"BUSY\",\n                    or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterAttribute"
-                        },
-                        "operator": {
-                          "type": "string",
-                          "enum": [
-                            "EQUALS",
-                            "LESS_THAN",
-                            "LESS_THAN_OR_EQUALS",
-                            "GREATER_THAN",
-                            "GREATER_THAN_OR_EQUALS",
-                            "IN",
-                            "NOT_IN",
-                            "CONTAINS"
-                          ],
-                          "zonbookDocumentation": "\n        <para>The filter operator.</para>\n        <itemizedlist>\n            <listitem>\n                <para>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</para>\n            </listitem>\n            <listitem>\n                <para>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</para>\n            </listitem>\n            <listitem>\n                <para>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>The filter operator.</p>\n        <ul>\n            <li>\n                <p>The EQUALS operator is available for every attribute except INSTANCE_LABELS.</p>\n            </li>\n            <li>\n                <p>The CONTAINS operator is available for the INSTANCE_LABELS and MODEL attributes.</p>\n            </li>\n            <li>\n                <p>The IN and NOT_IN operators are available for the\n                    ARN, OS_VERSION, MODEL, MANUFACTURER, and INSTANCE_ARN attributes.</p>\n            </li>\n            <li>\n                <p>The LESS_THAN, GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS\n                    operators are also available for the OS_VERSION attribute.</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterOperator"
-                        },
-                        "values": {
-                          "type": "list",
-                          "zonbookDocumentation": "\n        <para>An array of one or more filter values used in a device filter.</para>\n        <itemizedlist>\n            <title>Operator Values</title>\n            <listitem>\n               <para>The IN and NOT operators can take a values array that has more than one element.</para>\n            </listitem>\n            <listitem>\n                <para>The other operators require an array with a single element.</para>\n            </listitem>\n        </itemizedlist>\n        <itemizedlist>\n            <title>Attribute Values</title>\n            <listitem>\n                <para>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</para>\n            </listitem>\n            <listitem>\n                <para>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                          "documentation": "\n        <p>An array of one or more filter values used in a device filter.</p>\n        <p class=\"title\">\n            <b>Operator Values</b>\n         </p>\n         <ul>\n            <li>\n               <p>The IN and NOT operators can take a values array that has more than one element.</p>\n            </li>\n            <li>\n                <p>The other operators require an array with a single element.</p>\n            </li>\n         </ul>\n        <p class=\"title\">\n            <b>Attribute Values</b>\n         </p>\n         <ul>\n            <li>\n                <p>The PLATFORM attribute can be set to \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>The AVAILABILITY attribute can be set to \"AVAILABLE\",\n                    \"HIGHLY_AVAILABLE\", \"BUSY\", or \"TEMPORARY_NOT_AVAILABLE\".</p>\n            </li>\n            <li>\n                <p>The FORM_FACTOR attribute can be set to \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>The FLEET_TYPE attribute can be set to \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
-                          "shape_name": "DeviceFilterValues",
-                          "members": {
-                            "type": "string",
-                            "shape_name": "String",
-                            "documentation": null
-                          }
-                        }
-                      },
-                      "zonbookDocumentation": "\n        <para>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <xref linkend=\"ScheduleRun\"/>.</para>\n        <para>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <xref linkend=\"ListDevices\"/>.</para>\n      ",
-                      "documentation": "\n        <p>Represents a device filter used to select a set of devices to be included in a test run.\n            This data structure is passed in as the \"deviceSelectionConfiguration\" parameter to ScheduleRun.\n            For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p>\n        <p>It is also passed in as the \"filters\" parameter to ListDevices.\n            For an example of the JSON request syntax, see <a>ListDevices</a>.</p>\n      ",
-                      "shape_name": "DeviceFilter"
-                    }
-                  },
-                  "matchedDevicesCount": {
-                    "type": "integer",
-                    "zonbookDocumentation": "\n        <para>The number of devices that matched the device filter selection criteria.</para>\n      ",
-                    "documentation": "\n        <p>The number of devices that matched the device filter selection criteria.</p>\n      ",
-                    "shape_name": "Integer"
-                  },
-                  "maxDevices": {
-                    "type": "integer",
-                    "zonbookDocumentation": "\n        <para>The maximum number of devices to be selected by a device filter and included in a test run.</para>\n      ",
-                    "documentation": "\n        <p>The maximum number of devices to be selected by a device filter and included in a test run.</p>\n      ",
-                    "shape_name": "Integer"
-                  }
-                },
-                "zonbookDocumentation": "\n        <para>The results of a device filter used to select the devices for a test run.</para>\n      ",
-                "documentation": "\n        <p>The results of a device filter used to select the devices for a test run.</p>\n      ",
-                "shape_name": "DeviceSelectionResult"
               }
             },
             "zonbookDocumentation": "\n        <simpara>The run that was stopped.</simpara>\n      ",
@@ -17033,18 +16452,6 @@
                       "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                       "shape_name": "DeviceInstance"
                     }
-                  },
-                  "availability": {
-                    "type": "string",
-                    "enum": [
-                      "TEMPORARY_NOT_AVAILABLE",
-                      "BUSY",
-                      "AVAILABLE",
-                      "HIGHLY_AVAILABLE"
-                    ],
-                    "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                    "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                    "shape_name": "DeviceAvailability"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>The device (phone or tablet).</simpara>\n      ",
@@ -17542,18 +16949,6 @@
                       "documentation": "\n         <p>Represents the device instance.</p>\n      ",
                       "shape_name": "DeviceInstance"
                     }
-                  },
-                  "availability": {
-                    "type": "string",
-                    "enum": [
-                      "TEMPORARY_NOT_AVAILABLE",
-                      "BUSY",
-                      "AVAILABLE",
-                      "HIGHLY_AVAILABLE"
-                    ],
-                    "zonbookDocumentation": "\n        <para>Reflects how likely a device will be available for a test run.</para>\n      ",
-                    "documentation": "\n        <p>Reflects how likely a device will be available for a test run.</p>\n      ",
-                    "shape_name": "DeviceAvailability"
                   }
                 },
                 "zonbookDocumentation": "\n        <simpara>The device (phone or tablet) used in the remote access session.</simpara>\n      ",
@@ -17797,8 +17192,8 @@
                     "INSTANCE_LABELS",
                     "FLEET_TYPE"
                   ],
-                  "zonbookDocumentation": "\n        <simpara>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</simpara>\n        <para>Allowed values include:</para>\n        <itemizedlist>\n            <listitem>\n                <para>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</para>\n            </listitem>\n            <listitem>\n                <para>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>MANUFACTURER: The device manufacturer. For example, \"Apple\".</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</para>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_LABELS: The label of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                  "documentation": "\n        <p>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</simpara>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The ARN.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The form factor (for example, phone or tablet).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The manufacturer.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The platform (for example, Android or iOS).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                  "documentation": "\n        <p>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The ARN.</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The form factor (for example, phone or tablet).</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The manufacturer.</p>\n            </li>\n            <li>\n                <p>PLATFORM: The platform (for example, Android or iOS).</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n              <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n              <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n         </ul>\n      ",
                   "shape_name": "DeviceAttribute"
                 },
                 "operator": {
@@ -17817,13 +17212,13 @@
                 },
                 "value": {
                   "type": "string",
-                  "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n        <para>The value must be passed in as a string using escaped quotes.</para>\n        <para>For example:</para>\n        <para>\"value\": \"\\\"ANDROID\\\"\"</para>\n      ",
-                  "documentation": "\n        <p>The rule's value.</p>\n        <p>The value must be passed in as a string using escaped quotes.</p>\n        <p>For example:</p>\n        <p>\"value\": \"\\\"ANDROID\\\"\"</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n      ",
+                  "documentation": "\n        <p>The rule's value.</p>\n      ",
                   "shape_name": "String"
                 }
               },
-              "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <xref linkend=\"CreateDevicePool\"/> and <xref linkend=\"UpdateDevicePool\"/>.</simpara>\n      ",
-              "documentation": "\n        <p>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.</p>\n      ",
+              "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool.</simpara>\n      ",
+              "documentation": "\n        <p>Represents a condition for a device pool.</p>\n      ",
               "shape_name": "Rule"
             }
           }
@@ -17893,8 +17288,8 @@
                         "INSTANCE_LABELS",
                         "FLEET_TYPE"
                       ],
-                      "zonbookDocumentation": "\n        <simpara>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</simpara>\n        <para>Allowed values include:</para>\n        <itemizedlist>\n            <listitem>\n                <para>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</para>\n            </listitem>\n            <listitem>\n                <para>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</para>\n            </listitem>\n            <listitem>\n                <para>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</para>\n            </listitem>\n            <listitem>\n                <para>MANUFACTURER: The device manufacturer. For example, \"Apple\".</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</para>\n            </listitem>\n            <listitem>\n                <para>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</para>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>INSTANCE_LABELS: The label of the device instance.</para>\n            </listitem>\n            <listitem>\n                <para>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</para>\n            </listitem>\n        </itemizedlist>\n      ",
-                      "documentation": "\n        <p>The rule's attribute. It is the aspect of a device such as platform or model\n            used as selection criteria to create or update a device pool.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The Amazon Resource Name (ARN) of a device.\n                    For example, \"arn:aws:devicefarm:us-west-2::device:12345Example\".</p>\n            </li>\n            <li>\n                <p>PLATFORM: The device platform. Valid values are \"ANDROID\" or \"IOS\".</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The device form factor. Valid values are\n                    \"PHONE\" or \"TABLET\".</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The device manufacturer. For example, \"Apple\".</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote\n                    debugging.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n                <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n                <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n            <li>\n                <p>FLEET_TYPE: The fleet type. Valid values are \"PUBLIC\" or \"PRIVATE\".</p>\n            </li>\n         </ul>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</simpara>\n        <simpara>Allowed values include:</simpara>\n        <itemizedlist>\n            <listitem>\n                <simpara>ARN: The ARN.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>FORM_FACTOR: The form factor (for example, phone or tablet).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>MANUFACTURER: The manufacturer.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>PLATFORM: The platform (for example, Android or iOS).</simpara>\n            </listitem>\n            <listitem>\n                <simpara>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</simpara>\n            </listitem>\n            <listitem>\n                <simpara>APPIUM_VERSION: The Appium version for the test.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</simpara>\n            </listitem>\n            <listitem>\n              <simpara>INSTANCE_LABELS: The label of the device instance.</simpara>\n            </listitem>\n        </itemizedlist>\n      ",
+                      "documentation": "\n        <p>The rule's stringified attribute. For example, specify the value as\n                <code>\"\\\"abc\\\"\"</code>.</p>\n        <p>Allowed values include:</p>\n        <ul>\n            <li>\n                <p>ARN: The ARN.</p>\n            </li>\n            <li>\n                <p>FORM_FACTOR: The form factor (for example, phone or tablet).</p>\n            </li>\n            <li>\n                <p>MANUFACTURER: The manufacturer.</p>\n            </li>\n            <li>\n                <p>PLATFORM: The platform (for example, Android or iOS).</p>\n            </li>\n            <li>\n                <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote\n                    access.</p>\n            </li>\n            <li>\n                <p>APPIUM_VERSION: The Appium version for the test.</p>\n            </li>\n            <li>\n              <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>\n            </li>\n            <li>\n              <p>INSTANCE_LABELS: The label of the device instance.</p>\n            </li>\n         </ul>\n      ",
                       "shape_name": "DeviceAttribute"
                     },
                     "operator": {
@@ -17913,13 +17308,13 @@
                     },
                     "value": {
                       "type": "string",
-                      "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n        <para>The value must be passed in as a string using escaped quotes.</para>\n        <para>For example:</para>\n        <para>\"value\": \"\\\"ANDROID\\\"\"</para>\n      ",
-                      "documentation": "\n        <p>The rule's value.</p>\n        <p>The value must be passed in as a string using escaped quotes.</p>\n        <p>For example:</p>\n        <p>\"value\": \"\\\"ANDROID\\\"\"</p>\n      ",
+                      "zonbookDocumentation": "\n        <simpara>The rule's value.</simpara>\n      ",
+                      "documentation": "\n        <p>The rule's value.</p>\n      ",
                       "shape_name": "String"
                     }
                   },
-                  "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <xref linkend=\"CreateDevicePool\"/> and <xref linkend=\"UpdateDevicePool\"/>.</simpara>\n      ",
-                  "documentation": "\n        <p>Represents a condition for a device pool. It is passed in as the\n            <code>rules</code> parameter to <a>CreateDevicePool</a> and <a>UpdateDevicePool</a>.</p>\n      ",
+                  "zonbookDocumentation": "\n        <simpara>Represents a condition for a device pool.</simpara>\n      ",
+                  "documentation": "\n        <p>Represents a condition for a device pool.</p>\n      ",
                   "shape_name": "Rule"
                 }
               }
