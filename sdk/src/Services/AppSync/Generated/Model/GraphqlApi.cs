@@ -134,7 +134,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectConfig. 
         /// <para>
-        /// The Open Id Connect configuration.
+        /// The OpenID Connect configuration.
         /// </para>
         /// </summary>
         public OpenIDConnectConfig OpenIDConnectConfig
@@ -170,7 +170,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property UserPoolConfig. 
         /// <para>
-        /// The Amazon Cognito User Pool configuration.
+        /// The Amazon Cognito user pool configuration.
         /// </para>
         /// </summary>
         public UserPoolConfig UserPoolConfig

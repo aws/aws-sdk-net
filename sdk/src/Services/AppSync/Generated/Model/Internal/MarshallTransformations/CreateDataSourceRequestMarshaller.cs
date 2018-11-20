@@ -124,6 +124,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetRelationalDatabaseConfig())
+                {
+                    context.Writer.WritePropertyName("relationalDatabaseConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RelationalDatabaseDataSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.RelationalDatabaseConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetServiceRoleArn())
                 {
                     context.Writer.WritePropertyName("serviceRoleArn");

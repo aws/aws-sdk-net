@@ -57,7 +57,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FieldLogLevel. 
         /// <para>
-        /// The field logging level. Values can be NONE, ERROR, ALL. 
+        /// The field logging level. Values can be NONE, ERROR, or ALL. 
         /// </para>
         ///  <ul> <li> 
         /// <para>

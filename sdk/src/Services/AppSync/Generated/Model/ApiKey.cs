@@ -32,14 +32,14 @@ namespace Amazon.AppSync.Model
     /// 
     ///  
     /// <para>
-    /// Customers invoke AWS AppSync GraphQL APIs with API keys as an identity mechanism.
+    /// Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism.
     /// There are two key versions:
     /// </para>
     ///  
     /// <para>
     ///  <b>da1</b>: This version was introduced at launch in November 2017. These keys always
-    /// expire after 7 days. Key expiration is managed by DynamoDB TTL. The keys will cease
-    /// to be valid after Feb 21, 2018 and should not be used after that date.
+    /// expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased
+    /// to be valid after February 21, 2018 and should not be used after that date.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -59,9 +59,10 @@ namespace Amazon.AppSync.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys
-    /// are not automatically deleted because DynamoDB expects the TTL to be stored in seconds.
-    /// As a one-time action, we will delete these keys from the table after Feb 21, 2018.
+    /// Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where
+    /// keys are not automatically deleted because DynamoDB expects the TTL to be stored in
+    /// seconds. As a one-time action, we will delete these keys from the table after February
+    /// 21, 2018.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -89,7 +90,7 @@ namespace Amazon.AppSync.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Expiration is stored in DynamoDB as seconds.
+    /// Expiration is stored in Amazon DynamoDB as seconds.
     /// </para>
     ///  </li> </ul>
     /// </summary>

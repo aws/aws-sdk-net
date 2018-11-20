@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Describes an Amazon Cognito User Pool configuration.
+    /// Describes an Amazon Cognito user pool configuration.
     /// </summary>
     public partial class UserPoolConfig
     {
@@ -40,7 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AppIdClientRegex. 
         /// <para>
-        /// A regular expression for validating the incoming Amazon Cognito User Pool app client
+        /// A regular expression for validating the incoming Amazon Cognito user pool app client
         /// ID.
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The AWS region in which the user pool was created.
+        /// The AWS Region in which the user pool was created.
         /// </para>
         /// </summary>
         public string AwsRegion
@@ -78,7 +78,7 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property DefaultAction. 
         /// <para>
         /// The action that you want your GraphQL API to take when a request that uses Amazon
-        /// Cognito User Pool authentication doesn't match the Amazon Cognito User Pool configuration.
+        /// Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.
         /// </para>
         /// </summary>
         public DefaultAction DefaultAction

@@ -79,7 +79,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LogConfig. 
         /// <para>
-        /// The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code> object.
+        /// The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code> object.
         /// </para>
         /// </summary>
         public LogConfig LogConfig
@@ -115,7 +115,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectConfig. 
         /// <para>
-        /// The Open Id Connect configuration configuration for the <code>GraphqlApi</code> object.
+        /// The OpenID Connect configuration for the <code>GraphqlApi</code> object.
         /// </para>
         /// </summary>
         public OpenIDConnectConfig OpenIDConnectConfig
@@ -133,7 +133,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property UserPoolConfig. 
         /// <para>
-        /// The new Amazon Cognito User Pool configuration for the <code>GraphqlApi</code> object.
+        /// The new Amazon Cognito user pool configuration for the <code>GraphqlApi</code> object.
         /// </para>
         /// </summary>
         public UserPoolConfig UserPoolConfig

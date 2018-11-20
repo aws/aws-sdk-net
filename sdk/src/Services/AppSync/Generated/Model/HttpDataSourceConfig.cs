@@ -28,18 +28,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Describes a Http data source configuration.
+    /// Describes an HTTP data source configuration.
     /// </summary>
     public partial class HttpDataSourceConfig
     {
+        private AuthorizationConfig _authorizationConfig;
         private string _endpoint;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationConfig. 
+        /// <para>
+        /// The authorization config in case the HTTP endpoint requires authorization.
+        /// </para>
+        /// </summary>
+        public AuthorizationConfig AuthorizationConfig
+        {
+            get { return this._authorizationConfig; }
+            set { this._authorizationConfig = value; }
+        }
+
+        // Check to see if AuthorizationConfig property is set
+        internal bool IsSetAuthorizationConfig()
+        {
+            return this._authorizationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Endpoint. 
         /// <para>
-        /// The Http url endpoint. You can either specify the domain name or ip and port combination
-        /// and the url scheme must be http(s). If the port is not specified, AWS AppSync will
-        /// use the default port 80 for http endpoint and port 443 for https endpoints.
+        /// The HTTP URL endpoint. You can either specify the domain name or IP, and port combination,
+        /// and the URL scheme must be HTTP or HTTPS. If the port is not specified, AWS AppSync
+        /// uses the default port 80 for the HTTP endpoint and port 443 for HTTPS endpoints.
         /// </para>
         /// </summary>
         public string Endpoint

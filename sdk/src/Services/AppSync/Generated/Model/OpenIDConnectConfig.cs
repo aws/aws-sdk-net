@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Describes an Open Id Connect configuration.
+    /// Describes an OpenID Connect configuration.
     /// </summary>
     public partial class OpenIDConnectConfig
     {
@@ -58,10 +58,10 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The client identifier of the Relying party at the OpenID Provider. This identifier
-        /// is typically obtained when the Relying party is registered with the OpenID Provider.
-        /// You can specify a regular expression so the AWS AppSync can validate against multiple
-        /// client identifiers at a time
+        /// The client identifier of the Relying party at the OpenID identity provider. This identifier
+        /// is typically obtained when the Relying party is registered with the OpenID identity
+        /// provider. You can specify a regular expression so the AWS AppSync can validate against
+        /// multiple client identifiers at a time.
         /// </para>
         /// </summary>
         public string ClientId
@@ -97,8 +97,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Issuer. 
         /// <para>
-        /// The issuer for the open id connect configuration. The issuer returned by discovery
-        /// MUST exactly match the value of iss in the ID Token.
+        /// The issuer for the OpenID Connect configuration. The issuer returned by discovery
+        /// must exactly match the value of <code>iss</code> in the ID token.
         /// </para>
         /// </summary>
         public string Issuer

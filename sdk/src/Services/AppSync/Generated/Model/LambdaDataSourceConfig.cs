@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Describes a Lambda data source configuration.
+    /// Describes an AWS Lambda data source configuration.
     /// </summary>
     public partial class LambdaDataSourceConfig
     {

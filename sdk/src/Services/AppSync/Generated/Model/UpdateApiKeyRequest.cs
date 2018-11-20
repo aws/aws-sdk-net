@@ -41,7 +41,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ApiId. 
         /// <para>
-        /// The ID for the GraphQL API
+        /// The ID for the GraphQL API.
         /// </para>
         /// </summary>
         public string ApiId

@@ -42,7 +42,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication type: API key, IAM, or Amazon Cognito User Pools.
+        /// The authentication type: API key, AWS IAM, or Amazon Cognito user pools.
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType
@@ -60,7 +60,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LogConfig. 
         /// <para>
-        /// The Amazon CloudWatch logs configuration.
+        /// The Amazon CloudWatch Logs configuration.
         /// </para>
         /// </summary>
         public LogConfig LogConfig
@@ -96,7 +96,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property OpenIDConnectConfig. 
         /// <para>
-        /// The Open Id Connect configuration configuration.
+        /// The OpenID Connect configuration.
         /// </para>
         /// </summary>
         public OpenIDConnectConfig OpenIDConnectConfig
@@ -114,7 +114,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property UserPoolConfig. 
         /// <para>
-        /// The Amazon Cognito User Pool configuration.
+        /// The Amazon Cognito user pool configuration.
         /// </para>
         /// </summary>
         public UserPoolConfig UserPoolConfig

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Describes a DynamoDB data source configuration.
+    /// Describes an Amazon DynamoDB data source configuration.
     /// </summary>
     public partial class DynamodbDataSourceConfig
     {
@@ -39,7 +39,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The AWS region.
+        /// The AWS Region.
         /// </para>
         /// </summary>
         public string AwsRegion

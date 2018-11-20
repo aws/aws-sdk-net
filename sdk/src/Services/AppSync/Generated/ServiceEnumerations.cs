@@ -83,6 +83,52 @@ namespace Amazon.AppSync
 
 
     /// <summary>
+    /// Constants used for properties of type AuthorizationType.
+    /// </summary>
+    public class AuthorizationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_IAM for AuthorizationType
+        /// </summary>
+        public static readonly AuthorizationType AWS_IAM = new AuthorizationType("AWS_IAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthorizationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthorizationType FindValue(string value)
+        {
+            return FindValue<AuthorizationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthorizationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataSourceType.
     /// </summary>
     public class DataSourceType : ConstantClass
@@ -108,6 +154,10 @@ namespace Amazon.AppSync
         /// Constant NONE for DataSourceType
         /// </summary>
         public static readonly DataSourceType NONE = new DataSourceType("NONE");
+        /// <summary>
+        /// Constant RELATIONAL_DATABASE for DataSourceType
+        /// </summary>
+        public static readonly DataSourceType RELATIONAL_DATABASE = new DataSourceType("RELATIONAL_DATABASE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -292,6 +342,102 @@ namespace Amazon.AppSync
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OutputType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RelationalDatabaseSourceType.
+    /// </summary>
+    public class RelationalDatabaseSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RDS_HTTP_ENDPOINT for RelationalDatabaseSourceType
+        /// </summary>
+        public static readonly RelationalDatabaseSourceType RDS_HTTP_ENDPOINT = new RelationalDatabaseSourceType("RDS_HTTP_ENDPOINT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RelationalDatabaseSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RelationalDatabaseSourceType FindValue(string value)
+        {
+            return FindValue<RelationalDatabaseSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RelationalDatabaseSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolverKind.
+    /// </summary>
+    public class ResolverKind : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PIPELINE for ResolverKind
+        /// </summary>
+        public static readonly ResolverKind PIPELINE = new ResolverKind("PIPELINE");
+        /// <summary>
+        /// Constant UNIT for ResolverKind
+        /// </summary>
+        public static readonly ResolverKind UNIT = new ResolverKind("UNIT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverKind(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverKind FindValue(string value)
+        {
+            return FindValue<ResolverKind>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverKind(string value)
         {
             return FindValue(value);
         }

@@ -106,6 +106,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("relationalDatabaseConfig", targetDepth))
+                {
+                    var unmarshaller = RelationalDatabaseDataSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.RelationalDatabaseConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

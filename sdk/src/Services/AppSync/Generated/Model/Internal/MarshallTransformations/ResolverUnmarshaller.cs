@@ -76,6 +76,18 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.FieldName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("kind", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Kind = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pipelineConfig", targetDepth))
+                {
+                    var unmarshaller = PipelineConfigUnmarshaller.Instance;
+                    unmarshalledObject.PipelineConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("requestMappingTemplate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

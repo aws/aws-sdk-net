@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AwsRegion. 
         /// <para>
-        /// The AWS region.
+        /// The AWS Region.
         /// </para>
         /// </summary>
         public string AwsRegion

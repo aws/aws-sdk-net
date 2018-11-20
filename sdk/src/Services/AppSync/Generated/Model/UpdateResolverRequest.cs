@@ -36,6 +36,8 @@ namespace Amazon.AppSync.Model
         private string _apiId;
         private string _dataSourceName;
         private string _fieldName;
+        private ResolverKind _kind;
+        private PipelineConfig _pipelineConfig;
         private string _requestMappingTemplate;
         private string _responseMappingTemplate;
         private string _typeName;
@@ -92,6 +94,54 @@ namespace Amazon.AppSync.Model
         internal bool IsSetFieldName()
         {
             return this._fieldName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Kind. 
+        /// <para>
+        /// The resolver type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type.
+        /// A UNIT resolver enables you to execute a GraphQL query against a single data source.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute
+        /// a series of <code>Function</code> in a serial manner. You can use a pipeline resolver
+        /// to execute a GraphQL query against multiple data sources.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResolverKind Kind
+        {
+            get { return this._kind; }
+            set { this._kind = value; }
+        }
+
+        // Check to see if Kind property is set
+        internal bool IsSetKind()
+        {
+            return this._kind != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PipelineConfig. 
+        /// <para>
+        /// The <code>PipelineConfig</code>.
+        /// </para>
+        /// </summary>
+        public PipelineConfig PipelineConfig
+        {
+            get { return this._pipelineConfig; }
+            set { this._pipelineConfig = value; }
+        }
+
+        // Check to see if PipelineConfig property is set
+        internal bool IsSetPipelineConfig()
+        {
+            return this._pipelineConfig != null;
         }
 
         /// <summary>

@@ -307,6 +307,38 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  CreateFunction
+
+        internal virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
+        {
+            var marshaller = CreateFunctionRequestMarshaller.Instance;
+            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        public virtual Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateFunctionRequestMarshaller.Instance;
+            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateGraphqlApi
 
         internal virtual CreateGraphqlApiResponse CreateGraphqlApi(CreateGraphqlApiRequest request)
@@ -467,6 +499,38 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  DeleteFunction
+
+        internal virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
+        {
+            var marshaller = DeleteFunctionRequestMarshaller.Instance;
+            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteFunctionRequestMarshaller.Instance;
+            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteGraphqlApi
 
         internal virtual DeleteGraphqlApiResponse DeleteGraphqlApi(DeleteGraphqlApiRequest request)
@@ -590,6 +654,38 @@ namespace Amazon.AppSync
             var unmarshaller = GetDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDataSourceRequest,GetDataSourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetFunction
+
+        internal virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
+        {
+            var marshaller = GetFunctionRequestMarshaller.Instance;
+            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<GetFunctionRequest,GetFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        public virtual Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFunctionRequestMarshaller.Instance;
+            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFunctionRequest,GetFunctionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -819,6 +915,38 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  ListFunctions
+
+        internal virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
+        {
+            var marshaller = ListFunctionsRequestMarshaller.Instance;
+            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFunctionsRequest,ListFunctionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFunctions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        public virtual Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListFunctionsRequestMarshaller.Instance;
+            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFunctionsRequest,ListFunctionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGraphqlApis
 
         internal virtual ListGraphqlApisResponse ListGraphqlApis(ListGraphqlApisRequest request)
@@ -878,6 +1006,38 @@ namespace Amazon.AppSync
             var unmarshaller = ListResolversResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListResolversRequest,ListResolversResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListResolversByFunction
+
+        internal virtual ListResolversByFunctionResponse ListResolversByFunction(ListResolversByFunctionRequest request)
+        {
+            var marshaller = ListResolversByFunctionRequestMarshaller.Instance;
+            var unmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<ListResolversByFunctionRequest,ListResolversByFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResolversByFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResolversByFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
+        public virtual Task<ListResolversByFunctionResponse> ListResolversByFunctionAsync(ListResolversByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListResolversByFunctionRequestMarshaller.Instance;
+            var unmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResolversByFunctionRequest,ListResolversByFunctionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1006,6 +1166,38 @@ namespace Amazon.AppSync
             var unmarshaller = UpdateDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateDataSourceRequest,UpdateDataSourceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFunction
+
+        internal virtual UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request)
+        {
+            var marshaller = UpdateFunctionRequestMarshaller.Instance;
+            var unmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFunctionRequest,UpdateFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        public virtual Task<UpdateFunctionResponse> UpdateFunctionAsync(UpdateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateFunctionRequestMarshaller.Instance;
+            var unmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFunctionRequest,UpdateFunctionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

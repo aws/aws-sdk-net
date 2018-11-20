@@ -40,6 +40,7 @@ namespace Amazon.AppSync.Model
         private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
         private string _name;
+        private RelationalDatabaseDataSourceConfig _relationalDatabaseConfig;
         private string _serviceRoleArn;
         private DataSourceType _type;
 
@@ -82,7 +83,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DynamodbConfig. 
         /// <para>
-        /// The new DynamoDB configuration.
+        /// The new Amazon DynamoDB configuration.
         /// </para>
         /// </summary>
         public DynamodbDataSourceConfig DynamodbConfig
@@ -100,7 +101,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchConfig. 
         /// <para>
-        /// The new Elasticsearch configuration.
+        /// The new Elasticsearch Service configuration.
         /// </para>
         /// </summary>
         public ElasticsearchDataSourceConfig ElasticsearchConfig
@@ -118,7 +119,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property HttpConfig. 
         /// <para>
-        /// The new http endpoint configuration
+        /// The new HTTP endpoint configuration.
         /// </para>
         /// </summary>
         public HttpDataSourceConfig HttpConfig
@@ -136,7 +137,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property LambdaConfig. 
         /// <para>
-        /// The new Lambda configuration.
+        /// The new AWS Lambda configuration.
         /// </para>
         /// </summary>
         public LambdaDataSourceConfig LambdaConfig
@@ -167,6 +168,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelationalDatabaseConfig. 
+        /// <para>
+        /// The new relational database configuration.
+        /// </para>
+        /// </summary>
+        public RelationalDatabaseDataSourceConfig RelationalDatabaseConfig
+        {
+            get { return this._relationalDatabaseConfig; }
+            set { this._relationalDatabaseConfig = value; }
+        }
+
+        // Check to see if RelationalDatabaseConfig property is set
+        internal bool IsSetRelationalDatabaseConfig()
+        {
+            return this._relationalDatabaseConfig != null;
         }
 
         /// <summary>

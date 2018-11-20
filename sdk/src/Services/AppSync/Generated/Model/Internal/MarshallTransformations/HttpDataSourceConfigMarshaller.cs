@@ -45,6 +45,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HttpDataSourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAuthorizationConfig())
+            {
+                context.Writer.WritePropertyName("authorizationConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AuthorizationConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuthorizationConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("endpoint");

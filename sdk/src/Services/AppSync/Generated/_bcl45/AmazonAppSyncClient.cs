@@ -256,7 +256,7 @@ namespace Amazon.AppSync
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
@@ -268,7 +268,8 @@ namespace Amazon.AppSync
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -314,17 +315,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the CreateDataSource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -359,6 +361,65 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  CreateFunction
+
+
+        /// <summary>
+        /// Creates a <code>Function</code> object.
+        /// 
+        ///  
+        /// <para>
+        /// A function is a reusable entity. Multiple functions can be used to compose the resolver
+        /// logic.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
+        /// 
+        /// <returns>The response from the CreateFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        public virtual CreateFunctionResponse CreateFunction(CreateFunctionRequest request)
+        {
+            var marshaller = CreateFunctionRequestMarshaller.Instance;
+            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">REST API Reference for CreateFunction Operation</seealso>
+        public virtual Task<CreateFunctionResponse> CreateFunctionAsync(CreateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateFunctionRequestMarshaller.Instance;
+            var unmarshaller = CreateFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFunctionRequest,CreateFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateGraphqlApi
 
 
@@ -373,10 +434,10 @@ namespace Amazon.AppSync
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
@@ -434,14 +495,15 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the CreateResolver service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -487,17 +549,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the CreateType service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -543,13 +606,14 @@ namespace Amazon.AppSync
         /// <returns>The response from the DeleteApiKey service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -595,17 +659,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the DeleteDataSource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -640,6 +705,59 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  DeleteFunction
+
+
+        /// <summary>
+        /// Deletes a <code>Function</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
+        /// 
+        /// <returns>The response from the DeleteFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        public virtual DeleteFunctionResponse DeleteFunction(DeleteFunctionRequest request)
+        {
+            var marshaller = DeleteFunctionRequestMarshaller.Instance;
+            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">REST API Reference for DeleteFunction Operation</seealso>
+        public virtual Task<DeleteFunctionResponse> DeleteFunctionAsync(DeleteFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteFunctionRequestMarshaller.Instance;
+            var unmarshaller = DeleteFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteFunctionRequest,DeleteFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteGraphqlApi
 
 
@@ -651,17 +769,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the DeleteGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -706,14 +825,15 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the DeleteResolver service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -759,17 +879,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the DeleteType service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -815,17 +936,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the GetDataSource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -860,6 +982,56 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  GetFunction
+
+
+        /// <summary>
+        /// Get a <code>Function</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
+        /// 
+        /// <returns>The response from the GetFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        public virtual GetFunctionResponse GetFunction(GetFunctionRequest request)
+        {
+            var marshaller = GetFunctionRequestMarshaller.Instance;
+            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<GetFunctionRequest,GetFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">REST API Reference for GetFunction Operation</seealso>
+        public virtual Task<GetFunctionResponse> GetFunctionAsync(GetFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetFunctionRequestMarshaller.Instance;
+            var unmarshaller = GetFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetFunctionRequest,GetFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetGraphqlApi
 
 
@@ -871,13 +1043,14 @@ namespace Amazon.AppSync
         /// <returns>The response from the GetGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -928,7 +1101,8 @@ namespace Amazon.AppSync
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -973,11 +1147,12 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the GetResolver service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1023,13 +1198,14 @@ namespace Amazon.AppSync
         /// <returns>The response from the GetSchemaCreationStatus service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1075,17 +1251,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the GetType service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1140,13 +1317,14 @@ namespace Amazon.AppSync
         /// <returns>The response from the ListApiKeys service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1192,13 +1370,14 @@ namespace Amazon.AppSync
         /// <returns>The response from the ListDataSources service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1233,6 +1412,59 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  ListFunctions
+
+
+        /// <summary>
+        /// List multiple functions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
+        /// 
+        /// <returns>The response from the ListFunctions service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        public virtual ListFunctionsResponse ListFunctions(ListFunctionsRequest request)
+        {
+            var marshaller = ListFunctionsRequestMarshaller.Instance;
+            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFunctionsRequest,ListFunctionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListFunctions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListFunctions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">REST API Reference for ListFunctions Operation</seealso>
+        public virtual Task<ListFunctionsResponse> ListFunctionsAsync(ListFunctionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListFunctionsRequestMarshaller.Instance;
+            var unmarshaller = ListFunctionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFunctionsRequest,ListFunctionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGraphqlApis
 
 
@@ -1244,7 +1476,7 @@ namespace Amazon.AppSync
         /// <returns>The response from the ListGraphqlApis service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
@@ -1293,13 +1525,14 @@ namespace Amazon.AppSync
         /// <returns>The response from the ListResolvers service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1334,6 +1567,59 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  ListResolversByFunction
+
+
+        /// <summary>
+        /// List the resolvers that are associated with a specific function.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolversByFunction service method.</param>
+        /// 
+        /// <returns>The response from the ListResolversByFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
+        public virtual ListResolversByFunctionResponse ListResolversByFunction(ListResolversByFunctionRequest request)
+        {
+            var marshaller = ListResolversByFunctionRequestMarshaller.Instance;
+            var unmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<ListResolversByFunctionRequest,ListResolversByFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListResolversByFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListResolversByFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">REST API Reference for ListResolversByFunction Operation</seealso>
+        public virtual Task<ListResolversByFunctionResponse> ListResolversByFunctionAsync(ListResolversByFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListResolversByFunctionRequestMarshaller.Instance;
+            var unmarshaller = ListResolversByFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListResolversByFunctionRequest,ListResolversByFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTypes
 
 
@@ -1345,17 +1631,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the ListTypes service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1406,17 +1693,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the StartSchemaCreation service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1466,7 +1754,7 @@ namespace Amazon.AppSync
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
@@ -1475,7 +1763,8 @@ namespace Amazon.AppSync
         /// The request exceeded a limit. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1521,17 +1810,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the UpdateDataSource service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1566,6 +1856,59 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  UpdateFunction
+
+
+        /// <summary>
+        /// Updates a <code>Function</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateFunction service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AWS AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You are not authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        public virtual UpdateFunctionResponse UpdateFunction(UpdateFunctionRequest request)
+        {
+            var marshaller = UpdateFunctionRequestMarshaller.Instance;
+            var unmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFunctionRequest,UpdateFunctionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateFunction operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFunction operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">REST API Reference for UpdateFunction Operation</seealso>
+        public virtual Task<UpdateFunctionResponse> UpdateFunctionAsync(UpdateFunctionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateFunctionRequestMarshaller.Instance;
+            var unmarshaller = UpdateFunctionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFunctionRequest,UpdateFunctionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateGraphqlApi
 
 
@@ -1577,17 +1920,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the UpdateGraphqlApi service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1632,14 +1976,15 @@ namespace Amazon.AppSync
         /// 
         /// <returns>The response from the UpdateResolver service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.
@@ -1685,17 +2030,18 @@ namespace Amazon.AppSync
         /// <returns>The response from the UpdateType service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
-        /// is missing. Check the field values, and try again.
+        /// is missing. Check the field values, and then try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
-        /// Another modification is being made. That modification must complete before you can
+        /// Another modification is in progress at this time and it must complete before you can
         /// make your change.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
         /// An internal AWS AppSync error occurred. Try your request again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.NotFoundException">
-        /// The resource specified in the request was not found. Check the resource and try again.
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
         /// You are not authorized to perform this operation.

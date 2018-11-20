@@ -40,6 +40,7 @@ namespace Amazon.AppSync.Model
         private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
         private string _name;
+        private RelationalDatabaseDataSourceConfig _relationalDatabaseConfig;
         private string _serviceRoleArn;
         private DataSourceType _type;
 
@@ -82,7 +83,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DynamodbConfig. 
         /// <para>
-        /// DynamoDB settings.
+        /// Amazon DynamoDB settings.
         /// </para>
         /// </summary>
         public DynamodbDataSourceConfig DynamodbConfig
@@ -100,7 +101,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchConfig. 
         /// <para>
-        /// Amazon Elasticsearch settings.
+        /// Amazon Elasticsearch Service settings.
         /// </para>
         /// </summary>
         public ElasticsearchDataSourceConfig ElasticsearchConfig
@@ -118,7 +119,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property HttpConfig. 
         /// <para>
-        /// Http endpoint settings.
+        /// HTTP endpoint settings.
         /// </para>
         /// </summary>
         public HttpDataSourceConfig HttpConfig
@@ -170,10 +171,28 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RelationalDatabaseConfig. 
+        /// <para>
+        /// Relational database settings.
+        /// </para>
+        /// </summary>
+        public RelationalDatabaseDataSourceConfig RelationalDatabaseConfig
+        {
+            get { return this._relationalDatabaseConfig; }
+            set { this._relationalDatabaseConfig = value; }
+        }
+
+        // Check to see if RelationalDatabaseConfig property is set
+        internal bool IsSetRelationalDatabaseConfig()
+        {
+            return this._relationalDatabaseConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceRoleArn. 
         /// <para>
-        /// The IAM service role ARN for the data source. The system assumes this role when accessing
-        /// the data source.
+        /// The AWS IAM service role ARN for the data source. The system assumes this role when
+        /// accessing the data source.
         /// </para>
         /// </summary>
         public string ServiceRoleArn

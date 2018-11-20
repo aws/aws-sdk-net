@@ -83,6 +83,23 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FieldName);
                 }
 
+                if(publicRequest.IsSetKind())
+                {
+                    context.Writer.WritePropertyName("kind");
+                    context.Writer.Write(publicRequest.Kind);
+                }
+
+                if(publicRequest.IsSetPipelineConfig())
+                {
+                    context.Writer.WritePropertyName("pipelineConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PipelineConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.PipelineConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetRequestMappingTemplate())
                 {
                     context.Writer.WritePropertyName("requestMappingTemplate");
