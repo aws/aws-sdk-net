@@ -87,6 +87,7 @@ namespace Amazon.RDS.Model
         private string _tdeCredentialArn;
         private string _tdeCredentialPassword;
         private bool? _useDefaultProcessorFeatures;
+        private List<string> _vpcSecurityGroupIds = new List<string>();
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -821,6 +822,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetUseDefaultProcessorFeatures()
         {
             return this._useDefaultProcessorFeatures.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcSecurityGroupIds. 
+        /// <para>
+        ///  A list of EC2 VPC security groups to associate with this DB instance. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: The default EC2 VPC security group for the DB subnet group's VPC. 
+        /// </para>
+        /// </summary>
+        public List<string> VpcSecurityGroupIds
+        {
+            get { return this._vpcSecurityGroupIds; }
+            set { this._vpcSecurityGroupIds = value; }
+        }
+
+        // Check to see if VpcSecurityGroupIds property is set
+        internal bool IsSetVpcSecurityGroupIds()
+        {
+            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
         }
 
     }
