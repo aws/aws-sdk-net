@@ -336,8 +336,8 @@
                       "min_length": 1
                     }
                   },
-                  "zonbookDocumentation": "\n         <simpara>The size of the user storage.</simpara>\n      ",
-                  "documentation": "\n         <p>The size of the user storage.</p>\n      ",
+                  "zonbookDocumentation": " \n         <simpara>The size of the user storage.</simpara>\n      ",
+                  "documentation": " \n         <p>The size of the user storage.</p>\n      ",
                   "shape_name": "UserStorage"
                 },
                 "ComputeType": {
@@ -2303,6 +2303,222 @@
         }
       ],
       "documentation": "\n         <p>Sets the state of the specified WorkSpace.</p>\n         <p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to \n         <code>ADMIN_MAINTENANCE</code>. WorkSpaces in this state do not respond to requests \n         to reboot, stop, start, or rebuild. An AutoStop WorkSpace in this state is not stopped. \n         Users can log into a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.</p>\n      "
+    },
+    "ModifyClientProperties": {
+      "name": "ModifyClientProperties",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ResourceId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <para>The resource identifiers, in the form of directory IDs.</para>\n      ",
+            "documentation": "\n         <p>The resource identifiers, in the form of directory IDs.</p>\n      ",
+            "required": true,
+            "shape_name": "NonEmptyString",
+            "min_length": 1
+          },
+          "ClientProperties": {
+            "type": "structure",
+            "members": {
+              "ReconnectEnabled": {
+                "type": "string",
+                "enum": [
+                  "ENABLED",
+                  "DISABLED"
+                ],
+                "zonbookDocumentation": "\n         <para>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </para>\n      ",
+                "documentation": "\n         <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n      ",
+                "shape_name": "ReconnectEnum"
+              }
+            },
+            "zonbookDocumentation": "\n         <para>Information about the Amazon WorkSpaces client.</para>\n      ",
+            "documentation": "\n         <p>Information about the Amazon WorkSpaces client.</p>\n      ",
+            "shape_name": "ClientProperties"
+          }
+        },
+        "shape_name": "ModifyClientPropertiesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "ModifyClientPropertiesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Modifies the properties of the specified Amazon WorkSpaces client.</p>\n      "
+    },
+    "DescribeClientProperties": {
+      "name": "DescribeClientProperties",
+      "input": {
+        "type": "structure",
+        "members": {
+          "ResourceIds": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>The resource identifiers, in the form of directory IDs.</para>\n      ",
+            "documentation": "\n         <p>The resource identifiers, in the form of directory IDs.</p>\n      ",
+            "required": true,
+            "shape_name": "ResourceIdList",
+            "min_length": 1,
+            "max_length": 25,
+            "members": {
+              "type": "string",
+              "shape_name": "NonEmptyString",
+              "documentation": null,
+              "min_length": 1
+            }
+          }
+        },
+        "shape_name": "DescribeClientPropertiesRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "ClientPropertiesList": {
+            "type": "list",
+            "zonbookDocumentation": "\n         <para>Information about the specified Amazon WorkSpaces clients.</para>\n      ",
+            "documentation": "\n         <p>Information about the specified Amazon WorkSpaces clients.</p>\n      ",
+            "shape_name": "ClientPropertiesList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "ResourceId": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n         <para>The resource identifier, in the form of a directory ID.</para>\n      ",
+                  "documentation": "\n         <p>The resource identifier, in the form of a directory ID.</p>\n      ",
+                  "shape_name": "NonEmptyString",
+                  "min_length": 1
+                },
+                "ClientProperties": {
+                  "type": "structure",
+                  "members": {
+                    "ReconnectEnabled": {
+                      "type": "string",
+                      "enum": [
+                        "ENABLED",
+                        "DISABLED"
+                      ],
+                      "zonbookDocumentation": "\n         <para>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </para>\n      ",
+                      "documentation": "\n         <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client. When enabled, users can choose to reconnect to their WorkSpaces without re-entering their credentials. </p>\n      ",
+                      "shape_name": "ReconnectEnum"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>Information about the Amazon WorkSpaces client.</para>\n      ",
+                  "documentation": "\n         <p>Information about the Amazon WorkSpaces client.</p>\n      ",
+                  "shape_name": "ClientProperties"
+                }
+              },
+              "zonbookDocumentation": "\n         <para>Information about the Amazon WorkSpaces client.</para>\n      ",
+              "documentation": "\n         <p>Information about the Amazon WorkSpaces client.</p>\n      ",
+              "shape_name": "ClientPropertiesResult"
+            }
+          }
+        },
+        "shape_name": "DescribeClientPropertiesResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The exception error message.</simpara>\n      ",
+              "documentation": "\n         <p>The exception error message.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>One or more parameter values are not valid.</simpara>\n      ",
+          "documentation": "\n         <p>One or more parameter values are not valid.</p>\n      ",
+          "shape_name": "InvalidParameterValuesException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+              "shape_name": "ExceptionMessage"
+            },
+            "ResourceId": {
+              "type": "string",
+              "zonbookDocumentation": "\n         <simpara>The ID of the resource that could not be found.</simpara>\n      ",
+              "documentation": "\n         <p>The ID of the resource that could not be found.</p>\n      ",
+              "shape_name": "NonEmptyString",
+              "min_length": 1
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The resource could not be found.</simpara>\n      ",
+          "documentation": "\n         <p>The resource could not be found.</p>\n      ",
+          "shape_name": "ResourceNotFoundException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "message": {
+              "type": "string",
+              "shape_name": "ExceptionMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The user is not authorized to access a resource.</simpara>\n      ",
+          "documentation": "\n         <p>The user is not authorized to access a resource.</p>\n      ",
+          "shape_name": "AccessDeniedException"
+        }
+      ],
+      "documentation": "\n         <p>Retrieves a list that describes one or more specified Amazon WorkSpaces clients.</p>\n      "
     },
     "DescribeIpGroups": {
       "name": "DescribeIpGroups",

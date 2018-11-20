@@ -570,6 +570,55 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeClientProperties
+
+
+        /// <summary>
+        /// Retrieves a list that describes one or more specified Amazon WorkSpaces clients.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientProperties service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
+        DescribeClientPropertiesResponse DescribeClientProperties(DescribeClientPropertiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientProperties operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClientProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
+        IAsyncResult BeginDescribeClientProperties(DescribeClientPropertiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClientProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClientProperties.</param>
+        /// 
+        /// <returns>Returns a  DescribeClientPropertiesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
+        DescribeClientPropertiesResponse EndDescribeClientProperties(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeIpGroups
 
 
@@ -1154,6 +1203,55 @@ namespace Amazon.WorkSpaces
         /// <returns>Returns a  ModifyAccountResult from WorkSpaces.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">REST API Reference for ModifyAccount Operation</seealso>
         ModifyAccountResponse EndModifyAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyClientProperties
+
+
+        /// <summary>
+        /// Modifies the properties of the specified Amazon WorkSpaces client.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientProperties service method.</param>
+        /// 
+        /// <returns>The response from the ModifyClientProperties service method, as returned by WorkSpaces.</returns>
+        /// <exception cref="Amazon.WorkSpaces.Model.AccessDeniedException">
+        /// The user is not authorized to access a resource.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.InvalidParameterValuesException">
+        /// One or more parameter values are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpaces.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">REST API Reference for ModifyClientProperties Operation</seealso>
+        ModifyClientPropertiesResponse ModifyClientProperties(ModifyClientPropertiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClientProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientProperties operation on AmazonWorkSpacesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyClientProperties
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">REST API Reference for ModifyClientProperties Operation</seealso>
+        IAsyncResult BeginModifyClientProperties(ModifyClientPropertiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyClientProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClientProperties.</param>
+        /// 
+        /// <returns>Returns a  ModifyClientPropertiesResult from WorkSpaces.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">REST API Reference for ModifyClientProperties Operation</seealso>
+        ModifyClientPropertiesResponse EndModifyClientProperties(IAsyncResult asyncResult);
 
         #endregion
         

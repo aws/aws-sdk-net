@@ -566,6 +566,38 @@ namespace Amazon.WorkSpaces
 
         #endregion
         
+        #region  DescribeClientProperties
+
+        internal virtual DescribeClientPropertiesResponse DescribeClientProperties(DescribeClientPropertiesRequest request)
+        {
+            var marshaller = DescribeClientPropertiesRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClientPropertiesRequest,DescribeClientPropertiesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientProperties operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">REST API Reference for DescribeClientProperties Operation</seealso>
+        public virtual Task<DescribeClientPropertiesResponse> DescribeClientPropertiesAsync(DescribeClientPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeClientPropertiesRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientPropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeClientPropertiesRequest,DescribeClientPropertiesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeIpGroups
 
         internal virtual DescribeIpGroupsResponse DescribeIpGroups(DescribeIpGroupsRequest request)
@@ -985,6 +1017,38 @@ namespace Amazon.WorkSpaces
             var unmarshaller = ModifyAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyAccountRequest,ModifyAccountResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyClientProperties
+
+        internal virtual ModifyClientPropertiesResponse ModifyClientProperties(ModifyClientPropertiesRequest request)
+        {
+            var marshaller = ModifyClientPropertiesRequestMarshaller.Instance;
+            var unmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClientPropertiesRequest,ModifyClientPropertiesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClientProperties operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientProperties operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">REST API Reference for ModifyClientProperties Operation</seealso>
+        public virtual Task<ModifyClientPropertiesResponse> ModifyClientPropertiesAsync(ModifyClientPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyClientPropertiesRequestMarshaller.Instance;
+            var unmarshaller = ModifyClientPropertiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyClientPropertiesRequest,ModifyClientPropertiesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
