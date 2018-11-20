@@ -30,13 +30,6 @@ namespace Amazon.AutoScalingPlans.Model
     /// <summary>
     /// Container for the parameters to the CreateScalingPlan operation.
     /// Creates a scaling plan.
-    /// 
-    ///  
-    /// <para>
-    /// A scaling plan contains a set of instructions used to configure dynamic scaling for
-    /// the scalable resources in your application. AWS Auto Scaling creates target tracking
-    /// scaling policies based on the scaling instructions in your scaling plan.
-    /// </para>
     /// </summary>
     public partial class CreateScalingPlanRequest : AmazonAutoScalingPlansRequest
     {

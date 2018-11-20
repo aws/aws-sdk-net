@@ -40,15 +40,18 @@ namespace Amazon.AutoScalingPlans
     /// AWS Auto Scaling 
     /// <para>
     /// Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application
-    /// and configure dynamic scaling for your scalable resources.
+    /// and configure dynamic scaling and predictive scaling for your resources using scaling
+    /// plans. Use this service in conjunction with the Amazon EC2 Auto Scaling, Application
+    /// Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services. 
     /// </para>
     ///  
     /// <para>
-    /// To get started, create a scaling plan with a set of instructions used to configure
-    /// dynamic scaling for the scalable resources in your application. AWS Auto Scaling creates
-    /// target tracking scaling policies for the scalable resources in your scaling plan.
-    /// Target tracking scaling policies adjust the capacity of your scalable resource as
-    /// required to maintain resource utilization at the target value that you specified.
+    /// Currently, predictive scaling is only available for Amazon EC2 Auto Scaling groups.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about AWS Auto Scaling, see the <a href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
+    /// Auto Scaling User Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonAutoScalingPlansClient : AmazonServiceClient, IAmazonAutoScalingPlans
@@ -377,6 +380,38 @@ namespace Amazon.AutoScalingPlans
             var unmarshaller = DescribeScalingPlansResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeScalingPlansRequest,DescribeScalingPlansResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetScalingPlanResourceForecastData
+
+        internal virtual GetScalingPlanResourceForecastDataResponse GetScalingPlanResourceForecastData(GetScalingPlanResourceForecastDataRequest request)
+        {
+            var marshaller = GetScalingPlanResourceForecastDataRequestMarshaller.Instance;
+            var unmarshaller = GetScalingPlanResourceForecastDataResponseUnmarshaller.Instance;
+
+            return Invoke<GetScalingPlanResourceForecastDataRequest,GetScalingPlanResourceForecastDataResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetScalingPlanResourceForecastData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetScalingPlanResourceForecastData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/GetScalingPlanResourceForecastData">REST API Reference for GetScalingPlanResourceForecastData Operation</seealso>
+        public virtual Task<GetScalingPlanResourceForecastDataResponse> GetScalingPlanResourceForecastDataAsync(GetScalingPlanResourceForecastDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetScalingPlanResourceForecastDataRequestMarshaller.Instance;
+            var unmarshaller = GetScalingPlanResourceForecastDataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetScalingPlanResourceForecastDataRequest,GetScalingPlanResourceForecastDataResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

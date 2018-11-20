@@ -29,7 +29,7 @@ namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeScalingPlans operation.
-    /// Describes the specified scaling plans or all of your scaling plans.
+    /// Describes one or more of your scaling plans.
     /// </summary>
     public partial class DescribeScalingPlansRequest : AmazonAutoScalingPlansRequest
     {
@@ -117,8 +117,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanVersion. 
         /// <para>
-        /// The version of the scaling plan. If you specify a scaling plan version, you must also
-        /// specify a scaling plan name.
+        /// The version number of the scaling plan. If you specify a scaling plan version, you
+        /// must also specify a scaling plan name.
         /// </para>
         /// </summary>
         public long ScalingPlanVersion

@@ -41,7 +41,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of scalable resources to return. This value can be between 1 and
+        /// The maximum number of scalable resources to return. The value must be between 1 and
         /// 50. The default value is 50.
         /// </para>
         /// </summary>
@@ -96,7 +96,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanVersion. 
         /// <para>
-        /// The version of the scaling plan.
+        /// The version number of the scaling plan.
         /// </para>
         /// </summary>
         public long ScalingPlanVersion

@@ -29,7 +29,7 @@ namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateScalingPlan operation.
-    /// Updates the scaling plan for the specified scaling plan.
+    /// Updates the specified scaling plan.
     /// 
     ///  
     /// <para>
@@ -101,7 +101,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanVersion. 
         /// <para>
-        /// The version number.
+        /// The version number of the scaling plan.
         /// </para>
         /// </summary>
         public long ScalingPlanVersion

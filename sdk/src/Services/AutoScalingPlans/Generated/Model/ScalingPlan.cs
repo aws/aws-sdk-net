@@ -62,7 +62,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The Unix timestamp when the scaling plan was created.
+        /// The Unix time stamp when the scaling plan was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -116,7 +116,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property ScalingPlanVersion. 
         /// <para>
-        /// The version of the scaling plan.
+        /// The version number of the scaling plan.
         /// </para>
         /// </summary>
         public long ScalingPlanVersion
@@ -161,6 +161,14 @@ namespace Amazon.AutoScalingPlans.Model
         /// <para>
         ///  <code>DeletionFailed</code> - The scaling plan could not be deleted.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UpdateInProgress</code> - The scaling plan is being updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>UpdateFailed</code> - The scaling plan could not be updated.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ScalingPlanStatusCode StatusCode
@@ -196,7 +204,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property StatusStartTime. 
         /// <para>
-        /// The Unix timestamp when the scaling plan entered the current status.
+        /// The Unix time stamp when the scaling plan entered the current status.
         /// </para>
         /// </summary>
         public DateTime StatusStartTime

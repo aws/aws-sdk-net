@@ -28,32 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// This is the response object from the CreateScalingPlan operation.
+    /// This is the response object from the GetScalingPlanResourceForecastData operation.
     /// </summary>
-    public partial class CreateScalingPlanResponse : AmazonWebServiceResponse
+    public partial class GetScalingPlanResourceForecastDataResponse : AmazonWebServiceResponse
     {
-        private long? _scalingPlanVersion;
+        private List<Datapoint> _datapoints = new List<Datapoint>();
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanVersion. 
+        /// Gets and sets the property Datapoints. 
         /// <para>
-        /// The version number of the scaling plan. This value is always 1.
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently, you cannot specify multiple scaling plan versions.
+        /// The data points to return.
         /// </para>
         /// </summary>
-        public long ScalingPlanVersion
+        public List<Datapoint> Datapoints
         {
-            get { return this._scalingPlanVersion.GetValueOrDefault(); }
-            set { this._scalingPlanVersion = value; }
+            get { return this._datapoints; }
+            set { this._datapoints = value; }
         }
 
-        // Check to see if ScalingPlanVersion property is set
-        internal bool IsSetScalingPlanVersion()
+        // Check to see if Datapoints property is set
+        internal bool IsSetDatapoints()
         {
-            return this._scalingPlanVersion.HasValue; 
+            return this._datapoints != null && this._datapoints.Count > 0; 
         }
 
     }

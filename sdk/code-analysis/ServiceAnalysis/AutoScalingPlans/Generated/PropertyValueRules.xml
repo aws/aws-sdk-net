@@ -16,12 +16,25 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AutoScalingPlans.Model.GetScalingPlanResourceForecastDataRequest.ResourceId</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScalingPlans.Model.GetScalingPlanResourceForecastDataRequest.ScalingPlanName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AutoScalingPlans.Model.UpdateScalingPlanRequest.ScalingPlanName</property>
     <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScalingPlans.Model.ApplicationSource.CloudFormationStackARN</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScalingPlans.Model.PredefinedLoadMetricSpecification.ResourceLabel</property>
+    <min>1</min>
+    <max>1023</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScalingPlans.Model.PredefinedScalingMetricSpecification.ResourceLabel</property>
@@ -32,6 +45,10 @@
     <property>Amazon.AutoScalingPlans.Model.ScalingInstruction.ResourceId</property>
     <min>1</min>
     <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AutoScalingPlans.Model.ScalingInstruction.ScheduledActionBufferTime</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AutoScalingPlans.Model.ScalingPlan.ScalingPlanName</property>

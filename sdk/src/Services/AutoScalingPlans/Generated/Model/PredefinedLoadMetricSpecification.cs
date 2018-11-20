@@ -28,31 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// Represents a predefined metric that can be used for dynamic scaling as part of a target
-    /// tracking scaling policy.
+    /// Represents a predefined metric that can be used for predictive scaling.
     /// </summary>
-    public partial class PredefinedScalingMetricSpecification
+    public partial class PredefinedLoadMetricSpecification
     {
-        private ScalingMetricType _predefinedScalingMetricType;
+        private LoadMetricType _predefinedLoadMetricType;
         private string _resourceLabel;
 
         /// <summary>
-        /// Gets and sets the property PredefinedScalingMetricType. 
+        /// Gets and sets the property PredefinedLoadMetricType. 
         /// <para>
-        /// The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only
-        /// to Auto Scaling groups, Spot Fleet requests, and ECS services.
+        /// The metric type.
         /// </para>
         /// </summary>
-        public ScalingMetricType PredefinedScalingMetricType
+        public LoadMetricType PredefinedLoadMetricType
         {
-            get { return this._predefinedScalingMetricType; }
-            set { this._predefinedScalingMetricType = value; }
+            get { return this._predefinedLoadMetricType; }
+            set { this._predefinedLoadMetricType = value; }
         }
 
-        // Check to see if PredefinedScalingMetricType property is set
-        internal bool IsSetPredefinedScalingMetricType()
+        // Check to see if PredefinedLoadMetricType property is set
+        internal bool IsSetPredefinedLoadMetricType()
         {
-            return this._predefinedScalingMetricType != null;
+            return this._predefinedLoadMetricType != null;
         }
 
         /// <summary>
@@ -60,8 +58,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <para>
         /// Identifies the resource associated with the metric type. You can't specify a resource
         /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is
-        /// a target group for an Application Load Balancer attached to the Auto Scaling group,
-        /// Spot Fleet request, or ECS service.
+        /// a target group for an Application Load Balancer attached to the Auto Scaling group.
         /// </para>
         ///  
         /// <para>

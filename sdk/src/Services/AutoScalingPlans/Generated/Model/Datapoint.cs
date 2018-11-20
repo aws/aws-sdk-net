@@ -28,32 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// This is the response object from the CreateScalingPlan operation.
+    /// Represents a single value in the forecast data used for predictive scaling.
     /// </summary>
-    public partial class CreateScalingPlanResponse : AmazonWebServiceResponse
+    public partial class Datapoint
     {
-        private long? _scalingPlanVersion;
+        private DateTime? _timestamp;
+        private double? _value;
 
         /// <summary>
-        /// Gets and sets the property ScalingPlanVersion. 
+        /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The version number of the scaling plan. This value is always 1.
-        /// </para>
-        ///  
-        /// <para>
-        /// Currently, you cannot specify multiple scaling plan versions.
+        /// The time stamp for the data point in UTC format.
         /// </para>
         /// </summary>
-        public long ScalingPlanVersion
+        public DateTime Timestamp
         {
-            get { return this._scalingPlanVersion.GetValueOrDefault(); }
-            set { this._scalingPlanVersion = value; }
+            get { return this._timestamp.GetValueOrDefault(); }
+            set { this._timestamp = value; }
         }
 
-        // Check to see if ScalingPlanVersion property is set
-        internal bool IsSetScalingPlanVersion()
+        // Check to see if Timestamp property is set
+        internal bool IsSetTimestamp()
         {
-            return this._scalingPlanVersion.HasValue; 
+            return this._timestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The value of the data point.
+        /// </para>
+        /// </summary>
+        public double Value
+        {
+            get { return this._value.GetValueOrDefault(); }
+            set { this._value = value; }
+        }
+
+        // Check to see if Value property is set
+        internal bool IsSetValue()
+        {
+            return this._value.HasValue; 
         }
 
     }

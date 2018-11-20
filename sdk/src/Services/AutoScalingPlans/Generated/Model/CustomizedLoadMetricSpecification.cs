@@ -28,16 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// Represents a CloudWatch metric of your choosing that can be used for dynamic scaling
-    /// as part of a target tracking scaling policy. 
+    /// Represents a CloudWatch metric of your choosing that can be used for predictive scaling.
+    /// 
     /// 
     ///  
     /// <para>
+    /// For predictive scaling to work with a customized load metric specification, AWS Auto
+    /// Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that
+    /// CloudWatch computes from metric data. Statistics are calculations used to aggregate
+    /// data over specified time periods. For more information, see the <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
+    /// CloudWatch User Guide</a>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code>
+    /// statistics for your metric are available in CloudWatch and that they provide relevant
+    /// data for predictive scaling. The <code>Sum</code> statistic must represent the total
+    /// load on the resource, and the <code>Average</code> statistic must represent the average
+    /// load per capacity unit of the resource. For example, there is a metric that counts
+    /// the number of requests processed by your Auto Scaling group. If the <code>Sum</code>
+    /// statistic represents the total request count processed by the group, then the <code>Average</code>
+    /// statistic for the specified metric must represent the average request count processed
+    /// by each instance of the group.
+    /// </para>
+    ///  
+    /// <para>
     /// For information about terminology, see <a href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-    /// CloudWatch Concepts</a>.
+    /// CloudWatch Concepts</a>. 
     /// </para>
     /// </summary>
-    public partial class CustomizedScalingMetricSpecification
+    public partial class CustomizedLoadMetricSpecification
     {
         private List<MetricDimension> _dimensions = new List<MetricDimension>();
         private string _metricName;
@@ -102,7 +122,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The statistic of the metric.
+        /// The statistic of the metric. Currently, the value must always be <code>Sum</code>.
+        /// 
         /// </para>
         /// </summary>
         public MetricStatistic Statistic
@@ -120,7 +141,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of the metric. 
+        /// The unit of the metric.
         /// </para>
         /// </summary>
         public string Unit

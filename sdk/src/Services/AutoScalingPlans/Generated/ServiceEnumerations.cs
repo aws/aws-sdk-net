@@ -25,6 +25,122 @@ namespace Amazon.AutoScalingPlans
 {
 
     /// <summary>
+    /// Constants used for properties of type ForecastDataType.
+    /// </summary>
+    public class ForecastDataType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CapacityForecast for ForecastDataType
+        /// </summary>
+        public static readonly ForecastDataType CapacityForecast = new ForecastDataType("CapacityForecast");
+        /// <summary>
+        /// Constant LoadForecast for ForecastDataType
+        /// </summary>
+        public static readonly ForecastDataType LoadForecast = new ForecastDataType("LoadForecast");
+        /// <summary>
+        /// Constant ScheduledActionMaxCapacity for ForecastDataType
+        /// </summary>
+        public static readonly ForecastDataType ScheduledActionMaxCapacity = new ForecastDataType("ScheduledActionMaxCapacity");
+        /// <summary>
+        /// Constant ScheduledActionMinCapacity for ForecastDataType
+        /// </summary>
+        public static readonly ForecastDataType ScheduledActionMinCapacity = new ForecastDataType("ScheduledActionMinCapacity");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ForecastDataType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ForecastDataType FindValue(string value)
+        {
+            return FindValue<ForecastDataType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ForecastDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LoadMetricType.
+    /// </summary>
+    public class LoadMetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALBTargetGroupRequestCount for LoadMetricType
+        /// </summary>
+        public static readonly LoadMetricType ALBTargetGroupRequestCount = new LoadMetricType("ALBTargetGroupRequestCount");
+        /// <summary>
+        /// Constant ASGTotalCPUUtilization for LoadMetricType
+        /// </summary>
+        public static readonly LoadMetricType ASGTotalCPUUtilization = new LoadMetricType("ASGTotalCPUUtilization");
+        /// <summary>
+        /// Constant ASGTotalNetworkIn for LoadMetricType
+        /// </summary>
+        public static readonly LoadMetricType ASGTotalNetworkIn = new LoadMetricType("ASGTotalNetworkIn");
+        /// <summary>
+        /// Constant ASGTotalNetworkOut for LoadMetricType
+        /// </summary>
+        public static readonly LoadMetricType ASGTotalNetworkOut = new LoadMetricType("ASGTotalNetworkOut");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoadMetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoadMetricType FindValue(string value)
+        {
+            return FindValue<LoadMetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoadMetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetricStatistic.
     /// </summary>
     public class MetricStatistic : ConstantClass
@@ -126,6 +242,110 @@ namespace Amazon.AutoScalingPlans
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PredictiveScalingMaxCapacityBehavior.
+    /// </summary>
+    public class PredictiveScalingMaxCapacityBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SetForecastCapacityToMaxCapacity for PredictiveScalingMaxCapacityBehavior
+        /// </summary>
+        public static readonly PredictiveScalingMaxCapacityBehavior SetForecastCapacityToMaxCapacity = new PredictiveScalingMaxCapacityBehavior("SetForecastCapacityToMaxCapacity");
+        /// <summary>
+        /// Constant SetMaxCapacityAboveForecastCapacity for PredictiveScalingMaxCapacityBehavior
+        /// </summary>
+        public static readonly PredictiveScalingMaxCapacityBehavior SetMaxCapacityAboveForecastCapacity = new PredictiveScalingMaxCapacityBehavior("SetMaxCapacityAboveForecastCapacity");
+        /// <summary>
+        /// Constant SetMaxCapacityToForecastCapacity for PredictiveScalingMaxCapacityBehavior
+        /// </summary>
+        public static readonly PredictiveScalingMaxCapacityBehavior SetMaxCapacityToForecastCapacity = new PredictiveScalingMaxCapacityBehavior("SetMaxCapacityToForecastCapacity");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PredictiveScalingMaxCapacityBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PredictiveScalingMaxCapacityBehavior FindValue(string value)
+        {
+            return FindValue<PredictiveScalingMaxCapacityBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PredictiveScalingMaxCapacityBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PredictiveScalingMode.
+    /// </summary>
+    public class PredictiveScalingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ForecastAndScale for PredictiveScalingMode
+        /// </summary>
+        public static readonly PredictiveScalingMode ForecastAndScale = new PredictiveScalingMode("ForecastAndScale");
+        /// <summary>
+        /// Constant ForecastOnly for PredictiveScalingMode
+        /// </summary>
+        public static readonly PredictiveScalingMode ForecastOnly = new PredictiveScalingMode("ForecastOnly");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PredictiveScalingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PredictiveScalingMode FindValue(string value)
+        {
+            return FindValue<PredictiveScalingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PredictiveScalingMode(string value)
         {
             return FindValue(value);
         }
@@ -368,6 +588,56 @@ namespace Amazon.AutoScalingPlans
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScalingPlanStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScalingPolicyUpdateBehavior.
+    /// </summary>
+    public class ScalingPolicyUpdateBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KeepExternalPolicies for ScalingPolicyUpdateBehavior
+        /// </summary>
+        public static readonly ScalingPolicyUpdateBehavior KeepExternalPolicies = new ScalingPolicyUpdateBehavior("KeepExternalPolicies");
+        /// <summary>
+        /// Constant ReplaceExternalPolicies for ScalingPolicyUpdateBehavior
+        /// </summary>
+        public static readonly ScalingPolicyUpdateBehavior ReplaceExternalPolicies = new ScalingPolicyUpdateBehavior("ReplaceExternalPolicies");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScalingPolicyUpdateBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScalingPolicyUpdateBehavior FindValue(string value)
+        {
+            return FindValue<ScalingPolicyUpdateBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScalingPolicyUpdateBehavior(string value)
         {
             return FindValue(value);
         }

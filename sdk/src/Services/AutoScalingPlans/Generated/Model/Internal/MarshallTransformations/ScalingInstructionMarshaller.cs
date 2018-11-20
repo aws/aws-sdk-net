@@ -45,6 +45,23 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScalingInstruction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCustomizedLoadMetricSpecification())
+            {
+                context.Writer.WritePropertyName("CustomizedLoadMetricSpecification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CustomizedLoadMetricSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CustomizedLoadMetricSpecification, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDisableDynamicScaling())
+            {
+                context.Writer.WritePropertyName("DisableDynamicScaling");
+                context.Writer.Write(requestObject.DisableDynamicScaling);
+            }
+
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
@@ -57,6 +74,35 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinCapacity);
             }
 
+            if(requestObject.IsSetPredefinedLoadMetricSpecification())
+            {
+                context.Writer.WritePropertyName("PredefinedLoadMetricSpecification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PredefinedLoadMetricSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PredefinedLoadMetricSpecification, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPredictiveScalingMaxCapacityBehavior())
+            {
+                context.Writer.WritePropertyName("PredictiveScalingMaxCapacityBehavior");
+                context.Writer.Write(requestObject.PredictiveScalingMaxCapacityBehavior);
+            }
+
+            if(requestObject.IsSetPredictiveScalingMaxCapacityBuffer())
+            {
+                context.Writer.WritePropertyName("PredictiveScalingMaxCapacityBuffer");
+                context.Writer.Write(requestObject.PredictiveScalingMaxCapacityBuffer);
+            }
+
+            if(requestObject.IsSetPredictiveScalingMode())
+            {
+                context.Writer.WritePropertyName("PredictiveScalingMode");
+                context.Writer.Write(requestObject.PredictiveScalingMode);
+            }
+
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("ResourceId");
@@ -67,6 +113,18 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ScalableDimension");
                 context.Writer.Write(requestObject.ScalableDimension);
+            }
+
+            if(requestObject.IsSetScalingPolicyUpdateBehavior())
+            {
+                context.Writer.WritePropertyName("ScalingPolicyUpdateBehavior");
+                context.Writer.Write(requestObject.ScalingPolicyUpdateBehavior);
+            }
+
+            if(requestObject.IsSetScheduledActionBufferTime())
+            {
+                context.Writer.WritePropertyName("ScheduledActionBufferTime");
+                context.Writer.Write(requestObject.ScheduledActionBufferTime);
             }
 
             if(requestObject.IsSetServiceNamespace())

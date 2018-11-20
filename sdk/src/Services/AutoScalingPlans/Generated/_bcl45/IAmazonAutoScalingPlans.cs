@@ -34,15 +34,18 @@ namespace Amazon.AutoScalingPlans
     /// AWS Auto Scaling 
     /// <para>
     /// Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application
-    /// and configure dynamic scaling for your scalable resources.
+    /// and configure dynamic scaling and predictive scaling for your resources using scaling
+    /// plans. Use this service in conjunction with the Amazon EC2 Auto Scaling, Application
+    /// Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services. 
     /// </para>
     ///  
     /// <para>
-    /// To get started, create a scaling plan with a set of instructions used to configure
-    /// dynamic scaling for the scalable resources in your application. AWS Auto Scaling creates
-    /// target tracking scaling policies for the scalable resources in your scaling plan.
-    /// Target tracking scaling policies adjust the capacity of your scalable resource as
-    /// required to maintain resource utilization at the target value that you specified.
+    /// Currently, predictive scaling is only available for Amazon EC2 Auto Scaling groups.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about AWS Auto Scaling, see the <a href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
+    /// Auto Scaling User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonAutoScalingPlans : IAmazonService, IDisposable
@@ -54,13 +57,6 @@ namespace Amazon.AutoScalingPlans
 
         /// <summary>
         /// Creates a scaling plan.
-        /// 
-        ///  
-        /// <para>
-        /// A scaling plan contains a set of instructions used to configure dynamic scaling for
-        /// the scalable resources in your application. AWS Auto Scaling creates target tracking
-        /// scaling policies based on the scaling instructions in your scaling plan.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScalingPlan service method.</param>
         /// 
@@ -102,6 +98,17 @@ namespace Amazon.AutoScalingPlans
 
         /// <summary>
         /// Deletes the specified scaling plan.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a scaling plan deletes the underlying <a>ScalingInstruction</a> for all of
+        /// the scalable resources that are covered by the plan.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the plan has launched resources or has scaling activities in progress, you must
+        /// delete those resources separately.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteScalingPlan service method.</param>
         /// 
@@ -181,7 +188,7 @@ namespace Amazon.AutoScalingPlans
 
 
         /// <summary>
-        /// Describes the specified scaling plans or all of your scaling plans.
+        /// Describes one or more of your scaling plans.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeScalingPlans service method.</param>
         /// 
@@ -217,11 +224,51 @@ namespace Amazon.AutoScalingPlans
 
         #endregion
         
+        #region  GetScalingPlanResourceForecastData
+
+
+        /// <summary>
+        /// Retrieves the forecast data for a scalable resource.
+        /// 
+        ///  
+        /// <para>
+        /// Capacity forecasts are represented as predicted values, or data points, that are calculated
+        /// using historical data points from a specified CloudWatch load metric. Data points
+        /// are available for up to 56 days. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetScalingPlanResourceForecastData service method.</param>
+        /// 
+        /// <returns>The response from the GetScalingPlanResourceForecastData service method, as returned by AutoScalingPlans.</returns>
+        /// <exception cref="Amazon.AutoScalingPlans.Model.InternalServiceException">
+        /// The service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.AutoScalingPlans.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the parameters provided.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/GetScalingPlanResourceForecastData">REST API Reference for GetScalingPlanResourceForecastData Operation</seealso>
+        GetScalingPlanResourceForecastDataResponse GetScalingPlanResourceForecastData(GetScalingPlanResourceForecastDataRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetScalingPlanResourceForecastData operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetScalingPlanResourceForecastData operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/GetScalingPlanResourceForecastData">REST API Reference for GetScalingPlanResourceForecastData Operation</seealso>
+        Task<GetScalingPlanResourceForecastDataResponse> GetScalingPlanResourceForecastDataAsync(GetScalingPlanResourceForecastDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateScalingPlan
 
 
         /// <summary>
-        /// Updates the scaling plan for the specified scaling plan.
+        /// Updates the specified scaling plan.
         /// 
         ///  
         /// <para>

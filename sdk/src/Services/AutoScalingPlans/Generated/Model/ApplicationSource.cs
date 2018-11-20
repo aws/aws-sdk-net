@@ -38,7 +38,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property CloudFormationStackARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a CloudFormation stack.
+        /// The Amazon Resource Name (ARN) of a AWS CloudFormation stack.
         /// </para>
         /// </summary>
         public string CloudFormationStackARN

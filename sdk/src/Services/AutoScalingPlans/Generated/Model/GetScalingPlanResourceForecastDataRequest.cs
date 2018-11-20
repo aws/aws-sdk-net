@@ -28,23 +28,96 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
-    /// Represents a scalable resource.
+    /// Container for the parameters to the GetScalingPlanResourceForecastData operation.
+    /// Retrieves the forecast data for a scalable resource.
+    /// 
+    ///  
+    /// <para>
+    /// Capacity forecasts are represented as predicted values, or data points, that are calculated
+    /// using historical data points from a specified CloudWatch load metric. Data points
+    /// are available for up to 56 days. 
+    /// </para>
     /// </summary>
-    public partial class ScalingPlanResource
+    public partial class GetScalingPlanResourceForecastDataRequest : AmazonAutoScalingPlansRequest
     {
+        private DateTime? _endTime;
+        private ForecastDataType _forecastDataType;
         private string _resourceId;
         private ScalableDimension _scalableDimension;
         private string _scalingPlanName;
         private long? _scalingPlanVersion;
-        private List<ScalingPolicy> _scalingPolicies = new List<ScalingPolicy>();
-        private ScalingStatusCode _scalingStatusCode;
-        private string _scalingStatusMessage;
         private ServiceNamespace _serviceNamespace;
+        private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// The exclusive end time of the time range for the forecast data to get. The maximum
+        /// time duration between the start and end time is seven days. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Although this parameter can accept a date and time that is more than two days in the
+        /// future, the availability of forecast data has limits. AWS Auto Scaling only issues
+        /// forecasts for periods of two days in advance.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ForecastDataType. 
+        /// <para>
+        /// The type of forecast data to get.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>LoadForecast</code>: The load metric forecast. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CapacityForecast</code>: The capacity forecast. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ScheduledActionMinCapacity</code>: The minimum capacity for each scheduled
+        /// scaling action. This data is calculated as the larger of two values: the capacity
+        /// forecast or the minimum capacity in the scaling instruction.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ScheduledActionMaxCapacity</code>: The maximum capacity for each scheduled
+        /// scaling action. The calculation used is determined by the predictive scaling maximum
+        /// capacity behavior setting in the scaling instruction.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ForecastDataType ForecastDataType
+        {
+            get { return this._forecastDataType; }
+            set { this._forecastDataType = value; }
+        }
+
+        // Check to see if ForecastDataType property is set
+        internal bool IsSetForecastDataType()
+        {
+            return this._forecastDataType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The ID of the resource. This string consists of the resource type and unique identifier.
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -95,46 +168,6 @@ namespace Amazon.AutoScalingPlans.Model
         /// <para>
         /// The scalable dimension for the resource.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity
-        /// of an Auto Scaling group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
-        /// Fleet request.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for
-        /// a DynamoDB table.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for
-        /// a DynamoDB table.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for
-        /// a DynamoDB global secondary index.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for
-        /// a DynamoDB global secondary index.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora
-        /// DB cluster. Available for Aurora MySQL-compatible edition.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public ScalableDimension ScalableDimension
         {
@@ -185,77 +218,6 @@ namespace Amazon.AutoScalingPlans.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScalingPolicies. 
-        /// <para>
-        /// The scaling policies.
-        /// </para>
-        /// </summary>
-        public List<ScalingPolicy> ScalingPolicies
-        {
-            get { return this._scalingPolicies; }
-            set { this._scalingPolicies = value; }
-        }
-
-        // Check to see if ScalingPolicies property is set
-        internal bool IsSetScalingPolicies()
-        {
-            return this._scalingPolicies != null && this._scalingPolicies.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ScalingStatusCode. 
-        /// <para>
-        /// The scaling status of the resource.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Active</code> - The scaling configuration is active.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Inactive</code> - The scaling configuration is not active because the scaling
-        /// plan is being created or the scaling configuration could not be applied. Check the
-        /// status message for more information.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PartiallyActive</code> - The scaling configuration is partially active because
-        /// the scaling plan is being created or deleted or the scaling configuration could not
-        /// be fully applied. Check the status message for more information.
-        /// </para>
-        ///  </li> </ul>
-        /// </summary>
-        public ScalingStatusCode ScalingStatusCode
-        {
-            get { return this._scalingStatusCode; }
-            set { this._scalingStatusCode = value; }
-        }
-
-        // Check to see if ScalingStatusCode property is set
-        internal bool IsSetScalingStatusCode()
-        {
-            return this._scalingStatusCode != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ScalingStatusMessage. 
-        /// <para>
-        /// A simple message about the current scaling status of the resource.
-        /// </para>
-        /// </summary>
-        public string ScalingStatusMessage
-        {
-            get { return this._scalingStatusMessage; }
-            set { this._scalingStatusMessage = value; }
-        }
-
-        // Check to see if ScalingStatusMessage property is set
-        internal bool IsSetScalingStatusMessage()
-        {
-            return this._scalingStatusMessage != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ServiceNamespace. 
         /// <para>
         /// The namespace of the AWS service.
@@ -271,6 +233,25 @@ namespace Amazon.AutoScalingPlans.Model
         internal bool IsSetServiceNamespace()
         {
             return this._serviceNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The inclusive start time of the time range for the forecast data to get. The date
+        /// and time can be at most 56 days before the current date and time. 
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
         }
 
     }

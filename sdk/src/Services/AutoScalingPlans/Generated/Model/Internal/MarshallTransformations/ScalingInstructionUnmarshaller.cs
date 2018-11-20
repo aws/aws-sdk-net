@@ -64,6 +64,18 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CustomizedLoadMetricSpecification", targetDepth))
+                {
+                    var unmarshaller = CustomizedLoadMetricSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.CustomizedLoadMetricSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DisableDynamicScaling", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.DisableDynamicScaling = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxCapacity", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -76,6 +88,30 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinCapacity = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PredefinedLoadMetricSpecification", targetDepth))
+                {
+                    var unmarshaller = PredefinedLoadMetricSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.PredefinedLoadMetricSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PredictiveScalingMaxCapacityBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PredictiveScalingMaxCapacityBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PredictiveScalingMaxCapacityBuffer", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.PredictiveScalingMaxCapacityBuffer = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PredictiveScalingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PredictiveScalingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +122,18 @@ namespace Amazon.AutoScalingPlans.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ScalableDimension = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScalingPolicyUpdateBehavior", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScalingPolicyUpdateBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ScheduledActionBufferTime", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ScheduledActionBufferTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServiceNamespace", targetDepth))
