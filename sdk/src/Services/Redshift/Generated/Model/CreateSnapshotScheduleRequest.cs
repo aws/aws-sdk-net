@@ -73,8 +73,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ScheduleDefinitions. 
         /// <para>
-        /// The definition of the snapshot schedule. The definition is made up of schedule expressions.
-        /// For example, "cron(30 12 *)" or "rate(12 hours)". 
+        /// The definition of the snapshot schedule. The definition is made up of schedule expressions,
+        /// for example "cron(30 12 *)" or "rate(12 hours)". 
         /// </para>
         /// </summary>
         public List<string> ScheduleDefinitions

@@ -526,8 +526,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreateTime. 
         /// <para>
-        /// The time (UTC) when Amazon Redshift began the snapshot. A snapshot contains a copy
-        /// of the cluster data as of this exact time.
+        /// The time (in UTC format) when Amazon Redshift began the snapshot. A snapshot contains
+        /// a copy of the cluster data as of this exact time.
         /// </para>
         /// </summary>
         public DateTime SnapshotCreateTime
@@ -582,7 +582,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotType. 
         /// <para>
         /// The snapshot type. Snapshots created using <a>CreateClusterSnapshot</a> and <a>CopyClusterSnapshot</a>
-        /// will be of type "manual". 
+        /// are of type "manual". 
         /// </para>
         /// </summary>
         public string SnapshotType
@@ -618,7 +618,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The snapshot status. The value of the status depends on the API operation used. 
+        /// The snapshot status. The value of the status depends on the API operation used: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

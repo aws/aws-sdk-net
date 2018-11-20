@@ -38,7 +38,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Identifiers. 
         /// <para>
-        /// A list of indentifiers for the snapshots you want to delete.
+        /// A list of identifiers for the snapshots that you want to delete.
         /// </para>
         /// </summary>
         public List<DeleteClusterSnapshotMessage> Identifiers

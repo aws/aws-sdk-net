@@ -611,12 +611,12 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ManualSnapshotRetentionPeriod. 
         /// <para>
         /// The default number of days to retain a manual snapshot. If the value is -1, the snapshot
-        /// is retained indefinitely. This setting does not change the retention period of existing
+        /// is retained indefinitely. This setting doesn't change the retention period of existing
         /// snapshots.
         /// </para>
         ///  
         /// <para>
-        /// The value must be either -1 or an integer between 1 and 3,653
+        /// The value must be either -1 or an integer between 1 and 3,653.
         /// </para>
         /// </summary>
         public int ManualSnapshotRetentionPeriod

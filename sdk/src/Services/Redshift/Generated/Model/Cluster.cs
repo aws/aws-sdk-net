@@ -78,7 +78,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
-        /// A Boolean value that, if <code>true</code>, indicates that major version upgrades
+        /// A boolean value that, if <code>true</code>, indicates that major version upgrades
         /// will be applied automatically to the cluster during the maintenance window. 
         /// </para>
         /// </summary>
@@ -295,6 +295,14 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>available, prep-for-resize</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>available, resize-cleanup</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>cancelling-resize</code> 
         /// </para>
         ///  </li> <li> 
@@ -501,7 +509,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// A Boolean value that, if <code>true</code>, indicates that data in the cluster is
+        /// A boolean value that, if <code>true</code>, indicates that data in the cluster is
         /// encrypted at rest.
         /// </para>
         /// </summary>
@@ -647,12 +655,12 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ManualSnapshotRetentionPeriod. 
         /// <para>
         /// The default number of days to retain a manual snapshot. If the value is -1, the snapshot
-        /// is retained indefinitely. This setting does not change the retention period of existing
+        /// is retained indefinitely. This setting doesn't change the retention period of existing
         /// snapshots.
         /// </para>
         ///  
         /// <para>
-        /// The value must be either -1 or an integer between 1 and 3,653
+        /// The value must be either -1 or an integer between 1 and 3,653.
         /// </para>
         /// </summary>
         public int ManualSnapshotRetentionPeriod
@@ -799,7 +807,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A Boolean value that, if <code>true</code>, indicates that the cluster can be accessed
+        /// A boolean value that, if <code>true</code>, indicates that the cluster can be accessed
         /// from a public network.
         /// </para>
         /// </summary>

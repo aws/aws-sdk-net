@@ -347,7 +347,7 @@ namespace Amazon.Redshift
         /// <para>
         /// If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i>
         /// and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift
-        /// cluster must be in the same AWS region. 
+        /// cluster must be in the same AWS Region. 
         /// </para>
         ///  
         /// <para>
@@ -531,7 +531,7 @@ namespace Amazon.Redshift
         /// The maximum number for snapshot identifiers has been reached. The limit is 100.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -657,7 +657,7 @@ namespace Amazon.Redshift
         /// accounts are authorized to access the snapshot.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -752,7 +752,7 @@ namespace Amazon.Redshift
         /// The Elastic IP (EIP) is invalid or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -976,7 +976,7 @@ namespace Amazon.Redshift
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -1548,7 +1548,7 @@ namespace Amazon.Redshift
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -3682,7 +3682,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns a list of orderable cluster options. Before you create a new cluster you can
         /// use this operation to find what options are available, such as the EC2 Availability
-        /// Zones (AZ) in the specific AWS region that you can specify, and the node types you
+        /// Zones (AZ) in the specific AWS Region that you can specify, and the node types you
         /// can request. The node types differ by available storage, memory, CPU and price. With
         /// the cost involved you might want to obtain a list of cluster options in the specific
         /// region and specify values when creating a cluster. For more information about managing
@@ -3701,7 +3701,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns a list of orderable cluster options. Before you create a new cluster you can
         /// use this operation to find what options are available, such as the EC2 Availability
-        /// Zones (AZ) in the specific AWS region that you can specify, and the node types you
+        /// Zones (AZ) in the specific AWS Region that you can specify, and the node types you
         /// can request. The node types differ by available storage, memory, CPU and price. With
         /// the cost involved you might want to obtain a list of cluster options in the specific
         /// region and specify values when creating a cluster. For more information about managing
@@ -3724,7 +3724,7 @@ namespace Amazon.Redshift
         /// <summary>
         /// Returns a list of orderable cluster options. Before you create a new cluster you can
         /// use this operation to find what options are available, such as the EC2 Availability
-        /// Zones (AZ) in the specific AWS region that you can specify, and the node types you
+        /// Zones (AZ) in the specific AWS Region that you can specify, and the node types you
         /// can request. The node types differ by available storage, memory, CPU and price. With
         /// the cost involved you might want to obtain a list of cluster options in the specific
         /// region and specify values when creating a cluster. For more information about managing
@@ -4479,7 +4479,7 @@ namespace Amazon.Redshift
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -4728,7 +4728,7 @@ namespace Amazon.Redshift
         /// The Elastic IP (EIP) is invalid or cannot be found.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -4999,7 +4999,7 @@ namespace Amazon.Redshift
         /// accounts are authorized to access the snapshot.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -5221,13 +5221,13 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies the number of days to retain snapshots in the destination region after they
-        /// are copied from the source region. By default, this only changes the retention period
-        /// of copied automated snapshots. The retention periods for both new and existing copied
-        /// automated snapshots will be updated with the new retention period. You can set the
-        /// manual option to change only the retention periods of copied manual snapshots. If
-        /// you set this option only newly copied manual snapshots will have the new retention
-        /// period
+        /// Modifies the number of days to retain snapshots in the destination AWS Region after
+        /// they are copied from the source AWS Region. By default, this operation only changes
+        /// the retention period of copied automated snapshots. The retention periods for both
+        /// new and existing copied automated snapshots are updated with the new retention period.
+        /// You can set the manual option to change only the retention periods of copied manual
+        /// snapshots. If you set this option, only newly copied manual snapshots have the new
+        /// retention period.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotCopyRetentionPeriod service method.</param>
         /// 
@@ -5239,7 +5239,7 @@ namespace Amazon.Redshift
         /// The specified cluster is not in the <code>available</code> state.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.InvalidRetentionPeriodException">
-        /// The retention period specified is either in the past or is not a valide value.
+        /// The retention period specified is either in the past or is not a valid value.
         /// 
         ///  
         /// <para>
@@ -5286,8 +5286,7 @@ namespace Amazon.Redshift
 
 
         /// <summary>
-        /// Modifies a snapshot schedule. Any schedule associate with a cluster will be modified
-        /// asynchronously.
+        /// Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifySnapshotSchedule service method.</param>
         /// 

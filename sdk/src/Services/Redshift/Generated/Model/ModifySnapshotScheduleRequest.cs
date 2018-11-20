@@ -29,8 +29,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifySnapshotSchedule operation.
-    /// Modifies a snapshot schedule. Any schedule associate with a cluster will be modified
-    /// asynchronously.
+    /// Modifies a snapshot schedule. Any schedule associated with a cluster is modified asynchronously.
     /// </summary>
     public partial class ModifySnapshotScheduleRequest : AmazonRedshiftRequest
     {
@@ -41,7 +40,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ScheduleDefinitions. 
         /// <para>
         /// An updated list of schedule definitions. A schedule definition is made up of schedule
-        /// expressions. For example, "cron(30 12 *)" or "rate(12 hours)".
+        /// expressions, for example, "cron(30 12 *)" or "rate(12 hours)".
         /// </para>
         /// </summary>
         public List<string> ScheduleDefinitions

@@ -77,7 +77,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ScheduleIdentifier. 
         /// <para>
-        /// A unique alphanumeric identifier for the schedule you want to associate with the cluster.
+        /// A unique alphanumeric identifier for the schedule that you want to associate with
+        /// the cluster.
         /// </para>
         /// </summary>
         public string ScheduleIdentifier
