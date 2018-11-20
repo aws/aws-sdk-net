@@ -81,6 +81,49 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  CreateGroup
+
+
+        /// <summary>
+        /// Creates a group resource with a name and a filter expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        CreateGroupResponse CreateGroup(CreateGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGroup
+        ///         operation.</returns>
+        IAsyncResult BeginCreateGroup(CreateGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateGroup.</param>
+        /// 
+        /// <returns>Returns a  CreateGroupResult from XRay.</returns>
+        CreateGroupResponse EndCreateGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateSamplingRule
 
 
@@ -130,6 +173,49 @@ namespace Amazon.XRay
         /// 
         /// <returns>Returns a  CreateSamplingRuleResult from XRay.</returns>
         CreateSamplingRuleResponse EndCreateSamplingRule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteGroup
+
+
+        /// <summary>
+        /// Deletes a group resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        DeleteGroupResponse DeleteGroup(DeleteGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGroup
+        ///         operation.</returns>
+        IAsyncResult BeginDeleteGroup(DeleteGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteGroup.</param>
+        /// 
+        /// <returns>Returns a  DeleteGroupResult from XRay.</returns>
+        DeleteGroupResponse EndDeleteGroup(IAsyncResult asyncResult);
 
         #endregion
         
@@ -216,6 +302,92 @@ namespace Amazon.XRay
         /// 
         /// <returns>Returns a  GetEncryptionConfigResult from XRay.</returns>
         GetEncryptionConfigResponse EndGetEncryptionConfig(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetGroup
+
+
+        /// <summary>
+        /// Retrieves group resource details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        GetGroupResponse GetGroup(GetGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroup
+        ///         operation.</returns>
+        IAsyncResult BeginGetGroup(GetGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroup.</param>
+        /// 
+        /// <returns>Returns a  GetGroupResult from XRay.</returns>
+        GetGroupResponse EndGetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetGroups
+
+
+        /// <summary>
+        /// Retrieves all active group details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroups service method.</param>
+        /// 
+        /// <returns>The response from the GetGroups service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        GetGroupsResponse GetGroups(GetGroupsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroups operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGroups
+        ///         operation.</returns>
+        IAsyncResult BeginGetGroups(GetGroupsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetGroups.</param>
+        /// 
+        /// <returns>Returns a  GetGroupsResult from XRay.</returns>
+        GetGroupsResponse EndGetGroups(IAsyncResult asyncResult);
 
         #endregion
         
@@ -700,6 +872,49 @@ namespace Amazon.XRay
         /// 
         /// <returns>Returns a  PutTraceSegmentsResult from XRay.</returns>
         PutTraceSegmentsResponse EndPutTraceSegments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateGroup
+
+
+        /// <summary>
+        /// Updates a group resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation on AmazonXRayClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGroup
+        ///         operation.</returns>
+        IAsyncResult BeginUpdateGroup(UpdateGroupRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateGroup.</param>
+        /// 
+        /// <returns>Returns a  UpdateGroupResult from XRay.</returns>
+        UpdateGroupResponse EndUpdateGroup(IAsyncResult asyncResult);
 
         #endregion
         

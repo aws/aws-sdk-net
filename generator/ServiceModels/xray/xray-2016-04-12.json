@@ -264,6 +264,108 @@
       ],
       "documentation": "\n         <p>Used by the AWS X-Ray daemon to upload telemetry.</p>\n      "
     },
+    "PutExtensibleTelemetry": {
+      "name": "PutExtensibleTelemetry",
+      "http": {
+        "method": "POST",
+        "uri": "/ExtensibleTelemetry"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "ExtensibleTelemetryList": {
+            "type": "list",
+            "required": true,
+            "shape_name": "ExtensibleTelemetryList",
+            "documentation": null,
+            "members": {
+              "type": "structure",
+              "members": {
+                "Timestamp": {
+                  "type": "timestamp",
+                  "required": true,
+                  "shape_name": "Timestamp",
+                  "documentation": null
+                },
+                "Counters": {
+                  "type": "map",
+                  "shape_name": "TelemetryCounters",
+                  "documentation": null,
+                  "keys": {
+                    "type": "string",
+                    "shape_name": "String",
+                    "documentation": null
+                  },
+                  "members": {
+                    "type": "integer",
+                    "shape_name": "Integer",
+                    "documentation": null
+                  }
+                }
+              },
+              "shape_name": "ExtensibleTelemetry",
+              "documentation": null
+            }
+          },
+          "EC2InstanceId": {
+            "type": "string",
+            "shape_name": "EC2InstanceId",
+            "documentation": null,
+            "max_length": 20
+          },
+          "Hostname": {
+            "type": "string",
+            "shape_name": "Hostname",
+            "documentation": null,
+            "max_length": 255
+          },
+          "ResourceARN": {
+            "type": "string",
+            "shape_name": "ResourceARN",
+            "documentation": null,
+            "max_length": 500
+          }
+        },
+        "shape_name": "PutExtensibleTelemetryRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "PutExtensibleTelemetryResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request is missing required parameters or has invalid parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request is missing required parameters or has invalid parameters.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request exceeds the maximum number of requests per second.</simpara>\n      ",
+          "documentation": "\n         <p>The request exceeds the maximum number of requests per second.</p>\n      ",
+          "shape_name": "ThrottledException"
+        }
+      ],
+      "documentation": null
+    },
     "GetTraceSummaries": {
       "name": "GetTraceSummaries",
       "http": {
@@ -1015,6 +1117,22 @@
             "required": true,
             "shape_name": "Timestamp"
           },
+          "GroupName": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The name of a group to generate a graph based on.</simpara>\n      ",
+            "documentation": "\n         <p>The name of a group to generate a graph based on.</p>\n      ",
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 32
+          },
+          "GroupARN": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The ARN of a group to generate a graph based on.</simpara>\n      ",
+            "documentation": "\n         <p>The ARN of a group to generate a graph based on.</p>\n      ",
+            "shape_name": "GroupARN",
+            "min_length": 1,
+            "max_length": 400
+          },
           "NextToken": {
             "type": "string",
             "zonbookDocumentation": "\n         <simpara>Pagination token. Not used.</simpara>\n      ",
@@ -1403,6 +1521,12 @@
               "documentation": "\n         <p>Information about an application that processed requests, users that made requests, or\n      downstream services, resources and applications that an application used.</p>\n      ",
               "shape_name": "Service"
             }
+          },
+          "ContainsOldGroupVersions": {
+            "type": "boolean",
+            "zonbookDocumentation": "\n         <simpara>A flag indicating whether or not the group's filter expression has been consistent, or\n      if the returned service graph may show traces from an older version of the group's filter\n      expression.</simpara>\n      ",
+            "documentation": "\n         <p>A flag indicating whether or not the group's filter expression has been consistent, or\n      if the returned service graph may show traces from an older version of the group's filter\n      expression.</p>\n      ",
+            "shape_name": "Boolean"
           },
           "NextToken": {
             "type": "string",
@@ -3325,6 +3449,453 @@
         }
       ],
       "documentation": "\n         <p>Deletes a sampling rule.</p>\n      "
+    },
+    "CreateGroup": {
+      "name": "CreateGroup",
+      "http": {
+        "method": "POST",
+        "uri": "/CreateGroup"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The case-sensitive name of the new group. Default is a reserved name and names must\n            be unique.</simpara>\n      ",
+            "documentation": "\n        <p>The case-sensitive name of the new group. Default is a reserved name and names must\n            be unique.</p>\n      ",
+            "required": true,
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 32
+          },
+          "FilterExpression": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The filter expression defining criteria by which to group traces.</simpara>\n      ",
+            "documentation": "\n        <p>The filter expression defining criteria by which to group traces.</p>\n      ",
+            "shape_name": "FilterExpression",
+            "min_length": 1,
+            "max_length": 2000
+          }
+        },
+        "shape_name": "CreateGroupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Group": {
+            "type": "structure",
+            "members": {
+              "GroupName": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The unique case-sensitive name of the group.</para>\n      ",
+                "documentation": "\n        <p>The unique case-sensitive name of the group.</p>\n      ",
+                "shape_name": "String"
+              },
+              "GroupARN": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The ARN of the group generated based on the GroupName.</para>\n      ",
+                "documentation": "\n        <p>The ARN of the group generated based on the GroupName.</p>\n      ",
+                "shape_name": "String"
+              },
+              "FilterExpression": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The filter expression defining the parameters to include traces.</para>\n      ",
+                "documentation": "\n        <p>The filter expression defining the parameters to include traces.</p>\n      ",
+                "shape_name": "String"
+              }
+            },
+            "zonbookDocumentation": "\n        <simpara>The group that was created. Contains the name of the group that was created, the\n            ARN of the group that was generated based on the group name, and the filter expression\n            that was assigned to the group.</simpara>\n      ",
+            "documentation": "\n        <p>The group that was created. Contains the name of the group that was created, the\n            ARN of the group that was generated based on the group name, and the filter expression\n            that was assigned to the group.</p>\n      ",
+            "shape_name": "Group"
+          }
+        },
+        "shape_name": "CreateGroupResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request is missing required parameters or has invalid parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request is missing required parameters or has invalid parameters.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request exceeds the maximum number of requests per second.</simpara>\n      ",
+          "documentation": "\n         <p>The request exceeds the maximum number of requests per second.</p>\n      ",
+          "shape_name": "ThrottledException"
+        }
+      ],
+      "documentation": "\n        <p>Creates a group resource with a name and a filter expression. </p>\n      "
+    },
+    "GetGroup": {
+      "name": "GetGroup",
+      "http": {
+        "method": "POST",
+        "uri": "/GetGroup"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The case-sensitive name of the group.</simpara>\n      ",
+            "documentation": "\n        <p>The case-sensitive name of the group.</p>\n      ",
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 32
+          },
+          "GroupARN": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The ARN of the group that was generated on creation.</simpara>\n      ",
+            "documentation": "\n        <p>The ARN of the group that was generated on creation.</p>\n      ",
+            "shape_name": "GroupARN",
+            "min_length": 1,
+            "max_length": 400
+          }
+        },
+        "shape_name": "GetGroupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Group": {
+            "type": "structure",
+            "members": {
+              "GroupName": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The unique case-sensitive name of the group.</para>\n      ",
+                "documentation": "\n        <p>The unique case-sensitive name of the group.</p>\n      ",
+                "shape_name": "String"
+              },
+              "GroupARN": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The ARN of the group generated based on the GroupName.</para>\n      ",
+                "documentation": "\n        <p>The ARN of the group generated based on the GroupName.</p>\n      ",
+                "shape_name": "String"
+              },
+              "FilterExpression": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The filter expression defining the parameters to include traces.</para>\n      ",
+                "documentation": "\n        <p>The filter expression defining the parameters to include traces.</p>\n      ",
+                "shape_name": "String"
+              }
+            },
+            "zonbookDocumentation": "\n        <simpara>The group that was requested. Contains the name of the group, the ARN of the group,\n            and the filter expression that assigned to the group.</simpara>\n      ",
+            "documentation": "\n        <p>The group that was requested. Contains the name of the group, the ARN of the group,\n            and the filter expression that assigned to the group.</p>\n      ",
+            "shape_name": "Group"
+          }
+        },
+        "shape_name": "GetGroupResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request is missing required parameters or has invalid parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request is missing required parameters or has invalid parameters.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request exceeds the maximum number of requests per second.</simpara>\n      ",
+          "documentation": "\n         <p>The request exceeds the maximum number of requests per second.</p>\n      ",
+          "shape_name": "ThrottledException"
+        }
+      ],
+      "documentation": "\n        <p>Retrieves group resource details.</p>\n      "
+    },
+    "GetGroups": {
+      "name": "GetGroups",
+      "http": {
+        "method": "POST",
+        "uri": "/Groups"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>Pagination token. Not used.</simpara>\n      ",
+            "documentation": "\n        <p>Pagination token. Not used.</p>\n      ",
+            "shape_name": "GetGroupsNextToken",
+            "min_length": 1,
+            "max_length": 100
+          }
+        },
+        "shape_name": "GetGroupsRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Groups": {
+            "type": "list",
+            "zonbookDocumentation": "\n        <simpara>The collection of all active groups.</simpara>\n      ",
+            "documentation": "\n        <p>The collection of all active groups.</p>\n      ",
+            "shape_name": "GroupSummaryList",
+            "members": {
+              "type": "structure",
+              "members": {
+                "GroupName": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <para>The unique case-sensitive name of the group.</para>\n      ",
+                  "documentation": "\n        <p>The unique case-sensitive name of the group.</p>\n      ",
+                  "shape_name": "String"
+                },
+                "GroupARN": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <para>The ARN of the group generated based on the GroupName.</para>\n      ",
+                  "documentation": "\n        <p>The ARN of the group generated based on the GroupName.</p>\n      ",
+                  "shape_name": "String"
+                },
+                "FilterExpression": {
+                  "type": "string",
+                  "zonbookDocumentation": "\n        <para>The filter expression defining the parameters to include traces.</para>\n      ",
+                  "documentation": "\n        <p>The filter expression defining the parameters to include traces.</p>\n      ",
+                  "shape_name": "String"
+                }
+              },
+              "zonbookDocumentation": "\n        <para>Details for a group without metadata.</para>\n      ",
+              "documentation": "\n        <p>Details for a group without metadata.</p>\n      ",
+              "shape_name": "GroupSummary"
+            }
+          },
+          "NextToken": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>Pagination token. Not used.</simpara>\n      ",
+            "documentation": "\n        <p>Pagination token. Not used.</p>\n      ",
+            "shape_name": "String"
+          }
+        },
+        "shape_name": "GetGroupsResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request is missing required parameters or has invalid parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request is missing required parameters or has invalid parameters.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request exceeds the maximum number of requests per second.</simpara>\n      ",
+          "documentation": "\n         <p>The request exceeds the maximum number of requests per second.</p>\n      ",
+          "shape_name": "ThrottledException"
+        }
+      ],
+      "documentation": "\n        <p>Retrieves all active group details.</p>\n      "
+    },
+    "UpdateGroup": {
+      "name": "UpdateGroup",
+      "http": {
+        "method": "POST",
+        "uri": "/UpdateGroup"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The case-sensitive name of the group.</simpara>\n      ",
+            "documentation": "\n        <p>The case-sensitive name of the group.</p>\n      ",
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 32
+          },
+          "GroupARN": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The ARN that was generated upon create.</simpara>\n      ",
+            "documentation": "\n        <p>The ARN that was generated upon create.</p>\n      ",
+            "shape_name": "GroupARN",
+            "min_length": 1,
+            "max_length": 400
+          },
+          "FilterExpression": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The updated filter expression defining criteria by which to group traces.</simpara>\n      ",
+            "documentation": "\n        <p>The updated filter expression defining criteria by which to group traces.</p>\n      ",
+            "shape_name": "FilterExpression",
+            "min_length": 1,
+            "max_length": 2000
+          }
+        },
+        "shape_name": "UpdateGroupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+          "Group": {
+            "type": "structure",
+            "members": {
+              "GroupName": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The unique case-sensitive name of the group.</para>\n      ",
+                "documentation": "\n        <p>The unique case-sensitive name of the group.</p>\n      ",
+                "shape_name": "String"
+              },
+              "GroupARN": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The ARN of the group generated based on the GroupName.</para>\n      ",
+                "documentation": "\n        <p>The ARN of the group generated based on the GroupName.</p>\n      ",
+                "shape_name": "String"
+              },
+              "FilterExpression": {
+                "type": "string",
+                "zonbookDocumentation": "\n        <para>The filter expression defining the parameters to include traces.</para>\n      ",
+                "documentation": "\n        <p>The filter expression defining the parameters to include traces.</p>\n      ",
+                "shape_name": "String"
+              }
+            },
+            "zonbookDocumentation": "\n        <simpara>The group that was updated. Contains the name of the group that was updated, the\n            ARN of the group that was updated, and the updated filter expression assigned to the\n            group.</simpara>\n      ",
+            "documentation": "\n        <p>The group that was updated. Contains the name of the group that was updated, the\n            ARN of the group that was updated, and the updated filter expression assigned to the\n            group.</p>\n      ",
+            "shape_name": "Group"
+          }
+        },
+        "shape_name": "UpdateGroupResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request is missing required parameters or has invalid parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request is missing required parameters or has invalid parameters.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request exceeds the maximum number of requests per second.</simpara>\n      ",
+          "documentation": "\n         <p>The request exceeds the maximum number of requests per second.</p>\n      ",
+          "shape_name": "ThrottledException"
+        }
+      ],
+      "documentation": "\n        <p>Updates a group resource.</p>\n      "
+    },
+    "DeleteGroup": {
+      "name": "DeleteGroup",
+      "http": {
+        "method": "POST",
+        "uri": "/DeleteGroup"
+      },
+      "input": {
+        "type": "structure",
+        "members": {
+          "GroupName": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The case-sensitive name of the group.</simpara>\n      ",
+            "documentation": "\n        <p>The case-sensitive name of the group.</p>\n      ",
+            "shape_name": "GroupName",
+            "min_length": 1,
+            "max_length": 32
+          },
+          "GroupARN": {
+            "type": "string",
+            "zonbookDocumentation": "\n        <simpara>The ARN of the group that was generated on creation.</simpara>\n      ",
+            "documentation": "\n        <p>The ARN of the group that was generated on creation.</p>\n      ",
+            "shape_name": "GroupARN",
+            "min_length": 1,
+            "max_length": 400
+          }
+        },
+        "shape_name": "DeleteGroupRequest",
+        "documentation": null
+      },
+      "output": {
+        "type": "structure",
+        "members": {
+        },
+        "shape_name": "DeleteGroupResult",
+        "documentation": null
+      },
+      "errors": [
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request is missing required parameters or has invalid parameters.</simpara>\n      ",
+          "documentation": "\n         <p>The request is missing required parameters or has invalid parameters.</p>\n      ",
+          "shape_name": "InvalidRequestException"
+        },
+        {
+          "type": "structure",
+          "members": {
+            "Message": {
+              "type": "string",
+              "shape_name": "ErrorMessage",
+              "documentation": null
+            }
+          },
+          "zonbookDocumentation": "\n         <simpara>The request exceeds the maximum number of requests per second.</simpara>\n      ",
+          "documentation": "\n         <p>The request exceeds the maximum number of requests per second.</p>\n      ",
+          "shape_name": "ThrottledException"
+        }
+      ],
+      "documentation": "\n        <p>Deletes a group resource.</p>\n      "
     }
   }
 }

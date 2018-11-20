@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetServiceGraph Request Marshaller
+    /// GetGroups Request Marshaller
     /// </summary>       
-    public class GetServiceGraphRequestMarshaller : IMarshaller<IRequest, GetServiceGraphRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class GetGroupsRequestMarshaller : IMarshaller<IRequest, GetGroupsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetServiceGraphRequest)input);
+            return this.Marshall((GetGroupsRequest)input);
         }
 
         /// <summary>
@@ -52,47 +52,23 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetServiceGraphRequest publicRequest)
+        public IRequest Marshall(GetGroupsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.XRay");
             request.Headers["Content-Type"] = "application/x-amz-json-";
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/ServiceGraph";
+            string uriResourcePath = "/Groups";
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEndTime())
-                {
-                    context.Writer.WritePropertyName("EndTime");
-                    context.Writer.Write(publicRequest.EndTime);
-                }
-
-                if(publicRequest.IsSetGroupARN())
-                {
-                    context.Writer.WritePropertyName("GroupARN");
-                    context.Writer.Write(publicRequest.GroupARN);
-                }
-
-                if(publicRequest.IsSetGroupName())
-                {
-                    context.Writer.WritePropertyName("GroupName");
-                    context.Writer.Write(publicRequest.GroupName);
-                }
-
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("NextToken");
                     context.Writer.Write(publicRequest.NextToken);
-                }
-
-                if(publicRequest.IsSetStartTime())
-                {
-                    context.Writer.WritePropertyName("StartTime");
-                    context.Writer.Write(publicRequest.StartTime);
                 }
 
         
@@ -104,9 +80,9 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetServiceGraphRequestMarshaller _instance = new GetServiceGraphRequestMarshaller();        
+        private static GetGroupsRequestMarshaller _instance = new GetGroupsRequestMarshaller();        
 
-        internal static GetServiceGraphRequestMarshaller GetInstance()
+        internal static GetGroupsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +90,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetServiceGraphRequestMarshaller Instance
+        public static GetGroupsRequestMarshaller Instance
         {
             get
             {

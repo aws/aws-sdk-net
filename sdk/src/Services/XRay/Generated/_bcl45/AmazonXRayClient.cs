@@ -283,6 +283,49 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  CreateGroup
+
+
+        /// <summary>
+        /// Creates a group resource with a name and a filter expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
+        {
+            var marshaller = CreateGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGroupRequest,CreateGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSamplingRule
 
 
@@ -330,6 +373,49 @@ namespace Amazon.XRay
             var unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSamplingRuleRequest,CreateSamplingRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGroup
+
+
+        /// <summary>
+        /// Deletes a group resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
+        {
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -416,6 +502,92 @@ namespace Amazon.XRay
             var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGroup
+
+
+        /// <summary>
+        /// Retrieves group resource details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetGroupResponse GetGroup(GetGroupRequest request)
+        {
+            var marshaller = GetGroupRequestMarshaller.Instance;
+            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetGroupRequestMarshaller.Instance;
+            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGroupRequest,GetGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGroups
+
+
+        /// <summary>
+        /// Retrieves all active group details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroups service method.</param>
+        /// 
+        /// <returns>The response from the GetGroups service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual GetGroupsResponse GetGroups(GetGroupsRequest request)
+        {
+            var marshaller = GetGroupsRequestMarshaller.Instance;
+            var unmarshaller = GetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupsRequest,GetGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetGroupsResponse> GetGroupsAsync(GetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetGroupsRequestMarshaller.Instance;
+            var unmarshaller = GetGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGroupsRequest,GetGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -900,6 +1072,49 @@ namespace Amazon.XRay
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutTraceSegmentsRequest,PutTraceSegmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGroup
+
+
+        /// <summary>
+        /// Updates a group resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        public virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
+        {
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -32,10 +32,31 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class GetServiceGraphResponse : AmazonWebServiceResponse
     {
+        private bool? _containsOldGroupVersions;
         private DateTime? _endTime;
         private string _nextToken;
         private List<Service> _services = new List<Service>();
         private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property ContainsOldGroupVersions. 
+        /// <para>
+        /// A flag indicating whether or not the group's filter expression has been consistent,
+        /// or if the returned service graph may show traces from an older version of the group's
+        /// filter expression.
+        /// </para>
+        /// </summary>
+        public bool ContainsOldGroupVersions
+        {
+            get { return this._containsOldGroupVersions.GetValueOrDefault(); }
+            set { this._containsOldGroupVersions = value; }
+        }
+
+        // Check to see if ContainsOldGroupVersions property is set
+        internal bool IsSetContainsOldGroupVersions()
+        {
+            return this._containsOldGroupVersions.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EndTime. 

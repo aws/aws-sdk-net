@@ -76,6 +76,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("XRay")]
+        public void CreateGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateGroup");
+
+            var request = InstantiateClassGenerator.Execute<CreateGroupRequest>();
+            var marshaller = new CreateGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
         public void CreateSamplingRuleMarshallTest()
         {
             var operation = service_model.FindOperation("CreateSamplingRule");
@@ -100,6 +132,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as CreateSamplingRuleResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void DeleteGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteGroup");
+
+            var request = InstantiateClassGenerator.Execute<DeleteGroupRequest>();
+            var marshaller = new DeleteGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as DeleteGroupResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -164,6 +228,70 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as GetEncryptionConfigResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void GetGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetGroup");
+
+            var request = InstantiateClassGenerator.Execute<GetGroupRequest>();
+            var marshaller = new GetGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetGroupResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void GetGroupsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetGroups");
+
+            var request = InstantiateClassGenerator.Execute<GetGroupsRequest>();
+            var marshaller = new GetGroupsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetGroups", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetGroupsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetGroupsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -452,6 +580,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutTraceSegmentsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("XRay")]
+        public void UpdateGroupMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateGroup");
+
+            var request = InstantiateClassGenerator.Execute<UpdateGroupRequest>();
+            var marshaller = new UpdateGroupRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateGroup", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as UpdateGroupResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

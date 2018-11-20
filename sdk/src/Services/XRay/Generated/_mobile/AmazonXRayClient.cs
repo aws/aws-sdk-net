@@ -274,6 +274,37 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  CreateGroup
+
+        internal virtual CreateGroupResponse CreateGroup(CreateGroupRequest request)
+        {
+            var marshaller = CreateGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateGroupRequest,CreateGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateGroupRequestMarshaller.Instance;
+            var unmarshaller = CreateGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateGroupRequest,CreateGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateSamplingRule
 
         internal virtual CreateSamplingRuleResponse CreateSamplingRule(CreateSamplingRuleRequest request)
@@ -300,6 +331,37 @@ namespace Amazon.XRay
             var unmarshaller = CreateSamplingRuleResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSamplingRuleRequest,CreateSamplingRuleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteGroup
+
+        internal virtual DeleteGroupResponse DeleteGroup(DeleteGroupRequest request)
+        {
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteGroupRequestMarshaller.Instance;
+            var unmarshaller = DeleteGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteGroupRequest,DeleteGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -362,6 +424,68 @@ namespace Amazon.XRay
             var unmarshaller = GetEncryptionConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEncryptionConfigRequest,GetEncryptionConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGroup
+
+        internal virtual GetGroupResponse GetGroup(GetGroupRequest request)
+        {
+            var marshaller = GetGroupRequestMarshaller.Instance;
+            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupRequest,GetGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetGroupRequestMarshaller.Instance;
+            var unmarshaller = GetGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGroupRequest,GetGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetGroups
+
+        internal virtual GetGroupsResponse GetGroups(GetGroupsRequest request)
+        {
+            var marshaller = GetGroupsRequestMarshaller.Instance;
+            var unmarshaller = GetGroupsResponseUnmarshaller.Instance;
+
+            return Invoke<GetGroupsRequest,GetGroupsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetGroupsResponse> GetGroupsAsync(GetGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetGroupsRequestMarshaller.Instance;
+            var unmarshaller = GetGroupsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetGroupsRequest,GetGroupsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -641,6 +765,37 @@ namespace Amazon.XRay
             var unmarshaller = PutTraceSegmentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutTraceSegmentsRequest,PutTraceSegmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateGroup
+
+        internal virtual UpdateGroupResponse UpdateGroup(UpdateGroupRequest request)
+        {
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateGroupRequestMarshaller.Instance;
+            var unmarshaller = UpdateGroupResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateGroupRequest,UpdateGroupResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

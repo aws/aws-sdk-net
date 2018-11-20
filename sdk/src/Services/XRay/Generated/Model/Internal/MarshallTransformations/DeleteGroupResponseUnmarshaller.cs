@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetServiceGraph operation
+    /// Response Unmarshaller for DeleteGroup operation
     /// </summary>  
-    public class GetServiceGraphResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteGroupResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,43 +45,8 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetServiceGraphResponse response = new GetServiceGraphResponse();
+            DeleteGroupResponse response = new DeleteGroupResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("ContainsOldGroupVersions", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    response.ContainsOldGroupVersions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("EndTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.EndTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("NextToken", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Services", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<Service, ServiceUnmarshaller>(ServiceUnmarshaller.Instance);
-                    response.Services = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.StartTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -107,9 +72,9 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             return new AmazonXRayException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetServiceGraphResponseUnmarshaller _instance = new GetServiceGraphResponseUnmarshaller();        
+        private static DeleteGroupResponseUnmarshaller _instance = new DeleteGroupResponseUnmarshaller();        
 
-        internal static GetServiceGraphResponseUnmarshaller GetInstance()
+        internal static DeleteGroupResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -117,7 +82,7 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetServiceGraphResponseUnmarshaller Instance
+        public static DeleteGroupResponseUnmarshaller Instance
         {
             get
             {

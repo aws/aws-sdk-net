@@ -38,6 +38,8 @@ namespace Amazon.XRay.Model
     public partial class GetServiceGraphRequest : AmazonXRayRequest
     {
         private DateTime? _endTime;
+        private string _groupARN;
+        private string _groupName;
         private string _nextToken;
         private DateTime? _startTime;
 
@@ -57,6 +59,42 @@ namespace Amazon.XRay.Model
         internal bool IsSetEndTime()
         {
             return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupARN. 
+        /// <para>
+        /// The ARN of a group to generate a graph based on.
+        /// </para>
+        /// </summary>
+        public string GroupARN
+        {
+            get { return this._groupARN; }
+            set { this._groupARN = value; }
+        }
+
+        // Check to see if GroupARN property is set
+        internal bool IsSetGroupARN()
+        {
+            return this._groupARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GroupName. 
+        /// <para>
+        /// The name of a group to generate a graph based on.
+        /// </para>
+        /// </summary>
+        public string GroupName
+        {
+            get { return this._groupName; }
+            set { this._groupName = value; }
+        }
+
+        // Check to see if GroupName property is set
+        internal bool IsSetGroupName()
+        {
+            return this._groupName != null;
         }
 
         /// <summary>

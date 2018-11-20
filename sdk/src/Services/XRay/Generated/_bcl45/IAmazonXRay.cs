@@ -71,6 +71,37 @@ namespace Amazon.XRay
 
         #endregion
         
+        #region  CreateGroup
+
+
+        /// <summary>
+        /// Creates a group resource with a name and a filter expression.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
+        /// 
+        /// <returns>The response from the CreateGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        CreateGroupResponse CreateGroup(CreateGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateGroupResponse> CreateGroupAsync(CreateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateSamplingRule
 
 
@@ -108,6 +139,37 @@ namespace Amazon.XRay
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateSamplingRuleResponse> CreateSamplingRuleAsync(CreateSamplingRuleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteGroup
+
+
+        /// <summary>
+        /// Deletes a group resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        DeleteGroupResponse DeleteGroup(DeleteGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<DeleteGroupResponse> DeleteGroupAsync(DeleteGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -170,6 +232,68 @@ namespace Amazon.XRay
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetEncryptionConfigResponse> GetEncryptionConfigAsync(GetEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetGroup
+
+
+        /// <summary>
+        /// Retrieves group resource details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
+        /// 
+        /// <returns>The response from the GetGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        GetGroupResponse GetGroup(GetGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetGroupResponse> GetGroupAsync(GetGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetGroups
+
+
+        /// <summary>
+        /// Retrieves all active group details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGroups service method.</param>
+        /// 
+        /// <returns>The response from the GetGroups service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        GetGroupsResponse GetGroups(GetGroupsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetGroups operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetGroups operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetGroupsResponse> GetGroupsAsync(GetGroupsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -546,6 +670,37 @@ namespace Amazon.XRay
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutTraceSegmentsResponse> PutTraceSegmentsAsync(PutTraceSegmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateGroup
+
+
+        /// <summary>
+        /// Updates a group resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGroup service method, as returned by XRay.</returns>
+        /// <exception cref="Amazon.XRay.Model.InvalidRequestException">
+        /// The request is missing required parameters or has invalid parameters.
+        /// </exception>
+        /// <exception cref="Amazon.XRay.Model.ThrottledException">
+        /// The request exceeds the maximum number of requests per second.
+        /// </exception>
+        UpdateGroupResponse UpdateGroup(UpdateGroupRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateGroup operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGroup operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<UpdateGroupResponse> UpdateGroupAsync(UpdateGroupRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
