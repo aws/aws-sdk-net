@@ -731,6 +731,60 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceCountGroupKey.
+    /// </summary>
+    public class ResourceCountGroupKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for ResourceCountGroupKey
+        /// </summary>
+        public static readonly ResourceCountGroupKey ACCOUNT_ID = new ResourceCountGroupKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant AWS_REGION for ResourceCountGroupKey
+        /// </summary>
+        public static readonly ResourceCountGroupKey AWS_REGION = new ResourceCountGroupKey("AWS_REGION");
+        /// <summary>
+        /// Constant RESOURCE_TYPE for ResourceCountGroupKey
+        /// </summary>
+        public static readonly ResourceCountGroupKey RESOURCE_TYPE = new ResourceCountGroupKey("RESOURCE_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceCountGroupKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceCountGroupKey FindValue(string value)
+        {
+            return FindValue<ResourceCountGroupKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceCountGroupKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceType.
     /// </summary>
     public class ResourceType : ConstantClass

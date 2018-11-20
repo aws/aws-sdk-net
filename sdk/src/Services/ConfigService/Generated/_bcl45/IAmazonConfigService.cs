@@ -60,6 +60,52 @@ namespace Amazon.ConfigService
     {
 
         
+        #region  BatchGetAggregateResourceConfig
+
+
+        /// <summary>
+        /// Returns the current configuration items for resources that are present in your AWS
+        /// Config aggregator. The operation also returns a list of resources that are not processed
+        /// in the current request. If there are no unprocessed resources, the operation returns
+        /// an empty <code>unprocessedResourceIdentifiers</code> list. 
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The API does not return results for deleted resources.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The API does not return tags and relationships.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAggregateResourceConfig service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAggregateResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
+        BatchGetAggregateResourceConfigResponse BatchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAggregateResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAggregateResourceConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
+        Task<BatchGetAggregateResourceConfigResponse> BatchGetAggregateResourceConfigAsync(BatchGetAggregateResourceConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchGetResourceConfig
 
 
@@ -1471,6 +1517,95 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetAggregateDiscoveredResourceCounts
+
+
+        /// <summary>
+        /// Returns the resource counts across accounts and regions that are present in your AWS
+        /// Config aggregator. You can request the resource counts by providing filters and GroupByKey.
+        /// 
+        ///  
+        /// <para>
+        /// For example, if the input contains accountID 12345678910 and region us-east-1 in filters,
+        /// the API returns the count of resources in account ID 12345678910 and region us-east-1.
+        /// If the input contains ACCOUNT_ID as a GroupByKey, the API returns resource counts
+        /// for all source accounts that are present in your aggregator.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateDiscoveredResourceCounts service method.</param>
+        /// 
+        /// <returns>The response from the GetAggregateDiscoveredResourceCounts service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
+        GetAggregateDiscoveredResourceCountsResponse GetAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAggregateDiscoveredResourceCounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateDiscoveredResourceCounts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
+        Task<GetAggregateDiscoveredResourceCountsResponse> GetAggregateDiscoveredResourceCountsAsync(GetAggregateDiscoveredResourceCountsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAggregateResourceConfig
+
+
+        /// <summary>
+        /// Returns configuration item that is aggregated for your specific resource in a specific
+        /// source account and region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateResourceConfig service method.</param>
+        /// 
+        /// <returns>The response from the GetAggregateResourceConfig service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.OversizedConfigurationItemException">
+        /// The configuration item size is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotDiscoveredException">
+        /// You have specified a resource that is either unknown or has not been discovered.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
+        GetAggregateResourceConfigResponse GetAggregateResourceConfig(GetAggregateResourceConfigRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAggregateResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateResourceConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
+        Task<GetAggregateResourceConfigResponse> GetAggregateResourceConfigAsync(GetAggregateResourceConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetComplianceDetailsByConfigRule
 
 
@@ -1763,6 +1898,57 @@ namespace Amazon.ConfigService
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
         Task<GetResourceConfigHistoryResponse> GetResourceConfigHistoryAsync(GetResourceConfigHistoryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAggregateDiscoveredResources
+
+
+        /// <summary>
+        /// Accepts a resource type and returns a list of resource identifiers that are aggregated
+        /// for a specific resource type across accounts and regions. A resource identifier includes
+        /// the resource type, ID, (if available) the custom resource name, source account, and
+        /// source region. You can narrow the results to include only resources that have specific
+        /// resource IDs, or a resource name, or source account ID, or source region.
+        /// 
+        ///  
+        /// <para>
+        /// For example, if the input consists of accountID 12345678910 and the region is us-east-1
+        /// for resource type <code>AWS::EC2::Instance</code> then the API returns all the EC2
+        /// instance identifiers of accountID 12345678910 and region us-east-1.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregateDiscoveredResources service method.</param>
+        /// 
+        /// <returns>The response from the ListAggregateDiscoveredResources service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidLimitException">
+        /// The specified limit is outside the allowable range.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InvalidNextTokenException">
+        /// The specified next token is invalid. Specify the <code>nextToken</code> string that
+        /// was returned in the previous response to get the next page of results.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.NoSuchConfigurationAggregatorException">
+        /// You have specified a configuration aggregator that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested action is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
+        ListAggregateDiscoveredResourcesResponse ListAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAggregateDiscoveredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregateDiscoveredResources operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
+        Task<ListAggregateDiscoveredResourcesResponse> ListAggregateDiscoveredResourcesAsync(ListAggregateDiscoveredResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

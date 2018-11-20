@@ -43,6 +43,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void BatchGetAggregateResourceConfigMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<BatchGetAggregateResourceConfigRequest>();
+            var marshaller = new BatchGetAggregateResourceConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<BatchGetAggregateResourceConfigRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchGetAggregateResourceConfig").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchGetAggregateResourceConfigResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void BatchGetResourceConfigMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<BatchGetResourceConfigRequest>();
@@ -706,6 +735,64 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("ConfigService")]
+        public void GetAggregateDiscoveredResourceCountsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetAggregateDiscoveredResourceCountsRequest>();
+            var marshaller = new GetAggregateDiscoveredResourceCountsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetAggregateDiscoveredResourceCountsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAggregateDiscoveredResourceCounts").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAggregateDiscoveredResourceCountsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void GetAggregateResourceConfigMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetAggregateResourceConfigRequest>();
+            var marshaller = new GetAggregateResourceConfigRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetAggregateResourceConfigRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetAggregateResourceConfig").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetAggregateResourceConfigResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetAggregateResourceConfigResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
         public void GetComplianceDetailsByConfigRuleMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetComplianceDetailsByConfigRuleRequest>();
@@ -869,6 +956,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = GetResourceConfigHistoryResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetResourceConfigHistoryResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("ConfigService")]
+        public void ListAggregateDiscoveredResourcesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListAggregateDiscoveredResourcesRequest>();
+            var marshaller = new ListAggregateDiscoveredResourcesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListAggregateDiscoveredResourcesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListAggregateDiscoveredResources").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListAggregateDiscoveredResourcesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

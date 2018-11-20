@@ -50,7 +50,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The 12 digit AWS account ID associated with the resource.
+        /// The 12-digit AWS account ID associated with the resource.
         /// </para>
         /// </summary>
         public string AccountId

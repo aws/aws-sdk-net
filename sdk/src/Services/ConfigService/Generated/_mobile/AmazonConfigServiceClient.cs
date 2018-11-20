@@ -265,6 +265,38 @@ namespace Amazon.ConfigService
         #endregion
 
         
+        #region  BatchGetAggregateResourceConfig
+
+        internal virtual BatchGetAggregateResourceConfigResponse BatchGetAggregateResourceConfig(BatchGetAggregateResourceConfigRequest request)
+        {
+            var marshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
+            var unmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAggregateResourceConfigRequest,BatchGetAggregateResourceConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAggregateResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAggregateResourceConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">REST API Reference for BatchGetAggregateResourceConfig Operation</seealso>
+        public virtual Task<BatchGetAggregateResourceConfigResponse> BatchGetAggregateResourceConfigAsync(BatchGetAggregateResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchGetAggregateResourceConfigRequestMarshaller.Instance;
+            var unmarshaller = BatchGetAggregateResourceConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetAggregateResourceConfigRequest,BatchGetAggregateResourceConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetResourceConfig
 
         internal virtual BatchGetResourceConfigResponse BatchGetResourceConfig(BatchGetResourceConfigRequest request)
@@ -1292,6 +1324,70 @@ namespace Amazon.ConfigService
 
         #endregion
         
+        #region  GetAggregateDiscoveredResourceCounts
+
+        internal virtual GetAggregateDiscoveredResourceCountsResponse GetAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request)
+        {
+            var marshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
+            var unmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
+
+            return Invoke<GetAggregateDiscoveredResourceCountsRequest,GetAggregateDiscoveredResourceCountsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAggregateDiscoveredResourceCounts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateDiscoveredResourceCounts operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
+        public virtual Task<GetAggregateDiscoveredResourceCountsResponse> GetAggregateDiscoveredResourceCountsAsync(GetAggregateDiscoveredResourceCountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetAggregateDiscoveredResourceCountsRequestMarshaller.Instance;
+            var unmarshaller = GetAggregateDiscoveredResourceCountsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAggregateDiscoveredResourceCountsRequest,GetAggregateDiscoveredResourceCountsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAggregateResourceConfig
+
+        internal virtual GetAggregateResourceConfigResponse GetAggregateResourceConfig(GetAggregateResourceConfigRequest request)
+        {
+            var marshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
+            var unmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetAggregateResourceConfigRequest,GetAggregateResourceConfigResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAggregateResourceConfig operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAggregateResourceConfig operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">REST API Reference for GetAggregateResourceConfig Operation</seealso>
+        public virtual Task<GetAggregateResourceConfigResponse> GetAggregateResourceConfigAsync(GetAggregateResourceConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetAggregateResourceConfigRequestMarshaller.Instance;
+            var unmarshaller = GetAggregateResourceConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAggregateResourceConfigRequest,GetAggregateResourceConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetComplianceDetailsByConfigRule
 
         internal virtual GetComplianceDetailsByConfigRuleResponse GetComplianceDetailsByConfigRule(GetComplianceDetailsByConfigRuleRequest request)
@@ -1479,6 +1575,38 @@ namespace Amazon.ConfigService
             var unmarshaller = GetResourceConfigHistoryResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetResourceConfigHistoryRequest,GetResourceConfigHistoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAggregateDiscoveredResources
+
+        internal virtual ListAggregateDiscoveredResourcesResponse ListAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request)
+        {
+            var marshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
+            var unmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAggregateDiscoveredResourcesRequest,ListAggregateDiscoveredResourcesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAggregateDiscoveredResources operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAggregateDiscoveredResources operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
+        public virtual Task<ListAggregateDiscoveredResourcesResponse> ListAggregateDiscoveredResourcesAsync(ListAggregateDiscoveredResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListAggregateDiscoveredResourcesRequestMarshaller.Instance;
+            var unmarshaller = ListAggregateDiscoveredResourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAggregateDiscoveredResourcesRequest,ListAggregateDiscoveredResourcesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
