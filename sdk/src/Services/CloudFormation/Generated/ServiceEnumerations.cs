@@ -85,6 +85,10 @@ namespace Amazon.CloudFormation
     {
 
         /// <summary>
+        /// Constant CAPABILITY_AUTO_EXPAND for Capability
+        /// </summary>
+        public static readonly Capability CAPABILITY_AUTO_EXPAND = new Capability("CAPABILITY_AUTO_EXPAND");
+        /// <summary>
         /// Constant CAPABILITY_IAM for Capability
         /// </summary>
         public static readonly Capability CAPABILITY_IAM = new Capability("CAPABILITY_IAM");
