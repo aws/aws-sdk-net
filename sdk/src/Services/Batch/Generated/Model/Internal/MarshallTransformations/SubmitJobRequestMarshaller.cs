@@ -121,6 +121,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobQueue);
                 }
 
+                if(publicRequest.IsSetNodeOverrides())
+                {
+                    context.Writer.WritePropertyName("nodeOverrides");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NodeOverridesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NodeOverrides, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetParameters())
                 {
                     context.Writer.WritePropertyName("parameters");

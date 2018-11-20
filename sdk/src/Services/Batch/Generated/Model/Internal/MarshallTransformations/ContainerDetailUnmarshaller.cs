@@ -94,6 +94,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<MountPoint, MountPointUnmarshaller>(MountPointUnmarshaller.Instance);
                     unmarshalledObject.MountPoints = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("networkInterfaces", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
+                    unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("privileged", targetDepth))

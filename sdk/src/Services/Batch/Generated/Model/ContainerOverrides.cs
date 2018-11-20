@@ -34,6 +34,7 @@ namespace Amazon.Batch.Model
     {
         private List<string> _command = new List<string>();
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private string _instanceType;
         private int? _memory;
         private int? _vcpus;
 
@@ -80,6 +81,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null && this._environment.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type to use for a multi-node parallel job. This parameter is not valid
+        /// for single-node container jobs.
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

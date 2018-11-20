@@ -300,6 +300,10 @@ namespace Amazon.Batch
         /// Constant Container for JobDefinitionType
         /// </summary>
         public static readonly JobDefinitionType Container = new JobDefinitionType("container");
+        /// <summary>
+        /// Constant Multinode for JobDefinitionType
+        /// </summary>
+        public static readonly JobDefinitionType Multinode = new JobDefinitionType("multinode");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

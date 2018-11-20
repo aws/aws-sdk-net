@@ -41,6 +41,7 @@ namespace Amazon.Batch.Model
         private LaunchTemplateSpecification _launchTemplate;
         private int? _maxvCpus;
         private int? _minvCpus;
+        private string _placementGroup;
         private List<string> _securityGroupIds = new List<string>();
         private string _spotIamFleetRole;
         private List<string> _subnets = new List<string>();
@@ -224,6 +225,29 @@ namespace Amazon.Batch.Model
         internal bool IsSetMinvCpus()
         {
             return this._minvCpus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PlacementGroup. 
+        /// <para>
+        /// The Amazon EC2 placement group to associate with your compute resources. If you intend
+        /// to submit multi-node parallel jobs to your compute environment, you should consider
+        /// creating a cluster placement group and associate it with your compute resources. This
+        /// keeps your multi-node parallel job on a logical grouping of instances within a single
+        /// Availability Zone with high network flow potential. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+        /// </para>
+        /// </summary>
+        public string PlacementGroup
+        {
+            get { return this._placementGroup; }
+            set { this._placementGroup = value; }
+        }
+
+        // Check to see if PlacementGroup property is set
+        internal bool IsSetPlacementGroup()
+        {
+            return this._placementGroup != null;
         }
 
         /// <summary>

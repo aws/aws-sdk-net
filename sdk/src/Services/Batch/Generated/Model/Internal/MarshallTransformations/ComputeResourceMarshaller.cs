@@ -109,6 +109,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinvCpus);
             }
 
+            if(requestObject.IsSetPlacementGroup())
+            {
+                context.Writer.WritePropertyName("placementGroup");
+                context.Writer.Write(requestObject.PlacementGroup);
+            }
+
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AttemptContainerDetail Object
+    /// Response Unmarshaller for NetworkInterface Object
     /// </summary>  
-    public class AttemptContainerDetailUnmarshaller : IUnmarshaller<AttemptContainerDetail, XmlUnmarshallerContext>, IUnmarshaller<AttemptContainerDetail, JsonUnmarshallerContext>
+    public class NetworkInterfaceUnmarshaller : IUnmarshaller<NetworkInterface, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterface, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AttemptContainerDetail IUnmarshaller<AttemptContainerDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NetworkInterface IUnmarshaller<NetworkInterface, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AttemptContainerDetail Unmarshall(JsonUnmarshallerContext context)
+        public NetworkInterface Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AttemptContainerDetail unmarshalledObject = new AttemptContainerDetail();
+            NetworkInterface unmarshalledObject = new NetworkInterface();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("containerInstanceArn", targetDepth))
+                if (context.TestExpression("attachmentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerInstanceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttachmentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("exitCode", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ExitCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logStreamName", targetDepth))
+                if (context.TestExpression("ipv6Address", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ipv6Address = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("networkInterfaces", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
-                    unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth))
+                if (context.TestExpression("privateIpv4Address", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateIpv4Address = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static AttemptContainerDetailUnmarshaller _instance = new AttemptContainerDetailUnmarshaller();        
+        private static NetworkInterfaceUnmarshaller _instance = new NetworkInterfaceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttemptContainerDetailUnmarshaller Instance
+        public static NetworkInterfaceUnmarshaller Instance
         {
             get
             {

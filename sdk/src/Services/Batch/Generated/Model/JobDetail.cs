@@ -41,6 +41,8 @@ namespace Amazon.Batch.Model
         private string _jobId;
         private string _jobName;
         private string _jobQueue;
+        private NodeDetails _nodeDetails;
+        private NodeProperties _nodeProperties;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private RetryStrategy _retryStrategy;
         private long? _startedAt;
@@ -106,7 +108,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time stamp (in seconds and milliseconds) for when the job was created. For
+        /// The Unix timestamp (in seconds and milliseconds) for when the job was created. For
         /// non-array jobs and parent array jobs, this is when the job entered the <code>SUBMITTED</code>
         /// state (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
         /// the child job was spawned by its parent and entered the <code>PENDING</code> state.
@@ -215,6 +217,43 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NodeDetails. 
+        /// <para>
+        /// An object representing the details of a node that is associated with a multi-node
+        /// parallel job.
+        /// </para>
+        /// </summary>
+        public NodeDetails NodeDetails
+        {
+            get { return this._nodeDetails; }
+            set { this._nodeDetails = value; }
+        }
+
+        // Check to see if NodeDetails property is set
+        internal bool IsSetNodeDetails()
+        {
+            return this._nodeDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeProperties. 
+        /// <para>
+        /// An object representing the node properties of a multi-node parallel job.
+        /// </para>
+        /// </summary>
+        public NodeProperties NodeProperties
+        {
+            get { return this._nodeProperties; }
+            set { this._nodeProperties = value; }
+        }
+
+        // Check to see if NodeProperties property is set
+        internal bool IsSetNodeProperties()
+        {
+            return this._nodeProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
         /// Additional parameters passed to the job that replace parameter substitution placeholders
@@ -254,7 +293,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix time stamp (in seconds and milliseconds) for when the job was started (when
+        /// The Unix timestamp (in seconds and milliseconds) for when the job was started (when
         /// the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
         /// state).
         /// </para>
@@ -318,7 +357,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when
+        /// The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when
         /// the job transitioned from the <code>RUNNING</code> state to a terminal state, such
         /// as <code>SUCCEEDED</code> or <code>FAILED</code>).
         /// </para>

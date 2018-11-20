@@ -37,6 +37,7 @@ namespace Amazon.Batch.Model
         private long? _createdAt;
         private string _jobId;
         private string _jobName;
+        private NodePropertiesSummary _nodeProperties;
         private long? _startedAt;
         private JobStatus _status;
         private string _statusReason;
@@ -81,7 +82,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix time stamp for when the job was created. For non-array jobs and parent array
+        /// The Unix timestamp for when the job was created. For non-array jobs and parent array
         /// jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a>
         /// was called). For array child jobs, this is when the child job was spawned by its parent
         /// and entered the <code>PENDING</code> state.
@@ -136,9 +137,27 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NodeProperties. 
+        /// <para>
+        /// The node properties for a single node in a job summary list.
+        /// </para>
+        /// </summary>
+        public NodePropertiesSummary NodeProperties
+        {
+            get { return this._nodeProperties; }
+            set { this._nodeProperties = value; }
+        }
+
+        // Check to see if NodeProperties property is set
+        internal bool IsSetNodeProperties()
+        {
+            return this._nodeProperties != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The Unix time stamp for when the job was started (when the job transitioned from the
+        /// The Unix timestamp for when the job was started (when the job transitioned from the
         /// <code>STARTING</code> state to the <code>RUNNING</code> state).
         /// </para>
         /// </summary>
@@ -194,7 +213,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The Unix time stamp for when the job was stopped (when the job transitioned from the
+        /// The Unix timestamp for when the job was stopped (when the job transitioned from the
         /// <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or
         /// <code>FAILED</code>).
         /// </para>

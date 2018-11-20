@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ContainerOverrides Marshaller
+    /// NodeProperties Marshaller
     /// </summary>       
-    public class ContainerOverridesMarshaller : IRequestMarshaller<ContainerOverrides, JsonMarshallerContext> 
+    public class NodePropertiesMarshaller : IRequestMarshaller<NodeProperties, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,51 +43,34 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ContainerOverrides requestObject, JsonMarshallerContext context)
+        public void Marshall(NodeProperties requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetCommand())
+            if(requestObject.IsSetMainNode())
             {
-                context.Writer.WritePropertyName("command");
-                context.Writer.WriteArrayStart();
-                foreach(var requestObjectCommandListValue in requestObject.Command)
-                {
-                        context.Writer.Write(requestObjectCommandListValue);
-                }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WritePropertyName("mainNode");
+                context.Writer.Write(requestObject.MainNode);
             }
 
-            if(requestObject.IsSetEnvironment())
+            if(requestObject.IsSetNodeRangeProperties())
             {
-                context.Writer.WritePropertyName("environment");
+                context.Writer.WritePropertyName("nodeRangeProperties");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectEnvironmentListValue in requestObject.Environment)
+                foreach(var requestObjectNodeRangePropertiesListValue in requestObject.NodeRangeProperties)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = KeyValuePairMarshaller.Instance;
-                    marshaller.Marshall(requestObjectEnvironmentListValue, context);
+                    var marshaller = NodeRangePropertyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectNodeRangePropertiesListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetInstanceType())
+            if(requestObject.IsSetNumNodes())
             {
-                context.Writer.WritePropertyName("instanceType");
-                context.Writer.Write(requestObject.InstanceType);
-            }
-
-            if(requestObject.IsSetMemory())
-            {
-                context.Writer.WritePropertyName("memory");
-                context.Writer.Write(requestObject.Memory);
-            }
-
-            if(requestObject.IsSetVcpus())
-            {
-                context.Writer.WritePropertyName("vcpus");
-                context.Writer.Write(requestObject.Vcpus);
+                context.Writer.WritePropertyName("numNodes");
+                context.Writer.Write(requestObject.NumNodes);
             }
 
         }
@@ -95,7 +78,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static ContainerOverridesMarshaller Instance = new ContainerOverridesMarshaller();
+        public readonly static NodePropertiesMarshaller Instance = new NodePropertiesMarshaller();
 
     }
 }

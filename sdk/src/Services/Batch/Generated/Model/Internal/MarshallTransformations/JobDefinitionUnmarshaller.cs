@@ -82,6 +82,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobDefinitionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("nodeProperties", targetDepth))
+                {
+                    var unmarshaller = NodePropertiesUnmarshaller.Instance;
+                    unmarshalledObject.NodeProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("parameters", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

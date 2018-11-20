@@ -82,6 +82,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.Image = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("jobRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

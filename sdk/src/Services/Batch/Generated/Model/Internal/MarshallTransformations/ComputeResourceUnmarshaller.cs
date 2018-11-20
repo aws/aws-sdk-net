@@ -118,6 +118,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinvCpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("placementGroup", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PlacementGroup = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("securityGroupIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

@@ -40,6 +40,7 @@ namespace Amazon.Batch.Model
         private string _jobDefinition;
         private string _jobName;
         private string _jobQueue;
+        private NodeOverrides _nodeOverrides;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private RetryStrategy _retryStrategy;
         private JobTimeout _timeout;
@@ -96,8 +97,8 @@ namespace Amazon.Batch.Model
         /// can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID
         /// for array jobs so that each child array job completes sequentially, starting at index
         /// 0. You can also specify an <code>N_TO_N</code> type dependency with a job ID for array
-        /// jobs so that each index child of this job must wait for the corresponding index child
-        /// of each dependency to complete before it can begin.
+        /// jobs. In that case, each index child of this job must wait for the corresponding index
+        /// child of each dependency to complete before it can begin.
         /// </para>
         /// </summary>
         public List<JobDependency> DependsOn
@@ -167,6 +168,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetJobQueue()
         {
             return this._jobQueue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeOverrides. 
+        /// <para>
+        /// A list of node overrides in JSON format that specify the node range to target and
+        /// the container overrides for that node range.
+        /// </para>
+        /// </summary>
+        public NodeOverrides NodeOverrides
+        {
+            get { return this._nodeOverrides; }
+            set { this._nodeOverrides = value; }
+        }
+
+        // Check to see if NodeOverrides property is set
+        internal bool IsSetNodeOverrides()
+        {
+            return this._nodeOverrides != null;
         }
 
         /// <summary>

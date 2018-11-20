@@ -37,10 +37,12 @@ namespace Amazon.Batch.Model
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
         private int? _exitCode;
         private string _image;
+        private string _instanceType;
         private string _jobRoleArn;
         private string _logStreamName;
         private int? _memory;
         private List<MountPoint> _mountPoints = new List<MountPoint>();
+        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private bool? _privileged;
         private bool? _readonlyRootFilesystem;
         private string _reason;
@@ -148,6 +150,24 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type of the underlying host infrastructure of a multi-node parallel job.
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) associated with the job upon execution. 
@@ -219,6 +239,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetMountPoints()
         {
             return this._mountPoints != null && this._mountPoints.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// The network interfaces associated with the job.
+        /// </para>
+        /// </summary>
+        public List<NetworkInterface> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
         }
 
         /// <summary>

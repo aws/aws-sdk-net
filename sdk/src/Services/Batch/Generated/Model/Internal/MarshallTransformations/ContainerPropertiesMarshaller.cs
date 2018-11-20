@@ -78,6 +78,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Image);
             }
 
+            if(requestObject.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("instanceType");
+                context.Writer.Write(requestObject.InstanceType);
+            }
+
             if(requestObject.IsSetJobRoleArn())
             {
                 context.Writer.WritePropertyName("jobRoleArn");

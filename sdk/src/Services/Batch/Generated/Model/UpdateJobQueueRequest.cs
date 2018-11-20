@@ -81,9 +81,9 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The priority of the job queue. Job queues with a higher priority (or a higher integer
         /// value for the <code>priority</code> parameter) are evaluated first when associated
-        /// with same compute environment. Priority is determined in descending order, for example,
-        /// a job queue with a priority value of <code>10</code> is given scheduling preference
-        /// over a job queue with a priority value of <code>1</code>.
+        /// with the same compute environment. Priority is determined in descending order, for
+        /// example, a job queue with a priority value of <code>10</code> is given scheduling
+        /// preference over a job queue with a priority value of <code>1</code>.
         /// </para>
         /// </summary>
         public int Priority

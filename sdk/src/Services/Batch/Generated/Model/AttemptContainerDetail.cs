@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
         private string _containerInstanceArn;
         private int? _exitCode;
         private string _logStreamName;
+        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private string _reason;
         private string _taskArn;
 
@@ -93,6 +94,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetLogStreamName()
         {
             return this._logStreamName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkInterfaces. 
+        /// <para>
+        /// The network interfaces associated with the job attempt.
+        /// </para>
+        /// </summary>
+        public List<NetworkInterface> NetworkInterfaces
+        {
+            get { return this._networkInterfaces; }
+            set { this._networkInterfaces = value; }
+        }
+
+        // Check to see if NetworkInterfaces property is set
+        internal bool IsSetNetworkInterfaces()
+        {
+            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
         }
 
         /// <summary>

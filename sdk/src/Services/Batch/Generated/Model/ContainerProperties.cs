@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
         private List<string> _command = new List<string>();
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
         private string _image;
+        private string _instanceType;
         private string _jobRoleArn;
         private int? _memory;
         private List<MountPoint> _mountPoints = new List<MountPoint>();
@@ -147,6 +148,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetImage()
         {
             return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The instance type to use for a multi-node parallel job. Currently all node groups
+        /// in a multi-node parallel job must use the same instance type. This parameter is not
+        /// valid for single-node container jobs.
+        /// </para>
+        /// </summary>
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>

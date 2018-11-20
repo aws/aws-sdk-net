@@ -153,6 +153,12 @@
                   "documentation": null
                 }
               },
+              "placementGroup": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The Amazon EC2 placement group to associate with your compute resources. If you intend to\n         submit multi-node parallel jobs to your compute environment, you should consider creating a\n         cluster placement group and associate it with your compute resources. This keeps your\n         multi-node parallel job on a logical grouping of instances within a single Availability\n         Zone with high network flow potential. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/placement-groups.html\">Placement\n            Groups</ulink> in the <emphasis>Amazon EC2 User Guide for Linux Instances</emphasis>.</para>\n      ",
+                "documentation": "\n         <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to\n         submit multi-node parallel jobs to your compute environment, you should consider creating a\n         cluster placement group and associate it with your compute resources. This keeps your\n         multi-node parallel job on a logical grouping of instances within a single Availability\n         Zone with high network flow potential. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement\n            Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>\n      ",
+                "shape_name": "String"
+              },
               "bidPercentage": {
                 "type": "integer",
                 "zonbookDocumentation": "\n         <simpara>The maximum percentage that a Spot Instance price can be when compared with the\n         On-Demand price for that instance type before instances are launched. For example, if your\n         maximum percentage is 20%, then the Spot price must be below 20% of the current On-Demand\n         price for that EC2 instance. You always pay the lowest (market) price and never more than\n         your maximum percentage. If you leave this field empty, the default value is 100% of the\n         On-Demand price.</simpara>\n      ",
@@ -254,7 +260,7 @@
           "shape_name": "ServerException"
         }
       ],
-      "documentation": "\n         <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or\n            <code>UNMANAGED</code> compute environments.</p>\n         <p>In a managed compute environment, AWS Batch manages the capacity and instance types of\n         the compute resources within the environment, based on the compute resource specification\n         that you define or <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html\">launch template</a> that you specify when you create the\n         compute environment. You can choose to use Amazon EC2 On-Demand Instances or Spot Instances in\n         your managed compute environment. You can optionally set a maximum price so that Spot\n         Instances only launch when the Spot Instance price is below a specified percentage of the\n         On-Demand price.</p>\n         <p>In an unmanaged compute environment, you can manage your own compute resources. This\n         provides more compute resource configuration options, such as using a custom AMI, but you\n         must ensure that your AMI meets the Amazon ECS container instance AMI specification. For more\n         information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html\">Container Instance AMIs</a> in the\n            <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your unmanaged compute\n         environment, you can use the <a>DescribeComputeEnvironments</a> operation to\n         find the Amazon ECS cluster that is associated with it and then manually launch your container\n         instances into that Amazon ECS cluster. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html\">Launching an Amazon ECS Container Instance</a> in the\n            <i>Amazon Elastic Container Service Developer Guide</i>.</p>\n         <note>\n            <p>AWS Batch does not upgrade the AMIs in a compute environment after it is created (for\n            example, when a newer version of the Amazon ECS-optimized AMI is available). You are\n            responsible for the management of the guest operating system (including updates and\n            security patches) and any additional application software or utilities that you install\n            on the compute resources. To use a new AMI for your AWS Batch jobs:</p>\n            <ol>\n               <li>\n                  <p>Create a new compute environment with the new AMI.</p>\n               </li>\n               <li>\n                  <p>Add the compute environment to an existing job queue.</p>\n               </li>\n               <li>\n                  <p>Remove the old compute environment from your job queue.</p>\n               </li>\n               <li>\n                  <p>Delete the old compute environment.</p>\n               </li>\n            </ol>\n         </note>\n      \n      "
+      "documentation": "\n         <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code> or\n            <code>UNMANAGED</code> compute environments.</p>\n         <p>In a managed compute environment, AWS Batch manages the capacity and instance types of\n         the compute resources within the environment. This is based on the compute resource\n         specification that you define or the <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html\">launch\n            template</a> that you specify when you create the compute environment. You can\n         choose to use Amazon EC2 On-Demand Instances or Spot Instances in your managed compute\n         environment. You can optionally set a maximum price so that Spot Instances only launch when\n         the Spot Instance price is below a specified percentage of the On-Demand price.</p>\n         <note>\n            <p>Multi-node parallel jobs are not supported on Spot Instances.</p>\n         </note>\n         <p>In an unmanaged compute environment, you can manage your own compute resources. This\n         provides more compute resource configuration options, such as using a custom AMI, but you\n         must ensure that your AMI meets the Amazon ECS container instance AMI specification. For more\n         information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html\">Container Instance AMIs</a> in the\n            <i>Amazon Elastic Container Service Developer Guide</i>. After you have created your unmanaged compute\n         environment, you can use the <a>DescribeComputeEnvironments</a> operation to\n         find the Amazon ECS cluster that is associated with it. Then, manually launch your container\n         instances into that Amazon ECS cluster. For more information, see <a href=\"http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html\">Launching an Amazon ECS Container Instance</a> in the\n            <i>Amazon Elastic Container Service Developer Guide</i>.</p>\n         <note>\n            <p>AWS Batch does not upgrade the AMIs in a compute environment after it is created (for\n            example, when a newer version of the Amazon ECS-optimized AMI is available). You are\n            responsible for the management of the guest operating system (including updates and\n            security patches) and any additional application software or utilities that you install\n            on the compute resources. To use a new AMI for your AWS Batch jobs:</p>\n            <ol>\n               <li>\n                  <p>Create a new compute environment with the new AMI.</p>\n               </li>\n               <li>\n                  <p>Add the compute environment to an existing job queue.</p>\n               </li>\n               <li>\n                  <p>Remove the old compute environment from your job queue.</p>\n               </li>\n               <li>\n                  <p>Delete the old compute environment.</p>\n               </li>\n            </ol>\n         </note>\n      \n      "
     },
     "DescribeComputeEnvironments": {
       "name": "DescribeComputeEnvironments",
@@ -340,8 +346,8 @@
                     "ENABLED",
                     "DISABLED"
                   ],
-                  "zonbookDocumentation": "\n         <simpara>The state of the compute environment. The valid values are <code>ENABLED</code> or\n            <code>DISABLED</code>. </simpara>\n         <para>If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place\n         jobs from an associated job queue on the compute resources within the environment. If the\n         compute environment is managed, then it can scale its instances out or in automatically,\n         based on job queue demand.</para>\n         <para>If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to\n         place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>\n         state continue to progress normally. Managed compute environments in the\n            <code>DISABLED</code> state do not scale out; however, they scale in to\n            <code>minvCpus</code> value once instances become idle.</para>\n      ",
-                  "documentation": "\n         <p>The state of the compute environment. The valid values are <code>ENABLED</code> or\n            <code>DISABLED</code>. </p>\n         <p>If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place\n         jobs from an associated job queue on the compute resources within the environment. If the\n         compute environment is managed, then it can scale its instances out or in automatically,\n         based on job queue demand.</p>\n         <p>If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to\n         place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>\n         state continue to progress normally. Managed compute environments in the\n            <code>DISABLED</code> state do not scale out; however, they scale in to\n            <code>minvCpus</code> value once instances become idle.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The state of the compute environment. The valid values are <code>ENABLED</code> or\n            <code>DISABLED</code>. </simpara>\n         <para>If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place\n         jobs from an associated job queue on the compute resources within the environment. If the\n         compute environment is managed, then it can scale its instances out or in automatically,\n         based on the job queue demand.</para>\n         <para>If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to\n         place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>\n         state continue to progress normally. Managed compute environments in the\n            <code>DISABLED</code> state do not scale out. However, they scale in to\n            <code>minvCpus</code> value after instances become idle.</para>\n      ",
+                  "documentation": "\n         <p>The state of the compute environment. The valid values are <code>ENABLED</code> or\n            <code>DISABLED</code>. </p>\n         <p>If the state is <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place\n         jobs from an associated job queue on the compute resources within the environment. If the\n         compute environment is managed, then it can scale its instances out or in automatically,\n         based on the job queue demand.</p>\n         <p>If the state is <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to\n         place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>\n         state continue to progress normally. Managed compute environments in the\n            <code>DISABLED</code> state do not scale out. However, they scale in to\n            <code>minvCpus</code> value after instances become idle.</p>\n      ",
                   "shape_name": "CEState"
                 },
                 "status": {
@@ -467,6 +473,12 @@
                         "shape_name": "String",
                         "documentation": null
                       }
+                    },
+                    "placementGroup": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The Amazon EC2 placement group to associate with your compute resources. If you intend to\n         submit multi-node parallel jobs to your compute environment, you should consider creating a\n         cluster placement group and associate it with your compute resources. This keeps your\n         multi-node parallel job on a logical grouping of instances within a single Availability\n         Zone with high network flow potential. For more information, see <ulink type=\"documentation\" url=\"AWSEC2/latest/UserGuide/placement-groups.html\">Placement\n            Groups</ulink> in the <emphasis>Amazon EC2 User Guide for Linux Instances</emphasis>.</para>\n      ",
+                      "documentation": "\n         <p>The Amazon EC2 placement group to associate with your compute resources. If you intend to\n         submit multi-node parallel jobs to your compute environment, you should consider creating a\n         cluster placement group and associate it with your compute resources. This keeps your\n         multi-node parallel job on a logical grouping of instances within a single Availability\n         Zone with high network flow potential. For more information, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html\">Placement\n            Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>\n      ",
+                      "shape_name": "String"
                     },
                     "bidPercentage": {
                       "type": "integer",
@@ -630,8 +642,8 @@
         "members": {
           "computeEnvironmentName": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The name of compute environment.</simpara>\n      ",
-            "documentation": "\n         <p>The name of compute environment.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The name of the compute environment.</simpara>\n      ",
+            "documentation": "\n         <p>The name of the compute environment.</p>\n      ",
             "shape_name": "String"
           },
           "computeEnvironmentArn": {
@@ -759,8 +771,8 @@
           },
           "priority": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <simpara>The priority of the job queue. Job queues with a higher priority (or a higher integer\n         value for the <code>priority</code> parameter) are evaluated first when associated with\n         same compute environment. Priority is determined in descending order, for example, a job\n         queue with a priority value of <code>10</code> is given scheduling preference over a job\n         queue with a priority value of <code>1</code>.</simpara>\n      ",
-            "documentation": "\n         <p>The priority of the job queue. Job queues with a higher priority (or a higher integer\n         value for the <code>priority</code> parameter) are evaluated first when associated with\n         same compute environment. Priority is determined in descending order, for example, a job\n         queue with a priority value of <code>10</code> is given scheduling preference over a job\n         queue with a priority value of <code>1</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The priority of the job queue. Job queues with a higher priority (or a higher integer\n         value for the <code>priority</code> parameter) are evaluated first when associated with the\n         same compute environment. Priority is determined in descending order, for example, a job\n         queue with a priority value of <code>10</code> is given scheduling preference over a job\n         queue with a priority value of <code>1</code>.</simpara>\n      ",
+            "documentation": "\n         <p>The priority of the job queue. Job queues with a higher priority (or a higher integer\n         value for the <code>priority</code> parameter) are evaluated first when associated with the\n         same compute environment. Priority is determined in descending order, for example, a job\n         queue with a priority value of <code>10</code> is given scheduling preference over a job\n         queue with a priority value of <code>1</code>.</p>\n      ",
             "required": true,
             "shape_name": "Integer"
           },
@@ -1050,8 +1062,8 @@
           },
           "priority": {
             "type": "integer",
-            "zonbookDocumentation": "\n         <simpara>The priority of the job queue. Job queues with a higher priority (or a higher integer\n         value for the <code>priority</code> parameter) are evaluated first when associated with\n         same compute environment. Priority is determined in descending order, for example, a job\n         queue with a priority value of <code>10</code> is given scheduling preference over a job\n         queue with a priority value of <code>1</code>.</simpara>\n      ",
-            "documentation": "\n         <p>The priority of the job queue. Job queues with a higher priority (or a higher integer\n         value for the <code>priority</code> parameter) are evaluated first when associated with\n         same compute environment. Priority is determined in descending order, for example, a job\n         queue with a priority value of <code>10</code> is given scheduling preference over a job\n         queue with a priority value of <code>1</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The priority of the job queue. Job queues with a higher priority (or a higher integer\n         value for the <code>priority</code> parameter) are evaluated first when associated with the\n         same compute environment. Priority is determined in descending order, for example, a job\n         queue with a priority value of <code>10</code> is given scheduling preference over a job\n         queue with a priority value of <code>1</code>.</simpara>\n      ",
+            "documentation": "\n         <p>The priority of the job queue. Job queues with a higher priority (or a higher integer\n         value for the <code>priority</code> parameter) are evaluated first when associated with the\n         same compute environment. Priority is determined in descending order, for example, a job\n         queue with a priority value of <code>10</code> is given scheduling preference over a job\n         queue with a priority value of <code>1</code>.</p>\n      ",
             "shape_name": "Integer"
           },
           "computeEnvironmentOrder": {
@@ -1211,7 +1223,8 @@
           "type": {
             "type": "string",
             "enum": [
-              "container"
+              "container",
+              "multinode"
             ],
             "zonbookDocumentation": "\n         <simpara>The type of job definition.</simpara>\n      ",
             "documentation": "\n         <p>The type of job definition.</p>\n      ",
@@ -1241,21 +1254,18 @@
                 "type": "string",
                 "zonbookDocumentation": "\n         <simpara>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <emphasis>repository-url</emphasis>/<emphasis>image</emphasis>:<emphasis>tag</emphasis>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>IMAGE</code> parameter of <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
                 "documentation": "\n         <p>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <i>repository-url</i>/<i>image</i>:<i>tag</i>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n         <ul>\n            <li>\n               <p>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </p>\n            </li>\n            <li>\n               <p>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</p>\n            </li>\n            <li>\n               <p>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</p>\n            </li>\n            <li>\n               <p>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>\n            </li>\n         </ul>\n      ",
-                "required": true,
                 "shape_name": "String"
               },
               "vcpus": {
                 "type": "integer",
                 "zonbookDocumentation": "\n         <simpara>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--cpu-shares</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</simpara>\n      ",
                 "documentation": "\n         <p>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</p>\n      ",
-                "required": true,
                 "shape_name": "Integer"
               },
               "memory": {
                 "type": "integer",
                 "zonbookDocumentation": "\n         <simpara>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--memory</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. You must specify at least 4 MiB of\n         memory for a job.</simpara>\n         <note>\n            <para>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <ulink url=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</ulink> in the\n               <emphasis>AWS Batch User Guide</emphasis>.</para>\n         </note>\n      ",
                 "documentation": "\n         <p>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. You must specify at least 4 MiB of\n         memory for a job.</p>\n         <note>\n            <p>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</a> in the\n               <i>AWS Batch User Guide</i>.</p>\n         </note>\n      ",
-                "required": true,
                 "shape_name": "Integer"
               },
               "command": {
@@ -1419,19 +1429,263 @@
                 "zonbookDocumentation": "\n         <simpara>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>--user</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
                 "documentation": "\n         <p>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>--user</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
                 "shape_name": "String"
+              },
+              "instanceType": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</para>\n      ",
+                "documentation": "\n         <p>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</p>\n      ",
+                "shape_name": "String"
               }
             },
-            "zonbookDocumentation": "\n         <simpara>An object with various properties specific for container-based jobs. This parameter\n         is required if the <code>type</code> parameter is <code>container</code>.</simpara>\n      ",
-            "documentation": "\n         <p>An object with various properties specific for container-based jobs. This parameter\n         is required if the <code>type</code> parameter is <code>container</code>.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>An object with various properties specific to single-node container-based jobs. If\n         the job definition's <code>type</code> parameter is <code>container</code>, then you must\n         specify either <code>containerProperties</code> or <code>nodeProperties</code>.</simpara>\n      ",
+            "documentation": "\n         <p>An object with various properties specific to single-node container-based jobs. If\n         the job definition's <code>type</code> parameter is <code>container</code>, then you must\n         specify either <code>containerProperties</code> or <code>nodeProperties</code>.</p>\n      ",
             "shape_name": "ContainerProperties"
+          },
+          "nodeProperties": {
+            "type": "structure",
+            "members": {
+              "numNodes": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <para>The number of nodes associated with a multi-node parallel job.</para>\n      ",
+                "documentation": "\n         <p>The number of nodes associated with a multi-node parallel job.</p>\n      ",
+                "required": true,
+                "shape_name": "Integer"
+              },
+              "mainNode": {
+                "type": "integer",
+                "zonbookDocumentation": "\n         <para>Specifies the node index for the main node of a multi-node parallel job.</para>\n      ",
+                "documentation": "\n         <p>Specifies the node index for the main node of a multi-node parallel job.</p>\n      ",
+                "required": true,
+                "shape_name": "Integer"
+              },
+              "nodeRangeProperties": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>A list of node ranges and their properties associated with a multi-node parallel job.</para>\n      ",
+                "documentation": "\n         <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>\n      ",
+                "required": true,
+                "shape_name": "NodeRangeProperties",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "targetNodes": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes\n         with index values of <code>0</code> through <code>3</code>. If the starting range value is\n         omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending\n         range value is omitted (<code>n:</code>), then the highest possible node index is used to\n         end the range.  Your accumulative node ranges must account for all nodes (0:n). You may\n         nest node ranges, for example 0:10 and 4:5, in which case the 4:5 range properties override\n         the 0:10 properties. </para>\n      ",
+                      "documentation": "\n         <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes\n         with index values of <code>0</code> through <code>3</code>. If the starting range value is\n         omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending\n         range value is omitted (<code>n:</code>), then the highest possible node index is used to\n         end the range.  Your accumulative node ranges must account for all nodes (0:n). You may\n         nest node ranges, for example 0:10 and 4:5, in which case the 4:5 range properties override\n         the 0:10 properties. </p>\n      ",
+                      "required": true,
+                      "shape_name": "String"
+                    },
+                    "container": {
+                      "type": "structure",
+                      "members": {
+                        "image": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <emphasis>repository-url</emphasis>/<emphasis>image</emphasis>:<emphasis>tag</emphasis>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>IMAGE</code> parameter of <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+                          "documentation": "\n         <p>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <i>repository-url</i>/<i>image</i>:<i>tag</i>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n         <ul>\n            <li>\n               <p>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </p>\n            </li>\n            <li>\n               <p>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</p>\n            </li>\n            <li>\n               <p>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</p>\n            </li>\n            <li>\n               <p>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>\n            </li>\n         </ul>\n      ",
+                          "shape_name": "String"
+                        },
+                        "vcpus": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--cpu-shares</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</simpara>\n      ",
+                          "documentation": "\n         <p>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</p>\n      ",
+                          "shape_name": "Integer"
+                        },
+                        "memory": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--memory</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. You must specify at least 4 MiB of\n         memory for a job.</simpara>\n         <note>\n            <para>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <ulink url=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</ulink> in the\n               <emphasis>AWS Batch User Guide</emphasis>.</para>\n         </note>\n      ",
+                          "documentation": "\n         <p>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. You must specify at least 4 MiB of\n         memory for a job.</p>\n         <note>\n            <p>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</a> in the\n               <i>AWS Batch User Guide</i>.</p>\n         </note>\n      ",
+                          "shape_name": "Integer"
+                        },
+                        "command": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>The command that is passed to the container. This parameter maps to\n         <code>Cmd</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>COMMAND</code> parameter to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. For\n         more information, see <ulink url=\"https://docs.docker.com/engine/reference/builder/#cmd\">https://docs.docker.com/engine/reference/builder/#cmd</ulink>.</simpara>\n      ",
+                          "documentation": "\n         <p>The command that is passed to the container. This parameter maps to\n         <code>Cmd</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. For\n         more information, see <a href=\"https://docs.docker.com/engine/reference/builder/#cmd\">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>\n      ",
+                          "shape_name": "StringList",
+                          "members": {
+                            "type": "string",
+                            "shape_name": "String",
+                            "documentation": null
+                          }
+                        },
+                        "jobRoleArn": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS\n         permissions.</simpara>\n      ",
+                          "documentation": "\n         <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS\n         permissions.</p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "volumes": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>A list of data volumes used in a job.</simpara>\n      ",
+                          "documentation": "\n         <p>A list of data volumes used in a job.</p>\n      ",
+                          "shape_name": "Volumes",
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "host": {
+                                "type": "structure",
+                                "members": {
+                                  "sourcePath": {
+                                    "type": "string",
+                                    "zonbookDocumentation": "\n         <simpara>The path on the host container instance that is presented to the container. If this\n         parameter is empty, then the Docker daemon has assigned a host path for you. If the\n            <code>host</code> parameter contains a <code>sourcePath</code> file location, then the\n         data volume persists at the specified location on the host container instance until you\n         delete it manually. If the <code>sourcePath</code> value does not exist on the host\n         container instance, the Docker daemon creates it. If the location does exist, the contents\n         of the source path folder are exported.</simpara>\n      ",
+                                    "documentation": "\n         <p>The path on the host container instance that is presented to the container. If this\n         parameter is empty, then the Docker daemon has assigned a host path for you. If the\n            <code>host</code> parameter contains a <code>sourcePath</code> file location, then the\n         data volume persists at the specified location on the host container instance until you\n         delete it manually. If the <code>sourcePath</code> value does not exist on the host\n         container instance, the Docker daemon creates it. If the location does exist, the contents\n         of the source path folder are exported.</p>\n      ",
+                                    "shape_name": "String"
+                                  }
+                                },
+                                "zonbookDocumentation": "\n         <simpara>The contents of the <code>host</code> parameter determine whether your data volume\n         persists on the host container instance and where it is stored. If the host parameter is\n         empty, then the Docker daemon assigns a host path for your data volume. However, the data\n         is not guaranteed to persist after the containers associated with it stop\n         running.</simpara>\n      ",
+                                "documentation": "\n         <p>The contents of the <code>host</code> parameter determine whether your data volume\n         persists on the host container instance and where it is stored. If the host parameter is\n         empty, then the Docker daemon assigns a host path for your data volume. However, the data\n         is not guaranteed to persist after the containers associated with it stop\n         running.</p>\n      ",
+                                "shape_name": "Host"
+                              },
+                              "name": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. This name is referenced in the\n            <code>sourceVolume</code> parameter of container definition\n         <code>mountPoints</code>.</simpara>\n      ",
+                                "documentation": "\n         <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. This name is referenced in the\n            <code>sourceVolume</code> parameter of container definition\n         <code>mountPoints</code>.</p>\n      ",
+                                "shape_name": "String"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <simpara>A data volume used in a job's container properties.</simpara>\n      ",
+                            "documentation": "\n         <p>A data volume used in a job's container properties.</p>\n      ",
+                            "shape_name": "Volume"
+                          }
+                        },
+                        "environment": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>The environment variables to pass to a container. This parameter maps to\n         <code>Env</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--env</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n         <important>\n            <simpara>We do not recommend using plaintext environment variables for sensitive\n            information, such as credential data.</simpara>\n         </important>\n         <note>\n            <simpara>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</simpara>\n         </note>\n      ",
+                          "documentation": "\n         <p>The environment variables to pass to a container. This parameter maps to\n         <code>Env</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--env</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n         <important>\n            <p>We do not recommend using plaintext environment variables for sensitive\n            information, such as credential data.</p>\n         </important>\n         <note>\n            <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</p>\n         </note>\n      ",
+                          "shape_name": "EnvironmentVariables",
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "name": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The name of the key-value pair. For environment variables, this is the name of the\n         environment variable.</simpara>\n      ",
+                                "documentation": "\n         <p>The name of the key-value pair. For environment variables, this is the name of the\n         environment variable.</p>\n      ",
+                                "shape_name": "String"
+                              },
+                              "value": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The value of the key-value pair. For environment variables, this is the value of the\n         environment variable.</simpara>\n      ",
+                                "documentation": "\n         <p>The value of the key-value pair. For environment variables, this is the value of the\n         environment variable.</p>\n      ",
+                                "shape_name": "String"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <simpara>A key-value pair object.</simpara>\n      ",
+                            "documentation": "\n         <p>A key-value pair object.</p>\n      ",
+                            "shape_name": "KeyValuePair"
+                          }
+                        },
+                        "mountPoints": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>The mount points for data volumes in your container. This parameter maps to\n         <code>Volumes</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--volume</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                          "documentation": "\n         <p>The mount points for data volumes in your container. This parameter maps to\n         <code>Volumes</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--volume</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                          "shape_name": "MountPoints",
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "containerPath": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The path on the container at which to mount the host volume.</simpara>\n      ",
+                                "documentation": "\n         <p>The path on the container at which to mount the host volume.</p>\n      ",
+                                "shape_name": "String"
+                              },
+                              "readOnly": {
+                                "type": "boolean",
+                                "zonbookDocumentation": "\n         <simpara>If this value is <code>true</code>, the container has read-only access to the volume;\n         otherwise, the container can write to the volume. The\n         default value is <code>false</code>.</simpara>\n      ",
+                                "documentation": "\n         <p>If this value is <code>true</code>, the container has read-only access to the volume;\n         otherwise, the container can write to the volume. The\n         default value is <code>false</code>.</p>\n      ",
+                                "shape_name": "Boolean"
+                              },
+                              "sourceVolume": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The name of the volume to mount.</simpara>\n      ",
+                                "documentation": "\n         <p>The name of the volume to mount.</p>\n      ",
+                                "shape_name": "String"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <simpara>Details on a Docker volume mount point that is used in a job's container\n         properties.</simpara>\n      ",
+                            "documentation": "\n         <p>Details on a Docker volume mount point that is used in a job's container\n         properties.</p>\n      ",
+                            "shape_name": "MountPoint"
+                          }
+                        },
+                        "readonlyRootFilesystem": {
+                          "type": "boolean",
+                          "zonbookDocumentation": "\n         <simpara>When this parameter is true, the container is given read-only access to its root\n         file system. This parameter maps to <code>ReadonlyRootfs</code> in the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>--read-only</code> option to <code>docker run</code>.</simpara>\n      ",
+                          "documentation": "\n         <p>When this parameter is true, the container is given read-only access to its root\n         file system. This parameter maps to <code>ReadonlyRootfs</code> in the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>--read-only</code> option to <code>docker run</code>.</p>\n      ",
+                          "shape_name": "Boolean"
+                        },
+                        "privileged": {
+                          "type": "boolean",
+                          "zonbookDocumentation": "\n         <simpara>When this parameter is true, the container is given elevated privileges on the host\n         container instance (similar to the <code>root</code> user). This parameter maps to\n         <code>Privileged</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--privileged</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                          "documentation": "\n         <p>When this parameter is true, the container is given elevated privileges on the host\n         container instance (similar to the <code>root</code> user). This parameter maps to\n         <code>Privileged</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--privileged</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                          "shape_name": "Boolean"
+                        },
+                        "ulimits": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>A list of <code>ulimits</code> to set in the container. This parameter maps to\n            <code>Ulimits</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--ulimit</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>.</simpara>\n      ",
+                          "documentation": "\n         <p>A list of <code>ulimits</code> to set in the container. This parameter maps to\n            <code>Ulimits</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--ulimit</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>.</p>\n      ",
+                          "shape_name": "Ulimits",
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "hardLimit": {
+                                "type": "integer",
+                                "zonbookDocumentation": "\n         <simpara>The hard limit for the <code>ulimit</code> type.</simpara>\n      ",
+                                "documentation": "\n         <p>The hard limit for the <code>ulimit</code> type.</p>\n      ",
+                                "required": true,
+                                "shape_name": "Integer"
+                              },
+                              "name": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The <code>type</code> of the <code>ulimit</code>.</simpara>\n      ",
+                                "documentation": "\n         <p>The <code>type</code> of the <code>ulimit</code>.</p>\n      ",
+                                "required": true,
+                                "shape_name": "String"
+                              },
+                              "softLimit": {
+                                "type": "integer",
+                                "zonbookDocumentation": "\n         <simpara>The soft limit for the <code>ulimit</code> type.</simpara>\n      ",
+                                "documentation": "\n         <p>The soft limit for the <code>ulimit</code> type.</p>\n      ",
+                                "required": true,
+                                "shape_name": "Integer"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <simpara>The <code>ulimit</code> settings to pass to the container.</simpara>\n      ",
+                            "documentation": "\n         <p>The <code>ulimit</code> settings to pass to the container.</p>\n      ",
+                            "shape_name": "Ulimit"
+                          }
+                        },
+                        "user": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <simpara>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>--user</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                          "documentation": "\n         <p>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>--user</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "instanceType": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</para>\n      ",
+                          "documentation": "\n         <p>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</p>\n      ",
+                          "shape_name": "String"
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>The container details for the node range.</para>\n      ",
+                      "documentation": "\n         <p>The container details for the node range.</p>\n      ",
+                      "shape_name": "ContainerProperties"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>An object representing the properties of the node range for a multi-node parallel\n         job.</para>\n      ",
+                  "documentation": "\n         <p>An object representing the properties of the node range for a multi-node parallel\n         job.</p>\n      ",
+                  "shape_name": "NodeRangeProperty"
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>An object with various properties specific to multi-node parallel jobs. If you specify\n         node properties for a job, it becomes a multi-node parallel job. For more information, see\n            <ulink url=\"http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html\">Multi-node Parallel\n            Jobs</ulink> in the <emphasis>AWS Batch User Guide</emphasis>. If the job definition's\n            <code>type</code> parameter is <code>container</code>, then you must specify either\n            <code>containerProperties</code> or <code>nodeProperties</code>.</para>\n      ",
+            "documentation": "\n         <p>An object with various properties specific to multi-node parallel jobs. If you specify\n         node properties for a job, it becomes a multi-node parallel job. For more information, see\n            <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html\">Multi-node Parallel\n            Jobs</a> in the <i>AWS Batch User Guide</i>. If the job definition's\n            <code>type</code> parameter is <code>container</code>, then you must specify either\n            <code>containerProperties</code> or <code>nodeProperties</code>.</p>\n      ",
+            "shape_name": "NodeProperties"
           },
           "retryStrategy": {
             "type": "structure",
             "members": {
               "attempts": {
                 "type": "integer",
-                "zonbookDocumentation": "\n         <simpara>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many\n         times.</simpara>\n      ",
-                "documentation": "\n         <p>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many\n         times.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried on failure the same number of attempts as the value.</simpara>\n      ",
+                "documentation": "\n         <p>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried on failure the same number of attempts as the value.</p>\n      ",
                 "shape_name": "Integer"
               }
             },
@@ -1629,8 +1883,8 @@
                   "members": {
                     "attempts": {
                       "type": "integer",
-                      "zonbookDocumentation": "\n         <simpara>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many\n         times.</simpara>\n      ",
-                      "documentation": "\n         <p>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many\n         times.</p>\n      ",
+                      "zonbookDocumentation": "\n         <simpara>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried on failure the same number of attempts as the value.</simpara>\n      ",
+                      "documentation": "\n         <p>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried on failure the same number of attempts as the value.</p>\n      ",
                       "shape_name": "Integer"
                     }
                   },
@@ -1645,21 +1899,18 @@
                       "type": "string",
                       "zonbookDocumentation": "\n         <simpara>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <emphasis>repository-url</emphasis>/<emphasis>image</emphasis>:<emphasis>tag</emphasis>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>IMAGE</code> parameter of <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
                       "documentation": "\n         <p>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <i>repository-url</i>/<i>image</i>:<i>tag</i>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n         <ul>\n            <li>\n               <p>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </p>\n            </li>\n            <li>\n               <p>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</p>\n            </li>\n            <li>\n               <p>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</p>\n            </li>\n            <li>\n               <p>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>\n            </li>\n         </ul>\n      ",
-                      "required": true,
                       "shape_name": "String"
                     },
                     "vcpus": {
                       "type": "integer",
                       "zonbookDocumentation": "\n         <simpara>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--cpu-shares</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</simpara>\n      ",
                       "documentation": "\n         <p>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</p>\n      ",
-                      "required": true,
                       "shape_name": "Integer"
                     },
                     "memory": {
                       "type": "integer",
                       "zonbookDocumentation": "\n         <simpara>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--memory</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. You must specify at least 4 MiB of\n         memory for a job.</simpara>\n         <note>\n            <para>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <ulink url=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</ulink> in the\n               <emphasis>AWS Batch User Guide</emphasis>.</para>\n         </note>\n      ",
                       "documentation": "\n         <p>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. You must specify at least 4 MiB of\n         memory for a job.</p>\n         <note>\n            <p>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</a> in the\n               <i>AWS Batch User Guide</i>.</p>\n         </note>\n      ",
-                      "required": true,
                       "shape_name": "Integer"
                     },
                     "command": {
@@ -1823,6 +2074,12 @@
                       "zonbookDocumentation": "\n         <simpara>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>--user</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
                       "documentation": "\n         <p>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>--user</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
                       "shape_name": "String"
+                    },
+                    "instanceType": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</para>\n      ",
+                      "documentation": "\n         <p>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</p>\n      ",
+                      "shape_name": "String"
                     }
                   },
                   "zonbookDocumentation": "\n         <simpara>An object with various properties specific to container-based jobs. </simpara>\n      ",
@@ -1842,6 +2099,244 @@
                   "zonbookDocumentation": "\n         <para>The timeout configuration for jobs that are submitted with this job definition. You can\n         specify a timeout duration after which AWS Batch terminates your jobs if they have not\n         finished.</para>\n      ",
                   "documentation": "\n         <p>The timeout configuration for jobs that are submitted with this job definition. You can\n         specify a timeout duration after which AWS Batch terminates your jobs if they have not\n         finished.</p>\n      ",
                   "shape_name": "JobTimeout"
+                },
+                "nodeProperties": {
+                  "type": "structure",
+                  "members": {
+                    "numNodes": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>The number of nodes associated with a multi-node parallel job.</para>\n      ",
+                      "documentation": "\n         <p>The number of nodes associated with a multi-node parallel job.</p>\n      ",
+                      "required": true,
+                      "shape_name": "Integer"
+                    },
+                    "mainNode": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>Specifies the node index for the main node of a multi-node parallel job.</para>\n      ",
+                      "documentation": "\n         <p>Specifies the node index for the main node of a multi-node parallel job.</p>\n      ",
+                      "required": true,
+                      "shape_name": "Integer"
+                    },
+                    "nodeRangeProperties": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <para>A list of node ranges and their properties associated with a multi-node parallel job.</para>\n      ",
+                      "documentation": "\n         <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>\n      ",
+                      "required": true,
+                      "shape_name": "NodeRangeProperties",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "targetNodes": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <para>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes\n         with index values of <code>0</code> through <code>3</code>. If the starting range value is\n         omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending\n         range value is omitted (<code>n:</code>), then the highest possible node index is used to\n         end the range.  Your accumulative node ranges must account for all nodes (0:n). You may\n         nest node ranges, for example 0:10 and 4:5, in which case the 4:5 range properties override\n         the 0:10 properties. </para>\n      ",
+                            "documentation": "\n         <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes\n         with index values of <code>0</code> through <code>3</code>. If the starting range value is\n         omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending\n         range value is omitted (<code>n:</code>), then the highest possible node index is used to\n         end the range.  Your accumulative node ranges must account for all nodes (0:n). You may\n         nest node ranges, for example 0:10 and 4:5, in which case the 4:5 range properties override\n         the 0:10 properties. </p>\n      ",
+                            "required": true,
+                            "shape_name": "String"
+                          },
+                          "container": {
+                            "type": "structure",
+                            "members": {
+                              "image": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <emphasis>repository-url</emphasis>/<emphasis>image</emphasis>:<emphasis>tag</emphasis>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>IMAGE</code> parameter of <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+                                "documentation": "\n         <p>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <i>repository-url</i>/<i>image</i>:<i>tag</i>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n         <ul>\n            <li>\n               <p>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </p>\n            </li>\n            <li>\n               <p>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</p>\n            </li>\n            <li>\n               <p>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</p>\n            </li>\n            <li>\n               <p>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>\n            </li>\n         </ul>\n      ",
+                                "shape_name": "String"
+                              },
+                              "vcpus": {
+                                "type": "integer",
+                                "zonbookDocumentation": "\n         <simpara>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--cpu-shares</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</simpara>\n      ",
+                                "documentation": "\n         <p>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</p>\n      ",
+                                "shape_name": "Integer"
+                              },
+                              "memory": {
+                                "type": "integer",
+                                "zonbookDocumentation": "\n         <simpara>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--memory</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. You must specify at least 4 MiB of\n         memory for a job.</simpara>\n         <note>\n            <para>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <ulink url=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</ulink> in the\n               <emphasis>AWS Batch User Guide</emphasis>.</para>\n         </note>\n      ",
+                                "documentation": "\n         <p>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. You must specify at least 4 MiB of\n         memory for a job.</p>\n         <note>\n            <p>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</a> in the\n               <i>AWS Batch User Guide</i>.</p>\n         </note>\n      ",
+                                "shape_name": "Integer"
+                              },
+                              "command": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>The command that is passed to the container. This parameter maps to\n         <code>Cmd</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>COMMAND</code> parameter to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. For\n         more information, see <ulink url=\"https://docs.docker.com/engine/reference/builder/#cmd\">https://docs.docker.com/engine/reference/builder/#cmd</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>The command that is passed to the container. This parameter maps to\n         <code>Cmd</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. For\n         more information, see <a href=\"https://docs.docker.com/engine/reference/builder/#cmd\">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>\n      ",
+                                "shape_name": "StringList",
+                                "members": {
+                                  "type": "string",
+                                  "shape_name": "String",
+                                  "documentation": null
+                                }
+                              },
+                              "jobRoleArn": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS\n         permissions.</simpara>\n      ",
+                                "documentation": "\n         <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS\n         permissions.</p>\n      ",
+                                "shape_name": "String"
+                              },
+                              "volumes": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>A list of data volumes used in a job.</simpara>\n      ",
+                                "documentation": "\n         <p>A list of data volumes used in a job.</p>\n      ",
+                                "shape_name": "Volumes",
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "host": {
+                                      "type": "structure",
+                                      "members": {
+                                        "sourcePath": {
+                                          "type": "string",
+                                          "zonbookDocumentation": "\n         <simpara>The path on the host container instance that is presented to the container. If this\n         parameter is empty, then the Docker daemon has assigned a host path for you. If the\n            <code>host</code> parameter contains a <code>sourcePath</code> file location, then the\n         data volume persists at the specified location on the host container instance until you\n         delete it manually. If the <code>sourcePath</code> value does not exist on the host\n         container instance, the Docker daemon creates it. If the location does exist, the contents\n         of the source path folder are exported.</simpara>\n      ",
+                                          "documentation": "\n         <p>The path on the host container instance that is presented to the container. If this\n         parameter is empty, then the Docker daemon has assigned a host path for you. If the\n            <code>host</code> parameter contains a <code>sourcePath</code> file location, then the\n         data volume persists at the specified location on the host container instance until you\n         delete it manually. If the <code>sourcePath</code> value does not exist on the host\n         container instance, the Docker daemon creates it. If the location does exist, the contents\n         of the source path folder are exported.</p>\n      ",
+                                          "shape_name": "String"
+                                        }
+                                      },
+                                      "zonbookDocumentation": "\n         <simpara>The contents of the <code>host</code> parameter determine whether your data volume\n         persists on the host container instance and where it is stored. If the host parameter is\n         empty, then the Docker daemon assigns a host path for your data volume. However, the data\n         is not guaranteed to persist after the containers associated with it stop\n         running.</simpara>\n      ",
+                                      "documentation": "\n         <p>The contents of the <code>host</code> parameter determine whether your data volume\n         persists on the host container instance and where it is stored. If the host parameter is\n         empty, then the Docker daemon assigns a host path for your data volume. However, the data\n         is not guaranteed to persist after the containers associated with it stop\n         running.</p>\n      ",
+                                      "shape_name": "Host"
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. This name is referenced in the\n            <code>sourceVolume</code> parameter of container definition\n         <code>mountPoints</code>.</simpara>\n      ",
+                                      "documentation": "\n         <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. This name is referenced in the\n            <code>sourceVolume</code> parameter of container definition\n         <code>mountPoints</code>.</p>\n      ",
+                                      "shape_name": "String"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n         <simpara>A data volume used in a job's container properties.</simpara>\n      ",
+                                  "documentation": "\n         <p>A data volume used in a job's container properties.</p>\n      ",
+                                  "shape_name": "Volume"
+                                }
+                              },
+                              "environment": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>The environment variables to pass to a container. This parameter maps to\n         <code>Env</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--env</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n         <important>\n            <simpara>We do not recommend using plaintext environment variables for sensitive\n            information, such as credential data.</simpara>\n         </important>\n         <note>\n            <simpara>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</simpara>\n         </note>\n      ",
+                                "documentation": "\n         <p>The environment variables to pass to a container. This parameter maps to\n         <code>Env</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--env</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n         <important>\n            <p>We do not recommend using plaintext environment variables for sensitive\n            information, such as credential data.</p>\n         </important>\n         <note>\n            <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</p>\n         </note>\n      ",
+                                "shape_name": "EnvironmentVariables",
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "name": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The name of the key-value pair. For environment variables, this is the name of the\n         environment variable.</simpara>\n      ",
+                                      "documentation": "\n         <p>The name of the key-value pair. For environment variables, this is the name of the\n         environment variable.</p>\n      ",
+                                      "shape_name": "String"
+                                    },
+                                    "value": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The value of the key-value pair. For environment variables, this is the value of the\n         environment variable.</simpara>\n      ",
+                                      "documentation": "\n         <p>The value of the key-value pair. For environment variables, this is the value of the\n         environment variable.</p>\n      ",
+                                      "shape_name": "String"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n         <simpara>A key-value pair object.</simpara>\n      ",
+                                  "documentation": "\n         <p>A key-value pair object.</p>\n      ",
+                                  "shape_name": "KeyValuePair"
+                                }
+                              },
+                              "mountPoints": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>The mount points for data volumes in your container. This parameter maps to\n         <code>Volumes</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--volume</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>The mount points for data volumes in your container. This parameter maps to\n         <code>Volumes</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--volume</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                                "shape_name": "MountPoints",
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "containerPath": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The path on the container at which to mount the host volume.</simpara>\n      ",
+                                      "documentation": "\n         <p>The path on the container at which to mount the host volume.</p>\n      ",
+                                      "shape_name": "String"
+                                    },
+                                    "readOnly": {
+                                      "type": "boolean",
+                                      "zonbookDocumentation": "\n         <simpara>If this value is <code>true</code>, the container has read-only access to the volume;\n         otherwise, the container can write to the volume. The\n         default value is <code>false</code>.</simpara>\n      ",
+                                      "documentation": "\n         <p>If this value is <code>true</code>, the container has read-only access to the volume;\n         otherwise, the container can write to the volume. The\n         default value is <code>false</code>.</p>\n      ",
+                                      "shape_name": "Boolean"
+                                    },
+                                    "sourceVolume": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The name of the volume to mount.</simpara>\n      ",
+                                      "documentation": "\n         <p>The name of the volume to mount.</p>\n      ",
+                                      "shape_name": "String"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n         <simpara>Details on a Docker volume mount point that is used in a job's container\n         properties.</simpara>\n      ",
+                                  "documentation": "\n         <p>Details on a Docker volume mount point that is used in a job's container\n         properties.</p>\n      ",
+                                  "shape_name": "MountPoint"
+                                }
+                              },
+                              "readonlyRootFilesystem": {
+                                "type": "boolean",
+                                "zonbookDocumentation": "\n         <simpara>When this parameter is true, the container is given read-only access to its root\n         file system. This parameter maps to <code>ReadonlyRootfs</code> in the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>--read-only</code> option to <code>docker run</code>.</simpara>\n      ",
+                                "documentation": "\n         <p>When this parameter is true, the container is given read-only access to its root\n         file system. This parameter maps to <code>ReadonlyRootfs</code> in the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>--read-only</code> option to <code>docker run</code>.</p>\n      ",
+                                "shape_name": "Boolean"
+                              },
+                              "privileged": {
+                                "type": "boolean",
+                                "zonbookDocumentation": "\n         <simpara>When this parameter is true, the container is given elevated privileges on the host\n         container instance (similar to the <code>root</code> user). This parameter maps to\n         <code>Privileged</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--privileged</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>When this parameter is true, the container is given elevated privileges on the host\n         container instance (similar to the <code>root</code> user). This parameter maps to\n         <code>Privileged</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--privileged</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                                "shape_name": "Boolean"
+                              },
+                              "ulimits": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>A list of <code>ulimits</code> to set in the container. This parameter maps to\n            <code>Ulimits</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--ulimit</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>A list of <code>ulimits</code> to set in the container. This parameter maps to\n            <code>Ulimits</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--ulimit</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>.</p>\n      ",
+                                "shape_name": "Ulimits",
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "hardLimit": {
+                                      "type": "integer",
+                                      "zonbookDocumentation": "\n         <simpara>The hard limit for the <code>ulimit</code> type.</simpara>\n      ",
+                                      "documentation": "\n         <p>The hard limit for the <code>ulimit</code> type.</p>\n      ",
+                                      "required": true,
+                                      "shape_name": "Integer"
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The <code>type</code> of the <code>ulimit</code>.</simpara>\n      ",
+                                      "documentation": "\n         <p>The <code>type</code> of the <code>ulimit</code>.</p>\n      ",
+                                      "required": true,
+                                      "shape_name": "String"
+                                    },
+                                    "softLimit": {
+                                      "type": "integer",
+                                      "zonbookDocumentation": "\n         <simpara>The soft limit for the <code>ulimit</code> type.</simpara>\n      ",
+                                      "documentation": "\n         <p>The soft limit for the <code>ulimit</code> type.</p>\n      ",
+                                      "required": true,
+                                      "shape_name": "Integer"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n         <simpara>The <code>ulimit</code> settings to pass to the container.</simpara>\n      ",
+                                  "documentation": "\n         <p>The <code>ulimit</code> settings to pass to the container.</p>\n      ",
+                                  "shape_name": "Ulimit"
+                                }
+                              },
+                              "user": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>--user</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>--user</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                                "shape_name": "String"
+                              },
+                              "instanceType": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <para>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</para>\n      ",
+                                "documentation": "\n         <p>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</p>\n      ",
+                                "shape_name": "String"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <para>The container details for the node range.</para>\n      ",
+                            "documentation": "\n         <p>The container details for the node range.</p>\n      ",
+                            "shape_name": "ContainerProperties"
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <para>An object representing the properties of the node range for a multi-node parallel\n         job.</para>\n      ",
+                        "documentation": "\n         <p>An object representing the properties of the node range for a multi-node parallel\n         job.</p>\n      ",
+                        "shape_name": "NodeRangeProperty"
+                      }
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>An object with various properties specific to multi-node parallel jobs.</para>\n      ",
+                  "documentation": "\n         <p>An object with various properties specific to multi-node parallel jobs.</p>\n      ",
+                  "shape_name": "NodeProperties"
                 }
               },
               "zonbookDocumentation": "\n         <simpara>An object representing an AWS Batch job definition.</simpara>\n      ",
@@ -1985,8 +2480,8 @@
           },
           "dependsOn": {
             "type": "list",
-            "zonbookDocumentation": "\n         <simpara>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You\n         can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array\n         jobs so that each child array job completes sequentially, starting at index 0. You can also\n         specify an <code>N_TO_N</code> type dependency with a job ID for array jobs so that each\n         index child of this job must wait for the corresponding index child of each dependency to\n         complete before it can begin.</simpara>\n      ",
-            "documentation": "\n         <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You\n         can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array\n         jobs so that each child array job completes sequentially, starting at index 0. You can also\n         specify an <code>N_TO_N</code> type dependency with a job ID for array jobs so that each\n         index child of this job must wait for the corresponding index child of each dependency to\n         complete before it can begin.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You\n         can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array\n         jobs so that each child array job completes sequentially, starting at index 0. You can also\n         specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case,\n         each index child of this job must wait for the corresponding index child of each dependency\n         to complete before it can begin.</simpara>\n      ",
+            "documentation": "\n         <p>A list of dependencies for the job. A job can depend upon a maximum of 20 jobs. You\n         can specify a <code>SEQUENTIAL</code> type dependency without specifying a job ID for array\n         jobs so that each child array job completes sequentially, starting at index 0. You can also\n         specify an <code>N_TO_N</code> type dependency with a job ID for array jobs. In that case,\n         each index child of this job must wait for the corresponding index child of each dependency\n         to complete before it can begin.</p>\n      ",
             "shape_name": "JobDependencyList",
             "members": {
               "type": "structure",
@@ -2062,6 +2557,12 @@
                   "documentation": null
                 }
               },
+              "instanceType": {
+                "type": "string",
+                "zonbookDocumentation": "\n         <para>The instance type to use for a multi-node parallel job. This parameter is not valid for\n         single-node container jobs.</para>\n      ",
+                "documentation": "\n         <p>The instance type to use for a multi-node parallel job. This parameter is not valid for\n         single-node container jobs.</p>\n      ",
+                "shape_name": "String"
+              },
               "environment": {
                 "type": "list",
                 "zonbookDocumentation": "\n         <simpara>The environment variables to send to the container. You can add new environment\n         variables, which are added to the container at launch, or you can override the existing\n         environment variables from the Docker image or the job definition.</simpara>\n         <note>\n            <simpara>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</simpara>\n         </note>\n      ",
@@ -2093,13 +2594,105 @@
             "documentation": "\n         <p>A list of container overrides in JSON format that specify the name of a container in\n         the specified job definition and the overrides it should receive. You can override the\n         default command for a container (that is specified in the job definition or the Docker\n         image) with a <code>command</code> override. You can also override existing environment\n         variables (that are specified in the job definition or Docker image) on a container or add\n         new environment variables to it with an <code>environment</code> override.</p>\n      ",
             "shape_name": "ContainerOverrides"
           },
+          "nodeOverrides": {
+            "type": "structure",
+            "members": {
+              "nodePropertyOverrides": {
+                "type": "list",
+                "zonbookDocumentation": "\n         <para>The node property overrides for the job.</para>\n      ",
+                "documentation": "\n         <p>The node property overrides for the job.</p>\n      ",
+                "shape_name": "NodePropertyOverrides",
+                "members": {
+                  "type": "structure",
+                  "members": {
+                    "targetNodes": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The range of nodes, using node index values, with which to override. A range of\n            <code>0:3</code> indicates nodes with index values of <code>0</code> through\n            <code>3</code>. If the starting range value is omitted (<code>:n</code>), then\n            <code>0</code> is used to start the range. If the ending range value is omitted\n            (<code>n:</code>), then the highest possible node index is used to end the range.</para>\n      ",
+                      "documentation": "\n         <p>The range of nodes, using node index values, with which to override. A range of\n            <code>0:3</code> indicates nodes with index values of <code>0</code> through\n            <code>3</code>. If the starting range value is omitted (<code>:n</code>), then\n            <code>0</code> is used to start the range. If the ending range value is omitted\n            (<code>n:</code>), then the highest possible node index is used to end the range.</p>\n      ",
+                      "required": true,
+                      "shape_name": "String"
+                    },
+                    "containerOverrides": {
+                      "type": "structure",
+                      "members": {
+                        "vcpus": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The number of vCPUs to reserve for the container. This value overrides the value set in the job definition.</simpara>\n      ",
+                          "documentation": "\n         <p>The number of vCPUs to reserve for the container. This value overrides the value set in the job definition.</p>\n      ",
+                          "shape_name": "Integer"
+                        },
+                        "memory": {
+                          "type": "integer",
+                          "zonbookDocumentation": "\n         <simpara>The number of MiB of memory reserved for the job. This value overrides the value set in the job definition.</simpara>\n      ",
+                          "documentation": "\n         <p>The number of MiB of memory reserved for the job. This value overrides the value set in the job definition.</p>\n      ",
+                          "shape_name": "Integer"
+                        },
+                        "command": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>The command to send to the container that overrides the default command from the\n         Docker image or the job definition.</simpara>\n      ",
+                          "documentation": "\n         <p>The command to send to the container that overrides the default command from the\n         Docker image or the job definition.</p>\n      ",
+                          "shape_name": "StringList",
+                          "members": {
+                            "type": "string",
+                            "shape_name": "String",
+                            "documentation": null
+                          }
+                        },
+                        "instanceType": {
+                          "type": "string",
+                          "zonbookDocumentation": "\n         <para>The instance type to use for a multi-node parallel job. This parameter is not valid for\n         single-node container jobs.</para>\n      ",
+                          "documentation": "\n         <p>The instance type to use for a multi-node parallel job. This parameter is not valid for\n         single-node container jobs.</p>\n      ",
+                          "shape_name": "String"
+                        },
+                        "environment": {
+                          "type": "list",
+                          "zonbookDocumentation": "\n         <simpara>The environment variables to send to the container. You can add new environment\n         variables, which are added to the container at launch, or you can override the existing\n         environment variables from the Docker image or the job definition.</simpara>\n         <note>\n            <simpara>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</simpara>\n         </note>\n      ",
+                          "documentation": "\n         <p>The environment variables to send to the container. You can add new environment\n         variables, which are added to the container at launch, or you can override the existing\n         environment variables from the Docker image or the job definition.</p>\n         <note>\n            <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</p>\n         </note>\n      ",
+                          "shape_name": "EnvironmentVariables",
+                          "members": {
+                            "type": "structure",
+                            "members": {
+                              "name": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The name of the key-value pair. For environment variables, this is the name of the\n         environment variable.</simpara>\n      ",
+                                "documentation": "\n         <p>The name of the key-value pair. For environment variables, this is the name of the\n         environment variable.</p>\n      ",
+                                "shape_name": "String"
+                              },
+                              "value": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The value of the key-value pair. For environment variables, this is the value of the\n         environment variable.</simpara>\n      ",
+                                "documentation": "\n         <p>The value of the key-value pair. For environment variables, this is the value of the\n         environment variable.</p>\n      ",
+                                "shape_name": "String"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <simpara>A key-value pair object.</simpara>\n      ",
+                            "documentation": "\n         <p>A key-value pair object.</p>\n      ",
+                            "shape_name": "KeyValuePair"
+                          }
+                        }
+                      },
+                      "zonbookDocumentation": "\n         <para>The overrides that should be sent to a node range.</para>\n      ",
+                      "documentation": "\n         <p>The overrides that should be sent to a node range.</p>\n      ",
+                      "shape_name": "ContainerOverrides"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>Object representing any node overrides to a job definition that is used in a <xref linkend=\"SubmitJob\"/> API operation.</para>\n      ",
+                  "documentation": "\n         <p>Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a> API operation.</p>\n      ",
+                  "shape_name": "NodePropertyOverride"
+                }
+              }
+            },
+            "zonbookDocumentation": "\n         <para>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</para>\n      ",
+            "documentation": "\n         <p>A list of node overrides in JSON format that specify the node range to target and the container overrides for that node range.</p>\n      ",
+            "shape_name": "NodeOverrides"
+          },
           "retryStrategy": {
             "type": "structure",
             "members": {
               "attempts": {
                 "type": "integer",
-                "zonbookDocumentation": "\n         <simpara>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many\n         times.</simpara>\n      ",
-                "documentation": "\n         <p>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many\n         times.</p>\n      ",
+                "zonbookDocumentation": "\n         <simpara>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried on failure the same number of attempts as the value.</simpara>\n      ",
+                "documentation": "\n         <p>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried on failure the same number of attempts as the value.</p>\n      ",
                 "shape_name": "Integer"
               }
             },
@@ -2187,14 +2780,20 @@
         "members": {
           "jobQueue": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify\n         either a job queue or an array job ID.</simpara>\n      ",
-            "documentation": "\n         <p>The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs. You must specify\n         either a job queue or an array job ID.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.</simpara>\n      ",
+            "documentation": "\n         <p>The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.</p>\n      ",
             "shape_name": "String"
           },
           "arrayJobId": {
             "type": "string",
-            "zonbookDocumentation": "\n         <simpara>The job ID for an array job. Specifying an array job ID with this parameter lists all\n         child jobs from within the specified array. You must specify either a job queue or an array\n         job ID.</simpara>\n      ",
-            "documentation": "\n         <p>The job ID for an array job. Specifying an array job ID with this parameter lists all\n         child jobs from within the specified array. You must specify either a job queue or an array\n         job ID.</p>\n      ",
+            "zonbookDocumentation": "\n         <simpara>The job ID for an array job. Specifying an array job ID with this parameter lists all\n         child jobs from within the specified array.</simpara>\n      ",
+            "documentation": "\n         <p>The job ID for an array job. Specifying an array job ID with this parameter lists all\n         child jobs from within the specified array.</p>\n      ",
+            "shape_name": "String"
+          },
+          "multiNodeJobId": {
+            "type": "string",
+            "zonbookDocumentation": "\n         <simpara>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID\n         with this parameter lists all nodes that are associated with the specified job.</simpara>\n      ",
+            "documentation": "\n         <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID\n         with this parameter lists all nodes that are associated with the specified job.</p>\n      ",
             "shape_name": "String"
           },
           "jobStatus": {
@@ -2256,8 +2855,8 @@
                 },
                 "createdAt": {
                   "type": "long",
-                  "zonbookDocumentation": "\n         <simpara>The Unix time stamp for when the job was created. For non-array jobs and parent array\n         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <xref linkend=\"SubmitJob\"/> was called). For array child jobs, this is when the child job was\n         spawned by its parent and entered the <code>PENDING</code> state.</simpara>\n      ",
-                  "documentation": "\n         <p>The Unix time stamp for when the job was created. For non-array jobs and parent array\n         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is when the child job was\n         spawned by its parent and entered the <code>PENDING</code> state.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The Unix timestamp for when the job was created. For non-array jobs and parent array\n         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <xref linkend=\"SubmitJob\"/> was called). For array child jobs, this is when the child job was\n         spawned by its parent and entered the <code>PENDING</code> state.</simpara>\n      ",
+                  "documentation": "\n         <p>The Unix timestamp for when the job was created. For non-array jobs and parent array\n         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is when the child job was\n         spawned by its parent and entered the <code>PENDING</code> state.</p>\n      ",
                   "shape_name": "Long"
                 },
                 "status": {
@@ -2283,14 +2882,14 @@
                 },
                 "startedAt": {
                   "type": "long",
-                  "zonbookDocumentation": "\n         <simpara>The Unix time stamp for when the job was started (when the job transitioned from the\n            <code>STARTING</code> state to the <code>RUNNING</code> state).</simpara>\n      ",
-                  "documentation": "\n         <p>The Unix time stamp for when the job was started (when the job transitioned from the\n            <code>STARTING</code> state to the <code>RUNNING</code> state).</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The Unix timestamp for when the job was started (when the job transitioned from the\n            <code>STARTING</code> state to the <code>RUNNING</code> state).</simpara>\n      ",
+                  "documentation": "\n         <p>The Unix timestamp for when the job was started (when the job transitioned from the\n            <code>STARTING</code> state to the <code>RUNNING</code> state).</p>\n      ",
                   "shape_name": "Long"
                 },
                 "stoppedAt": {
                   "type": "long",
-                  "zonbookDocumentation": "\n         <simpara>The Unix time stamp for when the job was stopped (when the job transitioned from the\n            <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or\n            <code>FAILED</code>).</simpara>\n      ",
-                  "documentation": "\n         <p>The Unix time stamp for when the job was stopped (when the job transitioned from the\n            <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or\n            <code>FAILED</code>).</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The Unix timestamp for when the job was stopped (when the job transitioned from the\n            <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or\n            <code>FAILED</code>).</simpara>\n      ",
+                  "documentation": "\n         <p>The Unix timestamp for when the job was stopped (when the job transitioned from the\n            <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or\n            <code>FAILED</code>).</p>\n      ",
                   "shape_name": "Long"
                 },
                 "container": {
@@ -2332,6 +2931,32 @@
                   "zonbookDocumentation": "\n         <simpara>The array properties of the job, if it is an array job.</simpara>\n      ",
                   "documentation": "\n         <p>The array properties of the job, if it is an array job.</p>\n      ",
                   "shape_name": "ArrayPropertiesSummary"
+                },
+                "nodeProperties": {
+                  "type": "structure",
+                  "members": {
+                    "isMainNode": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n         <para>Specifies whether the current node is the main node for a multi-node parallel\n         job.</para>\n      ",
+                      "documentation": "\n         <p>Specifies whether the current node is the main node for a multi-node parallel\n         job.</p>\n      ",
+                      "shape_name": "Boolean"
+                    },
+                    "numNodes": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>The number of nodes associated with a multi-node parallel job.</para>\n      ",
+                      "documentation": "\n         <p>The number of nodes associated with a multi-node parallel job.</p>\n      ",
+                      "shape_name": "Integer"
+                    },
+                    "nodeIndex": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</para>\n      ",
+                      "documentation": "\n         <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>\n      ",
+                      "shape_name": "Integer"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>The node properties for a single node in a job summary list.</para>\n      ",
+                  "documentation": "\n         <p>The node properties for a single node in a job summary list.</p>\n      ",
+                  "shape_name": "NodePropertiesSummary"
                 }
               },
               "zonbookDocumentation": "\n         <simpara>An object representing summary details of a job.</simpara>\n      ",
@@ -2377,7 +3002,7 @@
           "shape_name": "ServerException"
         }
       ],
-      "documentation": "\n         <p>Returns a list of AWS Batch jobs. You must specify either a job queue to return a list\n         of jobs in that job queue, or an array job ID to return a list of that job's children. You\n         cannot specify both a job queue and an array job ID.</p>\n         <p>You can filter the results by job status with the <code>jobStatus</code> parameter.\n         If you do not specify a status, only <code>RUNNING</code> jobs are returned.</p>\n      \n      "
+      "documentation": "\n         <p>Returns a list of AWS Batch jobs.</p>\n         <p>You must specify only one of the following:</p>\n         <ul>\n            <li>\n               <p>a job queue ID to return a list of jobs in that job queue</p>\n            </li>\n            <li>\n               <p>a multi-node parallel job ID to return a list of that job's nodes</p>\n            </li>\n            <li>\n               <p>an array job ID to return a list of that job's children</p>\n            </li>\n         </ul>\n         <p>You can filter the results by job status with the <code>jobStatus</code> parameter.\n         If you do not specify a status, only <code>RUNNING</code> jobs are returned.</p>\n      \n      "
     },
     "DescribeJobs": {
       "name": "DescribeJobs",
@@ -2492,6 +3117,38 @@
                             "zonbookDocumentation": "\n         <simpara>The name of the CloudWatch Logs log stream associated with the container. The log\n         group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a\n         log stream name when they reach the <code>RUNNING</code> status.</simpara>\n      ",
                             "documentation": "\n         <p>The name of the CloudWatch Logs log stream associated with the container. The log\n         group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a\n         log stream name when they reach the <code>RUNNING</code> status.</p>\n      ",
                             "shape_name": "String"
+                          },
+                          "networkInterfaces": {
+                            "type": "list",
+                            "zonbookDocumentation": "\n         <para>The network interfaces associated with the job attempt.</para>\n      ",
+                            "documentation": "\n         <p>The network interfaces associated with the job attempt.</p>\n      ",
+                            "shape_name": "NetworkInterfaceList",
+                            "members": {
+                              "type": "structure",
+                              "members": {
+                                "attachmentId": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n         <para>The attachment ID for the network interface.</para>\n      ",
+                                  "documentation": "\n         <p>The attachment ID for the network interface.</p>\n      ",
+                                  "shape_name": "String"
+                                },
+                                "ipv6Address": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n         <para>The private IPv6 address for the network interface.</para>\n      ",
+                                  "documentation": "\n         <p>The private IPv6 address for the network interface.</p>\n      ",
+                                  "shape_name": "String"
+                                },
+                                "privateIpv4Address": {
+                                  "type": "string",
+                                  "zonbookDocumentation": "\n         <para>The private IPv4 address for the network interface.</para>\n      ",
+                                  "documentation": "\n         <p>The private IPv4 address for the network interface.</p>\n      ",
+                                  "shape_name": "String"
+                                }
+                              },
+                              "zonbookDocumentation": "\n         <para>An object representing the elastic network interface for a multi-node parallel job node.</para>\n      ",
+                              "documentation": "\n         <p>An object representing the elastic network interface for a multi-node parallel job node.</p>\n      ",
+                              "shape_name": "NetworkInterface"
+                            }
                           }
                         },
                         "zonbookDocumentation": "\n         <simpara>Details about the container in this job attempt.</simpara>\n      ",
@@ -2500,14 +3157,14 @@
                       },
                       "startedAt": {
                         "type": "long",
-                        "zonbookDocumentation": "\n         <simpara>The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned\n         from the <code>STARTING</code> state to the <code>RUNNING</code> state).</simpara>\n      ",
-                        "documentation": "\n         <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was started (when the attempt transitioned\n         from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>\n      ",
+                        "zonbookDocumentation": "\n         <simpara>The Unix timestamp (in seconds and milliseconds) for when the attempt was started\n         (when the attempt transitioned from the <code>STARTING</code> state to the\n            <code>RUNNING</code> state).</simpara>\n      ",
+                        "documentation": "\n         <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was started\n         (when the attempt transitioned from the <code>STARTING</code> state to the\n            <code>RUNNING</code> state).</p>\n      ",
                         "shape_name": "Long"
                       },
                       "stoppedAt": {
                         "type": "long",
-                        "zonbookDocumentation": "\n         <simpara>The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned\n         from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or\n            <code>FAILED</code>).</simpara>\n      ",
-                        "documentation": "\n         <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was stopped (when the attempt transitioned\n         from the <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or\n            <code>FAILED</code>).</p>\n      ",
+                        "zonbookDocumentation": "\n         <simpara>The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped\n         (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state,\n         such as <code>SUCCEEDED</code> or <code>FAILED</code>).</simpara>\n      ",
+                        "documentation": "\n         <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was stopped\n         (when the attempt transitioned from the <code>RUNNING</code> state to a terminal state,\n         such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>\n      ",
                         "shape_name": "Long"
                       },
                       "statusReason": {
@@ -2530,8 +3187,8 @@
                 },
                 "createdAt": {
                   "type": "long",
-                  "zonbookDocumentation": "\n         <simpara>The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent array\n         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <xref linkend=\"SubmitJob\"/> was called). For array child jobs, this is when the child job was\n         spawned by its parent and entered the <code>PENDING</code> state.</simpara>\n      ",
-                  "documentation": "\n         <p>The Unix time stamp (in seconds and milliseconds) for when the job was created. For non-array jobs and parent array\n         jobs, this is when the job entered the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For array child jobs, this is when the child job was\n         spawned by its parent and entered the <code>PENDING</code> state.</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The Unix timestamp (in seconds and milliseconds) for when the job was created. For\n         non-array jobs and parent array jobs, this is when the job entered the\n            <code>SUBMITTED</code> state (at the time <xref linkend=\"SubmitJob\"/> was called). For\n         array child jobs, this is when the child job was spawned by its parent and entered the\n            <code>PENDING</code> state.</simpara>\n      ",
+                  "documentation": "\n         <p>The Unix timestamp (in seconds and milliseconds) for when the job was created. For\n         non-array jobs and parent array jobs, this is when the job entered the\n            <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For\n         array child jobs, this is when the child job was spawned by its parent and entered the\n            <code>PENDING</code> state.</p>\n      ",
                   "shape_name": "Long"
                 },
                 "retryStrategy": {
@@ -2539,8 +3196,8 @@
                   "members": {
                     "attempts": {
                       "type": "integer",
-                      "zonbookDocumentation": "\n         <simpara>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many\n         times.</simpara>\n      ",
-                      "documentation": "\n         <p>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried if it fails until it has moved to <code>RUNNABLE</code> that many\n         times.</p>\n      ",
+                      "zonbookDocumentation": "\n         <simpara>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried on failure the same number of attempts as the value.</simpara>\n      ",
+                      "documentation": "\n         <p>The number of times to move a job to the <code>RUNNABLE</code> status. You may\n         specify between 1 and 10 attempts. If the value of <code>attempts</code> is greater than\n         one, the job is retried on failure the same number of attempts as the value.</p>\n      ",
                       "shape_name": "Integer"
                     }
                   },
@@ -2550,15 +3207,15 @@
                 },
                 "startedAt": {
                   "type": "long",
-                  "zonbookDocumentation": "\n         <simpara>The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the\n            <code>STARTING</code> state to the <code>RUNNING</code> state).</simpara>\n      ",
-                  "documentation": "\n         <p>The Unix time stamp (in seconds and milliseconds) for when the job was started (when the job transitioned from the\n            <code>STARTING</code> state to the <code>RUNNING</code> state).</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The Unix timestamp (in seconds and milliseconds) for when the job was started (when\n         the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>\n         state).</simpara>\n      ",
+                  "documentation": "\n         <p>The Unix timestamp (in seconds and milliseconds) for when the job was started (when\n         the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>\n         state).</p>\n      ",
                   "required": true,
                   "shape_name": "Long"
                 },
                 "stoppedAt": {
                   "type": "long",
-                  "zonbookDocumentation": "\n         <simpara>The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the\n            <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or\n            <code>FAILED</code>).</simpara>\n      ",
-                  "documentation": "\n         <p>The Unix time stamp (in seconds and milliseconds) for when the job was stopped (when the job transitioned from the\n            <code>RUNNING</code> state to a terminal state, such as <code>SUCCEEDED</code> or\n            <code>FAILED</code>).</p>\n      ",
+                  "zonbookDocumentation": "\n         <simpara>The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when\n         the job transitioned from the <code>RUNNING</code> state to a terminal state, such as\n            <code>SUCCEEDED</code> or <code>FAILED</code>).</simpara>\n      ",
+                  "documentation": "\n         <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped (when\n         the job transitioned from the <code>RUNNING</code> state to a terminal state, such as\n            <code>SUCCEEDED</code> or <code>FAILED</code>).</p>\n      ",
                   "shape_name": "Long"
                 },
                 "dependsOn": {
@@ -2826,11 +3483,307 @@
                       "zonbookDocumentation": "\n         <simpara>The name of the CloudWatch Logs log stream associated with the container. The log\n         group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a\n         log stream name when they reach the <code>RUNNING</code> status.</simpara>\n      ",
                       "documentation": "\n         <p>The name of the CloudWatch Logs log stream associated with the container. The log\n         group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives a\n         log stream name when they reach the <code>RUNNING</code> status.</p>\n      ",
                       "shape_name": "String"
+                    },
+                    "instanceType": {
+                      "type": "string",
+                      "zonbookDocumentation": "\n         <para>The instance type of the underlying host infrastructure of a multi-node parallel job.</para>\n      ",
+                      "documentation": "\n         <p>The instance type of the underlying host infrastructure of a multi-node parallel job.</p>\n      ",
+                      "shape_name": "String"
+                    },
+                    "networkInterfaces": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <para>The network interfaces associated with the job.</para>\n      ",
+                      "documentation": "\n         <p>The network interfaces associated with the job.</p>\n      ",
+                      "shape_name": "NetworkInterfaceList",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "attachmentId": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <para>The attachment ID for the network interface.</para>\n      ",
+                            "documentation": "\n         <p>The attachment ID for the network interface.</p>\n      ",
+                            "shape_name": "String"
+                          },
+                          "ipv6Address": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <para>The private IPv6 address for the network interface.</para>\n      ",
+                            "documentation": "\n         <p>The private IPv6 address for the network interface.</p>\n      ",
+                            "shape_name": "String"
+                          },
+                          "privateIpv4Address": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <para>The private IPv4 address for the network interface.</para>\n      ",
+                            "documentation": "\n         <p>The private IPv4 address for the network interface.</p>\n      ",
+                            "shape_name": "String"
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <para>An object representing the elastic network interface for a multi-node parallel job node.</para>\n      ",
+                        "documentation": "\n         <p>An object representing the elastic network interface for a multi-node parallel job node.</p>\n      ",
+                        "shape_name": "NetworkInterface"
+                      }
                     }
                   },
                   "zonbookDocumentation": "\n         <simpara>An object representing the details of the container that is associated with the\n         job.</simpara>\n      ",
                   "documentation": "\n         <p>An object representing the details of the container that is associated with the\n         job.</p>\n      ",
                   "shape_name": "ContainerDetail"
+                },
+                "nodeDetails": {
+                  "type": "structure",
+                  "members": {
+                    "nodeIndex": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</para>\n      ",
+                      "documentation": "\n         <p>The node index for the node. Node index numbering begins at zero. This index is also available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.</p>\n      ",
+                      "shape_name": "Integer"
+                    },
+                    "isMainNode": {
+                      "type": "boolean",
+                      "zonbookDocumentation": "\n         <para>Specifies whether the current node is the main node for a multi-node parallel\n         job.</para>\n      ",
+                      "documentation": "\n         <p>Specifies whether the current node is the main node for a multi-node parallel\n         job.</p>\n      ",
+                      "shape_name": "Boolean"
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>An object representing the details of a node that is associated with a multi-node\n         parallel job.</para>\n      ",
+                  "documentation": "\n         <p>An object representing the details of a node that is associated with a multi-node\n         parallel job.</p>\n      ",
+                  "shape_name": "NodeDetails"
+                },
+                "nodeProperties": {
+                  "type": "structure",
+                  "members": {
+                    "numNodes": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>The number of nodes associated with a multi-node parallel job.</para>\n      ",
+                      "documentation": "\n         <p>The number of nodes associated with a multi-node parallel job.</p>\n      ",
+                      "required": true,
+                      "shape_name": "Integer"
+                    },
+                    "mainNode": {
+                      "type": "integer",
+                      "zonbookDocumentation": "\n         <para>Specifies the node index for the main node of a multi-node parallel job.</para>\n      ",
+                      "documentation": "\n         <p>Specifies the node index for the main node of a multi-node parallel job.</p>\n      ",
+                      "required": true,
+                      "shape_name": "Integer"
+                    },
+                    "nodeRangeProperties": {
+                      "type": "list",
+                      "zonbookDocumentation": "\n         <para>A list of node ranges and their properties associated with a multi-node parallel job.</para>\n      ",
+                      "documentation": "\n         <p>A list of node ranges and their properties associated with a multi-node parallel job.</p>\n      ",
+                      "required": true,
+                      "shape_name": "NodeRangeProperties",
+                      "members": {
+                        "type": "structure",
+                        "members": {
+                          "targetNodes": {
+                            "type": "string",
+                            "zonbookDocumentation": "\n         <para>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes\n         with index values of <code>0</code> through <code>3</code>. If the starting range value is\n         omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending\n         range value is omitted (<code>n:</code>), then the highest possible node index is used to\n         end the range.  Your accumulative node ranges must account for all nodes (0:n). You may\n         nest node ranges, for example 0:10 and 4:5, in which case the 4:5 range properties override\n         the 0:10 properties. </para>\n      ",
+                            "documentation": "\n         <p>The range of nodes, using node index values. A range of <code>0:3</code> indicates nodes\n         with index values of <code>0</code> through <code>3</code>. If the starting range value is\n         omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending\n         range value is omitted (<code>n:</code>), then the highest possible node index is used to\n         end the range.  Your accumulative node ranges must account for all nodes (0:n). You may\n         nest node ranges, for example 0:10 and 4:5, in which case the 4:5 range properties override\n         the 0:10 properties. </p>\n      ",
+                            "required": true,
+                            "shape_name": "String"
+                          },
+                          "container": {
+                            "type": "structure",
+                            "members": {
+                              "image": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <emphasis>repository-url</emphasis>/<emphasis>image</emphasis>:<emphasis>tag</emphasis>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>IMAGE</code> parameter of <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n         <itemizedlist>\n            <listitem>\n               <simpara>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</simpara>\n            </listitem>\n            <listitem>\n               <simpara>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</simpara>\n            </listitem>\n         </itemizedlist>\n      ",
+                                "documentation": "\n         <p>The image used to start a container. This string is passed directly to the Docker\n         daemon. Images in the Docker Hub registry are available by default. Other repositories\n         are specified with <code>\n               <i>repository-url</i>/<i>image</i>:<i>tag</i>\n            </code>. Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons, periods, forward slashes, and number signs are allowed. This parameter maps to <code>Image</code> in the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>IMAGE</code> parameter of <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n         <ul>\n            <li>\n               <p>Images in Amazon ECR repositories use the full registry and repository URI (for\n               example,\n                  <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>). </p>\n            </li>\n            <li>\n               <p>Images in official repositories on Docker Hub use a single name (for\n               example, <code>ubuntu</code> or <code>mongo</code>).</p>\n            </li>\n            <li>\n               <p>Images in other repositories on Docker Hub are qualified with an\n               organization name (for example, <code>amazon/amazon-ecs-agent</code>).</p>\n            </li>\n            <li>\n               <p>Images in other online repositories are qualified further by a domain name\n               (for example, <code>quay.io/assemblyline/ubuntu</code>).</p>\n            </li>\n         </ul>\n      ",
+                                "shape_name": "String"
+                              },
+                              "vcpus": {
+                                "type": "integer",
+                                "zonbookDocumentation": "\n         <simpara>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--cpu-shares</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</simpara>\n      ",
+                                "documentation": "\n         <p>The number of vCPUs reserved for the container. This parameter maps to\n            <code>CpuShares</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--cpu-shares</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. Each vCPU is equivalent to 1,024 CPU\n         shares. You must specify at least one vCPU.</p>\n      ",
+                                "shape_name": "Integer"
+                              },
+                              "memory": {
+                                "type": "integer",
+                                "zonbookDocumentation": "\n         <simpara>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--memory</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. You must specify at least 4 MiB of\n         memory for a job.</simpara>\n         <note>\n            <para>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <ulink url=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</ulink> in the\n               <emphasis>AWS Batch User Guide</emphasis>.</para>\n         </note>\n      ",
+                                "documentation": "\n         <p>The hard limit (in MiB) of memory to present to the container. If your container\n         attempts to exceed the memory specified here, the container is killed. This parameter maps\n         to <code>Memory</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--memory</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. You must specify at least 4 MiB of\n         memory for a job.</p>\n         <note>\n            <p>If you are trying to maximize your resource utilization by providing your jobs as\n            much memory as possible for a particular instance type, see <a href=\"http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html\">Memory Management</a> in the\n               <i>AWS Batch User Guide</i>.</p>\n         </note>\n      ",
+                                "shape_name": "Integer"
+                              },
+                              "command": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>The command that is passed to the container. This parameter maps to\n         <code>Cmd</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>COMMAND</code> parameter to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>. For\n         more information, see <ulink url=\"https://docs.docker.com/engine/reference/builder/#cmd\">https://docs.docker.com/engine/reference/builder/#cmd</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>The command that is passed to the container. This parameter maps to\n         <code>Cmd</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>COMMAND</code> parameter to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>. For\n         more information, see <a href=\"https://docs.docker.com/engine/reference/builder/#cmd\">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>\n      ",
+                                "shape_name": "StringList",
+                                "members": {
+                                  "type": "string",
+                                  "shape_name": "String",
+                                  "documentation": null
+                                }
+                              },
+                              "jobRoleArn": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS\n         permissions.</simpara>\n      ",
+                                "documentation": "\n         <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume for AWS\n         permissions.</p>\n      ",
+                                "shape_name": "String"
+                              },
+                              "volumes": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>A list of data volumes used in a job.</simpara>\n      ",
+                                "documentation": "\n         <p>A list of data volumes used in a job.</p>\n      ",
+                                "shape_name": "Volumes",
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "host": {
+                                      "type": "structure",
+                                      "members": {
+                                        "sourcePath": {
+                                          "type": "string",
+                                          "zonbookDocumentation": "\n         <simpara>The path on the host container instance that is presented to the container. If this\n         parameter is empty, then the Docker daemon has assigned a host path for you. If the\n            <code>host</code> parameter contains a <code>sourcePath</code> file location, then the\n         data volume persists at the specified location on the host container instance until you\n         delete it manually. If the <code>sourcePath</code> value does not exist on the host\n         container instance, the Docker daemon creates it. If the location does exist, the contents\n         of the source path folder are exported.</simpara>\n      ",
+                                          "documentation": "\n         <p>The path on the host container instance that is presented to the container. If this\n         parameter is empty, then the Docker daemon has assigned a host path for you. If the\n            <code>host</code> parameter contains a <code>sourcePath</code> file location, then the\n         data volume persists at the specified location on the host container instance until you\n         delete it manually. If the <code>sourcePath</code> value does not exist on the host\n         container instance, the Docker daemon creates it. If the location does exist, the contents\n         of the source path folder are exported.</p>\n      ",
+                                          "shape_name": "String"
+                                        }
+                                      },
+                                      "zonbookDocumentation": "\n         <simpara>The contents of the <code>host</code> parameter determine whether your data volume\n         persists on the host container instance and where it is stored. If the host parameter is\n         empty, then the Docker daemon assigns a host path for your data volume. However, the data\n         is not guaranteed to persist after the containers associated with it stop\n         running.</simpara>\n      ",
+                                      "documentation": "\n         <p>The contents of the <code>host</code> parameter determine whether your data volume\n         persists on the host container instance and where it is stored. If the host parameter is\n         empty, then the Docker daemon assigns a host path for your data volume. However, the data\n         is not guaranteed to persist after the containers associated with it stop\n         running.</p>\n      ",
+                                      "shape_name": "Host"
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. This name is referenced in the\n            <code>sourceVolume</code> parameter of container definition\n         <code>mountPoints</code>.</simpara>\n      ",
+                                      "documentation": "\n         <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. This name is referenced in the\n            <code>sourceVolume</code> parameter of container definition\n         <code>mountPoints</code>.</p>\n      ",
+                                      "shape_name": "String"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n         <simpara>A data volume used in a job's container properties.</simpara>\n      ",
+                                  "documentation": "\n         <p>A data volume used in a job's container properties.</p>\n      ",
+                                  "shape_name": "Volume"
+                                }
+                              },
+                              "environment": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>The environment variables to pass to a container. This parameter maps to\n         <code>Env</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--env</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n         <important>\n            <simpara>We do not recommend using plaintext environment variables for sensitive\n            information, such as credential data.</simpara>\n         </important>\n         <note>\n            <simpara>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</simpara>\n         </note>\n      ",
+                                "documentation": "\n         <p>The environment variables to pass to a container. This parameter maps to\n         <code>Env</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--env</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n         <important>\n            <p>We do not recommend using plaintext environment variables for sensitive\n            information, such as credential data.</p>\n         </important>\n         <note>\n            <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming\n            convention is reserved for variables that are set by the AWS Batch service.</p>\n         </note>\n      ",
+                                "shape_name": "EnvironmentVariables",
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "name": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The name of the key-value pair. For environment variables, this is the name of the\n         environment variable.</simpara>\n      ",
+                                      "documentation": "\n         <p>The name of the key-value pair. For environment variables, this is the name of the\n         environment variable.</p>\n      ",
+                                      "shape_name": "String"
+                                    },
+                                    "value": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The value of the key-value pair. For environment variables, this is the value of the\n         environment variable.</simpara>\n      ",
+                                      "documentation": "\n         <p>The value of the key-value pair. For environment variables, this is the value of the\n         environment variable.</p>\n      ",
+                                      "shape_name": "String"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n         <simpara>A key-value pair object.</simpara>\n      ",
+                                  "documentation": "\n         <p>A key-value pair object.</p>\n      ",
+                                  "shape_name": "KeyValuePair"
+                                }
+                              },
+                              "mountPoints": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>The mount points for data volumes in your container. This parameter maps to\n         <code>Volumes</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--volume</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>The mount points for data volumes in your container. This parameter maps to\n         <code>Volumes</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--volume</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                                "shape_name": "MountPoints",
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "containerPath": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The path on the container at which to mount the host volume.</simpara>\n      ",
+                                      "documentation": "\n         <p>The path on the container at which to mount the host volume.</p>\n      ",
+                                      "shape_name": "String"
+                                    },
+                                    "readOnly": {
+                                      "type": "boolean",
+                                      "zonbookDocumentation": "\n         <simpara>If this value is <code>true</code>, the container has read-only access to the volume;\n         otherwise, the container can write to the volume. The\n         default value is <code>false</code>.</simpara>\n      ",
+                                      "documentation": "\n         <p>If this value is <code>true</code>, the container has read-only access to the volume;\n         otherwise, the container can write to the volume. The\n         default value is <code>false</code>.</p>\n      ",
+                                      "shape_name": "Boolean"
+                                    },
+                                    "sourceVolume": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The name of the volume to mount.</simpara>\n      ",
+                                      "documentation": "\n         <p>The name of the volume to mount.</p>\n      ",
+                                      "shape_name": "String"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n         <simpara>Details on a Docker volume mount point that is used in a job's container\n         properties.</simpara>\n      ",
+                                  "documentation": "\n         <p>Details on a Docker volume mount point that is used in a job's container\n         properties.</p>\n      ",
+                                  "shape_name": "MountPoint"
+                                }
+                              },
+                              "readonlyRootFilesystem": {
+                                "type": "boolean",
+                                "zonbookDocumentation": "\n         <simpara>When this parameter is true, the container is given read-only access to its root\n         file system. This parameter maps to <code>ReadonlyRootfs</code> in the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>--read-only</code> option to <code>docker run</code>.</simpara>\n      ",
+                                "documentation": "\n         <p>When this parameter is true, the container is given read-only access to its root\n         file system. This parameter maps to <code>ReadonlyRootfs</code> in the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>--read-only</code> option to <code>docker run</code>.</p>\n      ",
+                                "shape_name": "Boolean"
+                              },
+                              "privileged": {
+                                "type": "boolean",
+                                "zonbookDocumentation": "\n         <simpara>When this parameter is true, the container is given elevated privileges on the host\n         container instance (similar to the <code>root</code> user). This parameter maps to\n         <code>Privileged</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--privileged</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>When this parameter is true, the container is given elevated privileges on the host\n         container instance (similar to the <code>root</code> user). This parameter maps to\n         <code>Privileged</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--privileged</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                                "shape_name": "Boolean"
+                              },
+                              "ulimits": {
+                                "type": "list",
+                                "zonbookDocumentation": "\n         <simpara>A list of <code>ulimits</code> to set in the container. This parameter maps to\n            <code>Ulimits</code> in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the\n         <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the <code>--ulimit</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker run</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>A list of <code>ulimits</code> to set in the container. This parameter maps to\n            <code>Ulimits</code> in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the\n         <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the <code>--ulimit</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker run</a>.</p>\n      ",
+                                "shape_name": "Ulimits",
+                                "members": {
+                                  "type": "structure",
+                                  "members": {
+                                    "hardLimit": {
+                                      "type": "integer",
+                                      "zonbookDocumentation": "\n         <simpara>The hard limit for the <code>ulimit</code> type.</simpara>\n      ",
+                                      "documentation": "\n         <p>The hard limit for the <code>ulimit</code> type.</p>\n      ",
+                                      "required": true,
+                                      "shape_name": "Integer"
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "zonbookDocumentation": "\n         <simpara>The <code>type</code> of the <code>ulimit</code>.</simpara>\n      ",
+                                      "documentation": "\n         <p>The <code>type</code> of the <code>ulimit</code>.</p>\n      ",
+                                      "required": true,
+                                      "shape_name": "String"
+                                    },
+                                    "softLimit": {
+                                      "type": "integer",
+                                      "zonbookDocumentation": "\n         <simpara>The soft limit for the <code>ulimit</code> type.</simpara>\n      ",
+                                      "documentation": "\n         <p>The soft limit for the <code>ulimit</code> type.</p>\n      ",
+                                      "required": true,
+                                      "shape_name": "Integer"
+                                    }
+                                  },
+                                  "zonbookDocumentation": "\n         <simpara>The <code>ulimit</code> settings to pass to the container.</simpara>\n      ",
+                                  "documentation": "\n         <p>The <code>ulimit</code> settings to pass to the container.</p>\n      ",
+                                  "shape_name": "Ulimit"
+                                }
+                              },
+                              "user": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <simpara>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</ulink> section of the <ulink url=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</ulink> and the\n         <code>--user</code> option to <ulink url=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</ulink>.</simpara>\n      ",
+                                "documentation": "\n         <p>The user name to use inside the container. This parameter maps to <code>User</code>\n         in the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container\">Create a container</a> section of the <a href=\"https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/\">Docker Remote API</a> and the\n         <code>--user</code> option to <a href=\"https://docs.docker.com/engine/reference/run/\">docker\n            run</a>.</p>\n      ",
+                                "shape_name": "String"
+                              },
+                              "instanceType": {
+                                "type": "string",
+                                "zonbookDocumentation": "\n         <para>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</para>\n      ",
+                                "documentation": "\n         <p>The instance type to use for a multi-node parallel job. Currently all node groups in a\n         multi-node parallel job must use the same instance type. This parameter is not valid for\n         single-node container jobs.</p>\n      ",
+                                "shape_name": "String"
+                              }
+                            },
+                            "zonbookDocumentation": "\n         <para>The container details for the node range.</para>\n      ",
+                            "documentation": "\n         <p>The container details for the node range.</p>\n      ",
+                            "shape_name": "ContainerProperties"
+                          }
+                        },
+                        "zonbookDocumentation": "\n         <para>An object representing the properties of the node range for a multi-node parallel\n         job.</para>\n      ",
+                        "documentation": "\n         <p>An object representing the properties of the node range for a multi-node parallel\n         job.</p>\n      ",
+                        "shape_name": "NodeRangeProperty"
+                      }
+                    }
+                  },
+                  "zonbookDocumentation": "\n         <para>An object representing the node properties of a multi-node parallel job.</para>\n      ",
+                  "documentation": "\n         <p>An object representing the node properties of a multi-node parallel job.</p>\n      ",
+                  "shape_name": "NodeProperties"
                 },
                 "arrayProperties": {
                   "type": "structure",

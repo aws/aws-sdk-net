@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateComputeEnvironment operation.
+    /// An object representing the details of a multi-node parallel job node.
     /// </summary>
-    public partial class UpdateComputeEnvironmentResponse : AmazonWebServiceResponse
+    public partial class NodeDetails
     {
-        private string _computeEnvironmentArn;
-        private string _computeEnvironmentName;
+        private bool? _isMainNode;
+        private int? _nodeIndex;
 
         /// <summary>
-        /// Gets and sets the property ComputeEnvironmentArn. 
+        /// Gets and sets the property IsMainNode. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the compute environment. 
+        /// Specifies whether the current node is the main node for a multi-node parallel job.
         /// </para>
         /// </summary>
-        public string ComputeEnvironmentArn
+        public bool IsMainNode
         {
-            get { return this._computeEnvironmentArn; }
-            set { this._computeEnvironmentArn = value; }
+            get { return this._isMainNode.GetValueOrDefault(); }
+            set { this._isMainNode = value; }
         }
 
-        // Check to see if ComputeEnvironmentArn property is set
-        internal bool IsSetComputeEnvironmentArn()
+        // Check to see if IsMainNode property is set
+        internal bool IsSetIsMainNode()
         {
-            return this._computeEnvironmentArn != null;
+            return this._isMainNode.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property ComputeEnvironmentName. 
+        /// Gets and sets the property NodeIndex. 
         /// <para>
-        /// The name of the compute environment.
+        /// The node index for the node. Node index numbering begins at zero. This index is also
+        /// available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
         /// </para>
         /// </summary>
-        public string ComputeEnvironmentName
+        public int NodeIndex
         {
-            get { return this._computeEnvironmentName; }
-            set { this._computeEnvironmentName = value; }
+            get { return this._nodeIndex.GetValueOrDefault(); }
+            set { this._nodeIndex = value; }
         }
 
-        // Check to see if ComputeEnvironmentName property is set
-        internal bool IsSetComputeEnvironmentName()
+        // Check to see if NodeIndex property is set
+        internal bool IsSetNodeIndex()
         {
-            return this._computeEnvironmentName != null;
+            return this._nodeIndex.HasValue; 
         }
 
     }

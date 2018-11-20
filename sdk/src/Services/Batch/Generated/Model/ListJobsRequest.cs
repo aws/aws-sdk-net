@@ -29,11 +29,25 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// Returns a list of AWS Batch jobs. You must specify either a job queue to return a
-    /// list of jobs in that job queue, or an array job ID to return a list of that job's
-    /// children. You cannot specify both a job queue and an array job ID.
+    /// Returns a list of AWS Batch jobs.
     /// 
     ///  
+    /// <para>
+    /// You must specify only one of the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// a job queue ID to return a list of jobs in that job queue
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// a multi-node parallel job ID to return a list of that job's nodes
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// an array job ID to return a list of that job's children
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     /// You can filter the results by job status with the <code>jobStatus</code> parameter.
     /// If you do not specify a status, only <code>RUNNING</code> jobs are returned.
@@ -45,14 +59,14 @@ namespace Amazon.Batch.Model
         private string _jobQueue;
         private JobStatus _jobStatus;
         private int? _maxResults;
+        private string _multiNodeJobId;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ArrayJobId. 
         /// <para>
         /// The job ID for an array job. Specifying an array job ID with this parameter lists
-        /// all child jobs from within the specified array. You must specify either a job queue
-        /// or an array job ID.
+        /// all child jobs from within the specified array.
         /// </para>
         /// </summary>
         public string ArrayJobId
@@ -71,7 +85,6 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property JobQueue. 
         /// <para>
         /// The name or full Amazon Resource Name (ARN) of the job queue with which to list jobs.
-        /// You must specify either a job queue or an array job ID.
         /// </para>
         /// </summary>
         public string JobQueue
@@ -127,6 +140,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiNodeJobId. 
+        /// <para>
+        /// The job ID for a multi-node parallel job. Specifying a multi-node parallel job ID
+        /// with this parameter lists all nodes that are associated with the specified job.
+        /// </para>
+        /// </summary>
+        public string MultiNodeJobId
+        {
+            get { return this._multiNodeJobId; }
+            set { this._multiNodeJobId = value; }
+        }
+
+        // Check to see if MultiNodeJobId property is set
+        internal bool IsSetMultiNodeJobId()
+        {
+            return this._multiNodeJobId != null;
         }
 
         /// <summary>

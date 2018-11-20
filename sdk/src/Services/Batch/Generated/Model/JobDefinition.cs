@@ -35,6 +35,7 @@ namespace Amazon.Batch.Model
         private ContainerProperties _containerProperties;
         private string _jobDefinitionArn;
         private string _jobDefinitionName;
+        private NodeProperties _nodeProperties;
         private Dictionary<string, string> _parameters = new Dictionary<string, string>();
         private RetryStrategy _retryStrategy;
         private int? _revision;
@@ -94,6 +95,24 @@ namespace Amazon.Batch.Model
         internal bool IsSetJobDefinitionName()
         {
             return this._jobDefinitionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeProperties. 
+        /// <para>
+        /// An object with various properties specific to multi-node parallel jobs.
+        /// </para>
+        /// </summary>
+        public NodeProperties NodeProperties
+        {
+            get { return this._nodeProperties; }
+            set { this._nodeProperties = value; }
+        }
+
+        // Check to see if NodeProperties property is set
+        internal bool IsSetNodeProperties()
+        {
+            return this._nodeProperties != null;
         }
 
         /// <summary>

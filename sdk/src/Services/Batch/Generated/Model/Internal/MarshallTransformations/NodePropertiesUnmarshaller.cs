@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AttemptContainerDetail Object
+    /// Response Unmarshaller for NodeProperties Object
     /// </summary>  
-    public class AttemptContainerDetailUnmarshaller : IUnmarshaller<AttemptContainerDetail, XmlUnmarshallerContext>, IUnmarshaller<AttemptContainerDetail, JsonUnmarshallerContext>
+    public class NodePropertiesUnmarshaller : IUnmarshaller<NodeProperties, XmlUnmarshallerContext>, IUnmarshaller<NodeProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AttemptContainerDetail IUnmarshaller<AttemptContainerDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        NodeProperties IUnmarshaller<NodeProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,33 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AttemptContainerDetail Unmarshall(JsonUnmarshallerContext context)
+        public NodeProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AttemptContainerDetail unmarshalledObject = new AttemptContainerDetail();
+            NodeProperties unmarshalledObject = new NodeProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("containerInstanceArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerInstanceArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("exitCode", targetDepth))
+                if (context.TestExpression("mainNode", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ExitCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MainNode = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("logStreamName", targetDepth))
+                if (context.TestExpression("nodeRangeProperties", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogStreamName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<NodeRangeProperty, NodeRangePropertyUnmarshaller>(NodeRangePropertyUnmarshaller.Instance);
+                    unmarshalledObject.NodeRangeProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("networkInterfaces", targetDepth))
+                if (context.TestExpression("numNodes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
-                    unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("reason", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("taskArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumNodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +88,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         }
 
 
-        private static AttemptContainerDetailUnmarshaller _instance = new AttemptContainerDetailUnmarshaller();        
+        private static NodePropertiesUnmarshaller _instance = new NodePropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AttemptContainerDetailUnmarshaller Instance
+        public static NodePropertiesUnmarshaller Instance
         {
             get
             {

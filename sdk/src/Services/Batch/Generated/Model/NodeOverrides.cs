@@ -28,30 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The retry strategy associated with a job.
+    /// Object representing any node overrides to a job definition that is used in a <a>SubmitJob</a>
+    /// API operation.
     /// </summary>
-    public partial class RetryStrategy
+    public partial class NodeOverrides
     {
-        private int? _attempts;
+        private List<NodePropertyOverride> _nodePropertyOverrides = new List<NodePropertyOverride>();
 
         /// <summary>
-        /// Gets and sets the property Attempts. 
+        /// Gets and sets the property NodePropertyOverrides. 
         /// <para>
-        /// The number of times to move a job to the <code>RUNNABLE</code> status. You may specify
-        /// between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one,
-        /// the job is retried on failure the same number of attempts as the value.
+        /// The node property overrides for the job.
         /// </para>
         /// </summary>
-        public int Attempts
+        public List<NodePropertyOverride> NodePropertyOverrides
         {
-            get { return this._attempts.GetValueOrDefault(); }
-            set { this._attempts = value; }
+            get { return this._nodePropertyOverrides; }
+            set { this._nodePropertyOverrides = value; }
         }
 
-        // Check to see if Attempts property is set
-        internal bool IsSetAttempts()
+        // Check to see if NodePropertyOverrides property is set
+        internal bool IsSetNodePropertyOverrides()
         {
-            return this._attempts.HasValue; 
+            return this._nodePropertyOverrides != null && this._nodePropertyOverrides.Count > 0; 
         }
 
     }

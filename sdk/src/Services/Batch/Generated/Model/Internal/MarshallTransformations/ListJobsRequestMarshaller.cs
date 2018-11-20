@@ -89,6 +89,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetMultiNodeJobId())
+                {
+                    context.Writer.WritePropertyName("multiNodeJobId");
+                    context.Writer.Write(publicRequest.MultiNodeJobId);
+                }
+
                 if(publicRequest.IsSetNextToken())
                 {
                     context.Writer.WritePropertyName("nextToken");

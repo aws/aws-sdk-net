@@ -82,6 +82,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.JobDefinitionName);
                 }
 
+                if(publicRequest.IsSetNodeProperties())
+                {
+                    context.Writer.WritePropertyName("nodeProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NodePropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NodeProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetParameters())
                 {
                     context.Writer.WritePropertyName("parameters");
