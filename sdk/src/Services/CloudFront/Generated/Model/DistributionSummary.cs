@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -44,6 +44,7 @@ namespace Amazon.CloudFront.Model
         private string _id;
         private bool? _isIPV6Enabled;
         private DateTime? _lastModifiedTime;
+        private OriginGroups _originGroups;
         private Origins _origins;
         private PriceClass _priceClass;
         private Restrictions _restrictions;
@@ -279,6 +280,24 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginGroups. 
+        /// <para>
+        ///  A complex type that contains information about origin groups for this distribution.
+        /// </para>
+        /// </summary>
+        public OriginGroups OriginGroups
+        {
+            get { return this._originGroups; }
+            set { this._originGroups = value; }
+        }
+
+        // Check to see if OriginGroups property is set
+        internal bool IsSetOriginGroups()
+        {
+            return this._originGroups != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Origins. 
         /// <para>
         /// A complex type that contains information about origins for this distribution.
@@ -297,7 +316,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PriceClass.
+        /// Gets and sets the property PriceClass. 
+        /// <para>
+        /// A complex type that contains information about price class for this streaming distribution.
+        /// 
+        /// </para>
         /// </summary>
         public PriceClass PriceClass
         {

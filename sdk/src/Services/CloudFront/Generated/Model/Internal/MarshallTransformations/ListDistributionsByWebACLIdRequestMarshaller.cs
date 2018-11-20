@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "GET";
-            string uriResourcePath = "/2018-06-18/distributionsByWebACLId/{WebACLId}";
+            string uriResourcePath = "/2018-11-05/distributionsByWebACLId/{WebACLId}";
             if (!publicRequest.IsSetWebACLId())
                 throw new AmazonCloudFrontException("Request object does not have required field WebACLId set");
             uriResourcePath = uriResourcePath.Replace("{WebACLId}", StringUtils.FromStringWithSlashEncoding(publicRequest.WebACLId));

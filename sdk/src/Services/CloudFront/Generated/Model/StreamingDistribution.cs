@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -80,7 +80,11 @@ namespace Amazon.CloudFront.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ARN.
+        /// Gets and sets the property ARN. 
+        /// <para>
+        /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+        /// where <code>123456789012</code> is your AWS account ID.
+        /// </para>
         /// </summary>
         public string ARN
         {

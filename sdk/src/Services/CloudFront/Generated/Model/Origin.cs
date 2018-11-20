@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -28,14 +28,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that describes the Amazon S3 bucket or the HTTP server (for example,
-    /// a web server) from which CloudFront gets your files. You must create at least one
-    /// origin.
+    /// A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web
+    /// server), Amazon MediaStore, or other server from which CloudFront gets your files.
+    /// This can also be an origin group, if you've created an origin group. You must specify
+    /// at least one origin or origin group.
     /// 
     ///  
     /// <para>
-    /// For the current limit on the number of origins that you can create for a distribution,
-    /// see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
+    /// For the current limit on the number of origins or origin groups that you can specify
+    /// for a distribution, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
     /// CloudFront Limits</a> in the <i>AWS General Reference</i>.
     /// </para>
     /// </summary>
@@ -95,6 +96,12 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
+        /// For more information about specifying this value for different types of origins, see
+        /// <a href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+        /// Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// Constraints for Amazon S3 origins: 
         /// </para>
         ///  <ul> <li> 
@@ -151,8 +158,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A unique identifier for the origin. The value of <code>Id</code> must be unique within
-        /// the distribution.
+        /// A unique identifier for the origin or origin group. The value of <code>Id</code> must
+        /// be unique within the distribution.
         /// </para>
         ///  
         /// <para>

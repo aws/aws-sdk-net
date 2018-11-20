@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -63,16 +63,19 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// A unique number that ensures that the request can't be replayed. If the <code>CallerReference</code>
-        /// is new (no matter the content of the <code>StreamingDistributionConfig</code> object),
-        /// a new streaming distribution is created. If the <code>CallerReference</code> is a
-        /// value that you already sent in a previous request to create a streaming distribution,
-        /// and the content of the <code>StreamingDistributionConfig</code> is identical to the
-        /// original request (ignoring white space), the response includes the same information
-        /// returned to the original request. If the <code>CallerReference</code> is a value that
-        /// you already sent in a previous request to create a streaming distribution but the
-        /// content of the <code>StreamingDistributionConfig</code> is different from the original
-        /// request, CloudFront returns a <code>DistributionAlreadyExists</code> error. 
+        /// A unique value (for example, a date-time stamp) that ensures that the request can't
+        /// be replayed.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the value of <code>CallerReference</code> is new (regardless of the content of
+        /// the <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <code>CallerReference</code> is a value that you already sent in a previous request
+        /// to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code>
+        /// error.
         /// </para>
         /// </summary>
         public string CallerReference

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -59,11 +59,6 @@ namespace Amazon.CloudFront.Model
         ///  <code>origin-response</code>: The function executes after CloudFront receives a response
         /// from the origin and before it caches the object in the response. When the requested
         /// object is in the edge cache, the function doesn't execute.
-        /// </para>
-        ///  
-        /// <para>
-        /// If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't
-        /// execute.
         /// </para>
         ///  </li> <li> 
         /// <para>

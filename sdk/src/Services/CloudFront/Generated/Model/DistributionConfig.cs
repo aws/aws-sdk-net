@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -43,6 +43,7 @@ namespace Amazon.CloudFront.Model
         private HttpVersion _httpVersion;
         private bool? _isIPV6Enabled;
         private LoggingConfig _logging;
+        private OriginGroups _originGroups;
         private Origins _origins;
         private PriceClass _priceClass;
         private Restrictions _restrictions;
@@ -57,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Instantiates DistributionConfig with the parameterized properties
         /// </summary>
-        /// <param name="callerReference">A unique value (for example, a date-time stamp) that ensures that the request can't be replayed. If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution. If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution, and if the content of the <code>DistributionConfig</code> is identical to the original request (ignoring white space), CloudFront returns the same the response that it returned to the original request. If <code>CallerReference</code> is a value you already sent in a previous request to create a distribution but the content of the <code>DistributionConfig</code> is different from the original request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</param>
+        /// <param name="callerReference">A unique value (for example, a date-time stamp) that ensures that the request can't be replayed. If the value of <code>CallerReference</code> is new (regardless of the content of the <code>DistributionConfig</code> object), CloudFront creates a new distribution. If <code>CallerReference</code> is a value that you already sent in a previous request to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</param>
         /// <param name="enabled">From this field, you can enable or disable the selected distribution.</param>
         public DistributionConfig(string callerReference, bool enabled)
         {
@@ -115,16 +116,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>CallerReference</code> is a value you already sent in a previous request
-        /// to create a distribution, and if the content of the <code>DistributionConfig</code>
-        /// is identical to the original request (ignoring white space), CloudFront returns the
-        /// same the response that it returned to the original request.
-        /// </para>
-        ///  
-        /// <para>
-        /// If <code>CallerReference</code> is a value you already sent in a previous request
-        /// to create a distribution but the content of the <code>DistributionConfig</code> is
-        /// different from the original request, CloudFront returns a <code>DistributionAlreadyExists</code>
+        /// If <code>CallerReference</code> is a value that you already sent in a previous request
+        /// to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code>
         /// error.
         /// </para>
         /// </summary>
@@ -399,6 +392,24 @@ namespace Amazon.CloudFront.Model
         internal bool IsSetLogging()
         {
             return this._logging != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OriginGroups. 
+        /// <para>
+        ///  A complex type that contains information about origin groups for this distribution.
+        /// </para>
+        /// </summary>
+        public OriginGroups OriginGroups
+        {
+            get { return this._originGroups; }
+            set { this._originGroups = value; }
+        }
+
+        // Check to see if OriginGroups property is set
+        internal bool IsSetOriginGroups()
+        {
+            return this._originGroups != null;
         }
 
         /// <summary>

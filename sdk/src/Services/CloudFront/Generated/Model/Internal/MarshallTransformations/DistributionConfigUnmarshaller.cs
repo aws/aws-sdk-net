@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -119,6 +119,12 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = LoggingConfigUnmarshaller.Instance;
                         unmarshalledObject.Logging = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("OriginGroups", targetDepth))
+                    {
+                        var unmarshaller = OriginGroupsUnmarshaller.Instance;
+                        unmarshalledObject.OriginGroups = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("Origins", targetDepth))

@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2018-06-18/distribution/{DistributionId}/invalidation";
+            string uriResourcePath = "/2018-11-05/distribution/{DistributionId}/invalidation";
             if (!publicRequest.IsSetDistributionId())
                 throw new AmazonCloudFrontException("Request object does not have required field DistributionId set");
             uriResourcePath = uriResourcePath.Replace("{DistributionId}", StringUtils.FromStringWithSlashEncoding(publicRequest.DistributionId));
@@ -67,28 +67,28 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetInvalidationBatch())
                 {
-                    xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                    xmlWriter.WriteStartElement("InvalidationBatch", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
                     if(publicRequest.InvalidationBatch.IsSetCallerReference())
-                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
+                        xmlWriter.WriteElementString("CallerReference", "http://cloudfront.amazonaws.com/doc/2018-11-05/", StringUtils.FromString(publicRequest.InvalidationBatch.CallerReference));                    
     
                     
                     if (publicRequest.InvalidationBatch.Paths != null) 
                     {
-                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2018-06-18/");            
+                        xmlWriter.WriteStartElement("Paths", "http://cloudfront.amazonaws.com/doc/2018-11-05/");            
                         var publicRequestInvalidationBatchPathsItems = publicRequest.InvalidationBatch.Paths.Items;
                         if (publicRequestInvalidationBatchPathsItems != null && publicRequestInvalidationBatchPathsItems.Count > 0) 
                         {                        
-                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                            xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
                             foreach (var publicRequestInvalidationBatchPathsItemsValue in publicRequestInvalidationBatchPathsItems) 
                             {
-                                xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                                xmlWriter.WriteStartElement("Path", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
                                 xmlWriter.WriteValue(publicRequestInvalidationBatchPathsItemsValue);
                                 xmlWriter.WriteEndElement();
                             }            
                             xmlWriter.WriteEndElement();            
                         }
                         if(publicRequest.InvalidationBatch.Paths.IsSetQuantity())
-                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
+                            xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2018-11-05/", StringUtils.FromInt(publicRequest.InvalidationBatch.Paths.Quantity));                 
         
                         xmlWriter.WriteEndElement();
                     }

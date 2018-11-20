@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2018-06-18/tagging";
+            string uriResourcePath = "/2018-11-05/tagging";
             request.AddSubResource("Operation", "Tag");
             
             if (publicRequest.IsSetResource())
@@ -68,22 +68,22 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetTags())
                 {
-                    xmlWriter.WriteStartElement("Tags", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                    xmlWriter.WriteStartElement("Tags", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
                     var publicRequestTagsItems = publicRequest.Tags.Items;
                     if (publicRequestTagsItems != null && publicRequestTagsItems.Count > 0) 
                     {                        
-                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
                         foreach (var publicRequestTagsItemsValue in publicRequestTagsItems) 
                         {
                         
                         if (publicRequestTagsItemsValue != null) 
                         {
-                            xmlWriter.WriteStartElement("Tag", "http://cloudfront.amazonaws.com/doc/2018-06-18/");            
+                            xmlWriter.WriteStartElement("Tag", "http://cloudfront.amazonaws.com/doc/2018-11-05/");            
                             if(publicRequestTagsItemsValue.IsSetKey())
-                                xmlWriter.WriteElementString("Key", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequestTagsItemsValue.Key));                 
+                                xmlWriter.WriteElementString("Key", "http://cloudfront.amazonaws.com/doc/2018-11-05/", StringUtils.FromString(publicRequestTagsItemsValue.Key));                 
             
                             if(publicRequestTagsItemsValue.IsSetValue())
-                                xmlWriter.WriteElementString("Value", "http://cloudfront.amazonaws.com/doc/2018-06-18/", StringUtils.FromString(publicRequestTagsItemsValue.Value));                 
+                                xmlWriter.WriteElementString("Value", "http://cloudfront.amazonaws.com/doc/2018-11-05/", StringUtils.FromString(publicRequestTagsItemsValue.Value));                 
             
                             xmlWriter.WriteEndElement();
                         }

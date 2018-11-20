@@ -14,7 +14,7 @@
  */
 
 /*
- * Do not modify this file. This file is generated from the cloudfront-2018-06-18.normal.json service model.
+ * Do not modify this file. This file is generated from the cloudfront-2018-11-05.normal.json service model.
  */
 using System;
 using System.Collections.Generic;
@@ -56,7 +56,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
         {
             var request = new DefaultRequest(publicRequest, "Amazon.CloudFront");
             request.HttpMethod = "POST";
-            string uriResourcePath = "/2018-06-18/tagging";
+            string uriResourcePath = "/2018-11-05/tagging";
             request.AddSubResource("Operation", "Untag");
             
             if (publicRequest.IsSetResource())
@@ -68,14 +68,14 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             {   
                 if (publicRequest.IsSetTagKeys())
                 {
-                    xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                    xmlWriter.WriteStartElement("TagKeys", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
                     var publicRequestTagKeysItems = publicRequest.TagKeys.Items;
                     if (publicRequestTagKeysItems != null && publicRequestTagKeysItems.Count > 0) 
                     {                        
-                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                        xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
                         foreach (var publicRequestTagKeysItemsValue in publicRequestTagKeysItems) 
                         {
-                            xmlWriter.WriteStartElement("Key", "http://cloudfront.amazonaws.com/doc/2018-06-18/");
+                            xmlWriter.WriteStartElement("Key", "http://cloudfront.amazonaws.com/doc/2018-11-05/");
                             xmlWriter.WriteValue(publicRequestTagKeysItemsValue);
                             xmlWriter.WriteEndElement();
                         }            
