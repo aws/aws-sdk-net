@@ -109,6 +109,11 @@ namespace Amazon
         /// The South America (Sao Paulo) endpoint.
         /// </summary>
         public static readonly RegionEndpoint SAEast1 = NewEndpoint("sa-east-1", "South America (Sao Paulo)");
+		
+		/// <summary>
+        /// The US GovCloud East (Virginia) endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USGovCloudEast1 = NewEndpoint("us-gov-east-1", "US GovCloud East (Virginia)");
 
         /// <summary>
         /// The US GovCloud West (Oregon) endpoint.
