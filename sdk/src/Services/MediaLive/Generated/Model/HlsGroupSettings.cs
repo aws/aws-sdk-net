@@ -59,6 +59,7 @@ namespace Amazon.MediaLive.Model
         private HlsOutputSelection _outputSelection;
         private HlsProgramDateTime _programDateTime;
         private int? _programDateTimePeriod;
+        private HlsRedundantManifest _redundantManifest;
         private HlsSegmentationMode _segmentationMode;
         private int? _segmentLength;
         private int? _segmentsPerSubdirectory;
@@ -520,6 +521,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetProgramDateTimePeriod()
         {
             return this._programDateTimePeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundantManifest. When set to "enabled", includes the
+        /// media playlists from both pipelines in the master manifest (.m3u8) file.
+        /// </summary>
+        public HlsRedundantManifest RedundantManifest
+        {
+            get { return this._redundantManifest; }
+            set { this._redundantManifest = value; }
+        }
+
+        // Check to see if RedundantManifest property is set
+        internal bool IsSetRedundantManifest()
+        {
+            return this._redundantManifest != null;
         }
 
         /// <summary>

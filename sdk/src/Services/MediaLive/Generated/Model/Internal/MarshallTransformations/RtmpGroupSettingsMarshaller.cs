@@ -69,6 +69,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CaptionData);
             }
 
+            if(requestObject.IsSetInputLossAction())
+            {
+                context.Writer.WritePropertyName("inputLossAction");
+                context.Writer.Write(requestObject.InputLossAction);
+            }
+
             if(requestObject.IsSetRestartDelay())
             {
                 context.Writer.WritePropertyName("restartDelay");

@@ -237,6 +237,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ProgramDateTimePeriod);
             }
 
+            if(requestObject.IsSetRedundantManifest())
+            {
+                context.Writer.WritePropertyName("redundantManifest");
+                context.Writer.Write(requestObject.RedundantManifest);
+            }
+
             if(requestObject.IsSetSegmentationMode())
             {
                 context.Writer.WritePropertyName("segmentationMode");

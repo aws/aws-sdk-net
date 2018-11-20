@@ -88,6 +88,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.CaptionData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inputLossAction", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InputLossAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("restartDelay", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

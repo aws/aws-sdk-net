@@ -36,6 +36,7 @@ namespace Amazon.MediaLive.Model
         private RtmpCacheFullBehavior _cacheFullBehavior;
         private int? _cacheLength;
         private RtmpCaptionData _captionData;
+        private InputLossActionForRtmpOut _inputLossAction;
         private int? _restartDelay;
 
         /// <summary>
@@ -108,6 +109,24 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCaptionData()
         {
             return this._captionData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputLossAction. Controls the behavior of this RTMP group
+        /// if input becomes unavailable.- emitOutput: Emit a slate until input returns.- pauseOutput:
+        /// Stop transmitting data until input returns. This does not close the underlying RTMP
+        /// connection.
+        /// </summary>
+        public InputLossActionForRtmpOut InputLossAction
+        {
+            get { return this._inputLossAction; }
+            set { this._inputLossAction = value; }
+        }
+
+        // Check to see if InputLossAction property is set
+        internal bool IsSetInputLossAction()
+        {
+            return this._inputLossAction != null;
         }
 
         /// <summary>

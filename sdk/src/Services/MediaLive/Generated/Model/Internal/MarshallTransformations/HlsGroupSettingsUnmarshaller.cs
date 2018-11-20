@@ -226,6 +226,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProgramDateTimePeriod = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("redundantManifest", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RedundantManifest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("segmentationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
