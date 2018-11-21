@@ -379,6 +379,11 @@ namespace Amazon.Rekognition
         /// results in a specific collection. Then, a user can search the collection for faces
         /// in the user-specific container. 
         /// </para>
+        ///  
+        /// <para>
+        /// When you create a collection, it is associated with the latest version of the face
+        /// model version.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Collection names are case-sensitive.
@@ -876,9 +881,9 @@ namespace Amazon.Rekognition
         ///  
         /// <para>
         /// You pass the input image either as base64-encoded image bytes or as a reference to
-        /// an image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
-        /// operations, passing image bytes is not supported. The image must be either a PNG or
-        /// JPEG formatted file. 
+        /// an image in an Amazon S3 bucket. If you use the to call Amazon Rekognition operations,
+        /// passing image bytes is not supported. The image must be either a PNG or JPEG formatted
+        /// file. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -2038,10 +2043,18 @@ namespace Amazon.Rekognition
         /// <para>
         /// If you're using version 1.0 of the face detection model, <code>IndexFaces</code> indexes
         /// the 15 largest faces in the input image. Later versions of the face detection model
-        /// index the 100 largest faces in the input image. To determine which version of the
-        /// model you're using, call and supply the collection ID. You can also get the model
-        /// version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>.
-        /// 
+        /// index the 100 largest faces in the input image. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you're using version 4 or later of the face model, image orientation information
+        /// is not returned in the <code>OrientationCorrection</code> field. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To determine which version of the model you're using, call and supply the collection
+        /// ID. You can also get the model version from the value of <code>FaceModelVersion</code>
+        /// in the response from <code>IndexFaces</code> 
         /// </para>
         ///  
         /// <para>

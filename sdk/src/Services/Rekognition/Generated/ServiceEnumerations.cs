@@ -455,6 +455,10 @@ namespace Amazon.Rekognition
     {
 
         /// <summary>
+        /// Constant ChinBottom for LandmarkType
+        /// </summary>
+        public static readonly LandmarkType ChinBottom = new LandmarkType("chinBottom");
+        /// <summary>
         /// Constant EyeLeft for LandmarkType
         /// </summary>
         public static readonly LandmarkType EyeLeft = new LandmarkType("eyeLeft");
@@ -494,6 +498,14 @@ namespace Amazon.Rekognition
         /// Constant LeftPupil for LandmarkType
         /// </summary>
         public static readonly LandmarkType LeftPupil = new LandmarkType("leftPupil");
+        /// <summary>
+        /// Constant MidJawlineLeft for LandmarkType
+        /// </summary>
+        public static readonly LandmarkType MidJawlineLeft = new LandmarkType("midJawlineLeft");
+        /// <summary>
+        /// Constant MidJawlineRight for LandmarkType
+        /// </summary>
+        public static readonly LandmarkType MidJawlineRight = new LandmarkType("midJawlineRight");
         /// <summary>
         /// Constant MouthDown for LandmarkType
         /// </summary>
@@ -554,6 +566,14 @@ namespace Amazon.Rekognition
         /// Constant RightPupil for LandmarkType
         /// </summary>
         public static readonly LandmarkType RightPupil = new LandmarkType("rightPupil");
+        /// <summary>
+        /// Constant UpperJawlineLeft for LandmarkType
+        /// </summary>
+        public static readonly LandmarkType UpperJawlineLeft = new LandmarkType("upperJawlineLeft");
+        /// <summary>
+        /// Constant UpperJawlineRight for LandmarkType
+        /// </summary>
+        public static readonly LandmarkType UpperJawlineRight = new LandmarkType("upperJawlineRight");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

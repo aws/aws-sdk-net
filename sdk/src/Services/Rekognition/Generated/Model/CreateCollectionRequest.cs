@@ -39,6 +39,11 @@ namespace Amazon.Rekognition.Model
     /// results in a specific collection. Then, a user can search the collection for faces
     /// in the user-specific container. 
     /// </para>
+    ///  
+    /// <para>
+    /// When you create a collection, it is associated with the latest version of the face
+    /// model version.
+    /// </para>
     ///  <note> 
     /// <para>
     /// Collection names are case-sensitive.

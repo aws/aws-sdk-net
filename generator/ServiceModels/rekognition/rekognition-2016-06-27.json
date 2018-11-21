@@ -106,7 +106,7 @@
           "shape_name": "ResourceAlreadyExistsException"
         }
       ],
-      "documentation": "\n\n         <p>Creates a collection in an AWS Region. You can add faces to the collection using the\n         operation. </p>\n         <p>For example, you might create collections, one for each of your application users. A\n      user can then index faces using the <code>IndexFaces</code> operation and persist results in a\n      specific collection. Then, a user can search the collection for faces in the user-specific\n      container. </p>\n         <note>\n            <p>Collection names are case-sensitive.</p>\n         </note>\n\n         <p>This operation requires permissions to perform the\n        <code>rekognition:CreateCollection</code> action.</p>\n\n      "
+      "documentation": "\n\n         <p>Creates a collection in an AWS Region. You can add faces to the collection using the\n         operation. </p>\n         <p>For example, you might create collections, one for each of your application users. A\n      user can then index faces using the <code>IndexFaces</code> operation and persist results in a\n      specific collection. Then, a user can search the collection for faces in the user-specific\n      container. </p>\n         <p>When you create a collection, it is associated with the latest version of the face model version.</p>\n         <note>\n            <p>Collection names are case-sensitive.</p>\n         </note>\n\n         <p>This operation requires permissions to perform the\n        <code>rekognition:CreateCollection</code> action.</p>\n\n      "
     },
     "DeleteCollection": {
       "name": "DeleteCollection",
@@ -926,8 +926,8 @@
               "ROTATE_180",
               "ROTATE_270"
             ],
-            "zonbookDocumentation": "\n         <para>The value of <code>OrientationCorrection</code> is always null.</para>\n         <para>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction - the bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</para>\n         <para>Amazon Rekognition doesn’t perform image correction for images in .png format and\n         .jpeg images without orientation information in the image Exif metadata. The bounding box\n         coordinates are not translated and represent the object locations before the image is rotated.\n      </para>\n    \n      ",
-            "documentation": "\n         <p>The value of <code>OrientationCorrection</code> is always null.</p>\n         <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction - the bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</p>\n         <p>Amazon Rekognition doesn’t perform image correction for images in .png format and\n         .jpeg images without orientation information in the image Exif metadata. The bounding box\n         coordinates are not translated and represent the object locations before the image is rotated.\n      </p>\n    \n      ",
+            "zonbookDocumentation": "\n         <para>The value of <code>OrientationCorrection</code> is always null.</para>\n         <para>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction. The bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</para>\n         <para>Amazon Rekognition doesn’t perform image correction for images in .png format and\n         .jpeg images without orientation information in the image Exif metadata. The bounding box\n         coordinates aren't translated and represent the object locations before the image is rotated.\n      </para>\n    \n      ",
+            "documentation": "\n         <p>The value of <code>OrientationCorrection</code> is always null.</p>\n         <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction. The bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</p>\n         <p>Amazon Rekognition doesn’t perform image correction for images in .png format and\n         .jpeg images without orientation information in the image Exif metadata. The bounding box\n         coordinates aren't translated and represent the object locations before the image is rotated.\n      </p>\n    \n      ",
             "shape_name": "OrientationCorrection"
           },
           "LabelModelVersion": {
@@ -2023,7 +2023,12 @@
                               "mouthUp",
                               "mouthDown",
                               "leftPupil",
-                              "rightPupil"
+                              "rightPupil",
+                              "upperJawlineLeft",
+                              "midJawlineLeft",
+                              "chinBottom",
+                              "midJawlineRight",
+                              "upperJawlineRight"
                             ],
                             "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                             "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -2193,7 +2198,12 @@
                           "mouthUp",
                           "mouthDown",
                           "leftPupil",
-                          "rightPupil"
+                          "rightPupil",
+                          "upperJawlineLeft",
+                          "midJawlineLeft",
+                          "chinBottom",
+                          "midJawlineRight",
+                          "upperJawlineRight"
                         ],
                         "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                         "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -2283,8 +2293,8 @@
               "ROTATE_180",
               "ROTATE_270"
             ],
-            "zonbookDocumentation": "\n         <simpara> The orientation of the source image (counterclockwise direction). If your application\n      displays the source image, you can use this value to correct image orientation. The bounding\n      box coordinates returned in <code>SourceImageFace</code> represent the location of the face\n      before the image orientation is corrected. </simpara>\n         <note>\n            <simpara>If the source image is in .jpeg format, it might contain exchangeable image (Exif)\n        metadata that includes the image's orientation. If the Exif metadata for the source image\n        populates the orientation field, the value of <code>OrientationCorrection</code> is null.\n        The <code>SourceImageFace</code> bounding box coordinates represent the location of the face\n        after Exif metadata is used to correct the orientation. Images in .png format don't contain\n        Exif metadata.</simpara>\n         </note>\n      ",
-            "documentation": "\n         <p> The orientation of the source image (counterclockwise direction). If your application\n      displays the source image, you can use this value to correct image orientation. The bounding\n      box coordinates returned in <code>SourceImageFace</code> represent the location of the face\n      before the image orientation is corrected. </p>\n         <note>\n            <p>If the source image is in .jpeg format, it might contain exchangeable image (Exif)\n        metadata that includes the image's orientation. If the Exif metadata for the source image\n        populates the orientation field, the value of <code>OrientationCorrection</code> is null.\n        The <code>SourceImageFace</code> bounding box coordinates represent the location of the face\n        after Exif metadata is used to correct the orientation. Images in .png format don't contain\n        Exif metadata.</p>\n         </note>\n      ",
+            "zonbookDocumentation": "\n         <para>The value of <code>SourceImageOrientationCorrection</code> is always null.</para>\n         <para>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction. The bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</para>\n         <para>Amazon Rekognition doesn’t perform image correction for images in .png format and\n      .jpeg images without orientation information in the image Exif metadata. The bounding box\n      coordinates aren't translated and represent the object locations before the image is rotated.\n    </para>\n\n    \n      ",
+            "documentation": "\n         <p>The value of <code>SourceImageOrientationCorrection</code> is always null.</p>\n         <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction. The bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</p>\n         <p>Amazon Rekognition doesn’t perform image correction for images in .png format and\n      .jpeg images without orientation information in the image Exif metadata. The bounding box\n      coordinates aren't translated and represent the object locations before the image is rotated.\n    </p>\n\n    \n      ",
             "shape_name": "OrientationCorrection"
           },
           "TargetImageOrientationCorrection": {
@@ -2295,8 +2305,8 @@
               "ROTATE_180",
               "ROTATE_270"
             ],
-            "zonbookDocumentation": "\n         <simpara> The orientation of the target image (in counterclockwise direction). If your\n      application displays the target image, you can use this value to correct the orientation of\n      the image. The bounding box coordinates returned in <code>FaceMatches</code> and\n        <code>UnmatchedFaces</code> represent face locations before the image orientation is\n      corrected. </simpara>\n         <note>\n            <simpara>If the target image is in .jpg format, it might contain Exif metadata that includes\n        the orientation of the image. If the Exif metadata for the target image populates the\n        orientation field, the value of <code>OrientationCorrection</code> is null. The bounding box\n        coordinates in <code>FaceMatches</code> and <code>UnmatchedFaces</code> represent the\n        location of the face after Exif metadata is used to correct the orientation. Images in .png\n        format don't contain Exif metadata.</simpara>\n         </note>\n      ",
-            "documentation": "\n         <p> The orientation of the target image (in counterclockwise direction). If your\n      application displays the target image, you can use this value to correct the orientation of\n      the image. The bounding box coordinates returned in <code>FaceMatches</code> and\n        <code>UnmatchedFaces</code> represent face locations before the image orientation is\n      corrected. </p>\n         <note>\n            <p>If the target image is in .jpg format, it might contain Exif metadata that includes\n        the orientation of the image. If the Exif metadata for the target image populates the\n        orientation field, the value of <code>OrientationCorrection</code> is null. The bounding box\n        coordinates in <code>FaceMatches</code> and <code>UnmatchedFaces</code> represent the\n        location of the face after Exif metadata is used to correct the orientation. Images in .png\n        format don't contain Exif metadata.</p>\n         </note>\n      ",
+            "zonbookDocumentation": "\n         <para>The value of <code>TargetImageOrientationCorrection</code> is always null.</para>\n         <para>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction. The bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</para>\n         <para>Amazon Rekognition doesn’t perform image correction for images in .png format and\n      .jpeg images without orientation information in the image Exif metadata. The bounding box\n      coordinates aren't translated and represent the object locations before the image is rotated.\n    </para>\n    \n      ",
+            "documentation": "\n         <p>The value of <code>TargetImageOrientationCorrection</code> is always null.</p>\n         <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction. The bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</p>\n         <p>Amazon Rekognition doesn’t perform image correction for images in .png format and\n      .jpeg images without orientation information in the image Exif metadata. The bounding box\n      coordinates aren't translated and represent the object locations before the image is rotated.\n    </p>\n    \n      ",
             "shape_name": "OrientationCorrection"
           }
         },
@@ -2763,7 +2773,12 @@
                           "mouthUp",
                           "mouthDown",
                           "leftPupil",
-                          "rightPupil"
+                          "rightPupil",
+                          "upperJawlineLeft",
+                          "midJawlineLeft",
+                          "chinBottom",
+                          "midJawlineRight",
+                          "upperJawlineRight"
                         ],
                         "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                         "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -2861,8 +2876,8 @@
               "ROTATE_180",
               "ROTATE_270"
             ],
-            "zonbookDocumentation": "\n         <simpara> The orientation of the input image (counter-clockwise direction). If your application\n      displays the image, you can use this value to correct image orientation. The bounding box\n      coordinates returned in <code>FaceDetails</code> represent face locations before the image\n      orientation is corrected. </simpara>\n         <note>\n            <simpara>If the input image is in .jpeg format, it might contain exchangeable image (Exif)\n        metadata that includes the image's orientation. If so, and the Exif metadata for the input\n        image populates the orientation field, the value of <code>OrientationCorrection</code> is\n        null. The <code>FaceDetails</code> bounding box coordinates represent face locations after\n        Exif metadata is used to correct the image orientation. Images in .png format don't contain\n        Exif metadata.</simpara>\n         </note>\n      ",
-            "documentation": "\n         <p> The orientation of the input image (counter-clockwise direction). If your application\n      displays the image, you can use this value to correct image orientation. The bounding box\n      coordinates returned in <code>FaceDetails</code> represent face locations before the image\n      orientation is corrected. </p>\n         <note>\n            <p>If the input image is in .jpeg format, it might contain exchangeable image (Exif)\n        metadata that includes the image's orientation. If so, and the Exif metadata for the input\n        image populates the orientation field, the value of <code>OrientationCorrection</code> is\n        null. The <code>FaceDetails</code> bounding box coordinates represent face locations after\n        Exif metadata is used to correct the image orientation. Images in .png format don't contain\n        Exif metadata.</p>\n         </note>\n      ",
+            "zonbookDocumentation": "\n         <para>The value of <code>OrientationCorrection</code> is always null.</para>\n         <para>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction. The bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</para>\n         <para>Amazon Rekognition doesn’t perform image correction for images in .png format and\n      .jpeg images without orientation information in the image Exif metadata. The bounding box\n      coordinates aren't translated and represent the object locations before the image is rotated.\n    </para>\n    \n   \n     \n\n      ",
+            "documentation": "\n         <p>The value of <code>OrientationCorrection</code> is always null.</p>\n         <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n      that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n      image correction. The bounding box coordinates are translated to represent object locations\n      after the orientation information in the Exif metadata is used to correct the image orientation. \n      Images in .png format don't contain Exif metadata.</p>\n         <p>Amazon Rekognition doesn’t perform image correction for images in .png format and\n      .jpeg images without orientation information in the image Exif metadata. The bounding box\n      coordinates aren't translated and represent the object locations before the image is rotated.\n    </p>\n    \n   \n     \n\n      ",
             "shape_name": "OrientationCorrection"
           }
         },
@@ -2935,7 +2950,7 @@
           "shape_name": "InvalidImageFormatException"
         }
       ],
-      "documentation": "\n         <p>Detects faces within an image that is provided as input.</p>\n\n         <p>\n            <code>DetectFaces</code> detects the 100 largest faces in the image. For each face\n      detected, the operation returns face details. These details include a bounding box of the\n      face, a confidence value (that the bounding box contains a face), and a fixed set of\n      attributes such as facial landmarks (for example, coordinates of eye and mouth), gender,\n      presence of beard, sunglasses, and so on. </p>\n         <p>The face-detection algorithm is most effective on frontal faces. For non-frontal or\n      obscured faces, the algorithm might not detect the faces or might detect faces with lower\n      confidence. </p>\n         <p>You pass the input image either as base64-encoded image bytes or as a reference to an\n      image in an Amazon S3 bucket. If you use the\n      AWS\n      CLI to call Amazon Rekognition operations, passing image bytes is not\n      supported. The image must be either a PNG or JPEG formatted file. </p>\n\n         <note>\n            <p>This is a stateless API operation. That is, the operation does not persist any\n        data.</p>\n         </note>\n\n         <p>This operation requires permissions to perform the\n      <code>rekognition:DetectFaces</code> action. </p>\n\n      "
+      "documentation": "\n         <p>Detects faces within an image that is provided as input.</p>\n\n         <p>\n            <code>DetectFaces</code> detects the 100 largest faces in the image. For each face\n      detected, the operation returns face details. These details include a bounding box of the\n      face, a confidence value (that the bounding box contains a face), and a fixed set of\n      attributes such as facial landmarks (for example, coordinates of eye and mouth), gender,\n      presence of beard, sunglasses, and so on. </p>\n         <p>The face-detection algorithm is most effective on frontal faces. For non-frontal or\n      obscured faces, the algorithm might not detect the faces or might detect faces with lower\n      confidence. </p>\n         <p>You pass the input image either as base64-encoded image bytes or as a reference to an\n      image in an Amazon S3 bucket. If you use the\n       to call Amazon Rekognition operations, passing image bytes is not\n      supported. The image must be either a PNG or JPEG formatted file. </p>\n\n         <note>\n            <p>This is a stateless API operation. That is, the operation does not persist any\n        data.</p>\n         </note>\n\n         <p>This operation requires permissions to perform the\n      <code>rekognition:DetectFaces</code> action. </p>\n\n      "
     },
     "StartGroupFaces": {
       "name": "StartGroupFaces",
@@ -4154,7 +4169,12 @@
                               "mouthUp",
                               "mouthDown",
                               "leftPupil",
-                              "rightPupil"
+                              "rightPupil",
+                              "upperJawlineLeft",
+                              "midJawlineLeft",
+                              "chinBottom",
+                              "midJawlineRight",
+                              "upperJawlineRight"
                             ],
                             "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                             "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -4257,8 +4277,8 @@
               "ROTATE_180",
               "ROTATE_270"
             ],
-            "zonbookDocumentation": "\n         <simpara>The orientation of the input image (counterclockwise direction). If your application\n      displays the image, you can use this value to correct image orientation. The bounding box\n      coordinates returned in <code>FaceRecords</code> represent face locations before the image\n      orientation is corrected. </simpara>\n         <note>\n            <simpara>If the input image is in jpeg format, it might contain exchangeable image (Exif)\n        metadata. If so, and the Exif metadata populates the orientation field, the value of\n          <code>OrientationCorrection</code> is null. The bounding box coordinates in\n          <code>FaceRecords</code> represent face locations after Exif metadata is used to correct\n        the image orientation. Images in .png format don't contain Exif metadata.</simpara>\n         </note>\n      ",
-            "documentation": "\n         <p>The orientation of the input image (counterclockwise direction). If your application\n      displays the image, you can use this value to correct image orientation. The bounding box\n      coordinates returned in <code>FaceRecords</code> represent face locations before the image\n      orientation is corrected. </p>\n         <note>\n            <p>If the input image is in jpeg format, it might contain exchangeable image (Exif)\n        metadata. If so, and the Exif metadata populates the orientation field, the value of\n          <code>OrientationCorrection</code> is null. The bounding box coordinates in\n          <code>FaceRecords</code> represent face locations after Exif metadata is used to correct\n        the image orientation. Images in .png format don't contain Exif metadata.</p>\n         </note>\n      ",
+            "zonbookDocumentation": "\n         <para>If your collection is associated with a face detection model that's later \n      than version 3.0, the value of <code>OrientationCorrection</code>\n      is always null and no orientation information is returned.</para>\n    \n         <para>If your collection is associated with a face detection model that's\n      version 3.0 or earlier, the following applies:</para>\n         <itemizedlist>\n            <listitem>\n               <para>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n        that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n        image correction - the bounding box coordinates are translated to represent object locations\n        after the orientation information in the Exif metadata is used to correct the image orientation. \n        Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code>\n        is null.</para>\n            </listitem>\n            <listitem>\n               <para>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns\n      an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform \n      image correction for images. The bounding box coordinates aren't translated and represent the \n      object locations before the image is rotated.</para>\n            </listitem>\n         </itemizedlist>\n    \n    \n    \n         <para>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the \n    version of the face detection model by calling <xref linkend=\"API_DescribeCollection\"/>. </para>\n   \n   \n    \n    \n    \n      ",
+            "documentation": "\n         <p>If your collection is associated with a face detection model that's later \n      than version 3.0, the value of <code>OrientationCorrection</code>\n      is always null and no orientation information is returned.</p>\n    \n         <p>If your collection is associated with a face detection model that's\n      version 3.0 or earlier, the following applies:</p>\n         <ul>\n            <li>\n               <p>If the input image is in .jpeg format, it might contain exchangeable image file format (Exif) metadata\n        that includes the image's orientation. Amazon Rekognition uses this orientation information to perform \n        image correction - the bounding box coordinates are translated to represent object locations\n        after the orientation information in the Exif metadata is used to correct the image orientation. \n        Images in .png format don't contain Exif metadata. The value of <code>OrientationCorrection</code>\n        is null.</p>\n            </li>\n            <li>\n               <p>If the image doesn't contain orientation information in its Exif metadata, Amazon Rekognition returns\n      an estimated orientation (ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270). Amazon Rekognition doesn’t perform \n      image correction for images. The bounding box coordinates aren't translated and represent the \n      object locations before the image is rotated.</p>\n            </li>\n         </ul>\n    \n    \n    \n         <p>Bounding box information is returned in the <code>FaceRecords</code> array. You can get the \n    version of the face detection model by calling . </p>\n   \n   \n    \n    \n    \n      ",
             "shape_name": "OrientationCorrection"
           },
           "FaceModelVersion": {
@@ -4604,7 +4624,12 @@
                               "mouthUp",
                               "mouthDown",
                               "leftPupil",
-                              "rightPupil"
+                              "rightPupil",
+                              "upperJawlineLeft",
+                              "midJawlineLeft",
+                              "chinBottom",
+                              "midJawlineRight",
+                              "upperJawlineRight"
                             ],
                             "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                             "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -4777,7 +4802,7 @@
           "shape_name": "InvalidImageFormatException"
         }
       ],
-      "documentation": "\n         <p>Detects faces in the input image and adds them to the specified collection. </p>\n         <p>Amazon Rekognition doesn't save the actual faces that are detected. Instead, the underlying\n      detection algorithm first detects the faces in the input image. For each face, the algorithm\n      extracts facial features into a feature vector, and stores it in the backend database.\n      Amazon Rekognition uses feature vectors when it performs face match and search operations using the\n         and \n      operations.</p>\n    \n         <p>For more information, see Adding Faces to a Collection in the Amazon Rekognition\n      Developer Guide.</p>\n         <p>To get the number of faces in a collection, call . </p>\n\n         <p>If you're using version 1.0 of the face detection model, <code>IndexFaces</code>\n      indexes the 15 largest faces in the input image. Later versions of the face detection model\n      index the 100 largest faces in the input image. To determine which version of the model you're\n      using, call  and supply the collection ID. You can\n      also get the model version from the value of <code>FaceModelVersion</code> in the response\n      from <code>IndexFaces</code>. </p>\n    \n         <p>For more information, see Model Versioning in the Amazon Rekognition Developer\n      Guide.</p>\n         <p>If you provide the optional <code>ExternalImageID</code> for the input image you\n      provided, Amazon Rekognition associates this ID with all faces that it detects. When you call the  operation, the response returns the external ID. You can use this\n      external image ID to create a client-side index to associate the faces with each image. You\n      can then use the index to find all faces in an image.</p>\n         <p>You can specify the maximum number of faces to index with the <code>MaxFaces</code> input\n      parameter. This is useful when you want to index the largest faces in an image and don't want to index\n      smaller faces, such as those belonging to people standing in the background.</p>\n         <p>The <code>QualityFilter</code> input parameter allows you to filter out detected faces\n      that don’t meet the required quality bar chosen by Amazon Rekognition. The quality bar is based on a\n      variety of common use cases. By default, <code>IndexFaces</code> filters detected faces. You\n      can also explicitly filter detected faces by specifying <code>AUTO</code> for the value of\n        <code>QualityFilter</code>. If you do not want to filter detected faces, specify\n        <code>NONE</code>. </p>\n         <note>\n            <p>To use quality filtering, you need a collection associated with version 3 of the \n    face model. To get the version of the face model associated with a collection, call \n      . </p>\n         </note>\n         <p>Information about faces detected in an image, but not indexed, is returned in an array of\n       objects, <code>UnindexedFaces</code>. Faces aren't\n      indexed for reasons such as:</p>\n         <ul>\n            <li>\n               <p>The number of faces detected exceeds the value of the <code>MaxFaces</code> request\n          parameter.</p>\n            </li>\n            <li>\n               <p>The face is too small compared to the image dimensions.</p>\n            </li>\n            <li>\n               <p>The face is too blurry.</p>\n            </li>\n            <li>\n               <p>The image is too dark.</p>\n            </li>\n            <li>\n               <p>The face has an extreme pose.</p>\n            </li>\n         </ul>\n         <p>In response, the <code>IndexFaces</code> operation returns an array of metadata for \n      all detected faces, <code>FaceRecords</code>. This includes: </p>\n         <ul>\n            <li>\n               <p>The bounding box, <code>BoundingBox</code>, of the detected face. </p>\n            </li>\n            <li>\n               <p>A confidence value, <code>Confidence</code>, which indicates the confidence that the\n          bounding box contains a face.</p>\n            </li>\n            <li>\n               <p>A face ID, <code>faceId</code>, assigned by the service for each face that's detected\n          and stored.</p>\n            </li>\n            <li>\n               <p>An image ID, <code>ImageId</code>, assigned by the service for the input image.</p>\n            </li>\n         </ul>\n         <p>If you request all facial attributes (by using the <code>detectionAttributes</code>\n      parameter), Amazon Rekognition returns detailed facial attributes, such as facial landmarks (for\n      example, location of eye and mouth) and other facial attributes like gender. If you provide\n      the same image, specify the same collection, and use the same external ID in the\n        <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.</p>\n \n\n         <p/>\n    \n\n         <p>The input image is passed either as base64-encoded image bytes, or as a reference to an\n      image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,\n      passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file. </p>\n         <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code>\n      action.</p>\n\n      "
+      "documentation": "\n         <p>Detects faces in the input image and adds them to the specified collection. </p>\n         <p>Amazon Rekognition doesn't save the actual faces that are detected. Instead, the underlying\n      detection algorithm first detects the faces in the input image. For each face, the algorithm\n      extracts facial features into a feature vector, and stores it in the backend database.\n      Amazon Rekognition uses feature vectors when it performs face match and search operations using the\n         and \n      operations.</p>\n    \n         <p>For more information, see Adding Faces to a Collection in the Amazon Rekognition\n      Developer Guide.</p>\n         <p>To get the number of faces in a collection, call . </p>\n\n         <p>If you're using version 1.0 of the face detection model, <code>IndexFaces</code>\n      indexes the 15 largest faces in the input image. Later versions of the face detection model\n      index the 100 largest faces in the input image. </p>\n         <p>If you're using version 4 or later of the face model, image orientation information\n     is not returned in the <code>OrientationCorrection</code> field. </p>\n         <p>To determine which version of the model you're using, call \n      and supply the collection ID. You can also get the model version from the value of <code>FaceModelVersion</code> in the response\n      from <code>IndexFaces</code>\n         </p>\n    \n         <p>For more information, see Model Versioning in the Amazon Rekognition Developer\n      Guide.</p>\n         <p>If you provide the optional <code>ExternalImageID</code> for the input image you\n      provided, Amazon Rekognition associates this ID with all faces that it detects. When you call the  operation, the response returns the external ID. You can use this\n      external image ID to create a client-side index to associate the faces with each image. You\n      can then use the index to find all faces in an image.</p>\n         <p>You can specify the maximum number of faces to index with the <code>MaxFaces</code> input\n      parameter. This is useful when you want to index the largest faces in an image and don't want to index\n      smaller faces, such as those belonging to people standing in the background.</p>\n         <p>The <code>QualityFilter</code> input parameter allows you to filter out detected faces\n      that don’t meet the required quality bar chosen by Amazon Rekognition. The quality bar is based on a\n      variety of common use cases. By default, <code>IndexFaces</code> filters detected faces. You\n      can also explicitly filter detected faces by specifying <code>AUTO</code> for the value of\n        <code>QualityFilter</code>. If you do not want to filter detected faces, specify\n        <code>NONE</code>. </p>\n         <note>\n            <p>To use quality filtering, you need a collection associated with version 3 of the \n    face model. To get the version of the face model associated with a collection, call \n      . </p>\n         </note>\n         <p>Information about faces detected in an image, but not indexed, is returned in an array of\n       objects, <code>UnindexedFaces</code>. Faces aren't\n      indexed for reasons such as:</p>\n         <ul>\n            <li>\n               <p>The number of faces detected exceeds the value of the <code>MaxFaces</code> request\n          parameter.</p>\n            </li>\n            <li>\n               <p>The face is too small compared to the image dimensions.</p>\n            </li>\n            <li>\n               <p>The face is too blurry.</p>\n            </li>\n            <li>\n               <p>The image is too dark.</p>\n            </li>\n            <li>\n               <p>The face has an extreme pose.</p>\n            </li>\n         </ul>\n         <p>In response, the <code>IndexFaces</code> operation returns an array of metadata for \n      all detected faces, <code>FaceRecords</code>. This includes: </p>\n         <ul>\n            <li>\n               <p>The bounding box, <code>BoundingBox</code>, of the detected face. </p>\n            </li>\n            <li>\n               <p>A confidence value, <code>Confidence</code>, which indicates the confidence that the\n          bounding box contains a face.</p>\n            </li>\n            <li>\n               <p>A face ID, <code>faceId</code>, assigned by the service for each face that's detected\n          and stored.</p>\n            </li>\n            <li>\n               <p>An image ID, <code>ImageId</code>, assigned by the service for the input image.</p>\n            </li>\n         </ul>\n         <p>If you request all facial attributes (by using the <code>detectionAttributes</code>\n      parameter), Amazon Rekognition returns detailed facial attributes, such as facial landmarks (for\n      example, location of eye and mouth) and other facial attributes like gender. If you provide\n      the same image, specify the same collection, and use the same external ID in the\n        <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate face metadata.</p>\n \n\n         <p/>\n    \n\n         <p>The input image is passed either as base64-encoded image bytes, or as a reference to an\n      image in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,\n      passing image bytes isn't supported. The image must be formatted as a PNG or JPEG file. </p>\n         <p>This operation requires permissions to perform the <code>rekognition:IndexFaces</code>\n      action.</p>\n\n      "
     },
     "DetectModerationLabels": {
       "name": "DetectModerationLabels",
@@ -5127,7 +5152,12 @@
                               "mouthUp",
                               "mouthDown",
                               "leftPupil",
-                              "rightPupil"
+                              "rightPupil",
+                              "upperJawlineLeft",
+                              "midJawlineLeft",
+                              "chinBottom",
+                              "midJawlineRight",
+                              "upperJawlineRight"
                             ],
                             "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                             "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -5305,7 +5335,12 @@
                           "mouthUp",
                           "mouthDown",
                           "leftPupil",
-                          "rightPupil"
+                          "rightPupil",
+                          "upperJawlineLeft",
+                          "midJawlineLeft",
+                          "chinBottom",
+                          "midJawlineRight",
+                          "upperJawlineRight"
                         ],
                         "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                         "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -7943,7 +7978,12 @@
                               "mouthUp",
                               "mouthDown",
                               "leftPupil",
-                              "rightPupil"
+                              "rightPupil",
+                              "upperJawlineLeft",
+                              "midJawlineLeft",
+                              "chinBottom",
+                              "midJawlineRight",
+                              "upperJawlineRight"
                             ],
                             "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                             "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -8584,7 +8624,12 @@
                                   "mouthUp",
                                   "mouthDown",
                                   "leftPupil",
-                                  "rightPupil"
+                                  "rightPupil",
+                                  "upperJawlineLeft",
+                                  "midJawlineLeft",
+                                  "chinBottom",
+                                  "midJawlineRight",
+                                  "upperJawlineRight"
                                 ],
                                 "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                                 "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -9256,7 +9301,12 @@
                                   "mouthUp",
                                   "mouthDown",
                                   "leftPupil",
-                                  "rightPupil"
+                                  "rightPupil",
+                                  "upperJawlineLeft",
+                                  "midJawlineLeft",
+                                  "chinBottom",
+                                  "midJawlineRight",
+                                  "upperJawlineRight"
                                 ],
                                 "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                                 "documentation": "\n         <p>Type of landmark.</p>\n      ",
@@ -9902,7 +9952,12 @@
                                   "mouthUp",
                                   "mouthDown",
                                   "leftPupil",
-                                  "rightPupil"
+                                  "rightPupil",
+                                  "upperJawlineLeft",
+                                  "midJawlineLeft",
+                                  "chinBottom",
+                                  "midJawlineRight",
+                                  "upperJawlineRight"
                                 ],
                                 "zonbookDocumentation": "\n         <simpara>Type of landmark.</simpara>\n      ",
                                 "documentation": "\n         <p>Type of landmark.</p>\n      ",
