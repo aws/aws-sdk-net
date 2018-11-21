@@ -162,6 +162,8 @@
     </Target>
 
     <Target Name="run-generator">
+        <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)\references.targets')" />
+    
         <Message Text="Build and run code generator"/>
         <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="..\generator" />
         <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="..\generator"/>
