@@ -47,27 +47,8 @@ namespace ServiceClientGenerator
                 string projectGuid = Utils.GetProjectGuid(Path.Combine(unitTestRoot, projectName));
                 IList<ProjectFileCreator.ProjectReference> commonReferences;
                 IList<ProjectFileCreator.ProjectReference> serviceProjectReferences;
-                IList<ProjectFileCreator.Reference> dllProjectReferences;
 
-                if (useDllReference)
-                {
-                    if (_isLegacyProj)
-                    {
-                        projectName = string.Format("Build.UnitTests.{0}.partial.csproj", configuration.Name);
-                    }
-                    else
-                    {
-                        projectName = string.Format("Build.UnitTests.{0}.{1}.partial.csproj", _serviceName, configuration.Name);
-                    }
-                    serviceProjectReferences = null;
-                    dllProjectReferences = ServiceDllReferences(unitTestRoot, serviceConfigurations, configuration.Name);
-
-                }
-                else
-                {
-                    serviceProjectReferences = ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name);
-                    dllProjectReferences = null;
-                }
+                serviceProjectReferences = ServiceProjectReferences(unitTestRoot, serviceConfigurations, configuration.Name);
                 commonReferences = GetCommonReferences(unitTestRoot, configuration.Name, useDllReference);
 
                 var session = new Dictionary<string, object>
@@ -103,7 +84,6 @@ namespace ServiceClientGenerator
                     }
                 }
 
-                if (useDllReference) session.Add("ServiceDllReferences", dllProjectReferences);
                 if (serviceProjectReferences != null)
                 {
                     session["ProjectReferenceList"] = commonReferences.Concat(serviceProjectReferences).ToList();
