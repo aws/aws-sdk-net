@@ -1,3 +1,7 @@
+### 3.3.413.0 (2018-11-21 19:23 UTC)
+* Rekognition (3.3.13.0)
+	* This release updates the DetectFaces and IndexFaces operation. When the Attributes input parameter is set to ALL, the face location landmarks includes 5 new landmarks: upperJawlineLeft, midJawlineLeft, chinBottom, midJawlineRight, upperJawlineRight.
+
 ### 3.3.412.0 (2018-11-20 22:08 UTC)
 * AppSync (3.3.4.0)
 	* AWS AppSync now supports: 1. Pipeline Resolvers - Enables execution of one or more operations against multiple data sources in order, on a single GraphQL field. This allows orchestration of actions by composing code into a single Resolver, or share code across Resolvers.  2. Aurora Serverless Data Source - Built-in resolver for executing GraphQL operations with the new Aurora Serverless Data API, including connection management functionality.
