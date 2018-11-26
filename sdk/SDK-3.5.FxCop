@@ -24,6 +24,7 @@
     <AssemblyReferenceDirectories>
       <Directory>$(ProjectDir)/src/Services/acmpca/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/alexaforbusiness/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/amplify/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net35/</Directory>
@@ -67,6 +68,7 @@
       <Directory>$(ProjectDir)/src/Services/costexplorer/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/datasync/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/dax/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/devicefarm/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net35/</Directory>
@@ -143,6 +145,7 @@
       <Directory>$(ProjectDir)/src/Services/rekognition/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/resourcegroups/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/resourcegroupstaggingapi/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/robomaker/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53domains/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53resolver/bin/Release/net35/</Directory>
@@ -168,6 +171,7 @@
       <Directory>$(ProjectDir)/src/Services/stepfunctions/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/transcribeservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/transfer/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/translate/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/waf/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/wafregional/bin/Release/net35/</Directory>
@@ -179,6 +183,7 @@
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ACMPCA.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AlexaForBusiness.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Amplify.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -222,6 +227,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CostExplorer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DataSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DAX.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DeviceFarm.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -298,6 +304,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Rekognition.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ResourceGroups.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ResourceGroupsTaggingAPI.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.RoboMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Route53.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Route53Domains.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Route53Resolver.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -323,6 +330,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StepFunctions.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.TranscribeService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Transfer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Translate.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WAF.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.WAFRegional.dll" Analyze="True" AnalyzeAllChildren="True" />

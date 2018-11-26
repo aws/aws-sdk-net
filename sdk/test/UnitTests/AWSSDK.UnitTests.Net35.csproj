@@ -80,6 +80,7 @@
     <ProjectReference Include="..\..\src\Services\CostExplorer\AWSSDK.CostExplorer.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\DatabaseMigrationService\AWSSDK.DatabaseMigrationService.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\DataPipeline\AWSSDK.DataPipeline.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\DataSync\AWSSDK.DataSync.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\DAX\AWSSDK.DAX.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\DeviceFarm\AWSSDK.DeviceFarm.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\DirectConnect\AWSSDK.DirectConnect.Net35.csproj"/>
@@ -157,6 +158,7 @@
     <ProjectReference Include="..\..\src\Services\Rekognition\AWSSDK.Rekognition.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ResourceGroups\AWSSDK.ResourceGroups.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ResourceGroupsTaggingAPI\AWSSDK.ResourceGroupsTaggingAPI.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\RoboMaker\AWSSDK.RoboMaker.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Route53\AWSSDK.Route53.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Route53Domains\AWSSDK.Route53Domains.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Route53Resolver\AWSSDK.Route53Resolver.Net35.csproj"/>
@@ -182,6 +184,7 @@
     <ProjectReference Include="..\..\src\Services\StepFunctions\AWSSDK.StepFunctions.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\StorageGateway\AWSSDK.StorageGateway.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\TranscribeService\AWSSDK.TranscribeService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Transfer\AWSSDK.Transfer.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Translate\AWSSDK.Translate.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\WAF\AWSSDK.WAF.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\WAFRegional\AWSSDK.WAFRegional.Net35.csproj"/>

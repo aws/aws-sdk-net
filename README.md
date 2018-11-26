@@ -167,6 +167,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Database Migration Service (AWS DMS) can migrate your data to and from most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Aurora, MariaDB, and MySQL. The service supports homogeneous migrations such as Oracle to Oracle, and also heterogeneous migrations between different database platforms, such as Oracle to MySQL or MySQL to Amazon Aurora.
 * [AWSSDK.DataPipeline](https://www.nuget.org/packages/AWSSDK.DataPipeline/)
 	* AWS Data Pipeline is a managed extract-transform-load (ETL) service that helps you reliably and cost-effectively move and process data across your on-premise data stores and AWS services.
+* [AWSSDK.DataSync](https://www.nuget.org/packages/AWSSDK.DataSync/)
+	* AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.
 * [AWSSDK.DAX](https://www.nuget.org/packages/AWSSDK.DAX/)
 	* Amazon DynamoDB Accelerator (DAX) is a fully managed, highly available, in-memory cache for DynamoDB that delivers up to a 10x performance improvement - from milliseconds to microseconds - even at millions of requests per second. DAX does all the heavy lifting required to add in-memory acceleration to your DynamoDB tables, without requiring developers to manage cache invalidation, data population, or cluster management.
 * [AWSSDK.DeviceFarm](https://www.nuget.org/packages/AWSSDK.DeviceFarm/)
@@ -319,6 +321,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Resource Groups lets you search and group AWS resources from multiple services based on their tags.
 * [AWSSDK.ResourceGroupsTaggingAPI](https://www.nuget.org/packages/AWSSDK.ResourceGroupsTaggingAPI/)
 	* Resource Groups Tagging APIs can help you organize your resources and enable you to simplify resource management, access management, and cost allocation.
+* [AWSSDK.RoboMaker](https://www.nuget.org/packages/AWSSDK.RoboMaker/)
+	* (New Service) AWS RoboMaker is a service that makes it easy to develop, simulate, and deploy intelligent robotics applications at scale. 
 * [AWSSDK.Route53](https://www.nuget.org/packages/AWSSDK.Route53/)
 	* Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
 * [AWSSDK.Route53Domains](https://www.nuget.org/packages/AWSSDK.Route53Domains/)
@@ -369,6 +373,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* The AWS Storage Gateway is a service connecting an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and AWS's storage infrastructure.
 * [AWSSDK.TranscribeService](https://www.nuget.org/packages/AWSSDK.TranscribeService/)
 	* Amazon Transcribe Public Preview Release
+* [AWSSDK.Transfer](https://www.nuget.org/packages/AWSSDK.Transfer/)
+	* AWS Transfer for SFTP is a fully managed service that enables transfer of secure data over the internet into and out of Amazon S3. SFTP is deeply embedded in data exchange workflows across different industries such as financial services, healthcare, advertising, and retail, among others.
 * [AWSSDK.Translate](https://www.nuget.org/packages/AWSSDK.Translate/)
 	* Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.
 * [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)

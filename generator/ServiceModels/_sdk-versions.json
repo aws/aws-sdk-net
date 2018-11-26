@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.413.0",
+    "ProductVersion" : "3.3.414.0",
     "CoreVersion"    : "3.3.29.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.27.1",
+            "Version" : "3.3.28.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -585,7 +585,7 @@
             "InPreview"               : false
         },
         "Snowball"                        : {
-            "Version" : "3.3.4.22",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -1225,6 +1225,38 @@
             "InPreview"               : false
         },
         "QuickSight"                      : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.12"
+            },
+            "InPreview"               : false
+        },
+        "Amplify"                         : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.12"
+            },
+            "InPreview"               : false
+        },
+        "RoboMaker"                       : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.12"
+            },
+            "InPreview"               : false
+        },
+        "DataSync"                        : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.12"
+            },
+            "InPreview"               : false
+        },
+        "Transfer"                        : {
             "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {

@@ -236,6 +236,10 @@
       <Project>{CA4F8900-EA2E-44CD-AFCC-B4BE1F7AF3EA}</Project>
       <Name>AWSSDK.DataPipeline.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/DataSync/AWSSDK.DataSync.CodeAnalysis.csproj">
+      <Project>{19E89A31-27A2-47AB-B854-925F3BA7364B}</Project>
+      <Name>AWSSDK.DataSync.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/DAX/AWSSDK.DAX.CodeAnalysis.csproj">
       <Project>{058AC9AA-575E-41B0-BB07-ACB97F16D056}</Project>
       <Name>AWSSDK.DAX.CodeAnalysis</Name>
@@ -540,6 +544,10 @@
       <Project>{15035CAA-5072-4251-9C59-C58A9CBD2D8F}</Project>
       <Name>AWSSDK.ResourceGroupsTaggingAPI.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/RoboMaker/AWSSDK.RoboMaker.CodeAnalysis.csproj">
+      <Project>{5AA93273-ADD6-471B-8FBC-0C2FD3E641AE}</Project>
+      <Name>AWSSDK.RoboMaker.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Route53/AWSSDK.Route53.CodeAnalysis.csproj">
       <Project>{3CE0119E-8964-4015-AA92-9A0017A5B423}</Project>
       <Name>AWSSDK.Route53.CodeAnalysis</Name>
@@ -639,6 +647,10 @@
     <ProjectReference Include="../ServiceAnalysis/TranscribeService/AWSSDK.TranscribeService.CodeAnalysis.csproj">
       <Project>{7027246A-5E80-43D3-82D0-AA13B5519D45}</Project>
       <Name>AWSSDK.TranscribeService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/Transfer/AWSSDK.Transfer.CodeAnalysis.csproj">
+      <Project>{E6ABBF42-3FD1-4214-ADA3-6B6798BD2BCB}</Project>
+      <Name>AWSSDK.Transfer.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Translate/AWSSDK.Translate.CodeAnalysis.csproj">
       <Project>{6FF17F31-ED67-4AFF-830D-EC37A05E0BD4}</Project>

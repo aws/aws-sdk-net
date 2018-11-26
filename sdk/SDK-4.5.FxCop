@@ -24,6 +24,7 @@
     <AssemblyReferenceDirectories>
       <Directory>$(ProjectDir)/src/Services/acmpca/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/alexaforbusiness/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/amplify/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net45/</Directory>
@@ -67,6 +68,7 @@
       <Directory>$(ProjectDir)/src/Services/costexplorer/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/databasemigrationservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/datapipeline/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/datasync/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/dax/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/devicefarm/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/directconnect/bin/Release/net45/</Directory>
@@ -143,6 +145,7 @@
       <Directory>$(ProjectDir)/src/Services/rekognition/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/resourcegroups/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/resourcegroupstaggingapi/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/robomaker/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53domains/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/route53resolver/bin/Release/net45/</Directory>
@@ -168,6 +171,7 @@
       <Directory>$(ProjectDir)/src/Services/stepfunctions/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/storagegateway/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/transcribeservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/transfer/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/translate/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/waf/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/wafregional/bin/Release/net45/</Directory>
@@ -179,6 +183,7 @@
     </AssemblyReferenceDirectories>
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ACMPCA.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AlexaForBusiness.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Amplify.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -222,6 +227,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.CostExplorer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DatabaseMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DataPipeline.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DataSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DAX.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DeviceFarm.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.DirectConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -298,6 +304,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Rekognition.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ResourceGroups.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ResourceGroupsTaggingAPI.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.RoboMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53Domains.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Route53Resolver.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -323,6 +330,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.StepFunctions.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.StorageGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.TranscribeService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Transfer.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Translate.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WAF.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.WAFRegional.dll" Analyze="True" AnalyzeAllChildren="True" />
