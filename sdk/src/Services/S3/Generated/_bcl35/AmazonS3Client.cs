@@ -1401,7 +1401,7 @@ namespace Amazon.S3
         #region  DeletePublicAccessBlock
 
         /// <summary>
-        /// Removes the Public Access Block configuration for an Amazon S3 bucket.
+        /// Removes the <code>PublicAccessBlock</code> configuration from an Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublicAccessBlock service method.</param>
         /// 
@@ -2800,7 +2800,7 @@ namespace Amazon.S3
         #region  GetPublicAccessBlock
 
         /// <summary>
-        /// Retrieves the Public Access Block configuration for an Amazon S3 bucket.
+        /// Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPublicAccessBlock service method.</param>
         /// 
@@ -4653,7 +4653,8 @@ namespace Amazon.S3
         #region  PutPublicAccessBlock
 
         /// <summary>
-        /// Creates or modifies the Public Access Block configuration for an Amazon S3 bucket.
+        /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
+        /// S3 bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPublicAccessBlock service method.</param>
         /// 

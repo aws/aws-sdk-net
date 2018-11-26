@@ -584,6 +584,16 @@ namespace Amazon.S3
         public static readonly S3StorageClass OneZoneInfrequentAccess = new S3StorageClass("ONEZONE_IA");
 
         /// <summary>
+        /// IntelligentTiering makes it easy to lower your overall cost of storage by automatically placing data in the storage
+        /// class that best matches the access patterns for the storage. With IntelligentTiering, you don’t need to define
+        /// and manage individual policies for lifecycle data management or write code to transition objects
+        /// between storage classes. Instead, you can use IntelligentTiering to manage transitions between Standard and
+        /// S-IA without writing any application code. IntelligentTiering also manages transitions automatically to
+        /// Glacier for long term archive in addition to S3 storage classes.
+        /// </summary>
+        public static readonly S3StorageClass IntelligentTiering = new S3StorageClass("INTELLIGENT_TIERING");
+
+        /// <summary>
         /// Construct an instance of S3StorageClass.
         /// </summary>
         /// <param name="value"></param>
