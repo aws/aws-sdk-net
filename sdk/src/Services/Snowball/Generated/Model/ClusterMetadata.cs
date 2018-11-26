@@ -255,8 +255,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property ShippingOption. 
         /// <para>
         /// The shipping speed for each node in this cluster. This speed doesn't dictate how soon
-        /// you'll get each Snowball Edge device, rather it represents how quickly each device
-        /// moves to its destination while in transit. Regional shipping speeds are as follows:
+        /// you'll get each device, rather it represents how quickly each device moves to its
+        /// destination while in transit. Regional shipping speeds are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -265,14 +265,13 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In the European Union (EU), you have access to express shipping. Typically, Snowball
-        /// Edges shipped express are delivered in about a day. In addition, most countries in
-        /// the EU have access to standard shipping, which typically takes less than a week, one
-        /// way.
+        /// In the European Union (EU), you have access to express shipping. Typically, devices
+        /// shipped express are delivered in about a day. In addition, most countries in the EU
+        /// have access to standard shipping, which typically takes less than a week, one way.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, Snowball Edges are delivered in one to seven days.
+        /// In India, devices are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -295,8 +294,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball device to use for this cluster. Currently, the only supported
-        /// device type for cluster jobs is <code>EDGE</code>.
+        /// The type of AWS Snowball device to use for this cluster. The only supported device
+        /// types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
         /// </para>
         /// </summary>
         public SnowballType SnowballType

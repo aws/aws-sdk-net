@@ -30,10 +30,10 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Container for the parameters to the ListCompatibleImages operation.
     /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
-    /// that are owned by your AWS account that would be supported for use on a Snowball Edge
-    /// device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with Updates
-    /// HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images, available
-    /// on the AWS Marketplace.
+    /// that are owned by your AWS account that would be supported for use on <code>EDGE</code>,
+    /// <code>EDGE_C</code>, and <code>EDGE_CG</code> devices. For more information on compatible
+    /// AMIs, see <a href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
+    /// Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer Guide</i>.
     /// </summary>
     public partial class ListCompatibleImagesRequest : AmazonSnowballRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results for the list of compatible images. Currently, a Snowball
-        /// Edge device can store 10 AMIs.
+        /// The maximum number of results for the list of compatible images. Currently, each supported
+        /// device can store 10 AMIs.
         /// </para>
         /// </summary>
         public int MaxResults

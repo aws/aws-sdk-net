@@ -38,8 +38,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property CompatibleImages. 
         /// <para>
-        /// A JSON-formatted object that describes a compatible AMI, including the ID and name
-        /// for a Snowball Edge AMI.
+        /// A JSON-formatted object that describes a compatible AMI.
         /// </para>
         /// </summary>
         public List<CompatibleImage> CompatibleImages

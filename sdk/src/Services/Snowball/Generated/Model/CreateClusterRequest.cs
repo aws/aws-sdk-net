@@ -219,7 +219,7 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In India, Snowball Edges are delivered in one to seven days.
+        /// In India, devices are delivered in one to seven days.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -242,8 +242,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballType. 
         /// <para>
-        /// The type of AWS Snowball device to use for this cluster. Currently, the only supported
-        /// device type for cluster jobs is <code>EDGE</code>.
+        /// The type of AWS Snowball device to use for this cluster. The only supported device
+        /// types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code>.
         /// </para>
         /// </summary>
         public SnowballType SnowballType
