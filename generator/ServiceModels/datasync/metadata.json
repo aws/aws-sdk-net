@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS DataSync simplifies, automates, and accelerates moving and replicating data between on-premises storage and AWS services over the network.",
+  "generate-client-constructors": true
+}
