@@ -36,6 +36,7 @@
     <ProjectReference Include="..\..\..\generator\ServiceClientGeneratorLib\ServiceClientGeneratorLib.csproj"/>
     <ProjectReference Include="..\..\src\Services\ACMPCA\AWSSDK.ACMPCA.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\AlexaForBusiness\AWSSDK.AlexaForBusiness.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\Amplify\AWSSDK.Amplify.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net35.csproj"/>
