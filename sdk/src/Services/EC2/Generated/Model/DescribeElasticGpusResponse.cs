@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuSet. 
         /// <para>
-        /// Information about the Elastic GPUs.
+        /// Information about the Elastic Graphics accelerators.
         /// </para>
         /// </summary>
         public List<ElasticGpus> ElasticGpuSet

@@ -73,6 +73,7 @@ namespace Amazon.EC2.Model
         private string _natGatewayId;
         private string _networkInterfaceId;
         private string _routeTableId;
+        private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
 
         /// <summary>
@@ -220,6 +221,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetRouteTableId()
         {
             return this._routeTableId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayId. 
+        /// <para>
+        /// The ID of a transit gateway.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayId
+        {
+            get { return this._transitGatewayId; }
+            set { this._transitGatewayId = value; }
+        }
+
+        // Check to see if TransitGatewayId property is set
+        internal bool IsSetTransitGatewayId()
+        {
+            return this._transitGatewayId != null;
         }
 
         /// <summary>

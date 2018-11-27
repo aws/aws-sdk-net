@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an Elastic GPU.
+    /// Describes an Elastic Graphics accelerator.
     /// </summary>
     public partial class ElasticGpus
     {
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in the which the Elastic GPU resides.
+        /// The Availability Zone in the which the Elastic Graphics accelerator resides.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuHealth. 
         /// <para>
-        /// The status of the Elastic GPU.
+        /// The status of the Elastic Graphics accelerator.
         /// </para>
         /// </summary>
         public ElasticGpuHealth ElasticGpuHealth
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuId. 
         /// <para>
-        /// The ID of the Elastic GPU.
+        /// The ID of the Elastic Graphics accelerator.
         /// </para>
         /// </summary>
         public string ElasticGpuId
@@ -96,7 +96,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuState. 
         /// <para>
-        /// The state of the Elastic GPU.
+        /// The state of the Elastic Graphics accelerator.
         /// </para>
         /// </summary>
         public ElasticGpuState ElasticGpuState
@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuType. 
         /// <para>
-        /// The type of Elastic GPU.
+        /// The type of Elastic Graphics accelerator.
         /// </para>
         /// </summary>
         public string ElasticGpuType
@@ -132,7 +132,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance to which the Elastic GPU is attached.
+        /// The ID of the instance to which the Elastic Graphics accelerator is attached.
         /// </para>
         /// </summary>
         public string InstanceId

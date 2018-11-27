@@ -120,6 +120,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.State = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("transitGatewayId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TransitGatewayId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("vpcPeeringConnectionId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

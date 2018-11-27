@@ -99,6 +99,26 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayAttachmentsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayRouteTablesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewaysRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeTransitGatewayVpcAttachmentsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeVpcClassicLinkDnsSupportRequest.MaxResults</property>
     <min>5</min>
     <max>255</max>
@@ -114,10 +134,30 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayAttachmentPropagationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayRouteTableAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetTransitGatewayRouteTablePropagationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.ModifyLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.SearchTransitGatewayRoutesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.FleetLaunchTemplateSpecification.LaunchTemplateName</property>

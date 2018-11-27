@@ -329,6 +329,66 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptTransitGatewayVpcAttachment
+
+        /// <summary>
+        /// Accepts a request to attach a VPC to a transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <a>DescribeTransitGatewayVpcAttachments</a>
+        /// to view your pending VPC attachment requests. Use <a>RejectTransitGatewayVpcAttachment</a>
+        /// to reject a VPC attachment request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
+        public virtual AcceptTransitGatewayVpcAttachmentResponse AcceptTransitGatewayVpcAttachment(AcceptTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = AcceptTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = AcceptTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptTransitGatewayVpcAttachmentRequest,AcceptTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayVpcAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAcceptTransitGatewayVpcAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
+        public virtual IAsyncResult BeginAcceptTransitGatewayVpcAttachment(AcceptTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AcceptTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = AcceptTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AcceptTransitGatewayVpcAttachmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AcceptTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAcceptTransitGatewayVpcAttachment.</param>
+        /// 
+        /// <returns>Returns a  AcceptTransitGatewayVpcAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
+        public virtual AcceptTransitGatewayVpcAttachmentResponse EndAcceptTransitGatewayVpcAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AcceptTransitGatewayVpcAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AcceptVpcEndpointConnections
 
         /// <summary>
@@ -1153,6 +1213,60 @@ namespace Amazon.EC2
         public virtual AssociateSubnetCidrBlockResponse EndAssociateSubnetCidrBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateSubnetCidrBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateTransitGatewayRouteTable
+
+        /// <summary>
+        /// Associates the specified attachment with the specified transit gateway route table.
+        /// You can associate only one route table with an attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTransitGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
+        public virtual AssociateTransitGatewayRouteTableResponse AssociateTransitGatewayRouteTable(AssociateTransitGatewayRouteTableRequest request)
+        {
+            var marshaller = AssociateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTransitGatewayRouteTableRequest,AssociateTransitGatewayRouteTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayRouteTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateTransitGatewayRouteTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
+        public virtual IAsyncResult BeginAssociateTransitGatewayRouteTable(AssociateTransitGatewayRouteTableRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AssociateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssociateTransitGatewayRouteTableRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateTransitGatewayRouteTable.</param>
+        /// 
+        /// <returns>Returns a  AssociateTransitGatewayRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
+        public virtual AssociateTransitGatewayRouteTableResponse EndAssociateTransitGatewayRouteTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateTransitGatewayRouteTableResponse>(asyncResult);
         }
 
         #endregion
@@ -4545,6 +4659,258 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateTransitGateway
+
+        /// <summary>
+        /// Creates a transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// You can use a transit gateway to interconnect your virtual private clouds (VPC) and
+        /// on-premises networks. After the transit gateway enters the <code>available</code>
+        /// state, you can attach your VPCs and VPN connections to the transit gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// To attach your VPCs, use <a>CreateTransitGatewayVpcAttachment</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To attach a VPN connection, use <a>CreateCustomerGateway</a> to create a customer
+        /// gateway and specify the ID of the customer gateway and the ID of the transit gateway
+        /// in a call to <a>CreateVpnConnection</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a transit gateway, we create a default transit gateway route table
+        /// and use it as the default association route table and the default propagation route
+        /// table. You can use <a>CreateTransitGatewayRouteTable</a> to create additional transit
+        /// gateway route tables. If you disable automatic route propagation, we do not create
+        /// a default transit gateway route table. You can use <a>EnableTransitGatewayRouteTablePropagation</a>
+        /// to propagate routes from a resource attachment to a transit gateway route table. If
+        /// you disable automatic associations, you can use <a>AssociateTransitGatewayRouteTable</a>
+        /// to associate a resource attachment with a transit gateway route table.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
+        public virtual CreateTransitGatewayResponse CreateTransitGateway(CreateTransitGatewayRequest request)
+        {
+            var marshaller = CreateTransitGatewayRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRequest,CreateTransitGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGateway(CreateTransitGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateTransitGatewayRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateTransitGatewayRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGateway.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
+        public virtual CreateTransitGatewayResponse EndCreateTransitGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayRoute
+
+        /// <summary>
+        /// Creates a static route for the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
+        public virtual CreateTransitGatewayRouteResponse CreateTransitGatewayRoute(CreateTransitGatewayRouteRequest request)
+        {
+            var marshaller = CreateTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRouteRequest,CreateTransitGatewayRouteResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRoute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayRoute(CreateTransitGatewayRouteRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateTransitGatewayRouteRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
+        public virtual CreateTransitGatewayRouteResponse EndCreateTransitGatewayRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayRouteTable
+
+        /// <summary>
+        /// Creates a route table for the specified transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
+        public virtual CreateTransitGatewayRouteTableResponse CreateTransitGatewayRouteTable(CreateTransitGatewayRouteTableRequest request)
+        {
+            var marshaller = CreateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRouteTableRequest,CreateTransitGatewayRouteTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayRouteTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayRouteTable(CreateTransitGatewayRouteTableRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateTransitGatewayRouteTableRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayRouteTable.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
+        public virtual CreateTransitGatewayRouteTableResponse EndCreateTransitGatewayRouteTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayRouteTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayVpcAttachment
+
+        /// <summary>
+        /// Attaches the specified VPC to the specified transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// If you attach a VPC with a CIDR range that overlaps the CIDR range of a VPC that is
+        /// already attached, the new VPC CIDR range is not propagated to the default propagation
+        /// route table.
+        /// </para>
+        ///  
+        /// <para>
+        /// To send VPC traffic to an attached transit gateway, add a route to the VPC route table
+        /// using <a>CreateRoute</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
+        public virtual CreateTransitGatewayVpcAttachmentResponse CreateTransitGatewayVpcAttachment(CreateTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = CreateTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayVpcAttachmentRequest,CreateTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayVpcAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateTransitGatewayVpcAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
+        public virtual IAsyncResult BeginCreateTransitGatewayVpcAttachment(CreateTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateTransitGatewayVpcAttachmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateTransitGatewayVpcAttachment.</param>
+        /// 
+        /// <returns>Returns a  CreateTransitGatewayVpcAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
+        public virtual CreateTransitGatewayVpcAttachmentResponse EndCreateTransitGatewayVpcAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateTransitGatewayVpcAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateVolume
 
         /// <summary>
@@ -6466,6 +6832,219 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGateway
+
+        /// <summary>
+        /// Deletes the specified transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
+        public virtual DeleteTransitGatewayResponse DeleteTransitGateway(DeleteTransitGatewayRequest request)
+        {
+            var marshaller = DeleteTransitGatewayRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayRequest,DeleteTransitGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGateway operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGateway
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTransitGateway(DeleteTransitGatewayRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteTransitGatewayRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTransitGatewayRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGateway.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
+        public virtual DeleteTransitGatewayResponse EndDeleteTransitGateway(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTransitGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayRoute
+
+        /// <summary>
+        /// Deletes the specified route from the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
+        public virtual DeleteTransitGatewayRouteResponse DeleteTransitGatewayRoute(DeleteTransitGatewayRouteRequest request)
+        {
+            var marshaller = DeleteTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayRouteRequest,DeleteTransitGatewayRouteResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRoute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTransitGatewayRoute(DeleteTransitGatewayRouteRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTransitGatewayRouteRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
+        public virtual DeleteTransitGatewayRouteResponse EndDeleteTransitGatewayRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTransitGatewayRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayRouteTable
+
+        /// <summary>
+        /// Deletes the specified transit gateway route table. You must disassociate the route
+        /// table from any transit gateway route tables before you can delete it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
+        public virtual DeleteTransitGatewayRouteTableResponse DeleteTransitGatewayRouteTable(DeleteTransitGatewayRouteTableRequest request)
+        {
+            var marshaller = DeleteTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayRouteTableRequest,DeleteTransitGatewayRouteTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayRouteTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTransitGatewayRouteTable(DeleteTransitGatewayRouteTableRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTransitGatewayRouteTableRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayRouteTable.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
+        public virtual DeleteTransitGatewayRouteTableResponse EndDeleteTransitGatewayRouteTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTransitGatewayRouteTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayVpcAttachment
+
+        /// <summary>
+        /// Deletes the specified VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
+        public virtual DeleteTransitGatewayVpcAttachmentResponse DeleteTransitGatewayVpcAttachment(DeleteTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = DeleteTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayVpcAttachmentRequest,DeleteTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayVpcAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteTransitGatewayVpcAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
+        public virtual IAsyncResult BeginDeleteTransitGatewayVpcAttachment(DeleteTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteTransitGatewayVpcAttachmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteTransitGatewayVpcAttachment.</param>
+        /// 
+        /// <returns>Returns a  DeleteTransitGatewayVpcAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
+        public virtual DeleteTransitGatewayVpcAttachmentResponse EndDeleteTransitGatewayVpcAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteTransitGatewayVpcAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteVolume
 
         /// <summary>
@@ -8006,9 +8585,9 @@ namespace Amazon.EC2
         #region  DescribeElasticGpus
 
         /// <summary>
-        /// Describes the Elastic GPUs associated with your instances. For more information about
-        /// Elastic GPUs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html">Amazon
-        /// EC2 Elastic GPUs</a>.
+        /// Describes the Elastic Graphics accelerator associated with your instances. For more
+        /// information about Elastic Graphics, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+        /// Elastic Graphics</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus service method.</param>
         /// 
@@ -11957,6 +12536,223 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayAttachments
+
+        /// <summary>
+        /// Describes one or more attachments between resources and transit gateways. By default,
+        /// all attachments are described. Alternatively, you can filter the results by attachment
+        /// ID, attachment state, resource ID, or resource owner.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayAttachments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayAttachments service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
+        public virtual DescribeTransitGatewayAttachmentsResponse DescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request)
+        {
+            var marshaller = DescribeTransitGatewayAttachmentsRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayAttachmentsRequest,DescribeTransitGatewayAttachmentsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayAttachments operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayAttachments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeTransitGatewayAttachmentsRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayAttachmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTransitGatewayAttachmentsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayAttachments.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayAttachmentsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
+        public virtual DescribeTransitGatewayAttachmentsResponse EndDescribeTransitGatewayAttachments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTransitGatewayAttachmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGatewayRouteTables
+
+        /// <summary>
+        /// Describes one or more transit gateway route tables. By default, all transit gateway
+        /// route tables are described. Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTables service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
+        public virtual DescribeTransitGatewayRouteTablesResponse DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request)
+        {
+            var marshaller = DescribeTransitGatewayRouteTablesRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayRouteTablesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayRouteTablesRequest,DescribeTransitGatewayRouteTablesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayRouteTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTables operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayRouteTables
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeTransitGatewayRouteTablesRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayRouteTablesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTransitGatewayRouteTablesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayRouteTables operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayRouteTables.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayRouteTablesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
+        public virtual DescribeTransitGatewayRouteTablesResponse EndDescribeTransitGatewayRouteTables(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTransitGatewayRouteTablesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGateways
+
+        /// <summary>
+        /// Describes one or more transit gateways. By default, all transit gateways are described.
+        /// Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
+        public virtual DescribeTransitGatewaysResponse DescribeTransitGateways(DescribeTransitGatewaysRequest request)
+        {
+            var marshaller = DescribeTransitGatewaysRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewaysRequest,DescribeTransitGatewaysResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGateways operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGateways
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTransitGateways(DescribeTransitGatewaysRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeTransitGatewaysRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewaysResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTransitGatewaysRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGateways.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewaysResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
+        public virtual DescribeTransitGatewaysResponse EndDescribeTransitGateways(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTransitGatewaysResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGatewayVpcAttachments
+
+        /// <summary>
+        /// Describes one or more VPC attachments. By default, all VPC attachments are described.
+        /// Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayVpcAttachments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayVpcAttachments service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
+        public virtual DescribeTransitGatewayVpcAttachmentsResponse DescribeTransitGatewayVpcAttachments(DescribeTransitGatewayVpcAttachmentsRequest request)
+        {
+            var marshaller = DescribeTransitGatewayVpcAttachmentsRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayVpcAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayVpcAttachmentsRequest,DescribeTransitGatewayVpcAttachmentsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayVpcAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayVpcAttachments operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeTransitGatewayVpcAttachments
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
+        public virtual IAsyncResult BeginDescribeTransitGatewayVpcAttachments(DescribeTransitGatewayVpcAttachmentsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeTransitGatewayVpcAttachmentsRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayVpcAttachmentsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeTransitGatewayVpcAttachmentsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeTransitGatewayVpcAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeTransitGatewayVpcAttachments.</param>
+        /// 
+        /// <returns>Returns a  DescribeTransitGatewayVpcAttachmentsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
+        public virtual DescribeTransitGatewayVpcAttachmentsResponse EndDescribeTransitGatewayVpcAttachments(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeTransitGatewayVpcAttachmentsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeVolumeAttribute
 
         /// <summary>
@@ -13394,6 +14190,60 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableTransitGatewayRouteTablePropagation
+
+        /// <summary>
+        /// Disables the specified resource attachment from propagating routes to the specified
+        /// propagation route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableTransitGatewayRouteTablePropagation service method.</param>
+        /// 
+        /// <returns>The response from the DisableTransitGatewayRouteTablePropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
+        public virtual DisableTransitGatewayRouteTablePropagationResponse DisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request)
+        {
+            var marshaller = DisableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
+            var unmarshaller = DisableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
+
+            return Invoke<DisableTransitGatewayRouteTablePropagationRequest,DisableTransitGatewayRouteTablePropagationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableTransitGatewayRouteTablePropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableTransitGatewayRouteTablePropagation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisableTransitGatewayRouteTablePropagation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
+        public virtual IAsyncResult BeginDisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
+            var unmarshaller = DisableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisableTransitGatewayRouteTablePropagationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisableTransitGatewayRouteTablePropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisableTransitGatewayRouteTablePropagation.</param>
+        /// 
+        /// <returns>Returns a  DisableTransitGatewayRouteTablePropagationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
+        public virtual DisableTransitGatewayRouteTablePropagationResponse EndDisableTransitGatewayRouteTablePropagation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisableTransitGatewayRouteTablePropagationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisableVgwRoutePropagation
 
         /// <summary>
@@ -13798,6 +14648,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateTransitGatewayRouteTable
+
+        /// <summary>
+        /// Disassociates a resource attachment from a transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTransitGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
+        public virtual DisassociateTransitGatewayRouteTableResponse DisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request)
+        {
+            var marshaller = DisassociateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateTransitGatewayRouteTableRequest,DisassociateTransitGatewayRouteTableResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayRouteTable operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateTransitGatewayRouteTable
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisassociateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisassociateTransitGatewayRouteTableRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateTransitGatewayRouteTable.</param>
+        /// 
+        /// <returns>Returns a  DisassociateTransitGatewayRouteTableResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
+        public virtual DisassociateTransitGatewayRouteTableResponse EndDisassociateTransitGatewayRouteTable(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateTransitGatewayRouteTableResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateVpcCidrBlock
 
         /// <summary>
@@ -13856,6 +14759,60 @@ namespace Amazon.EC2
         public virtual DisassociateVpcCidrBlockResponse EndDisassociateVpcCidrBlock(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateVpcCidrBlockResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  EnableTransitGatewayRouteTablePropagation
+
+        /// <summary>
+        /// Enables the specified attachment to propagate routes to the specified propagation
+        /// route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableTransitGatewayRouteTablePropagation service method.</param>
+        /// 
+        /// <returns>The response from the EnableTransitGatewayRouteTablePropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
+        public virtual EnableTransitGatewayRouteTablePropagationResponse EnableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request)
+        {
+            var marshaller = EnableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
+            var unmarshaller = EnableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
+
+            return Invoke<EnableTransitGatewayRouteTablePropagationRequest,EnableTransitGatewayRouteTablePropagationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableTransitGatewayRouteTablePropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableTransitGatewayRouteTablePropagation operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndEnableTransitGatewayRouteTablePropagation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
+        public virtual IAsyncResult BeginEnableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = EnableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
+            var unmarshaller = EnableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<EnableTransitGatewayRouteTablePropagationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  EnableTransitGatewayRouteTablePropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginEnableTransitGatewayRouteTablePropagation.</param>
+        /// 
+        /// <returns>Returns a  EnableTransitGatewayRouteTablePropagationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
+        public virtual EnableTransitGatewayRouteTablePropagationResponse EndEnableTransitGatewayRouteTablePropagation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<EnableTransitGatewayRouteTablePropagationResponse>(asyncResult);
         }
 
         #endregion
@@ -14081,6 +15038,61 @@ namespace Amazon.EC2
         public virtual EnableVpcClassicLinkDnsSupportResponse EndEnableVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableVpcClassicLinkDnsSupportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExportTransitGatewayRoutes
+
+        /// <summary>
+        /// Exports routes from the specified transit gateway route table to the specified S3
+        /// bucket. By default, all routes are exported. Alternatively, you can filter by CIDR
+        /// range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportTransitGatewayRoutes service method.</param>
+        /// 
+        /// <returns>The response from the ExportTransitGatewayRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
+        public virtual ExportTransitGatewayRoutesResponse ExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request)
+        {
+            var marshaller = ExportTransitGatewayRoutesRequestMarshaller.Instance;
+            var unmarshaller = ExportTransitGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<ExportTransitGatewayRoutesRequest,ExportTransitGatewayRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportTransitGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportTransitGatewayRoutes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportTransitGatewayRoutes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
+        public virtual IAsyncResult BeginExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ExportTransitGatewayRoutesRequestMarshaller.Instance;
+            var unmarshaller = ExportTransitGatewayRoutesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ExportTransitGatewayRoutesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportTransitGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportTransitGatewayRoutes.</param>
+        /// 
+        /// <returns>Returns a  ExportTransitGatewayRoutesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
+        public virtual ExportTransitGatewayRoutesResponse EndExportTransitGatewayRoutes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportTransitGatewayRoutesResponse>(asyncResult);
         }
 
         #endregion
@@ -14463,6 +15475,166 @@ namespace Amazon.EC2
         public virtual GetReservedInstancesExchangeQuoteResponse EndGetReservedInstancesExchangeQuote(IAsyncResult asyncResult)
         {
             return EndInvoke<GetReservedInstancesExchangeQuoteResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayAttachmentPropagations
+
+        /// <summary>
+        /// Lists the route tables to which the specified resource attachment propagates routes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayAttachmentPropagations service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayAttachmentPropagations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
+        public virtual GetTransitGatewayAttachmentPropagationsResponse GetTransitGatewayAttachmentPropagations(GetTransitGatewayAttachmentPropagationsRequest request)
+        {
+            var marshaller = GetTransitGatewayAttachmentPropagationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayAttachmentPropagationsRequest,GetTransitGatewayAttachmentPropagationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayAttachmentPropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayAttachmentPropagations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayAttachmentPropagations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
+        public virtual IAsyncResult BeginGetTransitGatewayAttachmentPropagations(GetTransitGatewayAttachmentPropagationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetTransitGatewayAttachmentPropagationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTransitGatewayAttachmentPropagationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayAttachmentPropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayAttachmentPropagations.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayAttachmentPropagationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
+        public virtual GetTransitGatewayAttachmentPropagationsResponse EndGetTransitGatewayAttachmentPropagations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTransitGatewayAttachmentPropagationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayRouteTableAssociations
+
+        /// <summary>
+        /// Gets information about the associations for the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTableAssociations service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayRouteTableAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
+        public virtual GetTransitGatewayRouteTableAssociationsResponse GetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request)
+        {
+            var marshaller = GetTransitGatewayRouteTableAssociationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayRouteTableAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayRouteTableAssociationsRequest,GetTransitGatewayRouteTableAssociationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayRouteTableAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTableAssociations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayRouteTableAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
+        public virtual IAsyncResult BeginGetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetTransitGatewayRouteTableAssociationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayRouteTableAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTransitGatewayRouteTableAssociationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayRouteTableAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayRouteTableAssociations.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayRouteTableAssociationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
+        public virtual GetTransitGatewayRouteTableAssociationsResponse EndGetTransitGatewayRouteTableAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTransitGatewayRouteTableAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayRouteTablePropagations
+
+        /// <summary>
+        /// Gets information about the route table propagations for the specified transit gateway
+        /// route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTablePropagations service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayRouteTablePropagations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
+        public virtual GetTransitGatewayRouteTablePropagationsResponse GetTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request)
+        {
+            var marshaller = GetTransitGatewayRouteTablePropagationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayRouteTablePropagationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayRouteTablePropagationsRequest,GetTransitGatewayRouteTablePropagationsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayRouteTablePropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTablePropagations operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetTransitGatewayRouteTablePropagations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
+        public virtual IAsyncResult BeginGetTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetTransitGatewayRouteTablePropagationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayRouteTablePropagationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetTransitGatewayRouteTablePropagationsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetTransitGatewayRouteTablePropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetTransitGatewayRouteTablePropagations.</param>
+        /// 
+        /// <returns>Returns a  GetTransitGatewayRouteTablePropagationsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
+        public virtual GetTransitGatewayRouteTablePropagationsResponse EndGetTransitGatewayRouteTablePropagations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetTransitGatewayRouteTablePropagationsResponse>(asyncResult);
         }
 
         #endregion
@@ -15871,6 +17043,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyTransitGatewayVpcAttachment
+
+        /// <summary>
+        /// Modifies the specified VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
+        public virtual ModifyTransitGatewayVpcAttachmentResponse ModifyTransitGatewayVpcAttachment(ModifyTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = ModifyTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTransitGatewayVpcAttachmentRequest,ModifyTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayVpcAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyTransitGatewayVpcAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
+        public virtual IAsyncResult BeginModifyTransitGatewayVpcAttachment(ModifyTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ModifyTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyTransitGatewayVpcAttachmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyTransitGatewayVpcAttachment.</param>
+        /// 
+        /// <returns>Returns a  ModifyTransitGatewayVpcAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
+        public virtual ModifyTransitGatewayVpcAttachmentResponse EndModifyTransitGatewayVpcAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyTransitGatewayVpcAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ModifyVolume
 
         /// <summary>
@@ -17005,6 +18230,66 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RejectTransitGatewayVpcAttachment
+
+        /// <summary>
+        /// Rejects a request to attach a VPC to a transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <a>DescribeTransitGatewayVpcAttachments</a>
+        /// to view your pending VPC attachment requests. Use <a>AcceptTransitGatewayVpcAttachment</a>
+        /// to accept a VPC attachment request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
+        public virtual RejectTransitGatewayVpcAttachmentResponse RejectTransitGatewayVpcAttachment(RejectTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = RejectTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = RejectTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<RejectTransitGatewayVpcAttachmentRequest,RejectTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayVpcAttachment operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectTransitGatewayVpcAttachment
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
+        public virtual IAsyncResult BeginRejectTransitGatewayVpcAttachment(RejectTransitGatewayVpcAttachmentRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = RejectTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = RejectTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RejectTransitGatewayVpcAttachmentRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectTransitGatewayVpcAttachment.</param>
+        /// 
+        /// <returns>Returns a  RejectTransitGatewayVpcAttachmentResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
+        public virtual RejectTransitGatewayVpcAttachmentResponse EndRejectTransitGatewayVpcAttachment(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RejectTransitGatewayVpcAttachmentResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RejectVpcEndpointConnections
 
         /// <summary>
@@ -17556,6 +18841,59 @@ namespace Amazon.EC2
         public virtual ReplaceRouteTableAssociationResponse EndReplaceRouteTableAssociation(IAsyncResult asyncResult)
         {
             return EndInvoke<ReplaceRouteTableAssociationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ReplaceTransitGatewayRoute
+
+        /// <summary>
+        /// Replaces the specified route in the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceTransitGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceTransitGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
+        public virtual ReplaceTransitGatewayRouteResponse ReplaceTransitGatewayRoute(ReplaceTransitGatewayRouteRequest request)
+        {
+            var marshaller = ReplaceTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<ReplaceTransitGatewayRouteRequest,ReplaceTransitGatewayRouteResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplaceTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceTransitGatewayRoute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplaceTransitGatewayRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
+        public virtual IAsyncResult BeginReplaceTransitGatewayRoute(ReplaceTransitGatewayRouteRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ReplaceTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ReplaceTransitGatewayRouteRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReplaceTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplaceTransitGatewayRoute.</param>
+        /// 
+        /// <returns>Returns a  ReplaceTransitGatewayRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
+        public virtual ReplaceTransitGatewayRouteResponse EndReplaceTransitGatewayRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ReplaceTransitGatewayRouteResponse>(asyncResult);
         }
 
         #endregion
@@ -18453,6 +19791,59 @@ namespace Amazon.EC2
         public virtual RunScheduledInstancesResponse EndRunScheduledInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<RunScheduledInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchTransitGatewayRoutes
+
+        /// <summary>
+        /// Searches for routes in the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTransitGatewayRoutes service method.</param>
+        /// 
+        /// <returns>The response from the SearchTransitGatewayRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
+        public virtual SearchTransitGatewayRoutesResponse SearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request)
+        {
+            var marshaller = SearchTransitGatewayRoutesRequestMarshaller.Instance;
+            var unmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTransitGatewayRoutesRequest,SearchTransitGatewayRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchTransitGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchTransitGatewayRoutes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchTransitGatewayRoutes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
+        public virtual IAsyncResult BeginSearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = SearchTransitGatewayRoutesRequestMarshaller.Instance;
+            var unmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<SearchTransitGatewayRoutesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchTransitGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchTransitGatewayRoutes.</param>
+        /// 
+        /// <returns>Returns a  SearchTransitGatewayRoutesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
+        public virtual SearchTransitGatewayRoutesResponse EndSearchTransitGatewayRoutes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchTransitGatewayRoutesResponse>(asyncResult);
         }
 
         #endregion

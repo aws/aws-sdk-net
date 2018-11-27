@@ -114,6 +114,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>route.transit-gateway-id</code> - The ID of a transit gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>route.origin</code> - Describes how the route was created. <code>CreateRouteTable</code>
         /// indicates that the route was automatically created when the route table was created;
         /// <code>CreateRoute</code> indicates that the route was manually added to the route
@@ -144,6 +148,10 @@ namespace Amazon.EC2.Model
         /// <para>
         ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
         /// to find all resources assigned a tag with a specific key, regardless of the tag value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>transit-gateway-id</code> - The ID of a transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>

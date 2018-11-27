@@ -43,6 +43,7 @@ namespace Amazon.EC2.Model
         private string _networkInterfaceId;
         private RouteOrigin _origin;
         private RouteState _state;
+        private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
 
         /// <summary>
@@ -260,9 +261,27 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TransitGatewayId. 
+        /// <para>
+        /// The ID of a transit gateway.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayId
+        {
+            get { return this._transitGatewayId; }
+            set { this._transitGatewayId = value; }
+        }
+
+        // Check to see if TransitGatewayId property is set
+        internal bool IsSetTransitGatewayId()
+        {
+            return this._transitGatewayId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
-        /// The ID of the VPC peering connection.
+        /// The ID of a VPC peering connection.
         /// </para>
         /// </summary>
         public string VpcPeeringConnectionId

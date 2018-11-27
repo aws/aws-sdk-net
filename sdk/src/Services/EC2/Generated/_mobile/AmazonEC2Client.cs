@@ -314,6 +314,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptTransitGatewayVpcAttachment
+
+        internal virtual AcceptTransitGatewayVpcAttachmentResponse AcceptTransitGatewayVpcAttachment(AcceptTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = AcceptTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = AcceptTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<AcceptTransitGatewayVpcAttachmentRequest,AcceptTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
+        public virtual Task<AcceptTransitGatewayVpcAttachmentResponse> AcceptTransitGatewayVpcAttachmentAsync(AcceptTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AcceptTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = AcceptTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AcceptTransitGatewayVpcAttachmentRequest,AcceptTransitGatewayVpcAttachmentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AcceptVpcEndpointConnections
 
         internal virtual AcceptVpcEndpointConnectionsResponse AcceptVpcEndpointConnections(AcceptVpcEndpointConnectionsRequest request)
@@ -742,6 +774,38 @@ namespace Amazon.EC2
             var unmarshaller = AssociateSubnetCidrBlockResponseUnmarshaller.Instance;
 
             return InvokeAsync<AssociateSubnetCidrBlockRequest,AssociateSubnetCidrBlockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateTransitGatewayRouteTable
+
+        internal virtual AssociateTransitGatewayRouteTableResponse AssociateTransitGatewayRouteTable(AssociateTransitGatewayRouteTableRequest request)
+        {
+            var marshaller = AssociateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateTransitGatewayRouteTableRequest,AssociateTransitGatewayRouteTableResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayRouteTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
+        public virtual Task<AssociateTransitGatewayRouteTableResponse> AssociateTransitGatewayRouteTableAsync(AssociateTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AssociateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = AssociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateTransitGatewayRouteTableRequest,AssociateTransitGatewayRouteTableResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2373,6 +2437,134 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateTransitGateway
+
+        internal virtual CreateTransitGatewayResponse CreateTransitGateway(CreateTransitGatewayRequest request)
+        {
+            var marshaller = CreateTransitGatewayRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRequest,CreateTransitGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
+        public virtual Task<CreateTransitGatewayResponse> CreateTransitGatewayAsync(CreateTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateTransitGatewayRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayRequest,CreateTransitGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayRoute
+
+        internal virtual CreateTransitGatewayRouteResponse CreateTransitGatewayRoute(CreateTransitGatewayRouteRequest request)
+        {
+            var marshaller = CreateTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRouteRequest,CreateTransitGatewayRouteResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRoute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
+        public virtual Task<CreateTransitGatewayRouteResponse> CreateTransitGatewayRouteAsync(CreateTransitGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayRouteRequest,CreateTransitGatewayRouteResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayRouteTable
+
+        internal virtual CreateTransitGatewayRouteTableResponse CreateTransitGatewayRouteTable(CreateTransitGatewayRouteTableRequest request)
+        {
+            var marshaller = CreateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayRouteTableRequest,CreateTransitGatewayRouteTableResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
+        public virtual Task<CreateTransitGatewayRouteTableResponse> CreateTransitGatewayRouteTableAsync(CreateTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayRouteTableRequest,CreateTransitGatewayRouteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateTransitGatewayVpcAttachment
+
+        internal virtual CreateTransitGatewayVpcAttachmentResponse CreateTransitGatewayVpcAttachment(CreateTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = CreateTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTransitGatewayVpcAttachmentRequest,CreateTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
+        public virtual Task<CreateTransitGatewayVpcAttachmentResponse> CreateTransitGatewayVpcAttachmentAsync(CreateTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = CreateTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTransitGatewayVpcAttachmentRequest,CreateTransitGatewayVpcAttachmentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateVolume
 
         internal virtual CreateVolumeResponse CreateVolume(CreateVolumeRequest request)
@@ -3411,6 +3603,134 @@ namespace Amazon.EC2
             var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGateway
+
+        internal virtual DeleteTransitGatewayResponse DeleteTransitGateway(DeleteTransitGatewayRequest request)
+        {
+            var marshaller = DeleteTransitGatewayRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayRequest,DeleteTransitGatewayResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
+        public virtual Task<DeleteTransitGatewayResponse> DeleteTransitGatewayAsync(DeleteTransitGatewayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteTransitGatewayRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayRequest,DeleteTransitGatewayResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayRoute
+
+        internal virtual DeleteTransitGatewayRouteResponse DeleteTransitGatewayRoute(DeleteTransitGatewayRouteRequest request)
+        {
+            var marshaller = DeleteTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayRouteRequest,DeleteTransitGatewayRouteResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRoute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
+        public virtual Task<DeleteTransitGatewayRouteResponse> DeleteTransitGatewayRouteAsync(DeleteTransitGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayRouteRequest,DeleteTransitGatewayRouteResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayRouteTable
+
+        internal virtual DeleteTransitGatewayRouteTableResponse DeleteTransitGatewayRouteTable(DeleteTransitGatewayRouteTableRequest request)
+        {
+            var marshaller = DeleteTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayRouteTableRequest,DeleteTransitGatewayRouteTableResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
+        public virtual Task<DeleteTransitGatewayRouteTableResponse> DeleteTransitGatewayRouteTableAsync(DeleteTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayRouteTableRequest,DeleteTransitGatewayRouteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTransitGatewayVpcAttachment
+
+        internal virtual DeleteTransitGatewayVpcAttachmentResponse DeleteTransitGatewayVpcAttachment(DeleteTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = DeleteTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTransitGatewayVpcAttachmentRequest,DeleteTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
+        public virtual Task<DeleteTransitGatewayVpcAttachmentResponse> DeleteTransitGatewayVpcAttachmentAsync(DeleteTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = DeleteTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTransitGatewayVpcAttachmentRequest,DeleteTransitGatewayVpcAttachmentResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -6859,6 +7179,134 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayAttachments
+
+        internal virtual DescribeTransitGatewayAttachmentsResponse DescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request)
+        {
+            var marshaller = DescribeTransitGatewayAttachmentsRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayAttachmentsRequest,DescribeTransitGatewayAttachmentsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayAttachments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
+        public virtual Task<DescribeTransitGatewayAttachmentsResponse> DescribeTransitGatewayAttachmentsAsync(DescribeTransitGatewayAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeTransitGatewayAttachmentsRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayAttachmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewayAttachmentsRequest,DescribeTransitGatewayAttachmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGatewayRouteTables
+
+        internal virtual DescribeTransitGatewayRouteTablesResponse DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request)
+        {
+            var marshaller = DescribeTransitGatewayRouteTablesRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayRouteTablesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayRouteTablesRequest,DescribeTransitGatewayRouteTablesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayRouteTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTables operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
+        public virtual Task<DescribeTransitGatewayRouteTablesResponse> DescribeTransitGatewayRouteTablesAsync(DescribeTransitGatewayRouteTablesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeTransitGatewayRouteTablesRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayRouteTablesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewayRouteTablesRequest,DescribeTransitGatewayRouteTablesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGateways
+
+        internal virtual DescribeTransitGatewaysResponse DescribeTransitGateways(DescribeTransitGatewaysRequest request)
+        {
+            var marshaller = DescribeTransitGatewaysRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewaysResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewaysRequest,DescribeTransitGatewaysResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
+        public virtual Task<DescribeTransitGatewaysResponse> DescribeTransitGatewaysAsync(DescribeTransitGatewaysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeTransitGatewaysRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewaysResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewaysRequest,DescribeTransitGatewaysResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeTransitGatewayVpcAttachments
+
+        internal virtual DescribeTransitGatewayVpcAttachmentsResponse DescribeTransitGatewayVpcAttachments(DescribeTransitGatewayVpcAttachmentsRequest request)
+        {
+            var marshaller = DescribeTransitGatewayVpcAttachmentsRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayVpcAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTransitGatewayVpcAttachmentsRequest,DescribeTransitGatewayVpcAttachmentsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayVpcAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayVpcAttachments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
+        public virtual Task<DescribeTransitGatewayVpcAttachmentsResponse> DescribeTransitGatewayVpcAttachmentsAsync(DescribeTransitGatewayVpcAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeTransitGatewayVpcAttachmentsRequestMarshaller.Instance;
+            var unmarshaller = DescribeTransitGatewayVpcAttachmentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTransitGatewayVpcAttachmentsRequest,DescribeTransitGatewayVpcAttachmentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeVolumeAttribute
 
         internal virtual DescribeVolumeAttributeResponse DescribeVolumeAttribute(DescribeVolumeAttributeRequest request)
@@ -7748,6 +8196,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableTransitGatewayRouteTablePropagation
+
+        internal virtual DisableTransitGatewayRouteTablePropagationResponse DisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request)
+        {
+            var marshaller = DisableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
+            var unmarshaller = DisableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
+
+            return Invoke<DisableTransitGatewayRouteTablePropagationRequest,DisableTransitGatewayRouteTablePropagationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableTransitGatewayRouteTablePropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableTransitGatewayRouteTablePropagation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
+        public virtual Task<DisableTransitGatewayRouteTablePropagationResponse> DisableTransitGatewayRouteTablePropagationAsync(DisableTransitGatewayRouteTablePropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
+            var unmarshaller = DisableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisableTransitGatewayRouteTablePropagationRequest,DisableTransitGatewayRouteTablePropagationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableVgwRoutePropagation
 
         internal virtual DisableVgwRoutePropagationResponse DisableVgwRoutePropagation(DisableVgwRoutePropagationRequest request)
@@ -7972,6 +8452,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateTransitGatewayRouteTable
+
+        internal virtual DisassociateTransitGatewayRouteTableResponse DisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request)
+        {
+            var marshaller = DisassociateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateTransitGatewayRouteTableRequest,DisassociateTransitGatewayRouteTableResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayRouteTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
+        public virtual Task<DisassociateTransitGatewayRouteTableResponse> DisassociateTransitGatewayRouteTableAsync(DisassociateTransitGatewayRouteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisassociateTransitGatewayRouteTableRequestMarshaller.Instance;
+            var unmarshaller = DisassociateTransitGatewayRouteTableResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateTransitGatewayRouteTableRequest,DisassociateTransitGatewayRouteTableResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateVpcCidrBlock
 
         internal virtual DisassociateVpcCidrBlockResponse DisassociateVpcCidrBlock(DisassociateVpcCidrBlockRequest request)
@@ -7999,6 +8511,38 @@ namespace Amazon.EC2
             var unmarshaller = DisassociateVpcCidrBlockResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateVpcCidrBlockRequest,DisassociateVpcCidrBlockResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableTransitGatewayRouteTablePropagation
+
+        internal virtual EnableTransitGatewayRouteTablePropagationResponse EnableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request)
+        {
+            var marshaller = EnableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
+            var unmarshaller = EnableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
+
+            return Invoke<EnableTransitGatewayRouteTablePropagationRequest,EnableTransitGatewayRouteTablePropagationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableTransitGatewayRouteTablePropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableTransitGatewayRouteTablePropagation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
+        public virtual Task<EnableTransitGatewayRouteTablePropagationResponse> EnableTransitGatewayRouteTablePropagationAsync(EnableTransitGatewayRouteTablePropagationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = EnableTransitGatewayRouteTablePropagationRequestMarshaller.Instance;
+            var unmarshaller = EnableTransitGatewayRouteTablePropagationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<EnableTransitGatewayRouteTablePropagationRequest,EnableTransitGatewayRouteTablePropagationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -8127,6 +8671,38 @@ namespace Amazon.EC2
             var unmarshaller = EnableVpcClassicLinkDnsSupportResponseUnmarshaller.Instance;
 
             return InvokeAsync<EnableVpcClassicLinkDnsSupportRequest,EnableVpcClassicLinkDnsSupportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ExportTransitGatewayRoutes
+
+        internal virtual ExportTransitGatewayRoutesResponse ExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request)
+        {
+            var marshaller = ExportTransitGatewayRoutesRequestMarshaller.Instance;
+            var unmarshaller = ExportTransitGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<ExportTransitGatewayRoutesRequest,ExportTransitGatewayRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportTransitGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportTransitGatewayRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
+        public virtual Task<ExportTransitGatewayRoutesResponse> ExportTransitGatewayRoutesAsync(ExportTransitGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ExportTransitGatewayRoutesRequestMarshaller.Instance;
+            var unmarshaller = ExportTransitGatewayRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ExportTransitGatewayRoutesRequest,ExportTransitGatewayRoutesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -8319,6 +8895,102 @@ namespace Amazon.EC2
             var unmarshaller = GetReservedInstancesExchangeQuoteResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetReservedInstancesExchangeQuoteRequest,GetReservedInstancesExchangeQuoteResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayAttachmentPropagations
+
+        internal virtual GetTransitGatewayAttachmentPropagationsResponse GetTransitGatewayAttachmentPropagations(GetTransitGatewayAttachmentPropagationsRequest request)
+        {
+            var marshaller = GetTransitGatewayAttachmentPropagationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayAttachmentPropagationsRequest,GetTransitGatewayAttachmentPropagationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayAttachmentPropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayAttachmentPropagations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
+        public virtual Task<GetTransitGatewayAttachmentPropagationsResponse> GetTransitGatewayAttachmentPropagationsAsync(GetTransitGatewayAttachmentPropagationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetTransitGatewayAttachmentPropagationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayAttachmentPropagationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayAttachmentPropagationsRequest,GetTransitGatewayAttachmentPropagationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayRouteTableAssociations
+
+        internal virtual GetTransitGatewayRouteTableAssociationsResponse GetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request)
+        {
+            var marshaller = GetTransitGatewayRouteTableAssociationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayRouteTableAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayRouteTableAssociationsRequest,GetTransitGatewayRouteTableAssociationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayRouteTableAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTableAssociations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
+        public virtual Task<GetTransitGatewayRouteTableAssociationsResponse> GetTransitGatewayRouteTableAssociationsAsync(GetTransitGatewayRouteTableAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetTransitGatewayRouteTableAssociationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayRouteTableAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayRouteTableAssociationsRequest,GetTransitGatewayRouteTableAssociationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTransitGatewayRouteTablePropagations
+
+        internal virtual GetTransitGatewayRouteTablePropagationsResponse GetTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request)
+        {
+            var marshaller = GetTransitGatewayRouteTablePropagationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayRouteTablePropagationsResponseUnmarshaller.Instance;
+
+            return Invoke<GetTransitGatewayRouteTablePropagationsRequest,GetTransitGatewayRouteTablePropagationsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayRouteTablePropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTablePropagations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
+        public virtual Task<GetTransitGatewayRouteTablePropagationsResponse> GetTransitGatewayRouteTablePropagationsAsync(GetTransitGatewayRouteTablePropagationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetTransitGatewayRouteTablePropagationsRequestMarshaller.Instance;
+            var unmarshaller = GetTransitGatewayRouteTablePropagationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTransitGatewayRouteTablePropagationsRequest,GetTransitGatewayRouteTablePropagationsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -9028,6 +9700,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyTransitGatewayVpcAttachment
+
+        internal virtual ModifyTransitGatewayVpcAttachmentResponse ModifyTransitGatewayVpcAttachment(ModifyTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = ModifyTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyTransitGatewayVpcAttachmentRequest,ModifyTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
+        public virtual Task<ModifyTransitGatewayVpcAttachmentResponse> ModifyTransitGatewayVpcAttachmentAsync(ModifyTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ModifyTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = ModifyTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyTransitGatewayVpcAttachmentRequest,ModifyTransitGatewayVpcAttachmentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyVolume
 
         internal virtual ModifyVolumeResponse ModifyVolume(ModifyVolumeRequest request)
@@ -9572,6 +10276,38 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RejectTransitGatewayVpcAttachment
+
+        internal virtual RejectTransitGatewayVpcAttachmentResponse RejectTransitGatewayVpcAttachment(RejectTransitGatewayVpcAttachmentRequest request)
+        {
+            var marshaller = RejectTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = RejectTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<RejectTransitGatewayVpcAttachmentRequest,RejectTransitGatewayVpcAttachmentResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
+        public virtual Task<RejectTransitGatewayVpcAttachmentResponse> RejectTransitGatewayVpcAttachmentAsync(RejectTransitGatewayVpcAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RejectTransitGatewayVpcAttachmentRequestMarshaller.Instance;
+            var unmarshaller = RejectTransitGatewayVpcAttachmentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectTransitGatewayVpcAttachmentRequest,RejectTransitGatewayVpcAttachmentResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RejectVpcEndpointConnections
 
         internal virtual RejectVpcEndpointConnectionsResponse RejectVpcEndpointConnections(RejectVpcEndpointConnectionsRequest request)
@@ -9855,6 +10591,38 @@ namespace Amazon.EC2
             var unmarshaller = ReplaceRouteTableAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<ReplaceRouteTableAssociationRequest,ReplaceRouteTableAssociationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ReplaceTransitGatewayRoute
+
+        internal virtual ReplaceTransitGatewayRouteResponse ReplaceTransitGatewayRoute(ReplaceTransitGatewayRouteRequest request)
+        {
+            var marshaller = ReplaceTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return Invoke<ReplaceTransitGatewayRouteRequest,ReplaceTransitGatewayRouteResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplaceTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceTransitGatewayRoute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
+        public virtual Task<ReplaceTransitGatewayRouteResponse> ReplaceTransitGatewayRouteAsync(ReplaceTransitGatewayRouteRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ReplaceTransitGatewayRouteRequestMarshaller.Instance;
+            var unmarshaller = ReplaceTransitGatewayRouteResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReplaceTransitGatewayRouteRequest,ReplaceTransitGatewayRouteResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -10271,6 +11039,38 @@ namespace Amazon.EC2
             var unmarshaller = RunScheduledInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<RunScheduledInstancesRequest,RunScheduledInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchTransitGatewayRoutes
+
+        internal virtual SearchTransitGatewayRoutesResponse SearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request)
+        {
+            var marshaller = SearchTransitGatewayRoutesRequestMarshaller.Instance;
+            var unmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTransitGatewayRoutesRequest,SearchTransitGatewayRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchTransitGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchTransitGatewayRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
+        public virtual Task<SearchTransitGatewayRoutesResponse> SearchTransitGatewayRoutesAsync(SearchTransitGatewayRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = SearchTransitGatewayRoutesRequestMarshaller.Instance;
+            var unmarshaller = SearchTransitGatewayRoutesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchTransitGatewayRoutesRequest,SearchTransitGatewayRoutesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

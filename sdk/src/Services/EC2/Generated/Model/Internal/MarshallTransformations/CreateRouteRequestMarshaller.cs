@@ -90,6 +90,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("RouteTableId", StringUtils.FromString(publicRequest.RouteTableId));
                 }
+                if(publicRequest.IsSetTransitGatewayId())
+                {
+                    request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
+                }
                 if(publicRequest.IsSetVpcPeeringConnectionId())
                 {
                     request.Parameters.Add("VpcPeeringConnectionId", StringUtils.FromString(publicRequest.VpcPeeringConnectionId));

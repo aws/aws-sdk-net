@@ -63,6 +63,7 @@ namespace Amazon.EC2.Model
     {
         private string _customerGatewayId;
         private VpnConnectionOptionsSpecification _options;
+        private string _transitGatewayId;
         private string _type;
         private string _vpnGatewayId;
 
@@ -76,7 +77,7 @@ namespace Amazon.EC2.Model
         /// </summary>
         /// <param name="type">The type of VPN connection (<code>ipsec.1</code>).</param>
         /// <param name="customerGatewayId">The ID of the customer gateway.</param>
-        /// <param name="vpnGatewayId">The ID of the virtual private gateway.</param>
+        /// <param name="vpnGatewayId">The ID of the virtual private gateway. If you specify a virtual private gateway, you cannot specify a transit gateway.</param>
         public CreateVpnConnectionRequest(string type, string customerGatewayId, string vpnGatewayId)
         {
             _type = type;
@@ -121,6 +122,25 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TransitGatewayId. 
+        /// <para>
+        /// The ID of the transit gateway. If you specify a transit gateway, you cannot specify
+        /// a virtual private gateway.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayId
+        {
+            get { return this._transitGatewayId; }
+            set { this._transitGatewayId = value; }
+        }
+
+        // Check to see if TransitGatewayId property is set
+        internal bool IsSetTransitGatewayId()
+        {
+            return this._transitGatewayId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of VPN connection (<code>ipsec.1</code>).
@@ -141,7 +161,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpnGatewayId. 
         /// <para>
-        /// The ID of the virtual private gateway.
+        /// The ID of the virtual private gateway. If you specify a virtual private gateway, you
+        /// cannot specify a transit gateway.
         /// </para>
         /// </summary>
         public string VpnGatewayId

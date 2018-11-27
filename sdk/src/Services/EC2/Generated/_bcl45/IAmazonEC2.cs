@@ -95,6 +95,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AcceptTransitGatewayVpcAttachment
+
+
+        /// <summary>
+        /// Accepts a request to attach a VPC to a transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <a>DescribeTransitGatewayVpcAttachments</a>
+        /// to view your pending VPC attachment requests. Use <a>RejectTransitGatewayVpcAttachment</a>
+        /// to reject a VPC attachment request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the AcceptTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
+        AcceptTransitGatewayVpcAttachmentResponse AcceptTransitGatewayVpcAttachment(AcceptTransitGatewayVpcAttachmentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AcceptTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayVpcAttachment">REST API Reference for AcceptTransitGatewayVpcAttachment Operation</seealso>
+        Task<AcceptTransitGatewayVpcAttachmentResponse> AcceptTransitGatewayVpcAttachmentAsync(AcceptTransitGatewayVpcAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AcceptVpcEndpointConnections
 
 
@@ -648,6 +682,34 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateSubnetCidrBlock">REST API Reference for AssociateSubnetCidrBlock Operation</seealso>
         Task<AssociateSubnetCidrBlockResponse> AssociateSubnetCidrBlockAsync(AssociateSubnetCidrBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateTransitGatewayRouteTable
+
+
+        /// <summary>
+        /// Associates the specified attachment with the specified transit gateway route table.
+        /// You can associate only one route table with an attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the AssociateTransitGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
+        AssociateTransitGatewayRouteTableResponse AssociateTransitGatewayRouteTable(AssociateTransitGatewayRouteTableRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateTransitGatewayRouteTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayRouteTable">REST API Reference for AssociateTransitGatewayRouteTable Operation</seealso>
+        Task<AssociateTransitGatewayRouteTableResponse> AssociateTransitGatewayRouteTableAsync(AssociateTransitGatewayRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2756,6 +2818,154 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateTransitGateway
+
+
+        /// <summary>
+        /// Creates a transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// You can use a transit gateway to interconnect your virtual private clouds (VPC) and
+        /// on-premises networks. After the transit gateway enters the <code>available</code>
+        /// state, you can attach your VPCs and VPN connections to the transit gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// To attach your VPCs, use <a>CreateTransitGatewayVpcAttachment</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To attach a VPN connection, use <a>CreateCustomerGateway</a> to create a customer
+        /// gateway and specify the ID of the customer gateway and the ID of the transit gateway
+        /// in a call to <a>CreateVpnConnection</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you create a transit gateway, we create a default transit gateway route table
+        /// and use it as the default association route table and the default propagation route
+        /// table. You can use <a>CreateTransitGatewayRouteTable</a> to create additional transit
+        /// gateway route tables. If you disable automatic route propagation, we do not create
+        /// a default transit gateway route table. You can use <a>EnableTransitGatewayRouteTablePropagation</a>
+        /// to propagate routes from a resource attachment to a transit gateway route table. If
+        /// you disable automatic associations, you can use <a>AssociateTransitGatewayRouteTable</a>
+        /// to associate a resource attachment with a transit gateway route table.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGateway service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
+        CreateTransitGatewayResponse CreateTransitGateway(CreateTransitGatewayRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGateway">REST API Reference for CreateTransitGateway Operation</seealso>
+        Task<CreateTransitGatewayResponse> CreateTransitGatewayAsync(CreateTransitGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateTransitGatewayRoute
+
+
+        /// <summary>
+        /// Creates a static route for the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
+        CreateTransitGatewayRouteResponse CreateTransitGatewayRoute(CreateTransitGatewayRouteRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRoute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRoute">REST API Reference for CreateTransitGatewayRoute Operation</seealso>
+        Task<CreateTransitGatewayRouteResponse> CreateTransitGatewayRouteAsync(CreateTransitGatewayRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateTransitGatewayRouteTable
+
+
+        /// <summary>
+        /// Creates a route table for the specified transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
+        CreateTransitGatewayRouteTableResponse CreateTransitGatewayRouteTable(CreateTransitGatewayRouteTableRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayRouteTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayRouteTable">REST API Reference for CreateTransitGatewayRouteTable Operation</seealso>
+        Task<CreateTransitGatewayRouteTableResponse> CreateTransitGatewayRouteTableAsync(CreateTransitGatewayRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateTransitGatewayVpcAttachment
+
+
+        /// <summary>
+        /// Attaches the specified VPC to the specified transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// If you attach a VPC with a CIDR range that overlaps the CIDR range of a VPC that is
+        /// already attached, the new VPC CIDR range is not propagated to the default propagation
+        /// route table.
+        /// </para>
+        ///  
+        /// <para>
+        /// To send VPC traffic to an attached transit gateway, add a route to the VPC route table
+        /// using <a>CreateRoute</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
+        CreateTransitGatewayVpcAttachmentResponse CreateTransitGatewayVpcAttachment(CreateTransitGatewayVpcAttachmentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayVpcAttachment">REST API Reference for CreateTransitGatewayVpcAttachment Operation</seealso>
+        Task<CreateTransitGatewayVpcAttachmentResponse> CreateTransitGatewayVpcAttachmentAsync(CreateTransitGatewayVpcAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateVolume
 
 
@@ -3855,6 +4065,115 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteTransitGateway
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGateway service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGateway service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
+        DeleteTransitGatewayResponse DeleteTransitGateway(DeleteTransitGatewayRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGateway operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGateway operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGateway">REST API Reference for DeleteTransitGateway Operation</seealso>
+        Task<DeleteTransitGatewayResponse> DeleteTransitGatewayAsync(DeleteTransitGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTransitGatewayRoute
+
+
+        /// <summary>
+        /// Deletes the specified route from the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
+        DeleteTransitGatewayRouteResponse DeleteTransitGatewayRoute(DeleteTransitGatewayRouteRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRoute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">REST API Reference for DeleteTransitGatewayRoute Operation</seealso>
+        Task<DeleteTransitGatewayRouteResponse> DeleteTransitGatewayRouteAsync(DeleteTransitGatewayRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTransitGatewayRouteTable
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway route table. You must disassociate the route
+        /// table from any transit gateway route tables before you can delete it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
+        DeleteTransitGatewayRouteTableResponse DeleteTransitGatewayRouteTable(DeleteTransitGatewayRouteTableRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayRouteTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRouteTable">REST API Reference for DeleteTransitGatewayRouteTable Operation</seealso>
+        Task<DeleteTransitGatewayRouteTableResponse> DeleteTransitGatewayRouteTableAsync(DeleteTransitGatewayRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTransitGatewayVpcAttachment
+
+
+        /// <summary>
+        /// Deletes the specified VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
+        DeleteTransitGatewayVpcAttachmentResponse DeleteTransitGatewayVpcAttachment(DeleteTransitGatewayVpcAttachmentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayVpcAttachment">REST API Reference for DeleteTransitGatewayVpcAttachment Operation</seealso>
+        Task<DeleteTransitGatewayVpcAttachmentResponse> DeleteTransitGatewayVpcAttachmentAsync(DeleteTransitGatewayVpcAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteVolume
 
 
@@ -4944,9 +5263,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the Elastic GPUs associated with your instances. For more information about
-        /// Elastic GPUs, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html">Amazon
-        /// EC2 Elastic GPUs</a>.
+        /// Describes the Elastic Graphics accelerator associated with your instances. For more
+        /// information about Elastic Graphics, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+        /// Elastic Graphics</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticGpus service method.</param>
         /// 
@@ -7888,6 +8207,119 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeTransitGatewayAttachments
+
+
+        /// <summary>
+        /// Describes one or more attachments between resources and transit gateways. By default,
+        /// all attachments are described. Alternatively, you can filter the results by attachment
+        /// ID, attachment state, resource ID, or resource owner.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayAttachments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayAttachments service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
+        DescribeTransitGatewayAttachmentsResponse DescribeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayAttachments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayAttachments">REST API Reference for DescribeTransitGatewayAttachments Operation</seealso>
+        Task<DescribeTransitGatewayAttachmentsResponse> DescribeTransitGatewayAttachmentsAsync(DescribeTransitGatewayAttachmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTransitGatewayRouteTables
+
+
+        /// <summary>
+        /// Describes one or more transit gateway route tables. By default, all transit gateway
+        /// route tables are described. Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTables service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayRouteTables service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
+        DescribeTransitGatewayRouteTablesResponse DescribeTransitGatewayRouteTables(DescribeTransitGatewayRouteTablesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayRouteTables operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayRouteTables operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayRouteTables">REST API Reference for DescribeTransitGatewayRouteTables Operation</seealso>
+        Task<DescribeTransitGatewayRouteTablesResponse> DescribeTransitGatewayRouteTablesAsync(DescribeTransitGatewayRouteTablesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTransitGateways
+
+
+        /// <summary>
+        /// Describes one or more transit gateways. By default, all transit gateways are described.
+        /// Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGateways service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGateways service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
+        DescribeTransitGatewaysResponse DescribeTransitGateways(DescribeTransitGatewaysRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGateways operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGateways operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGateways">REST API Reference for DescribeTransitGateways Operation</seealso>
+        Task<DescribeTransitGatewaysResponse> DescribeTransitGatewaysAsync(DescribeTransitGatewaysRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeTransitGatewayVpcAttachments
+
+
+        /// <summary>
+        /// Describes one or more VPC attachments. By default, all VPC attachments are described.
+        /// Alternatively, you can filter the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayVpcAttachments service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTransitGatewayVpcAttachments service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
+        DescribeTransitGatewayVpcAttachmentsResponse DescribeTransitGatewayVpcAttachments(DescribeTransitGatewayVpcAttachmentsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeTransitGatewayVpcAttachments operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTransitGatewayVpcAttachments operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayVpcAttachments">REST API Reference for DescribeTransitGatewayVpcAttachments Operation</seealso>
+        Task<DescribeTransitGatewayVpcAttachmentsResponse> DescribeTransitGatewayVpcAttachmentsAsync(DescribeTransitGatewayVpcAttachmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeVolumeAttribute
 
 
@@ -8884,6 +9316,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableTransitGatewayRouteTablePropagation
+
+
+        /// <summary>
+        /// Disables the specified resource attachment from propagating routes to the specified
+        /// propagation route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableTransitGatewayRouteTablePropagation service method.</param>
+        /// 
+        /// <returns>The response from the DisableTransitGatewayRouteTablePropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
+        DisableTransitGatewayRouteTablePropagationResponse DisableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisableTransitGatewayRouteTablePropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisableTransitGatewayRouteTablePropagation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">REST API Reference for DisableTransitGatewayRouteTablePropagation Operation</seealso>
+        Task<DisableTransitGatewayRouteTablePropagationResponse> DisableTransitGatewayRouteTablePropagationAsync(DisableTransitGatewayRouteTablePropagationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisableVgwRoutePropagation
 
 
@@ -9106,6 +9566,33 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateTransitGatewayRouteTable
+
+
+        /// <summary>
+        /// Disassociates a resource attachment from a transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayRouteTable service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateTransitGatewayRouteTable service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
+        DisassociateTransitGatewayRouteTableResponse DisassociateTransitGatewayRouteTable(DisassociateTransitGatewayRouteTableRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateTransitGatewayRouteTable operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateTransitGatewayRouteTable operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">REST API Reference for DisassociateTransitGatewayRouteTable Operation</seealso>
+        Task<DisassociateTransitGatewayRouteTableResponse> DisassociateTransitGatewayRouteTableAsync(DisassociateTransitGatewayRouteTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateVpcCidrBlock
 
 
@@ -9139,6 +9626,34 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateVpcCidrBlock">REST API Reference for DisassociateVpcCidrBlock Operation</seealso>
         Task<DisassociateVpcCidrBlockResponse> DisassociateVpcCidrBlockAsync(DisassociateVpcCidrBlockRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  EnableTransitGatewayRouteTablePropagation
+
+
+        /// <summary>
+        /// Enables the specified attachment to propagate routes to the specified propagation
+        /// route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableTransitGatewayRouteTablePropagation service method.</param>
+        /// 
+        /// <returns>The response from the EnableTransitGatewayRouteTablePropagation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
+        EnableTransitGatewayRouteTablePropagationResponse EnableTransitGatewayRouteTablePropagation(EnableTransitGatewayRouteTablePropagationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the EnableTransitGatewayRouteTablePropagation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the EnableTransitGatewayRouteTablePropagation operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableTransitGatewayRouteTablePropagation">REST API Reference for EnableTransitGatewayRouteTablePropagation Operation</seealso>
+        Task<EnableTransitGatewayRouteTablePropagationResponse> EnableTransitGatewayRouteTablePropagationAsync(EnableTransitGatewayRouteTablePropagationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9260,6 +9775,35 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         Task<EnableVpcClassicLinkDnsSupportResponse> EnableVpcClassicLinkDnsSupportAsync(EnableVpcClassicLinkDnsSupportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ExportTransitGatewayRoutes
+
+
+        /// <summary>
+        /// Exports routes from the specified transit gateway route table to the specified S3
+        /// bucket. By default, all routes are exported. Alternatively, you can filter by CIDR
+        /// range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportTransitGatewayRoutes service method.</param>
+        /// 
+        /// <returns>The response from the ExportTransitGatewayRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
+        ExportTransitGatewayRoutesResponse ExportTransitGatewayRoutes(ExportTransitGatewayRoutesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportTransitGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportTransitGatewayRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportTransitGatewayRoutes">REST API Reference for ExportTransitGatewayRoutes Operation</seealso>
+        Task<ExportTransitGatewayRoutesResponse> ExportTransitGatewayRoutesAsync(ExportTransitGatewayRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9486,6 +10030,88 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetReservedInstancesExchangeQuote">REST API Reference for GetReservedInstancesExchangeQuote Operation</seealso>
         Task<GetReservedInstancesExchangeQuoteResponse> GetReservedInstancesExchangeQuoteAsync(GetReservedInstancesExchangeQuoteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTransitGatewayAttachmentPropagations
+
+
+        /// <summary>
+        /// Lists the route tables to which the specified resource attachment propagates routes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayAttachmentPropagations service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayAttachmentPropagations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
+        GetTransitGatewayAttachmentPropagationsResponse GetTransitGatewayAttachmentPropagations(GetTransitGatewayAttachmentPropagationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayAttachmentPropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayAttachmentPropagations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayAttachmentPropagations">REST API Reference for GetTransitGatewayAttachmentPropagations Operation</seealso>
+        Task<GetTransitGatewayAttachmentPropagationsResponse> GetTransitGatewayAttachmentPropagationsAsync(GetTransitGatewayAttachmentPropagationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTransitGatewayRouteTableAssociations
+
+
+        /// <summary>
+        /// Gets information about the associations for the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTableAssociations service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayRouteTableAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
+        GetTransitGatewayRouteTableAssociationsResponse GetTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayRouteTableAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTableAssociations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTableAssociations">REST API Reference for GetTransitGatewayRouteTableAssociations Operation</seealso>
+        Task<GetTransitGatewayRouteTableAssociationsResponse> GetTransitGatewayRouteTableAssociationsAsync(GetTransitGatewayRouteTableAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetTransitGatewayRouteTablePropagations
+
+
+        /// <summary>
+        /// Gets information about the route table propagations for the specified transit gateway
+        /// route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTablePropagations service method.</param>
+        /// 
+        /// <returns>The response from the GetTransitGatewayRouteTablePropagations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
+        GetTransitGatewayRouteTablePropagationsResponse GetTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTransitGatewayRouteTablePropagations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTransitGatewayRouteTablePropagations operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayRouteTablePropagations">REST API Reference for GetTransitGatewayRouteTablePropagations Operation</seealso>
+        Task<GetTransitGatewayRouteTablePropagationsResponse> GetTransitGatewayRouteTablePropagationsAsync(GetTransitGatewayRouteTablePropagationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10321,6 +10947,33 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyTransitGatewayVpcAttachment
+
+
+        /// <summary>
+        /// Modifies the specified VPC attachment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
+        ModifyTransitGatewayVpcAttachmentResponse ModifyTransitGatewayVpcAttachment(ModifyTransitGatewayVpcAttachmentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayVpcAttachment">REST API Reference for ModifyTransitGatewayVpcAttachment Operation</seealso>
+        Task<ModifyTransitGatewayVpcAttachmentResponse> ModifyTransitGatewayVpcAttachmentAsync(ModifyTransitGatewayVpcAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyVolume
 
 
@@ -11013,6 +11666,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RejectTransitGatewayVpcAttachment
+
+
+        /// <summary>
+        /// Rejects a request to attach a VPC to a transit gateway.
+        /// 
+        ///  
+        /// <para>
+        /// The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <a>DescribeTransitGatewayVpcAttachments</a>
+        /// to view your pending VPC attachment requests. Use <a>AcceptTransitGatewayVpcAttachment</a>
+        /// to accept a VPC attachment request.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayVpcAttachment service method.</param>
+        /// 
+        /// <returns>The response from the RejectTransitGatewayVpcAttachment service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
+        RejectTransitGatewayVpcAttachmentResponse RejectTransitGatewayVpcAttachment(RejectTransitGatewayVpcAttachmentRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectTransitGatewayVpcAttachment operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectTransitGatewayVpcAttachment operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayVpcAttachment">REST API Reference for RejectTransitGatewayVpcAttachment Operation</seealso>
+        Task<RejectTransitGatewayVpcAttachmentResponse> RejectTransitGatewayVpcAttachmentAsync(RejectTransitGatewayVpcAttachmentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RejectVpcEndpointConnections
 
 
@@ -11331,6 +12018,33 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">REST API Reference for ReplaceRouteTableAssociation Operation</seealso>
         Task<ReplaceRouteTableAssociationResponse> ReplaceRouteTableAssociationAsync(ReplaceRouteTableAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ReplaceTransitGatewayRoute
+
+
+        /// <summary>
+        /// Replaces the specified route in the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceTransitGatewayRoute service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceTransitGatewayRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
+        ReplaceTransitGatewayRouteResponse ReplaceTransitGatewayRoute(ReplaceTransitGatewayRouteRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplaceTransitGatewayRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceTransitGatewayRoute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceTransitGatewayRoute">REST API Reference for ReplaceTransitGatewayRoute Operation</seealso>
+        Task<ReplaceTransitGatewayRouteResponse> ReplaceTransitGatewayRouteAsync(ReplaceTransitGatewayRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11890,6 +12604,33 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">REST API Reference for RunScheduledInstances Operation</seealso>
         Task<RunScheduledInstancesResponse> RunScheduledInstancesAsync(RunScheduledInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  SearchTransitGatewayRoutes
+
+
+        /// <summary>
+        /// Searches for routes in the specified transit gateway route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTransitGatewayRoutes service method.</param>
+        /// 
+        /// <returns>The response from the SearchTransitGatewayRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
+        SearchTransitGatewayRoutesResponse SearchTransitGatewayRoutes(SearchTransitGatewayRoutesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchTransitGatewayRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchTransitGatewayRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">REST API Reference for SearchTransitGatewayRoutes Operation</seealso>
+        Task<SearchTransitGatewayRoutesResponse> SearchTransitGatewayRoutesAsync(SearchTransitGatewayRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

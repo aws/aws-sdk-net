@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the status of an Elastic GPU.
+    /// Describes the status of an Elastic Graphics accelerator.
     /// </summary>
     public partial class ElasticGpuHealth
     {

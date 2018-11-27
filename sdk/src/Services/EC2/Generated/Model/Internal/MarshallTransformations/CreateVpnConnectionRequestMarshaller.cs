@@ -85,6 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if(publicRequest.IsSetTransitGatewayId())
+                {
+                    request.Parameters.Add("TransitGatewayId", StringUtils.FromString(publicRequest.TransitGatewayId));
+                }
                 if(publicRequest.IsSetType())
                 {
                     request.Parameters.Add("Type", StringUtils.FromString(publicRequest.Type));

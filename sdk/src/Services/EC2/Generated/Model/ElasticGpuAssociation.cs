@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the association between an instance and an Elastic GPU.
+    /// Describes the association between an instance and an Elastic Graphics accelerator.
     /// </summary>
     public partial class ElasticGpuAssociation
     {
@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuAssociationState. 
         /// <para>
-        /// The state of the association between the instance and the Elastic GPU.
+        /// The state of the association between the instance and the Elastic Graphics accelerator.
         /// </para>
         /// </summary>
         public string ElasticGpuAssociationState
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuAssociationTime. 
         /// <para>
-        /// The time the Elastic GPU was associated with the instance.
+        /// The time the Elastic Graphics accelerator was associated with the instance.
         /// </para>
         /// </summary>
         public string ElasticGpuAssociationTime
@@ -94,7 +94,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticGpuId. 
         /// <para>
-        /// The ID of the Elastic GPU.
+        /// The ID of the Elastic Graphics accelerator.
         /// </para>
         /// </summary>
         public string ElasticGpuId
