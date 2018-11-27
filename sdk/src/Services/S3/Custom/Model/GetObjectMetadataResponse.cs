@@ -36,7 +36,7 @@ namespace Amazon.S3.Model
         private string eTag;
         private int? missingMeta;
         private string versionId;
-        private DateTime? expires;
+        private DateTime? expires;        
         private string websiteRedirectLocation;
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private ServerSideEncryptionMethod serverSideEncryption;
@@ -45,6 +45,9 @@ namespace Amazon.S3.Model
         private MetadataCollection metadataCollection = new MetadataCollection();
         private ReplicationStatus replicationStatus;
         private int? partsCount;
+        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
+        private ObjectLockMode objectLockMode;
+        private DateTime? objectLockRetainUntilDate;
         private S3StorageClass storageClass;
         private RequestCharged requestCharged;
 
@@ -356,6 +359,60 @@ namespace Amazon.S3.Model
         internal bool IsSetPartsCount()
         {
             return this.partsCount.HasValue;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockLegalHoldStatus. 
+        /// <para>
+        /// The Legal Hold status for the specified object.
+        /// </para>
+        /// </summary>
+        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
+        {
+            get { return this.objectLockLegalHoldStatus; }
+            set { this.objectLockLegalHoldStatus = value; }
+        }
+
+        // Check to see if ObjectLockLegalHoldStatus property is set
+        internal bool IsSetObjectLockLegalHoldStatus()
+        {
+            return this.objectLockLegalHoldStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockMode. 
+        /// <para>
+        /// The Object Lock mode currently in place for this object.
+        /// </para>
+        /// </summary>
+        public ObjectLockMode ObjectLockMode
+        {
+            get { return this.objectLockMode; }
+            set { this.objectLockMode = value; }
+        }
+
+        // Check to see if ObjectLockMode property is set
+        internal bool IsSetObjectLockMode()
+        {
+            return this.objectLockMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockRetainUntilDate. 
+        /// <para>
+        /// The date and time when this object's Object Lock will expire.
+        /// </para>
+        /// </summary>
+        public DateTime ObjectLockRetainUntilDate
+        {
+            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            set { this.objectLockRetainUntilDate = value; }
+        }
+
+        // Check to see if ObjectLockRetainUntilDate property is set
+        internal bool IsSetObjectLockRetainUntilDate()
+        {
+            return this.objectLockRetainUntilDate.HasValue; 
         }
 
         /// <summary>

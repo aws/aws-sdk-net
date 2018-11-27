@@ -1571,6 +1571,58 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectLegalHold
+
+
+        /// <summary>
+        /// Gets an object's current Legal Hold status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectLegalHold service method, as returned by S3.</returns>
+        GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetObjectLegalHoldResponse> GetObjectLegalHoldAsync(GetObjectLegalHoldRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetObjectLockConfiguration
+
+
+        /// <summary>
+        /// Gets the Object Lock configuration for a bucket. The rule specified in the Object
+        /// Lock configuration will be applied by default to every new object placed in the specified
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectLockConfiguration service method, as returned by S3.</returns>
+        GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetObjectLockConfigurationResponse> GetObjectLockConfigurationAsync(GetObjectLockConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetObjectMetadata
 
 
@@ -1647,6 +1699,31 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<GetObjectMetadataResponse> GetObjectMetadataAsync(GetObjectMetadataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetObjectRetention
+
+
+        /// <summary>
+        /// Retrieves an object's retention settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectRetention service method, as returned by S3.</returns>
+        GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetObjectRetentionResponse> GetObjectRetentionAsync(GetObjectRetentionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2850,6 +2927,83 @@ namespace Amazon.S3
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutObjectLegalHold
+
+
+        /// <summary>
+        /// Applies a Legal Hold configuration to the specified object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectLegalHold service method, as returned by S3.</returns>
+        PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutObjectLegalHoldResponse> PutObjectLegalHoldAsync(PutObjectLegalHoldRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutObjectLockConfiguration
+
+
+        /// <summary>
+        /// Places an Object Lock configuration on the specified bucket. The rule specified in
+        /// the Object Lock configuration will be applied by default to every new object placed
+        /// in the specified bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectLockConfiguration service method, as returned by S3.</returns>
+        PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutObjectLockConfigurationResponse> PutObjectLockConfigurationAsync(PutObjectLockConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutObjectRetention
+
+
+        /// <summary>
+        /// Places an Object Retention configuration on an object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectRetention service method, as returned by S3.</returns>
+        PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutObjectRetentionResponse> PutObjectRetentionAsync(PutObjectRetentionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

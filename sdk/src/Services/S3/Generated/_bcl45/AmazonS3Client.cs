@@ -2601,6 +2601,82 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectLegalHold
+
+
+        /// <summary>
+        /// Gets an object's current Legal Hold status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectLegalHold service method, as returned by S3.</returns>
+        public virtual GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request)
+        {
+            var marshaller = GetObjectLegalHoldRequestMarshaller.Instance;
+            var unmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectLegalHoldRequest,GetObjectLegalHoldResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetObjectLegalHoldResponse> GetObjectLegalHoldAsync(GetObjectLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetObjectLegalHoldRequestMarshaller.Instance;
+            var unmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectLegalHoldRequest,GetObjectLegalHoldResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetObjectLockConfiguration
+
+
+        /// <summary>
+        /// Gets the Object Lock configuration for a bucket. The rule specified in the Object
+        /// Lock configuration will be applied by default to every new object placed in the specified
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectLockConfiguration service method, as returned by S3.</returns>
+        public virtual GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request)
+        {
+            var marshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectLockConfigurationRequest,GetObjectLockConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetObjectLockConfigurationResponse> GetObjectLockConfigurationAsync(GetObjectLockConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectLockConfigurationRequest,GetObjectLockConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetObjectMetadata
 
 
@@ -2717,6 +2793,43 @@ namespace Amazon.S3
             var unmarshaller = GetObjectMetadataResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetObjectMetadataRequest,GetObjectMetadataResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetObjectRetention
+
+
+        /// <summary>
+        /// Retrieves an object's retention settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectRetention service method, as returned by S3.</returns>
+        public virtual GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request)
+        {
+            var marshaller = GetObjectRetentionRequestMarshaller.Instance;
+            var unmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
+
+            return Invoke<GetObjectRetentionRequest,GetObjectRetentionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetObjectRetentionResponse> GetObjectRetentionAsync(GetObjectRetentionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetObjectRetentionRequestMarshaller.Instance;
+            var unmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetObjectRetentionRequest,GetObjectRetentionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -4569,6 +4682,119 @@ namespace Amazon.S3
             var unmarshaller = PutObjectResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutObjectRequest,PutObjectResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutObjectLegalHold
+
+
+        /// <summary>
+        /// Applies a Legal Hold configuration to the specified object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectLegalHold service method, as returned by S3.</returns>
+        public virtual PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request)
+        {
+            var marshaller = PutObjectLegalHoldRequestMarshaller.Instance;
+            var unmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
+
+            return Invoke<PutObjectLegalHoldRequest,PutObjectLegalHoldResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutObjectLegalHoldResponse> PutObjectLegalHoldAsync(PutObjectLegalHoldRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutObjectLegalHoldRequestMarshaller.Instance;
+            var unmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutObjectLegalHoldRequest,PutObjectLegalHoldResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutObjectLockConfiguration
+
+
+        /// <summary>
+        /// Places an Object Lock configuration on the specified bucket. The rule specified in
+        /// the Object Lock configuration will be applied by default to every new object placed
+        /// in the specified bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectLockConfiguration service method, as returned by S3.</returns>
+        public virtual PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request)
+        {
+            var marshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutObjectLockConfigurationRequest,PutObjectLockConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutObjectLockConfigurationResponse> PutObjectLockConfigurationAsync(PutObjectLockConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutObjectLockConfigurationRequest,PutObjectLockConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutObjectRetention
+
+
+        /// <summary>
+        /// Places an Object Retention configuration on an object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectRetention service method, as returned by S3.</returns>
+        public virtual PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request)
+        {
+            var marshaller = PutObjectRetentionRequestMarshaller.Instance;
+            var unmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
+
+            return Invoke<PutObjectRetentionRequest,PutObjectRetentionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutObjectRetentionResponse> PutObjectRetentionAsync(PutObjectRetentionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutObjectRetentionRequestMarshaller.Instance;
+            var unmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutObjectRetentionRequest,PutObjectRetentionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

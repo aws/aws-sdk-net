@@ -72,6 +72,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (initiateMultipartUploadRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(initiateMultipartUploadRequest.RequestPayer.ToString()));
 
+            if(initiateMultipartUploadRequest.IsSetObjectLockLegalHoldStatus())
+                request.Headers.Add("x-amz-object-lock-legal-hold", S3Transforms.ToStringValue(initiateMultipartUploadRequest.ObjectLockLegalHoldStatus));        
+            if(initiateMultipartUploadRequest.IsSetObjectLockMode())
+                request.Headers.Add("x-amz-object-lock-mode", S3Transforms.ToStringValue(initiateMultipartUploadRequest.ObjectLockMode));        
+            if(initiateMultipartUploadRequest.IsSetObjectLockRetainUntilDate())
+                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(initiateMultipartUploadRequest.ObjectLockRetainUntilDate));
+
             if (initiateMultipartUploadRequest.IsSetTagSet())
                 request.Headers.Add(S3Constants.AmzHeaderTagging, AmazonS3Util.TagSetToQueryString(initiateMultipartUploadRequest.TagSet));
 

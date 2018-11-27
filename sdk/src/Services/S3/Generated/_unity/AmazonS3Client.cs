@@ -1881,6 +1881,60 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectLegalHold
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void GetObjectLegalHoldAsync(GetObjectLegalHoldRequest request, AmazonServiceCallback<GetObjectLegalHoldRequest, GetObjectLegalHoldResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = GetObjectLegalHoldRequestMarshaller.Instance;
+            var unmarshaller = GetObjectLegalHoldResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetObjectLegalHoldRequest,GetObjectLegalHoldResponse> responseObject 
+                            = new AmazonServiceResult<GetObjectLegalHoldRequest,GetObjectLegalHoldResponse>((GetObjectLegalHoldRequest)req, (GetObjectLegalHoldResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetObjectLegalHoldRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetObjectLockConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void GetObjectLockConfigurationAsync(GetObjectLockConfigurationRequest request, AmazonServiceCallback<GetObjectLockConfigurationRequest, GetObjectLockConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = GetObjectLockConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetObjectLockConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetObjectLockConfigurationRequest,GetObjectLockConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<GetObjectLockConfigurationRequest,GetObjectLockConfigurationResponse>((GetObjectLockConfigurationRequest)req, (GetObjectLockConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetObjectLockConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  GetObjectMetadata
 
         /// <summary>
@@ -1959,6 +2013,33 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<GetObjectMetadataRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetObjectRetention
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void GetObjectRetentionAsync(GetObjectRetentionRequest request, AmazonServiceCallback<GetObjectRetentionRequest, GetObjectRetentionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = GetObjectRetentionRequestMarshaller.Instance;
+            var unmarshaller = GetObjectRetentionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetObjectRetentionRequest,GetObjectRetentionResponse> responseObject 
+                            = new AmazonServiceResult<GetObjectRetentionRequest,GetObjectRetentionResponse>((GetObjectRetentionRequest)req, (GetObjectRetentionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetObjectRetentionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -3331,6 +3412,102 @@ namespace Amazon.S3
                         callback(responseObject); 
                 };
             BeginInvoke<PutObjectRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutObjectLegalHold
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectLegalHold operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void PutObjectLegalHoldAsync(PutObjectLegalHoldRequest request, AmazonServiceCallback<PutObjectLegalHoldRequest, PutObjectLegalHoldResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutObjectLegalHold is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = PutObjectLegalHoldRequestMarshaller.Instance;
+            var unmarshaller = PutObjectLegalHoldResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutObjectLegalHoldRequest,PutObjectLegalHoldResponse> responseObject 
+                            = new AmazonServiceResult<PutObjectLegalHoldRequest,PutObjectLegalHoldResponse>((PutObjectLegalHoldRequest)req, (PutObjectLegalHoldResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutObjectLegalHoldRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutObjectLockConfiguration
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectLockConfiguration operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void PutObjectLockConfigurationAsync(PutObjectLockConfigurationRequest request, AmazonServiceCallback<PutObjectLockConfigurationRequest, PutObjectLockConfigurationResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutObjectLockConfiguration is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = PutObjectLockConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutObjectLockConfigurationResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutObjectLockConfigurationRequest,PutObjectLockConfigurationResponse> responseObject 
+                            = new AmazonServiceResult<PutObjectLockConfigurationRequest,PutObjectLockConfigurationResponse>((PutObjectLockConfigurationRequest)req, (PutObjectLockConfigurationResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutObjectLockConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PutObjectRetention
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectRetention operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention operation on AmazonS3Client.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        public virtual void PutObjectRetentionAsync(PutObjectRetentionRequest request, AmazonServiceCallback<PutObjectRetentionRequest, PutObjectRetentionResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("PutObjectRetention is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = PutObjectRetentionRequestMarshaller.Instance;
+            var unmarshaller = PutObjectRetentionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PutObjectRetentionRequest,PutObjectRetentionResponse> responseObject 
+                            = new AmazonServiceResult<PutObjectRetentionRequest,PutObjectRetentionResponse>((PutObjectRetentionRequest)req, (PutObjectRetentionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PutObjectRetentionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

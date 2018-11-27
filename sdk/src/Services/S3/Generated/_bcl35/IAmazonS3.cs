@@ -1703,6 +1703,82 @@ namespace Amazon.S3
 
         #endregion
         
+        #region  GetObjectLegalHold
+
+
+        /// <summary>
+        /// Gets an object's current Legal Hold status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectLegalHold service method, as returned by S3.</returns>
+        GetObjectLegalHoldResponse GetObjectLegalHold(GetObjectLegalHoldRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLegalHold operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectLegalHold
+        ///         operation.</returns>
+        IAsyncResult BeginGetObjectLegalHold(GetObjectLegalHoldRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectLegalHold.</param>
+        /// 
+        /// <returns>Returns a  GetObjectLegalHoldResult from S3.</returns>
+        GetObjectLegalHoldResponse EndGetObjectLegalHold(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetObjectLockConfiguration
+
+
+        /// <summary>
+        /// Gets the Object Lock configuration for a bucket. The rule specified in the Object
+        /// Lock configuration will be applied by default to every new object placed in the specified
+        /// bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectLockConfiguration service method, as returned by S3.</returns>
+        GetObjectLockConfigurationResponse GetObjectLockConfiguration(GetObjectLockConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectLockConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectLockConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginGetObjectLockConfiguration(GetObjectLockConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectLockConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetObjectLockConfigurationResult from S3.</returns>
+        GetObjectLockConfigurationResponse EndGetObjectLockConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetObjectMetadata
 
 
@@ -1762,6 +1838,43 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  GetObjectMetadataResult from S3.</returns>
         GetObjectMetadataResponse EndGetObjectMetadata(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetObjectRetention
+
+
+        /// <summary>
+        /// Retrieves an object's retention settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention service method.</param>
+        /// 
+        /// <returns>The response from the GetObjectRetention service method, as returned by S3.</returns>
+        GetObjectRetentionResponse GetObjectRetention(GetObjectRetentionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetObjectRetention operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetObjectRetention
+        ///         operation.</returns>
+        IAsyncResult BeginGetObjectRetention(GetObjectRetentionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetObjectRetention.</param>
+        /// 
+        /// <returns>Returns a  GetObjectRetentionResult from S3.</returns>
+        GetObjectRetentionResponse EndGetObjectRetention(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3107,6 +3220,119 @@ namespace Amazon.S3
         /// 
         /// <returns>Returns a  PutObjectResult from S3.</returns>
         PutObjectResponse EndPutObject(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutObjectLegalHold
+
+
+        /// <summary>
+        /// Applies a Legal Hold configuration to the specified object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectLegalHold service method, as returned by S3.</returns>
+        PutObjectLegalHoldResponse PutObjectLegalHold(PutObjectLegalHoldRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLegalHold operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectLegalHold
+        ///         operation.</returns>
+        IAsyncResult BeginPutObjectLegalHold(PutObjectLegalHoldRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutObjectLegalHold operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectLegalHold.</param>
+        /// 
+        /// <returns>Returns a  PutObjectLegalHoldResult from S3.</returns>
+        PutObjectLegalHoldResponse EndPutObjectLegalHold(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutObjectLockConfiguration
+
+
+        /// <summary>
+        /// Places an Object Lock configuration on the specified bucket. The rule specified in
+        /// the Object Lock configuration will be applied by default to every new object placed
+        /// in the specified bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectLockConfiguration service method, as returned by S3.</returns>
+        PutObjectLockConfigurationResponse PutObjectLockConfiguration(PutObjectLockConfigurationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectLockConfiguration operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectLockConfiguration
+        ///         operation.</returns>
+        IAsyncResult BeginPutObjectLockConfiguration(PutObjectLockConfigurationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutObjectLockConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectLockConfiguration.</param>
+        /// 
+        /// <returns>Returns a  PutObjectLockConfigurationResult from S3.</returns>
+        PutObjectLockConfigurationResponse EndPutObjectLockConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutObjectRetention
+
+
+        /// <summary>
+        /// Places an Object Retention configuration on an object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention service method.</param>
+        /// 
+        /// <returns>The response from the PutObjectRetention service method, as returned by S3.</returns>
+        PutObjectRetentionResponse PutObjectRetention(PutObjectRetentionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutObjectRetention operation on AmazonS3Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutObjectRetention
+        ///         operation.</returns>
+        IAsyncResult BeginPutObjectRetention(PutObjectRetentionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutObjectRetention operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutObjectRetention.</param>
+        /// 
+        /// <returns>Returns a  PutObjectRetentionResult from S3.</returns>
+        PutObjectRetentionResponse EndPutObjectRetention(IAsyncResult asyncResult);
 
         #endregion
         

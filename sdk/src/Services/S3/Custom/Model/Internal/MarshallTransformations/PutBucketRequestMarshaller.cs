@@ -23,6 +23,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using System.Globalization;
 using Amazon.Util;
+using Amazon.Runtime.Internal.Util;
 
 #pragma warning disable 1591
 
@@ -48,6 +49,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 request.Headers.Add(HeaderKeys.XAmzAclHeader, putBucketRequest.CannedACL.Value);
             else if (putBucketRequest.Grants != null && putBucketRequest.Grants.Count > 0)
                 ConvertPutWithACLRequest(putBucketRequest, request);
+
+            if(putBucketRequest.IsSetObjectLockEnabledForBucket())
+                request.Headers.Add("x-amz-bucket-object-lock-enabled", S3Transforms.ToStringValue(putBucketRequest.ObjectLockEnabledForBucket));
 
             if (string.IsNullOrEmpty(putBucketRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "PutBucketRequest.BucketName");

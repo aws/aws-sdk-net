@@ -75,6 +75,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.Headers.Add(HeaderKeys.XAmzMetadataDirectiveHeader, S3Transforms.ToStringValue(copyObjectRequest.MetadataDirective.ToString()));
 
+			if(copyObjectRequest.IsSetObjectLockLegalHoldStatus())
+                request.Headers.Add("x-amz-object-lock-legal-hold", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockLegalHoldStatus));        
+            if(copyObjectRequest.IsSetObjectLockMode())
+                request.Headers.Add("x-amz-object-lock-mode", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockMode));        
+            if(copyObjectRequest.IsSetObjectLockRetainUntilDate())
+                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockRetainUntilDate));
+
             if (copyObjectRequest.IsSetServerSideEncryptionMethod())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(copyObjectRequest.ServerSideEncryptionMethod));
             if (copyObjectRequest.IsSetServerSideEncryptionCustomerMethod())

@@ -80,6 +80,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 response.Headers.ContentEncoding = S3Transforms.ToString(responseData.GetHeaderValue("Content-Encoding"));
             if (responseData.IsHeaderPresent("Content-Length"))
                 response.Headers.ContentLength = long.Parse(responseData.GetHeaderValue("Content-Length"), CultureInfo.InvariantCulture);
+            if (responseData.IsHeaderPresent("x-amz-object-lock-legal-hold"))
+                response.ObjectLockLegalHoldStatus = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-object-lock-legal-hold"));
+            if (responseData.IsHeaderPresent("x-amz-object-lock-mode"))
+                response.ObjectLockMode = S3Transforms.ToString(responseData.GetHeaderValue("x-amz-object-lock-mode"));
+            if (responseData.IsHeaderPresent("x-amz-object-lock-retain-until-date"))
+                response.ObjectLockRetainUntilDate = S3Transforms.ToDateTime(responseData.GetHeaderValue("x-amz-object-lock-retain-until-date"));
             if (responseData.IsHeaderPresent("Content-Type"))
                 response.Headers.ContentType = S3Transforms.ToString(responseData.GetHeaderValue("Content-Type"));
             if (responseData.IsHeaderPresent("Expires"))

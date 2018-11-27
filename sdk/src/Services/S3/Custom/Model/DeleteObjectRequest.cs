@@ -44,6 +44,7 @@ namespace Amazon.S3.Model
     public partial class DeleteObjectRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+		private bool? bypassGovernanceRetention;
         private string key;
         private string versionId;
         private MfaCodes mfaCodes;
@@ -62,6 +63,21 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+		
+		/// <summary>
+        /// Gets and sets the property BypassGovernanceRetention.
+        /// </summary>
+        public bool BypassGovernanceRetention
+        {
+            get { return this.bypassGovernanceRetention.GetValueOrDefault(); }
+            set { this.bypassGovernanceRetention = value; }
+        }
+
+        // Check to see if BypassGovernanceRetention property is set
+        internal bool IsSetBypassGovernanceRetention()
+        {
+            return this.bypassGovernanceRetention.HasValue; 
         }
 
         /// <summary>

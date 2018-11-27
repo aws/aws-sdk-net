@@ -77,6 +77,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (putObjectRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, putObjectRequest.ServerSideEncryptionKeyManagementServiceKeyId);
+
+            if (putObjectRequest.IsSetObjectLockLegalHoldStatus())
+                request.Headers.Add("x-amz-object-lock-legal-hold", S3Transforms.ToStringValue(putObjectRequest.ObjectLockLegalHoldStatus));
+
+            if (putObjectRequest.IsSetObjectLockMode())
+                request.Headers.Add("x-amz-object-lock-mode", S3Transforms.ToStringValue(putObjectRequest.ObjectLockMode));
+
+            if (putObjectRequest.IsSetObjectLockRetainUntilDate())
+                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(putObjectRequest.ObjectLockRetainUntilDate));
+
             if (putObjectRequest.IsSetRequestPayer())
                 request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(putObjectRequest.RequestPayer.ToString()));
 

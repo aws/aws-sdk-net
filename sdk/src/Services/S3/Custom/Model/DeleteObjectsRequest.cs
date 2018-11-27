@@ -31,6 +31,7 @@ namespace Amazon.S3.Model
     public partial class DeleteObjectsRequest : AmazonWebServiceRequest
     {
         private string bucketName;
+		private bool? bypassGovernanceRetention;
         private List<KeyVersion> objects = new List<KeyVersion>();
         private bool? quiet;
         private MfaCodes mfaCodes;
@@ -49,6 +50,25 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketName()
         {
             return this.bucketName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BypassGovernanceRetention. 
+        /// <para>
+        /// Specifies whether you want to delete this object even if it has a Governance-type
+        /// Object Lock in place. You must have sufficient permissions to perform this operation.
+        /// </para>
+        /// </summary>
+        public bool BypassGovernanceRetention
+        {
+            get { return this.bypassGovernanceRetention.GetValueOrDefault(); }
+            set { this.bypassGovernanceRetention = value; }
+        }
+
+        // Check to see if BypassGovernanceRetention property is set
+        internal bool IsSetBypassGovernanceRetention()
+        {
+            return this.bypassGovernanceRetention.HasValue; 
         }
 
         /// <summary>

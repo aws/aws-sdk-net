@@ -47,6 +47,9 @@ namespace Amazon.S3.Model
         private string filePath;
         private string contentBody;
         private bool autoCloseStream = true;
+        private ObjectLockLegalHoldStatus objectLockLegalHoldStatus;
+        private ObjectLockMode objectLockMode;
+        private DateTime? objectLockRetainUntilDate;
         private bool autoResetStreamPosition = true;
         private bool useChunkEncoding = true;
         private RequestPayer requestPayer;
@@ -322,6 +325,60 @@ namespace Amazon.S3.Model
         internal bool IsSetStorageClass()
         {
             return this.storageClass != null;
+        }
+		
+        /// <summary>
+        /// Gets and sets the property ObjectLockLegalHoldStatus. 
+        /// <para>
+        /// The Legal Hold status that you want to apply to the specified object.
+        /// </para>
+        /// </summary>
+        public ObjectLockLegalHoldStatus ObjectLockLegalHoldStatus
+        {
+            get { return this.objectLockLegalHoldStatus; }
+            set { this.objectLockLegalHoldStatus = value; }
+        }
+
+        // Check to see if ObjectLockLegalHoldStatus property is set
+        internal bool IsSetObjectLockLegalHoldStatus()
+        {
+            return this.objectLockLegalHoldStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockMode. 
+        /// <para>
+        /// The Object Lock mode that you want to apply to this object.
+        /// </para>
+        /// </summary>
+        public ObjectLockMode ObjectLockMode
+        {
+            get { return this.objectLockMode; }
+            set { this.objectLockMode = value; }
+        }
+
+        // Check to see if ObjectLockMode property is set
+        internal bool IsSetObjectLockMode()
+        {
+            return this.objectLockMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockRetainUntilDate. 
+        /// <para>
+        /// The date and time when you want this object's Object Lock to expire.
+        /// </para>
+        /// </summary>
+        public DateTime ObjectLockRetainUntilDate
+        {
+            get { return this.objectLockRetainUntilDate.GetValueOrDefault(); }
+            set { this.objectLockRetainUntilDate = value; }
+        }
+
+        // Check to see if ObjectLockRetainUntilDate property is set
+        internal bool IsSetObjectLockRetainUntilDate()
+        {
+            return this.objectLockRetainUntilDate.HasValue; 
         }
 
         /// <summary>

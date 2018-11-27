@@ -22,6 +22,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return bucketName;
         }
 
+        public static string CreateBucket(IAmazonS3 s3Client, PutBucketRequest bucketRequest)
+        {
+            string bucketName = UtilityMethods.SDK_TEST_PREFIX + DateTime.Now.Ticks;
+            bucketRequest.BucketName = bucketName;
+            s3Client.PutBucket(bucketRequest);
+            return bucketName;
+        }
+
         public static string CreateBucketWithWait(IAmazonS3 s3Client)
         {
             string bucketName = CreateBucket(s3Client);

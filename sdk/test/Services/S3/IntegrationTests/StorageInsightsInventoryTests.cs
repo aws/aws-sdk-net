@@ -94,7 +94,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                                                                                InventoryOptionalField.StorageClass,
                                                                                InventoryOptionalField.ETag,
                                                                                InventoryOptionalField.IsMultipartUploaded,
-                                                                               InventoryOptionalField.ReplicationStatus
+                                                                               InventoryOptionalField.ReplicationStatus,
+                                                                               InventoryOptionalField.EncryptionStatus,
+                                                                               InventoryOptionalField.ObjectLockRetainUntilDate,
+                                                                               InventoryOptionalField.ObjectLockMode,
+                                                                               InventoryOptionalField.ObjectLockLegalHoldStatus,
                                                                                },
                     Schedule = new InventorySchedule
                     {

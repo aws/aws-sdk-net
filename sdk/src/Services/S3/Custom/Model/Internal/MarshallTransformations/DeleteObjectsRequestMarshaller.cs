@@ -44,6 +44,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             request.HttpMethod = "POST";
 
+			if (deleteObjectsRequest.IsSetBypassGovernanceRetention())
+                request.Headers.Add("x-amz-bypass-governance-retention", S3Transforms.ToStringValue(deleteObjectsRequest.BypassGovernanceRetention));
             if (deleteObjectsRequest.IsSetMfaCodes())
                 request.Headers.Add(HeaderKeys.XAmzMfaHeader, deleteObjectsRequest.MfaCodes.FormattedMfaCodes);
             if (deleteObjectsRequest.IsSetRequestPayer())

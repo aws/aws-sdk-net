@@ -34,6 +34,7 @@ namespace Amazon.S3.Model
         private string bucketRegionName;
         private bool useClientRegion = true;
         private S3CannedACL cannedAcl;
+        private bool? _objectLockEnabledForBucket;
 
         /// <summary>
         /// The canned ACL to apply to the bucket.
@@ -121,6 +122,24 @@ namespace Amazon.S3.Model
         internal bool IsSetBucketRegionName()
         {
             return !string.IsNullOrEmpty(this.bucketRegionName);
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObjectLockEnabledForBucket. 
+        /// <para>
+        /// Specifies whether you want S3 Object Lock to be enabled for the new bucket.
+        /// </para>
+        /// </summary>
+        public bool ObjectLockEnabledForBucket
+        {
+            get { return this._objectLockEnabledForBucket.GetValueOrDefault(); }
+            set { this._objectLockEnabledForBucket = value; }
+        }
+
+        // Check to see if ObjectLockEnabledForBucket property is set
+        internal bool IsSetObjectLockEnabledForBucket()
+        {
+            return this._objectLockEnabledForBucket.HasValue; 
         }
     }
 }
