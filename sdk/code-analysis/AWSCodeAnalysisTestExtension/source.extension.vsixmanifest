@@ -151,6 +151,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.GameLift.CodeAnalysis" Path="|AWSSDK.GameLift.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Glacier.CodeAnalysis" Path="|AWSSDK.Glacier.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Glacier.CodeAnalysis" Path="|AWSSDK.Glacier.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.GlobalAccelerator.CodeAnalysis" Path="|AWSSDK.GlobalAccelerator.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.GlobalAccelerator.CodeAnalysis" Path="|AWSSDK.GlobalAccelerator.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Glue.CodeAnalysis" Path="|AWSSDK.Glue.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Glue.CodeAnalysis" Path="|AWSSDK.Glue.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Greengrass.CodeAnalysis" Path="|AWSSDK.Greengrass.CodeAnalysis|"/>

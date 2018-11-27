@@ -100,6 +100,7 @@
     <ProjectReference Include="..\..\src\Services\FMS\AWSSDK.FMS.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\GlobalAccelerator\AWSSDK.GlobalAccelerator.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glue\AWSSDK.Glue.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Greengrass\AWSSDK.Greengrass.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\GuardDuty\AWSSDK.GuardDuty.Net45.csproj"/>
