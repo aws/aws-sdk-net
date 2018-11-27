@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.414.0",
+    "ProductVersion" : "3.3.415.0",
     "CoreVersion"    : "3.3.29.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.72.0",
+            "Version" : "3.3.73.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -249,7 +249,7 @@
             "InPreview"               : false
         },
         "KeyManagementService" : {
-            "Version" : "3.3.6.26",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -313,7 +313,7 @@
             "InPreview"               : false
         },
         "S3"                   : {
-            "Version" : "3.3.28.0",
+            "Version" : "3.3.29.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -465,7 +465,7 @@
             "InPreview"               : false
         },
         "IoT"                             : {
-            "Version" : "3.3.21.0",
+            "Version" : "3.3.22.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -601,7 +601,7 @@
             "InPreview"               : false
         },
         "ServerMigrationService"          : {
-            "Version" : "3.3.0.58",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -801,7 +801,7 @@
             "InPreview"               : false
         },
         "Greengrass"                      : {
-            "Version" : "3.3.4.9",
+            "Version" : "3.3.5.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -1089,7 +1089,7 @@
             "InPreview"               : false
         },
         "IoTAnalytics"                    : {
-            "Version" : "3.3.5.14",
+            "Version" : "3.3.6.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -1257,6 +1257,14 @@
             "InPreview"               : false
         },
         "Transfer"                        : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.12"
+            },
+            "InPreview"               : false
+        },
+        "GlobalAccelerator"               : {
             "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {

@@ -90,6 +90,7 @@
       <Directory>$(ProjectDir)/src/Services/fms/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/gamelift/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/globalaccelerator/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/glue/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/greengrass/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/guardduty/bin/Release/net45/</Directory>
@@ -249,6 +250,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.FMS.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GameLift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GlobalAccelerator.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Glue.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Greengrass.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.GuardDuty.dll" Analyze="True" AnalyzeAllChildren="True" />
