@@ -33,13 +33,15 @@ namespace Amazon.Greengrass.Model
     public partial class FunctionConfigurationEnvironment
     {
         private bool? _accessSysfs;
+        private FunctionExecutionConfig _execution;
         private List<ResourceAccessPolicy> _resourceAccessPolicies = new List<ResourceAccessPolicy>();
         private Dictionary<string, string> _variables = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AccessSysfs. If true, the Lambda function is allowed to
         /// access the host's /sys folder. Use this when the Lambda function needs to read device
-        /// information from /sys.
+        /// information from /sys. This setting applies only when you run the Lambda function
+        /// in a Greengrass container.
         /// </summary>
         public bool AccessSysfs
         {
@@ -54,9 +56,26 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Execution. Configuration related to executing the Lambda
+        /// function
+        /// </summary>
+        public FunctionExecutionConfig Execution
+        {
+            get { return this._execution; }
+            set { this._execution = value; }
+        }
+
+        // Check to see if Execution property is set
+        internal bool IsSetExecution()
+        {
+            return this._execution != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceAccessPolicies. A list of the resources, with their
         /// permissions, to which the Lambda function will be granted access. A Lambda function
-        /// can have at most 10 resources.
+        /// can have at most 10 resources. ResourceAccessPolicies apply only when you run the
+        /// Lambda function in a Greengrass container.
         /// </summary>
         public List<ResourceAccessPolicy> ResourceAccessPolicies
         {

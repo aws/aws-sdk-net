@@ -68,6 +68,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConnectorDefinitionVersionArn())
+                {
+                    context.Writer.WritePropertyName("ConnectorDefinitionVersionArn");
+                    context.Writer.Write(publicRequest.ConnectorDefinitionVersionArn);
+                }
+
                 if(publicRequest.IsSetCoreDefinitionVersionArn())
                 {
                     context.Writer.WritePropertyName("CoreDefinitionVersionArn");

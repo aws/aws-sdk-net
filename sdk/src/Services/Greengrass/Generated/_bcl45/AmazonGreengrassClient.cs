@@ -37,12 +37,12 @@ namespace Amazon.Greengrass
     /// <summary>
     /// Implementation for accessing Greengrass
     ///
-    /// AWS Greengrass seamlessly extends AWS onto physical devices so they can act locally
+    /// AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act locally
     /// on the data they generate, while still using the cloud for management, analytics,
-    /// and durable storage. AWS Greengrass ensures your devices can respond quickly to local
-    /// events and operate with intermittent connectivity. AWS Greengrass minimizes the cost
-    /// of transmitting data to the cloud by allowing you to author AWS Lambda functions that
-    /// execute locally.
+    /// and durable storage. AWS IoT Greengrass ensures your devices can respond quickly to
+    /// local events and operate with intermittent connectivity. AWS IoT Greengrass minimizes
+    /// the cost of transmitting data to the cloud by allowing you to author AWS Lambda functions
+    /// that execute locally.
     /// </summary>
     public partial class AmazonGreengrassClient : AmazonServiceClient, IAmazonGreengrass
     {
@@ -246,8 +246,8 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Associates a role with a group. Your AWS Greengrass core will use the role to access
-        /// AWS cloud services. The role's permissions should allow Greengrass core Lambda functions
+        /// Associates a role with a group. Your Greengrass core will use the role to access AWS
+        /// cloud services. The role's permissions should allow Greengrass core Lambda functions
         /// to perform actions against the cloud.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateRoleToGroup service method.</param>
@@ -293,9 +293,9 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Associates a role with your account. AWS Greengrass will use the role to access your
-        /// Lambda functions and AWS IoT resources. This is necessary for deployments to succeed.
-        /// The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''.
+        /// Associates a role with your account. AWS IoT Greengrass will use the role to access
+        /// your Lambda functions and AWS IoT resources. This is necessary for deployments to
+        /// succeed. The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateServiceRoleToAccount service method.</param>
         /// 
@@ -336,13 +336,98 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  CreateConnectorDefinition
+
+
+        /// <summary>
+        /// Creates a connector definition. You may provide the initial version of the connector
+        /// definition now or use ''CreateConnectorDefinitionVersion'' at a later time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectorDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinition">REST API Reference for CreateConnectorDefinition Operation</seealso>
+        public virtual CreateConnectorDefinitionResponse CreateConnectorDefinition(CreateConnectorDefinitionRequest request)
+        {
+            var marshaller = CreateConnectorDefinitionRequestMarshaller.Instance;
+            var unmarshaller = CreateConnectorDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectorDefinitionRequest,CreateConnectorDefinitionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDefinition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinition">REST API Reference for CreateConnectorDefinition Operation</seealso>
+        public virtual Task<CreateConnectorDefinitionResponse> CreateConnectorDefinitionAsync(CreateConnectorDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateConnectorDefinitionRequestMarshaller.Instance;
+            var unmarshaller = CreateConnectorDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConnectorDefinitionRequest,CreateConnectorDefinitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateConnectorDefinitionVersion
+
+
+        /// <summary>
+        /// Creates a version of a connector definition which has already been defined.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDefinitionVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectorDefinitionVersion service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinitionVersion">REST API Reference for CreateConnectorDefinitionVersion Operation</seealso>
+        public virtual CreateConnectorDefinitionVersionResponse CreateConnectorDefinitionVersion(CreateConnectorDefinitionVersionRequest request)
+        {
+            var marshaller = CreateConnectorDefinitionVersionRequestMarshaller.Instance;
+            var unmarshaller = CreateConnectorDefinitionVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectorDefinitionVersionRequest,CreateConnectorDefinitionVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectorDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDefinitionVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinitionVersion">REST API Reference for CreateConnectorDefinitionVersion Operation</seealso>
+        public virtual Task<CreateConnectorDefinitionVersionResponse> CreateConnectorDefinitionVersionAsync(CreateConnectorDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateConnectorDefinitionVersionRequestMarshaller.Instance;
+            var unmarshaller = CreateConnectorDefinitionVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConnectorDefinitionVersionRequest,CreateConnectorDefinitionVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateCoreDefinition
 
 
         /// <summary>
         /// Creates a core definition. You may provide the initial version of the core definition
-        /// now or use ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass groups
-        /// must each contain exactly one AWS Greengrass core.
+        /// now or use ''CreateCoreDefinitionVersion'' at a later time. Greengrass groups must
+        /// each contain exactly one Greengrass core.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCoreDefinition service method.</param>
         /// 
@@ -384,8 +469,8 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a version of a core definition that has already been defined. AWS Greengrass
-        /// groups must each contain exactly one AWS Greengrass core.
+        /// Creates a version of a core definition that has already been defined. Greengrass groups
+        /// must each contain exactly one Greengrass core.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCoreDefinitionVersion service method.</param>
         /// 
@@ -643,7 +728,8 @@ namespace Amazon.Greengrass
 
         /// <summary>
         /// Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion''
-        /// at a later time.
+        /// at a later time. Tip: You can use the ''gg_group_setup'' package (https://github.com/awslabs/aws-greengrass-group-setup)
+        /// as a library or command-line application to create and deploy Greengrass groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// 
@@ -1067,6 +1153,48 @@ namespace Amazon.Greengrass
             var unmarshaller = CreateSubscriptionDefinitionVersionResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateSubscriptionDefinitionVersionRequest,CreateSubscriptionDefinitionVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteConnectorDefinition
+
+
+        /// <summary>
+        /// Deletes a connector definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectorDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteConnectorDefinition">REST API Reference for DeleteConnectorDefinition Operation</seealso>
+        public virtual DeleteConnectorDefinitionResponse DeleteConnectorDefinition(DeleteConnectorDefinitionRequest request)
+        {
+            var marshaller = DeleteConnectorDefinitionRequestMarshaller.Instance;
+            var unmarshaller = DeleteConnectorDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectorDefinitionRequest,DeleteConnectorDefinitionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorDefinition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteConnectorDefinition">REST API Reference for DeleteConnectorDefinition Operation</seealso>
+        public virtual Task<DeleteConnectorDefinitionResponse> DeleteConnectorDefinitionAsync(DeleteConnectorDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteConnectorDefinitionRequestMarshaller.Instance;
+            var unmarshaller = DeleteConnectorDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConnectorDefinitionRequest,DeleteConnectorDefinitionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1581,6 +1709,92 @@ namespace Amazon.Greengrass
             var unmarshaller = GetConnectivityInfoResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetConnectivityInfoRequest,GetConnectivityInfoResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConnectorDefinition
+
+
+        /// <summary>
+        /// Retrieves information about a connector definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectorDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinition">REST API Reference for GetConnectorDefinition Operation</seealso>
+        public virtual GetConnectorDefinitionResponse GetConnectorDefinition(GetConnectorDefinitionRequest request)
+        {
+            var marshaller = GetConnectorDefinitionRequestMarshaller.Instance;
+            var unmarshaller = GetConnectorDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectorDefinitionRequest,GetConnectorDefinitionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDefinition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinition">REST API Reference for GetConnectorDefinition Operation</seealso>
+        public virtual Task<GetConnectorDefinitionResponse> GetConnectorDefinitionAsync(GetConnectorDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetConnectorDefinitionRequestMarshaller.Instance;
+            var unmarshaller = GetConnectorDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectorDefinitionRequest,GetConnectorDefinitionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetConnectorDefinitionVersion
+
+
+        /// <summary>
+        /// Retrieves information about a connector definition version, including the connectors
+        /// that the version contains. Connectors are prebuilt modules that interact with local
+        /// infrastructure, device protocols, AWS, and other cloud services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDefinitionVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectorDefinitionVersion service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinitionVersion">REST API Reference for GetConnectorDefinitionVersion Operation</seealso>
+        public virtual GetConnectorDefinitionVersionResponse GetConnectorDefinitionVersion(GetConnectorDefinitionVersionRequest request)
+        {
+            var marshaller = GetConnectorDefinitionVersionRequestMarshaller.Instance;
+            var unmarshaller = GetConnectorDefinitionVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectorDefinitionVersionRequest,GetConnectorDefinitionVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectorDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDefinitionVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinitionVersion">REST API Reference for GetConnectorDefinitionVersion Operation</seealso>
+        public virtual Task<GetConnectorDefinitionVersionResponse> GetConnectorDefinitionVersionAsync(GetConnectorDefinitionVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetConnectorDefinitionVersionRequestMarshaller.Instance;
+            var unmarshaller = GetConnectorDefinitionVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectorDefinitionVersionRequest,GetConnectorDefinitionVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2437,6 +2651,89 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  ListConnectorDefinitions
+
+
+        /// <summary>
+        /// Retrieves a list of connector definitions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorDefinitions service method, as returned by Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitions">REST API Reference for ListConnectorDefinitions Operation</seealso>
+        public virtual ListConnectorDefinitionsResponse ListConnectorDefinitions(ListConnectorDefinitionsRequest request)
+        {
+            var marshaller = ListConnectorDefinitionsRequestMarshaller.Instance;
+            var unmarshaller = ListConnectorDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorDefinitionsRequest,ListConnectorDefinitionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectorDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDefinitions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitions">REST API Reference for ListConnectorDefinitions Operation</seealso>
+        public virtual Task<ListConnectorDefinitionsResponse> ListConnectorDefinitionsAsync(ListConnectorDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListConnectorDefinitionsRequestMarshaller.Instance;
+            var unmarshaller = ListConnectorDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConnectorDefinitionsRequest,ListConnectorDefinitionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListConnectorDefinitionVersions
+
+
+        /// <summary>
+        /// Lists the versions of a connector definition, which are containers for connectors.
+        /// Connectors run on the Greengrass core and contain built-in integration with local
+        /// infrastructure, device protocols, AWS, and other cloud services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDefinitionVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorDefinitionVersions service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitionVersions">REST API Reference for ListConnectorDefinitionVersions Operation</seealso>
+        public virtual ListConnectorDefinitionVersionsResponse ListConnectorDefinitionVersions(ListConnectorDefinitionVersionsRequest request)
+        {
+            var marshaller = ListConnectorDefinitionVersionsRequestMarshaller.Instance;
+            var unmarshaller = ListConnectorDefinitionVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorDefinitionVersionsRequest,ListConnectorDefinitionVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectorDefinitionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDefinitionVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitionVersions">REST API Reference for ListConnectorDefinitionVersions Operation</seealso>
+        public virtual Task<ListConnectorDefinitionVersionsResponse> ListConnectorDefinitionVersionsAsync(ListConnectorDefinitionVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListConnectorDefinitionVersionsRequestMarshaller.Instance;
+            var unmarshaller = ListConnectorDefinitionVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConnectorDefinitionVersionsRequest,ListConnectorDefinitionVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListCoreDefinitions
 
 
@@ -3266,6 +3563,48 @@ namespace Amazon.Greengrass
             var unmarshaller = UpdateConnectivityInfoResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConnectivityInfoRequest,UpdateConnectivityInfoResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateConnectorDefinition
+
+
+        /// <summary>
+        /// Updates a connector definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectorDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectorDefinition">REST API Reference for UpdateConnectorDefinition Operation</seealso>
+        public virtual UpdateConnectorDefinitionResponse UpdateConnectorDefinition(UpdateConnectorDefinitionRequest request)
+        {
+            var marshaller = UpdateConnectorDefinitionRequestMarshaller.Instance;
+            var unmarshaller = UpdateConnectorDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectorDefinitionRequest,UpdateConnectorDefinitionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorDefinition operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectorDefinition">REST API Reference for UpdateConnectorDefinition Operation</seealso>
+        public virtual Task<UpdateConnectorDefinitionResponse> UpdateConnectorDefinitionAsync(UpdateConnectorDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateConnectorDefinitionRequestMarshaller.Instance;
+            var unmarshaller = UpdateConnectorDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConnectorDefinitionRequest,UpdateConnectorDefinitionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

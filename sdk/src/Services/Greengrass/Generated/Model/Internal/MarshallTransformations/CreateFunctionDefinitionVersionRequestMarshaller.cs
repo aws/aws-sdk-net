@@ -68,6 +68,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDefaultConfig())
+                {
+                    context.Writer.WritePropertyName("DefaultConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FunctionDefaultConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DefaultConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetFunctions())
                 {
                     context.Writer.WritePropertyName("Functions");

@@ -34,6 +34,7 @@ namespace Amazon.Greengrass.Model
     public partial class CreateFunctionDefinitionVersionRequest : AmazonGreengrassRequest
     {
         private string _amznClientToken;
+        private FunctionDefaultConfig _defaultConfig;
         private string _functionDefinitionId;
         private List<Function> _functions = new List<Function>();
 
@@ -51,6 +52,22 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetAmznClientToken()
         {
             return this._amznClientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultConfig. Default configuration that will apply to
+        /// all Lambda functions in this function definition version
+        /// </summary>
+        public FunctionDefaultConfig DefaultConfig
+        {
+            get { return this._defaultConfig; }
+            set { this._defaultConfig = value; }
+        }
+
+        // Check to see if DefaultConfig property is set
+        internal bool IsSetDefaultConfig()
+        {
+            return this._defaultConfig != null;
         }
 
         /// <summary>

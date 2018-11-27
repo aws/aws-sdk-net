@@ -30,7 +30,7 @@ namespace Amazon.Greengrass.Model
     /// <summary>
     /// A container for resource data. The container takes only one of the following supported
     /// resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'',
-    /// ''S3MachineLearningModelResourceData''.
+    /// ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''.
     /// </summary>
     public partial class ResourceDataContainer
     {
@@ -38,6 +38,7 @@ namespace Amazon.Greengrass.Model
         private LocalVolumeResourceData _localVolumeResourceData;
         private S3MachineLearningModelResourceData _s3MachineLearningModelResourceData;
         private SageMakerMachineLearningModelResourceData _sageMakerMachineLearningModelResourceData;
+        private SecretsManagerSecretResourceData _secretsManagerSecretResourceData;
 
         /// <summary>
         /// Gets and sets the property LocalDeviceResourceData. Attributes that define the local
@@ -73,7 +74,7 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property S3MachineLearningModelResourceData. Attributes that define
-        /// an S3 machine learning resource.
+        /// an Amazon S3 machine learning resource.
         /// </summary>
         public S3MachineLearningModelResourceData S3MachineLearningModelResourceData
         {
@@ -89,7 +90,7 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property SageMakerMachineLearningModelResourceData. Attributes that
-        /// define an SageMaker machine learning resource.
+        /// define an Amazon SageMaker machine learning resource.
         /// </summary>
         public SageMakerMachineLearningModelResourceData SageMakerMachineLearningModelResourceData
         {
@@ -101,6 +102,22 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetSageMakerMachineLearningModelResourceData()
         {
             return this._sageMakerMachineLearningModelResourceData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SecretsManagerSecretResourceData. Attributes that define
+        /// a secret resource, which references a secret from AWS Secrets Manager.
+        /// </summary>
+        public SecretsManagerSecretResourceData SecretsManagerSecretResourceData
+        {
+            get { return this._secretsManagerSecretResourceData; }
+            set { this._secretsManagerSecretResourceData = value; }
+        }
+
+        // Check to see if SecretsManagerSecretResourceData property is set
+        internal bool IsSetSecretsManagerSecretResourceData()
+        {
+            return this._secretsManagerSecretResourceData != null;
         }
 
     }

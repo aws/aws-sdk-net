@@ -88,6 +88,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     unmarshalledObject.SageMakerMachineLearningModelResourceData = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SecretsManagerSecretResourceData", targetDepth))
+                {
+                    var unmarshaller = SecretsManagerSecretResourceDataUnmarshaller.Instance;
+                    unmarshalledObject.SecretsManagerSecretResourceData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -34,6 +34,7 @@ namespace Amazon.Greengrass.Model
     public partial class CreateGroupVersionRequest : AmazonGreengrassRequest
     {
         private string _amznClientToken;
+        private string _connectorDefinitionVersionArn;
         private string _coreDefinitionVersionArn;
         private string _deviceDefinitionVersionArn;
         private string _functionDefinitionVersionArn;
@@ -56,6 +57,22 @@ namespace Amazon.Greengrass.Model
         internal bool IsSetAmznClientToken()
         {
             return this._amznClientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorDefinitionVersionArn. The ARN of the connector
+        /// definition version for this group.
+        /// </summary>
+        public string ConnectorDefinitionVersionArn
+        {
+            get { return this._connectorDefinitionVersionArn; }
+            set { this._connectorDefinitionVersionArn = value; }
+        }
+
+        // Check to see if ConnectorDefinitionVersionArn property is set
+        internal bool IsSetConnectorDefinitionVersionArn()
+        {
+            return this._connectorDefinitionVersionArn != null;
         }
 
         /// <summary>
@@ -107,7 +124,7 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property GroupId. The ID of the AWS Greengrass group.
+        /// Gets and sets the property GroupId. The ID of the Greengrass group.
         /// </summary>
         public string GroupId
         {
@@ -138,8 +155,8 @@ namespace Amazon.Greengrass.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceDefinitionVersionArn. The resource definition version
-        /// ARN for this group.
+        /// Gets and sets the property ResourceDefinitionVersionArn. The ARN of the resource definition
+        /// version for this group.
         /// </summary>
         public string ResourceDefinitionVersionArn
         {

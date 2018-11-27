@@ -45,6 +45,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GroupVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetConnectorDefinitionVersionArn())
+            {
+                context.Writer.WritePropertyName("ConnectorDefinitionVersionArn");
+                context.Writer.Write(requestObject.ConnectorDefinitionVersionArn);
+            }
+
             if(requestObject.IsSetCoreDefinitionVersionArn())
             {
                 context.Writer.WritePropertyName("CoreDefinitionVersionArn");

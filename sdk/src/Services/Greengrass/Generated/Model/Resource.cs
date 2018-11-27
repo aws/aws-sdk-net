@@ -55,7 +55,7 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property Name. The descriptive resource name, which is displayed
-        /// on the Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
+        /// on the AWS IoT Greengrass console. Max length 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         /// This must be unique within a Greengrass group.
         /// </summary>
         public string Name

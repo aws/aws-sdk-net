@@ -29,8 +29,8 @@ namespace Amazon.Greengrass.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateRoleToGroup operation.
-    /// Associates a role with a group. Your AWS Greengrass core will use the role to access
-    /// AWS cloud services. The role's permissions should allow Greengrass core Lambda functions
+    /// Associates a role with a group. Your Greengrass core will use the role to access AWS
+    /// cloud services. The role's permissions should allow Greengrass core Lambda functions
     /// to perform actions against the cloud.
     /// </summary>
     public partial class AssociateRoleToGroupRequest : AmazonGreengrassRequest
@@ -39,7 +39,7 @@ namespace Amazon.Greengrass.Model
         private string _roleArn;
 
         /// <summary>
-        /// Gets and sets the property GroupId. The ID of the AWS Greengrass group.
+        /// Gets and sets the property GroupId. The ID of the Greengrass group.
         /// </summary>
         public string GroupId
         {

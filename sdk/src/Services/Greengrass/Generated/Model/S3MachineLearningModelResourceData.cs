@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Attributes that define an S3 machine learning resource.
+    /// Attributes that define an Amazon S3 machine learning resource.
     /// </summary>
     public partial class S3MachineLearningModelResourceData
     {

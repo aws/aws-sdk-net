@@ -51,6 +51,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AccessSysfs);
             }
 
+            if(requestObject.IsSetExecution())
+            {
+                context.Writer.WritePropertyName("Execution");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FunctionExecutionConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.Execution, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetResourceAccessPolicies())
             {
                 context.Writer.WritePropertyName("ResourceAccessPolicies");

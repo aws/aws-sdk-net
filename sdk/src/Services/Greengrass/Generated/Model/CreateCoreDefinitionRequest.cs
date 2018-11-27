@@ -30,8 +30,8 @@ namespace Amazon.Greengrass.Model
     /// <summary>
     /// Container for the parameters to the CreateCoreDefinition operation.
     /// Creates a core definition. You may provide the initial version of the core definition
-    /// now or use ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass groups
-    /// must each contain exactly one AWS Greengrass core.
+    /// now or use ''CreateCoreDefinitionVersion'' at a later time. Greengrass groups must
+    /// each contain exactly one Greengrass core.
     /// </summary>
     public partial class CreateCoreDefinitionRequest : AmazonGreengrassRequest
     {

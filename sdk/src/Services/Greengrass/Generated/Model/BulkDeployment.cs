@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
-    /// Information about a bulk deployment.
+    /// Information about a bulk deployment. You cannot start a new bulk deployment while
+    /// another one is still running or in a non-terminal state.
     /// </summary>
     public partial class BulkDeployment
     {

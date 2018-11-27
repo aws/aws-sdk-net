@@ -103,7 +103,8 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property MemorySize. The memory size, in KB, which the function
-        /// requires.
+        /// requires. This setting is not applicable and should be cleared when you run the Lambda
+        /// function without containerization.
         /// </summary>
         public int MemorySize
         {
@@ -135,8 +136,8 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property Timeout. The allowed function execution time, after which
-        /// Lambda should terminate the function. This timeout still applies to pinned lambdas
-        /// for each request.
+        /// Lambda should terminate the function. This timeout still applies to pinned Lambda
+        /// functions for each request.
         /// </summary>
         public int Timeout
         {

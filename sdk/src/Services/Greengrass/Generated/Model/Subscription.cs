@@ -40,7 +40,7 @@ namespace Amazon.Greengrass.Model
         /// <summary>
         /// Gets and sets the property Id. A descriptive or arbitrary ID for the subscription.
         /// This value must be unique within the subscription definition version. Max length is
-        /// 128 characters with pattern ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+        /// 128 characters with pattern ''[a-zA-Z0-9:_-]+''.
         /// </summary>
         public string Id
         {
@@ -56,7 +56,8 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property Source. The source of the subscription. Can be a thing
-        /// ARN, a Lambda function ARN, 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
+        /// ARN, a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT
+        /// cloud), or 'GGShadowService'.
         /// </summary>
         public string Source
         {
@@ -87,7 +88,8 @@ namespace Amazon.Greengrass.Model
 
         /// <summary>
         /// Gets and sets the property Target. Where the message is sent to. Can be a thing ARN,
-        /// a Lambda function ARN, 'cloud' (which represents the IoT cloud), or 'GGShadowService'.
+        /// a Lambda function ARN, a connector ARN, 'cloud' (which represents the AWS IoT cloud),
+        /// or 'GGShadowService'.
         /// </summary>
         public string Target
         {

@@ -29,12 +29,12 @@ namespace Amazon.Greengrass
     /// <summary>
     /// Interface for accessing Greengrass
     ///
-    /// AWS Greengrass seamlessly extends AWS onto physical devices so they can act locally
+    /// AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act locally
     /// on the data they generate, while still using the cloud for management, analytics,
-    /// and durable storage. AWS Greengrass ensures your devices can respond quickly to local
-    /// events and operate with intermittent connectivity. AWS Greengrass minimizes the cost
-    /// of transmitting data to the cloud by allowing you to author AWS Lambda functions that
-    /// execute locally.
+    /// and durable storage. AWS IoT Greengrass ensures your devices can respond quickly to
+    /// local events and operate with intermittent connectivity. AWS IoT Greengrass minimizes
+    /// the cost of transmitting data to the cloud by allowing you to author AWS Lambda functions
+    /// that execute locally.
     /// </summary>
     public partial interface IAmazonGreengrass : IAmazonService, IDisposable
     {
@@ -44,8 +44,8 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Associates a role with a group. Your AWS Greengrass core will use the role to access
-        /// AWS cloud services. The role's permissions should allow Greengrass core Lambda functions
+        /// Associates a role with a group. Your Greengrass core will use the role to access AWS
+        /// cloud services. The role's permissions should allow Greengrass core Lambda functions
         /// to perform actions against the cloud.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateRoleToGroup service method.</param>
@@ -92,9 +92,9 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Associates a role with your account. AWS Greengrass will use the role to access your
-        /// Lambda functions and AWS IoT resources. This is necessary for deployments to succeed.
-        /// The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''.
+        /// Associates a role with your account. AWS IoT Greengrass will use the role to access
+        /// your Lambda functions and AWS IoT resources. This is necessary for deployments to
+        /// succeed. The role must have at least minimum permissions in the policy ''AWSGreengrassResourceAccessRolePolicy''.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateServiceRoleToAccount service method.</param>
         /// 
@@ -136,13 +136,100 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  CreateConnectorDefinition
+
+
+        /// <summary>
+        /// Creates a connector definition. You may provide the initial version of the connector
+        /// definition now or use ''CreateConnectorDefinitionVersion'' at a later time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectorDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinition">REST API Reference for CreateConnectorDefinition Operation</seealso>
+        CreateConnectorDefinitionResponse CreateConnectorDefinition(CreateConnectorDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDefinition operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectorDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinition">REST API Reference for CreateConnectorDefinition Operation</seealso>
+        IAsyncResult BeginCreateConnectorDefinition(CreateConnectorDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectorDefinition.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectorDefinitionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinition">REST API Reference for CreateConnectorDefinition Operation</seealso>
+        CreateConnectorDefinitionResponse EndCreateConnectorDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateConnectorDefinitionVersion
+
+
+        /// <summary>
+        /// Creates a version of a connector definition which has already been defined.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDefinitionVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreateConnectorDefinitionVersion service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinitionVersion">REST API Reference for CreateConnectorDefinitionVersion Operation</seealso>
+        CreateConnectorDefinitionVersionResponse CreateConnectorDefinitionVersion(CreateConnectorDefinitionVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateConnectorDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnectorDefinitionVersion operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConnectorDefinitionVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinitionVersion">REST API Reference for CreateConnectorDefinitionVersion Operation</seealso>
+        IAsyncResult BeginCreateConnectorDefinitionVersion(CreateConnectorDefinitionVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateConnectorDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateConnectorDefinitionVersion.</param>
+        /// 
+        /// <returns>Returns a  CreateConnectorDefinitionVersionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateConnectorDefinitionVersion">REST API Reference for CreateConnectorDefinitionVersion Operation</seealso>
+        CreateConnectorDefinitionVersionResponse EndCreateConnectorDefinitionVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateCoreDefinition
 
 
         /// <summary>
         /// Creates a core definition. You may provide the initial version of the core definition
-        /// now or use ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass groups
-        /// must each contain exactly one AWS Greengrass core.
+        /// now or use ''CreateCoreDefinitionVersion'' at a later time. Greengrass groups must
+        /// each contain exactly one Greengrass core.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCoreDefinition service method.</param>
         /// 
@@ -185,8 +272,8 @@ namespace Amazon.Greengrass
 
 
         /// <summary>
-        /// Creates a version of a core definition that has already been defined. AWS Greengrass
-        /// groups must each contain exactly one AWS Greengrass core.
+        /// Creates a version of a core definition that has already been defined. Greengrass groups
+        /// must each contain exactly one Greengrass core.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCoreDefinitionVersion service method.</param>
         /// 
@@ -450,7 +537,8 @@ namespace Amazon.Greengrass
 
         /// <summary>
         /// Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion''
-        /// at a later time.
+        /// at a later time. Tip: You can use the ''gg_group_setup'' package (https://github.com/awslabs/aws-greengrass-group-setup)
+        /// as a library or command-line application to create and deploy Greengrass groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// 
@@ -886,6 +974,49 @@ namespace Amazon.Greengrass
         /// <returns>Returns a  CreateSubscriptionDefinitionVersionResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateSubscriptionDefinitionVersion">REST API Reference for CreateSubscriptionDefinitionVersion Operation</seealso>
         CreateSubscriptionDefinitionVersionResponse EndCreateSubscriptionDefinitionVersion(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteConnectorDefinition
+
+
+        /// <summary>
+        /// Deletes a connector definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteConnectorDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteConnectorDefinition">REST API Reference for DeleteConnectorDefinition Operation</seealso>
+        DeleteConnectorDefinitionResponse DeleteConnectorDefinition(DeleteConnectorDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnectorDefinition operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConnectorDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteConnectorDefinition">REST API Reference for DeleteConnectorDefinition Operation</seealso>
+        IAsyncResult BeginDeleteConnectorDefinition(DeleteConnectorDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteConnectorDefinition.</param>
+        /// 
+        /// <returns>Returns a  DeleteConnectorDefinitionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/DeleteConnectorDefinition">REST API Reference for DeleteConnectorDefinition Operation</seealso>
+        DeleteConnectorDefinitionResponse EndDeleteConnectorDefinition(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1412,6 +1543,94 @@ namespace Amazon.Greengrass
         /// <returns>Returns a  GetConnectivityInfoResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectivityInfo">REST API Reference for GetConnectivityInfo Operation</seealso>
         GetConnectivityInfoResponse EndGetConnectivityInfo(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConnectorDefinition
+
+
+        /// <summary>
+        /// Retrieves information about a connector definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectorDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinition">REST API Reference for GetConnectorDefinition Operation</seealso>
+        GetConnectorDefinitionResponse GetConnectorDefinition(GetConnectorDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDefinition operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectorDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinition">REST API Reference for GetConnectorDefinition Operation</seealso>
+        IAsyncResult BeginGetConnectorDefinition(GetConnectorDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectorDefinition.</param>
+        /// 
+        /// <returns>Returns a  GetConnectorDefinitionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinition">REST API Reference for GetConnectorDefinition Operation</seealso>
+        GetConnectorDefinitionResponse EndGetConnectorDefinition(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetConnectorDefinitionVersion
+
+
+        /// <summary>
+        /// Retrieves information about a connector definition version, including the connectors
+        /// that the version contains. Connectors are prebuilt modules that interact with local
+        /// infrastructure, device protocols, AWS, and other cloud services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDefinitionVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetConnectorDefinitionVersion service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinitionVersion">REST API Reference for GetConnectorDefinitionVersion Operation</seealso>
+        GetConnectorDefinitionVersionResponse GetConnectorDefinitionVersion(GetConnectorDefinitionVersionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetConnectorDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetConnectorDefinitionVersion operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConnectorDefinitionVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinitionVersion">REST API Reference for GetConnectorDefinitionVersion Operation</seealso>
+        IAsyncResult BeginGetConnectorDefinitionVersion(GetConnectorDefinitionVersionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetConnectorDefinitionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetConnectorDefinitionVersion.</param>
+        /// 
+        /// <returns>Returns a  GetConnectorDefinitionVersionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetConnectorDefinitionVersion">REST API Reference for GetConnectorDefinitionVersion Operation</seealso>
+        GetConnectorDefinitionVersionResponse EndGetConnectorDefinitionVersion(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2286,6 +2505,91 @@ namespace Amazon.Greengrass
 
         #endregion
         
+        #region  ListConnectorDefinitions
+
+
+        /// <summary>
+        /// Retrieves a list of connector definitions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorDefinitions service method, as returned by Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitions">REST API Reference for ListConnectorDefinitions Operation</seealso>
+        ListConnectorDefinitionsResponse ListConnectorDefinitions(ListConnectorDefinitionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectorDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDefinitions operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectorDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitions">REST API Reference for ListConnectorDefinitions Operation</seealso>
+        IAsyncResult BeginListConnectorDefinitions(ListConnectorDefinitionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectorDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectorDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListConnectorDefinitionsResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitions">REST API Reference for ListConnectorDefinitions Operation</seealso>
+        ListConnectorDefinitionsResponse EndListConnectorDefinitions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListConnectorDefinitionVersions
+
+
+        /// <summary>
+        /// Lists the versions of a connector definition, which are containers for connectors.
+        /// Connectors run on the Greengrass core and contain built-in integration with local
+        /// infrastructure, device protocols, AWS, and other cloud services.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDefinitionVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListConnectorDefinitionVersions service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitionVersions">REST API Reference for ListConnectorDefinitionVersions Operation</seealso>
+        ListConnectorDefinitionVersionsResponse ListConnectorDefinitionVersions(ListConnectorDefinitionVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListConnectorDefinitionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorDefinitionVersions operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConnectorDefinitionVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitionVersions">REST API Reference for ListConnectorDefinitionVersions Operation</seealso>
+        IAsyncResult BeginListConnectorDefinitionVersions(ListConnectorDefinitionVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListConnectorDefinitionVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListConnectorDefinitionVersions.</param>
+        /// 
+        /// <returns>Returns a  ListConnectorDefinitionVersionsResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ListConnectorDefinitionVersions">REST API Reference for ListConnectorDefinitionVersions Operation</seealso>
+        ListConnectorDefinitionVersionsResponse EndListConnectorDefinitionVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListCoreDefinitions
 
 
@@ -3137,6 +3441,49 @@ namespace Amazon.Greengrass
         /// <returns>Returns a  UpdateConnectivityInfoResult from Greengrass.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectivityInfo">REST API Reference for UpdateConnectivityInfo Operation</seealso>
         UpdateConnectivityInfoResponse EndUpdateConnectivityInfo(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateConnectorDefinition
+
+
+        /// <summary>
+        /// Updates a connector definition.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateConnectorDefinition service method, as returned by Greengrass.</returns>
+        /// <exception cref="Amazon.Greengrass.Model.BadRequestException">
+        /// General error information.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectorDefinition">REST API Reference for UpdateConnectorDefinition Operation</seealso>
+        UpdateConnectorDefinitionResponse UpdateConnectorDefinition(UpdateConnectorDefinitionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorDefinition operation on AmazonGreengrassClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConnectorDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectorDefinition">REST API Reference for UpdateConnectorDefinition Operation</seealso>
+        IAsyncResult BeginUpdateConnectorDefinition(UpdateConnectorDefinitionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateConnectorDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateConnectorDefinition.</param>
+        /// 
+        /// <returns>Returns a  UpdateConnectorDefinitionResult from Greengrass.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateConnectorDefinition">REST API Reference for UpdateConnectorDefinition Operation</seealso>
+        UpdateConnectorDefinitionResponse EndUpdateConnectorDefinition(IAsyncResult asyncResult);
 
         #endregion
         

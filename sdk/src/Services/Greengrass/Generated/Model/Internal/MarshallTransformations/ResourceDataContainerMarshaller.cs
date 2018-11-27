@@ -89,6 +89,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSecretsManagerSecretResourceData())
+            {
+                context.Writer.WritePropertyName("SecretsManagerSecretResourceData");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = SecretsManagerSecretResourceDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.SecretsManagerSecretResourceData, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

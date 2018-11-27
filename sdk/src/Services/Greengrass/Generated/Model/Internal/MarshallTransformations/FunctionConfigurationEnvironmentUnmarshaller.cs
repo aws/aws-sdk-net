@@ -70,6 +70,12 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessSysfs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Execution", targetDepth))
+                {
+                    var unmarshaller = FunctionExecutionConfigUnmarshaller.Instance;
+                    unmarshalledObject.Execution = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResourceAccessPolicies", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ResourceAccessPolicy, ResourceAccessPolicyUnmarshaller>(ResourceAccessPolicyUnmarshaller.Instance);

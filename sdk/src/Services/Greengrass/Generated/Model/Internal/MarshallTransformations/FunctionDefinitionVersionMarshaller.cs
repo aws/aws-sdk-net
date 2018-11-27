@@ -45,6 +45,17 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FunctionDefinitionVersion requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetDefaultConfig())
+            {
+                context.Writer.WritePropertyName("DefaultConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FunctionDefaultConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFunctions())
             {
                 context.Writer.WritePropertyName("Functions");
