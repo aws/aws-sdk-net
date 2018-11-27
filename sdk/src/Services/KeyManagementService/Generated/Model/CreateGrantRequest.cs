@@ -172,8 +172,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name for identifying the grant. Use this value to prevent the unintended
-        /// creation of duplicate grants when retrying this request.
+        /// A friendly name for identifying the grant. Use this value to prevent unintended creation
+        /// of duplicate grants when retrying this request.
         /// </para>
         ///  
         /// <para>

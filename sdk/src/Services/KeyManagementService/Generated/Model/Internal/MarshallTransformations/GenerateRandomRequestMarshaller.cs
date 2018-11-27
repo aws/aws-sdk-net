@@ -67,6 +67,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCustomKeyStoreId())
+                {
+                    context.Writer.WritePropertyName("CustomKeyStoreId");
+                    context.Writer.Write(publicRequest.CustomKeyStoreId);
+                }
+
                 if(publicRequest.IsSetNumberOfBytes())
                 {
                     context.Writer.WritePropertyName("NumberOfBytes");

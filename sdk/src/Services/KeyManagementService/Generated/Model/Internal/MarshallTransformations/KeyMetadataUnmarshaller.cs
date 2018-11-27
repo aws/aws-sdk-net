@@ -76,10 +76,22 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AWSAccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CloudHsmClusterId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CloudHsmClusterId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CustomKeyStoreId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CustomKeyStoreId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DeletionDate", targetDepth))

@@ -40,7 +40,9 @@ namespace Amazon.KeyManagementService.Model
     {
         private string _arn;
         private string _awsAccountId;
+        private string _cloudHsmClusterId;
         private DateTime? _creationDate;
+        private string _customKeyStoreId;
         private DateTime? _deletionDate;
         private string _description;
         private bool? _enabled;
@@ -91,6 +93,28 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CloudHsmClusterId. 
+        /// <para>
+        /// The cluster ID of the AWS CloudHSM cluster that contains the key material for the
+        /// CMK. When you create a CMK in a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// key store</a>, AWS KMS creates the key material for the CMK in the associated AWS
+        /// CloudHSM cluster. This value is present only when the CMK is created in a custom key
+        /// store.
+        /// </para>
+        /// </summary>
+        public string CloudHsmClusterId
+        {
+            get { return this._cloudHsmClusterId; }
+            set { this._cloudHsmClusterId = value; }
+        }
+
+        // Check to see if CloudHsmClusterId property is set
+        internal bool IsSetCloudHsmClusterId()
+        {
+            return this._cloudHsmClusterId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time when the CMK was created.
@@ -109,11 +133,30 @@ namespace Amazon.KeyManagementService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CustomKeyStoreId. 
+        /// <para>
+        /// A unique identifier for the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// key store</a> that contains the CMK. This value is present only when the CMK is created
+        /// in a custom key store.
+        /// </para>
+        /// </summary>
+        public string CustomKeyStoreId
+        {
+            get { return this._customKeyStoreId; }
+            set { this._customKeyStoreId = value; }
+        }
+
+        // Check to see if CustomKeyStoreId property is set
+        internal bool IsSetCustomKeyStoreId()
+        {
+            return this._customKeyStoreId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeletionDate. 
         /// <para>
         /// The date and time after which AWS KMS deletes the CMK. This value is present only
-        /// when <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this value is
-        /// omitted.
+        /// when <code>KeyState</code> is <code>PendingDeletion</code>.
         /// </para>
         /// </summary>
         public DateTime DeletionDate
@@ -205,7 +248,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyManager. 
         /// <para>
-        /// The CMK's manager. CMKs are either customer managed or AWS managed. For more information
+        /// The CMK's manager. CMKs are either customer-managed or AWS-managed. For more information
         /// about the difference, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
         /// Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
         /// </para>
@@ -272,7 +315,8 @@ namespace Amazon.KeyManagementService.Model
         /// The source of the CMK's key material. When this value is <code>AWS_KMS</code>, AWS
         /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material
         /// was imported from your existing key management infrastructure or the CMK lacks key
-        /// material.
+        /// material. When this value is <code>AWS_CLOUDHSM</code>, the key material was created
+        /// in the AWS CloudHSM cluster associated with a custom key store.
         /// </para>
         /// </summary>
         public OriginType Origin

@@ -29,8 +29,8 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateKeyDescription operation.
-    /// Updates the description of a customer master key (CMK). To see the description of
-    /// a CMK, use <a>DescribeKey</a>. 
+    /// Updates the description of a customer master key (CMK). To see the decription of a
+    /// CMK, use <a>DescribeKey</a>. 
     /// 
     ///  
     /// <para>

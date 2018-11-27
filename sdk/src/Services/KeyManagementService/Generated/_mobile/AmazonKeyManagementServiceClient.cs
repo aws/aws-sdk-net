@@ -41,8 +41,8 @@ namespace Amazon.KeyManagementService
     /// <para>
     /// AWS Key Management Service (AWS KMS) is an encryption and key management web service.
     /// This guide describes the AWS KMS operations that you can call programmatically. For
-    /// general information about AWS KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/">AWS
-    /// Key Management Service Developer Guide</a>.
+    /// general information about AWS KMS, see the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/">
+    /// <i>AWS Key Management Service Developer Guide</i> </a>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -74,7 +74,7 @@ namespace Amazon.KeyManagementService
     /// Requests must be signed by using an access key ID and a secret access key. We strongly
     /// recommend that you <i>do not</i> use your AWS account (root) access key ID and secret
     /// key for everyday work with AWS KMS. Instead, use the access key ID and secret access
-    /// key for an IAM user. You can also use the AWS Security Token Service to generate temporary
+    /// key for an IAM user, or you can use the AWS Security Token Service to generate temporary
     /// security credentials that you can use to sign requests.
     /// </para>
     ///  
@@ -107,8 +107,8 @@ namespace Amazon.KeyManagementService
     ///  <ul> <li> 
     /// <para>
     ///  <a href="http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html">AWS
-    /// Security Credentials</a> - This topic provides general information about the types
-    /// of credentials used for accessing AWS.
+    /// Security Credentials</a> - This topic provides general information about the of credentials
+    /// used for accessing AWS.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -124,13 +124,13 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>Commonly Used API Operations</b> 
+    ///  <b>Commonly Used APIs</b> 
     /// </para>
     ///  
     /// <para>
-    /// Of the API operations discussed in this guide, the following will prove the most useful
-    /// for most applications. You will likely perform operations other than these, such as
-    /// creating keys and assigning policies, by using the console.
+    /// Of the APIs discussed in this guide, the following will prove the most useful for
+    /// most applications. You will likely perform actions other than these, such as creating
+    /// keys and assigning policies, by using the console.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -442,6 +442,38 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  ConnectCustomKeyStore
+
+        internal virtual ConnectCustomKeyStoreResponse ConnectCustomKeyStore(ConnectCustomKeyStoreRequest request)
+        {
+            var marshaller = ConnectCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = ConnectCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return Invoke<ConnectCustomKeyStoreRequest,ConnectCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ConnectCustomKeyStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ConnectCustomKeyStore operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ConnectCustomKeyStore">REST API Reference for ConnectCustomKeyStore Operation</seealso>
+        public virtual Task<ConnectCustomKeyStoreResponse> ConnectCustomKeyStoreAsync(ConnectCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ConnectCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = ConnectCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ConnectCustomKeyStoreRequest,ConnectCustomKeyStoreResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateAlias
 
         internal virtual CreateAliasResponse CreateAlias(CreateAliasRequest request)
@@ -454,9 +486,8 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Creates a display name for a customer-managed customer master key (CMK). You can use
-        /// an alias to identify a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>.
-        /// 
+        /// Creates a display name for a customer master key (CMK). You can use an alias to identify
+        /// a CMK in selected operations, such as <a>Encrypt</a> and <a>GenerateDataKey</a>. 
         /// 
         ///  
         /// <para>
@@ -474,9 +505,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        /// An alias must start with the word <code>alias</code> followed by a forward slash (<code>alias/</code>).
         /// The alias name can contain only alphanumeric characters, forward slashes (/), underscores
-        /// (_), and dashes (-). Alias names cannot begin with <b>aws/</b>. That alias name prefix
-        /// is reserved for AWS managed CMKs.
+        /// (_), and dashes (-). Alias names cannot begin with <code>aws</code>; that alias name
+        /// prefix is reserved by Amazon Web Services (AWS).
         /// </para>
         ///  
         /// <para>
@@ -495,7 +527,7 @@ namespace Amazon.KeyManagementService
         /// Developer Guide</i>.
         /// </para>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is reserved for AWS managed CMKs.</param>
+        /// <param name="aliasName">String that contains the display name. The name must start with the word "alias" followed by a forward slash (alias/). Aliases that begin with "alias/AWS" are reserved.</param>
         /// <param name="targetKeyId">Identifies the CMK for which you are creating the alias. This value cannot be an alias. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -560,6 +592,38 @@ namespace Amazon.KeyManagementService
             var unmarshaller = CreateAliasResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAliasRequest,CreateAliasResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCustomKeyStore
+
+        internal virtual CreateCustomKeyStoreResponse CreateCustomKeyStore(CreateCustomKeyStoreRequest request)
+        {
+            var marshaller = CreateCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = CreateCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomKeyStoreRequest,CreateCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomKeyStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomKeyStore operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateCustomKeyStore">REST API Reference for CreateCustomKeyStore Operation</seealso>
+        public virtual Task<CreateCustomKeyStoreResponse> CreateCustomKeyStoreAsync(CreateCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = CreateCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomKeyStoreRequest,CreateCustomKeyStoreResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -747,6 +811,38 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  DeleteCustomKeyStore
+
+        internal virtual DeleteCustomKeyStoreResponse DeleteCustomKeyStore(DeleteCustomKeyStoreRequest request)
+        {
+            var marshaller = DeleteCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = DeleteCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomKeyStoreRequest,DeleteCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomKeyStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomKeyStore operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DeleteCustomKeyStore">REST API Reference for DeleteCustomKeyStore Operation</seealso>
+        public virtual Task<DeleteCustomKeyStoreResponse> DeleteCustomKeyStoreAsync(DeleteCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = DeleteCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomKeyStoreRequest,DeleteCustomKeyStoreResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteImportedKeyMaterial
 
         internal virtual DeleteImportedKeyMaterialResponse DeleteImportedKeyMaterial(DeleteImportedKeyMaterialRequest request)
@@ -779,6 +875,38 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  DescribeCustomKeyStores
+
+        internal virtual DescribeCustomKeyStoresResponse DescribeCustomKeyStores(DescribeCustomKeyStoresRequest request)
+        {
+            var marshaller = DescribeCustomKeyStoresRequestMarshaller.Instance;
+            var unmarshaller = DescribeCustomKeyStoresResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomKeyStoresRequest,DescribeCustomKeyStoresResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCustomKeyStores operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomKeyStores operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DescribeCustomKeyStores">REST API Reference for DescribeCustomKeyStores Operation</seealso>
+        public virtual Task<DescribeCustomKeyStoresResponse> DescribeCustomKeyStoresAsync(DescribeCustomKeyStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeCustomKeyStoresRequestMarshaller.Instance;
+            var unmarshaller = DescribeCustomKeyStoresResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCustomKeyStoresRequest,DescribeCustomKeyStoresResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeKey
 
         internal virtual DescribeKeyResponse DescribeKey(DescribeKeyRequest request)
@@ -795,8 +923,8 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
-        /// with no key ID. When you do, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
+        /// If you use <code>DescribeKey</code> on a predefined AWS alias, that is, an AWS alias
+        /// with no key ID, AWS KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
         /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response.
         /// </para>
         ///  
@@ -805,7 +933,7 @@ namespace Amazon.KeyManagementService
         /// or alias ARN in the value of the KeyId parameter.
         /// </para>
         /// </summary>
-        /// <param name="keyId">Describes the specified customer master key (CMK).  If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
+        /// <param name="keyId">Describes the specified customer master key (CMK).  If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the alias with an <a href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the response. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name, prefix it with "alias/". To specify a CMK in a different AWS account, you must use the key ARN or alias ARN. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Alias name: <code>alias/ExampleAlias</code>  </li> <li> Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -1035,6 +1163,38 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  DisconnectCustomKeyStore
+
+        internal virtual DisconnectCustomKeyStoreResponse DisconnectCustomKeyStore(DisconnectCustomKeyStoreRequest request)
+        {
+            var marshaller = DisconnectCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = DisconnectCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return Invoke<DisconnectCustomKeyStoreRequest,DisconnectCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisconnectCustomKeyStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisconnectCustomKeyStore operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/DisconnectCustomKeyStore">REST API Reference for DisconnectCustomKeyStore Operation</seealso>
+        public virtual Task<DisconnectCustomKeyStoreResponse> DisconnectCustomKeyStoreAsync(DisconnectCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DisconnectCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = DisconnectCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisconnectCustomKeyStoreRequest,DisconnectCustomKeyStoreResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EnableKey
 
         internal virtual EnableKeyResponse EnableKey(EnableKeyRequest request)
@@ -1047,9 +1207,9 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Sets the state of a customer master key (CMK) to enabled, thereby permitting its use
-        /// for cryptographic operations. You cannot perform this operation on a CMK in a different
-        /// AWS account.
+        /// Sets the key state of a customer master key (CMK) to enabled. This allows you to use
+        /// the CMK for cryptographic operations. You cannot perform this operation on a CMK in
+        /// a different AWS account.
         /// 
         ///  
         /// <para>
@@ -1140,6 +1300,12 @@ namespace Amazon.KeyManagementService
         /// rotation of the key material</a> for the specified customer master key (CMK). You
         /// cannot perform this operation on a CMK in a different AWS account.
         /// 
+        ///  
+        /// <para>
+        /// You cannot enable automatic rotation of CMKs with imported key material or CMKs in
+        /// a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// key store</a>.
+        /// </para>
         ///  
         /// <para>
         /// The result of this operation varies with the key state of the CMK. For details, see
@@ -1327,6 +1493,12 @@ namespace Amazon.KeyManagementService
         /// 
         ///  
         /// <para>
+        /// By default, the random byte string is generated in AWS KMS. To generate the byte string
+        /// in the AWS CloudHSM cluster that is associated with a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// key store</a>, specify the custom key store ID.
+        /// </para>
+        ///  
+        /// <para>
         /// For more information about entropy and random number generation, see the <a href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS
         /// Key Management Service Cryptographic Details</a> whitepaper.
         /// </para>
@@ -1337,6 +1509,39 @@ namespace Amazon.KeyManagementService
         /// </param>
         /// 
         /// <returns>The response from the GenerateRandom service method, as returned by KeyManagementService.</returns>
+        /// <exception cref="Amazon.KeyManagementService.Model.CustomKeyStoreInvalidStateException">
+        /// The request was rejected because of the <code>ConnectionState</code> of the custom
+        /// key store. To get the <code>ConnectionState</code> of a custom key store, use the
+        /// <a>DescribeCustomKeyStores</a> operation.
+        /// 
+        ///  
+        /// <para>
+        /// This exception is thrown under the following conditions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom
+        /// key store that is not connected. These operations are valid only when the custom key
+        /// store <code>ConnectionState</code> is <code>CONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
+        /// on a custom key store that is not disconnected. This operation is valid only when
+        /// the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
+        /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
+        /// This operation is valid for all other <code>ConnectionState</code> values.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.KeyManagementService.Model.CustomKeyStoreNotFoundException">
+        /// The request was rejected because AWS KMS cannot find a custom key store with the specified
+        /// key store name or ID.
+        /// </exception>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
         /// The system timed out while trying to fulfill the request. The request can be retried.
         /// </exception>
@@ -1915,7 +2120,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">A unique identifier for the customer master key (CMK). Specify the key ID or the Amazon Resource Name (ARN) of the CMK. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy. The reason for this is that the new principal might not be immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
+        /// <param name="policy">The key policy to attach to the CMK. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to AWS KMS. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS Identity and Access Management User Guide</i>. </li> </ul> The key policy size limit is 32 kilobytes (32768 bytes).</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2226,23 +2431,31 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Schedules the deletion of a customer master key (CMK). You may provide a waiting period,
         /// specified in days, before deletion occurs. If you do not provide a waiting period,
-        /// the default period of 30 days is used. When this operation is successful, the state
-        /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
-        /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
-        /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
+        /// the default period of 30 days is used. When this operation is successful, the key
+        /// state of the CMK changes to <code>PendingDeletion</code>. Before the waiting period
+        /// ends, you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After
+        /// the waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
         /// it, including all aliases that refer to it.
         /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
+        /// deleted, all data that was encrypted under the CMK is unrecoverable. To prevent the
+        /// use of a CMK without deleting it, use <a>DisableKey</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you schedule deletion of a CMK from a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
+        /// the CMK from AWS KMS. Then AWS KMS makes a best effort to delete the key material
+        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// the orphaned key material</a> from the cluster and its backups.
+        /// </para>
         ///  
         /// <para>
         /// You cannot perform this operation on a CMK in a different AWS account.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
-        /// deleted, all data that was encrypted under the CMK is rendered unrecoverable. To restrict
-        /// the use of a CMK without deleting it, use <a>DisableKey</a>.
-        /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
@@ -2297,23 +2510,31 @@ namespace Amazon.KeyManagementService
         /// <summary>
         /// Schedules the deletion of a customer master key (CMK). You may provide a waiting period,
         /// specified in days, before deletion occurs. If you do not provide a waiting period,
-        /// the default period of 30 days is used. When this operation is successful, the state
-        /// of the CMK changes to <code>PendingDeletion</code>. Before the waiting period ends,
-        /// you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After the
-        /// waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
+        /// the default period of 30 days is used. When this operation is successful, the key
+        /// state of the CMK changes to <code>PendingDeletion</code>. Before the waiting period
+        /// ends, you can use <a>CancelKeyDeletion</a> to cancel the deletion of the CMK. After
+        /// the waiting period ends, AWS KMS deletes the CMK and all AWS KMS data associated with
         /// it, including all aliases that refer to it.
         /// 
+        ///  <important> 
+        /// <para>
+        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
+        /// deleted, all data that was encrypted under the CMK is unrecoverable. To prevent the
+        /// use of a CMK without deleting it, use <a>DisableKey</a>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you schedule deletion of a CMK from a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// key store</a>, when the waiting period expires, <code>ScheduleKeyDeletion</code> deletes
+        /// the CMK from AWS KMS. Then AWS KMS makes a best effort to delete the key material
+        /// from the associated AWS CloudHSM cluster. However, you might need to manually <a href="http://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html#fix-keystore-orphaned-key">delete
+        /// the orphaned key material</a> from the cluster and its backups.
+        /// </para>
         ///  
         /// <para>
         /// You cannot perform this operation on a CMK in a different AWS account.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// Deleting a CMK is a destructive and potentially dangerous operation. When a CMK is
-        /// deleted, all data that was encrypted under the CMK is rendered unrecoverable. To restrict
-        /// the use of a CMK without deleting it, use <a>DisableKey</a>.
-        /// </para>
-        ///  </important> 
+        ///  
         /// <para>
         /// For more information about scheduling a CMK for deletion, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/deleting-keys.html">Deleting
         /// Customer Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
@@ -2557,6 +2778,38 @@ namespace Amazon.KeyManagementService
 
         #endregion
         
+        #region  UpdateCustomKeyStore
+
+        internal virtual UpdateCustomKeyStoreResponse UpdateCustomKeyStore(UpdateCustomKeyStoreRequest request)
+        {
+            var marshaller = UpdateCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = UpdateCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomKeyStoreRequest,UpdateCustomKeyStoreResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCustomKeyStore operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomKeyStore operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/UpdateCustomKeyStore">REST API Reference for UpdateCustomKeyStore Operation</seealso>
+        public virtual Task<UpdateCustomKeyStoreResponse> UpdateCustomKeyStoreAsync(UpdateCustomKeyStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateCustomKeyStoreRequestMarshaller.Instance;
+            var unmarshaller = UpdateCustomKeyStoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCustomKeyStoreRequest,UpdateCustomKeyStoreResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateKeyDescription
 
         internal virtual UpdateKeyDescriptionResponse UpdateKeyDescription(UpdateKeyDescriptionRequest request)
@@ -2569,8 +2822,8 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Updates the description of a customer master key (CMK). To see the description of
-        /// a CMK, use <a>DescribeKey</a>. 
+        /// Updates the description of a customer master key (CMK). To see the decription of a
+        /// CMK, use <a>DescribeKey</a>. 
         /// 
         ///  
         /// <para>

@@ -33,13 +33,41 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
+    /// By default, the random byte string is generated in AWS KMS. To generate the byte string
+    /// in the AWS CloudHSM cluster that is associated with a <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+    /// key store</a>, specify the custom key store ID.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information about entropy and random number generation, see the <a href="https://d0.awsstatic.com/whitepapers/KMS-Cryptographic-Details.pdf">AWS
     /// Key Management Service Cryptographic Details</a> whitepaper.
     /// </para>
     /// </summary>
     public partial class GenerateRandomRequest : AmazonKeyManagementServiceRequest
     {
+        private string _customKeyStoreId;
         private int? _numberOfBytes;
+
+        /// <summary>
+        /// Gets and sets the property CustomKeyStoreId. 
+        /// <para>
+        /// Generates the random byte string in the AWS CloudHSM cluster that is associated with
+        /// the specified <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+        /// key store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
+        /// operation.
+        /// </para>
+        /// </summary>
+        public string CustomKeyStoreId
+        {
+            get { return this._customKeyStoreId; }
+            set { this._customKeyStoreId = value; }
+        }
+
+        // Check to see if CustomKeyStoreId property is set
+        internal bool IsSetCustomKeyStoreId()
+        {
+            return this._customKeyStoreId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NumberOfBytes. 

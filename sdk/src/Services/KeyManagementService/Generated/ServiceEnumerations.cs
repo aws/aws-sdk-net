@@ -79,6 +79,130 @@ namespace Amazon.KeyManagementService
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionErrorCodeType.
+    /// </summary>
+    public class ConnectionErrorCodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLUSTER_NOT_FOUND for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType CLUSTER_NOT_FOUND = new ConnectionErrorCodeType("CLUSTER_NOT_FOUND");
+        /// <summary>
+        /// Constant INSUFFICIENT_CLOUDHSM_HSMS for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType INSUFFICIENT_CLOUDHSM_HSMS = new ConnectionErrorCodeType("INSUFFICIENT_CLOUDHSM_HSMS");
+        /// <summary>
+        /// Constant INVALID_CREDENTIALS for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType INVALID_CREDENTIALS = new ConnectionErrorCodeType("INVALID_CREDENTIALS");
+        /// <summary>
+        /// Constant NETWORK_ERRORS for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType NETWORK_ERRORS = new ConnectionErrorCodeType("NETWORK_ERRORS");
+        /// <summary>
+        /// Constant USER_LOCKED_OUT for ConnectionErrorCodeType
+        /// </summary>
+        public static readonly ConnectionErrorCodeType USER_LOCKED_OUT = new ConnectionErrorCodeType("USER_LOCKED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionErrorCodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionErrorCodeType FindValue(string value)
+        {
+            return FindValue<ConnectionErrorCodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionErrorCodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConnectionStateType.
+    /// </summary>
+    public class ConnectionStateType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED for ConnectionStateType
+        /// </summary>
+        public static readonly ConnectionStateType CONNECTED = new ConnectionStateType("CONNECTED");
+        /// <summary>
+        /// Constant CONNECTING for ConnectionStateType
+        /// </summary>
+        public static readonly ConnectionStateType CONNECTING = new ConnectionStateType("CONNECTING");
+        /// <summary>
+        /// Constant DISCONNECTED for ConnectionStateType
+        /// </summary>
+        public static readonly ConnectionStateType DISCONNECTED = new ConnectionStateType("DISCONNECTED");
+        /// <summary>
+        /// Constant DISCONNECTING for ConnectionStateType
+        /// </summary>
+        public static readonly ConnectionStateType DISCONNECTING = new ConnectionStateType("DISCONNECTING");
+        /// <summary>
+        /// Constant FAILED for ConnectionStateType
+        /// </summary>
+        public static readonly ConnectionStateType FAILED = new ConnectionStateType("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStateType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStateType FindValue(string value)
+        {
+            return FindValue<ConnectionStateType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DataKeySpec.
     /// </summary>
     public class DataKeySpec : ConstantClass
@@ -328,6 +452,10 @@ namespace Amazon.KeyManagementService
         /// Constant PendingImport for KeyState
         /// </summary>
         public static readonly KeyState PendingImport = new KeyState("PendingImport");
+        /// <summary>
+        /// Constant Unavailable for KeyState
+        /// </summary>
+        public static readonly KeyState Unavailable = new KeyState("Unavailable");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -416,6 +544,10 @@ namespace Amazon.KeyManagementService
     public class OriginType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AWS_CLOUDHSM for OriginType
+        /// </summary>
+        public static readonly OriginType AWS_CLOUDHSM = new OriginType("AWS_CLOUDHSM");
         /// <summary>
         /// Constant AWS_KMS for OriginType
         /// </summary>
