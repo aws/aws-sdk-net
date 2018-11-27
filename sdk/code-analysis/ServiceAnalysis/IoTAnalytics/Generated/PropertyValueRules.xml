@@ -404,6 +404,17 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.IotEventsDestinationConfiguration.InputName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTAnalytics.Model.IotEventsDestinationConfiguration.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTAnalytics.Model.LambdaActivity.BatchSize</property>
     <min>1</min>
     <max>1000</max>

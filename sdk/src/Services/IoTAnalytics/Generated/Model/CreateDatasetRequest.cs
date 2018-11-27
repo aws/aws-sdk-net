@@ -37,6 +37,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class CreateDatasetRequest : AmazonIoTAnalyticsRequest
     {
         private List<DatasetAction> _actions = new List<DatasetAction>();
+        private List<DatasetContentDeliveryRule> _contentDeliveryRules = new List<DatasetContentDeliveryRule>();
         private string _datasetName;
         private RetentionPeriod _retentionPeriod;
         private List<Tag> _tags = new List<Tag>();
@@ -58,6 +59,21 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetActions()
         {
             return this._actions != null && this._actions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentDeliveryRules.
+        /// </summary>
+        public List<DatasetContentDeliveryRule> ContentDeliveryRules
+        {
+            get { return this._contentDeliveryRules; }
+            set { this._contentDeliveryRules = value; }
+        }
+
+        // Check to see if ContentDeliveryRules property is set
+        internal bool IsSetContentDeliveryRules()
+        {
+            return this._contentDeliveryRules != null && this._contentDeliveryRules.Count > 0; 
         }
 
         /// <summary>

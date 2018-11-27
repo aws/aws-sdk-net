@@ -84,6 +84,22 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetContentDeliveryRules())
+                {
+                    context.Writer.WritePropertyName("contentDeliveryRules");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestContentDeliveryRulesListValue in publicRequest.ContentDeliveryRules)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DatasetContentDeliveryRuleMarshaller.Instance;
+                        marshaller.Marshall(publicRequestContentDeliveryRulesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetRetentionPeriod())
                 {
                     context.Writer.WritePropertyName("retentionPeriod");

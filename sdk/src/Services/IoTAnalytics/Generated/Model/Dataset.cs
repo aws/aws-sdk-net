@@ -34,6 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     {
         private List<DatasetAction> _actions = new List<DatasetAction>();
         private string _arn;
+        private List<DatasetContentDeliveryRule> _contentDeliveryRules = new List<DatasetContentDeliveryRule>();
         private DateTime? _creationTime;
         private DateTime? _lastUpdateTime;
         private string _name;
@@ -75,6 +76,21 @@ namespace Amazon.IoTAnalytics.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentDeliveryRules.
+        /// </summary>
+        public List<DatasetContentDeliveryRule> ContentDeliveryRules
+        {
+            get { return this._contentDeliveryRules; }
+            set { this._contentDeliveryRules = value; }
+        }
+
+        // Check to see if ContentDeliveryRules property is set
+        internal bool IsSetContentDeliveryRules()
+        {
+            return this._contentDeliveryRules != null && this._contentDeliveryRules.Count > 0; 
         }
 
         /// <summary>

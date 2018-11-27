@@ -76,6 +76,12 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("contentDeliveryRules", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DatasetContentDeliveryRule, DatasetContentDeliveryRuleUnmarshaller>(DatasetContentDeliveryRuleUnmarshaller.Instance);
+                    unmarshalledObject.ContentDeliveryRules = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("creationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
