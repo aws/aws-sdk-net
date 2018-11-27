@@ -29,15 +29,23 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateConnector operation.
-    /// The DisassociateConnector API will disassociate a connector from the Server Migration
-    /// Service, rendering it unavailable to support replication jobs.
+    /// Disassociates the specified connector from AWS SMS.
+    /// 
+    ///  
+    /// <para>
+    /// After you disassociate a connector, it is no longer available to support replication
+    /// jobs.
+    /// </para>
     /// </summary>
     public partial class DisassociateConnectorRequest : AmazonServerMigrationServiceRequest
     {
         private string _connectorId;
 
         /// <summary>
-        /// Gets and sets the property ConnectorId.
+        /// Gets and sets the property ConnectorId. 
+        /// <para>
+        /// The identifier of the connector.
+        /// </para>
         /// </summary>
         public string ConnectorId
         {

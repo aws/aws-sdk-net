@@ -28,21 +28,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// Object representing a Replication Run
+    /// Represents a replication run.
     /// </summary>
     public partial class ReplicationRun
     {
         private string _amiId;
         private DateTime? _completedTime;
         private string _description;
+        private bool? _encrypted;
+        private string _kmsKeyId;
         private string _replicationRunId;
         private DateTime? _scheduledStartTime;
+        private ReplicationRunStageDetails _stageDetails;
         private ReplicationRunState _state;
         private string _statusMessage;
         private ReplicationRunType _type;
 
         /// <summary>
-        /// Gets and sets the property AmiId.
+        /// Gets and sets the property AmiId. 
+        /// <para>
+        /// The identifier of the Amazon Machine Image (AMI) from the replication run.
+        /// </para>
         /// </summary>
         public string AmiId
         {
@@ -57,7 +63,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CompletedTime.
+        /// Gets and sets the property CompletedTime. 
+        /// <para>
+        /// The completion time of the last replication run.
+        /// </para>
         /// </summary>
         public DateTime CompletedTime
         {
@@ -72,7 +81,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the replication run.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -87,7 +99,69 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationRunId.
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code>
+        /// below.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// KMS key ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// KMS key alias
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARN referring to KMS key ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARN referring to KMS key alias
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default
+        /// KMS key for EBS is used. 
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationRunId. 
+        /// <para>
+        /// The identifier of the replication run.
+        /// </para>
         /// </summary>
         public string ReplicationRunId
         {
@@ -102,7 +176,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ScheduledStartTime.
+        /// Gets and sets the property ScheduledStartTime. 
+        /// <para>
+        /// The start time of the next replication run.
+        /// </para>
         /// </summary>
         public DateTime ScheduledStartTime
         {
@@ -117,7 +194,28 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property StageDetails. 
+        /// <para>
+        /// Details of the current stage of the replication run.
+        /// </para>
+        /// </summary>
+        public ReplicationRunStageDetails StageDetails
+        {
+            get { return this._stageDetails; }
+            set { this._stageDetails = value; }
+        }
+
+        // Check to see if StageDetails property is set
+        internal bool IsSetStageDetails()
+        {
+            return this._stageDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the replication run.
+        /// </para>
         /// </summary>
         public ReplicationRunState State
         {
@@ -132,7 +230,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage.
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The description of the current status of the replication job.
+        /// </para>
         /// </summary>
         public string StatusMessage
         {
@@ -147,7 +248,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of replication run.
+        /// </para>
         /// </summary>
         public ReplicationRunType Type
         {

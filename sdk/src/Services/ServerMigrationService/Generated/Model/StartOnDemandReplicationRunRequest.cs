@@ -29,10 +29,14 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartOnDemandReplicationRun operation.
-    /// The StartOnDemandReplicationRun API is used to start a ReplicationRun on demand (in
-    /// addition to those that are scheduled based on your frequency). This ReplicationRun
-    /// will start immediately. StartOnDemandReplicationRun is subject to limits on how many
-    /// on demand ReplicationRuns you may call per 24-hour period.
+    /// Starts an on-demand replication run for the specified replication job. This replication
+    /// run starts immediately. This replication run is in addition to the ones already scheduled.
+    /// 
+    ///  
+    /// <para>
+    /// There is a limit on the number of on-demand replications runs you can request in a
+    /// 24-hour period.
+    /// </para>
     /// </summary>
     public partial class StartOnDemandReplicationRunRequest : AmazonServerMigrationServiceRequest
     {
@@ -40,7 +44,10 @@ namespace Amazon.ServerMigrationService.Model
         private string _replicationJobId;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the replication run.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -55,7 +62,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationJobId.
+        /// Gets and sets the property ReplicationJobId. 
+        /// <para>
+        /// The identifier of the replication job.
+        /// </para>
         /// </summary>
         public string ReplicationJobId
         {

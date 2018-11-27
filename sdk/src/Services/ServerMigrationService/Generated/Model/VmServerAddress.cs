@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// Object representing a server's location
+    /// Represents a VM server location.
     /// </summary>
     public partial class VmServerAddress
     {
@@ -36,7 +36,10 @@ namespace Amazon.ServerMigrationService.Model
         private string _vmManagerId;
 
         /// <summary>
-        /// Gets and sets the property VmId.
+        /// Gets and sets the property VmId. 
+        /// <para>
+        /// The identifier of the VM.
+        /// </para>
         /// </summary>
         public string VmId
         {
@@ -51,7 +54,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmManagerId.
+        /// Gets and sets the property VmManagerId. 
+        /// <para>
+        /// The identifier of the VM manager.
+        /// </para>
         /// </summary>
         public string VmManagerId
         {

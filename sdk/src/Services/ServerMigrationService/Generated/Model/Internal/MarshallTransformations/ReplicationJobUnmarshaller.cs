@@ -70,10 +70,22 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encrypted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("frequency", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     unmarshalledObject.Frequency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("latestAmiId", targetDepth))
@@ -94,6 +106,12 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.NextReplicationRunStartTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("numberOfRecentAmisToKeep", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.NumberOfRecentAmisToKeep = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("replicationJobId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +128,12 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("runOnce", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.RunOnce = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("seedReplicationTime", targetDepth))

@@ -37,7 +37,11 @@ namespace Amazon.ServerMigrationService.Model
         private List<ReplicationRun> _replicationRunList = new List<ReplicationRun>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token required to retrieve the next set of results. This value is null when there
+        /// are no more results to return.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -52,7 +56,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationJob.
+        /// Gets and sets the property ReplicationJob. 
+        /// <para>
+        /// Information about the replication job.
+        /// </para>
         /// </summary>
         public ReplicationJob ReplicationJob
         {
@@ -67,7 +74,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationRunList.
+        /// Gets and sets the property ReplicationRunList. 
+        /// <para>
+        /// Information about the replication runs.
+        /// </para>
         /// </summary>
         public List<ReplicationRun> ReplicationRunList
         {

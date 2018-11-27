@@ -29,16 +29,24 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteReplicationJob operation.
-    /// The DeleteReplicationJob API is used to delete a ReplicationJob, resulting in no further
-    /// ReplicationRuns. This will delete the contents of the S3 bucket used to store SMS
-    /// artifacts, but will not delete any AMIs created by the SMS service.
+    /// Deletes the specified replication job.
+    /// 
+    ///  
+    /// <para>
+    /// After you delete a replication job, there are no further replication runs. AWS deletes
+    /// the contents of the Amazon S3 bucket used to store AWS SMS artifacts. The AMIs created
+    /// by the replication runs are not deleted.
+    /// </para>
     /// </summary>
     public partial class DeleteReplicationJobRequest : AmazonServerMigrationServiceRequest
     {
         private string _replicationJobId;
 
         /// <summary>
-        /// Gets and sets the property ReplicationJobId.
+        /// Gets and sets the property ReplicationJobId. 
+        /// <para>
+        /// The identifier of the replication job.
+        /// </para>
         /// </summary>
         public string ReplicationJobId
         {

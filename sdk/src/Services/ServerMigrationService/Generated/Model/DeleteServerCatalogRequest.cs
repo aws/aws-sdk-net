@@ -29,8 +29,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteServerCatalog operation.
-    /// The DeleteServerCatalog API clears all servers from your server catalog. This means
-    /// that these servers will no longer be accessible to the Server Migration Service.
+    /// Deletes all servers from your server catalog.
     /// </summary>
     public partial class DeleteServerCatalogRequest : AmazonServerMigrationServiceRequest
     {

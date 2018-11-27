@@ -38,7 +38,10 @@ namespace Amazon.ServerMigrationService.Model
         private List<Server> _serverList = new List<Server>();
 
         /// <summary>
-        /// Gets and sets the property LastModifiedOn.
+        /// Gets and sets the property LastModifiedOn. 
+        /// <para>
+        /// The time when the server was last modified.
+        /// </para>
         /// </summary>
         public DateTime LastModifiedOn
         {
@@ -53,7 +56,11 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token required to retrieve the next set of results. This value is null when there
+        /// are no more results to return.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -68,7 +75,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerCatalogStatus.
+        /// Gets and sets the property ServerCatalogStatus. 
+        /// <para>
+        /// The status of the server catalog.
+        /// </para>
         /// </summary>
         public ServerCatalogStatus ServerCatalogStatus
         {
@@ -83,7 +93,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerList.
+        /// Gets and sets the property ServerList. 
+        /// <para>
+        /// Information about the servers.
+        /// </para>
         /// </summary>
         public List<Server> ServerList
         {

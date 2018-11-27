@@ -29,16 +29,26 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetServers operation.
-    /// The GetServers API returns a list of all servers in your server catalog. For this
-    /// call to succeed, you must previously have called ImportServerCatalog.
+    /// Describes the servers in your server catalog.
+    /// 
+    ///  
+    /// <para>
+    /// Before you can describe your servers, you must import them using <a>ImportServerCatalog</a>.
+    /// </para>
     /// </summary>
     public partial class GetServersRequest : AmazonServerMigrationServiceRequest
     {
         private int? _maxResults;
         private string _nextToken;
+        private List<VmServerAddress> _vmServerAddressList = new List<VmServerAddress>();
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. The default value is 50.
+        /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+        /// value.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -53,7 +63,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -65,6 +78,24 @@ namespace Amazon.ServerMigrationService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VmServerAddressList. 
+        /// <para>
+        /// List of <code>VmServerAddress</code> objects
+        /// </para>
+        /// </summary>
+        public List<VmServerAddress> VmServerAddressList
+        {
+            get { return this._vmServerAddressList; }
+            set { this._vmServerAddressList = value; }
+        }
+
+        // Check to see if VmServerAddressList property is set
+        internal bool IsSetVmServerAddressList()
+        {
+            return this._vmServerAddressList != null && this._vmServerAddressList.Count > 0; 
         }
 
     }

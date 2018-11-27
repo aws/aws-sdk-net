@@ -73,10 +73,22 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetEncrypted())
+                {
+                    context.Writer.WritePropertyName("encrypted");
+                    context.Writer.Write(publicRequest.Encrypted);
+                }
+
                 if(publicRequest.IsSetFrequency())
                 {
                     context.Writer.WritePropertyName("frequency");
                     context.Writer.Write(publicRequest.Frequency);
+                }
+
+                if(publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WritePropertyName("kmsKeyId");
+                    context.Writer.Write(publicRequest.KmsKeyId);
                 }
 
                 if(publicRequest.IsSetLicenseType())
@@ -89,6 +101,12 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("nextReplicationRunStartTime");
                     context.Writer.Write(publicRequest.NextReplicationRunStartTime);
+                }
+
+                if(publicRequest.IsSetNumberOfRecentAmisToKeep())
+                {
+                    context.Writer.WritePropertyName("numberOfRecentAmisToKeep");
+                    context.Writer.Write(publicRequest.NumberOfRecentAmisToKeep);
                 }
 
                 if(publicRequest.IsSetReplicationJobId())

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// Object representing a VM server
+    /// Represents a VM server.
     /// </summary>
     public partial class VmServer
     {
@@ -39,7 +39,10 @@ namespace Amazon.ServerMigrationService.Model
         private VmServerAddress _vmServerAddress;
 
         /// <summary>
-        /// Gets and sets the property VmManagerName.
+        /// Gets and sets the property VmManagerName. 
+        /// <para>
+        /// The name of the VM manager.
+        /// </para>
         /// </summary>
         public string VmManagerName
         {
@@ -54,7 +57,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmManagerType.
+        /// Gets and sets the property VmManagerType. 
+        /// <para>
+        /// The type of VM management product.
+        /// </para>
         /// </summary>
         public VmManagerType VmManagerType
         {
@@ -69,7 +75,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmName.
+        /// Gets and sets the property VmName. 
+        /// <para>
+        /// The name of the VM.
+        /// </para>
         /// </summary>
         public string VmName
         {
@@ -84,7 +93,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmPath.
+        /// Gets and sets the property VmPath. 
+        /// <para>
+        /// The VM folder path in the vCenter Server virtual machine inventory tree.
+        /// </para>
         /// </summary>
         public string VmPath
         {
@@ -99,7 +111,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmServerAddress.
+        /// Gets and sets the property VmServerAddress. 
+        /// <para>
+        /// Information about the VM server location.
+        /// </para>
         /// </summary>
         public VmServerAddress VmServerAddress
         {

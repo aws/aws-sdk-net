@@ -36,7 +36,10 @@ namespace Amazon.ServerMigrationService.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ConnectorList.
+        /// Gets and sets the property ConnectorList. 
+        /// <para>
+        /// Information about the registered connectors.
+        /// </para>
         /// </summary>
         public List<Connector> ConnectorList
         {
@@ -51,7 +54,11 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token required to retrieve the next set of results. This value is null when there
+        /// are no more results to return.
+        /// </para>
         /// </summary>
         public string NextToken
         {

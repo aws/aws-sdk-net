@@ -79,6 +79,22 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetVmServerAddressList())
+                {
+                    context.Writer.WritePropertyName("vmServerAddressList");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestVmServerAddressListListValue in publicRequest.VmServerAddressList)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = VmServerAddressMarshaller.Instance;
+                        marshaller.Marshall(publicRequestVmServerAddressListListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

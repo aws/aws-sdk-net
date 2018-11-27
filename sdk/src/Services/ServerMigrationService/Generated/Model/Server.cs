@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// Object representing a server
+    /// Represents a server.
     /// </summary>
     public partial class Server
     {
@@ -39,7 +39,10 @@ namespace Amazon.ServerMigrationService.Model
         private VmServer _vmServer;
 
         /// <summary>
-        /// Gets and sets the property ReplicationJobId.
+        /// Gets and sets the property ReplicationJobId. 
+        /// <para>
+        /// The identifier of the replication job.
+        /// </para>
         /// </summary>
         public string ReplicationJobId
         {
@@ -54,7 +57,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationJobTerminated.
+        /// Gets and sets the property ReplicationJobTerminated. 
+        /// <para>
+        /// Indicates whether the replication job is deleted or failed.
+        /// </para>
         /// </summary>
         public bool ReplicationJobTerminated
         {
@@ -69,7 +75,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerId.
+        /// Gets and sets the property ServerId. 
+        /// <para>
+        /// The identifier of the server.
+        /// </para>
         /// </summary>
         public string ServerId
         {
@@ -84,7 +93,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerType.
+        /// Gets and sets the property ServerType. 
+        /// <para>
+        /// The type of server.
+        /// </para>
         /// </summary>
         public ServerType ServerType
         {
@@ -99,7 +111,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmServer.
+        /// Gets and sets the property VmServer. 
+        /// <para>
+        /// Information about the VM server.
+        /// </para>
         /// </summary>
         public VmServer VmServer
         {

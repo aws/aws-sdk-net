@@ -37,7 +37,35 @@ namespace Amazon.ServerMigrationService
     /// <summary>
     /// Implementation for accessing ServerMigrationService
     ///
-    /// Amazon Server Migration Service automates the process of migrating servers to EC2.
+    /// AAWS Sever Migration Service 
+    /// <para>
+    /// This is the <i>AWS Sever Migration Service API Reference</i>. It provides descriptions,
+    /// syntax, and usage examples for each of the actions and data types for the AWS Sever
+    /// Migration Service (AWS SMS). The topic for each action shows the Query API request
+    /// parameters and the XML response. You can also view the XML request elements in the
+    /// WSDL.
+    /// </para>
+    ///  
+    /// <para>
+    /// Alternatively, you can use one of the AWS SDKs to access an API that's tailored to
+    /// the programming language or platform that you're using. For more information, see
+    /// <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To learn more about the Server Migration Service, see the following resources:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://aws.amazon.com/server-migration-service/">AWS Sever Migration Service
+    /// product page</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/server-migration.html">AWS
+    /// Sever Migration Service User Guide</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonServerMigrationServiceClient : AmazonServiceClient, IAmazonServerMigrationService
     {
@@ -242,6 +270,38 @@ namespace Amazon.ServerMigrationService
         #endregion
 
         
+        #region  CreateApp
+
+        internal virtual CreateAppResponse CreateApp(CreateAppRequest request)
+        {
+            var marshaller = CreateAppRequestMarshaller.Instance;
+            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppRequest,CreateAppResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateApp operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/CreateApp">REST API Reference for CreateApp Operation</seealso>
+        public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateAppRequestMarshaller.Instance;
+            var unmarshaller = CreateAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAppRequest,CreateAppResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateReplicationJob
 
         internal virtual CreateReplicationJobResponse CreateReplicationJob(CreateReplicationJobRequest request)
@@ -269,6 +329,102 @@ namespace Amazon.ServerMigrationService
             var unmarshaller = CreateReplicationJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateReplicationJobRequest,CreateReplicationJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteApp
+
+        internal virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
+        {
+            var marshaller = DeleteAppRequestMarshaller.Instance;
+            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppRequest,DeleteAppResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApp operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
+        public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteAppRequestMarshaller.Instance;
+            var unmarshaller = DeleteAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAppRequest,DeleteAppResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAppLaunchConfiguration
+
+        internal virtual DeleteAppLaunchConfigurationResponse DeleteAppLaunchConfiguration(DeleteAppLaunchConfigurationRequest request)
+        {
+            var marshaller = DeleteAppLaunchConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteAppLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppLaunchConfigurationRequest,DeleteAppLaunchConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppLaunchConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppLaunchConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppLaunchConfiguration">REST API Reference for DeleteAppLaunchConfiguration Operation</seealso>
+        public virtual Task<DeleteAppLaunchConfigurationResponse> DeleteAppLaunchConfigurationAsync(DeleteAppLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteAppLaunchConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteAppLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAppLaunchConfigurationRequest,DeleteAppLaunchConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAppReplicationConfiguration
+
+        internal virtual DeleteAppReplicationConfigurationResponse DeleteAppReplicationConfiguration(DeleteAppReplicationConfigurationRequest request)
+        {
+            var marshaller = DeleteAppReplicationConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteAppReplicationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppReplicationConfigurationRequest,DeleteAppReplicationConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAppReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppReplicationConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppReplicationConfiguration">REST API Reference for DeleteAppReplicationConfiguration Operation</seealso>
+        public virtual Task<DeleteAppReplicationConfigurationResponse> DeleteAppReplicationConfigurationAsync(DeleteAppReplicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteAppReplicationConfigurationRequestMarshaller.Instance;
+            var unmarshaller = DeleteAppReplicationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAppReplicationConfigurationRequest,DeleteAppReplicationConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -365,6 +521,166 @@ namespace Amazon.ServerMigrationService
             var unmarshaller = DisassociateConnectorResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateConnectorRequest,DisassociateConnectorResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GenerateChangeSet
+
+        internal virtual GenerateChangeSetResponse GenerateChangeSet(GenerateChangeSetRequest request)
+        {
+            var marshaller = GenerateChangeSetRequestMarshaller.Instance;
+            var unmarshaller = GenerateChangeSetResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateChangeSetRequest,GenerateChangeSetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateChangeSet operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateChangeSet operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateChangeSet">REST API Reference for GenerateChangeSet Operation</seealso>
+        public virtual Task<GenerateChangeSetResponse> GenerateChangeSetAsync(GenerateChangeSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GenerateChangeSetRequestMarshaller.Instance;
+            var unmarshaller = GenerateChangeSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GenerateChangeSetRequest,GenerateChangeSetResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GenerateTemplate
+
+        internal virtual GenerateTemplateResponse GenerateTemplate(GenerateTemplateRequest request)
+        {
+            var marshaller = GenerateTemplateRequestMarshaller.Instance;
+            var unmarshaller = GenerateTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GenerateTemplateRequest,GenerateTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GenerateTemplate">REST API Reference for GenerateTemplate Operation</seealso>
+        public virtual Task<GenerateTemplateResponse> GenerateTemplateAsync(GenerateTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GenerateTemplateRequestMarshaller.Instance;
+            var unmarshaller = GenerateTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GenerateTemplateRequest,GenerateTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetApp
+
+        internal virtual GetAppResponse GetApp(GetAppRequest request)
+        {
+            var marshaller = GetAppRequestMarshaller.Instance;
+            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppRequest,GetAppResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetApp operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetApp">REST API Reference for GetApp Operation</seealso>
+        public virtual Task<GetAppResponse> GetAppAsync(GetAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetAppRequestMarshaller.Instance;
+            var unmarshaller = GetAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAppRequest,GetAppResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAppLaunchConfiguration
+
+        internal virtual GetAppLaunchConfigurationResponse GetAppLaunchConfiguration(GetAppLaunchConfigurationRequest request)
+        {
+            var marshaller = GetAppLaunchConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetAppLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppLaunchConfigurationRequest,GetAppLaunchConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppLaunchConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppLaunchConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppLaunchConfiguration">REST API Reference for GetAppLaunchConfiguration Operation</seealso>
+        public virtual Task<GetAppLaunchConfigurationResponse> GetAppLaunchConfigurationAsync(GetAppLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetAppLaunchConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetAppLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAppLaunchConfigurationRequest,GetAppLaunchConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAppReplicationConfiguration
+
+        internal virtual GetAppReplicationConfigurationResponse GetAppReplicationConfiguration(GetAppReplicationConfigurationRequest request)
+        {
+            var marshaller = GetAppReplicationConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetAppReplicationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetAppReplicationConfigurationRequest,GetAppReplicationConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAppReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAppReplicationConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppReplicationConfiguration">REST API Reference for GetAppReplicationConfiguration Operation</seealso>
+        public virtual Task<GetAppReplicationConfigurationResponse> GetAppReplicationConfigurationAsync(GetAppReplicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetAppReplicationConfigurationRequestMarshaller.Instance;
+            var unmarshaller = GetAppReplicationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAppReplicationConfigurationRequest,GetAppReplicationConfigurationResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -530,6 +846,166 @@ namespace Amazon.ServerMigrationService
 
         #endregion
         
+        #region  LaunchApp
+
+        internal virtual LaunchAppResponse LaunchApp(LaunchAppRequest request)
+        {
+            var marshaller = LaunchAppRequestMarshaller.Instance;
+            var unmarshaller = LaunchAppResponseUnmarshaller.Instance;
+
+            return Invoke<LaunchAppRequest,LaunchAppResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the LaunchApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the LaunchApp operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/LaunchApp">REST API Reference for LaunchApp Operation</seealso>
+        public virtual Task<LaunchAppResponse> LaunchAppAsync(LaunchAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = LaunchAppRequestMarshaller.Instance;
+            var unmarshaller = LaunchAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<LaunchAppRequest,LaunchAppResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListApps
+
+        internal virtual ListAppsResponse ListApps(ListAppsRequest request)
+        {
+            var marshaller = ListAppsRequestMarshaller.Instance;
+            var unmarshaller = ListAppsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAppsRequest,ListAppsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApps operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApps operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ListApps">REST API Reference for ListApps Operation</seealso>
+        public virtual Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListAppsRequestMarshaller.Instance;
+            var unmarshaller = ListAppsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAppsRequest,ListAppsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAppLaunchConfiguration
+
+        internal virtual PutAppLaunchConfigurationResponse PutAppLaunchConfiguration(PutAppLaunchConfigurationRequest request)
+        {
+            var marshaller = PutAppLaunchConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutAppLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutAppLaunchConfigurationRequest,PutAppLaunchConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAppLaunchConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAppLaunchConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppLaunchConfiguration">REST API Reference for PutAppLaunchConfiguration Operation</seealso>
+        public virtual Task<PutAppLaunchConfigurationResponse> PutAppLaunchConfigurationAsync(PutAppLaunchConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutAppLaunchConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutAppLaunchConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAppLaunchConfigurationRequest,PutAppLaunchConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAppReplicationConfiguration
+
+        internal virtual PutAppReplicationConfigurationResponse PutAppReplicationConfiguration(PutAppReplicationConfigurationRequest request)
+        {
+            var marshaller = PutAppReplicationConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutAppReplicationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<PutAppReplicationConfigurationRequest,PutAppReplicationConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAppReplicationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAppReplicationConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppReplicationConfiguration">REST API Reference for PutAppReplicationConfiguration Operation</seealso>
+        public virtual Task<PutAppReplicationConfigurationResponse> PutAppReplicationConfigurationAsync(PutAppReplicationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutAppReplicationConfigurationRequestMarshaller.Instance;
+            var unmarshaller = PutAppReplicationConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutAppReplicationConfigurationRequest,PutAppReplicationConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAppReplication
+
+        internal virtual StartAppReplicationResponse StartAppReplication(StartAppReplicationRequest request)
+        {
+            var marshaller = StartAppReplicationRequestMarshaller.Instance;
+            var unmarshaller = StartAppReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartAppReplicationRequest,StartAppReplicationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAppReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAppReplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartAppReplication">REST API Reference for StartAppReplication Operation</seealso>
+        public virtual Task<StartAppReplicationResponse> StartAppReplicationAsync(StartAppReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartAppReplicationRequestMarshaller.Instance;
+            var unmarshaller = StartAppReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartAppReplicationRequest,StartAppReplicationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartOnDemandReplicationRun
 
         internal virtual StartOnDemandReplicationRunResponse StartOnDemandReplicationRun(StartOnDemandReplicationRunRequest request)
@@ -557,6 +1033,102 @@ namespace Amazon.ServerMigrationService
             var unmarshaller = StartOnDemandReplicationRunResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartOnDemandReplicationRunRequest,StartOnDemandReplicationRunResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopAppReplication
+
+        internal virtual StopAppReplicationResponse StopAppReplication(StopAppReplicationRequest request)
+        {
+            var marshaller = StopAppReplicationRequestMarshaller.Instance;
+            var unmarshaller = StopAppReplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopAppReplicationRequest,StopAppReplicationResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopAppReplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopAppReplication operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StopAppReplication">REST API Reference for StopAppReplication Operation</seealso>
+        public virtual Task<StopAppReplicationResponse> StopAppReplicationAsync(StopAppReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopAppReplicationRequestMarshaller.Instance;
+            var unmarshaller = StopAppReplicationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopAppReplicationRequest,StopAppReplicationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  TerminateApp
+
+        internal virtual TerminateAppResponse TerminateApp(TerminateAppRequest request)
+        {
+            var marshaller = TerminateAppRequestMarshaller.Instance;
+            var unmarshaller = TerminateAppResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateAppRequest,TerminateAppResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateApp operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/TerminateApp">REST API Reference for TerminateApp Operation</seealso>
+        public virtual Task<TerminateAppResponse> TerminateAppAsync(TerminateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = TerminateAppRequestMarshaller.Instance;
+            var unmarshaller = TerminateAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<TerminateAppRequest,TerminateAppResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateApp
+
+        internal virtual UpdateAppResponse UpdateApp(UpdateAppRequest request)
+        {
+            var marshaller = UpdateAppRequestMarshaller.Instance;
+            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppRequest,UpdateAppResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateApp operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApp operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
+        public virtual Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateAppRequestMarshaller.Instance;
+            var unmarshaller = UpdateAppResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAppRequest,UpdateAppResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

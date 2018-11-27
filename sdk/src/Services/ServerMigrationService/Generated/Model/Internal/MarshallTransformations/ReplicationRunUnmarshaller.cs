@@ -82,6 +82,18 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("encrypted", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Encrypted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("kmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("replicationRunId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -92,6 +104,12 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.ScheduledStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("stageDetails", targetDepth))
+                {
+                    var unmarshaller = ReplicationRunStageDetailsUnmarshaller.Instance;
+                    unmarshalledObject.StageDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("state", targetDepth))

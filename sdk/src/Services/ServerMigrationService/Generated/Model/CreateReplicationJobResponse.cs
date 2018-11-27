@@ -35,7 +35,10 @@ namespace Amazon.ServerMigrationService.Model
         private string _replicationJobId;
 
         /// <summary>
-        /// Gets and sets the property ReplicationJobId.
+        /// Gets and sets the property ReplicationJobId. 
+        /// <para>
+        /// The unique identifier of the replication job.
+        /// </para>
         /// </summary>
         public string ReplicationJobId
         {

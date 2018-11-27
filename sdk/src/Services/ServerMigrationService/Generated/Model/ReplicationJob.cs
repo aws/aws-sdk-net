@@ -28,18 +28,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// Object representing a Replication Job
+    /// Represents a replication job.
     /// </summary>
     public partial class ReplicationJob
     {
         private string _description;
+        private bool? _encrypted;
         private int? _frequency;
+        private string _kmsKeyId;
         private string _latestAmiId;
         private LicenseType _licenseType;
         private DateTime? _nextReplicationRunStartTime;
+        private int? _numberOfRecentAmisToKeep;
         private string _replicationJobId;
         private List<ReplicationRun> _replicationRunList = new List<ReplicationRun>();
         private string _roleName;
+        private bool? _runOnce;
         private DateTime? _seedReplicationTime;
         private string _serverId;
         private ServerType _serverType;
@@ -48,7 +52,10 @@ namespace Amazon.ServerMigrationService.Model
         private VmServer _vmServer;
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the replication job.
+        /// </para>
         /// </summary>
         public string Description
         {
@@ -63,7 +70,29 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Frequency.
+        /// Gets and sets the property Encrypted. 
+        /// <para>
+        /// Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code>
+        /// below.
+        /// </para>
+        /// </summary>
+        public bool Encrypted
+        {
+            get { return this._encrypted.GetValueOrDefault(); }
+            set { this._encrypted = value; }
+        }
+
+        // Check to see if Encrypted property is set
+        internal bool IsSetEncrypted()
+        {
+            return this._encrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Frequency. 
+        /// <para>
+        /// The time between consecutive replication runs, in hours.
+        /// </para>
         /// </summary>
         public int Frequency
         {
@@ -78,7 +107,50 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LatestAmiId.
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// KMS key ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// KMS key alias
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARN referring to KMS key ID
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ARN referring to KMS key alias
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default
+        /// KMS key for EBS is used. 
+        /// </para>
+        /// </summary>
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestAmiId. 
+        /// <para>
+        /// The ID of the latest Amazon Machine Image (AMI).
+        /// </para>
         /// </summary>
         public string LatestAmiId
         {
@@ -93,7 +165,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LicenseType.
+        /// Gets and sets the property LicenseType. 
+        /// <para>
+        /// The license type to be used for the AMI created by a successful replication run.
+        /// </para>
         /// </summary>
         public LicenseType LicenseType
         {
@@ -108,7 +183,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextReplicationRunStartTime.
+        /// Gets and sets the property NextReplicationRunStartTime. 
+        /// <para>
+        /// The start time of the next replication run.
+        /// </para>
         /// </summary>
         public DateTime NextReplicationRunStartTime
         {
@@ -123,7 +201,29 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationJobId.
+        /// Gets and sets the property NumberOfRecentAmisToKeep. 
+        /// <para>
+        /// Number of recent AMIs to keep in the customer's account for a replication job. By
+        /// default the value is set to zero, meaning that all AMIs are kept.
+        /// </para>
+        /// </summary>
+        public int NumberOfRecentAmisToKeep
+        {
+            get { return this._numberOfRecentAmisToKeep.GetValueOrDefault(); }
+            set { this._numberOfRecentAmisToKeep = value; }
+        }
+
+        // Check to see if NumberOfRecentAmisToKeep property is set
+        internal bool IsSetNumberOfRecentAmisToKeep()
+        {
+            return this._numberOfRecentAmisToKeep.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationJobId. 
+        /// <para>
+        /// The identifier of the replication job.
+        /// </para>
         /// </summary>
         public string ReplicationJobId
         {
@@ -138,7 +238,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationRunList.
+        /// Gets and sets the property ReplicationRunList. 
+        /// <para>
+        /// Information about the replication runs.
+        /// </para>
         /// </summary>
         public List<ReplicationRun> ReplicationRunList
         {
@@ -153,7 +256,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoleName.
+        /// Gets and sets the property RoleName. 
+        /// <para>
+        /// The name of the IAM role to be used by the Server Migration Service.
+        /// </para>
         /// </summary>
         public string RoleName
         {
@@ -168,7 +274,25 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SeedReplicationTime.
+        /// Gets and sets the property RunOnce.
+        /// </summary>
+        public bool RunOnce
+        {
+            get { return this._runOnce.GetValueOrDefault(); }
+            set { this._runOnce = value; }
+        }
+
+        // Check to see if RunOnce property is set
+        internal bool IsSetRunOnce()
+        {
+            return this._runOnce.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SeedReplicationTime. 
+        /// <para>
+        /// The seed replication time.
+        /// </para>
         /// </summary>
         public DateTime SeedReplicationTime
         {
@@ -183,7 +307,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerId.
+        /// Gets and sets the property ServerId. 
+        /// <para>
+        /// The identifier of the server.
+        /// </para>
         /// </summary>
         public string ServerId
         {
@@ -198,7 +325,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerType.
+        /// Gets and sets the property ServerType. 
+        /// <para>
+        /// The type of server.
+        /// </para>
         /// </summary>
         public ServerType ServerType
         {
@@ -213,7 +343,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the replication job.
+        /// </para>
         /// </summary>
         public ReplicationJobState State
         {
@@ -228,7 +361,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StatusMessage.
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The description of the current status of the replication job.
+        /// </para>
         /// </summary>
         public string StatusMessage
         {
@@ -243,7 +379,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmServer.
+        /// Gets and sets the property VmServer. 
+        /// <para>
+        /// Information about the VM server.
+        /// </para>
         /// </summary>
         public VmServer VmServer
         {

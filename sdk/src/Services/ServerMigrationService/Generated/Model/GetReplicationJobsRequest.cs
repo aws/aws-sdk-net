@@ -29,9 +29,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReplicationJobs operation.
-    /// The GetReplicationJobs API will return all of your ReplicationJobs and their details.
-    /// This API returns a paginated list, that may be consecutively called with nextToken
-    /// to retrieve all ReplicationJobs.
+    /// Describes the specified replication job or all of your replication jobs.
     /// </summary>
     public partial class GetReplicationJobsRequest : AmazonServerMigrationServiceRequest
     {
@@ -40,7 +38,12 @@ namespace Amazon.ServerMigrationService.Model
         private string _replicationJobId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. The default value is 50.
+        /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+        /// value.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -55,7 +58,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -70,7 +76,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationJobId.
+        /// Gets and sets the property ReplicationJobId. 
+        /// <para>
+        /// The identifier of the replication job.
+        /// </para>
         /// </summary>
         public string ReplicationJobId
         {

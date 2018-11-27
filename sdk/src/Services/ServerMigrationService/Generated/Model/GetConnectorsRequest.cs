@@ -29,8 +29,7 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConnectors operation.
-    /// The GetConnectors API returns a list of connectors that are registered with the Server
-    /// Migration Service.
+    /// Describes the connectors registered with the AWS SMS.
     /// </summary>
     public partial class GetConnectorsRequest : AmazonServerMigrationServiceRequest
     {
@@ -38,7 +37,12 @@ namespace Amazon.ServerMigrationService.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. The default value is 50.
+        /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+        /// value.
+        /// </para>
         /// </summary>
         public int MaxResults
         {
@@ -53,7 +57,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

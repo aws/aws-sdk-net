@@ -100,6 +100,10 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             {
                 return new ServerCannotBeReplicatedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("TemporarilyUnavailableException"))
+            {
+                return new TemporarilyUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnauthorizedOperationException"))
             {
                 return new UnauthorizedOperationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

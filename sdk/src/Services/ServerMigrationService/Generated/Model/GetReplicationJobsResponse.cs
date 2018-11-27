@@ -36,7 +36,11 @@ namespace Amazon.ServerMigrationService.Model
         private List<ReplicationJob> _replicationJobList = new List<ReplicationJob>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token required to retrieve the next set of results. This value is null when there
+        /// are no more results to return.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -51,7 +55,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReplicationJobList.
+        /// Gets and sets the property ReplicationJobList. 
+        /// <para>
+        /// Information about the replication jobs.
+        /// </para>
         /// </summary>
         public List<ReplicationJob> ReplicationJobList
         {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
-    /// Object representing a Connector
+    /// Represents a connector.
     /// </summary>
     public partial class Connector
     {
@@ -44,7 +44,10 @@ namespace Amazon.ServerMigrationService.Model
         private VmManagerType _vmManagerType;
 
         /// <summary>
-        /// Gets and sets the property AssociatedOn.
+        /// Gets and sets the property AssociatedOn. 
+        /// <para>
+        /// The time the connector was associated.
+        /// </para>
         /// </summary>
         public DateTime AssociatedOn
         {
@@ -59,7 +62,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CapabilityList.
+        /// Gets and sets the property CapabilityList. 
+        /// <para>
+        /// The capabilities of the connector.
+        /// </para>
         /// </summary>
         public List<string> CapabilityList
         {
@@ -74,7 +80,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ConnectorId.
+        /// Gets and sets the property ConnectorId. 
+        /// <para>
+        /// The identifier of the connector.
+        /// </para>
         /// </summary>
         public string ConnectorId
         {
@@ -89,7 +98,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IpAddress.
+        /// Gets and sets the property IpAddress. 
+        /// <para>
+        /// The IP address of the connector.
+        /// </para>
         /// </summary>
         public string IpAddress
         {
@@ -104,7 +116,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MacAddress.
+        /// Gets and sets the property MacAddress. 
+        /// <para>
+        /// The MAC address of the connector.
+        /// </para>
         /// </summary>
         public string MacAddress
         {
@@ -119,7 +134,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the connector.
+        /// </para>
         /// </summary>
         public ConnectorStatus Status
         {
@@ -134,7 +152,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Version.
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The connector version.
+        /// </para>
         /// </summary>
         public string Version
         {
@@ -149,7 +170,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmManagerId.
+        /// Gets and sets the property VmManagerId. 
+        /// <para>
+        /// The identifier of the VM manager.
+        /// </para>
         /// </summary>
         public string VmManagerId
         {
@@ -164,7 +188,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmManagerName.
+        /// Gets and sets the property VmManagerName. 
+        /// <para>
+        /// The name of the VM manager.
+        /// </para>
         /// </summary>
         public string VmManagerName
         {
@@ -179,7 +206,10 @@ namespace Amazon.ServerMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VmManagerType.
+        /// Gets and sets the property VmManagerType. 
+        /// <para>
+        /// The VM management product.
+        /// </para>
         /// </summary>
         public VmManagerType VmManagerType
         {

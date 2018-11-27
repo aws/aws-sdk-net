@@ -29,10 +29,14 @@ namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportServerCatalog operation.
-    /// The ImportServerCatalog API is used to gather the complete list of on-premises servers
-    /// on your premises. This API call requires connectors to be installed and monitoring
-    /// all servers you would like imported. This API call returns immediately, but may take
-    /// some time to retrieve all of the servers.
+    /// Gathers a complete list of on-premises servers. Connectors must be installed and monitoring
+    /// all servers that you want to import.
+    /// 
+    ///  
+    /// <para>
+    /// This call returns immediately, but might take additional time to retrieve all the
+    /// servers.
+    /// </para>
     /// </summary>
     public partial class ImportServerCatalogRequest : AmazonServerMigrationServiceRequest
     {
