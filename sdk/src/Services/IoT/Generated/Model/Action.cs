@@ -39,6 +39,7 @@ namespace Amazon.IoT.Model
         private ElasticsearchAction _elasticsearch;
         private FirehoseAction _firehose;
         private IotAnalyticsAction _iotAnalytics;
+        private IotEventsAction _iotEvents;
         private KinesisAction _kinesis;
         private LambdaAction _lambda;
         private RepublishAction _republish;
@@ -173,6 +174,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetIotAnalytics()
         {
             return this._iotAnalytics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IotEvents. 
+        /// <para>
+        /// Sends an input to an AWS IoT Events detector.
+        /// </para>
+        /// </summary>
+        public IotEventsAction IotEvents
+        {
+            get { return this._iotEvents; }
+            set { this._iotEvents = value; }
+        }
+
+        // Check to see if IotEvents property is set
+        internal bool IsSetIotEvents()
+        {
+            return this._iotEvents != null;
         }
 
         /// <summary>

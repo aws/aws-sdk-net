@@ -106,6 +106,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.IotAnalytics = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("iotEvents", targetDepth))
+                {
+                    var unmarshaller = IotEventsActionUnmarshaller.Instance;
+                    unmarshalledObject.IotEvents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kinesis", targetDepth))
                 {
                     var unmarshaller = KinesisActionUnmarshaller.Instance;

@@ -122,6 +122,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetIotEvents())
+            {
+                context.Writer.WritePropertyName("iotEvents");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = IotEventsActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.IotEvents, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKinesis())
             {
                 context.Writer.WritePropertyName("kinesis");
