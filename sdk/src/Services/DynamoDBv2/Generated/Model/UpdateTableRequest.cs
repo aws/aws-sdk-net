@@ -65,6 +65,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
     {
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
+        private BillingMode _billingMode;
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
         private ProvisionedThroughput _provisionedThroughput;
         private SSESpecification _sseSpecification;
@@ -105,6 +106,39 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetAttributeDefinitions()
         {
             return this._attributeDefinitions != null && this._attributeDefinitions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingMode. 
+        /// <para>
+        /// Controls how you are charged for read and write throughput and how you manage capacity.
+        /// When switching from pay-per-request to provisioned capacity, initial provisioned capacity
+        /// values must be set. The initial provisioned capacity values are estimated based on
+        /// the consumed read and write capacity of your table and global secondary indexes over
+        /// the past 30 minutes.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+        /// recommend using <code>PROVISIONED</code> for predictable workloads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PAY_PER_REQUEST</code> - Sets the billing mode to <code>PAY_PER_REQUEST</code>.
+        /// We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BillingMode BillingMode
+        {
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
+        }
+
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
+        {
+            return this._billingMode != null;
         }
 
         /// <summary>

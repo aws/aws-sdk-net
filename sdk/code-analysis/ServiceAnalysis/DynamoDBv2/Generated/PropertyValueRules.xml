@@ -367,6 +367,12 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.ConditionCheck.TableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ConsumedCapacity.TableName</property>
     <min>3</min>
     <max>255</max>
@@ -379,7 +385,19 @@
     <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.Delete.TableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.DeleteGlobalSecondaryIndexAction.IndexName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.Get.TableName</property>
     <min>3</min>
     <max>255</max>
     <pattern>[a-zA-Z0-9_.-]+</pattern>
@@ -461,11 +479,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ProvisionedThroughputDescription.ReadCapacityUnits</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ProvisionedThroughputDescription.WriteCapacityUnits</property>
-    <min>1</min>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.Put.TableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaGlobalSecondaryIndexSettingsDescription.IndexName</property>
@@ -493,11 +517,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaSettingsDescription.ReplicaProvisionedReadCapacityUnits</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaSettingsDescription.ReplicaProvisionedWriteCapacityUnits</property>
-    <min>1</min>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.ReplicaSettingsUpdate.ReplicaProvisionedReadCapacityUnits</property>
@@ -556,6 +580,12 @@
     <property>Amazon.DynamoDBv2.Model.TimeToLiveSpecification.AttributeName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.Update.TableName</property>
+    <min>3</min>
+    <max>255</max>
+    <pattern>[a-zA-Z0-9_.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UpdateGlobalSecondaryIndexAction.IndexName</property>

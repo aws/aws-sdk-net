@@ -61,11 +61,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+        ///  <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not
+        /// applicable).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
+        /// Key is stored in your account and is managed by AWS KMS (KMS charges apply).
         /// </para>
         ///  </li> </ul>
         /// </summary>

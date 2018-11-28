@@ -33,11 +33,32 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class UpdateGlobalTableSettingsRequest : AmazonDynamoDBRequest
     {
+        private BillingMode _globalTableBillingMode;
         private List<GlobalTableGlobalSecondaryIndexSettingsUpdate> _globalTableGlobalSecondaryIndexSettingsUpdate = new List<GlobalTableGlobalSecondaryIndexSettingsUpdate>();
         private string _globalTableName;
         private AutoScalingSettingsUpdate _globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
         private long? _globalTableProvisionedWriteCapacityUnits;
         private List<ReplicaSettingsUpdate> _replicaSettingsUpdate = new List<ReplicaSettingsUpdate>();
+
+        /// <summary>
+        /// Gets and sets the property GlobalTableBillingMode. 
+        /// <para>
+        /// The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not
+        /// specified, the global table defaults to <code>PROVISIONED</code> capacity billing
+        /// mode.
+        /// </para>
+        /// </summary>
+        public BillingMode GlobalTableBillingMode
+        {
+            get { return this._globalTableBillingMode; }
+            set { this._globalTableBillingMode = value; }
+        }
+
+        // Check to see if GlobalTableBillingMode property is set
+        internal bool IsSetGlobalTableBillingMode()
+        {
+            return this._globalTableBillingMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GlobalTableGlobalSecondaryIndexSettingsUpdate. 

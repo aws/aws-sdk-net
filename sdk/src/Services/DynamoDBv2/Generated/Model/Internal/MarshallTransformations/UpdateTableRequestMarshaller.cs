@@ -83,6 +83,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetBillingMode())
+                {
+                    context.Writer.WritePropertyName("BillingMode");
+                    context.Writer.Write(publicRequest.BillingMode);
+                }
+
                 if(publicRequest.IsSetGlobalSecondaryIndexUpdates())
                 {
                     context.Writer.WritePropertyName("GlobalSecondaryIndexUpdates");

@@ -40,7 +40,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// Indicates whether server-side encryption is enabled (true) or disabled (false) on
-        /// the table.
+        /// the table. If enabled (true), server-side encryption type is set to <code>KMS</code>.
+        /// If disabled (false) or not specified, server-side encryption is set to AWS owned CMK.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -83,12 +84,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AES256</code> - Server-side encryption which uses the AES256 algorithm.
+        ///  <code>AES256</code> - Server-side encryption which uses the AES256 algorithm (not
+        /// applicable).
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-        /// (default)
+        /// Key is stored in your account and is managed by AWS KMS (KMS charges apply).
         /// </para>
         ///  </li> </ul>
         /// </summary>

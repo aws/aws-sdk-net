@@ -36,7 +36,9 @@ namespace Amazon.DynamoDBv2.Internal
         /// <param name="config">The IClientConfig object</param>
         public DynamoDBRetryPolicy(IClientConfig config) :
             base(config)
-        { }
+        {
+            ErrorCodesToRetryOn.Add("TransactionInProgressException");
+        }
 
         /// <summary>
         /// Overriden to cause a pause between retries.

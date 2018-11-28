@@ -32,6 +32,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class SourceTableDetails
     {
+        private BillingMode _billingMode;
         private long? _itemCount;
         private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
         private ProvisionedThroughput _provisionedThroughput;
@@ -40,6 +41,36 @@ namespace Amazon.DynamoDBv2.Model
         private string _tableId;
         private string _tableName;
         private long? _tableSizeBytes;
+
+        /// <summary>
+        /// Gets and sets the property BillingMode. 
+        /// <para>
+        /// Controls how you are charged for read and write throughput and how you manage capacity.
+        /// This setting can be changed later.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>.
+        /// We recommend using <code>PROVISIONED</code> for predictable workloads.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>.
+        /// We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public BillingMode BillingMode
+        {
+            get { return this._billingMode; }
+            set { this._billingMode = value; }
+        }
+
+        // Check to see if BillingMode property is set
+        internal bool IsSetBillingMode()
+        {
+            return this._billingMode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ItemCount. 

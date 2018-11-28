@@ -70,6 +70,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AttributeDefinitions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("BillingModeSummary", targetDepth))
+                {
+                    var unmarshaller = BillingModeSummaryUnmarshaller.Instance;
+                    unmarshalledObject.BillingModeSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CreationDateTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

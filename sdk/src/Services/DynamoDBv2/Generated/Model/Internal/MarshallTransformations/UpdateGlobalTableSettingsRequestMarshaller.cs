@@ -67,6 +67,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetGlobalTableBillingMode())
+                {
+                    context.Writer.WritePropertyName("GlobalTableBillingMode");
+                    context.Writer.Write(publicRequest.GlobalTableBillingMode);
+                }
+
                 if(publicRequest.IsSetGlobalTableGlobalSecondaryIndexSettingsUpdate())
                 {
                     context.Writer.WritePropertyName("GlobalTableGlobalSecondaryIndexSettingsUpdate");

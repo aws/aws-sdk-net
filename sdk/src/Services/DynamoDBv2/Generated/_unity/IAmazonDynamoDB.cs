@@ -151,6 +151,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -248,6 +253,11 @@ namespace Amazon.DynamoDBv2
         /// queue is too large to finish. Reduce the frequency of requests and use exponential
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -400,6 +410,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -486,7 +501,7 @@ namespace Amazon.DynamoDBv2
         /// <param name="tableName">The name of the table to create.</param>
         /// <param name="keySchema">Specifies the attributes that make up the primary key for a table or an index. The attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code> array. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data Model</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each <code>KeySchemaElement</code> in the array is composed of: <ul> <li>  <code>AttributeName</code> - The name of this key attribute. </li> <li>  <code>KeyType</code> - The role that the key attribute will assume: <ul> <li>  <code>HASH</code> - partition key </li> <li>  <code>RANGE</code> - sort key </li> </ul> </li> </ul> <note> The partition key of an item is also known as its <i>hash attribute</i>. The term "hash attribute" derives from DynamoDB' usage of an internal hash function to evenly distribute data items across partitions, based on their partition key values. The sort key of an item is also known as its <i>range attribute</i>. The term "range attribute" derives from the way DynamoDB stores items with the same partition key physically close together, in sorted order by the sort key value. </note> For a simple primary key (partition key), you must provide exactly one element with a <code>KeyType</code> of <code>HASH</code>. For a composite primary key (partition key and sort key), you must provide exactly two elements, in this order: The first element must have a <code>KeyType</code> of <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#WorkingWithTables.primary.key">Specifying the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="attributeDefinitions">An array of attributes that describe the key schema for the table and indexes.</param>
-        /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation. For current minimum and maximum provisioned throughput values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="provisionedThroughput">Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.  For current minimum and maximum provisioned throughput values, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -606,9 +621,17 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
+        /// Operation was rejected because there is an ongoing transaction for the item.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
         void DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key,  AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null);
@@ -662,9 +685,17 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
+        /// Operation was rejected because there is an ongoing transaction for the item.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteItem">REST API Reference for DeleteItem Operation</seealso>
         void DeleteItemAsync(string tableName, Dictionary<string, AttributeValue> key, ReturnValue returnValues,  AmazonServiceCallback<DeleteItemRequest, DeleteItemResponse> callback, AsyncOptions options = null);
@@ -996,6 +1027,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -1035,6 +1071,11 @@ namespace Amazon.DynamoDBv2
         /// queue is too large to finish. Reduce the frequency of requests and use exponential
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1295,9 +1336,17 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
+        /// Operation was rejected because there is an ongoing transaction for the item.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
         void PutItemAsync(string tableName, Dictionary<string, AttributeValue> item,  AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null);
@@ -1412,9 +1461,17 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
+        /// Operation was rejected because there is an ongoing transaction for the item.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem">REST API Reference for PutItem Operation</seealso>
         void PutItemAsync(string tableName, Dictionary<string, AttributeValue> item, ReturnValue returnValues,  AmazonServiceCallback<PutItemRequest, PutItemResponse> callback, AsyncOptions options = null);
@@ -1545,6 +1602,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -1609,6 +1671,11 @@ namespace Amazon.DynamoDBv2
         /// queue is too large to finish. Reduce the frequency of requests and use exponential
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
@@ -1676,6 +1743,11 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
@@ -1710,6 +1782,40 @@ namespace Amazon.DynamoDBv2
         ///          procedure using the AsyncState property.</param>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
         void TagResourceAsync(TagResourceRequest request, AmazonServiceCallback<TagResourceRequest, TagResourceResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  TransactGetItems
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TransactGetItems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TransactGetItems operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">REST API Reference for TransactGetItems Operation</seealso>
+        void TransactGetItemsAsync(TransactGetItemsRequest request, AmazonServiceCallback<TransactGetItemsRequest, TransactGetItemsResponse> callback, AsyncOptions options = null);
+
+
+        #endregion
+        
+        #region  TransactWriteItems
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TransactWriteItems operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TransactWriteItems operation on AmazonDynamoDBClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItems">REST API Reference for TransactWriteItems Operation</seealso>
+        void TransactWriteItemsAsync(TransactWriteItemsRequest request, AmazonServiceCallback<TransactWriteItemsRequest, TransactWriteItemsResponse> callback, AsyncOptions options = null);
 
 
         #endregion
@@ -1825,9 +1931,17 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
+        /// Operation was rejected because there is an ongoing transaction for the item.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
         void UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates,  AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null);
@@ -1873,9 +1987,17 @@ namespace Amazon.DynamoDBv2
         /// backoff. For more information, go to <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff">Error
         /// Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput limit for your account. Please contact AWS
+        /// Support at <a href="http://docs.aws.amazon.com/https:/aws.amazon.com/support">AWS
+        /// Support</a> to request a limit increase.
+        /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
         /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
+        /// Operation was rejected because there is an ongoing transaction for the item.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateItem">REST API Reference for UpdateItem Operation</seealso>
         void UpdateItemAsync(string tableName, Dictionary<string, AttributeValue> key, Dictionary<string, AttributeValueUpdate> attributeUpdates, ReturnValue returnValues,  AmazonServiceCallback<UpdateItemRequest, UpdateItemResponse> callback, AsyncOptions options = null);

@@ -237,6 +237,56 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type BillingMode.
+    /// </summary>
+    public class BillingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PAY_PER_REQUEST for BillingMode
+        /// </summary>
+        public static readonly BillingMode PAY_PER_REQUEST = new BillingMode("PAY_PER_REQUEST");
+        /// <summary>
+        /// Constant PROVISIONED for BillingMode
+        /// </summary>
+        public static readonly BillingMode PROVISIONED = new BillingMode("PROVISIONED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingMode FindValue(string value)
+        {
+            return FindValue<BillingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComparisonOperator.
     /// </summary>
     public class ComparisonOperator : ConstantClass
@@ -918,6 +968,56 @@ namespace Amazon.DynamoDBv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReturnValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReturnValuesOnConditionCheckFailure.
+    /// </summary>
+    public class ReturnValuesOnConditionCheckFailure : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_OLD for ReturnValuesOnConditionCheckFailure
+        /// </summary>
+        public static readonly ReturnValuesOnConditionCheckFailure ALL_OLD = new ReturnValuesOnConditionCheckFailure("ALL_OLD");
+        /// <summary>
+        /// Constant NONE for ReturnValuesOnConditionCheckFailure
+        /// </summary>
+        public static readonly ReturnValuesOnConditionCheckFailure NONE = new ReturnValuesOnConditionCheckFailure("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReturnValuesOnConditionCheckFailure(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReturnValuesOnConditionCheckFailure FindValue(string value)
+        {
+            return FindValue<ReturnValuesOnConditionCheckFailure>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReturnValuesOnConditionCheckFailure(string value)
         {
             return FindValue(value);
         }

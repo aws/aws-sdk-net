@@ -33,6 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ReplicaSettingsDescription
     {
         private string _regionName;
+        private BillingModeSummary _replicaBillingModeSummary;
         private List<ReplicaGlobalSecondaryIndexSettingsDescription> _replicaGlobalSecondaryIndexSettings = new List<ReplicaGlobalSecondaryIndexSettingsDescription>();
         private AutoScalingSettingsDescription _replicaProvisionedReadCapacityAutoScalingSettings;
         private long? _replicaProvisionedReadCapacityUnits;
@@ -56,6 +57,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetRegionName()
         {
             return this._regionName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicaBillingModeSummary. 
+        /// <para>
+        /// The read/write capacity mode of the replica.
+        /// </para>
+        /// </summary>
+        public BillingModeSummary ReplicaBillingModeSummary
+        {
+            get { return this._replicaBillingModeSummary; }
+            set { this._replicaBillingModeSummary = value; }
+        }
+
+        // Check to see if ReplicaBillingModeSummary property is set
+        internal bool IsSetReplicaBillingModeSummary()
+        {
+            return this._replicaBillingModeSummary != null;
         }
 
         /// <summary>

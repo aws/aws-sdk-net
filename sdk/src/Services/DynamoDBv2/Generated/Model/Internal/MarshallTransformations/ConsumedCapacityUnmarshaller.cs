@@ -82,6 +82,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.LocalSecondaryIndexes = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReadCapacityUnits", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.ReadCapacityUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Table", targetDepth))
                 {
                     var unmarshaller = CapacityUnmarshaller.Instance;
@@ -92,6 +98,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WriteCapacityUnits", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.WriteCapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

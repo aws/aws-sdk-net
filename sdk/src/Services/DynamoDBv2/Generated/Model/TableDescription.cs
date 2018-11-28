@@ -33,6 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class TableDescription
     {
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
+        private BillingModeSummary _billingModeSummary;
         private DateTime? _creationDateTime;
         private List<GlobalSecondaryIndexDescription> _globalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
         private long? _itemCount;
@@ -85,6 +86,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetAttributeDefinitions()
         {
             return this._attributeDefinitions != null && this._attributeDefinitions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BillingModeSummary. 
+        /// <para>
+        /// Contains the details for the read/write capacity mode.
+        /// </para>
+        /// </summary>
+        public BillingModeSummary BillingModeSummary
+        {
+            get { return this._billingModeSummary; }
+            set { this._billingModeSummary = value; }
+        }
+
+        // Check to see if BillingModeSummary property is set
+        internal bool IsSetBillingModeSummary()
+        {
+            return this._billingModeSummary != null;
         }
 
         /// <summary>

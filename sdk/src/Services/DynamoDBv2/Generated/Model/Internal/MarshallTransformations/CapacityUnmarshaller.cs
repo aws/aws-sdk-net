@@ -70,6 +70,18 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CapacityUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReadCapacityUnits", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.ReadCapacityUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("WriteCapacityUnits", targetDepth))
+                {
+                    var unmarshaller = DoubleUnmarshaller.Instance;
+                    unmarshalledObject.WriteCapacityUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -34,6 +34,8 @@ namespace Amazon.DynamoDBv2.Model
     public partial class Capacity
     {
         private double? _capacityUnits;
+        private double? _readCapacityUnits;
+        private double? _writeCapacityUnits;
 
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
@@ -51,6 +53,42 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetCapacityUnits()
         {
             return this._capacityUnits.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadCapacityUnits. 
+        /// <para>
+        /// The total number of read capacity units consumed on a table or an index.
+        /// </para>
+        /// </summary>
+        public double ReadCapacityUnits
+        {
+            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            set { this._readCapacityUnits = value; }
+        }
+
+        // Check to see if ReadCapacityUnits property is set
+        internal bool IsSetReadCapacityUnits()
+        {
+            return this._readCapacityUnits.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteCapacityUnits. 
+        /// <para>
+        /// The total number of write capacity units consumed on a table or an index.
+        /// </para>
+        /// </summary>
+        public double WriteCapacityUnits
+        {
+            get { return this._writeCapacityUnits.GetValueOrDefault(); }
+            set { this._writeCapacityUnits = value; }
+        }
+
+        // Check to see if WriteCapacityUnits property is set
+        internal bool IsSetWriteCapacityUnits()
+        {
+            return this._writeCapacityUnits.HasValue; 
         }
 
     }

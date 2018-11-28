@@ -39,8 +39,10 @@ namespace Amazon.DynamoDBv2.Model
         private double? _capacityUnits;
         private Dictionary<string, Capacity> _globalSecondaryIndexes = new Dictionary<string, Capacity>();
         private Dictionary<string, Capacity> _localSecondaryIndexes = new Dictionary<string, Capacity>();
+        private double? _readCapacityUnits;
         private Capacity _table;
         private string _tableName;
+        private double? _writeCapacityUnits;
 
         /// <summary>
         /// Gets and sets the property CapacityUnits. 
@@ -97,6 +99,24 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReadCapacityUnits. 
+        /// <para>
+        /// The total number of read capacity units consumed by the operation.
+        /// </para>
+        /// </summary>
+        public double ReadCapacityUnits
+        {
+            get { return this._readCapacityUnits.GetValueOrDefault(); }
+            set { this._readCapacityUnits = value; }
+        }
+
+        // Check to see if ReadCapacityUnits property is set
+        internal bool IsSetReadCapacityUnits()
+        {
+            return this._readCapacityUnits.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Table. 
         /// <para>
         /// The amount of throughput consumed on the table affected by the operation.
@@ -130,6 +150,24 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableName()
         {
             return this._tableName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WriteCapacityUnits. 
+        /// <para>
+        /// The total number of write capacity units consumed by the operation.
+        /// </para>
+        /// </summary>
+        public double WriteCapacityUnits
+        {
+            get { return this._writeCapacityUnits.GetValueOrDefault(); }
+            set { this._writeCapacityUnits = value; }
+        }
+
+        // Check to see if WriteCapacityUnits property is set
+        internal bool IsSetWriteCapacityUnits()
+        {
+            return this._writeCapacityUnits.HasValue; 
         }
 
     }

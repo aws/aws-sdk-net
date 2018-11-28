@@ -70,6 +70,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.RegionName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ReplicaBillingModeSummary", targetDepth))
+                {
+                    var unmarshaller = BillingModeSummaryUnmarshaller.Instance;
+                    unmarshalledObject.ReplicaBillingModeSummary = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ReplicaGlobalSecondaryIndexSettings", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<ReplicaGlobalSecondaryIndexSettingsDescription, ReplicaGlobalSecondaryIndexSettingsDescriptionUnmarshaller>(ReplicaGlobalSecondaryIndexSettingsDescriptionUnmarshaller.Instance);

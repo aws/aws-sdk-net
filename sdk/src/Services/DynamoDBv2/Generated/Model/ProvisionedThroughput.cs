@@ -50,8 +50,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ProvisionedThroughput with the parameterized properties
         /// </summary>
-        /// <param name="readCapacityUnits">The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
-        /// <param name="writeCapacityUnits">The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.</param>
+        /// <param name="readCapacityUnits">The maximum number of strongly consistent reads consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</param>
+        /// <param name="writeCapacityUnits">The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>. If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.</param>
         public ProvisionedThroughput(long readCapacityUnits, long writeCapacityUnits)
         {
             _readCapacityUnits = readCapacityUnits;
@@ -64,6 +64,10 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
         /// returns a <code>ThrottlingException</code>. For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
         /// </para>
         /// </summary>
         public long ReadCapacityUnits
@@ -84,6 +88,10 @@ namespace Amazon.DynamoDBv2.Model
         /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
         /// For more information, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
         /// </para>
         /// </summary>
         public long WriteCapacityUnits

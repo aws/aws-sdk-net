@@ -64,6 +64,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("BillingMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BillingMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
