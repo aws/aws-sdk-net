@@ -71,6 +71,7 @@
     <ProjectReference Include="..\..\src\Services\CognitoIdentityProvider\AWSSDK.CognitoIdentityProvider.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CognitoSync\AWSSDK.CognitoSync.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Comprehend\AWSSDK.Comprehend.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ComprehendMedical\AWSSDK.ComprehendMedical.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ConfigService\AWSSDK.ConfigService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Connect\AWSSDK.Connect.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\CostAndUsageReport\AWSSDK.CostAndUsageReport.Net45.csproj"/>

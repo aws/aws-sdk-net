@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "The first release of Comprehend Medical includes two APIs, detectPHI and detectEntities. DetectPHI extracts PHI from your clinical text, and detectEntities extracts entities such as medication, medical conditions, or anatomy. DetectEntities also extracts attributes (e.g. dosage for medication) and identifies contextual traits (e.g. negation) for each entity.",
+  "generate-client-constructors": true
+}
