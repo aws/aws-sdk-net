@@ -56,6 +56,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>owner-id</code> - The ID of the AWS account that owns the internet gateway.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the
         /// resource. Use the tag key in the filter name and the tag value as the filter value.
         /// For example, to find all resources that have a tag with the key <code>Owner</code>

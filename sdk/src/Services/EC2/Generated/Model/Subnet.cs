@@ -34,12 +34,15 @@ namespace Amazon.EC2.Model
     {
         private bool? _assignIpv6AddressOnCreation;
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private int? _availableIpAddressCount;
         private string _cidrBlock;
         private bool? _defaultForAz;
         private List<SubnetIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<SubnetIpv6CidrBlockAssociation>();
         private bool? _mapPublicIpOnLaunch;
+        private string _ownerId;
         private SubnetState _state;
+        private string _subnetArn;
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
@@ -79,6 +82,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The AZ ID of the subnet.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>
@@ -173,6 +194,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the subnet.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The current state of the subnet.
@@ -188,6 +227,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the subnet.
+        /// </para>
+        /// </summary>
+        public string SubnetArn
+        {
+            get { return this._subnetArn; }
+            set { this._subnetArn = value; }
+        }
+
+        // Check to see if SubnetArn property is set
+        internal bool IsSetSubnetArn()
+        {
+            return this._subnetArn != null;
         }
 
         /// <summary>

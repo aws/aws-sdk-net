@@ -71,7 +71,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>dhcp-options-id</code> - The ID of a set of DHCP options.
+        ///  <code>dhcp-options-id</code> - The ID of a DHCP options set.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -80,6 +80,10 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>value</code> - The value for one of the options.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>owner-id</code> - The ID of the AWS account that owns the DHCP options set.
         /// </para>
         ///  </li> <li> 
         /// <para>

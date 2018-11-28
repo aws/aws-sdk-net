@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class RouteTable
     {
         private List<RouteTableAssociation> _associations = new List<RouteTableAssociation>();
+        private string _ownerId;
         private List<PropagatingVgw> _propagatingVgws = new List<PropagatingVgw>();
         private List<Route> _routes = new List<Route>();
         private string _routeTableId;
@@ -55,6 +56,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAssociations()
         {
             return this._associations != null && this._associations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the route table.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

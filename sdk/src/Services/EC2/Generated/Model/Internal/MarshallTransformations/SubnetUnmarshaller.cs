@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("availabilityZoneId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AvailabilityZoneId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("availableIpAddressCount", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
@@ -97,10 +103,22 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.MapPublicIpOnLaunch = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("subnetArn", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SubnetArn = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("subnetId", targetDepth))

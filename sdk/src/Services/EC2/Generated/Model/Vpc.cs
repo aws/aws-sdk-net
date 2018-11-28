@@ -38,6 +38,7 @@ namespace Amazon.EC2.Model
         private Tenancy _instanceTenancy;
         private List<VpcIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<VpcIpv6CidrBlockAssociation>();
         private bool? _isDefault;
+        private string _ownerId;
         private VpcState _state;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
@@ -149,6 +150,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetIsDefault()
         {
             return this._isDefault.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the VPC.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

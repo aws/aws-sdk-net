@@ -34,6 +34,7 @@ namespace Amazon.EC2.Model
     {
         private List<DhcpConfiguration> _dhcpConfigurations = new List<DhcpConfiguration>();
         private string _dhcpOptionsId;
+        private string _ownerId;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -70,6 +71,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDhcpOptionsId()
         {
             return this._dhcpOptionsId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the DHCP options set.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

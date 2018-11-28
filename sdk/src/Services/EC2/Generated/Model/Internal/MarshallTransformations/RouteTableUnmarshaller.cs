@@ -61,6 +61,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Associations.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("propagatingVgwSet/item", targetDepth))
                     {
                         var unmarshaller = PropagatingVgwUnmarshaller.Instance;

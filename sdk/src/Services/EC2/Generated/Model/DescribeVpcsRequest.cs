@@ -87,6 +87,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>owner-id</code> - The ID of the AWS account that owns the VPC.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>state</code> - The state of the VPC (<code>pending</code> | <code>available</code>).
         /// </para>
         ///  </li> <li> 

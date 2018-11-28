@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
         private List<NetworkAclEntry> _entries = new List<NetworkAclEntry>();
         private bool? _isDefault;
         private string _networkAclId;
+        private string _ownerId;
         private List<Tag> _tags = new List<Tag>();
         private string _vpcId;
 
@@ -109,6 +110,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkAclId()
         {
             return this._networkAclId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerId. 
+        /// <para>
+        /// The ID of the AWS account that owns the network ACL.
+        /// </para>
+        /// </summary>
+        public string OwnerId
+        {
+            get { return this._ownerId; }
+            set { this._ownerId = value; }
+        }
+
+        // Check to see if OwnerId property is set
+        internal bool IsSetOwnerId()
+        {
+            return this._ownerId != null;
         }
 
         /// <summary>

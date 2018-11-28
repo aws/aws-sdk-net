@@ -49,8 +49,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>availabilityZone</code> - The Availability Zone for the subnet. You can also
-        /// use <code>availability-zone</code> as the filter name.
+        ///  <code>availability-zone</code> - The Availability Zone for the subnet. You can also
+        /// use <code>availabilityZone</code> as the filter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>availability-zone-id</code> - The ID of the Availability Zone for the subnet.
+        /// You can also use <code>availabilityZoneId</code> as the filter name.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -59,15 +64,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cidrBlock</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify
+        ///  <code>cidr-block</code> - The IPv4 CIDR block of the subnet. The CIDR block you specify
         /// must exactly match the subnet's CIDR block for information to be returned for the
-        /// subnet. You can also use <code>cidr</code> or <code>cidr-block</code> as the filter
+        /// subnet. You can also use <code>cidr</code> or <code>cidrBlock</code> as the filter
         /// names.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>defaultForAz</code> - Indicates whether this is the default subnet for the
-        /// Availability Zone. You can also use <code>default-for-az</code> as the filter name.
+        ///  <code>default-for-az</code> - Indicates whether this is the default subnet for the
+        /// Availability Zone. You can also use <code>defaultForAz</code> as the filter name.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -86,7 +91,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>owner-id</code> - The ID of the AWS account that owns the subnet.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>state</code> - The state of the subnet (<code>pending</code> | <code>available</code>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>subnet-arn</code> - The Amazon Resource Name (ARN) of the subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>

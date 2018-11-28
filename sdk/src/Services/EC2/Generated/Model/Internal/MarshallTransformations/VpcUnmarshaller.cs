@@ -92,6 +92,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.IsDefault = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("state", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DhcpOptionsId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ownerId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;

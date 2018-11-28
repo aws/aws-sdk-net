@@ -72,6 +72,7 @@ namespace Amazon.EC2.Model
     public partial class CreateSubnetRequest : AmazonEC2Request
     {
         private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _cidrBlock;
         private string _ipv6CidrBlock;
         private string _vpcId;
@@ -113,6 +114,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetAvailabilityZone()
         {
             return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The AZ ID of the subnet.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>
