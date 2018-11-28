@@ -358,7 +358,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type on which your task is running.
+        /// The launch type on which your task is running. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -452,7 +453,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version on which your task is running. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// The platform version on which your task is running. A platform version is only specified
+        /// for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code>
+        /// platform version is used by default. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
         /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -585,7 +588,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property StoppedReason. 
         /// <para>
-        /// The reason the task was stopped.
+        /// The reason that the task was stopped.
         /// </para>
         /// </summary>
         public string StoppedReason
@@ -682,9 +685,9 @@ namespace Amazon.ECS.Model
         /// The version counter for the task. Every time a task experiences a change that triggers
         /// a CloudWatch event, the version counter is incremented. If you are replicating your
         /// Amazon ECS task state with CloudWatch Events, you can compare the version of a task
-        /// reported by the Amazon ECS APIs with the version reported in CloudWatch Events for
-        /// the task (inside the <code>detail</code> object) to verify that the version in your
-        /// event stream is current.
+        /// reported by the Amazon ECS API actionss with the version reported in CloudWatch Events
+        /// for the task (inside the <code>detail</code> object) to verify that the version in
+        /// your event stream is current.
         /// </para>
         /// </summary>
         public long Version

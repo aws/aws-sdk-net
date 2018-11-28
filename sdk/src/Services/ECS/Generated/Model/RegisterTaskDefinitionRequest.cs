@@ -219,7 +219,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If you are setting namespaced kernel parameters using <code>systemControls</code>
         /// for the containers in the task, the following will apply to your IPC resource namespace.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
         /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 

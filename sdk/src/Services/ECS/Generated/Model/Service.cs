@@ -36,6 +36,7 @@ namespace Amazon.ECS.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private DeploymentConfiguration _deploymentConfiguration;
+        private DeploymentController _deploymentController;
         private List<Deployment> _deployments = new List<Deployment>();
         private int? _desiredCount;
         private bool? _enableecsManagedTags;
@@ -58,6 +59,7 @@ namespace Amazon.ECS.Model
         private string _status;
         private List<Tag> _tags = new List<Tag>();
         private string _taskDefinition;
+        private List<TaskSet> _taskSets = new List<TaskSet>();
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
@@ -130,6 +132,24 @@ namespace Amazon.ECS.Model
         internal bool IsSetDeploymentConfiguration()
         {
             return this._deploymentConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentController. 
+        /// <para>
+        /// The deployment controller type the service is using.
+        /// </para>
+        /// </summary>
+        public DeploymentController DeploymentController
+        {
+            get { return this._deploymentController; }
+            set { this._deploymentController = value; }
+        }
+
+        // Check to see if DeploymentController property is set
+        internal bool IsSetDeploymentController()
+        {
+            return this._deploymentController != null;
         }
 
         /// <summary>
@@ -231,7 +251,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type on which your service is running.
+        /// The launch type on which your service is running. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -259,8 +280,8 @@ namespace Amazon.ECS.Model
         /// with the Fargate launch type) only support Application Load Balancers and Network
         /// Load Balancers. Classic Load Balancers are not supported. Also, when you create any
         /// target groups for these services, you must choose <code>ip</code> as the target type,
-        /// not <code>instance</code>, because tasks that use the <code>awsvpc</code> network
-        /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
+        /// not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are
+        /// associated with an elastic network interface, not an Amazon EC2 instance.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -351,7 +372,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version on which your task is running. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// The platform version on which your tasks in the service are running. A platform version
+        /// is only specified for tasks using the Fargate launch type. If one is not specified,
+        /// the <code>LATEST</code> platform version is used by default. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
         /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -427,7 +451,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SchedulingStrategy. 
         /// <para>
-        /// The scheduling strategy to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.
+        /// The scheduling strategy to use for the service. For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.
         /// </para>
         ///  
         /// <para>
@@ -578,6 +602,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetTaskDefinition()
         {
             return this._taskDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskSets. 
+        /// <para>
+        /// Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon
+        /// ECS task set includes details such as the desired number of tasks, how many tasks
+        /// are running, and whether the task set serves production traffic.
+        /// </para>
+        /// </summary>
+        public List<TaskSet> TaskSets
+        {
+            get { return this._taskSets; }
+            set { this._taskSets = value; }
+        }
+
+        // Check to see if TaskSets property is set
+        internal bool IsSetTaskSets()
+        {
+            return this._taskSets != null && this._taskSets.Count > 0; 
         }
 
     }

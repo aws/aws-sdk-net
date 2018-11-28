@@ -29,9 +29,23 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateService operation.
-    /// Modifies the desired count, deployment configuration, network configuration, or task
-    /// definition used in a service.
+    /// Modifies the parameters of a service.
     /// 
+    ///  
+    /// <para>
+    /// For services using the rolling update (<code>ECS</code>) deployment controller, the
+    /// desired count, deployment configuration, network configuration, or task definition
+    /// used can be updated.
+    /// </para>
+    ///  
+    /// <para>
+    /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
+    /// only the desired count, deployment configuration, and health check grace period can
+    /// be updated using this API. If the network configuration, platform version, or task
+    /// definition need to be updated, a new AWS CodeDeploy deployment should be created.
+    /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+    /// in the <i>AWS CodeDeploy API Reference</i>.
+    /// </para>
     ///  
     /// <para>
     /// You can add to or subtract from the number of instantiations of a task definition
@@ -232,10 +246,10 @@ namespace Amazon.ECS.Model
         /// unhealthy Elastic Load Balancing target health checks after a task has first started.
         /// This is only valid if your service is configured to use a load balancer. If your service's
         /// tasks take a while to start and respond to Elastic Load Balancing health checks, you
-        /// can specify a health check grace period of up to 1,800 seconds during which the ECS
-        /// service scheduler ignores the Elastic Load Balancing health check status. This grace
-        /// period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping
-        /// them before they have time to come up.
+        /// can specify a health check grace period of up to 1,800 seconds. During that time,
+        /// the ECS service scheduler ignores the Elastic Load Balancing health check status.
+        /// This grace period can prevent the ECS service scheduler from marking tasks as unhealthy
+        /// and stopping them before they have time to come up.
         /// </para>
         /// </summary>
         public int HealthCheckGracePeriodSeconds
@@ -283,7 +297,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version that your service should run.
+        /// The platform version on which your tasks in the service are running. A platform version
+        /// is only specified for tasks using the Fargate launch type. If one is not specified,
+        /// the <code>LATEST</code> platform version is used by default. For more information,
+        /// see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+        /// Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public string PlatformVersion

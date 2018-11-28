@@ -68,9 +68,9 @@ namespace Amazon.ECS.Model
     /// <para>
     /// The <code>maximumPercent</code> parameter represents an upper limit on the number
     /// of running tasks during task replacement, which enables you to define the replacement
-    /// batch size. For example, if <code>desiredCount</code> of four tasks, a maximum of
-    /// 200% starts four new tasks before stopping the four tasks to be drained (provided
-    /// that the cluster resources required to do this are available). If the maximum is 100%,
+    /// batch size. For example, if <code>desiredCount</code> is four tasks, a maximum of
+    /// 200% starts four new tasks before stopping the four tasks to be drained, provided
+    /// that the cluster resources required to do this are available. If the maximum is 100%,
     /// then replacement tasks can't start until the draining tasks have stopped.
     /// </para>
     ///  </li> </ul> 

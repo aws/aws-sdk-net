@@ -58,7 +58,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SourceContainer. 
         /// <para>
-        /// The name of another container within the same task definition to mount volumes from.
+        /// The name of another container within the same task definition from which to mount
+        /// volumes.
         /// </para>
         /// </summary>
         public string SourceContainer

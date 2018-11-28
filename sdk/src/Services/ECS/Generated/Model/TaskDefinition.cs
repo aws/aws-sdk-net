@@ -199,7 +199,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// If you are setting namespaced kernel parameters using <code>systemControls</code>
         /// for the containers in the task, the following will apply to your IPC resource namespace.
-        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguidetask_definition_parameters.html">System
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html">System
         /// Controls</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  <ul> <li> 
@@ -383,7 +383,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlacementConstraints. 
         /// <para>
         /// An array of placement constraint objects to use for tasks. This field is not valid
-        /// if using the Fargate launch type for your task.
+        /// if you are using the Fargate launch type for your task.
         /// </para>
         /// </summary>
         public List<TaskDefinitionPlacementConstraint> PlacementConstraints
@@ -402,7 +402,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property RequiresAttributes. 
         /// <para>
         /// The container instance attributes required by your task. This field is not valid if
-        /// using the Fargate launch type for your task.
+        /// you are using the Fargate launch type for your task.
         /// </para>
         /// </summary>
         public List<Attribute> RequiresAttributes
@@ -420,7 +420,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The launch type the task is using.
+        /// The launch type that the task is using.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities
@@ -440,9 +440,9 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The revision of the task in a particular family. The revision is a version number
         /// of a task definition in a family. When you register a task definition for the first
-        /// time, the revision is <code>1</code>. Each time you register a new revision of a task
-        /// definition in the same family, the revision value always increases by one (even if
-        /// you have deregistered previous revisions in this family).
+        /// time, the revision is <code>1</code>. Each time that you register a new revision of
+        /// a task definition in the same family, the revision value always increases by one,
+        /// even if you have deregistered previous revisions in this family.
         /// </para>
         /// </summary>
         public int Revision

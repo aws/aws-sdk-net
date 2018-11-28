@@ -39,8 +39,8 @@ namespace Amazon.ECS.Model
     /// <para>
     /// You cannot use an <code>INACTIVE</code> task definition to run new tasks or create
     /// new services, and you cannot update an existing service to reference an <code>INACTIVE</code>
-    /// task definition (although there may be up to a 10-minute window following deregistration
-    /// where these restrictions have not yet taken effect).
+    /// task definition. However, there may be up to a 10-minute window following deregistration
+    /// where these restrictions have not yet taken effect.
     /// </para>
     ///  <note> 
     /// <para>

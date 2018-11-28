@@ -32,6 +32,21 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
+    /// If the service is using the <code>ECS</code> deployment controller, you are limited
+    /// to one load balancer or target group.
+    /// </para>
+    ///  
+    /// <para>
+    /// If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service
+    /// is required to use either an Application Load Balancer or Network Load Balancer. When
+    /// you are creating an AWS CodeDeploy deployment group, you specify two target groups
+    /// (referred to as a <code>targetGroupPair</code>). Each target group binds to a separate
+    /// task set in the deployment. The load balancer can also have up to two listeners, a
+    /// required listener for production traffic and an optional listener that allows you
+    /// to test new revisions of the service before routing production traffic to it.
+    /// </para>
+    ///  
+    /// <para>
     /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
     /// with the Fargate launch type) only support Application Load Balancers and Network
     /// Load Balancers. Classic Load Balancers are not supported. Also, when you create any
@@ -107,8 +122,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TargetGroupArn. 
         /// <para>
-        /// The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated
-        /// with a service.
+        /// The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group or
+        /// groups associated with a service. For services using the <code>ECS</code> deployment
+        /// controller, you are limited to one target group. For services using the <code>CODE_DEPLOY</code>
+        /// deployment controller, you are required to define two target groups for the load balancer.
         /// </para>
         ///  <important> 
         /// <para>

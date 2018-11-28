@@ -387,6 +387,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type DeploymentControllerType.
+    /// </summary>
+    public class DeploymentControllerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CODE_DEPLOY for DeploymentControllerType
+        /// </summary>
+        public static readonly DeploymentControllerType CODE_DEPLOY = new DeploymentControllerType("CODE_DEPLOY");
+        /// <summary>
+        /// Constant ECS for DeploymentControllerType
+        /// </summary>
+        public static readonly DeploymentControllerType ECS = new DeploymentControllerType("ECS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeploymentControllerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeploymentControllerType FindValue(string value)
+        {
+            return FindValue<DeploymentControllerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeploymentControllerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DesiredStatus.
     /// </summary>
     public class DesiredStatus : ConstantClass
@@ -985,6 +1035,52 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ScaleUnit.
+    /// </summary>
+    public class ScaleUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PERCENT for ScaleUnit
+        /// </summary>
+        public static readonly ScaleUnit PERCENT = new ScaleUnit("PERCENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScaleUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScaleUnit FindValue(string value)
+        {
+            return FindValue<ScaleUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScaleUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SchedulingStrategy.
     /// </summary>
     public class SchedulingStrategy : ConstantClass
@@ -1228,6 +1324,56 @@ namespace Amazon.ECS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StabilityStatus.
+    /// </summary>
+    public class StabilityStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STABILIZING for StabilityStatus
+        /// </summary>
+        public static readonly StabilityStatus STABILIZING = new StabilityStatus("STABILIZING");
+        /// <summary>
+        /// Constant STEADY_STATE for StabilityStatus
+        /// </summary>
+        public static readonly StabilityStatus STEADY_STATE = new StabilityStatus("STEADY_STATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StabilityStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StabilityStatus FindValue(string value)
+        {
+            return FindValue<StabilityStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StabilityStatus(string value)
         {
             return FindValue(value);
         }

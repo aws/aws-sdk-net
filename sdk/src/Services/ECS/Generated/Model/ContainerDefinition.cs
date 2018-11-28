@@ -147,7 +147,7 @@ namespace Amazon.ECS.Model
         /// <para>
         ///  <b>Agent versions less than or equal to 1.1.0:</b> Null and zero CPU values are passed
         /// to Docker as 0, which Docker then converts to 1,024 CPU shares. CPU values of 1 are
-        /// passed to Docker as 1, which the Linux kernel converts to 2 CPU shares.
+        /// passed to Docker as 1, which the Linux kernel converts to two CPU shares.
         /// </para>
         ///  </li> <li> 
         /// <para>

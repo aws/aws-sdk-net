@@ -88,6 +88,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("deploymentController", targetDepth))
+                {
+                    var unmarshaller = DeploymentControllerUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentController = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("deployments", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Deployment, DeploymentUnmarshaller>(DeploymentUnmarshaller.Instance);
@@ -218,6 +224,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TaskDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("taskSets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TaskSet, TaskSetUnmarshaller>(TaskSetUnmarshaller.Instance);
+                    unmarshalledObject.TaskSets = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

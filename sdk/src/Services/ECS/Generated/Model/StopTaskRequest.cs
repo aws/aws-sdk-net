@@ -35,10 +35,10 @@ namespace Amazon.ECS.Model
     /// <para>
     /// When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code>
     /// is issued to the containers running in the task. This results in a <code>SIGTERM</code>
-    /// and a default 30-second timeout, after which <code>SIGKILL</code> is sent and the
-    /// containers are forcibly stopped. If the container handles the <code>SIGTERM</code>
-    /// gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code>
-    /// is sent.
+    /// value and a default 30-second timeout, after which the <code>SIGKILL</code> value
+    /// is sent and the containers are forcibly stopped. If the container handles the <code>SIGTERM</code>
+    /// value gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code>
+    /// value is sent.
     /// </para>
     ///  <note> 
     /// <para>

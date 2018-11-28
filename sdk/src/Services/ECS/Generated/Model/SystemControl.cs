@@ -63,7 +63,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespaced kernel parameter to set a <code>value</code> for.
+        /// The namespaced kernel parameter for which to set a <code>value</code>.
         /// </para>
         /// </summary>
         public string Namespace
