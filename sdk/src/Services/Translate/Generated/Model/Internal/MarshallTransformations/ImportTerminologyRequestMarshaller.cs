@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TranslateText Request Marshaller
+    /// ImportTerminology Request Marshaller
     /// </summary>       
-    public class TranslateTextRequestMarshaller : IMarshaller<IRequest, TranslateTextRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ImportTerminologyRequestMarshaller : IMarshaller<IRequest, ImportTerminologyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((TranslateTextRequest)input);
+            return this.Marshall((ImportTerminologyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(TranslateTextRequest publicRequest)
+        public IRequest Marshall(ImportTerminologyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Translate");
-            string target = "AWSShineFrontendService_20170701.TranslateText";
+            string target = "AWSShineFrontendService_20170701.ImportTerminology";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,33 +67,44 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSourceLanguageCode())
+                if(publicRequest.IsSetDescription())
                 {
-                    context.Writer.WritePropertyName("SourceLanguageCode");
-                    context.Writer.Write(publicRequest.SourceLanguageCode);
+                    context.Writer.WritePropertyName("Description");
+                    context.Writer.Write(publicRequest.Description);
                 }
 
-                if(publicRequest.IsSetTargetLanguageCode())
+                if(publicRequest.IsSetEncryptionKey())
                 {
-                    context.Writer.WritePropertyName("TargetLanguageCode");
-                    context.Writer.Write(publicRequest.TargetLanguageCode);
+                    context.Writer.WritePropertyName("EncryptionKey");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EncryptionKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EncryptionKey, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetTerminologyNames())
+                if(publicRequest.IsSetMergeStrategy())
                 {
-                    context.Writer.WritePropertyName("TerminologyNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTerminologyNamesListValue in publicRequest.TerminologyNames)
-                    {
-                            context.Writer.Write(publicRequestTerminologyNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("MergeStrategy");
+                    context.Writer.Write(publicRequest.MergeStrategy);
                 }
 
-                if(publicRequest.IsSetText())
+                if(publicRequest.IsSetName())
                 {
-                    context.Writer.WritePropertyName("Text");
-                    context.Writer.Write(publicRequest.Text);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetTerminologyData())
+                {
+                    context.Writer.WritePropertyName("TerminologyData");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TerminologyDataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TerminologyData, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
         
@@ -105,9 +116,9 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static TranslateTextRequestMarshaller _instance = new TranslateTextRequestMarshaller();        
+        private static ImportTerminologyRequestMarshaller _instance = new ImportTerminologyRequestMarshaller();        
 
-        internal static TranslateTextRequestMarshaller GetInstance()
+        internal static ImportTerminologyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +126,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TranslateTextRequestMarshaller Instance
+        public static ImportTerminologyRequestMarshaller Instance
         {
             get
             {

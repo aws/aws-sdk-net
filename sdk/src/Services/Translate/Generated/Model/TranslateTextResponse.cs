@@ -32,14 +32,34 @@ namespace Amazon.Translate.Model
     /// </summary>
     public partial class TranslateTextResponse : AmazonWebServiceResponse
     {
+        private List<AppliedTerminology> _appliedTerminologies = new List<AppliedTerminology>();
         private string _sourceLanguageCode;
         private string _targetLanguageCode;
         private string _translatedText;
 
         /// <summary>
+        /// Gets and sets the property AppliedTerminologies. 
+        /// <para>
+        /// The names of the custom terminologies applied to the input text by Amazon Translate
+        /// for the translated text response.
+        /// </para>
+        /// </summary>
+        public List<AppliedTerminology> AppliedTerminologies
+        {
+            get { return this._appliedTerminologies; }
+            set { this._appliedTerminologies = value; }
+        }
+
+        // Check to see if AppliedTerminologies property is set
+        internal bool IsSetAppliedTerminologies()
+        {
+            return this._appliedTerminologies != null && this._appliedTerminologies.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// The language code for the language of the input text. 
+        /// The language code for the language of the source text. 
         /// </para>
         /// </summary>
         public string SourceLanguageCode
@@ -57,7 +77,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TargetLanguageCode. 
         /// <para>
-        /// The language code for the language of the translated text. 
+        /// The language code for the language of the target text. 
         /// </para>
         /// </summary>
         public string TargetLanguageCode
@@ -75,7 +95,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TranslatedText. 
         /// <para>
-        /// The text translated into the target language.
+        /// The the translated text. The maximum length of this text is 5kb.
         /// </para>
         /// </summary>
         public string TranslatedText

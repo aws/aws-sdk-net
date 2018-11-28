@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TranslateText operation
+    /// Response Unmarshaller for ListTerminologies operation
     /// </summary>  
-    public class TranslateTextResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTerminologiesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,34 +45,22 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            TranslateTextResponse response = new TranslateTextResponse();
+            ListTerminologiesResponse response = new ListTerminologiesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AppliedTerminologies", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<AppliedTerminology, AppliedTerminologyUnmarshaller>(AppliedTerminologyUnmarshaller.Instance);
-                    response.AppliedTerminologies = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SourceLanguageCode", targetDepth))
+                if (context.TestExpression("NextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceLanguageCode = unmarshaller.Unmarshall(context);
+                    response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TargetLanguageCode", targetDepth))
+                if (context.TestExpression("TerminologyPropertiesList", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TargetLanguageCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TranslatedText", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.TranslatedText = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<TerminologyProperties, TerminologyPropertiesUnmarshaller>(TerminologyPropertiesUnmarshaller.Instance);
+                    response.TerminologyPropertiesList = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,44 +78,24 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
-            if (errorResponse.Code != null && errorResponse.Code.Equals("DetectedLanguageLowConfidenceException"))
-            {
-                return new DetectedLanguageLowConfidenceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
             {
                 return new InternalServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
             {
-                return new InvalidRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-            {
-                return new ResourceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
-            {
-                return new ServiceUnavailableException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TextSizeLimitExceededException"))
-            {
-                return new TextSizeLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidParameterValueException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestsException"))
             {
                 return new TooManyRequestsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedLanguagePairException"))
-            {
-                return new UnsupportedLanguagePairException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonTranslateException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static TranslateTextResponseUnmarshaller _instance = new TranslateTextResponseUnmarshaller();        
+        private static ListTerminologiesResponseUnmarshaller _instance = new ListTerminologiesResponseUnmarshaller();        
 
-        internal static TranslateTextResponseUnmarshaller GetInstance()
+        internal static ListTerminologiesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -135,7 +103,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TranslateTextResponseUnmarshaller Instance
+        public static ListTerminologiesResponseUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TranslateText Request Marshaller
+    /// DeleteTerminology Request Marshaller
     /// </summary>       
-    public class TranslateTextRequestMarshaller : IMarshaller<IRequest, TranslateTextRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteTerminologyRequestMarshaller : IMarshaller<IRequest, DeleteTerminologyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((TranslateTextRequest)input);
+            return this.Marshall((DeleteTerminologyRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(TranslateTextRequest publicRequest)
+        public IRequest Marshall(DeleteTerminologyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Translate");
-            string target = "AWSShineFrontendService_20170701.TranslateText";
+            string target = "AWSShineFrontendService_20170701.DeleteTerminology";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,33 +67,10 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetSourceLanguageCode())
+                if(publicRequest.IsSetName())
                 {
-                    context.Writer.WritePropertyName("SourceLanguageCode");
-                    context.Writer.Write(publicRequest.SourceLanguageCode);
-                }
-
-                if(publicRequest.IsSetTargetLanguageCode())
-                {
-                    context.Writer.WritePropertyName("TargetLanguageCode");
-                    context.Writer.Write(publicRequest.TargetLanguageCode);
-                }
-
-                if(publicRequest.IsSetTerminologyNames())
-                {
-                    context.Writer.WritePropertyName("TerminologyNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTerminologyNamesListValue in publicRequest.TerminologyNames)
-                    {
-                            context.Writer.Write(publicRequestTerminologyNamesListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetText())
-                {
-                    context.Writer.WritePropertyName("Text");
-                    context.Writer.Write(publicRequest.Text);
+                    context.Writer.WritePropertyName("Name");
+                    context.Writer.Write(publicRequest.Name);
                 }
 
         
@@ -105,9 +82,9 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static TranslateTextRequestMarshaller _instance = new TranslateTextRequestMarshaller();        
+        private static DeleteTerminologyRequestMarshaller _instance = new DeleteTerminologyRequestMarshaller();        
 
-        internal static TranslateTextRequestMarshaller GetInstance()
+        internal static DeleteTerminologyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -115,7 +92,7 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TranslateTextRequestMarshaller Instance
+        public static DeleteTerminologyRequestMarshaller Instance
         {
             get
             {

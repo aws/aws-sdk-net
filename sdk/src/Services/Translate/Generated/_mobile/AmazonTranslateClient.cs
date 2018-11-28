@@ -37,8 +37,7 @@ namespace Amazon.Translate
     /// <summary>
     /// Implementation for accessing Translate
     ///
-    /// Provides translation between English and one of six languages, or between one of the
-    /// six languages and English.
+    /// Provides translation between one source language and another of the same set of languages.
     /// </summary>
     public partial class AmazonTranslateClient : AmazonServiceClient, IAmazonTranslate
     {
@@ -242,6 +241,134 @@ namespace Amazon.Translate
 
         #endregion
 
+        
+        #region  DeleteTerminology
+
+        internal virtual DeleteTerminologyResponse DeleteTerminology(DeleteTerminologyRequest request)
+        {
+            var marshaller = DeleteTerminologyRequestMarshaller.Instance;
+            var unmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTerminologyRequest,DeleteTerminologyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTerminology operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTerminology operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteTerminology">REST API Reference for DeleteTerminology Operation</seealso>
+        public virtual Task<DeleteTerminologyResponse> DeleteTerminologyAsync(DeleteTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteTerminologyRequestMarshaller.Instance;
+            var unmarshaller = DeleteTerminologyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTerminologyRequest,DeleteTerminologyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetTerminology
+
+        internal virtual GetTerminologyResponse GetTerminology(GetTerminologyRequest request)
+        {
+            var marshaller = GetTerminologyRequestMarshaller.Instance;
+            var unmarshaller = GetTerminologyResponseUnmarshaller.Instance;
+
+            return Invoke<GetTerminologyRequest,GetTerminologyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetTerminology operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetTerminology operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetTerminology">REST API Reference for GetTerminology Operation</seealso>
+        public virtual Task<GetTerminologyResponse> GetTerminologyAsync(GetTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetTerminologyRequestMarshaller.Instance;
+            var unmarshaller = GetTerminologyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetTerminologyRequest,GetTerminologyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportTerminology
+
+        internal virtual ImportTerminologyResponse ImportTerminology(ImportTerminologyRequest request)
+        {
+            var marshaller = ImportTerminologyRequestMarshaller.Instance;
+            var unmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
+
+            return Invoke<ImportTerminologyRequest,ImportTerminologyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportTerminology operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportTerminology operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ImportTerminology">REST API Reference for ImportTerminology Operation</seealso>
+        public virtual Task<ImportTerminologyResponse> ImportTerminologyAsync(ImportTerminologyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ImportTerminologyRequestMarshaller.Instance;
+            var unmarshaller = ImportTerminologyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportTerminologyRequest,ImportTerminologyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTerminologies
+
+        internal virtual ListTerminologiesResponse ListTerminologies(ListTerminologiesRequest request)
+        {
+            var marshaller = ListTerminologiesRequestMarshaller.Instance;
+            var unmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
+
+            return Invoke<ListTerminologiesRequest,ListTerminologiesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTerminologies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTerminologies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListTerminologies">REST API Reference for ListTerminologies Operation</seealso>
+        public virtual Task<ListTerminologiesResponse> ListTerminologiesAsync(ListTerminologiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListTerminologiesRequestMarshaller.Instance;
+            var unmarshaller = ListTerminologiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTerminologiesRequest,ListTerminologiesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
         
         #region  TranslateText
 

@@ -29,9 +29,10 @@ namespace Amazon.Translate.Model
 {
     /// <summary>
     /// Container for the parameters to the TranslateText operation.
-    /// Translates input text from the source language to the target language. You can translate
-    /// between English (en) and one of the following languages, or between one of the following
-    /// languages and English.
+    /// Translates input text from the source language to the target language. It is not necessary
+    /// to use English (en) as either the source or the target language but not all language
+    /// combinations are supported by Amazon Translate. For more information, see <a href="http://docs.aws.amazon.com/translate/latest/dg/pairs.html">Supported
+    /// Language Pairs</a>.
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -43,6 +44,30 @@ namespace Amazon.Translate.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Chinese (Traditional) (zh-TW)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Czech (cs)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Danish (da)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Dutch (nl)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// English (en)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Finnish (fi)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// French (fr)
     /// </para>
     ///  </li> <li> 
@@ -51,11 +76,47 @@ namespace Amazon.Translate.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Hebrew (he)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Indonesian (id)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Italian (it)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Japanese (ja)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Korean (ko)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Polish (pl)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Portuguese (pt)
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Russian (ru)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Spanish (es)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Swedish (sv)
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Turkish (tr)
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -68,13 +129,14 @@ namespace Amazon.Translate.Model
     {
         private string _sourceLanguageCode;
         private string _targetLanguageCode;
+        private List<string> _terminologyNames = new List<string>();
         private string _text;
 
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// One of the supported language codes for the source text. If the <code>TargetLanguageCode</code>
-        /// is not "en", the <code>SourceLanguageCode</code> must be "en".
+        /// The language code for the language of the source text. The language must be a language
+        /// supported by Amazon Translate. 
         /// </para>
         ///  
         /// <para>
@@ -98,8 +160,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TargetLanguageCode. 
         /// <para>
-        /// One of the supported language codes for the target text. If the <code>SourceLanguageCode</code>
-        /// is not "en", the <code>TargetLanguageCode</code> must be "en".
+        /// The language code requested for the language of the target text. The language must
+        /// be a language supported by Amazon Translate.
         /// </para>
         /// </summary>
         public string TargetLanguageCode
@@ -115,9 +177,29 @@ namespace Amazon.Translate.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TerminologyNames. 
+        /// <para>
+        /// The TerminologyNames list that is taken as input to the TranslateText request. This
+        /// has a minimum length of 0 and a maximum length of 1.
+        /// </para>
+        /// </summary>
+        public List<string> TerminologyNames
+        {
+            get { return this._terminologyNames; }
+            set { this._terminologyNames = value; }
+        }
+
+        // Check to see if TerminologyNames property is set
+        internal bool IsSetTerminologyNames()
+        {
+            return this._terminologyNames != null && this._terminologyNames.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The text to translate.
+        /// The text to translate. The text string can be a maximum of 5,000 bytes long. Depending
+        /// on your character set, this may be fewer than 5,000 characters.
         /// </para>
         /// </summary>
         public string Text
