@@ -35,7 +35,10 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private string _meteringRecordId;
 
         /// <summary>
-        /// Gets and sets the property MeteringRecordId.
+        /// Gets and sets the property MeteringRecordId. 
+        /// <para>
+        /// Metering record id.
+        /// </para>
         /// </summary>
         public string MeteringRecordId
         {

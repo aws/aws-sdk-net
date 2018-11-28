@@ -21,6 +21,23 @@
     <max>1000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageRequest.Nonce</property>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageRequest.ProductCode</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageRequest.PublicKeyVersion</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSMarketplaceMetering.Model.RegisterUsageResponse.Signature</property>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSMarketplaceMetering.Model.ResolveCustomerRequest.RegistrationToken</property>
     <pattern>\S+</pattern>
   </property-value-rule>

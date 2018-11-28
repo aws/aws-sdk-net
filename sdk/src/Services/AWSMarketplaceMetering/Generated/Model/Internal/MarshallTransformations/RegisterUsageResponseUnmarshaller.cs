@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchMeterUsage operation
+    /// Response Unmarshaller for RegisterUsage operation
     /// </summary>  
-    public class BatchMeterUsageResponseUnmarshaller : JsonResponseUnmarshaller
+    public class RegisterUsageResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            BatchMeterUsageResponse response = new BatchMeterUsageResponse();
+            RegisterUsageResponse response = new RegisterUsageResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Results", targetDepth))
+                if (context.TestExpression("PublicKeyRotationTimestamp", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageRecordResult, UsageRecordResultUnmarshaller>(UsageRecordResultUnmarshaller.Instance);
-                    response.Results = unmarshaller.Unmarshall(context);
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    response.PublicKeyRotationTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("UnprocessedRecords", targetDepth))
+                if (context.TestExpression("Signature", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageRecord, UsageRecordUnmarshaller>(UsageRecordUnmarshaller.Instance);
-                    response.UnprocessedRecords = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Signature = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -78,6 +78,10 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("CustomerNotEntitledException"))
+            {
+                return new CustomerNotEntitledException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("DisabledApiException"))
             {
                 return new DisabledApiException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -86,32 +90,32 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
             {
                 return new InternalServiceErrorException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidCustomerIdentifierException"))
-            {
-                return new InvalidCustomerIdentifierException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidProductCodeException"))
             {
                 return new InvalidProductCodeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidUsageDimensionException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidPublicKeyVersionException"))
             {
-                return new InvalidUsageDimensionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new InvalidPublicKeyVersionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRegionException"))
+            {
+                return new InvalidRegionException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("PlatformNotSupportedException"))
+            {
+                return new PlatformNotSupportedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
             {
                 return new ThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TimestampOutOfBoundsException"))
-            {
-                return new TimestampOutOfBoundsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonAWSMarketplaceMeteringException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static BatchMeterUsageResponseUnmarshaller _instance = new BatchMeterUsageResponseUnmarshaller();        
+        private static RegisterUsageResponseUnmarshaller _instance = new RegisterUsageResponseUnmarshaller();        
 
-        internal static BatchMeterUsageResponseUnmarshaller GetInstance()
+        internal static RegisterUsageResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -119,7 +123,7 @@ namespace Amazon.AWSMarketplaceMetering.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchMeterUsageResponseUnmarshaller Instance
+        public static RegisterUsageResponseUnmarshaller Instance
         {
             get
             {
