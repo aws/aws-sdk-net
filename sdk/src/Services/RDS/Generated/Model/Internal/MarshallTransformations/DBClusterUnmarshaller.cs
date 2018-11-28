@@ -228,6 +228,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.HostedZoneId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HttpEndpointEnabled", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.HttpEndpointEnabled = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IAMDatabaseAuthenticationEnabled", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

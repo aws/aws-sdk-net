@@ -60,6 +60,7 @@ namespace Amazon.RDS.Model
         private string _engine;
         private string _engineMode;
         private string _engineVersion;
+        private string _globalClusterIdentifier;
         private string _kmsKeyId;
         private string _masterUsername;
         private string _masterUserPassword;
@@ -378,7 +379,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EngineMode. 
         /// <para>
         /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-        /// or <code>parallelquery</code>.
+        /// <code>parallelquery</code>, or <code>global</code>.
         /// </para>
         /// </summary>
         public string EngineMode
@@ -425,6 +426,25 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// <para>
+        ///  The global cluster ID of an Aurora cluster that becomes the primary cluster in the
+        /// new global database cluster. 
+        /// </para>
+        /// </summary>
+        public string GlobalClusterIdentifier
+        {
+            get { return this._globalClusterIdentifier; }
+            set { this._globalClusterIdentifier = value; }
+        }
+
+        // Check to see if GlobalClusterIdentifier property is set
+        internal bool IsSetGlobalClusterIdentifier()
+        {
+            return this._globalClusterIdentifier != null;
         }
 
         /// <summary>

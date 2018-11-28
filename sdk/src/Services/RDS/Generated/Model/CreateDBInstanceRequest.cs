@@ -1396,8 +1396,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Specifies if the DB instance is a Multi-AZ deployment. You can't set the AvailabilityZone
-        /// parameter if the MultiAZ parameter is set to true.
+        /// A value that specifies whether the DB instance is a Multi-AZ deployment. You can't
+        /// set the AvailabilityZone parameter if the MultiAZ parameter is set to true.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -1921,7 +1921,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of EC2 VPC security groups to associate with this DB instance.
+        /// A list of Amazon EC2 VPC security groups to associate with this DB instance.
         /// </para>
         ///  
         /// <para>

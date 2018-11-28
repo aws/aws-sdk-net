@@ -43,6 +43,7 @@ namespace Amazon.RDS.Model
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private bool? _deletionProtection;
+        private bool? _enableHttpEndpoint;
         private bool? _enableIAMDatabaseAuthentication;
         private string _engineVersion;
         private string _masterUserPassword;
@@ -234,6 +235,40 @@ namespace Amazon.RDS.Model
         internal bool IsSetDeletionProtection()
         {
             return this._deletionProtection.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableHttpEndpoint. <note> 
+        /// <para>
+        /// HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless
+        /// DB cluster. By default, the HTTP endpoint is disabled.
+        /// </para>
+        ///  
+        /// <para>
+        /// When enabled, the HTTP endpoint provides a connectionless web service API for running
+        /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
+        /// from inside the RDS console with the query editor.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool EnableHttpEndpoint
+        {
+            get { return this._enableHttpEndpoint.GetValueOrDefault(); }
+            set { this._enableHttpEndpoint = value; }
+        }
+
+        // Check to see if EnableHttpEndpoint property is set
+        internal bool IsSetEnableHttpEndpoint()
+        {
+            return this._enableHttpEndpoint.HasValue; 
         }
 
         /// <summary>

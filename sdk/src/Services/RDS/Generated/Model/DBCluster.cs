@@ -66,6 +66,7 @@ namespace Amazon.RDS.Model
         private string _engineMode;
         private string _engineVersion;
         private string _hostedZoneId;
+        private bool? _httpEndpointEnabled;
         private bool? _iamDatabaseAuthenticationEnabled;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
@@ -605,6 +606,40 @@ namespace Amazon.RDS.Model
         internal bool IsSetHostedZoneId()
         {
             return this._hostedZoneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpEndpointEnabled. <note> 
+        /// <para>
+        /// HTTP endpoint functionality is in beta for Aurora Serverless and is subject to change.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Value that is <code>true</code> if the HTTP endpoint for an Aurora Serverless DB cluster
+        /// is enabled and <code>false</code> otherwise.
+        /// </para>
+        ///  
+        /// <para>
+        /// When enabled, the HTTP endpoint provides a connectionless web service API for running
+        /// SQL queries on the Aurora Serverless DB cluster. You can also query your database
+        /// from inside the RDS console with the query editor.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        /// </summary>
+        public bool HttpEndpointEnabled
+        {
+            get { return this._httpEndpointEnabled.GetValueOrDefault(); }
+            set { this._httpEndpointEnabled = value; }
+        }
+
+        // Check to see if HttpEndpointEnabled property is set
+        internal bool IsSetHttpEndpointEnabled()
+        {
+            return this._httpEndpointEnabled.HasValue; 
         }
 
         /// <summary>
