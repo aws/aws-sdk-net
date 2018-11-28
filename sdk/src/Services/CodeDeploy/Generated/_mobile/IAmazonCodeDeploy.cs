@@ -211,6 +211,7 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use BatchGetDeploymentTargets instead.")]
         Task<BatchGetDeploymentInstancesResponse> BatchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -229,6 +230,23 @@ namespace Amazon.CodeDeploy
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">REST API Reference for BatchGetDeployments Operation</seealso>
         Task<BatchGetDeploymentsResponse> BatchGetDeploymentsAsync(BatchGetDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  BatchGetDeploymentTargets
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">REST API Reference for BatchGetDeploymentTargets Operation</seealso>
+        Task<BatchGetDeploymentTargetsResponse> BatchGetDeploymentTargetsAsync(BatchGetDeploymentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -517,7 +535,25 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetDeploymentTarget instead.")]
         Task<GetDeploymentInstanceResponse> GetDeploymentInstanceAsync(GetDeploymentInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDeploymentTarget
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeploymentTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentTarget operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget">REST API Reference for GetDeploymentTarget Operation</seealso>
+        Task<GetDeploymentTargetResponse> GetDeploymentTargetAsync(GetDeploymentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -649,6 +685,7 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use ListDeploymentTargets instead.")]
         Task<ListDeploymentInstancesResponse> ListDeploymentInstancesAsync(ListDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -667,6 +704,23 @@ namespace Amazon.CodeDeploy
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         Task<ListDeploymentsResponse> ListDeploymentsAsync(ListDeploymentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDeploymentTargets
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets">REST API Reference for ListDeploymentTargets Operation</seealso>
+        Task<ListDeploymentTargetsResponse> ListDeploymentTargetsAsync(ListDeploymentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -785,6 +839,7 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
+        [Obsolete("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
         Task<SkipWaitTimeForInstanceTerminationResponse> SkipWaitTimeForInstanceTerminationAsync(SkipWaitTimeForInstanceTerminationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

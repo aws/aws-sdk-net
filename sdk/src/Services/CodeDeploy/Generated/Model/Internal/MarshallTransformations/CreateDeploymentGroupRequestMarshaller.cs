@@ -167,6 +167,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEcsServices())
+                {
+                    context.Writer.WritePropertyName("ecsServices");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEcsServicesListValue in publicRequest.EcsServices)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ECSServiceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEcsServicesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLoadBalancerInfo())
                 {
                     context.Writer.WritePropertyName("loadBalancerInfo");

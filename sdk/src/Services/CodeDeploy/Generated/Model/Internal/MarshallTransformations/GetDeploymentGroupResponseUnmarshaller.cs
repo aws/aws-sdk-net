@@ -80,6 +80,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new ApplicationNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentConfigDoesNotExistException"))
+            {
+                return new DeploymentConfigDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentGroupDoesNotExistException"))
             {
                 return new DeploymentGroupDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

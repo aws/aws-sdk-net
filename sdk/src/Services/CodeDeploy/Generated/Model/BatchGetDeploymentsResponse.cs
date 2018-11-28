@@ -37,7 +37,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentsInfo. 
         /// <para>
-        /// Information about the deployments.
+        ///  Information about the deployments. 
         /// </para>
         /// </summary>
         public List<DeploymentInfo> DeploymentsInfo

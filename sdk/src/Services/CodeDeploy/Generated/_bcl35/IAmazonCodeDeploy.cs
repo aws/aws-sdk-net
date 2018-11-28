@@ -318,6 +318,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.BatchLimitExceededException">
         /// The maximum number of names or IDs allowed for this request (100) was exceeded.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
+        /// The deployment configuration does not exist with the applicable IAM user or AWS account.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
         /// </exception>
@@ -362,7 +365,17 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Gets information about one or more instance that are part of a deployment group.
+        /// <note> 
+        /// <para>
+        ///  This method works, but is considered deprecated. Use <code>BatchGetDeploymentTargets</code>
+        /// instead. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Returns an array of instances associated with a deployment. This method works with
+        /// EC2/On-premises and AWS Lambda compute platforms. The newer <code>BatchGetDeploymentTargets</code>
+        /// works with all compute platforms. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentInstances service method.</param>
         /// 
@@ -379,6 +392,10 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InstanceIdRequiredException">
         /// The instance ID was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
+        /// The computePlatform is invalid. The computePlatform should be <code>Lambda</code>
+        /// or <code>Server</code>.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
         /// At least one of the deployment IDs was specified in an invalid format.
         /// </exception>
@@ -386,6 +403,7 @@ namespace Amazon.CodeDeploy
         /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use BatchGetDeploymentTargets instead.")]
         BatchGetDeploymentInstancesResponse BatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request);
 
         /// <summary>
@@ -400,6 +418,7 @@ namespace Amazon.CodeDeploy
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetDeploymentInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use BatchGetDeploymentTargets instead.")]
         IAsyncResult BeginBatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -412,6 +431,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>Returns a  BatchGetDeploymentInstancesResult from CodeDeploy.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use BatchGetDeploymentTargets instead.")]
         BatchGetDeploymentInstancesResponse EndBatchGetDeploymentInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -462,6 +482,89 @@ namespace Amazon.CodeDeploy
         /// <returns>Returns a  BatchGetDeploymentsResult from CodeDeploy.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeployments">REST API Reference for BatchGetDeployments Operation</seealso>
         BatchGetDeploymentsResponse EndBatchGetDeployments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  BatchGetDeploymentTargets
+
+
+        /// <summary>
+        /// Returns an array of targets associated with a deployment. This method works with
+        /// all compute types and should be used instead of the deprecated <code>BatchGetDeploymentInstances</code>.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  The type of targets returned depends on the deployment's compute platform: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>EC2/On-premises</b> - Information about EC2 instance targets. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>AWS Lambda</b> - Information about Lambda functions targets. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon ECS</b> - Information about ECS service targets. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentTargets service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDeploymentTargets service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
+        /// The deployment does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
+        /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetDoesNotExistException">
+        /// The provided target ID does not belong to the attempted deployment.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetIdRequiredException">
+        /// A deployment target ID was not provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetListSizeExceededException">
+        /// The maximum number of targets that can be associated with an Amazon ECS or AWS Lambda
+        /// deployment was exceeded. The target list of both types of deployments must have exactly
+        /// one item. This exception does not apply to EC2/On-premises deployments.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
+        /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentTargetIdException">
+        /// The target ID provide was not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">REST API Reference for BatchGetDeploymentTargets Operation</seealso>
+        BatchGetDeploymentTargetsResponse BatchGetDeploymentTargets(BatchGetDeploymentTargetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentTargets operation on AmazonCodeDeployClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetDeploymentTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">REST API Reference for BatchGetDeploymentTargets Operation</seealso>
+        IAsyncResult BeginBatchGetDeploymentTargets(BatchGetDeploymentTargetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetDeploymentTargets.</param>
+        /// 
+        /// <returns>Returns a  BatchGetDeploymentTargetsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">REST API Reference for BatchGetDeploymentTargets Operation</seealso>
+        BatchGetDeploymentTargetsResponse EndBatchGetDeploymentTargets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -541,6 +644,12 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
         /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentStatusException">
+        /// The specified deployment status doesn't exist or cannot be determined.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentWaitTypeException">
+        /// The wait type is invalid.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.UnsupportedActionForDeploymentTypeException">
         /// A call was submitted that is not supported for the specified deployment type.
@@ -865,6 +974,10 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ECSServiceMappingLimitExceededException">
+        /// The Amazon ECS service is associated with more than one deployment groups. An ECS
+        /// service can only be associated with one deployment group.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAlarmConfigException">
         /// The format of the alarm configuration is invalid. Possible causes include:
         /// 
@@ -922,6 +1035,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagException">
         /// The tag was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidECSServiceException">
+        /// The Amazon ECS service identifier is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInputException">
         /// The specified input was specified in an invalid format.
         /// </exception>
@@ -940,6 +1056,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagException">
         /// The specified tag was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTargetGroupPairException">
+        /// A target group pair associated with this deployment is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTriggerConfigException">
         /// The trigger was specified in an invalid format.
         /// </exception>
@@ -952,6 +1071,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.TagSetListLimitExceededException">
         /// The number of tag groups included in the tag set list exceeded the maximum allowed
         /// limit of 3.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ThrottlingException">
+        /// An API function was called too frequently.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.TriggerTargetsLimitExceededException">
         /// The maximum allowed number of triggers was exceeded.
@@ -1421,6 +1543,10 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigNameRequiredException">
         /// The deployment configuration name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
+        /// The computePlatform is invalid. The computePlatform should be <code>Lambda</code>
+        /// or <code>Server</code>.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
@@ -1469,6 +1595,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.ApplicationNameRequiredException">
         /// The minimum number of required application names was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentConfigDoesNotExistException">
+        /// The deployment configuration does not exist with the applicable IAM user or AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
         /// The named deployment group does not exist with the applicable IAM user or AWS account.
@@ -1534,6 +1663,10 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InstanceIdRequiredException">
         /// The instance ID was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
+        /// The computePlatform is invalid. The computePlatform should be <code>Lambda</code>
+        /// or <code>Server</code>.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
         /// At least one of the deployment IDs was specified in an invalid format.
         /// </exception>
@@ -1541,6 +1674,7 @@ namespace Amazon.CodeDeploy
         /// The specified on-premises instance name was specified in an invalid format.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetDeploymentTarget instead.")]
         GetDeploymentInstanceResponse GetDeploymentInstance(GetDeploymentInstanceRequest request);
 
         /// <summary>
@@ -1555,6 +1689,7 @@ namespace Amazon.CodeDeploy
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeploymentInstance
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetDeploymentTarget instead.")]
         IAsyncResult BeginGetDeploymentInstance(GetDeploymentInstanceRequest request, AsyncCallback callback, object state);
 
 
@@ -1567,7 +1702,69 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>Returns a  GetDeploymentInstanceResult from CodeDeploy.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetDeploymentTarget instead.")]
         GetDeploymentInstanceResponse EndGetDeploymentInstance(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetDeploymentTarget
+
+
+        /// <summary>
+        /// Returns information about a deployment target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentTarget service method.</param>
+        /// 
+        /// <returns>The response from the GetDeploymentTarget service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
+        /// The deployment does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
+        /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetDoesNotExistException">
+        /// The provided target ID does not belong to the attempted deployment.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentTargetIdRequiredException">
+        /// A deployment target ID was not provided.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
+        /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentTargetIdException">
+        /// The target ID provide was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceNameException">
+        /// The specified on-premises instance name was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget">REST API Reference for GetDeploymentTarget Operation</seealso>
+        GetDeploymentTargetResponse GetDeploymentTarget(GetDeploymentTargetRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeploymentTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentTarget operation on AmazonCodeDeployClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeploymentTarget
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget">REST API Reference for GetDeploymentTarget Operation</seealso>
+        IAsyncResult BeginGetDeploymentTarget(GetDeploymentTargetRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeploymentTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeploymentTarget.</param>
+        /// 
+        /// <returns>Returns a  GetDeploymentTargetResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget">REST API Reference for GetDeploymentTarget Operation</seealso>
+        GetDeploymentTargetResponse EndGetDeploymentTarget(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1855,8 +2052,17 @@ namespace Amazon.CodeDeploy
 
 
         /// <summary>
-        /// Lists the instance for a deployment associated with the applicable IAM user or AWS
-        /// account.
+        /// <note> 
+        /// <para>
+        ///  The newer BatchGetDeploymentTargets should be used instead because it works with
+        /// all compute types. <code>ListDeploymentInstances</code> throws an exception if it
+        /// is used with a compute platform other than EC2/On-premises or AWS Lambda. 
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Lists the instance for a deployment associated with the applicable IAM user or AWS
+        /// account. 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeploymentInstances service method.</param>
         /// 
@@ -1869,6 +2075,10 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentNotStartedException">
         /// The specified deployment has not started.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
+        /// The computePlatform is invalid. The computePlatform should be <code>Lambda</code>
+        /// or <code>Server</code>.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
         /// At least one of the deployment IDs was specified in an invalid format.
@@ -1887,7 +2097,11 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
         /// The next token was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTargetFilterNameException">
+        /// The target filter name is invalid.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use ListDeploymentTargets instead.")]
         ListDeploymentInstancesResponse ListDeploymentInstances(ListDeploymentInstancesRequest request);
 
         /// <summary>
@@ -1902,6 +2116,7 @@ namespace Amazon.CodeDeploy
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeploymentInstances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use ListDeploymentTargets instead.")]
         IAsyncResult BeginListDeploymentInstances(ListDeploymentInstancesRequest request, AsyncCallback callback, object state);
 
 
@@ -1914,6 +2129,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>Returns a  ListDeploymentInstancesResult from CodeDeploy.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use ListDeploymentTargets instead.")]
         ListDeploymentInstancesResponse EndListDeploymentInstances(IAsyncResult asyncResult);
 
         #endregion
@@ -1983,6 +2199,72 @@ namespace Amazon.CodeDeploy
         /// <returns>Returns a  ListDeploymentsResult from CodeDeploy.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">REST API Reference for ListDeployments Operation</seealso>
         ListDeploymentsResponse EndListDeployments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDeploymentTargets
+
+
+        /// <summary>
+        /// Returns an array of target IDs that are associated a deployment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentTargets service method.</param>
+        /// 
+        /// <returns>The response from the ListDeploymentTargets service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
+        /// The deployment does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
+        /// At least one deployment ID must be specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentNotStartedException">
+        /// The specified deployment has not started.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentIdException">
+        /// At least one of the deployment IDs was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentInstanceTypeException">
+        /// An instance type was specified for an in-place deployment. Instance types are supported
+        /// for blue/green deployments only.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceStatusException">
+        /// The specified instance status does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInstanceTypeException">
+        /// An invalid instance type was specified for instances in a blue/green deployment. Valid
+        /// values include "Blue" for an original environment and "Green" for a replacement environment.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidNextTokenException">
+        /// The next token was specified in an invalid format.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets">REST API Reference for ListDeploymentTargets Operation</seealso>
+        ListDeploymentTargetsResponse ListDeploymentTargets(ListDeploymentTargetsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentTargets operation on AmazonCodeDeployClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeploymentTargets
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets">REST API Reference for ListDeploymentTargets Operation</seealso>
+        IAsyncResult BeginListDeploymentTargets(ListDeploymentTargetsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeploymentTargets.</param>
+        /// 
+        /// <returns>Returns a  ListDeploymentTargetsResult from CodeDeploy.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets">REST API Reference for ListDeploymentTargets Operation</seealso>
+        ListDeploymentTargetsResponse EndListDeploymentTargets(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2384,6 +2666,7 @@ namespace Amazon.CodeDeploy
         /// A call was submitted that is not supported for the specified deployment type.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
+        [Obsolete("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
         SkipWaitTimeForInstanceTerminationResponse SkipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request);
 
         /// <summary>
@@ -2398,6 +2681,7 @@ namespace Amazon.CodeDeploy
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSkipWaitTimeForInstanceTermination
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
+        [Obsolete("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
         IAsyncResult BeginSkipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request, AsyncCallback callback, object state);
 
 
@@ -2410,6 +2694,7 @@ namespace Amazon.CodeDeploy
         /// 
         /// <returns>Returns a  SkipWaitTimeForInstanceTerminationResult from CodeDeploy.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
+        [Obsolete("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
         SkipWaitTimeForInstanceTerminationResponse EndSkipWaitTimeForInstanceTermination(IAsyncResult asyncResult);
 
         #endregion
@@ -2428,6 +2713,9 @@ namespace Amazon.CodeDeploy
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
         /// The deployment does not exist with the applicable IAM user or AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
+        /// The named deployment group does not exist with the applicable IAM user or AWS account.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2550,6 +2838,10 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupNameRequiredException">
         /// The deployment group name was not specified.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ECSServiceMappingLimitExceededException">
+        /// The Amazon ECS service is associated with more than one deployment groups. An ECS
+        /// service can only be associated with one deployment group.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAlarmConfigException">
         /// The format of the alarm configuration is invalid. Possible causes include:
         /// 
@@ -2607,6 +2899,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidEC2TagException">
         /// The tag was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidECSServiceException">
+        /// The Amazon ECS service identifier is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidInputException">
         /// The specified input was specified in an invalid format.
         /// </exception>
@@ -2625,6 +2920,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagException">
         /// The specified tag was specified in an invalid format.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidTargetGroupPairException">
+        /// A target group pair associated with this deployment is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTriggerConfigException">
         /// The trigger was specified in an invalid format.
         /// </exception>
@@ -2634,6 +2932,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.TagSetListLimitExceededException">
         /// The number of tag groups included in the tag set list exceeded the maximum allowed
         /// limit of 3.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ThrottlingException">
+        /// An API function was called too frequently.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.TriggerTargetsLimitExceededException">
         /// The maximum allowed number of triggers was exceeded.

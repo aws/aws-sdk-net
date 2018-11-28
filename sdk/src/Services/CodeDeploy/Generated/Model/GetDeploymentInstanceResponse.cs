@@ -37,7 +37,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceSummary. 
         /// <para>
-        /// Information about the instance.
+        ///  Information about the instance. 
         /// </para>
         /// </summary>
         public InstanceSummary InstanceSummary

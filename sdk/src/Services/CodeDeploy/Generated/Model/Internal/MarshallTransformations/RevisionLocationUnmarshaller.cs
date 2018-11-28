@@ -64,6 +64,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("appSpecContent", targetDepth))
+                {
+                    var unmarshaller = AppSpecContentUnmarshaller.Instance;
+                    unmarshalledObject.AppSpecContent = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("gitHubLocation", targetDepth))
                 {
                     var unmarshaller = GitHubLocationUnmarshaller.Instance;

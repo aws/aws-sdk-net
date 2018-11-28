@@ -90,6 +90,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new DeploymentNotStartedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidComputePlatformException"))
+            {
+                return new InvalidComputePlatformException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentIdException"))
             {
                 return new InvalidDeploymentIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -109,6 +113,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
             {
                 return new InvalidNextTokenException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTargetFilterNameException"))
+            {
+                return new InvalidTargetFilterNameException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonCodeDeployException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }

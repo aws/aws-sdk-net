@@ -204,6 +204,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeDeploy")]
+        public void BatchGetDeploymentTargetsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<BatchGetDeploymentTargetsRequest>();
+            var marshaller = new BatchGetDeploymentTargetsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<BatchGetDeploymentTargetsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchGetDeploymentTargets").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = BatchGetDeploymentTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as BatchGetDeploymentTargetsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
         public void BatchGetOnPremisesInstancesMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<BatchGetOnPremisesInstancesRequest>();
@@ -645,6 +674,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("CodeDeploy")]
+        public void GetDeploymentTargetMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetDeploymentTargetRequest>();
+            var marshaller = new GetDeploymentTargetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<GetDeploymentTargetRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetDeploymentTarget").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetDeploymentTargetResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetDeploymentTargetResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
         public void GetOnPremisesInstanceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetOnPremisesInstanceRequest>();
@@ -840,6 +898,35 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
             var response = ListDeploymentsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListDeploymentsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("CodeDeploy")]
+        public void ListDeploymentTargetsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDeploymentTargetsRequest>();
+            var marshaller = new ListDeploymentTargetsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);                        
+            Comparer.CompareObjectToJson<ListDeploymentTargetsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListDeploymentTargets").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListDeploymentTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListDeploymentTargetsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 

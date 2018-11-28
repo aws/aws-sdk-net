@@ -37,7 +37,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceInfo. 
         /// <para>
-        /// Information about the on-premises instance.
+        ///  Information about the on-premises instance. 
         /// </para>
         /// </summary>
         public InstanceInfo InstanceInfo

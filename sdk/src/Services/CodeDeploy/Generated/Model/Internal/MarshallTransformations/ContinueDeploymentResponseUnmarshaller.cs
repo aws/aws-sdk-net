@@ -81,6 +81,14 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new InvalidDeploymentIdException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentStatusException"))
+            {
+                return new InvalidDeploymentStatusException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeploymentWaitTypeException"))
+            {
+                return new InvalidDeploymentWaitTypeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedActionForDeploymentTypeException"))
             {
                 return new UnsupportedActionForDeploymentTypeException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

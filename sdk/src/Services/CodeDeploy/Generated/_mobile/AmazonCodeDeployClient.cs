@@ -466,6 +466,7 @@ namespace Amazon.CodeDeploy
         
         #region  BatchGetDeploymentInstances
 
+        [Obsolete("This operation is deprecated, use BatchGetDeploymentTargets instead.")]
         internal virtual BatchGetDeploymentInstancesResponse BatchGetDeploymentInstances(BatchGetDeploymentInstancesRequest request)
         {
             var marshaller = BatchGetDeploymentInstancesRequestMarshaller.Instance;
@@ -485,6 +486,7 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentInstances">REST API Reference for BatchGetDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use BatchGetDeploymentTargets instead.")]
         public virtual Task<BatchGetDeploymentInstancesResponse> BatchGetDeploymentInstancesAsync(BatchGetDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = BatchGetDeploymentInstancesRequestMarshaller.Instance;
@@ -523,6 +525,38 @@ namespace Amazon.CodeDeploy
             var unmarshaller = BatchGetDeploymentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchGetDeploymentsRequest,BatchGetDeploymentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetDeploymentTargets
+
+        internal virtual BatchGetDeploymentTargetsResponse BatchGetDeploymentTargets(BatchGetDeploymentTargetsRequest request)
+        {
+            var marshaller = BatchGetDeploymentTargetsRequestMarshaller.Instance;
+            var unmarshaller = BatchGetDeploymentTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDeploymentTargetsRequest,BatchGetDeploymentTargetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDeploymentTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">REST API Reference for BatchGetDeploymentTargets Operation</seealso>
+        public virtual Task<BatchGetDeploymentTargetsResponse> BatchGetDeploymentTargetsAsync(BatchGetDeploymentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = BatchGetDeploymentTargetsRequestMarshaller.Instance;
+            var unmarshaller = BatchGetDeploymentTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetDeploymentTargetsRequest,BatchGetDeploymentTargetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1042,6 +1076,7 @@ namespace Amazon.CodeDeploy
         
         #region  GetDeploymentInstance
 
+        [Obsolete("This operation is deprecated, use GetDeploymentTarget instead.")]
         internal virtual GetDeploymentInstanceResponse GetDeploymentInstance(GetDeploymentInstanceRequest request)
         {
             var marshaller = GetDeploymentInstanceRequestMarshaller.Instance;
@@ -1061,12 +1096,45 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentInstance">REST API Reference for GetDeploymentInstance Operation</seealso>
+        [Obsolete("This operation is deprecated, use GetDeploymentTarget instead.")]
         public virtual Task<GetDeploymentInstanceResponse> GetDeploymentInstanceAsync(GetDeploymentInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = GetDeploymentInstanceRequestMarshaller.Instance;
             var unmarshaller = GetDeploymentInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDeploymentInstanceRequest,GetDeploymentInstanceResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDeploymentTarget
+
+        internal virtual GetDeploymentTargetResponse GetDeploymentTarget(GetDeploymentTargetRequest request)
+        {
+            var marshaller = GetDeploymentTargetRequestMarshaller.Instance;
+            var unmarshaller = GetDeploymentTargetResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeploymentTargetRequest,GetDeploymentTargetResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeploymentTarget operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeploymentTarget operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeploymentTarget">REST API Reference for GetDeploymentTarget Operation</seealso>
+        public virtual Task<GetDeploymentTargetResponse> GetDeploymentTargetAsync(GetDeploymentTargetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetDeploymentTargetRequestMarshaller.Instance;
+            var unmarshaller = GetDeploymentTargetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeploymentTargetRequest,GetDeploymentTargetResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1278,6 +1346,7 @@ namespace Amazon.CodeDeploy
         
         #region  ListDeploymentInstances
 
+        [Obsolete("This operation is deprecated, use ListDeploymentTargets instead.")]
         internal virtual ListDeploymentInstancesResponse ListDeploymentInstances(ListDeploymentInstancesRequest request)
         {
             var marshaller = ListDeploymentInstancesRequestMarshaller.Instance;
@@ -1297,6 +1366,7 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentInstances">REST API Reference for ListDeploymentInstances Operation</seealso>
+        [Obsolete("This operation is deprecated, use ListDeploymentTargets instead.")]
         public virtual Task<ListDeploymentInstancesResponse> ListDeploymentInstancesAsync(ListDeploymentInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = ListDeploymentInstancesRequestMarshaller.Instance;
@@ -1335,6 +1405,38 @@ namespace Amazon.CodeDeploy
             var unmarshaller = ListDeploymentsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDeploymentsRequest,ListDeploymentsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDeploymentTargets
+
+        internal virtual ListDeploymentTargetsResponse ListDeploymentTargets(ListDeploymentTargetsRequest request)
+        {
+            var marshaller = ListDeploymentTargetsRequestMarshaller.Instance;
+            var unmarshaller = ListDeploymentTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeploymentTargetsRequest,ListDeploymentTargetsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeploymentTargets operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeploymentTargets operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentTargets">REST API Reference for ListDeploymentTargets Operation</seealso>
+        public virtual Task<ListDeploymentTargetsResponse> ListDeploymentTargetsAsync(ListDeploymentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListDeploymentTargetsRequestMarshaller.Instance;
+            var unmarshaller = ListDeploymentTargetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDeploymentTargetsRequest,ListDeploymentTargetsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1534,6 +1636,7 @@ namespace Amazon.CodeDeploy
         
         #region  SkipWaitTimeForInstanceTermination
 
+        [Obsolete("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
         internal virtual SkipWaitTimeForInstanceTerminationResponse SkipWaitTimeForInstanceTermination(SkipWaitTimeForInstanceTerminationRequest request)
         {
             var marshaller = SkipWaitTimeForInstanceTerminationRequestMarshaller.Instance;
@@ -1553,6 +1656,7 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/SkipWaitTimeForInstanceTermination">REST API Reference for SkipWaitTimeForInstanceTermination Operation</seealso>
+        [Obsolete("This operation is deprecated, use ContinueDeployment with DeploymentWaitType instead.")]
         public virtual Task<SkipWaitTimeForInstanceTerminationResponse> SkipWaitTimeForInstanceTerminationAsync(SkipWaitTimeForInstanceTerminationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var marshaller = SkipWaitTimeForInstanceTerminationRequestMarshaller.Instance;

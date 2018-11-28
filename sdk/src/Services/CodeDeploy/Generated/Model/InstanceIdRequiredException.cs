@@ -28,6 +28,7 @@ namespace Amazon.CodeDeploy.Model
 #if !PCL && !CORECLR
     [Serializable]
 #endif
+    [Obsolete("This exception is deprecated, use DeploymentTargetIdRequiredException instead.")]
     public class InstanceIdRequiredException : AmazonCodeDeployException 
     {
         /// <summary>

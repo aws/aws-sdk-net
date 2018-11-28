@@ -42,8 +42,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The ID of the deployment. Pass this ID to a Lambda function that validates a deployment
-        /// lifecycle event.
+        ///  The unique ID of a deployment. Pass this ID to a Lambda function that validates a
+        /// deployment lifecycle event. 
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -61,8 +61,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LifecycleEventHookExecutionId. 
         /// <para>
-        /// The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
-        /// specified in the <code>hooks</code> section of the AppSpec file.
+        ///  The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
+        /// specified in the <code>hooks</code> section of the AppSpec file. 
         /// </para>
         /// </summary>
         public string LifecycleEventHookExecutionId

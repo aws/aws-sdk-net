@@ -39,8 +39,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The ID of the blue/green deployment for which you want to skip the instance termination
-        /// wait time.
+        ///  The unique ID of a blue/green deployment for which you want to skip the instance
+        /// termination wait time. 
         /// </para>
         /// </summary>
         public string DeploymentId

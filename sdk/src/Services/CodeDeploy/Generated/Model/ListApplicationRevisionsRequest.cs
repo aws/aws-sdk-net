@@ -44,8 +44,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of an AWS CodeDeploy application associated with the applicable IAM user
-        /// or AWS account.
+        ///  The name of an AWS CodeDeploy application associated with the applicable IAM user
+        /// or AWS account. 
         /// </para>
         /// </summary>
         public string ApplicationName
@@ -63,8 +63,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Deployed. 
         /// <para>
-        /// Whether to list revisions based on whether the revision is the target revision of
-        /// an deployment group:
+        ///  Whether to list revisions based on whether the revision is the target revision of
+        /// an deployment group: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -95,8 +95,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier returned from the previous list application revisions call. It can be
-        /// used to return the next set of applications in the list.
+        /// An identifier returned from the previous <code>ListApplicationRevisions</code> call.
+        /// It can be used to return the next set of applications in the list.
         /// </para>
         /// </summary>
         public string NextToken
@@ -114,11 +114,11 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property S3Bucket. 
         /// <para>
-        /// An Amazon S3 bucket name to limit the search for revisions.
+        ///  An Amazon S3 bucket name to limit the search for revisions. 
         /// </para>
         ///  
         /// <para>
-        /// If set to null, all of the user's buckets will be searched.
+        ///  If set to null, all of the user's buckets are searched. 
         /// </para>
         /// </summary>
         public string S3Bucket
@@ -136,7 +136,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property S3KeyPrefix. 
         /// <para>
-        /// A key prefix for the set of Amazon S3 objects to limit the search for revisions.
+        ///  A key prefix for the set of Amazon S3 objects to limit the search for revisions.
+        /// 
         /// </para>
         /// </summary>
         public string S3KeyPrefix
@@ -170,7 +171,8 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If not specified or set to null, the results will be returned in an arbitrary order.
+        ///  If not specified or set to null, the results will be returned in an arbitrary order.
+        /// 
         /// </para>
         /// </summary>
         public ApplicationRevisionSortBy SortBy
@@ -188,7 +190,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The order in which to sort the list results:
+        ///  The order in which to sort the list results: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

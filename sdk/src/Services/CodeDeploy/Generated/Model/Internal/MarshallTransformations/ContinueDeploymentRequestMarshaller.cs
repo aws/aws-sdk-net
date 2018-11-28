@@ -73,6 +73,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DeploymentId);
                 }
 
+                if(publicRequest.IsSetDeploymentWaitType())
+                {
+                    context.Writer.WritePropertyName("deploymentWaitType");
+                    context.Writer.Write(publicRequest.DeploymentWaitType);
+                }
+
         
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();

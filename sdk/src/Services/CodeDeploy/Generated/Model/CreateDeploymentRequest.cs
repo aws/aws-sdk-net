@@ -185,16 +185,17 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property IgnoreApplicationStopFailures. 
         /// <para>
-        /// If set to true, then if the deployment causes the ApplicationStop deployment lifecycle
+        ///  If set to true, then if the deployment causes the ApplicationStop deployment lifecycle
         /// event to an instance to fail, the deployment to that instance will not be considered
         /// to have failed at that point and will continue on to the BeforeInstall deployment
-        /// lifecycle event.
+        /// lifecycle event. 
         /// </para>
         ///  
         /// <para>
-        /// If set to false or not specified, then if the deployment causes the ApplicationStop
+        ///  If set to false or not specified, then if the deployment causes the ApplicationStop
         /// deployment lifecycle event to fail to an instance, the deployment to that instance
         /// will stop, and the deployment to that instance will be considered to have failed.
+        /// 
         /// </para>
         /// </summary>
         public bool IgnoreApplicationStopFailures
@@ -212,7 +213,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Revision. 
         /// <para>
-        /// The type and location of the revision to deploy.
+        ///  The type and location of the revision to deploy. 
         /// </para>
         /// </summary>
         public RevisionLocation Revision
@@ -230,8 +231,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetInstances. 
         /// <para>
-        /// Information about the instances that will belong to the replacement environment in
-        /// a blue/green deployment.
+        ///  Information about the instances that will belong to the replacement environment in
+        /// a blue/green deployment. 
         /// </para>
         /// </summary>
         public TargetInstances TargetInstances
@@ -249,8 +250,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property UpdateOutdatedInstancesOnly. 
         /// <para>
-        /// Indicates whether to deploy to all instances or only to instances that are not running
-        /// the latest application revision.
+        ///  Indicates whether to deploy to all instances or only to instances that are not running
+        /// the latest application revision. 
         /// </para>
         /// </summary>
         public bool UpdateOutdatedInstancesOnly

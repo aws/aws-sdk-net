@@ -43,6 +43,7 @@ namespace Amazon.CodeDeploy.Model
         private DeploymentStyle _deploymentStyle;
         private List<EC2TagFilter> _ec2TagFilters = new List<EC2TagFilter>();
         private EC2TagSet _ec2TagSet;
+        private List<ECSService> _ecsServices = new List<ECSService>();
         private LoadBalancerInfo _loadBalancerInfo;
         private string _newDeploymentGroupName;
         private List<TagFilter> _onPremisesInstanceTagFilters = new List<TagFilter>();
@@ -236,6 +237,27 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetEc2TagSet()
         {
             return this._ec2TagSet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsServices. 
+        /// <para>
+        ///  The target ECS services in the deployment group. This only applies to deployment
+        /// groups that use the Amazon ECS compute platform. A target ECS service is specified
+        /// as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<ECSService> EcsServices
+        {
+            get { return this._ecsServices; }
+            set { this._ecsServices = value; }
+        }
+
+        // Check to see if EcsServices property is set
+        internal bool IsSetEcsServices()
+        {
+            return this._ecsServices != null && this._ecsServices.Count > 0; 
         }
 
         /// <summary>

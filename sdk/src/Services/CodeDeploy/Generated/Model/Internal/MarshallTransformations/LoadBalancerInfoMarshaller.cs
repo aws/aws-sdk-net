@@ -77,6 +77,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetTargetGroupPairInfoList())
+            {
+                context.Writer.WritePropertyName("targetGroupPairInfoList");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectTargetGroupPairInfoListListValue in requestObject.TargetGroupPairInfoList)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetGroupPairInfoMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTargetGroupPairInfoListListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

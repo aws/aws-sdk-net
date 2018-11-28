@@ -136,6 +136,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.Ec2TagSet = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ecsServices", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ECSService, ECSServiceUnmarshaller>(ECSServiceUnmarshaller.Instance);
+                    unmarshalledObject.EcsServices = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastAttemptedDeployment", targetDepth))
                 {
                     var unmarshaller = LastDeploymentInfoUnmarshaller.Instance;

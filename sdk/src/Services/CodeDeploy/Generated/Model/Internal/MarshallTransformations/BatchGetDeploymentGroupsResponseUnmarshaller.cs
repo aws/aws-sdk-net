@@ -90,6 +90,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new BatchLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentConfigDoesNotExistException"))
+            {
+                return new DeploymentConfigDoesNotExistException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("DeploymentGroupNameRequiredException"))
             {
                 return new DeploymentGroupNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);

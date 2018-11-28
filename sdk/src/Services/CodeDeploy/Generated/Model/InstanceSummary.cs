@@ -30,6 +30,7 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// Information about an instance in a deployment.
     /// </summary>
+    [Obsolete("InstanceSummary is deprecated, use DeploymentTarget instead.")]
     public partial class InstanceSummary
     {
         private string _deploymentId;
@@ -42,7 +43,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The deployment ID.
+        ///  The unique ID of a deployment. 
         /// </para>
         /// </summary>
         public string DeploymentId

@@ -154,7 +154,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
         /// <para>
-        /// The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+        ///  The destination platform type for the deployment (<code>Lambda</code> or <code>Server</code>).
+        /// 
         /// </para>
         /// </summary>
         public ComputePlatform ComputePlatform
@@ -221,7 +222,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigName. 
         /// <para>
-        /// The deployment configuration name.
+        ///  The deployment configuration name. 
         /// </para>
         /// </summary>
         public string DeploymentConfigName
@@ -239,7 +240,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentGroupName. 
         /// <para>
-        /// The deployment group name.
+        ///  The deployment group name. 
         /// </para>
         /// </summary>
         public string DeploymentGroupName
@@ -257,7 +258,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The deployment ID.
+        ///  The unique ID of a deployment. 
         /// </para>
         /// </summary>
         public string DeploymentId

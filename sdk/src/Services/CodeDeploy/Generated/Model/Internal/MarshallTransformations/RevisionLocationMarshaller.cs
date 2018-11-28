@@ -45,6 +45,17 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RevisionLocation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAppSpecContent())
+            {
+                context.Writer.WritePropertyName("appSpecContent");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AppSpecContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.AppSpecContent, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetGitHubLocation())
             {
                 context.Writer.WritePropertyName("gitHubLocation");

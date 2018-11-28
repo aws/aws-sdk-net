@@ -59,7 +59,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The deployment ID.
+        ///  The unique ID of a deployment. 
         /// </para>
         /// </summary>
         public string DeploymentId

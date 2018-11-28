@@ -100,6 +100,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new DeploymentGroupNameRequiredException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ECSServiceMappingLimitExceededException"))
+            {
+                return new ECSServiceMappingLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAlarmConfigException"))
             {
                 return new InvalidAlarmConfigException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -140,6 +144,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new InvalidEC2TagException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidECSServiceException"))
+            {
+                return new InvalidECSServiceException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -160,6 +168,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             {
                 return new InvalidTagException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTargetGroupPairException"))
+            {
+                return new InvalidTargetGroupPairException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTriggerConfigException"))
             {
                 return new InvalidTriggerConfigException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
@@ -175,6 +187,10 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if (errorResponse.Code != null && errorResponse.Code.Equals("TagSetListLimitExceededException"))
             {
                 return new TagSetListLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+            {
+                return new ThrottlingException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("TriggerTargetsLimitExceededException"))
             {

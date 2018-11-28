@@ -76,6 +76,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetGroupInfoList = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("targetGroupPairInfoList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TargetGroupPairInfo, TargetGroupPairInfoUnmarshaller>(TargetGroupPairInfoUnmarshaller.Instance);
+                    unmarshalledObject.TargetGroupPairInfoList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -35,6 +35,7 @@ namespace Amazon.CodeDeploy.Model
     {
         private List<ELBInfo> _elbInfoList = new List<ELBInfo>();
         private List<TargetGroupInfo> _targetGroupInfoList = new List<TargetGroupInfo>();
+        private List<TargetGroupPairInfo> _targetGroupPairInfoList = new List<TargetGroupPairInfo>();
 
         /// <summary>
         /// Gets and sets the property ElbInfoList. 
@@ -84,6 +85,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetTargetGroupInfoList()
         {
             return this._targetGroupInfoList != null && this._targetGroupInfoList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetGroupPairInfoList. 
+        /// <para>
+        ///  The target group pair information. This is an array of <code>TargeGroupPairInfo</code>
+        /// objects with a maximum size of one. 
+        /// </para>
+        /// </summary>
+        public List<TargetGroupPairInfo> TargetGroupPairInfoList
+        {
+            get { return this._targetGroupPairInfoList; }
+            set { this._targetGroupPairInfoList = value; }
+        }
+
+        // Check to see if TargetGroupPairInfoList property is set
+        internal bool IsSetTargetGroupPairInfoList()
+        {
+            return this._targetGroupPairInfoList != null && this._targetGroupPairInfoList.Count > 0; 
         }
 
     }

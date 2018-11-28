@@ -31,6 +31,7 @@ namespace Amazon.CodeDeploy.Model
     /// A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted
     /// string. For AWS Lambda deployments, the revision is the same as the AppSpec file.
     /// </summary>
+    [Obsolete("RawString and String revision type are deprecated, use AppSpecContent type instead.")]
     public partial class RawString
     {
         private string _content;
@@ -59,7 +60,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Sha256. 
         /// <para>
-        /// The SHA256 hash value of the revision that is specified as a RawString.
+        /// The SHA256 hash value of the revision content.
         /// </para>
         /// </summary>
         public string Sha256

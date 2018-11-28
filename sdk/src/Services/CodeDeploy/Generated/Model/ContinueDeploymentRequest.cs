@@ -38,12 +38,13 @@ namespace Amazon.CodeDeploy.Model
     public partial class ContinueDeploymentRequest : AmazonCodeDeployRequest
     {
         private string _deploymentId;
+        private DeploymentWaitType _deploymentWaitType;
 
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The deployment ID of the blue/green deployment for which you want to start rerouting
-        /// traffic to the replacement environment.
+        ///  The unique ID of a blue/green deployment for which you want to start rerouting traffic
+        /// to the replacement environment. 
         /// </para>
         /// </summary>
         public string DeploymentId
@@ -56,6 +57,26 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDeploymentId()
         {
             return this._deploymentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentWaitType. 
+        /// <para>
+        ///  The status of the deployment's waiting period. READY_WAIT indicates the deployment
+        /// is ready to start shifting traffic. TERMINATION_WAIT indicates the traffic is shifted,
+        /// but the original target is not terminated. 
+        /// </para>
+        /// </summary>
+        public DeploymentWaitType DeploymentWaitType
+        {
+            get { return this._deploymentWaitType; }
+            set { this._deploymentWaitType = value; }
+        }
+
+        // Check to see if DeploymentWaitType property is set
+        internal bool IsSetDeploymentWaitType()
+        {
+            return this._deploymentWaitType != null;
         }
 
     }
