@@ -120,6 +120,7 @@
     <ProjectReference Include="..\..\src\Services\KeyManagementService\AWSSDK.KeyManagementService.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Kinesis\AWSSDK.Kinesis.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\KinesisAnalytics\AWSSDK.KinesisAnalytics.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\KinesisAnalyticsV2\AWSSDK.KinesisAnalyticsV2.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\KinesisFirehose\AWSSDK.KinesisFirehose.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\KinesisVideo\AWSSDK.KinesisVideo.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\KinesisVideoArchivedMedia\AWSSDK.KinesisVideoArchivedMedia.Net35.csproj"/>
@@ -131,6 +132,7 @@
     <ProjectReference Include="..\..\src\Services\MachineLearning\AWSSDK.MachineLearning.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Macie\AWSSDK.Macie.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\MarketplaceEntitlementService\AWSSDK.MarketplaceEntitlementService.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\MediaConnect\AWSSDK.MediaConnect.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\MediaConvert\AWSSDK.MediaConvert.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\MediaLive\AWSSDK.MediaLive.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\MediaPackage\AWSSDK.MediaPackage.Net35.csproj"/>

@@ -62,6 +62,7 @@
       <Directory>$(ProjectDir)/src/Services/cognitoidentityprovider/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/cognitosync/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/comprehend/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/comprehendmedical/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/configservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/connect/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/costandusagereport/bin/Release/net35/</Directory>
@@ -106,6 +107,7 @@
       <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisanalytics/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kinesisanalyticsv2/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisfirehose/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisvideo/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisvideoarchivedmedia/bin/Release/net35/</Directory>
@@ -117,6 +119,7 @@
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/macie/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/marketplaceentitlementservice/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/mediaconnect/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediaconvert/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/medialive/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/mediapackage/bin/Release/net35/</Directory>
@@ -222,6 +225,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoIdentityProvider.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CognitoSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Comprehend.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ComprehendMedical.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ConfigService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Connect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.CostAndUsageReport.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -266,6 +270,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisAnalyticsV2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisFirehose.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisVideo.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.KinesisVideoArchivedMedia.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -277,6 +282,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Macie.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MarketplaceEntitlementService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaConnect.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaConvert.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaLive.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.MediaPackage.dll" Analyze="True" AnalyzeAllChildren="True" />

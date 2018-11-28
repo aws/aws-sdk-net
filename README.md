@@ -245,6 +245,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Kinesis is a fully managed, cloud-based service for real-time processing of large, distributed data streams.
 * [AWSSDK.KinesisAnalytics](https://www.nuget.org/packages/AWSSDK.KinesisAnalytics/)
 	* Amazon Kinesis Analytics is a fully managed service for continuously querying streaming data using standard SQL.
+* [AWSSDK.KinesisAnalyticsV2](https://www.nuget.org/packages/AWSSDK.KinesisAnalyticsV2/)
+	* Amazon Kinesis Data Analytics now supports Java-based stream processing applications, in addition to the previously supported SQL. Now, you can use your own Java code in Amazon Kinesis Data Analytics to build and run stream processing applications. This new capability also comes with an update to the previous Amazon Kinesis Data Analytics APIs to enable support for different runtime environments and more.
 * [AWSSDK.KinesisFirehose](https://www.nuget.org/packages/AWSSDK.KinesisFirehose/)
 	* Amazon Kinesis Firehose is a fully managed service for ingesting data streams directly into AWS data services such as Amazon S3 and Amazon Redshift.
 * [AWSSDK.KinesisVideo](https://www.nuget.org/packages/AWSSDK.KinesisVideo/)
@@ -267,6 +269,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Macie is a security service that uses machine learning to automatically discover, classify, and protect sensitive data in AWS. With this release, we are launching the following Macie HTTPS API operations: AssociateMemberAccount, AssociateS3Resources, DisassociateMemberAccount, DisassociateS3Resources, ListMemberAccounts, ListS3Resources, and UpdateS3Resources. With these API operations you can issue HTTPS requests directly to the service.
 * [AWSSDK.MarketplaceEntitlementService](https://www.nuget.org/packages/AWSSDK.MarketplaceEntitlementService/)
 	* AWS Marketplace Entitlement Service enables AWS Marketplace sellers to determine the capacity purchased by their customers.
+* [AWSSDK.MediaConnect](https://www.nuget.org/packages/AWSSDK.MediaConnect/)
+	* This is the initial release for AWS Elemental MediaConnect, an ingest and transport service for live video. This new AWS service allows broadcasters and content owners to send high-value live content into the cloud, securely transmit it to partners for distribution, and replicate it to multiple destinations around the globe.
 * [AWSSDK.MediaConvert](https://www.nuget.org/packages/AWSSDK.MediaConvert/)
 	* AWS Elemental MediaConvert is a file-based video conversion service that transforms media into formats required for traditional broadcast and for internet streaming to multi-screen devices.
 * [AWSSDK.MediaLive](https://www.nuget.org/packages/AWSSDK.MediaLive/)

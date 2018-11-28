@@ -392,6 +392,10 @@
       <Project>{C8CA4E5A-31A2-4932-990C-25C84DAFFA8C}</Project>
       <Name>AWSSDK.KinesisAnalytics.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/KinesisAnalyticsV2/AWSSDK.KinesisAnalyticsV2.CodeAnalysis.csproj">
+      <Project>{A2456510-EC2B-4B0D-8FD6-7CCC2961DDF4}</Project>
+      <Name>AWSSDK.KinesisAnalyticsV2.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/KinesisFirehose/AWSSDK.KinesisFirehose.CodeAnalysis.csproj">
       <Project>{7C69A0B1-C32D-4F12-9CA1-33242BDB4A4A}</Project>
       <Name>AWSSDK.KinesisFirehose.CodeAnalysis</Name>
@@ -435,6 +439,10 @@
     <ProjectReference Include="../ServiceAnalysis/MarketplaceEntitlementService/AWSSDK.MarketplaceEntitlementService.CodeAnalysis.csproj">
       <Project>{0FDE26C8-DEB7-4466-8A1F-6072943EFEB6}</Project>
       <Name>AWSSDK.MarketplaceEntitlementService.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MediaConnect/AWSSDK.MediaConnect.CodeAnalysis.csproj">
+      <Project>{74516196-3046-4FC3-A2C3-142F2190AC6F}</Project>
+      <Name>AWSSDK.MediaConnect.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MediaConvert/AWSSDK.MediaConvert.CodeAnalysis.csproj">
       <Project>{6CAF68E7-5102-4DA8-9908-E948F87C1EF9}</Project>
