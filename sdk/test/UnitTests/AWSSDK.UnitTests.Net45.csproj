@@ -99,6 +99,7 @@
     <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\FMS\AWSSDK.FMS.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\FSx\AWSSDK.FSx.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\GlobalAccelerator\AWSSDK.GlobalAccelerator.Net45.csproj"/>

@@ -320,6 +320,10 @@
       <Project>{7814E166-D2B9-432C-B5D7-49E0B665B400}</Project>
       <Name>AWSSDK.FMS.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/FSx/AWSSDK.FSx.CodeAnalysis.csproj">
+      <Project>{8D1894F4-BA02-4B2D-AA39-C570D365B5A0}</Project>
+      <Name>AWSSDK.FSx.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/GameLift/AWSSDK.GameLift.CodeAnalysis.csproj">
       <Project>{4AD60585-F9A0-41FD-BDBB-A2F8659CB2A5}</Project>
       <Name>AWSSDK.GameLift.CodeAnalysis</Name>

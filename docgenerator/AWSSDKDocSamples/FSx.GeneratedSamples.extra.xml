@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.CreateBackup(Amazon.FSx.Model.CreateBackupRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.CreateBackup(Amazon.FSx.Model.CreateBackupRequest)" />
+            <member name="T:Amazon.FSx.Model.CreateBackupRequest" />
+            <member name="T:Amazon.FSx.Model.CreateBackupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a new backup.
+                </para>
+                <code
+                    title="To create a new backup"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-create-a-new-backup-1481840798597" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.CreateFileSystem(Amazon.FSx.Model.CreateFileSystemRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.CreateFileSystem(Amazon.FSx.Model.CreateFileSystemRequest)" />
+            <member name="T:Amazon.FSx.Model.CreateFileSystemRequest" />
+            <member name="T:Amazon.FSx.Model.CreateFileSystemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a new file system.
+                </para>
+                <code
+                    title="To create a new file system"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-create-a-new-file-system-1481840798547" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.CreateFileSystemFromBackup(Amazon.FSx.Model.CreateFileSystemFromBackupRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.CreateFileSystemFromBackup(Amazon.FSx.Model.CreateFileSystemFromBackupRequest)" />
+            <member name="T:Amazon.FSx.Model.CreateFileSystemFromBackupRequest" />
+            <member name="T:Amazon.FSx.Model.CreateFileSystemFromBackupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation creates a new file system from backup.
+                </para>
+                <code
+                    title="To create a new file system from backup"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-create-a-new-file-system-from-backup-1481840798598" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.DeleteBackup(Amazon.FSx.Model.DeleteBackupRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.DeleteBackup(Amazon.FSx.Model.DeleteBackupRequest)" />
+            <member name="T:Amazon.FSx.Model.DeleteBackupRequest" />
+            <member name="T:Amazon.FSx.Model.DeleteBackupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes an Amazon FSx file system backup.
+                </para>
+                <code
+                    title="To delete a backup"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-delete-a-file-system-1481847318399" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.DeleteFileSystem(Amazon.FSx.Model.DeleteFileSystemRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.DeleteFileSystem(Amazon.FSx.Model.DeleteFileSystemRequest)" />
+            <member name="T:Amazon.FSx.Model.DeleteFileSystemRequest" />
+            <member name="T:Amazon.FSx.Model.DeleteFileSystemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation deletes an Amazon FSx file system.
+                </para>
+                <code
+                    title="To delete a file system"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-delete-a-file-system-1481847318348" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.DescribeBackups(Amazon.FSx.Model.DescribeBackupsRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.DescribeBackups(Amazon.FSx.Model.DescribeBackupsRequest)" />
+            <member name="T:Amazon.FSx.Model.DescribeBackupsRequest" />
+            <member name="T:Amazon.FSx.Model.DescribeBackupsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes all of the Amazon FSx backups in an account.
+                </para>
+                <code
+                    title="To describe Amazon FSx backups"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-describe-backups-1481848448499" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.DescribeFileSystems(Amazon.FSx.Model.DescribeFileSystemsRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.DescribeFileSystems(Amazon.FSx.Model.DescribeFileSystemsRequest)" />
+            <member name="T:Amazon.FSx.Model.DescribeFileSystemsRequest" />
+            <member name="T:Amazon.FSx.Model.DescribeFileSystemsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation describes all of the Amazon FSx file systems in an account.
+                </para>
+                <code
+                    title="To describe an Amazon FSx file system"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-describe-a-file-systems-1481848448460" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.ListTagsForResource(Amazon.FSx.Model.ListTagsForResourceRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.ListTagsForResource(Amazon.FSx.Model.ListTagsForResourceRequest)" />
+            <member name="T:Amazon.FSx.Model.ListTagsForResourceRequest" />
+            <member name="T:Amazon.FSx.Model.ListTagsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation lists tags for an Amazon FSx resource.
+                </para>
+                <code
+                    title="To list tags for a resource"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-list-tags-for-a-fsx-resource-1481847318372" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.TagResource(Amazon.FSx.Model.TagResourceRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.TagResource(Amazon.FSx.Model.TagResourceRequest)" />
+            <member name="T:Amazon.FSx.Model.TagResourceRequest" />
+            <member name="T:Amazon.FSx.Model.TagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation tags an Amazon FSx resource.
+                </para>
+                <code
+                    title="To tag a resource"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-tag-a-fsx-resource-1481847318371" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.UntagResource(Amazon.FSx.Model.UntagResourceRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.UntagResource(Amazon.FSx.Model.UntagResourceRequest)" />
+            <member name="T:Amazon.FSx.Model.UntagResourceRequest" />
+            <member name="T:Amazon.FSx.Model.UntagResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation untags an Amazon FSx resource.
+                </para>
+                <code
+                    title="To untag a resource"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-untag-a-fsx-resource-1481847318373" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.FSx.IAmazonFSx.UpdateFileSystem(Amazon.FSx.Model.UpdateFileSystemRequest)" />
+            <member name="M:Amazon.FSx.AmazonFSxClient.UpdateFileSystem(Amazon.FSx.Model.UpdateFileSystemRequest)" />
+            <member name="T:Amazon.FSx.Model.UpdateFileSystemRequest" />
+            <member name="T:Amazon.FSx.Model.UpdateFileSystemResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This operation updates an existing file system.
+                </para>
+                <code
+                    title="To update an existing file system"
+                    source=".\AWSSDKDocSamples\FSx\FSx.GeneratedSamples.cs"
+                    region="to-update-a-file-system-1481840798595" />
+            </example>
+        </value>
+    </doc>
+</docs>

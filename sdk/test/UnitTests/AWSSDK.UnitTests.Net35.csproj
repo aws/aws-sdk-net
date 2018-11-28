@@ -102,6 +102,7 @@
     <ProjectReference Include="..\..\src\Services\Elasticsearch\AWSSDK.Elasticsearch.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ElasticTranscoder\AWSSDK.ElasticTranscoder.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\FMS\AWSSDK.FMS.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\FSx\AWSSDK.FSx.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\GameLift\AWSSDK.GameLift.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\Glacier\AWSSDK.Glacier.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\GlobalAccelerator\AWSSDK.GlobalAccelerator.Net35.csproj"/>

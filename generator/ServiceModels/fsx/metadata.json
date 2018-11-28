@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.",
+  "generate-client-constructors": true
+}

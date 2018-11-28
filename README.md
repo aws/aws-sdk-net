@@ -209,6 +209,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Elastic Transcoder is media transcoding in the cloud. It is designed to be a highly scalable, easy to use and a cost effective way for developers and businesses to convert (or 'transcode') media files from their source format into versions that will playback on devices like smartphones, tablets and PCs.
 * [AWSSDK.FMS](https://www.nuget.org/packages/AWSSDK.FMS/)
 	* This release is the initial release version for AWS Firewall Manager, a new AWS service that makes it easy for customers to centrally configure WAF rules across all their resources (ALBs and CloudFront distributions) and across accounts.
+* [AWSSDK.FSx](https://www.nuget.org/packages/AWSSDK.FSx/)
+	* Amazon FSx provides fully-managed third-party file systems optimized for a variety of enterprise and compute-intensive workloads.
 * [AWSSDK.GameLift](https://www.nuget.org/packages/AWSSDK.GameLift/)
 	* Amazon GameLift Service is a managed AWS service for developers who need a scalable, server-based solution for multiplayer games.
 * [AWSSDK.Glacier](https://www.nuget.org/packages/AWSSDK.Glacier/)
