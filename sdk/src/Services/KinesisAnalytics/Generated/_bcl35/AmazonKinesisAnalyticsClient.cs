@@ -259,6 +259,9 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationCloudWatchLoggingOption">REST API Reference for AddApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual AddApplicationCloudWatchLoggingOptionResponse AddApplicationCloudWatchLoggingOption(AddApplicationCloudWatchLoggingOptionRequest request)
         {
@@ -348,6 +351,9 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInput">REST API Reference for AddApplicationInput Operation</seealso>
         public virtual AddApplicationInputResponse AddApplicationInput(AddApplicationInputRequest request)
         {
@@ -417,6 +423,9 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationInputProcessingConfiguration">REST API Reference for AddApplicationInputProcessingConfiguration Operation</seealso>
         public virtual AddApplicationInputProcessingConfigurationResponse AddApplicationInputProcessingConfiguration(AddApplicationInputProcessingConfigurationRequest request)
         {
@@ -471,22 +480,22 @@ namespace Amazon.KinesisAnalytics
         /// <para>
         /// If you want Amazon Kinesis Analytics to deliver data from an in-application stream
         /// within your application to an external destination (such as an Amazon Kinesis stream,
-        /// an Amazon Kinesis Firehose delivery stream, or an Amazon Lambda function), you add
-        /// the relevant configuration to your application using this operation. You can configure
+        /// an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), you add the
+        /// relevant configuration to your application using this operation. You can configure
         /// one or more outputs for your application. Each output configuration maps an in-application
         /// stream and an external destination.
         /// </para>
         ///  
         /// <para>
         ///  You can use one of the output configurations to deliver data from your in-application
-        /// error stream to an external destination so that you can analyze the errors. For conceptual
+        /// error stream to an external destination so that you can analyze the errors. For more
         /// information, see <a href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
         /// Application Output (Destination)</a>. 
         /// </para>
         ///  
         /// <para>
-        ///  Note that any configuration update, including adding a streaming source using this
-        /// operation, results in a new version of the application. You can use the <a>DescribeApplication</a>
+        ///  Any configuration update, including adding a streaming source using this operation,
+        /// results in a new version of the application. You can use the <a>DescribeApplication</a>
         /// operation to find the current application version.
         /// </para>
         ///  
@@ -515,6 +524,9 @@ namespace Amazon.KinesisAnalytics
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationOutput">REST API Reference for AddApplicationOutput Operation</seealso>
         public virtual AddApplicationOutputResponse AddApplicationOutput(AddApplicationOutputRequest request)
@@ -602,6 +614,9 @@ namespace Amazon.KinesisAnalytics
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/AddApplicationReferenceDataSource">REST API Reference for AddApplicationReferenceDataSource Operation</seealso>
         public virtual AddApplicationReferenceDataSourceResponse AddApplicationReferenceDataSource(AddApplicationReferenceDataSourceRequest request)
@@ -775,6 +790,9 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplication">REST API Reference for DeleteApplication Operation</seealso>
         public virtual DeleteApplicationResponse DeleteApplication(DeleteApplicationRequest request)
         {
@@ -843,6 +861,9 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationCloudWatchLoggingOption">REST API Reference for DeleteApplicationCloudWatchLoggingOption Operation</seealso>
         public virtual DeleteApplicationCloudWatchLoggingOptionResponse DeleteApplicationCloudWatchLoggingOption(DeleteApplicationCloudWatchLoggingOptionRequest request)
         {
@@ -908,6 +929,9 @@ namespace Amazon.KinesisAnalytics
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationInputProcessingConfiguration">REST API Reference for DeleteApplicationInputProcessingConfiguration Operation</seealso>
         public virtual DeleteApplicationInputProcessingConfigurationResponse DeleteApplicationInputProcessingConfiguration(DeleteApplicationInputProcessingConfigurationRequest request)
@@ -982,6 +1006,9 @@ namespace Amazon.KinesisAnalytics
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationOutput">REST API Reference for DeleteApplicationOutput Operation</seealso>
         public virtual DeleteApplicationOutputResponse DeleteApplicationOutput(DeleteApplicationOutputRequest request)
@@ -1061,6 +1088,9 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DeleteApplicationReferenceDataSource">REST API Reference for DeleteApplicationReferenceDataSource Operation</seealso>
         public virtual DeleteApplicationReferenceDataSourceResponse DeleteApplicationReferenceDataSource(DeleteApplicationReferenceDataSourceRequest request)
         {
@@ -1128,6 +1158,9 @@ namespace Amazon.KinesisAnalytics
         /// <returns>The response from the DescribeApplication service method, as returned by KinesisAnalytics.</returns>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DescribeApplication">REST API Reference for DescribeApplication Operation</seealso>
         public virtual DescribeApplicationResponse DescribeApplication(DescribeApplicationRequest request)
@@ -1208,10 +1241,10 @@ namespace Amazon.KinesisAnalytics
         /// in the Amazon Kinesis Streams API Reference.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ServiceUnavailableException">
-        /// The service is unavailable, back off and retry the operation.
+        /// The service is unavailable. Back off and retry the operation.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.UnableToDetectSchemaException">
-        /// Data format is not valid, Amazon Kinesis Analytics is not able to detect schema for
+        /// Data format is not valid. Amazon Kinesis Analytics is not able to detect schema for
         /// the given streaming source.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/DiscoverInputSchema">REST API Reference for DiscoverInputSchema Operation</seealso>
@@ -1370,6 +1403,9 @@ namespace Amazon.KinesisAnalytics
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
         /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StartApplication">REST API Reference for StartApplication Operation</seealso>
         public virtual StartApplicationResponse StartApplication(StartApplicationRequest request)
         {
@@ -1438,6 +1474,9 @@ namespace Amazon.KinesisAnalytics
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/StopApplication">REST API Reference for StopApplication Operation</seealso>
         public virtual StopApplicationResponse StopApplication(StopApplicationRequest request)
@@ -1519,6 +1558,9 @@ namespace Amazon.KinesisAnalytics
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalytics.Model.ResourceNotFoundException">
         /// Specified application can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.KinesisAnalytics.Model.UnsupportedOperationException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/UpdateApplication">REST API Reference for UpdateApplication Operation</seealso>
         public virtual UpdateApplicationResponse UpdateApplication(UpdateApplicationRequest request)

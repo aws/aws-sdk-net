@@ -64,7 +64,7 @@
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.CreateApplicationRequest.ApplicationCode</property>
     <min>0</min>
-    <max>51200</max>
+    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.CreateApplicationRequest.ApplicationDescription</property>
@@ -212,7 +212,7 @@
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ApplicationDetail.ApplicationCode</property>
     <min>0</min>
-    <max>51200</max>
+    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ApplicationDetail.ApplicationDescription</property>
@@ -245,7 +245,7 @@
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.ApplicationUpdate.ApplicationCodeUpdate</property>
     <min>0</min>
-    <max>51200</max>
+    <max>102400</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KinesisAnalytics.Model.CloudWatchLoggingOption.LogStreamARN</property>

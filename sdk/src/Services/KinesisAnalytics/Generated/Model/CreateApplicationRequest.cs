@@ -215,7 +215,7 @@ namespace Amazon.KinesisAnalytics.Model
         ///  
         /// <para>
         /// These destinations can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery
-        /// streams, Amazon Lambda destinations, or any combination of the three.
+        /// streams, AWS Lambda destinations, or any combination of the three.
         /// </para>
         ///  
         /// <para>

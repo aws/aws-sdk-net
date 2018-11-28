@@ -134,7 +134,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// Specify this parameter to discover a schema from data in an S3 object.
+        /// Specify this parameter to discover a schema from data in an Amazon S3 object.
         /// </para>
         /// </summary>
         public S3Configuration S3Configuration

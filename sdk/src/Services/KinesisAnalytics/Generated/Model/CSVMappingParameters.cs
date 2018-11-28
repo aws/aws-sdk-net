@@ -35,11 +35,11 @@ namespace Amazon.KinesisAnalytics.Model
     /// 
     ///  
     /// <para>
-    ///  <code>"name1", "address1" </code> 
+    ///  <code>"name1", "address1"</code> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"name2, "address2"</code> 
+    ///  <code>"name2", "address2"</code> 
     /// </para>
     /// </summary>
     public partial class CSVMappingParameters

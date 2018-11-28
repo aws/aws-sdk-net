@@ -59,8 +59,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// ARN of the IAM role that Amazon Kinesis Analytics can assume to access the stream
-        /// on your behalf. You need to make sure the role has necessary permissions to access
-        /// the stream.
+        /// on your behalf. You need to make sure that the role has the necessary permissions
+        /// to access the stream.
         /// </para>
         /// </summary>
         public string RoleARN
