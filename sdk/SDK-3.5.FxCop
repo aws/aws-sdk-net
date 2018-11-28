@@ -89,6 +89,7 @@
       <Directory>$(ProjectDir)/src/Services/elasticsearch/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/elastictranscoder/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/fms/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/fsx/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/gamelift/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/glacier/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/globalaccelerator/bin/Release/net35/</Directory>
@@ -158,6 +159,7 @@
       <Directory>$(ProjectDir)/src/Services/sagemaker/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/sagemakerruntime/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/secretsmanager/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/securityhub/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/securitytoken/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/serverlessapplicationrepository/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/servermigrationservice/bin/Release/net35/</Directory>
@@ -252,6 +254,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Elasticsearch.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ElasticTranscoder.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.FMS.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.FSx.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.GameLift.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Glacier.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.GlobalAccelerator.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -321,6 +324,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SageMaker.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SageMakerRuntime.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecretsManager.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecurityHub.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.SecurityToken.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServerlessApplicationRepository.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ServerMigrationService.dll" Analyze="True" AnalyzeAllChildren="True" />

@@ -172,6 +172,7 @@
     <ProjectReference Include="..\..\src\Services\SageMaker\AWSSDK.SageMaker.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SageMakerRuntime\AWSSDK.SageMakerRuntime.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SecretsManager\AWSSDK.SecretsManager.Net35.csproj"/>
+    <ProjectReference Include="..\..\src\Services\SecurityHub\AWSSDK.SecurityHub.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\SecurityToken\AWSSDK.SecurityToken.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerlessApplicationRepository\AWSSDK.ServerlessApplicationRepository.Net35.csproj"/>
     <ProjectReference Include="..\..\src\Services\ServerMigrationService\AWSSDK.ServerMigrationService.Net35.csproj"/>

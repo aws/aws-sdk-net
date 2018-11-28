@@ -600,6 +600,10 @@
       <Project>{CC45DFC3-33E9-4495-9491-2D82B19E8E13}</Project>
       <Name>AWSSDK.SecretsManager.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/SecurityHub/AWSSDK.SecurityHub.CodeAnalysis.csproj">
+      <Project>{E32AFF39-D837-461B-8328-FE45DDA5A60C}</Project>
+      <Name>AWSSDK.SecurityHub.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/SecurityToken/AWSSDK.SecurityToken.CodeAnalysis.csproj">
       <Project>{89D04592-47DB-4292-8BEA-78BA2F33954F}</Project>
       <Name>AWSSDK.SecurityToken.CodeAnalysis</Name>
