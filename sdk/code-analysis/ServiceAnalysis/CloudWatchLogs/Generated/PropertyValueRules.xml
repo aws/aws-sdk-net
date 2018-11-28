@@ -243,6 +243,25 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeQueriesRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeQueriesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeQueriesRequest.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.DescribeQueriesResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.DescribeResourcePoliciesRequest.Limit</property>
     <min>1</min>
     <max>50</max>
@@ -362,6 +381,21 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLogGroupFieldsRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetLogGroupFieldsRequest.Time</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.GetQueryResultsRequest.QueryId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ListTagsLogGroupRequest.LogGroupName</property>
     <min>1</min>
     <max>512</max>
@@ -463,6 +497,40 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.PutSubscriptionFilterRequest.RoleArn</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.StartQueryRequest.EndTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.StartQueryRequest.Limit</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.StartQueryRequest.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.StartQueryRequest.QueryString</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.StartQueryRequest.StartTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.StartQueryResponse.QueryId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.StopQueryRequest.QueryId</property>
+    <min>0</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.TagLogGroupRequest.LogGroupName</property>
@@ -593,6 +661,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.LogGroupField.Percent</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.LogStream.CreationTime</property>
     <min>0</min>
   </property-value-rule>
@@ -672,6 +745,26 @@
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.OutputLogEvent.Timestamp</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryInfo.CreateTime</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryInfo.LogGroupName</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>[\.\-_/#A-Za-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryInfo.QueryId</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchLogs.Model.QueryInfo.QueryString</property>
+    <min>0</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatchLogs.Model.ResourcePolicy.LastUpdatedTime</property>

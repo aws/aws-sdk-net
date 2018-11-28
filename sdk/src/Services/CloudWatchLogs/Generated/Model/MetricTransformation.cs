@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Indicates how to transform ingested log events in to metric data in a CloudWatch metric.
+    /// Indicates how to transform ingested log eventsto metric data in a CloudWatch metric.
     /// </summary>
     public partial class MetricTransformation
     {

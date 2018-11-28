@@ -847,6 +847,38 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
         
+        #region  DescribeQueries
+
+        internal virtual DescribeQueriesResponse DescribeQueries(DescribeQueriesRequest request)
+        {
+            var marshaller = DescribeQueriesRequestMarshaller.Instance;
+            var unmarshaller = DescribeQueriesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQueriesRequest,DescribeQueriesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeQueries operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQueries operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueries">REST API Reference for DescribeQueries Operation</seealso>
+        public virtual Task<DescribeQueriesResponse> DescribeQueriesAsync(DescribeQueriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeQueriesRequestMarshaller.Instance;
+            var unmarshaller = DescribeQueriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeQueriesRequest,DescribeQueriesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeResourcePolicies
 
         internal virtual DescribeResourcePoliciesResponse DescribeResourcePolicies(DescribeResourcePoliciesRequest request)
@@ -1002,6 +1034,102 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = GetLogEventsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetLogEventsRequest,GetLogEventsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLogGroupFields
+
+        internal virtual GetLogGroupFieldsResponse GetLogGroupFields(GetLogGroupFieldsRequest request)
+        {
+            var marshaller = GetLogGroupFieldsRequestMarshaller.Instance;
+            var unmarshaller = GetLogGroupFieldsResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogGroupFieldsRequest,GetLogGroupFieldsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLogGroupFields operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLogGroupFields operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogGroupFields">REST API Reference for GetLogGroupFields Operation</seealso>
+        public virtual Task<GetLogGroupFieldsResponse> GetLogGroupFieldsAsync(GetLogGroupFieldsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetLogGroupFieldsRequestMarshaller.Instance;
+            var unmarshaller = GetLogGroupFieldsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLogGroupFieldsRequest,GetLogGroupFieldsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLogRecord
+
+        internal virtual GetLogRecordResponse GetLogRecord(GetLogRecordRequest request)
+        {
+            var marshaller = GetLogRecordRequestMarshaller.Instance;
+            var unmarshaller = GetLogRecordResponseUnmarshaller.Instance;
+
+            return Invoke<GetLogRecordRequest,GetLogRecordResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLogRecord operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLogRecord operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogRecord">REST API Reference for GetLogRecord Operation</seealso>
+        public virtual Task<GetLogRecordResponse> GetLogRecordAsync(GetLogRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetLogRecordRequestMarshaller.Instance;
+            var unmarshaller = GetLogRecordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLogRecordRequest,GetLogRecordResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetQueryResults
+
+        internal virtual GetQueryResultsResponse GetQueryResults(GetQueryResultsRequest request)
+        {
+            var marshaller = GetQueryResultsRequestMarshaller.Instance;
+            var unmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
+
+            return Invoke<GetQueryResultsRequest,GetQueryResultsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetQueryResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetQueryResults operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">REST API Reference for GetQueryResults Operation</seealso>
+        public virtual Task<GetQueryResultsResponse> GetQueryResultsAsync(GetQueryResultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetQueryResultsRequestMarshaller.Instance;
+            var unmarshaller = GetQueryResultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetQueryResultsRequest,GetQueryResultsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1258,6 +1386,70 @@ namespace Amazon.CloudWatchLogs
             var unmarshaller = PutSubscriptionFilterResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutSubscriptionFilterRequest,PutSubscriptionFilterResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartQuery
+
+        internal virtual StartQueryResponse StartQuery(StartQueryRequest request)
+        {
+            var marshaller = StartQueryRequestMarshaller.Instance;
+            var unmarshaller = StartQueryResponseUnmarshaller.Instance;
+
+            return Invoke<StartQueryRequest,StartQueryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartQuery operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">REST API Reference for StartQuery Operation</seealso>
+        public virtual Task<StartQueryResponse> StartQueryAsync(StartQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StartQueryRequestMarshaller.Instance;
+            var unmarshaller = StartQueryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartQueryRequest,StartQueryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopQuery
+
+        internal virtual StopQueryResponse StopQuery(StopQueryRequest request)
+        {
+            var marshaller = StopQueryRequestMarshaller.Instance;
+            var unmarshaller = StopQueryResponseUnmarshaller.Instance;
+
+            return Invoke<StopQueryRequest,StopQueryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopQuery operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopQuery operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StopQuery">REST API Reference for StopQuery Operation</seealso>
+        public virtual Task<StopQueryResponse> StopQueryAsync(StopQueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopQueryRequestMarshaller.Instance;
+            var unmarshaller = StopQueryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopQueryRequest,StopQueryResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

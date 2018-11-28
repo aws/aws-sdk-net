@@ -56,7 +56,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a time stamp later than this time are not returned.
+        /// 00:00:00 UTC. Events with a timestamp later than this time are not returned.
         /// </para>
         /// </summary>
         public long EndTime
@@ -185,9 +185,7 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>,
-        /// but the value for <code>logStreamNamePrefix</code> does not match any log stream names
-        /// specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code>
-        /// error.
+        /// the action returns an <code>InvalidParameterException</code> error.
         /// </para>
         /// </summary>
         public List<string> LogStreamNames
@@ -225,7 +223,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The start of the time range, expressed as the number of milliseconds after Jan 1,
-        /// 1970 00:00:00 UTC. Events with a time stamp before this time are not returned.
+        /// 1970 00:00:00 UTC. Events with a timestamp before this time are not returned.
         /// </para>
         /// </summary>
         public long StartTime

@@ -101,10 +101,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LastEventTimestamp. 
         /// <para>
-        ///  the time of the most recent log event in the log stream in CloudWatch Logs. This
-        /// number is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-        /// lastEventTime updates on an eventual consistency basis. It typically updates in less
-        /// than an hour from ingestion, but may take longer in some rare situations.
+        /// The time of the most recent log event in the log stream in CloudWatch Logs. This number
+        /// is expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code>
+        /// value updates on an eventual consistency basis. It typically updates in less than
+        /// an hour from ingestion, but may take longer in some rare situations.
         /// </para>
         /// </summary>
         public DateTime LastEventTimestamp

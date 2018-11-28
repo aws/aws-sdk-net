@@ -69,7 +69,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end of the time range, expressed as the number of milliseconds after Jan 1, 1970
-        /// 00:00:00 UTC. Events with a time stamp equal to or later than this time are not included.
+        /// 00:00:00 UTC. Events with a timestamp equal to or later than this time are not included.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -181,8 +181,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The start of the time range, expressed as the number of milliseconds after Jan 1,
-        /// 1970 00:00:00 UTC. Events with a time stamp equal to this time or later than this
-        /// time are included. Events with a time stamp earlier than this time are not included.
+        /// 1970 00:00:00 UTC. Events with a timestamp equal to this time or later than this time
+        /// are included. Events with a timestamp earlier than this time are not included.
         /// </para>
         /// </summary>
         public DateTime StartTime

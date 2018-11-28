@@ -189,4 +189,66 @@ namespace Amazon.CloudWatchLogs
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type QueryStatus.
+    /// </summary>
+    public class QueryStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cancelled for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus Cancelled = new QueryStatus("Cancelled");
+        /// <summary>
+        /// Constant Complete for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus Complete = new QueryStatus("Complete");
+        /// <summary>
+        /// Constant Failed for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus Failed = new QueryStatus("Failed");
+        /// <summary>
+        /// Constant Running for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus Running = new QueryStatus("Running");
+        /// <summary>
+        /// Constant Scheduled for QueryStatus
+        /// </summary>
+        public static readonly QueryStatus Scheduled = new QueryStatus("Scheduled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QueryStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QueryStatus FindValue(string value)
+        {
+            return FindValue<QueryStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QueryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

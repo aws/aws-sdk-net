@@ -78,7 +78,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamName. 
         /// <para>
-        /// The name of the log stream this event belongs to.
+        /// The name of the log stream to which this event belongs.
         /// </para>
         /// </summary>
         public string LogStreamName

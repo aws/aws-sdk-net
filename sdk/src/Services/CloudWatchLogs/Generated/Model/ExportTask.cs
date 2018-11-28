@@ -100,7 +100,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property From. 
         /// <para>
         /// The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-        /// UTC. Events with a time stamp before this time are not exported.
+        /// UTC. Events with a timestamp before this time are not exported.
         /// </para>
         /// </summary>
         public long From
@@ -191,7 +191,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property To. 
         /// <para>
         /// The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-        /// Events with a time stamp later than this time are not exported.
+        /// Events with a timestamp later than this time are not exported.
         /// </para>
         /// </summary>
         public long To
