@@ -1,0 +1,167 @@
+/*
+ * Copyright 2010-2014 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the kinesisanalyticsv2-2018-05-23.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.KinesisAnalyticsV2.Model
+{
+    /// <summary>
+    /// When you configure the application input for an SQL-based Amazon Kinesis Data Analytics
+    /// application, you specify the streaming source, the in-application stream name that
+    /// is created, and the mapping between the two.
+    /// </summary>
+    public partial class Input
+    {
+        private InputParallelism _inputParallelism;
+        private InputProcessingConfiguration _inputProcessingConfiguration;
+        private SourceSchema _inputSchema;
+        private KinesisFirehoseInput _kinesisFirehoseInput;
+        private KinesisStreamsInput _kinesisStreamsInput;
+        private string _namePrefix;
+
+        /// <summary>
+        /// Gets and sets the property InputParallelism. 
+        /// <para>
+        /// Describes the number of in-application streams to create. 
+        /// </para>
+        /// </summary>
+        public InputParallelism InputParallelism
+        {
+            get { return this._inputParallelism; }
+            set { this._inputParallelism = value; }
+        }
+
+        // Check to see if InputParallelism property is set
+        internal bool IsSetInputParallelism()
+        {
+            return this._inputParallelism != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputProcessingConfiguration. 
+        /// <para>
+        /// The <a>InputProcessingConfiguration</a> for the input. An input processor transforms
+        /// records as they are received from the stream, before the application's SQL code executes.
+        /// Currently, the only input processing configuration available is <a>InputLambdaProcessor</a>.
+        /// 
+        /// </para>
+        /// </summary>
+        public InputProcessingConfiguration InputProcessingConfiguration
+        {
+            get { return this._inputProcessingConfiguration; }
+            set { this._inputProcessingConfiguration = value; }
+        }
+
+        // Check to see if InputProcessingConfiguration property is set
+        internal bool IsSetInputProcessingConfiguration()
+        {
+            return this._inputProcessingConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputSchema. 
+        /// <para>
+        /// Describes the format of the data in the streaming source, and how each data element
+        /// maps to corresponding columns in the in-application stream that is being created.
+        /// </para>
+        ///  
+        /// <para>
+        /// Also used to describe the format of the reference data source.
+        /// </para>
+        /// </summary>
+        public SourceSchema InputSchema
+        {
+            get { return this._inputSchema; }
+            set { this._inputSchema = value; }
+        }
+
+        // Check to see if InputSchema property is set
+        internal bool IsSetInputSchema()
+        {
+            return this._inputSchema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KinesisFirehoseInput. 
+        /// <para>
+        /// If the streaming source is an Amazon Kinesis Data Firehose delivery stream, identifies
+        /// the delivery stream's ARN.
+        /// </para>
+        /// </summary>
+        public KinesisFirehoseInput KinesisFirehoseInput
+        {
+            get { return this._kinesisFirehoseInput; }
+            set { this._kinesisFirehoseInput = value; }
+        }
+
+        // Check to see if KinesisFirehoseInput property is set
+        internal bool IsSetKinesisFirehoseInput()
+        {
+            return this._kinesisFirehoseInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KinesisStreamsInput. 
+        /// <para>
+        /// If the streaming source is an Amazon Kinesis data stream, identifies the stream's
+        /// Amazon Resource Name (ARN). 
+        /// </para>
+        /// </summary>
+        public KinesisStreamsInput KinesisStreamsInput
+        {
+            get { return this._kinesisStreamsInput; }
+            set { this._kinesisStreamsInput = value; }
+        }
+
+        // Check to see if KinesisStreamsInput property is set
+        internal bool IsSetKinesisStreamsInput()
+        {
+            return this._kinesisStreamsInput != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamePrefix. 
+        /// <para>
+        /// The name prefix to use when creating an in-application stream. Suppose that you specify
+        /// a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates
+        /// one or more (as per the <code>InputParallelism</code> count you specified) in-application
+        /// streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>,"
+        /// and so on. 
+        /// </para>
+        /// </summary>
+        public string NamePrefix
+        {
+            get { return this._namePrefix; }
+            set { this._namePrefix = value; }
+        }
+
+        // Check to see if NamePrefix property is set
+        internal bool IsSetNamePrefix()
+        {
+            return this._namePrefix != null;
+        }
+
+    }
+}

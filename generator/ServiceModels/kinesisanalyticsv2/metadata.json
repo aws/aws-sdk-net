@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Amazon Kinesis Data Analytics now supports Java-based stream processing applications, in addition to the previously supported SQL. Now, you can use your own Java code in Amazon Kinesis Data Analytics to build and run stream processing applications. This new capability also comes with an update to the previous Amazon Kinesis Data Analytics APIs to enable support for different runtime environments and more.",
+  "generate-client-constructors": true
+}
