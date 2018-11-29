@@ -106,6 +106,7 @@
       <Directory>$(ProjectDir)/src/Services/iotanalytics/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotdata/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/iotjobsdataplane/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/kafka/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/keymanagementservice/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesis/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/kinesisanalytics/bin/Release/net45/</Directory>
@@ -273,6 +274,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoTAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IotData.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.IoTJobsDataPlane.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Kafka.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KeyManagementService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Kinesis.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.KinesisAnalytics.dll" Analyze="True" AnalyzeAllChildren="True" />
