@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "Amazon Managed Streaming for Kafka (Amazon MSK). Amazon MSK is a service that you can use to easily build, monitor, and manage Apache Kafka clusters in the cloud.",
+  "generate-client-constructors": true
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.CreateClusterRequest.ClusterName</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.CreateClusterRequest.KafkaVersion</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.CreateClusterRequest.NumberOfBrokerNodes</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.ListClustersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.ListNodesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.BrokerNodeGroupInfo.InstanceType</property>
+    <min>5</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kafka.Model.EBSStorageInfo.VolumeSize</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+</property-value-rules>
