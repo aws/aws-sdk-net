@@ -274,6 +274,102 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateAlgorithm
+
+        internal virtual CreateAlgorithmResponse CreateAlgorithm(CreateAlgorithmRequest request)
+        {
+            var marshaller = CreateAlgorithmRequestMarshaller.Instance;
+            var unmarshaller = CreateAlgorithmResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAlgorithmRequest,CreateAlgorithmResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAlgorithm operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAlgorithm">REST API Reference for CreateAlgorithm Operation</seealso>
+        public virtual Task<CreateAlgorithmResponse> CreateAlgorithmAsync(CreateAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateAlgorithmRequestMarshaller.Instance;
+            var unmarshaller = CreateAlgorithmResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAlgorithmRequest,CreateAlgorithmResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCodeRepository
+
+        internal virtual CreateCodeRepositoryResponse CreateCodeRepository(CreateCodeRepositoryRequest request)
+        {
+            var marshaller = CreateCodeRepositoryRequestMarshaller.Instance;
+            var unmarshaller = CreateCodeRepositoryResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCodeRepositoryRequest,CreateCodeRepositoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCodeRepository operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCodeRepository operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">REST API Reference for CreateCodeRepository Operation</seealso>
+        public virtual Task<CreateCodeRepositoryResponse> CreateCodeRepositoryAsync(CreateCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateCodeRepositoryRequestMarshaller.Instance;
+            var unmarshaller = CreateCodeRepositoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCodeRepositoryRequest,CreateCodeRepositoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateCompilationJob
+
+        internal virtual CreateCompilationJobResponse CreateCompilationJob(CreateCompilationJobRequest request)
+        {
+            var marshaller = CreateCompilationJobRequestMarshaller.Instance;
+            var unmarshaller = CreateCompilationJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCompilationJobRequest,CreateCompilationJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCompilationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCompilationJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob">REST API Reference for CreateCompilationJob Operation</seealso>
+        public virtual Task<CreateCompilationJobResponse> CreateCompilationJobAsync(CreateCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateCompilationJobRequestMarshaller.Instance;
+            var unmarshaller = CreateCompilationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCompilationJobRequest,CreateCompilationJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEndpoint
 
         internal virtual CreateEndpointResponse CreateEndpoint(CreateEndpointRequest request)
@@ -370,6 +466,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateLabelingJob
+
+        internal virtual CreateLabelingJobResponse CreateLabelingJob(CreateLabelingJobRequest request)
+        {
+            var marshaller = CreateLabelingJobRequestMarshaller.Instance;
+            var unmarshaller = CreateLabelingJobResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLabelingJobRequest,CreateLabelingJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateLabelingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateLabelingJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateLabelingJob">REST API Reference for CreateLabelingJob Operation</seealso>
+        public virtual Task<CreateLabelingJobResponse> CreateLabelingJobAsync(CreateLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateLabelingJobRequestMarshaller.Instance;
+            var unmarshaller = CreateLabelingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLabelingJobRequest,CreateLabelingJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateModel
 
         internal virtual CreateModelResponse CreateModel(CreateModelRequest request)
@@ -397,6 +525,38 @@ namespace Amazon.SageMaker
             var unmarshaller = CreateModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateModelRequest,CreateModelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateModelPackage
+
+        internal virtual CreateModelPackageResponse CreateModelPackage(CreateModelPackageRequest request)
+        {
+            var marshaller = CreateModelPackageRequestMarshaller.Instance;
+            var unmarshaller = CreateModelPackageResponseUnmarshaller.Instance;
+
+            return Invoke<CreateModelPackageRequest,CreateModelPackageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateModelPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateModelPackage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">REST API Reference for CreateModelPackage Operation</seealso>
+        public virtual Task<CreateModelPackageResponse> CreateModelPackageAsync(CreateModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateModelPackageRequestMarshaller.Instance;
+            var unmarshaller = CreateModelPackageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateModelPackageRequest,CreateModelPackageResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -562,6 +722,102 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  CreateWorkteam
+
+        internal virtual CreateWorkteamResponse CreateWorkteam(CreateWorkteamRequest request)
+        {
+            var marshaller = CreateWorkteamRequestMarshaller.Instance;
+            var unmarshaller = CreateWorkteamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWorkteamRequest,CreateWorkteamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateWorkteam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateWorkteam operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkteam">REST API Reference for CreateWorkteam Operation</seealso>
+        public virtual Task<CreateWorkteamResponse> CreateWorkteamAsync(CreateWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateWorkteamRequestMarshaller.Instance;
+            var unmarshaller = CreateWorkteamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWorkteamRequest,CreateWorkteamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAlgorithm
+
+        internal virtual DeleteAlgorithmResponse DeleteAlgorithm(DeleteAlgorithmRequest request)
+        {
+            var marshaller = DeleteAlgorithmRequestMarshaller.Instance;
+            var unmarshaller = DeleteAlgorithmResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAlgorithmRequest,DeleteAlgorithmResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAlgorithm operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteAlgorithm">REST API Reference for DeleteAlgorithm Operation</seealso>
+        public virtual Task<DeleteAlgorithmResponse> DeleteAlgorithmAsync(DeleteAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteAlgorithmRequestMarshaller.Instance;
+            var unmarshaller = DeleteAlgorithmResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAlgorithmRequest,DeleteAlgorithmResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCodeRepository
+
+        internal virtual DeleteCodeRepositoryResponse DeleteCodeRepository(DeleteCodeRepositoryRequest request)
+        {
+            var marshaller = DeleteCodeRepositoryRequestMarshaller.Instance;
+            var unmarshaller = DeleteCodeRepositoryResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCodeRepositoryRequest,DeleteCodeRepositoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCodeRepository operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCodeRepository operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">REST API Reference for DeleteCodeRepository Operation</seealso>
+        public virtual Task<DeleteCodeRepositoryResponse> DeleteCodeRepositoryAsync(DeleteCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteCodeRepositoryRequestMarshaller.Instance;
+            var unmarshaller = DeleteCodeRepositoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCodeRepositoryRequest,DeleteCodeRepositoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteEndpoint
 
         internal virtual DeleteEndpointResponse DeleteEndpoint(DeleteEndpointRequest request)
@@ -653,6 +909,38 @@ namespace Amazon.SageMaker
             var unmarshaller = DeleteModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteModelRequest,DeleteModelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteModelPackage
+
+        internal virtual DeleteModelPackageResponse DeleteModelPackage(DeleteModelPackageRequest request)
+        {
+            var marshaller = DeleteModelPackageRequestMarshaller.Instance;
+            var unmarshaller = DeleteModelPackageResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteModelPackageRequest,DeleteModelPackageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteModelPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteModelPackage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelPackage">REST API Reference for DeleteModelPackage Operation</seealso>
+        public virtual Task<DeleteModelPackageResponse> DeleteModelPackageAsync(DeleteModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteModelPackageRequestMarshaller.Instance;
+            var unmarshaller = DeleteModelPackageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteModelPackageRequest,DeleteModelPackageResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -754,6 +1042,134 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DeleteWorkteam
+
+        internal virtual DeleteWorkteamResponse DeleteWorkteam(DeleteWorkteamRequest request)
+        {
+            var marshaller = DeleteWorkteamRequestMarshaller.Instance;
+            var unmarshaller = DeleteWorkteamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWorkteamRequest,DeleteWorkteamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteWorkteam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWorkteam operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkteam">REST API Reference for DeleteWorkteam Operation</seealso>
+        public virtual Task<DeleteWorkteamResponse> DeleteWorkteamAsync(DeleteWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteWorkteamRequestMarshaller.Instance;
+            var unmarshaller = DeleteWorkteamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWorkteamRequest,DeleteWorkteamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAlgorithm
+
+        internal virtual DescribeAlgorithmResponse DescribeAlgorithm(DescribeAlgorithmRequest request)
+        {
+            var marshaller = DescribeAlgorithmRequestMarshaller.Instance;
+            var unmarshaller = DescribeAlgorithmResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAlgorithmRequest,DescribeAlgorithmResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAlgorithm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAlgorithm operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAlgorithm">REST API Reference for DescribeAlgorithm Operation</seealso>
+        public virtual Task<DescribeAlgorithmResponse> DescribeAlgorithmAsync(DescribeAlgorithmRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeAlgorithmRequestMarshaller.Instance;
+            var unmarshaller = DescribeAlgorithmResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAlgorithmRequest,DescribeAlgorithmResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCodeRepository
+
+        internal virtual DescribeCodeRepositoryResponse DescribeCodeRepository(DescribeCodeRepositoryRequest request)
+        {
+            var marshaller = DescribeCodeRepositoryRequestMarshaller.Instance;
+            var unmarshaller = DescribeCodeRepositoryResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCodeRepositoryRequest,DescribeCodeRepositoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCodeRepository operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCodeRepository operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCodeRepository">REST API Reference for DescribeCodeRepository Operation</seealso>
+        public virtual Task<DescribeCodeRepositoryResponse> DescribeCodeRepositoryAsync(DescribeCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeCodeRepositoryRequestMarshaller.Instance;
+            var unmarshaller = DescribeCodeRepositoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCodeRepositoryRequest,DescribeCodeRepositoryResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCompilationJob
+
+        internal virtual DescribeCompilationJobResponse DescribeCompilationJob(DescribeCompilationJobRequest request)
+        {
+            var marshaller = DescribeCompilationJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeCompilationJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCompilationJobRequest,DescribeCompilationJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCompilationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCompilationJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCompilationJob">REST API Reference for DescribeCompilationJob Operation</seealso>
+        public virtual Task<DescribeCompilationJobResponse> DescribeCompilationJobAsync(DescribeCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeCompilationJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeCompilationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCompilationJobRequest,DescribeCompilationJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeEndpoint
 
         internal virtual DescribeEndpointResponse DescribeEndpoint(DescribeEndpointRequest request)
@@ -850,6 +1266,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeLabelingJob
+
+        internal virtual DescribeLabelingJobResponse DescribeLabelingJob(DescribeLabelingJobRequest request)
+        {
+            var marshaller = DescribeLabelingJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeLabelingJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLabelingJobRequest,DescribeLabelingJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeLabelingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLabelingJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeLabelingJob">REST API Reference for DescribeLabelingJob Operation</seealso>
+        public virtual Task<DescribeLabelingJobResponse> DescribeLabelingJobAsync(DescribeLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeLabelingJobRequestMarshaller.Instance;
+            var unmarshaller = DescribeLabelingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLabelingJobRequest,DescribeLabelingJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeModel
 
         internal virtual DescribeModelResponse DescribeModel(DescribeModelRequest request)
@@ -877,6 +1325,38 @@ namespace Amazon.SageMaker
             var unmarshaller = DescribeModelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeModelRequest,DescribeModelResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeModelPackage
+
+        internal virtual DescribeModelPackageResponse DescribeModelPackage(DescribeModelPackageRequest request)
+        {
+            var marshaller = DescribeModelPackageRequestMarshaller.Instance;
+            var unmarshaller = DescribeModelPackageResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeModelPackageRequest,DescribeModelPackageResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeModelPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeModelPackage operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">REST API Reference for DescribeModelPackage Operation</seealso>
+        public virtual Task<DescribeModelPackageResponse> DescribeModelPackageAsync(DescribeModelPackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeModelPackageRequestMarshaller.Instance;
+            var unmarshaller = DescribeModelPackageResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeModelPackageRequest,DescribeModelPackageResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -946,6 +1426,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeSubscribedWorkteam
+
+        internal virtual DescribeSubscribedWorkteamResponse DescribeSubscribedWorkteam(DescribeSubscribedWorkteamRequest request)
+        {
+            var marshaller = DescribeSubscribedWorkteamRequestMarshaller.Instance;
+            var unmarshaller = DescribeSubscribedWorkteamResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeSubscribedWorkteamRequest,DescribeSubscribedWorkteamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSubscribedWorkteam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSubscribedWorkteam operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSubscribedWorkteam">REST API Reference for DescribeSubscribedWorkteam Operation</seealso>
+        public virtual Task<DescribeSubscribedWorkteamResponse> DescribeSubscribedWorkteamAsync(DescribeSubscribedWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeSubscribedWorkteamRequestMarshaller.Instance;
+            var unmarshaller = DescribeSubscribedWorkteamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeSubscribedWorkteamRequest,DescribeSubscribedWorkteamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTrainingJob
 
         internal virtual DescribeTrainingJobResponse DescribeTrainingJob(DescribeTrainingJobRequest request)
@@ -1005,6 +1517,166 @@ namespace Amazon.SageMaker
             var unmarshaller = DescribeTransformJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTransformJobRequest,DescribeTransformJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeWorkteam
+
+        internal virtual DescribeWorkteamResponse DescribeWorkteam(DescribeWorkteamRequest request)
+        {
+            var marshaller = DescribeWorkteamRequestMarshaller.Instance;
+            var unmarshaller = DescribeWorkteamResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeWorkteamRequest,DescribeWorkteamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeWorkteam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeWorkteam operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkteam">REST API Reference for DescribeWorkteam Operation</seealso>
+        public virtual Task<DescribeWorkteamResponse> DescribeWorkteamAsync(DescribeWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeWorkteamRequestMarshaller.Instance;
+            var unmarshaller = DescribeWorkteamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeWorkteamRequest,DescribeWorkteamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSearchSuggestions
+
+        internal virtual GetSearchSuggestionsResponse GetSearchSuggestions(GetSearchSuggestionsRequest request)
+        {
+            var marshaller = GetSearchSuggestionsRequestMarshaller.Instance;
+            var unmarshaller = GetSearchSuggestionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetSearchSuggestionsRequest,GetSearchSuggestionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSearchSuggestions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSearchSuggestions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSearchSuggestions">REST API Reference for GetSearchSuggestions Operation</seealso>
+        public virtual Task<GetSearchSuggestionsResponse> GetSearchSuggestionsAsync(GetSearchSuggestionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetSearchSuggestionsRequestMarshaller.Instance;
+            var unmarshaller = GetSearchSuggestionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetSearchSuggestionsRequest,GetSearchSuggestionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAlgorithms
+
+        internal virtual ListAlgorithmsResponse ListAlgorithms(ListAlgorithmsRequest request)
+        {
+            var marshaller = ListAlgorithmsRequestMarshaller.Instance;
+            var unmarshaller = ListAlgorithmsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAlgorithmsRequest,ListAlgorithmsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAlgorithms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAlgorithms operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAlgorithms">REST API Reference for ListAlgorithms Operation</seealso>
+        public virtual Task<ListAlgorithmsResponse> ListAlgorithmsAsync(ListAlgorithmsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListAlgorithmsRequestMarshaller.Instance;
+            var unmarshaller = ListAlgorithmsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAlgorithmsRequest,ListAlgorithmsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCodeRepositories
+
+        internal virtual ListCodeRepositoriesResponse ListCodeRepositories(ListCodeRepositoriesRequest request)
+        {
+            var marshaller = ListCodeRepositoriesRequestMarshaller.Instance;
+            var unmarshaller = ListCodeRepositoriesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodeRepositoriesRequest,ListCodeRepositoriesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCodeRepositories operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCodeRepositories operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCodeRepositories">REST API Reference for ListCodeRepositories Operation</seealso>
+        public virtual Task<ListCodeRepositoriesResponse> ListCodeRepositoriesAsync(ListCodeRepositoriesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListCodeRepositoriesRequestMarshaller.Instance;
+            var unmarshaller = ListCodeRepositoriesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCodeRepositoriesRequest,ListCodeRepositoriesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCompilationJobs
+
+        internal virtual ListCompilationJobsResponse ListCompilationJobs(ListCompilationJobsRequest request)
+        {
+            var marshaller = ListCompilationJobsRequestMarshaller.Instance;
+            var unmarshaller = ListCompilationJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCompilationJobsRequest,ListCompilationJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCompilationJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCompilationJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCompilationJobs">REST API Reference for ListCompilationJobs Operation</seealso>
+        public virtual Task<ListCompilationJobsResponse> ListCompilationJobsAsync(ListCompilationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListCompilationJobsRequestMarshaller.Instance;
+            var unmarshaller = ListCompilationJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCompilationJobsRequest,ListCompilationJobsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1106,6 +1778,102 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListLabelingJobs
+
+        internal virtual ListLabelingJobsResponse ListLabelingJobs(ListLabelingJobsRequest request)
+        {
+            var marshaller = ListLabelingJobsRequestMarshaller.Instance;
+            var unmarshaller = ListLabelingJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLabelingJobsRequest,ListLabelingJobsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLabelingJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLabelingJobs operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobs">REST API Reference for ListLabelingJobs Operation</seealso>
+        public virtual Task<ListLabelingJobsResponse> ListLabelingJobsAsync(ListLabelingJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListLabelingJobsRequestMarshaller.Instance;
+            var unmarshaller = ListLabelingJobsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLabelingJobsRequest,ListLabelingJobsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLabelingJobsForWorkteam
+
+        internal virtual ListLabelingJobsForWorkteamResponse ListLabelingJobsForWorkteam(ListLabelingJobsForWorkteamRequest request)
+        {
+            var marshaller = ListLabelingJobsForWorkteamRequestMarshaller.Instance;
+            var unmarshaller = ListLabelingJobsForWorkteamResponseUnmarshaller.Instance;
+
+            return Invoke<ListLabelingJobsForWorkteamRequest,ListLabelingJobsForWorkteamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLabelingJobsForWorkteam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLabelingJobsForWorkteam operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListLabelingJobsForWorkteam">REST API Reference for ListLabelingJobsForWorkteam Operation</seealso>
+        public virtual Task<ListLabelingJobsForWorkteamResponse> ListLabelingJobsForWorkteamAsync(ListLabelingJobsForWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListLabelingJobsForWorkteamRequestMarshaller.Instance;
+            var unmarshaller = ListLabelingJobsForWorkteamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLabelingJobsForWorkteamRequest,ListLabelingJobsForWorkteamResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListModelPackages
+
+        internal virtual ListModelPackagesResponse ListModelPackages(ListModelPackagesRequest request)
+        {
+            var marshaller = ListModelPackagesRequestMarshaller.Instance;
+            var unmarshaller = ListModelPackagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListModelPackagesRequest,ListModelPackagesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListModelPackages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListModelPackages operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelPackages">REST API Reference for ListModelPackages Operation</seealso>
+        public virtual Task<ListModelPackagesResponse> ListModelPackagesAsync(ListModelPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListModelPackagesRequestMarshaller.Instance;
+            var unmarshaller = ListModelPackagesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListModelPackagesRequest,ListModelPackagesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListModels
 
         internal virtual ListModelsResponse ListModels(ListModelsRequest request)
@@ -1197,6 +1965,38 @@ namespace Amazon.SageMaker
             var unmarshaller = ListNotebookInstancesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListNotebookInstancesRequest,ListNotebookInstancesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSubscribedWorkteams
+
+        internal virtual ListSubscribedWorkteamsResponse ListSubscribedWorkteams(ListSubscribedWorkteamsRequest request)
+        {
+            var marshaller = ListSubscribedWorkteamsRequestMarshaller.Instance;
+            var unmarshaller = ListSubscribedWorkteamsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSubscribedWorkteamsRequest,ListSubscribedWorkteamsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSubscribedWorkteams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSubscribedWorkteams operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSubscribedWorkteams">REST API Reference for ListSubscribedWorkteams Operation</seealso>
+        public virtual Task<ListSubscribedWorkteamsResponse> ListSubscribedWorkteamsAsync(ListSubscribedWorkteamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSubscribedWorkteamsRequestMarshaller.Instance;
+            var unmarshaller = ListSubscribedWorkteamsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSubscribedWorkteamsRequest,ListSubscribedWorkteamsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1330,6 +2130,102 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  ListWorkteams
+
+        internal virtual ListWorkteamsResponse ListWorkteams(ListWorkteamsRequest request)
+        {
+            var marshaller = ListWorkteamsRequestMarshaller.Instance;
+            var unmarshaller = ListWorkteamsResponseUnmarshaller.Instance;
+
+            return Invoke<ListWorkteamsRequest,ListWorkteamsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListWorkteams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListWorkteams operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkteams">REST API Reference for ListWorkteams Operation</seealso>
+        public virtual Task<ListWorkteamsResponse> ListWorkteamsAsync(ListWorkteamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListWorkteamsRequestMarshaller.Instance;
+            var unmarshaller = ListWorkteamsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWorkteamsRequest,ListWorkteamsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RenderUiTemplate
+
+        internal virtual RenderUiTemplateResponse RenderUiTemplate(RenderUiTemplateRequest request)
+        {
+            var marshaller = RenderUiTemplateRequestMarshaller.Instance;
+            var unmarshaller = RenderUiTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<RenderUiTemplateRequest,RenderUiTemplateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RenderUiTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RenderUiTemplate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate">REST API Reference for RenderUiTemplate Operation</seealso>
+        public virtual Task<RenderUiTemplateResponse> RenderUiTemplateAsync(RenderUiTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RenderUiTemplateRequestMarshaller.Instance;
+            var unmarshaller = RenderUiTemplateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RenderUiTemplateRequest,RenderUiTemplateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  Search
+
+        internal virtual SearchResponse Search(SearchRequest request)
+        {
+            var marshaller = SearchRequestMarshaller.Instance;
+            var unmarshaller = SearchResponseUnmarshaller.Instance;
+
+            return Invoke<SearchRequest,SearchResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Search operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the Search operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">REST API Reference for Search Operation</seealso>
+        public virtual Task<SearchResponse> SearchAsync(SearchRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = SearchRequestMarshaller.Instance;
+            var unmarshaller = SearchResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchRequest,SearchResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartNotebookInstance
 
         internal virtual StartNotebookInstanceResponse StartNotebookInstance(StartNotebookInstanceRequest request)
@@ -1362,6 +2258,38 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  StopCompilationJob
+
+        internal virtual StopCompilationJobResponse StopCompilationJob(StopCompilationJobRequest request)
+        {
+            var marshaller = StopCompilationJobRequestMarshaller.Instance;
+            var unmarshaller = StopCompilationJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopCompilationJobRequest,StopCompilationJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopCompilationJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopCompilationJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopCompilationJob">REST API Reference for StopCompilationJob Operation</seealso>
+        public virtual Task<StopCompilationJobResponse> StopCompilationJobAsync(StopCompilationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopCompilationJobRequestMarshaller.Instance;
+            var unmarshaller = StopCompilationJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopCompilationJobRequest,StopCompilationJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopHyperParameterTuningJob
 
         internal virtual StopHyperParameterTuningJobResponse StopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request)
@@ -1389,6 +2317,38 @@ namespace Amazon.SageMaker
             var unmarshaller = StopHyperParameterTuningJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopHyperParameterTuningJobRequest,StopHyperParameterTuningJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopLabelingJob
+
+        internal virtual StopLabelingJobResponse StopLabelingJob(StopLabelingJobRequest request)
+        {
+            var marshaller = StopLabelingJobRequestMarshaller.Instance;
+            var unmarshaller = StopLabelingJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopLabelingJobRequest,StopLabelingJobResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopLabelingJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopLabelingJob operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopLabelingJob">REST API Reference for StopLabelingJob Operation</seealso>
+        public virtual Task<StopLabelingJobResponse> StopLabelingJobAsync(StopLabelingJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopLabelingJobRequestMarshaller.Instance;
+            var unmarshaller = StopLabelingJobResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopLabelingJobRequest,StopLabelingJobResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1485,6 +2445,38 @@ namespace Amazon.SageMaker
             var unmarshaller = StopTransformJobResponseUnmarshaller.Instance;
 
             return InvokeAsync<StopTransformJobRequest,StopTransformJobResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCodeRepository
+
+        internal virtual UpdateCodeRepositoryResponse UpdateCodeRepository(UpdateCodeRepositoryRequest request)
+        {
+            var marshaller = UpdateCodeRepositoryRequestMarshaller.Instance;
+            var unmarshaller = UpdateCodeRepositoryResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCodeRepositoryRequest,UpdateCodeRepositoryResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCodeRepository operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCodeRepository operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">REST API Reference for UpdateCodeRepository Operation</seealso>
+        public virtual Task<UpdateCodeRepositoryResponse> UpdateCodeRepositoryAsync(UpdateCodeRepositoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateCodeRepositoryRequestMarshaller.Instance;
+            var unmarshaller = UpdateCodeRepositoryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCodeRepositoryRequest,UpdateCodeRepositoryResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1613,6 +2605,38 @@ namespace Amazon.SageMaker
             var unmarshaller = UpdateNotebookInstanceLifecycleConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateNotebookInstanceLifecycleConfigRequest,UpdateNotebookInstanceLifecycleConfigResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWorkteam
+
+        internal virtual UpdateWorkteamResponse UpdateWorkteam(UpdateWorkteamRequest request)
+        {
+            var marshaller = UpdateWorkteamRequestMarshaller.Instance;
+            var unmarshaller = UpdateWorkteamResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWorkteamRequest,UpdateWorkteamResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateWorkteam operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWorkteam operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkteam">REST API Reference for UpdateWorkteam Operation</seealso>
+        public virtual Task<UpdateWorkteamResponse> UpdateWorkteamAsync(UpdateWorkteamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateWorkteamRequestMarshaller.Instance;
+            var unmarshaller = UpdateWorkteamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWorkteamRequest,UpdateWorkteamResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _image;
         private string _modelDataUrl;
+        private string _modelPackageName;
 
         /// <summary>
         /// Gets and sets the property ContainerHostname. 
@@ -110,7 +111,7 @@ namespace Amazon.SageMaker.Model
         /// Service to download model artifacts from the S3 path you provide. AWS STS is activated
         /// in your IAM user account by default. If you previously deactivated AWS STS for a region,
         /// you need to reactivate AWS STS for that region. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-        /// and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management
+        /// and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access Management
         /// User Guide</i>.
         /// </para>
         /// </summary>
@@ -124,6 +125,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetModelDataUrl()
         {
             return this._modelDataUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageName. 
+        /// <para>
+        /// The name of the model package in this container.
+        /// </para>
+        /// </summary>
+        public string ModelPackageName
+        {
+            get { return this._modelPackageName; }
+            set { this._modelPackageName = value; }
+        }
+
+        // Check to see if ModelPackageName property is set
+        internal bool IsSetModelPackageName()
+        {
+            return this._modelPackageName != null;
         }
 
     }

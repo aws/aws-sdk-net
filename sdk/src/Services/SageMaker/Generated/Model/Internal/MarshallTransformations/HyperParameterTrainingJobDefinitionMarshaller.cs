@@ -56,6 +56,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEnableNetworkIsolation())
+            {
+                context.Writer.WritePropertyName("EnableNetworkIsolation");
+                context.Writer.Write(requestObject.EnableNetworkIsolation);
+            }
+
             if(requestObject.IsSetInputDataConfig())
             {
                 context.Writer.WritePropertyName("InputDataConfig");

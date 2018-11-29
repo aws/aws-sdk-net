@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AcceleratorType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AcceleratorType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("InitialInstanceCount", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

@@ -33,9 +33,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class HyperParameterAlgorithmSpecification
     {
+        private string _algorithmName;
         private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
         private string _trainingImage;
         private TrainingInputMode _trainingInputMode;
+
+        /// <summary>
+        /// Gets and sets the property AlgorithmName. 
+        /// <para>
+        /// The name of the resource algorithm to use for the hyperparameter tuning job. If you
+        /// specify a value for this parameter, do not specify a value for <code>TrainingImage</code>.
+        /// </para>
+        /// </summary>
+        public string AlgorithmName
+        {
+            get { return this._algorithmName; }
+            set { this._algorithmName = value; }
+        }
+
+        // Check to see if AlgorithmName property is set
+        internal bool IsSetAlgorithmName()
+        {
+            return this._algorithmName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MetricDefinitions. 

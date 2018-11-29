@@ -67,6 +67,52 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAcceleratorTypes())
+                {
+                    context.Writer.WritePropertyName("AcceleratorTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAcceleratorTypesListValue in publicRequest.AcceleratorTypes)
+                    {
+                            context.Writer.Write(publicRequestAcceleratorTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAdditionalCodeRepositories())
+                {
+                    context.Writer.WritePropertyName("AdditionalCodeRepositories");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalCodeRepositoriesListValue in publicRequest.AdditionalCodeRepositories)
+                    {
+                            context.Writer.Write(publicRequestAdditionalCodeRepositoriesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDefaultCodeRepository())
+                {
+                    context.Writer.WritePropertyName("DefaultCodeRepository");
+                    context.Writer.Write(publicRequest.DefaultCodeRepository);
+                }
+
+                if(publicRequest.IsSetDisassociateAcceleratorTypes())
+                {
+                    context.Writer.WritePropertyName("DisassociateAcceleratorTypes");
+                    context.Writer.Write(publicRequest.DisassociateAcceleratorTypes);
+                }
+
+                if(publicRequest.IsSetDisassociateAdditionalCodeRepositories())
+                {
+                    context.Writer.WritePropertyName("DisassociateAdditionalCodeRepositories");
+                    context.Writer.Write(publicRequest.DisassociateAdditionalCodeRepositories);
+                }
+
+                if(publicRequest.IsSetDisassociateDefaultCodeRepository())
+                {
+                    context.Writer.WritePropertyName("DisassociateDefaultCodeRepository");
+                    context.Writer.Write(publicRequest.DisassociateDefaultCodeRepository);
+                }
+
                 if(publicRequest.IsSetDisassociateLifecycleConfig())
                 {
                     context.Writer.WritePropertyName("DisassociateLifecycleConfig");

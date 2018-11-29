@@ -78,6 +78,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEnableNetworkIsolation())
+                {
+                    context.Writer.WritePropertyName("EnableNetworkIsolation");
+                    context.Writer.Write(publicRequest.EnableNetworkIsolation);
+                }
+
                 if(publicRequest.IsSetHyperParameters())
                 {
                     context.Writer.WritePropertyName("HyperParameters");

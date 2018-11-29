@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private DataSource _dataSource;
         private TrainingInputMode _inputMode;
         private RecordWrapper _recordWrapperType;
+        private ShuffleConfig _shuffleConfig;
 
         /// <summary>
         /// Gets and sets the property ChannelName. 
@@ -146,14 +147,14 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RecordWrapperType.  
         /// <para>
         /// Specify RecordIO as the value when input data is in raw format but the training algorithm
-        /// requires the RecordIO format, in which case, Amazon SageMaker wraps each individual
+        /// requires the RecordIO format. In this case, Amazon SageMaker wraps each individual
         /// S3 object in a RecordIO record. If the input data is already in RecordIO format, you
         /// don't need to set this attribute. For more information, see <a href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create
         /// a Dataset Using RecordIO</a>. 
         /// </para>
         ///  
         /// <para>
-        /// In FILE mode, leave this field unset or set it to None.
+        /// In File mode, leave this field unset or set it to None.
         /// </para>
         /// </summary>
         public RecordWrapper RecordWrapperType
@@ -166,6 +167,38 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetRecordWrapperType()
         {
             return this._recordWrapperType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShuffleConfig. 
+        /// <para>
+        /// A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code>
+        /// for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches.
+        /// If you use <code>ManifestFile</code>, the order of the S3 object references in the
+        /// <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>,
+        /// the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled.
+        /// The shuffling order is determined using the <code>Seed</code> value.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Pipe input mode, shuffling is done at the start of every epoch. With large datasets
+        /// this ensures that the order of the training data is different for each epoch, it helps
+        /// reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig
+        /// is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>,
+        /// the data is shuffled across nodes so that the content sent to a particular node on
+        /// the first epoch might be sent to a different node on the second epoch.
+        /// </para>
+        /// </summary>
+        public ShuffleConfig ShuffleConfig
+        {
+            get { return this._shuffleConfig; }
+            set { this._shuffleConfig = value; }
+        }
+
+        // Check to see if ShuffleConfig property is set
+        internal bool IsSetShuffleConfig()
+        {
+            return this._shuffleConfig != null;
         }
 
     }

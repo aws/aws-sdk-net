@@ -32,12 +32,32 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeModelResponse : AmazonWebServiceResponse
     {
+        private List<ContainerDefinition> _containers = new List<ContainerDefinition>();
         private DateTime? _creationTime;
+        private bool? _enableNetworkIsolation;
         private string _executionRoleArn;
         private string _modelArn;
         private string _modelName;
         private ContainerDefinition _primaryContainer;
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property Containers. 
+        /// <para>
+        /// The containers in the inference pipeline.
+        /// </para>
+        /// </summary>
+        public List<ContainerDefinition> Containers
+        {
+            get { return this._containers; }
+            set { this._containers = value; }
+        }
+
+        // Check to see if Containers property is set
+        internal bool IsSetContainers()
+        {
+            return this._containers != null && this._containers.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -55,6 +75,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableNetworkIsolation. 
+        /// <para>
+        /// If <code>True</code>, no inbound or outbound network calls can be made to or from
+        /// the model container.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Semantic Segmentation built-in algorithm does not support network isolation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool EnableNetworkIsolation
+        {
+            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            set { this._enableNetworkIsolation = value; }
+        }
+
+        // Check to see if EnableNetworkIsolation property is set
+        internal bool IsSetEnableNetworkIsolation()
+        {
+            return this._enableNetworkIsolation.HasValue; 
         }
 
         /// <summary>

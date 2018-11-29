@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HyperParameterAlgorithmSpecification requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlgorithmName())
+            {
+                context.Writer.WritePropertyName("AlgorithmName");
+                context.Writer.Write(requestObject.AlgorithmName);
+            }
+
             if(requestObject.IsSetMetricDefinitions())
             {
                 context.Writer.WritePropertyName("MetricDefinitions");

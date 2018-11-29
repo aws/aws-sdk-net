@@ -89,6 +89,9 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateNotebookInstanceRequest : AmazonSageMakerRequest
     {
+        private List<string> _acceleratorTypes = new List<string>();
+        private List<string> _additionalCodeRepositories = new List<string>();
+        private string _defaultCodeRepository;
         private DirectInternetAccess _directInternetAccess;
         private InstanceType _instanceType;
         private string _kmsKeyId;
@@ -99,6 +102,75 @@ namespace Amazon.SageMaker.Model
         private string _subnetId;
         private List<Tag> _tags = new List<Tag>();
         private int? _volumeSizeInGB;
+
+        /// <summary>
+        /// Gets and sets the property AcceleratorTypes. 
+        /// <para>
+        /// A list of Elastic Inference (EI) instance types to associate with this notebook instance.
+        /// Currently, only one instance type can be associated with a notebook intance. For more
+        /// information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using
+        /// Elastic Inference in Amazon SageMaker</a>.
+        /// </para>
+        /// </summary>
+        public List<string> AcceleratorTypes
+        {
+            get { return this._acceleratorTypes; }
+            set { this._acceleratorTypes = value; }
+        }
+
+        // Check to see if AcceleratorTypes property is set
+        internal bool IsSetAcceleratorTypes()
+        {
+            return this._acceleratorTypes != null && this._acceleratorTypes.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalCodeRepositories. 
+        /// <para>
+        /// An array of up to 3 git repositories to associate with the notebook instance. These
+        /// can be either the names of git repositories stored as resources in your account, or
+        /// the URL of git repositories in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// CodeCommit</a> or in any other git repository. These repositories are cloned at the
+        /// same level as the default repository of your notebook instance. For more information,
+        /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalCodeRepositories
+        {
+            get { return this._additionalCodeRepositories; }
+            set { this._additionalCodeRepositories = value; }
+        }
+
+        // Check to see if AdditionalCodeRepositories property is set
+        internal bool IsSetAdditionalCodeRepositories()
+        {
+            return this._additionalCodeRepositories != null && this._additionalCodeRepositories.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultCodeRepository. 
+        /// <para>
+        /// A git repository to associate with the notebook instance as its default code repository.
+        /// This can be either the name of a git repository stored as a resource in your account,
+        /// or the URL of a git repository in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// CodeCommit</a> or in any other git repository. When you open a notebook instance,
+        /// it opens in the directory that contains this repository. For more information, see
+        /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// </para>
+        /// </summary>
+        public string DefaultCodeRepository
+        {
+            get { return this._defaultCodeRepository; }
+            set { this._defaultCodeRepository = value; }
+        }
+
+        // Check to see if DefaultCodeRepository property is set
+        internal bool IsSetDefaultCodeRepository()
+        {
+            return this._defaultCodeRepository != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DirectInternetAccess. 
@@ -149,9 +221,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         ///  If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest
-        /// on the ML storage volume that is attached to your notebook instance. The KMS key you
-        /// provide must be enabled. For information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
-        /// and Disabling Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+        /// on the ML storage volume that is attached to your notebook instance. 
         /// </para>
         /// </summary>
         public string KmsKeyId

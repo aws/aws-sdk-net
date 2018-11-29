@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecordWrapperType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ShuffleConfig", targetDepth))
+                {
+                    var unmarshaller = ShuffleConfigUnmarshaller.Instance;
+                    unmarshalledObject.ShuffleConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

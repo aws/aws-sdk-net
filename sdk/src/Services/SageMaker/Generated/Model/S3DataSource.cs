@@ -32,9 +32,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class S3DataSource
     {
+        private List<string> _attributeNames = new List<string>();
         private S3DataDistribution _s3DataDistributionType;
         private S3DataType _s3DataType;
         private string _s3Uri;
+
+        /// <summary>
+        /// Gets and sets the property AttributeNames. 
+        /// <para>
+        /// A list of one or more attribute names to use that are found in a specified augmented
+        /// manifest file.
+        /// </para>
+        /// </summary>
+        public List<string> AttributeNames
+        {
+            get { return this._attributeNames; }
+            set { this._attributeNames = value; }
+        }
+
+        // Check to see if AttributeNames property is set
+        internal bool IsSetAttributeNames()
+        {
+            return this._attributeNames != null && this._attributeNames.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property S3DataDistributionType. 
@@ -54,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Don't choose more ML compute instances for training than available S3 objects. If
         /// you do, some nodes won't get any data and you will pay for nodes that aren't getting
-        /// any training data. This applies in both FILE and PIPE modes. Keep this in mind when
+        /// any training data. This applies in both File and Pipemodes. Keep this in mind when
         /// developing algorithms. 
         /// </para>
         ///  
@@ -81,14 +101,21 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3DataType. 
         /// <para>
         /// If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix.
-        /// Amazon SageMaker uses all objects with the specified key name prefix for model training.
-        /// 
+        /// Amazon SageMaker uses all objects that match the specified key name prefix for model
+        /// training. 
         /// </para>
         ///  
         /// <para>
         /// If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that
         /// is a manifest file containing a list of object keys that you want Amazon SageMaker
         /// to use for model training. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that
+        /// is an augmented manifest file in JSON lines format. This file contains the data you
+        /// want to use for model training. <code>AugmentedManifestFile</code> can only be used
+        /// if the Channel's input mode is <code>Pipe</code>.
         /// </para>
         /// </summary>
         public S3DataType S3DataType
@@ -156,7 +183,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> 
+        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> 
         /// </para>
         ///  
         /// <para>
@@ -164,10 +191,10 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  The complete set of <code>s3uris</code> in this manifest constitutes the input data
-        /// for the channel for this datasource. The object that each <code>s3uris</code> points
-        /// to must readable by the IAM role that Amazon SageMaker uses to perform tasks on your
-        /// behalf. 
+        /// The complete set of <code>s3uris</code> in this manifest is the input data for the
+        /// channel for this datasource. The object that each <code>s3uris</code> points to must
+        /// be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

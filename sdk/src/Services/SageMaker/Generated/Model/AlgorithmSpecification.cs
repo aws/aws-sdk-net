@@ -40,9 +40,30 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AlgorithmSpecification
     {
+        private string _algorithmName;
         private List<MetricDefinition> _metricDefinitions = new List<MetricDefinition>();
         private string _trainingImage;
         private TrainingInputMode _trainingInputMode;
+
+        /// <summary>
+        /// Gets and sets the property AlgorithmName. 
+        /// <para>
+        /// The name of the algorithm resource to use for the training job. This must be an algorithm
+        /// resource that you created or subscribe to on AWS Marketplace. If you specify a value
+        /// for this parameter, you can't specify a value for <code>TrainingImage</code>.
+        /// </para>
+        /// </summary>
+        public string AlgorithmName
+        {
+            get { return this._algorithmName; }
+            set { this._algorithmName = value; }
+        }
+
+        // Check to see if AlgorithmName property is set
+        internal bool IsSetAlgorithmName()
+        {
+            return this._algorithmName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MetricDefinitions. 

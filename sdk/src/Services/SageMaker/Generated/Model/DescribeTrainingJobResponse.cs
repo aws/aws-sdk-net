@@ -34,10 +34,12 @@ namespace Amazon.SageMaker.Model
     {
         private AlgorithmSpecification _algorithmSpecification;
         private DateTime? _creationTime;
+        private bool? _enableNetworkIsolation;
         private string _failureReason;
         private List<MetricData> _finalMetricDataList = new List<MetricData>();
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
+        private string _labelingJobArn;
         private DateTime? _lastModifiedTime;
         private ModelArtifacts _modelArtifacts;
         private OutputDataConfig _outputDataConfig;
@@ -88,6 +90,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableNetworkIsolation. 
+        /// <para>
+        /// If <code>True</code>, inbound or outbound network calls can be made, except for calls
+        /// between peers within a training cluster for distributed training. If network isolation
+        /// is used for training jobs that are configured to use a VPC, Amazon SageMaker downloads
+        /// and uploads customer data and model artifacts through the specifed VPC, but the training
+        /// container does not have network access.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Semantic Segmentation built-in algorithm does not support network isolation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool EnableNetworkIsolation
+        {
+            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            set { this._enableNetworkIsolation = value; }
+        }
+
+        // Check to see if EnableNetworkIsolation property is set
+        internal bool IsSetEnableNetworkIsolation()
+        {
+            return this._enableNetworkIsolation.HasValue; 
         }
 
         /// <summary>
@@ -161,6 +190,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInputDataConfig()
         {
             return this._inputDataConfig != null && this._inputDataConfig.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelingJobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that
+        /// created the transform or training job.
+        /// </para>
+        /// </summary>
+        public string LabelingJobArn
+        {
+            get { return this._labelingJobArn; }
+            set { this._labelingJobArn = value; }
+        }
+
+        // Check to see if LabelingJobArn property is set
+        internal bool IsSetLabelingJobArn()
+        {
+            return this._labelingJobArn != null;
         }
 
         /// <summary>

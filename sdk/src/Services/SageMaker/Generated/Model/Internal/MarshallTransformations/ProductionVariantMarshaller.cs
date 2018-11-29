@@ -45,6 +45,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ProductionVariant requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAcceleratorType())
+            {
+                context.Writer.WritePropertyName("AcceleratorType");
+                context.Writer.Write(requestObject.AcceleratorType);
+            }
+
             if(requestObject.IsSetInitialInstanceCount())
             {
                 context.Writer.WritePropertyName("InitialInstanceCount");

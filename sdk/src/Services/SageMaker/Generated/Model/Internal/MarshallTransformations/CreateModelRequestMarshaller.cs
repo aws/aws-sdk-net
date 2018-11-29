@@ -67,6 +67,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetContainers())
+                {
+                    context.Writer.WritePropertyName("Containers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestContainersListValue in publicRequest.Containers)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = ContainerDefinitionMarshaller.Instance;
+                        marshaller.Marshall(publicRequestContainersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetEnableNetworkIsolation())
+                {
+                    context.Writer.WritePropertyName("EnableNetworkIsolation");
+                    context.Writer.Write(publicRequest.EnableNetworkIsolation);
+                }
+
                 if(publicRequest.IsSetExecutionRoleArn())
                 {
                     context.Writer.WritePropertyName("ExecutionRoleArn");

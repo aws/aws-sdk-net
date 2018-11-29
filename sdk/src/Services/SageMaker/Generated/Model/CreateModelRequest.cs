@@ -68,11 +68,55 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateModelRequest : AmazonSageMakerRequest
     {
+        private List<ContainerDefinition> _containers = new List<ContainerDefinition>();
+        private bool? _enableNetworkIsolation;
         private string _executionRoleArn;
         private string _modelName;
         private ContainerDefinition _primaryContainer;
         private List<Tag> _tags = new List<Tag>();
         private VpcConfig _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property Containers. 
+        /// <para>
+        /// Specifies the containers in the inference pipeline.
+        /// </para>
+        /// </summary>
+        public List<ContainerDefinition> Containers
+        {
+            get { return this._containers; }
+            set { this._containers = value; }
+        }
+
+        // Check to see if Containers property is set
+        internal bool IsSetContainers()
+        {
+            return this._containers != null && this._containers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableNetworkIsolation. 
+        /// <para>
+        /// Isolates the model container. No inbound or outbound network calls can be made to
+        /// or from the model container.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Semantic Segmentation built-in algorithm does not support network isolation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool EnableNetworkIsolation
+        {
+            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            set { this._enableNetworkIsolation = value; }
+        }
+
+        // Check to see if EnableNetworkIsolation property is set
+        internal bool IsSetEnableNetworkIsolation()
+        {
+            return this._enableNetworkIsolation.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 

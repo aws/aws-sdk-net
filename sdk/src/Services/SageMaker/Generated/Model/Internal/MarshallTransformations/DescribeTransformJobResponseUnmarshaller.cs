@@ -75,6 +75,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("LabelingJobArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LabelingJobArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxConcurrentTransforms", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

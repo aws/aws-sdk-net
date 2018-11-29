@@ -91,6 +91,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateTrainingJobRequest : AmazonSageMakerRequest
     {
         private AlgorithmSpecification _algorithmSpecification;
+        private bool? _enableNetworkIsolation;
         private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
         private List<Channel> _inputDataConfig = new List<Channel>();
         private OutputDataConfig _outputDataConfig;
@@ -121,6 +122,33 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAlgorithmSpecification()
         {
             return this._algorithmSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableNetworkIsolation. 
+        /// <para>
+        /// Isolates the training container. No inbound or outbound network calls can be made,
+        /// except for calls between peers within a training cluster for distributed training.
+        /// If network isolation is used for training jobs that are configured to use a VPC, Amazon
+        /// SageMaker downloads and uploads customer data and model artifacts through the specifed
+        /// VPC, but the training container does not have network access.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The Semantic Segmentation built-in algorithm does not support network isolation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool EnableNetworkIsolation
+        {
+            get { return this._enableNetworkIsolation.GetValueOrDefault(); }
+            set { this._enableNetworkIsolation = value; }
+        }
+
+        // Check to see if EnableNetworkIsolation property is set
+        internal bool IsSetEnableNetworkIsolation()
+        {
+            return this._enableNetworkIsolation.HasValue; 
         }
 
         /// <summary>
@@ -232,8 +260,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to
-        /// perform tasks on your behalf. 
+        /// The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform
+        /// tasks on your behalf. 
         /// </para>
         ///  
         /// <para>

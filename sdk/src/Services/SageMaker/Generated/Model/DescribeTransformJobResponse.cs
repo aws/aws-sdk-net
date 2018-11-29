@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private Dictionary<string, string> _environment = new Dictionary<string, string>();
         private string _failureReason;
+        private string _labelingJobArn;
         private int? _maxConcurrentTransforms;
         private int? _maxPayloadInMB;
         private string _modelName;
@@ -117,6 +118,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LabelingJobArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling job that
+        /// created the transform or training job.
+        /// </para>
+        /// </summary>
+        public string LabelingJobArn
+        {
+            get { return this._labelingJobArn; }
+            set { this._labelingJobArn = value; }
+        }
+
+        // Check to see if LabelingJobArn property is set
+        internal bool IsSetLabelingJobArn()
+        {
+            return this._labelingJobArn != null;
         }
 
         /// <summary>

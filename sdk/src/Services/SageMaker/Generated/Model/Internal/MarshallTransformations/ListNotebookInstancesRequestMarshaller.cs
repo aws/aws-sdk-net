@@ -67,6 +67,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalCodeRepositoryEquals())
+                {
+                    context.Writer.WritePropertyName("AdditionalCodeRepositoryEquals");
+                    context.Writer.Write(publicRequest.AdditionalCodeRepositoryEquals);
+                }
+
                 if(publicRequest.IsSetCreationTimeAfter())
                 {
                     context.Writer.WritePropertyName("CreationTimeAfter");
@@ -77,6 +83,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("CreationTimeBefore");
                     context.Writer.Write(publicRequest.CreationTimeBefore);
+                }
+
+                if(publicRequest.IsSetDefaultCodeRepositoryContains())
+                {
+                    context.Writer.WritePropertyName("DefaultCodeRepositoryContains");
+                    context.Writer.Write(publicRequest.DefaultCodeRepositoryContains);
                 }
 
                 if(publicRequest.IsSetLastModifiedTimeAfter())

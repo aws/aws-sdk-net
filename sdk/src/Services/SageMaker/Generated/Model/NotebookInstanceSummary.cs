@@ -32,7 +32,9 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class NotebookInstanceSummary
     {
+        private List<string> _additionalCodeRepositories = new List<string>();
         private DateTime? _creationTime;
+        private string _defaultCodeRepository;
         private InstanceType _instanceType;
         private DateTime? _lastModifiedTime;
         private string _notebookInstanceArn;
@@ -40,6 +42,30 @@ namespace Amazon.SageMaker.Model
         private string _notebookInstanceName;
         private NotebookInstanceStatus _notebookInstanceStatus;
         private string _url;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalCodeRepositories. 
+        /// <para>
+        /// An array of up to 3 git repositories associated with the notebook instance. These
+        /// can be either the names of git repositories stored as resources in your account, or
+        /// the URL of git repositories in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// CodeCommit</a> or in any other git repository. These repositories are cloned at the
+        /// same level as the default repository of your notebook instance. For more information,
+        /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// </para>
+        /// </summary>
+        public List<string> AdditionalCodeRepositories
+        {
+            get { return this._additionalCodeRepositories; }
+            set { this._additionalCodeRepositories = value; }
+        }
+
+        // Check to see if AdditionalCodeRepositories property is set
+        internal bool IsSetAdditionalCodeRepositories()
+        {
+            return this._additionalCodeRepositories != null && this._additionalCodeRepositories.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -57,6 +83,30 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultCodeRepository. 
+        /// <para>
+        /// The git repository associated with the notebook instance as its default code repository.
+        /// This can be either the name of a git repository stored as a resource in your account,
+        /// or the URL of a git repository in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+        /// CodeCommit</a> or in any other git repository. When you open a notebook instance,
+        /// it opens in the directory that contains this repository. For more information, see
+        /// <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+        /// Git Repositories with Amazon SageMaker Notebook Instances</a>.
+        /// </para>
+        /// </summary>
+        public string DefaultCodeRepository
+        {
+            get { return this._defaultCodeRepository; }
+            set { this._defaultCodeRepository = value; }
+        }
+
+        // Check to see if DefaultCodeRepository property is set
+        internal bool IsSetDefaultCodeRepository()
+        {
+            return this._defaultCodeRepository != null;
         }
 
         /// <summary>

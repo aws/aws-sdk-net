@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3DataSource requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAttributeNames())
+            {
+                context.Writer.WritePropertyName("AttributeNames");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAttributeNamesListValue in requestObject.AttributeNames)
+                {
+                        context.Writer.Write(requestObjectAttributeNamesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetS3DataDistributionType())
             {
                 context.Writer.WritePropertyName("S3DataDistributionType");

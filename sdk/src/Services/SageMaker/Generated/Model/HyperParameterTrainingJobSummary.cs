@@ -243,7 +243,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TuningJobName.
+        /// Gets and sets the property TuningJobName. 
+        /// <para>
+        /// The name of the hyperparameter tuning job that launched this training job.
+        /// </para>
         /// </summary>
         public string TuningJobName
         {

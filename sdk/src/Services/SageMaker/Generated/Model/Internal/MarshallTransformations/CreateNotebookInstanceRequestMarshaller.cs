@@ -67,6 +67,34 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAcceleratorTypes())
+                {
+                    context.Writer.WritePropertyName("AcceleratorTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAcceleratorTypesListValue in publicRequest.AcceleratorTypes)
+                    {
+                            context.Writer.Write(publicRequestAcceleratorTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAdditionalCodeRepositories())
+                {
+                    context.Writer.WritePropertyName("AdditionalCodeRepositories");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdditionalCodeRepositoriesListValue in publicRequest.AdditionalCodeRepositories)
+                    {
+                            context.Writer.Write(publicRequestAdditionalCodeRepositoriesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetDefaultCodeRepository())
+                {
+                    context.Writer.WritePropertyName("DefaultCodeRepository");
+                    context.Writer.Write(publicRequest.DefaultCodeRepository);
+                }
+
                 if(publicRequest.IsSetDirectInternetAccess())
                 {
                     context.Writer.WritePropertyName("DirectInternetAccess");

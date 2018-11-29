@@ -34,11 +34,34 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ProductionVariant
     {
+        private ProductionVariantAcceleratorType _acceleratorType;
         private int? _initialInstanceCount;
         private float? _initialVariantWeight;
         private ProductionVariantInstanceType _instanceType;
         private string _modelName;
         private string _variantName;
+
+        /// <summary>
+        /// Gets and sets the property AcceleratorType. 
+        /// <para>
+        /// The size of the Elastic Inference (EI) instance to use for the production variant.
+        /// EI instances provide on-demand GPU computing for inference. For more information,
+        /// see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+        /// Inference in Amazon SageMaker</a>. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using
+        /// Elastic Inference in Amazon SageMaker</a>.
+        /// </para>
+        /// </summary>
+        public ProductionVariantAcceleratorType AcceleratorType
+        {
+            get { return this._acceleratorType; }
+            set { this._acceleratorType = value; }
+        }
+
+        // Check to see if AcceleratorType property is set
+        internal bool IsSetAcceleratorType()
+        {
+            return this._acceleratorType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InitialInstanceCount. 

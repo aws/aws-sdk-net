@@ -34,8 +34,10 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListNotebookInstancesRequest : AmazonSageMakerRequest
     {
+        private string _additionalCodeRepositoryEquals;
         private DateTime? _creationTimeAfter;
         private DateTime? _creationTimeBefore;
+        private string _defaultCodeRepositoryContains;
         private DateTime? _lastModifiedTimeAfter;
         private DateTime? _lastModifiedTimeBefore;
         private int? _maxResults;
@@ -45,6 +47,25 @@ namespace Amazon.SageMaker.Model
         private NotebookInstanceSortKey _sortBy;
         private NotebookInstanceSortOrder _sortOrder;
         private NotebookInstanceStatus _statusEquals;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalCodeRepositoryEquals. 
+        /// <para>
+        /// A filter that returns only notebook instances with associated with the specified git
+        /// respository.
+        /// </para>
+        /// </summary>
+        public string AdditionalCodeRepositoryEquals
+        {
+            get { return this._additionalCodeRepositoryEquals; }
+            set { this._additionalCodeRepositoryEquals = value; }
+        }
+
+        // Check to see if AdditionalCodeRepositoryEquals property is set
+        internal bool IsSetAdditionalCodeRepositoryEquals()
+        {
+            return this._additionalCodeRepositoryEquals != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
@@ -82,6 +103,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTimeBefore()
         {
             return this._creationTimeBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultCodeRepositoryContains. 
+        /// <para>
+        /// A string in the name or URL of a git repository associated with this notebook instance.
+        /// This filter returns only notebook instances associated with a git repository with
+        /// a name that contains the specified string.
+        /// </para>
+        /// </summary>
+        public string DefaultCodeRepositoryContains
+        {
+            get { return this._defaultCodeRepositoryContains; }
+            set { this._defaultCodeRepositoryContains = value; }
+        }
+
+        // Check to see if DefaultCodeRepositoryContains property is set
+        internal bool IsSetDefaultCodeRepositoryContains()
+        {
+            return this._defaultCodeRepositoryContains != null;
         }
 
         /// <summary>
