@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "AWS App Mesh is a service mesh that makes it easy to monitor and control communications between microservices of an application. AWS App Mesh APIs are available for preview in eu-west-1, us-east-1, us-east-2, and us-west-2 regions.",
+  "generate-client-constructors": true
+}
