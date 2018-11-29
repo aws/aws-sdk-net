@@ -539,6 +539,38 @@ namespace Amazon.ServerlessApplicationRepository
 
         #endregion
         
+        #region  ListApplicationDependencies
+
+        internal virtual ListApplicationDependenciesResponse ListApplicationDependencies(ListApplicationDependenciesRequest request)
+        {
+            var marshaller = ListApplicationDependenciesRequestMarshaller.Instance;
+            var unmarshaller = ListApplicationDependenciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationDependenciesRequest,ListApplicationDependenciesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationDependencies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationDependencies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">REST API Reference for ListApplicationDependencies Operation</seealso>
+        public virtual Task<ListApplicationDependenciesResponse> ListApplicationDependenciesAsync(ListApplicationDependenciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListApplicationDependenciesRequestMarshaller.Instance;
+            var unmarshaller = ListApplicationDependenciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListApplicationDependenciesRequest,ListApplicationDependenciesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListApplications
 
         internal virtual ListApplicationsResponse ListApplications(ListApplicationsRequest request)

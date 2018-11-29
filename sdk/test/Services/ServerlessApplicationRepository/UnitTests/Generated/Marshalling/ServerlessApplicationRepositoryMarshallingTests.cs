@@ -285,6 +285,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ServerlessApplicationRepository")]
+        public void ListApplicationDependenciesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListApplicationDependencies");
+
+            var request = InstantiateClassGenerator.Execute<ListApplicationDependenciesRequest>();
+            var marshaller = new ListApplicationDependenciesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListApplicationDependencies", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListApplicationDependenciesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListApplicationDependenciesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ServerlessApplicationRepository")]
         public void ListApplicationsMarshallTest()
         {
             var operation = service_model.FindOperation("ListApplications");

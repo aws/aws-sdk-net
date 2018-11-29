@@ -420,6 +420,49 @@ namespace Amazon.ServerlessApplicationRepository
 
         #endregion
         
+        #region  ListApplicationDependencies
+
+
+        /// <summary>
+        /// Retrieves the list of applications nested in the containing application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationDependencies service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationDependencies service method, as returned by ServerlessApplicationRepository.</returns>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.BadRequestException">
+        /// One of the parameters in the request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.ForbiddenException">
+        /// The client is not authenticated.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.InternalServerErrorException">
+        /// The AWS Serverless Application Repository service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.NotFoundException">
+        /// The resource (for example, an access policy statement) specified in the request doesn't
+        /// exist.
+        /// </exception>
+        /// <exception cref="Amazon.ServerlessApplicationRepository.Model.TooManyRequestsException">
+        /// The client is sending more than the allowed number of requests per unit of time.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">REST API Reference for ListApplicationDependencies Operation</seealso>
+        ListApplicationDependenciesResponse ListApplicationDependencies(ListApplicationDependenciesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListApplicationDependencies operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationDependencies operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">REST API Reference for ListApplicationDependencies Operation</seealso>
+        Task<ListApplicationDependenciesResponse> ListApplicationDependenciesAsync(ListApplicationDependenciesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListApplications
 
 

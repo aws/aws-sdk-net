@@ -83,7 +83,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// The following resources require you to specify CAPABILITY_IAM or CAPABILITY_NAMED_IAM:
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
         /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
         /// If the application contains IAM resources, you can specify either CAPABILITY_IAM or
         /// CAPABILITY_NAMED_IAM. If the application contains IAM resources with custom names,
@@ -91,7 +91,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
+        /// The following resources require you to specify CAPABILITY_RESOURCE_POLICY: <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-policy.html">AWS::S3::BucketPolicy</a>,
         /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
         /// and <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.
@@ -105,7 +107,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// </para>
         /// 
         /// <para>
-        /// Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY
+        /// Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM | CAPABILITY_RESOURCE_POLICY 
         /// </para>
         /// </summary>
         public List<string> Capabilities
@@ -124,8 +126,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property ChangeSetName. 
         /// <para>
         /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
-        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-        /// CreateChangeSet</a></i> API.
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+        /// API.
         /// </para>
         /// </summary>
         public string ChangeSetName
@@ -144,8 +146,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
-        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-        /// CreateChangeSet</a></i> API.
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+        /// API.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -164,8 +166,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
-        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-        /// CreateChangeSet</a></i> API.
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+        /// API.
         /// </para>
         /// </summary>
         public string Description
@@ -184,8 +186,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property NotificationArns. 
         /// <para>
         /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
-        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-        /// CreateChangeSet</a></i> API.
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+        /// API.
         /// </para>
         /// </summary>
         public List<string> NotificationArns
@@ -222,8 +224,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
-        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-        /// CreateChangeSet</a></i> API.
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+        /// API.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes
@@ -242,8 +244,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property RollbackConfiguration. 
         /// <para>
         /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
-        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-        /// CreateChangeSet</a></i> API.
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+        /// API.
         /// </para>
         /// </summary>
         public RollbackConfiguration RollbackConfiguration
@@ -284,8 +286,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property StackName. 
         /// <para>
         /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
-        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-        /// CreateChangeSet</a></i> API.
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+        /// API.
         /// </para>
         /// </summary>
         public string StackName
@@ -304,8 +306,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// This property corresponds to the parameter of the same name for the <i>AWS CloudFormation
-        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-        /// CreateChangeSet</a></i> API.
+        /// <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+        /// API.
         /// </para>
         /// </summary>
         public List<Tag> Tags
