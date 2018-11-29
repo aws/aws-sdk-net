@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NamespaceProperties Object
+    /// Response Unmarshaller for HttpProperties Object
     /// </summary>  
-    public class NamespacePropertiesUnmarshaller : IUnmarshaller<NamespaceProperties, XmlUnmarshallerContext>, IUnmarshaller<NamespaceProperties, JsonUnmarshallerContext>
+    public class HttpPropertiesUnmarshaller : IUnmarshaller<HttpProperties, XmlUnmarshallerContext>, IUnmarshaller<HttpProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NamespaceProperties IUnmarshaller<NamespaceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HttpProperties IUnmarshaller<HttpProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NamespaceProperties Unmarshall(JsonUnmarshallerContext context)
+        public HttpProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NamespaceProperties unmarshalledObject = new NamespaceProperties();
+            HttpProperties unmarshalledObject = new HttpProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DnsProperties", targetDepth))
+                if (context.TestExpression("HttpName", targetDepth))
                 {
-                    var unmarshaller = DnsPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.DnsProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HttpProperties", targetDepth))
-                {
-                    var unmarshaller = HttpPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.HttpProperties = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HttpName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         }
 
 
-        private static NamespacePropertiesUnmarshaller _instance = new NamespacePropertiesUnmarshaller();        
+        private static HttpPropertiesUnmarshaller _instance = new HttpPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NamespacePropertiesUnmarshaller Instance
+        public static HttpPropertiesUnmarshaller Instance
         {
             get
             {

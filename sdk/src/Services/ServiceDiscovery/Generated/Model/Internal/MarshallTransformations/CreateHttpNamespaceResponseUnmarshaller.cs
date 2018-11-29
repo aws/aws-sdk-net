@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetOperation operation
+    /// Response Unmarshaller for CreateHttpNamespace operation
     /// </summary>  
-    public class GetOperationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateHttpNamespaceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetOperationResponse response = new GetOperationResponse();
+            CreateHttpNamespaceResponse response = new CreateHttpNamespaceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Operation", targetDepth))
+                if (context.TestExpression("OperationId", targetDepth))
                 {
-                    var unmarshaller = OperationUnmarshaller.Instance;
-                    response.Operation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.OperationId = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -72,20 +72,28 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
             ErrorResponse errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateRequest"))
+            {
+                return new DuplicateRequestException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
             if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInput"))
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NamespaceAlreadyExists"))
             {
-                return new OperationNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new NamespaceAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceLimitExceeded"))
+            {
+                return new ResourceLimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonServiceDiscoveryException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetOperationResponseUnmarshaller _instance = new GetOperationResponseUnmarshaller();        
+        private static CreateHttpNamespaceResponseUnmarshaller _instance = new CreateHttpNamespaceResponseUnmarshaller();        
 
-        internal static GetOperationResponseUnmarshaller GetInstance()
+        internal static CreateHttpNamespaceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -93,7 +101,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOperationResponseUnmarshaller Instance
+        public static CreateHttpNamespaceResponseUnmarshaller Instance
         {
             get
             {

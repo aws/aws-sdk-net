@@ -54,8 +54,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If you omit <code>Instances</code>, Amazon Route 53 returns the health status for
-        /// all the instances that are associated with the specified service.
+        /// If you omit <code>Instances</code>, AWS Cloud Map returns the health status for all
+        /// the instances that are associated with the specified service.
         /// </para>
         ///  <note> 
         /// <para>
@@ -79,9 +79,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of instances that you want Route 53 to return in the response to
-        /// a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for
-        /// <code>MaxResults</code>, Route 53 returns up to 100 instances.
+        /// The maximum number of instances that you want AWS Cloud Map to return in the response
+        /// to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for
+        /// <code>MaxResults</code>, AWS Cloud Map returns up to 100 instances.
         /// </para>
         /// </summary>
         public int MaxResults

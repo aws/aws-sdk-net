@@ -28,26 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreatePrivateDnsNamespace operation.
-    /// Creates a private namespace based on DNS, which will be visible only inside a specified
-    /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
-    /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
-    /// the resulting DNS name for the service will be <code>backend.example.com</code>. For
-    /// the current limit on the number of namespaces that you can create using the same AWS
-    /// account, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+    /// Container for the parameters to the CreateHttpNamespace operation.
+    /// Creates an HTTP namespace. Service instances that you register using an HTTP namespace
+    /// can be discovered using a <code>DiscoverInstances</code> request but can't be discovered
+    /// using DNS. 
+    /// 
+    ///  
+    /// <para>
+    /// For the current limit on the number of namespaces that you can create using the same
+    /// AWS account, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
     /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
+    /// </para>
     /// </summary>
-    public partial class CreatePrivateDnsNamespaceRequest : AmazonServiceDiscoveryRequest
+    public partial class CreateHttpNamespaceRequest : AmazonServiceDiscoveryRequest
     {
         private string _creatorRequestId;
         private string _description;
         private string _name;
-        private string _vpc;
 
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
+        /// A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code>
         /// requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
         /// can be any unique string, for example, a date/time stamp.
         /// </para>
@@ -85,9 +87,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name that you want to assign to this namespace. When you create a private DNS
-        /// namespace, AWS Cloud Map automatically creates an Amazon Route 53 private hosted zone
-        /// that has the same name as the namespace.
+        /// The name that you want to assign to this namespace.
         /// </para>
         /// </summary>
         public string Name
@@ -100,24 +100,6 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetName()
         {
             return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Vpc. 
-        /// <para>
-        /// The ID of the Amazon VPC that you want to associate the namespace with.
-        /// </para>
-        /// </summary>
-        public string Vpc
-        {
-            get { return this._vpc; }
-            set { this._vpc = value; }
-        }
-
-        // Check to see if Vpc property is set
-        internal bool IsSetVpc()
-        {
-            return this._vpc != null;
         }
 
     }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NamespaceSummary Object
+    /// Response Unmarshaller for HttpInstanceSummary Object
     /// </summary>  
-    public class NamespaceSummaryUnmarshaller : IUnmarshaller<NamespaceSummary, XmlUnmarshallerContext>, IUnmarshaller<NamespaceSummary, JsonUnmarshallerContext>
+    public class HttpInstanceSummaryUnmarshaller : IUnmarshaller<HttpInstanceSummary, XmlUnmarshallerContext>, IUnmarshaller<HttpInstanceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        NamespaceSummary IUnmarshaller<NamespaceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        HttpInstanceSummary IUnmarshaller<HttpInstanceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,63 +53,45 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public NamespaceSummary Unmarshall(JsonUnmarshallerContext context)
+        public HttpInstanceSummary Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            NamespaceSummary unmarshalledObject = new NamespaceSummary();
+            HttpInstanceSummary unmarshalledObject = new HttpInstanceSummary();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Arn", targetDepth))
+                if (context.TestExpression("Attributes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Attributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CreateDate", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("InstanceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("NamespaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Name", targetDepth))
+                if (context.TestExpression("ServiceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Properties", targetDepth))
-                {
-                    var unmarshaller = NamespacePropertiesUnmarshaller.Instance;
-                    unmarshalledObject.Properties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ServiceCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.ServiceCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -118,12 +100,12 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         }
 
 
-        private static NamespaceSummaryUnmarshaller _instance = new NamespaceSummaryUnmarshaller();        
+        private static HttpInstanceSummaryUnmarshaller _instance = new HttpInstanceSummaryUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NamespaceSummaryUnmarshaller Instance
+        public static HttpInstanceSummaryUnmarshaller Instance
         {
             get
             {

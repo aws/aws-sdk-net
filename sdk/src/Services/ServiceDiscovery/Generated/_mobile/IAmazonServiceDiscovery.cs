@@ -31,14 +31,33 @@ namespace Amazon.ServiceDiscovery
     /// <summary>
     /// Interface for accessing ServiceDiscovery
     ///
-    /// Amazon Route 53 auto naming lets you configure public or private namespaces that your
-    /// microservice applications run in. When instances of the service become available,
-    /// you can call the auto naming API to register the instance, and Route 53 automatically
-    /// creates up to five DNS records and an optional health check. Clients that submit DNS
-    /// queries for the service receive an answer that contains up to eight healthy records.
+    /// AWS Cloud Map lets you configure public DNS, private DNS, or HTTP namespaces that
+    /// your microservice applications run in. When an instance of the service becomes available,
+    /// you can call the AWS Cloud Map API to register the instance with AWS Cloud Map. For
+    /// public or private DNS namespaces, AWS Cloud Map automatically creates DNS records
+    /// and an optional health check. Clients that submit public or private DNS queries, or
+    /// HTTP requests, for the service receive an answer that contains up to eight healthy
+    /// records.
     /// </summary>
     public partial interface IAmazonServiceDiscovery : IAmazonService, IDisposable
     {
+                
+        #region  CreateHttpNamespace
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateHttpNamespace operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateHttpNamespace operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreateHttpNamespace">REST API Reference for CreateHttpNamespace Operation</seealso>
+        Task<CreateHttpNamespaceResponse> CreateHttpNamespaceAsync(CreateHttpNamespaceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
                 
         #region  CreatePrivateDnsNamespace
 
@@ -139,6 +158,23 @@ namespace Amazon.ServiceDiscovery
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DeregisterInstance">REST API Reference for DeregisterInstance Operation</seealso>
         Task<DeregisterInstanceResponse> DeregisterInstanceAsync(DeregisterInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DiscoverInstances
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DiscoverInstances operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DiscoverInstances operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/DiscoverInstances">REST API Reference for DiscoverInstances Operation</seealso>
+        Task<DiscoverInstancesResponse> DiscoverInstancesAsync(DiscoverInstancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

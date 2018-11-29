@@ -28,29 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map
-    /// creates when you create a namespace.
+    /// A complex type that contains the name of an HTTP namespace.
     /// </summary>
-    public partial class DnsProperties
+    public partial class HttpProperties
     {
-        private string _hostedZoneId;
+        private string _httpName;
 
         /// <summary>
-        /// Gets and sets the property HostedZoneId. 
+        /// Gets and sets the property HttpName. 
         /// <para>
-        /// The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+        /// The name of an HTTP namespace.
         /// </para>
         /// </summary>
-        public string HostedZoneId
+        public string HttpName
         {
-            get { return this._hostedZoneId; }
-            set { this._hostedZoneId = value; }
+            get { return this._httpName; }
+            set { this._httpName = value; }
         }
 
-        // Check to see if HostedZoneId property is set
-        internal bool IsSetHostedZoneId()
+        // Check to see if HttpName property is set
+        internal bool IsSetHttpName()
         {
-            return this._hostedZoneId != null;
+            return this._httpName != null;
         }
 
     }

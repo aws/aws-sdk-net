@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains information about an instance that Amazon Route 53 creates
+    /// A complex type that contains information about an instance that AWS Cloud Map creates
     /// when you submit a <code>RegisterInstance</code> request.
     /// </summary>
     public partial class Instance
@@ -65,9 +65,10 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want Route 53 to create an alias record that routes traffic to an Elastic Load
-        /// Balancing load balancer, specify the DNS name that is associated with the load balancer.
-        /// For information about how to get the DNS name, see "DNSName" in the topic <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+        /// If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to
+        /// an Elastic Load Balancing load balancer, specify the DNS name that is associated with
+        /// the load balancer. For information about how to get the DNS name, see "DNSName" in
+        /// the topic <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
         /// </para>
         ///  
         /// <para>
@@ -86,7 +87,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </li> <li> 
         /// <para>
         /// If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
-        /// settings, Route 53 will create the health check, but it won't associate the health
+        /// settings, AWS Cloud Map will create the health check, but it won't associate the health
         /// check with the alias record.
         /// </para>
         ///  </li> <li> 
@@ -221,9 +222,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Route
-        /// 53 updates the existing records. If there's also an existing health check, Route 53
-        /// deletes the old health check and creates a new one. 
+        /// If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS
+        /// Cloud Map updates the existing DNS records. If there's also an existing health check,
+        /// AWS Cloud Map deletes the old health check and creates a new one. 
         /// </para>
         ///  <note> 
         /// <para>

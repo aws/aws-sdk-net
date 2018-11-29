@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetOperation operation
+    /// Response Unmarshaller for DiscoverInstances operation
     /// </summary>  
-    public class GetOperationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DiscoverInstancesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetOperationResponse response = new GetOperationResponse();
+            DiscoverInstancesResponse response = new DiscoverInstancesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Operation", targetDepth))
+                if (context.TestExpression("Instances", targetDepth))
                 {
-                    var unmarshaller = OperationUnmarshaller.Instance;
-                    response.Operation = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<HttpInstanceSummary, HttpInstanceSummaryUnmarshaller>(HttpInstanceSummaryUnmarshaller.Instance);
+                    response.Instances = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,16 +76,20 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             {
                 return new InvalidInputException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotFound"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("NamespaceNotFound"))
             {
-                return new OperationNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new NamespaceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            }
+            if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceNotFound"))
+            {
+                return new ServiceNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             return new AmazonServiceDiscoveryException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static GetOperationResponseUnmarshaller _instance = new GetOperationResponseUnmarshaller();        
+        private static DiscoverInstancesResponseUnmarshaller _instance = new DiscoverInstancesResponseUnmarshaller();        
 
-        internal static GetOperationResponseUnmarshaller GetInstance()
+        internal static DiscoverInstancesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -93,7 +97,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetOperationResponseUnmarshaller Instance
+        public static DiscoverInstancesResponseUnmarshaller Instance
         {
             get
             {

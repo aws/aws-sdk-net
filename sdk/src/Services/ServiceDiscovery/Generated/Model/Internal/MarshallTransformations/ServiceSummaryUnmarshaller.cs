@@ -70,10 +70,34 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CreateDate", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreateDate = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DnsConfig", targetDepth))
+                {
+                    var unmarshaller = DnsConfigUnmarshaller.Instance;
+                    unmarshalledObject.DnsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthCheckConfig", targetDepth))
+                {
+                    var unmarshaller = HealthCheckConfigUnmarshaller.Instance;
+                    unmarshalledObject.HealthCheckConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("HealthCheckCustomConfig", targetDepth))
+                {
+                    var unmarshaller = HealthCheckCustomConfigUnmarshaller.Instance;
+                    unmarshalledObject.HealthCheckCustomConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))

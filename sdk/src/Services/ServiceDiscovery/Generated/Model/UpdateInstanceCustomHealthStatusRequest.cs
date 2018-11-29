@@ -29,7 +29,20 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateInstanceCustomHealthStatus operation.
+    /// Submits a request to change the health status of a custom health check to healthy
+    /// or unhealthy.
     /// 
+    ///  
+    /// <para>
+    /// You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only
+    /// for custom health checks, which you define using <code>HealthCheckCustomConfig</code>
+    /// when you create a service. You can't use it to change the status for Route 53 health
+    /// checks, which you define using <code>HealthCheckConfig</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information, see <a>HealthCheckCustomConfig</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateInstanceCustomHealthStatusRequest : AmazonServiceDiscoveryRequest
     {
@@ -38,7 +51,10 @@ namespace Amazon.ServiceDiscovery.Model
         private CustomHealthStatus _status;
 
         /// <summary>
-        /// Gets and sets the property InstanceId.
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The ID of the instance that you want to change the health status for.
+        /// </para>
         /// </summary>
         public string InstanceId
         {
@@ -53,7 +69,11 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceId.
+        /// Gets and sets the property ServiceId. 
+        /// <para>
+        /// The ID of the service that includes the configuration for the custom health check
+        /// that you want to change the status for.
+        /// </para>
         /// </summary>
         public string ServiceId
         {
@@ -68,7 +88,10 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.
+        /// </para>
         /// </summary>
         public CustomHealthStatus Status
         {

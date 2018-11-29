@@ -28,8 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains information about the records that you want Route 53
-    /// to create when you register an instance.
+    /// A complex type that contains information about the Route 53 DNS records that you want
+    /// AWS Cloud Map to create when you register an instance.
     /// </summary>
     public partial class DnsRecord
     {
@@ -76,19 +76,19 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>A, AAAA, and SRV records: You can specify settings for a maximum of one A, one
-        /// AAAA, and one SRV record. You can specify them in any combination.</b> 
+        ///  <b>A, AAAA, and SRV records:</b> You can specify settings for a maximum of one A,
+        /// one AAAA, and one SRV record. You can specify them in any combination.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>CNAME records:</b> If you specify <code>CNAME</code> for <code>Type</code>, you
-        /// can't define any other records. This is a limitation of DNS—you can't create a CNAME
+        /// can't define any other records. This is a limitation of DNS: you can't create a CNAME
         /// record and any other type of record that has the same name as a CNAME record.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Alias records:</b> If you want Route 53 to create an alias record when you register
-        /// an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+        ///  <b>Alias records:</b> If you want AWS Cloud Map to create a Route 53 alias record
+        /// when you register an instance, specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -195,8 +195,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// If you specify settings for an SRV record and if you specify values for <code>AWS_INSTANCE_IPV4</code>,
         /// <code>AWS_INSTANCE_IPV6</code>, or both in the <code>RegisterInstance</code> request,
-        /// Route 53 automatically creates <code>A</code> and/or <code>AAAA</code> records that
-        /// have the same name as the value of <code>service-hostname</code> in the SRV record.
+        /// AWS Cloud Map automatically creates <code>A</code> and/or <code>AAAA</code> records
+        /// that have the same name as the value of <code>service-hostname</code> in the SRV record.
         /// You can ignore these records.
         /// </para>
         /// </summary>

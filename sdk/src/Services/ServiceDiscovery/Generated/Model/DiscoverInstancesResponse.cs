@@ -28,29 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
-    /// A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map
-    /// creates when you create a namespace.
+    /// This is the response object from the DiscoverInstances operation.
     /// </summary>
-    public partial class DnsProperties
+    public partial class DiscoverInstancesResponse : AmazonWebServiceResponse
     {
-        private string _hostedZoneId;
+        private List<HttpInstanceSummary> _instances = new List<HttpInstanceSummary>();
 
         /// <summary>
-        /// Gets and sets the property HostedZoneId. 
+        /// Gets and sets the property Instances. 
         /// <para>
-        /// The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+        /// A complex type that contains one <code>HttpInstanceSummary</code> for each registered
+        /// instance.
         /// </para>
         /// </summary>
-        public string HostedZoneId
+        public List<HttpInstanceSummary> Instances
         {
-            get { return this._hostedZoneId; }
-            set { this._hostedZoneId = value; }
+            get { return this._instances; }
+            set { this._instances = value; }
         }
 
-        // Check to see if HostedZoneId property is set
-        internal bool IsSetHostedZoneId()
+        // Check to see if Instances property is set
+        internal bool IsSetInstances()
         {
-            return this._hostedZoneId != null;
+            return this._instances != null && this._instances.Count > 0; 
         }
 
     }

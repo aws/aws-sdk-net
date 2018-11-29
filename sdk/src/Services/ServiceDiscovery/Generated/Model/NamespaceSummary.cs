@@ -33,15 +33,19 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class NamespaceSummary
     {
         private string _arn;
+        private DateTime? _createDate;
+        private string _description;
         private string _id;
         private string _name;
+        private NamespaceProperties _properties;
+        private int? _serviceCount;
         private NamespaceType _type;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create
-        /// it.
+        /// The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you
+        /// create it.
         /// </para>
         /// </summary>
         public string Arn
@@ -54,6 +58,42 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateDate. 
+        /// <para>
+        /// The date and time that the namespace was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreateDate
+        {
+            get { return this._createDate.GetValueOrDefault(); }
+            set { this._createDate = value; }
+        }
+
+        // Check to see if CreateDate property is set
+        internal bool IsSetCreateDate()
+        {
+            return this._createDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description for the namespace.
+        /// </para>
+        /// </summary>
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
         }
 
         /// <summary>
@@ -77,8 +117,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the namespace. When you create a namespace, Route 53 automatically creates
-        /// a hosted zone that has the same name as the namespace.
+        /// The name of the namespace. When you create a namespace, AWS Cloud Map automatically
+        /// creates a Route 53 hosted zone that has the same name as the namespace.
         /// </para>
         /// </summary>
         public string Name
@@ -91,6 +131,39 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Properties.
+        /// </summary>
+        public NamespaceProperties Properties
+        {
+            get { return this._properties; }
+            set { this._properties = value; }
+        }
+
+        // Check to see if Properties property is set
+        internal bool IsSetProperties()
+        {
+            return this._properties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceCount. 
+        /// <para>
+        /// The number of services that were created using the namespace.
+        /// </para>
+        /// </summary>
+        public int ServiceCount
+        {
+            get { return this._serviceCount.GetValueOrDefault(); }
+            set { this._serviceCount = value; }
+        }
+
+        // Check to see if ServiceCount property is set
+        internal bool IsSetServiceCount()
+        {
+            return this._serviceCount.HasValue; 
         }
 
         /// <summary>

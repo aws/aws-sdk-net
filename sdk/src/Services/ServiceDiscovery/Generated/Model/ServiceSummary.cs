@@ -33,7 +33,11 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class ServiceSummary
     {
         private string _arn;
+        private DateTime? _createDate;
         private string _description;
+        private DnsConfig _dnsConfig;
+        private HealthCheckConfig _healthCheckConfig;
+        private HealthCheckCustomConfig _healthCheckCustomConfig;
         private string _id;
         private int? _instanceCount;
         private string _name;
@@ -41,8 +45,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create
-        /// it.
+        /// The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you
+        /// create it.
         /// </para>
         /// </summary>
         public string Arn
@@ -55,6 +59,24 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreateDate. 
+        /// <para>
+        /// The date and time that the service was created.
+        /// </para>
+        /// </summary>
+        public DateTime CreateDate
+        {
+            get { return this._createDate.GetValueOrDefault(); }
+            set { this._createDate = value; }
+        }
+
+        // Check to see if CreateDate property is set
+        internal bool IsSetCreateDate()
+        {
+            return this._createDate.HasValue; 
         }
 
         /// <summary>
@@ -76,9 +98,54 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DnsConfig.
+        /// </summary>
+        public DnsConfig DnsConfig
+        {
+            get { return this._dnsConfig; }
+            set { this._dnsConfig = value; }
+        }
+
+        // Check to see if DnsConfig property is set
+        internal bool IsSetDnsConfig()
+        {
+            return this._dnsConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckConfig.
+        /// </summary>
+        public HealthCheckConfig HealthCheckConfig
+        {
+            get { return this._healthCheckConfig; }
+            set { this._healthCheckConfig = value; }
+        }
+
+        // Check to see if HealthCheckConfig property is set
+        internal bool IsSetHealthCheckConfig()
+        {
+            return this._healthCheckConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckCustomConfig.
+        /// </summary>
+        public HealthCheckCustomConfig HealthCheckCustomConfig
+        {
+            get { return this._healthCheckCustomConfig; }
+            set { this._healthCheckCustomConfig = value; }
+        }
+
+        // Check to see if HealthCheckCustomConfig property is set
+        internal bool IsSetHealthCheckCustomConfig()
+        {
+            return this._healthCheckCustomConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID that Route 53 assigned to the service when you created it.
+        /// The ID that AWS Cloud Map assigned to the service when you created it.
         /// </para>
         /// </summary>
         public string Id

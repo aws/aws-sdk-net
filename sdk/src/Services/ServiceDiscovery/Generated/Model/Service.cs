@@ -42,12 +42,13 @@ namespace Amazon.ServiceDiscovery.Model
         private string _id;
         private int? _instanceCount;
         private string _name;
+        private string _namespaceId;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Route 53 assigns to the service when you create
-        /// it.
+        /// The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when you
+        /// create it.
         /// </para>
         /// </summary>
         public string Arn
@@ -124,8 +125,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// A complex type that contains information about the records that you want Route 53
-        /// to create when you register an instance.
+        /// A complex type that contains information about the Route 53 DNS records that you want
+        /// AWS Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
         public DnsConfig DnsConfig
@@ -144,13 +145,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
         ///  <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional
-        /// health check. If you specify settings for a health check, Route 53 associates the
-        /// health check with all the records that you specify in <code>DnsConfig</code>.
+        /// health check. If you specify settings for a health check, AWS Cloud Map associates
+        /// the health check with the records that you specify in <code>DnsConfig</code>.
         /// </para>
         ///  
         /// <para>
-        /// For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route
-        /// 53 Pricing</a>.
+        /// For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
+        /// Route 53 Pricing</a>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig
@@ -166,7 +167,16 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HealthCheckCustomConfig.
+        /// Gets and sets the property HealthCheckCustomConfig. 
+        /// <para>
+        /// A complex type that contains information about an optional custom health check.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+        /// or <code>HealthCheckConfig</code> but not both.
+        /// </para>
+        ///  </important>
         /// </summary>
         public HealthCheckCustomConfig HealthCheckCustomConfig
         {
@@ -183,7 +193,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID that Route 53 assigned to the service when you created it.
+        /// The ID that AWS Cloud Map assigned to the service when you created it.
         /// </para>
         /// </summary>
         public string Id
@@ -234,6 +244,24 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceId. 
+        /// <para>
+        /// The ID of the namespace that was used to create the service.
+        /// </para>
+        /// </summary>
+        public string NamespaceId
+        {
+            get { return this._namespaceId; }
+            set { this._namespaceId = value; }
+        }
+
+        // Check to see if NamespaceId property is set
+        internal bool IsSetNamespaceId()
+        {
+            return this._namespaceId != null;
         }
 
     }

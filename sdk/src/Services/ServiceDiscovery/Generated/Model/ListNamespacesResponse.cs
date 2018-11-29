@@ -63,8 +63,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Route 53 gets <code>MaxResults</code> namespaces and then filters them based on the
-        /// specified criteria. It's possible that no namespaces in the first <code>MaxResults</code>
+        /// AWS Cloud Map gets <code>MaxResults</code> namespaces and then filters them based
+        /// on the specified criteria. It's possible that no namespaces in the first <code>MaxResults</code>
         /// namespaces matched the specified criteria but that subsequent groups of <code>MaxResults</code>
         /// namespaces do contain namespaces that match the criteria.
         /// </para>

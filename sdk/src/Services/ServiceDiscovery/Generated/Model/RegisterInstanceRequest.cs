@@ -29,24 +29,24 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterInstance operation.
-    /// Creates or updates one or more records and optionally a health check based on the
-    /// settings in a specified service. When you submit a <code>RegisterInstance</code> request,
-    /// Amazon Route 53 does the following:
+    /// Creates or updates one or more records and, optionally, creates a health check based
+    /// on the settings in a specified service. When you submit a <code>RegisterInstance</code>
+    /// request, the following occurs:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// For each DNS record that you define in the service specified by <code>ServiceId</code>,
-    /// creates or updates a record in the hosted zone that is associated with the corresponding
-    /// namespace
+    /// For each DNS record that you define in the service that is specified by <code>ServiceId</code>,
+    /// a record is created or updated in the hosted zone that is associated with the corresponding
+    /// namespace.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the service includes <code>HealthCheckConfig</code>, creates or updates a health
-    /// check based on the settings in the health check configuration
+    /// If the service includes <code>HealthCheckConfig</code>, a health check is created
+    /// based on the settings in the health check configuration.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Associates the health check, if any, with each of the records
+    /// The health check, if any, is associated with each of the new or updated records.
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
@@ -59,8 +59,8 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  
     /// <para>
-    /// When Route 53 receives a DNS query for the specified DNS name, it returns the applicable
-    /// value:
+    /// When AWS Cloud Map receives a DNS query for the specified DNS name, it returns the
+    /// applicable value:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -78,8 +78,8 @@ namespace Amazon.ServiceDiscovery.Model
     ///  </li> </ul> 
     /// <para>
     /// For the current limit on the number of instances that you can register using the same
-    /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
-    /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+    /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+    /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class RegisterInstanceRequest : AmazonServiceDiscoveryRequest
@@ -117,9 +117,11 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want Route 53 to create an alias record that routes traffic to an Elastic Load
-        /// Balancing load balancer, specify the DNS name that is associated with the load balancer.
-        /// For information about how to get the DNS name, see "DNSName" in the topic <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
+        /// If you want AWS Cloud Map to create an Amazon Route 53 alias record that routes traffic
+        /// to an Elastic Load Balancing load balancer, specify the DNS name that is associated
+        /// with the load balancer. For information about how to get the DNS name, see "DNSName"
+        /// in the topic <a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>
+        /// in the <i>Route 53 API Reference</i>.
         /// </para>
         ///  
         /// <para>
@@ -138,8 +140,8 @@ namespace Amazon.ServiceDiscovery.Model
         ///  </li> <li> 
         /// <para>
         /// If the service that is specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
-        /// settings, Route 53 will create the health check, but it won't associate the health
-        /// check with the alias record.
+        /// settings, AWS Cloud Map will create the Route 53 health check, but it won't associate
+        /// the health check with the alias record.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -152,6 +154,17 @@ namespace Amazon.ServiceDiscovery.Model
         /// any of the <code>AWS_INSTANCE</code> attributes.
         /// </para>
         ///  </li> </ul> 
+        /// <para>
+        ///  <b>AWS_INIT_HEALTH_STATUS</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the service configuration includes <code>HealthCheckCustomConfig</code>, you can
+        /// optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of
+        /// the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
+        /// specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
+        /// </para>
+        ///  
         /// <para>
         ///  <b>AWS_INSTANCE_CNAME</b> 
         /// </para>
@@ -216,6 +229,16 @@ namespace Amazon.ServiceDiscovery.Model
         /// This value is required if you specified settings for an SRV record when you created
         /// the service.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>Custom attributes</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can add up to 30 custom attributes. For each key-value pair, the maximum length
+        /// of the attribute name is 255 characters, and the maximum length of the attribute value
+        /// is 1,024 characters. 
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
         {
@@ -273,9 +296,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Route
-        /// 53 updates the existing records. If there's also an existing health check, Route 53
-        /// deletes the old health check and creates a new one. 
+        /// If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, AWS
+        /// Cloud Map updates the existing DNS records, if any. If there's also an existing health
+        /// check, AWS Cloud Map deletes the old health check and creates a new one. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -299,8 +322,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property ServiceId. 
         /// <para>
-        /// The ID of the service that you want to use for settings for the records and health
-        /// check that Route 53 will create.
+        /// The ID of the service that you want to use for settings for the instance.
         /// </para>
         /// </summary>
         public string ServiceId

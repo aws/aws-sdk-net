@@ -45,8 +45,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when you create
-        /// it.
+        /// The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace when you
+        /// create it.
         /// </para>
         /// </summary>
         public string Arn

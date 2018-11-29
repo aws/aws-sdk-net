@@ -33,22 +33,43 @@ namespace Amazon.ServiceDiscovery.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Up to three records (A, AAAA, and SRV) or one CNAME record
+    /// For public and private DNS namespaces, one of the following combinations of DNS records
+    /// in Amazon Route 53:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// A
     /// </para>
     ///  </li> <li> 
+    /// <para>
+    /// AAAA
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A and AAAA
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// SRV
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// CNAME
+    /// </para>
+    ///  </li> </ul> </li> <li> 
     /// <para>
     /// Optionally, a health check
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// After you create the service, you can submit a <a>RegisterInstance</a> request, and
-    /// Amazon Route 53 uses the values in the configuration to create the specified entities.
+    /// AWS Cloud Map uses the values in the configuration to create the specified entities.
     /// </para>
     ///  
     /// <para>
     /// For the current limit on the number of instances that you can register using the same
-    /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming">Limits
-    /// on Auto Naming</a> in the <i>Route 53 Developer Guide</i>.
+    /// namespace and using the same service, see <a href="http://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS
+    /// Cloud Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateServiceRequest : AmazonServiceDiscoveryRequest
@@ -59,6 +80,7 @@ namespace Amazon.ServiceDiscovery.Model
         private HealthCheckConfig _healthCheckConfig;
         private HealthCheckCustomConfig _healthCheckCustomConfig;
         private string _name;
+        private string _namespaceId;
 
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
@@ -101,8 +123,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsConfig. 
         /// <para>
-        /// A complex type that contains information about the records that you want Route 53
-        /// to create when you register an instance. 
+        /// A complex type that contains information about the Amazon Route 53 records that you
+        /// want AWS Cloud Map to create when you register an instance. 
         /// </para>
         /// </summary>
         public DnsConfig DnsConfig
@@ -121,13 +143,18 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property HealthCheckConfig. 
         /// <para>
         ///  <i>Public DNS namespaces only.</i> A complex type that contains settings for an optional
-        /// health check. If you specify settings for a health check, Route 53 associates the
-        /// health check with all the records that you specify in <code>DnsConfig</code>.
+        /// Route 53 health check. If you specify settings for a health check, AWS Cloud Map associates
+        /// the health check with all the Route 53 DNS records that you specify in <code>DnsConfig</code>.
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing">Route
-        /// 53 Pricing</a>.
+        /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+        /// or <code>HealthCheckConfig</code> but not both.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For information about the charges for health checks, see <a href="http://aws.amazon.com/cloud-map/pricing/">AWS
+        /// Cloud Map Pricing</a>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig
@@ -143,7 +170,16 @@ namespace Amazon.ServiceDiscovery.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HealthCheckCustomConfig.
+        /// Gets and sets the property HealthCheckCustomConfig. 
+        /// <para>
+        /// A complex type that contains information about an optional custom health check.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
+        /// or <code>HealthCheckConfig</code> but not both.
+        /// </para>
+        ///  </important>
         /// </summary>
         public HealthCheckCustomConfig HealthCheckCustomConfig
         {
@@ -173,6 +209,24 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceId. 
+        /// <para>
+        /// The ID of the namespace that you want to use to create the service.
+        /// </para>
+        /// </summary>
+        public string NamespaceId
+        {
+            get { return this._namespaceId; }
+            set { this._namespaceId = value; }
+        }
+
+        // Check to see if NamespaceId property is set
+        internal bool IsSetNamespaceId()
+        {
+            return this._namespaceId != null;
         }
 
     }

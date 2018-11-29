@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateService Request Marshaller
+    /// DiscoverInstances Request Marshaller
     /// </summary>       
-    public class CreateServiceRequestMarshaller : IMarshaller<IRequest, CreateServiceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DiscoverInstancesRequestMarshaller : IMarshaller<IRequest, DiscoverInstancesRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateServiceRequest)input);
+            return this.Marshall((DiscoverInstancesRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateServiceRequest publicRequest)
+        public IRequest Marshall(DiscoverInstancesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ServiceDiscovery");
-            string target = "Route53AutoNaming_v20170314.CreateService";
+            string target = "Route53AutoNaming_v20170314.DiscoverInstances";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,66 +67,42 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCreatorRequestId())
+                if(publicRequest.IsSetHealthStatus())
                 {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(publicRequest.CreatorRequestId);
+                    context.Writer.WritePropertyName("HealthStatus");
+                    context.Writer.Write(publicRequest.HealthStatus);
                 }
 
-                else if(!(publicRequest.IsSetCreatorRequestId()))
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("CreatorRequestId");
-                    context.Writer.Write(Guid.NewGuid().ToString());                                                
-                }
-                if(publicRequest.IsSetDescription())
-                {
-                    context.Writer.WritePropertyName("Description");
-                    context.Writer.Write(publicRequest.Description);
+                    context.Writer.WritePropertyName("MaxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
-                if(publicRequest.IsSetDnsConfig())
+                if(publicRequest.IsSetNamespaceName())
                 {
-                    context.Writer.WritePropertyName("DnsConfig");
+                    context.Writer.WritePropertyName("NamespaceName");
+                    context.Writer.Write(publicRequest.NamespaceName);
+                }
+
+                if(publicRequest.IsSetQueryParameters())
+                {
+                    context.Writer.WritePropertyName("QueryParameters");
                     context.Writer.WriteObjectStart();
+                    foreach (var publicRequestQueryParametersKvp in publicRequest.QueryParameters)
+                    {
+                        context.Writer.WritePropertyName(publicRequestQueryParametersKvp.Key);
+                        var publicRequestQueryParametersValue = publicRequestQueryParametersKvp.Value;
 
-                    var marshaller = DnsConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.DnsConfig, context);
-
+                            context.Writer.Write(publicRequestQueryParametersValue);
+                    }
                     context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetHealthCheckConfig())
+                if(publicRequest.IsSetServiceName())
                 {
-                    context.Writer.WritePropertyName("HealthCheckConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HealthCheckConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HealthCheckConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetHealthCheckCustomConfig())
-                {
-                    context.Writer.WritePropertyName("HealthCheckCustomConfig");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = HealthCheckCustomConfigMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.HealthCheckCustomConfig, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("Name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNamespaceId())
-                {
-                    context.Writer.WritePropertyName("NamespaceId");
-                    context.Writer.Write(publicRequest.NamespaceId);
+                    context.Writer.WritePropertyName("ServiceName");
+                    context.Writer.Write(publicRequest.ServiceName);
                 }
 
         
@@ -135,12 +111,14 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
 
+            
+            request.HostPrefix = $"data-";
 
             return request;
         }
-        private static CreateServiceRequestMarshaller _instance = new CreateServiceRequestMarshaller();        
+        private static DiscoverInstancesRequestMarshaller _instance = new DiscoverInstancesRequestMarshaller();        
 
-        internal static CreateServiceRequestMarshaller GetInstance()
+        internal static DiscoverInstancesRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -148,7 +126,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateServiceRequestMarshaller Instance
+        public static DiscoverInstancesRequestMarshaller Instance
         {
             get
             {

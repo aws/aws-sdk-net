@@ -33,12 +33,13 @@ namespace Amazon.ServiceDiscovery.Model
     public partial class NamespaceProperties
     {
         private DnsProperties _dnsProperties;
+        private HttpProperties _httpProperties;
 
         /// <summary>
         /// Gets and sets the property DnsProperties. 
         /// <para>
-        /// A complex type that contains the ID for the hosted zone that Route 53 creates when
-        /// you create a namespace.
+        /// A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map
+        /// creates when you create a namespace.
         /// </para>
         /// </summary>
         public DnsProperties DnsProperties
@@ -51,6 +52,24 @@ namespace Amazon.ServiceDiscovery.Model
         internal bool IsSetDnsProperties()
         {
             return this._dnsProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HttpProperties. 
+        /// <para>
+        /// A complex type that contains the name of an HTTP namespace.
+        /// </para>
+        /// </summary>
+        public HttpProperties HttpProperties
+        {
+            get { return this._httpProperties; }
+            set { this._httpProperties = value; }
+        }
+
+        // Check to see if HttpProperties property is set
+        internal bool IsSetHttpProperties()
+        {
+            return this._httpProperties != null;
         }
 
     }

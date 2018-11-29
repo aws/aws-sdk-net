@@ -237,6 +237,60 @@ namespace Amazon.ServiceDiscovery
 
 
     /// <summary>
+    /// Constants used for properties of type HealthStatusFilter.
+    /// </summary>
+    public class HealthStatusFilter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for HealthStatusFilter
+        /// </summary>
+        public static readonly HealthStatusFilter ALL = new HealthStatusFilter("ALL");
+        /// <summary>
+        /// Constant HEALTHY for HealthStatusFilter
+        /// </summary>
+        public static readonly HealthStatusFilter HEALTHY = new HealthStatusFilter("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for HealthStatusFilter
+        /// </summary>
+        public static readonly HealthStatusFilter UNHEALTHY = new HealthStatusFilter("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public HealthStatusFilter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static HealthStatusFilter FindValue(string value)
+        {
+            return FindValue<HealthStatusFilter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator HealthStatusFilter(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NamespaceFilterName.
     /// </summary>
     public class NamespaceFilterName : ConstantClass
@@ -296,6 +350,10 @@ namespace Amazon.ServiceDiscovery
         /// Constant DNS_PUBLIC for NamespaceType
         /// </summary>
         public static readonly NamespaceType DNS_PUBLIC = new NamespaceType("DNS_PUBLIC");
+        /// <summary>
+        /// Constant HTTP for NamespaceType
+        /// </summary>
+        public static readonly NamespaceType HTTP = new NamespaceType("HTTP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
