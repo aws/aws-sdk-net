@@ -39,6 +39,13 @@ namespace Amazon.Lightsail.Model
     /// operation with the non-attached certificate, and it will replace the existing one
     /// and become the attached certificate.
     /// </para>
+    ///  
+    /// <para>
+    /// The <code>attach load balancer tls certificate</code> operation supports tag-based
+    /// access control via resource tags applied to the resource identified by loadBalancerName.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class AttachLoadBalancerTlsCertificateRequest : AmazonLightsailRequest
     {

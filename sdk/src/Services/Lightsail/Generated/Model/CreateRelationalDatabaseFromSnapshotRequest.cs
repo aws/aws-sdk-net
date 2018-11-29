@@ -37,6 +37,13 @@ namespace Amazon.Lightsail.Model
     /// original database, or to change it to a different plan, such as a high availability
     /// or standard plan.
     /// </para>
+    ///  
+    /// <para>
+    /// The <code>create relational database from snapshot</code> operation supports tag-based
+    /// access control via request tags and resource tags applied to the resource identified
+    /// by relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class CreateRelationalDatabaseFromSnapshotRequest : AmazonLightsailRequest
     {
@@ -47,6 +54,7 @@ namespace Amazon.Lightsail.Model
         private string _relationalDatabaseSnapshotName;
         private DateTime? _restoreTime;
         private string _sourceRelationalDatabaseName;
+        private List<Tag> _tags = new List<Tag>();
         private bool? _useLatestRestorableTime;
 
         /// <summary>
@@ -233,6 +241,28 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetSourceRelationalDatabaseName()
         {
             return this._sourceRelationalDatabaseName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag keys and optional values to add to the resource during create.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag a resource after it has been created, see the <code>tag resource</code> operation.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

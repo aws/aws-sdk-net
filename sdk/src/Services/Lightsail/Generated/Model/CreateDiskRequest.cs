@@ -33,12 +33,20 @@ namespace Amazon.Lightsail.Model
     /// Availability Zone (e.g., <code>us-east-2a</code>). The disk is created in the regional
     /// endpoint that you send the HTTP request to. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
     /// and Availability Zones in Lightsail</a>.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>create disk</code> operation supports tag-based access control via request
+    /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class CreateDiskRequest : AmazonLightsailRequest
     {
         private string _availabilityZone;
         private string _diskName;
         private int? _sizeInGb;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -99,6 +107,28 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetSizeInGb()
         {
             return this._sizeInGb.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag keys and optional values to add to the resource during create.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag a resource after it has been created, see the <code>tag resource</code> operation.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

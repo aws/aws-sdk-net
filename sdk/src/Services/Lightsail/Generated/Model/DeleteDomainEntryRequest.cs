@@ -30,6 +30,14 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the DeleteDomainEntry operation.
     /// Deletes a specific domain entry.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>delete domain entry</code> operation supports tag-based access control via
+    /// resource tags applied to the resource identified by domainName. For more information,
+    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class DeleteDomainEntryRequest : AmazonLightsailRequest
     {

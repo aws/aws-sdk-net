@@ -31,6 +31,14 @@ namespace Amazon.Lightsail.Model
     /// Container for the parameters to the AttachDisk operation.
     /// Attaches a block storage disk to a running or stopped Lightsail instance and exposes
     /// it to the instance with the specified disk name.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>attach disk</code> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by diskName. For more information, see the
+    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class AttachDiskRequest : AmazonLightsailRequest
     {

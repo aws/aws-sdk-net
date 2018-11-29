@@ -31,6 +31,12 @@ namespace Amazon.Lightsail.Model
     /// Container for the parameters to the GetRelationalDatabaseMasterUserPassword operation.
     /// Returns the current, previous, or pending versions of the master user password for
     /// a Lightsail database.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>asdf</code> operation GetRelationalDatabaseMasterUserPassword supports tag-based
+    /// access control via resource tags applied to the resource identified by relationalDatabaseName.
+    /// </para>
     /// </summary>
     public partial class GetRelationalDatabaseMasterUserPasswordRequest : AmazonLightsailRequest
     {

@@ -31,6 +31,14 @@ namespace Amazon.Lightsail.Model
     /// Container for the parameters to the GetInstanceAccessDetails operation.
     /// Returns temporary SSH keys you can use to connect to a specific virtual private server,
     /// or <i>instance</i>.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>get instance access details</code> operation supports tag-based access control
+    /// via resource tags applied to the resource identified by instanceName. For more information,
+    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class GetInstanceAccessDetailsRequest : AmazonLightsailRequest
     {

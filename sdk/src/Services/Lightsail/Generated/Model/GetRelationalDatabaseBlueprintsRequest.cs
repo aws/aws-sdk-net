@@ -45,8 +45,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// A token used for advancing to a specific page of results for your get relational database
-        /// blueprints request.
+        /// A token used for advancing to a specific page of results for your <code>get relational
+        /// database blueprints</code> request.
         /// </para>
         /// </summary>
         public string PageToken

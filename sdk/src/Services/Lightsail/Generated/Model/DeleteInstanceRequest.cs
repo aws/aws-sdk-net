@@ -30,6 +30,14 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the DeleteInstance operation.
     /// Deletes a specific Amazon Lightsail virtual private server, or <i>instance</i>.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>delete instance</code> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by instanceName. For more information, see
+    /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class DeleteInstanceRequest : AmazonLightsailRequest
     {

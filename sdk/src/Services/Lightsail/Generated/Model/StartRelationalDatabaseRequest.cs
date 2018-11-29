@@ -31,6 +31,14 @@ namespace Amazon.Lightsail.Model
     /// Container for the parameters to the StartRelationalDatabase operation.
     /// Starts a specific database from a stopped state in Amazon Lightsail. To restart a
     /// database, use the <code>reboot relational database</code> operation.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>start relational database</code> operation supports tag-based access control
+    /// via resource tags applied to the resource identified by relationalDatabaseName. For
+    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class StartRelationalDatabaseRequest : AmazonLightsailRequest
     {

@@ -31,6 +31,14 @@ namespace Amazon.Lightsail.Model
     /// Container for the parameters to the StartInstance operation.
     /// Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance,
     /// use the reboot instance operation.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>start instance</code> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by instanceName. For more information, see
+    /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class StartInstanceRequest : AmazonLightsailRequest
     {

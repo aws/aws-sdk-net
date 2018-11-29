@@ -125,6 +125,52 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type CloudFormationStackRecordSourceType.
+    /// </summary>
+    public class CloudFormationStackRecordSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ExportSnapshotRecord for CloudFormationStackRecordSourceType
+        /// </summary>
+        public static readonly CloudFormationStackRecordSourceType ExportSnapshotRecord = new CloudFormationStackRecordSourceType("ExportSnapshotRecord");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudFormationStackRecordSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudFormationStackRecordSourceType FindValue(string value)
+        {
+            return FindValue<CloudFormationStackRecordSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudFormationStackRecordSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DiskSnapshotState.
     /// </summary>
     public class DiskSnapshotState : ConstantClass
@@ -238,6 +284,56 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DiskState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportSnapshotRecordSourceType.
+    /// </summary>
+    public class ExportSnapshotRecordSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DiskSnapshot for ExportSnapshotRecordSourceType
+        /// </summary>
+        public static readonly ExportSnapshotRecordSourceType DiskSnapshot = new ExportSnapshotRecordSourceType("DiskSnapshot");
+        /// <summary>
+        /// Constant InstanceSnapshot for ExportSnapshotRecordSourceType
+        /// </summary>
+        public static readonly ExportSnapshotRecordSourceType InstanceSnapshot = new ExportSnapshotRecordSourceType("InstanceSnapshot");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportSnapshotRecordSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportSnapshotRecordSourceType FindValue(string value)
+        {
+            return FindValue<ExportSnapshotRecordSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportSnapshotRecordSourceType(string value)
         {
             return FindValue(value);
         }
@@ -1799,6 +1895,60 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type PortInfoSourceType.
+    /// </summary>
+    public class PortInfoSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for PortInfoSourceType
+        /// </summary>
+        public static readonly PortInfoSourceType DEFAULT = new PortInfoSourceType("DEFAULT");
+        /// <summary>
+        /// Constant INSTANCE for PortInfoSourceType
+        /// </summary>
+        public static readonly PortInfoSourceType INSTANCE = new PortInfoSourceType("INSTANCE");
+        /// <summary>
+        /// Constant NONE for PortInfoSourceType
+        /// </summary>
+        public static readonly PortInfoSourceType NONE = new PortInfoSourceType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PortInfoSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PortInfoSourceType FindValue(string value)
+        {
+            return FindValue<PortInfoSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PortInfoSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PortState.
     /// </summary>
     public class PortState : ConstantClass
@@ -1842,6 +1992,60 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PortState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecordState.
+    /// </summary>
+    public class RecordState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for RecordState
+        /// </summary>
+        public static readonly RecordState Failed = new RecordState("Failed");
+        /// <summary>
+        /// Constant Started for RecordState
+        /// </summary>
+        public static readonly RecordState Started = new RecordState("Started");
+        /// <summary>
+        /// Constant Succeeded for RecordState
+        /// </summary>
+        public static readonly RecordState Succeeded = new RecordState("Succeeded");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordState FindValue(string value)
+        {
+            return FindValue<RecordState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordState(string value)
         {
             return FindValue(value);
         }
@@ -2119,6 +2323,10 @@ namespace Amazon.Lightsail
     {
 
         /// <summary>
+        /// Constant CloudFormationStackRecord for ResourceType
+        /// </summary>
+        public static readonly ResourceType CloudFormationStackRecord = new ResourceType("CloudFormationStackRecord");
+        /// <summary>
         /// Constant Disk for ResourceType
         /// </summary>
         public static readonly ResourceType Disk = new ResourceType("Disk");
@@ -2130,6 +2338,10 @@ namespace Amazon.Lightsail
         /// Constant Domain for ResourceType
         /// </summary>
         public static readonly ResourceType Domain = new ResourceType("Domain");
+        /// <summary>
+        /// Constant ExportSnapshotRecord for ResourceType
+        /// </summary>
+        public static readonly ResourceType ExportSnapshotRecord = new ResourceType("ExportSnapshotRecord");
         /// <summary>
         /// Constant Instance for ResourceType
         /// </summary>

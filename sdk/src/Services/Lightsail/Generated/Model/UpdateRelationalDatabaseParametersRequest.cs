@@ -40,6 +40,13 @@ namespace Amazon.Lightsail.Model
     /// marked with a <code>pending-reboot</code> apply type are applied only after the database
     /// is rebooted using the <code>reboot relational database</code> operation.
     /// </para>
+    ///  
+    /// <para>
+    /// The <code>update relational database parameters</code> operation supports tag-based
+    /// access control via resource tags applied to the resource identified by relationalDatabaseName.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateRelationalDatabaseParametersRequest : AmazonLightsailRequest
     {

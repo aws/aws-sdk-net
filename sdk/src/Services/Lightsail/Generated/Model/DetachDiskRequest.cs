@@ -32,6 +32,14 @@ namespace Amazon.Lightsail.Model
     /// Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount
     /// any file systems on the device within your operating system before stopping the instance
     /// and detaching the disk.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>detach disk</code> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by diskName. For more information, see the
+    /// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class DetachDiskRequest : AmazonLightsailRequest
     {

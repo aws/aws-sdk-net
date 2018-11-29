@@ -31,11 +31,19 @@ namespace Amazon.Lightsail.Model
     /// Container for the parameters to the CreateRelationalDatabaseSnapshot operation.
     /// Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for
     /// backups, to make copies of a database, and to save data before deleting a database.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>create relational database snapshot</code> operation supports tag-based
+    /// access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+    /// Dev Guide</a>.
+    /// </para>
     /// </summary>
     public partial class CreateRelationalDatabaseSnapshotRequest : AmazonLightsailRequest
     {
         private string _relationalDatabaseName;
         private string _relationalDatabaseSnapshotName;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
         /// Gets and sets the property RelationalDatabaseName. 
@@ -84,6 +92,28 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetRelationalDatabaseSnapshotName()
         {
             return this._relationalDatabaseSnapshotName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tag keys and optional values to add to the resource during create.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag a resource after it has been created, see the <code>tag resource</code> operation.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }
