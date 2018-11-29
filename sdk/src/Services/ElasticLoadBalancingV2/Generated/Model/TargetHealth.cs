@@ -58,8 +58,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason code. If the target state is <code>healthy</code>, a reason code is not
-        /// provided.
+        /// The reason code.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the target state is <code>healthy</code>, a reason code is not provided.
         /// </para>
         ///  
         /// <para>
@@ -133,6 +136,16 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         ///  <code>Target.DeregistrationInProgress</code> - The target is in the process of being
         /// deregistered and the deregistration delay period has not expired.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the target state is <code>unavailable</code>, the reason code can be the following
+        /// value:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target
+        /// group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

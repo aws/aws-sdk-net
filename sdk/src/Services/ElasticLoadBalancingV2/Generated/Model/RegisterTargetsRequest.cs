@@ -33,8 +33,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// You can register targets by instance ID or by IP address. If the target is an EC2
-    /// instance, it must be in the <code>running</code> state when you register it.
+    /// If the target is an EC2 instance, it must be in the <code>running</code> state when
+    /// you register it.
     /// </para>
     ///  
     /// <para>
@@ -81,6 +81,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Targets. 
         /// <para>
         /// The targets.
+        /// </para>
+        ///  
+        /// <para>
+        /// To register a target by instance ID, specify the instance ID. To register a target
+        /// by IP address, specify the IP address. To register a Lambda function, specify the
+        /// ARN of the Lambda function.
         /// </para>
         /// </summary>
         public List<TargetDescription> Targets

@@ -60,6 +60,36 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Field = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("HostHeaderConfig", targetDepth))
+                    {
+                        var unmarshaller = HostHeaderConditionConfigUnmarshaller.Instance;
+                        unmarshalledObject.HostHeaderConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HttpHeaderConfig", targetDepth))
+                    {
+                        var unmarshaller = HttpHeaderConditionConfigUnmarshaller.Instance;
+                        unmarshalledObject.HttpHeaderConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("HttpRequestMethodConfig", targetDepth))
+                    {
+                        var unmarshaller = HttpRequestMethodConditionConfigUnmarshaller.Instance;
+                        unmarshalledObject.HttpRequestMethodConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("PathPatternConfig", targetDepth))
+                    {
+                        var unmarshaller = PathPatternConditionConfigUnmarshaller.Instance;
+                        unmarshalledObject.PathPatternConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("QueryStringConfig", targetDepth))
+                    {
+                        var unmarshaller = QueryStringConditionConfigUnmarshaller.Instance;
+                        unmarshalledObject.QueryStringConfig = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Values/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

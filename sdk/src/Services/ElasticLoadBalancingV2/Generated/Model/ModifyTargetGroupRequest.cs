@@ -39,6 +39,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class ModifyTargetGroupRequest : AmazonElasticLoadBalancingV2Request
     {
+        private bool? _healthCheckEnabled;
         private int? _healthCheckIntervalSeconds;
         private string _healthCheckPath;
         private string _healthCheckPort;
@@ -50,11 +51,33 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private int? _unhealthyThresholdCount;
 
         /// <summary>
+        /// Gets and sets the property HealthCheckEnabled. 
+        /// <para>
+        /// Indicates whether health checks are enabled.
+        /// </para>
+        /// </summary>
+        public bool HealthCheckEnabled
+        {
+            get { return this._healthCheckEnabled.GetValueOrDefault(); }
+            set { this._healthCheckEnabled = value; }
+        }
+
+        // Check to see if HealthCheckEnabled property is set
+        internal bool IsSetHealthCheckEnabled()
+        {
+            return this._healthCheckEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
         /// target. For Application Load Balancers, the range is 5–300 seconds. For Network Load
         /// Balancers, the supported values are 10 or 30 seconds.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the protocol of the target group is TCP, you can't modify this setting.
         /// </para>
         /// </summary>
         public int HealthCheckIntervalSeconds
@@ -112,6 +135,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The protocol the load balancer uses when performing health checks on targets. The
         /// TCP protocol is supported only if the protocol of the target group is TCP.
         /// </para>
+        ///  
+        /// <para>
+        /// If the protocol of the target group is TCP, you can't modify this setting.
+        /// </para>
         /// </summary>
         public ProtocolEnum HealthCheckProtocol
         {
@@ -130,6 +157,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// [HTTP/HTTPS health checks] The amount of time, in seconds, during which no response
         /// means a failed health check.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the protocol of the target group is TCP, you can't modify this setting.
         /// </para>
         /// </summary>
         public int HealthCheckTimeoutSeconds
@@ -168,6 +199,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response
         /// from a target.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the protocol of the target group is TCP, you can't modify this setting.
         /// </para>
         /// </summary>
         public Matcher Matcher

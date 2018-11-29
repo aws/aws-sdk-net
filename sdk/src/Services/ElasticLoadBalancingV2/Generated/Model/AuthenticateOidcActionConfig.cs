@@ -43,6 +43,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _sessionCookieName;
         private long? _sessionTimeout;
         private string _tokenEndpoint;
+        private bool? _useExistingClientSecret;
         private string _userInfoEndpoint;
 
         /// <summary>
@@ -247,6 +248,21 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetTokenEndpoint()
         {
             return this._tokenEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseExistingClientSecret.
+        /// </summary>
+        public bool UseExistingClientSecret
+        {
+            get { return this._useExistingClientSecret.GetValueOrDefault(); }
+            set { this._useExistingClientSecret = value; }
+        }
+
+        // Check to see if UseExistingClientSecret property is set
+        internal bool IsSetUseExistingClientSecret()
+        {
+            return this._useExistingClientSecret.HasValue; 
         }
 
         /// <summary>

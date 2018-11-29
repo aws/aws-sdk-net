@@ -32,6 +32,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class TargetGroup
     {
+        private bool? _healthCheckEnabled;
         private int? _healthCheckIntervalSeconds;
         private string _healthCheckPath;
         private string _healthCheckPort;
@@ -47,6 +48,24 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private TargetTypeEnum _targetType;
         private int? _unhealthyThresholdCount;
         private string _vpcId;
+
+        /// <summary>
+        /// Gets and sets the property HealthCheckEnabled. 
+        /// <para>
+        /// Indicates whether health checks are enabled.
+        /// </para>
+        /// </summary>
+        public bool HealthCheckEnabled
+        {
+            get { return this._healthCheckEnabled.GetValueOrDefault(); }
+            set { this._healthCheckEnabled = value; }
+        }
+
+        // Check to see if HealthCheckEnabled property is set
+        internal bool IsSetHealthCheckEnabled()
+        {
+            return this._healthCheckEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property HealthCheckIntervalSeconds. 

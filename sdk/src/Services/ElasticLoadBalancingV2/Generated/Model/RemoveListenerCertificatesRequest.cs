@@ -49,7 +49,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The certificate to remove. You can specify one certificate per call.
+        /// The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code>
+        /// to the certificate ARN but do not set <code>IsDefault</code>.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates

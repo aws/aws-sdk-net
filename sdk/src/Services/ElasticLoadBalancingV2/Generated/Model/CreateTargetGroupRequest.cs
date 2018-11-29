@@ -61,6 +61,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class CreateTargetGroupRequest : AmazonElasticLoadBalancingV2Request
     {
+        private bool? _healthCheckEnabled;
         private int? _healthCheckIntervalSeconds;
         private string _healthCheckPath;
         private string _healthCheckPort;
@@ -76,11 +77,33 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _vpcId;
 
         /// <summary>
+        /// Gets and sets the property HealthCheckEnabled. 
+        /// <para>
+        /// Indicates whether health checks are enabled. If the target type is <code>instance</code>
+        /// or <code>ip</code>, the default is <code>true</code>. If the target type is <code>lambda</code>,
+        /// the default is <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool HealthCheckEnabled
+        {
+            get { return this._healthCheckEnabled.GetValueOrDefault(); }
+            set { this._healthCheckEnabled = value; }
+        }
+
+        // Check to see if HealthCheckEnabled property is set
+        internal bool IsSetHealthCheckEnabled()
+        {
+            return this._healthCheckEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
         /// The approximate amount of time, in seconds, between health checks of an individual
         /// target. For Application Load Balancers, the range is 5–300 seconds. For Network Load
-        /// Balancers, the supported values are 10 or 30 seconds. The default is 30 seconds.
+        /// Balancers, the supported values are 10 or 30 seconds. If the target type is <code>instance</code>
+        /// or <code>ip</code>, the default is 30 seconds. If the target type is <code>lambda</code>,
+        /// the default is 35 seconds.
         /// </para>
         /// </summary>
         public int HealthCheckIntervalSeconds
@@ -158,9 +181,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckTimeoutSeconds. 
         /// <para>
         /// The amount of time, in seconds, during which no response from a target means a failed
-        /// health check. For Application Load Balancers, the range is 2–60 seconds and the default
-        /// is 5 seconds. For Network Load Balancers, this is 10 seconds for TCP and HTTPS health
-        /// checks and 6 seconds for HTTP health checks.
+        /// health check. For Application Load Balancers, the range is 2–120 seconds and the default
+        /// is 5 seconds if the target type is <code>instance</code> or <code>ip</code> and 30
+        /// seconds if the target type is <code>lambda</code>. For Network Load Balancers, this
+        /// is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.
         /// </para>
         /// </summary>
         public int HealthCheckTimeoutSeconds
@@ -242,7 +266,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// The port on which the targets receive traffic. This port is used unless you specify
-        /// a port override when registering the target.
+        /// a port override when registering the target. If the target is a Lambda function, this
+        /// parameter does not apply.
         /// </para>
         /// </summary>
         public int Port
@@ -262,7 +287,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The protocol to use for routing traffic to the targets. For Application Load Balancers,
         /// the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported
-        /// protocol is TCP.
+        /// protocol is TCP. If the target is a Lambda function, this parameter does not apply.
         /// </para>
         /// </summary>
         public ProtocolEnum Protocol
@@ -281,17 +306,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The type of target that you must specify when registering targets with this target
-        /// group. The possible values are <code>instance</code> (targets are specified by instance
-        /// ID) or <code>ip</code> (targets are specified by IP address). The default is <code>instance</code>.
-        /// You can't specify targets for a target group using both instance IDs and IP addresses.
+        /// group. You can't specify targets for a target group using more than one target type.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// If the target type is <code>ip</code>, specify IP addresses from the subnets of the
-        /// virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8,
-        /// 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't
-        /// specify publicly routable IP addresses.
+        ///  <code>instance</code> - Targets are specified by instance ID. This is the default
+        /// value.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ip</code> - Targets are specified by IP address. You can specify IP addresses
+        /// from the subnets of the virtual private cloud (VPC) for the target group, the RFC
+        /// 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+        /// (100.64.0.0/10). You can't specify publicly routable IP addresses.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>lambda</code> - The target groups contains a single Lambda function.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public TargetTypeEnum TargetType
         {
@@ -328,7 +361,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The identifier of the virtual private cloud (VPC).
+        /// The identifier of the virtual private cloud (VPC). If the target is a Lambda function,
+        /// this parameter does not apply.
         /// </para>
         /// </summary>
         public string VpcId

@@ -56,7 +56,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property IsDefault. 
         /// <para>
-        /// Indicates whether the certificate is the default certificate.
+        /// Indicates whether the certificate is the default certificate. Do not set <code>IsDefault</code>
+        /// when specifying a certificate as an input parameter.
         /// </para>
         /// </summary>
         public bool IsDefault

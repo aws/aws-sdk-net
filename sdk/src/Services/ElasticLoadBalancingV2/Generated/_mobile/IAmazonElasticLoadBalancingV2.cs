@@ -380,6 +380,23 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
                 
+        #region  DescribeProvisionedCapacity
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedCapacity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity">REST API Reference for DescribeProvisionedCapacity Operation</seealso>
+        Task<DescribeProvisionedCapacityResponse> DescribeProvisionedCapacityAsync(DescribeProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeRules
 
 
@@ -513,6 +530,23 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         Task<ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesAsync(ModifyLoadBalancerAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyProvisionedCapacity
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyProvisionedCapacity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity">REST API Reference for ModifyProvisionedCapacity Operation</seealso>
+        Task<ModifyProvisionedCapacityResponse> ModifyProvisionedCapacityAsync(ModifyProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

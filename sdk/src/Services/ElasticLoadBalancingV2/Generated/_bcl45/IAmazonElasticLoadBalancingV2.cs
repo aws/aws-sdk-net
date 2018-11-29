@@ -124,6 +124,7 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <para>
         /// To list the certificates for your listener, use <a>DescribeListenerCertificates</a>.
         /// To remove certificates from your listener, use <a>RemoveListenerCertificates</a>.
+        /// To specify the default SSL server certificate, use <a>ModifyListener</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddListenerCertificates service method.</param>
@@ -137,6 +138,12 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyCertificatesException">
         /// You've reached the limit on the number of certificates per load balancer.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedCertificateException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
+        /// The specified protocol is not supported.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
         AddListenerCertificatesResponse AddListenerCertificates(AddListenerCertificatesRequest request);
@@ -277,6 +284,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedCertificateException">
+        /// 
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -909,6 +919,36 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
+        #region  DescribeProvisionedCapacity
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the DescribeProvisionedCapacity service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity">REST API Reference for DescribeProvisionedCapacity Operation</seealso>
+        DescribeProvisionedCapacityResponse DescribeProvisionedCapacity(DescribeProvisionedCapacityRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedCapacity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity">REST API Reference for DescribeProvisionedCapacity Operation</seealso>
+        Task<DescribeProvisionedCapacityResponse> DescribeProvisionedCapacityAsync(DescribeProvisionedCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeRules
 
 
@@ -1198,6 +1238,9 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
         /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedCertificateException">
+        /// 
+        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
         /// </exception>
@@ -1256,6 +1299,48 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyLoadBalancerAttributes">REST API Reference for ModifyLoadBalancerAttributes Operation</seealso>
         Task<ModifyLoadBalancerAttributesResponse> ModifyLoadBalancerAttributesAsync(ModifyLoadBalancerAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyProvisionedCapacity
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyProvisionedCapacity service method.</param>
+        /// 
+        /// <returns>The response from the ModifyProvisionedCapacity service method, as returned by ElasticLoadBalancingV2.</returns>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InsufficientCapacityException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
+        /// The requested configuration is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
+        /// The specified load balancer does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.MinimumLBCapacityUnitsDecreaseThrottlingException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.MinimumLBCapacityUnitsLimitExceededException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity">REST API Reference for ModifyProvisionedCapacity Operation</seealso>
+        ModifyProvisionedCapacityResponse ModifyProvisionedCapacity(ModifyProvisionedCapacityRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyProvisionedCapacity operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyProvisionedCapacity operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity">REST API Reference for ModifyProvisionedCapacity Operation</seealso>
+        Task<ModifyProvisionedCapacityResponse> ModifyProvisionedCapacityAsync(ModifyProvisionedCapacityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1406,8 +1491,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// You can register targets by instance ID or by IP address. If the target is an EC2
-        /// instance, it must be in the <code>running</code> state when you register it.
+        /// If the target is an EC2 instance, it must be in the <code>running</code> state when
+        /// you register it.
         /// </para>
         ///  
         /// <para>

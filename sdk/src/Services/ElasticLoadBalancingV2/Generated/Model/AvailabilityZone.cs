@@ -33,6 +33,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class AvailabilityZone
     {
         private List<LoadBalancerAddress> _loadBalancerAddresses = new List<LoadBalancerAddress>();
+        private bool? _staticIp;
         private string _subnetId;
         private string _zoneName;
 
@@ -52,6 +53,21 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetLoadBalancerAddresses()
         {
             return this._loadBalancerAddresses != null && this._loadBalancerAddresses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StaticIp.
+        /// </summary>
+        public bool StaticIp
+        {
+            get { return this._staticIp.GetValueOrDefault(); }
+            set { this._staticIp = value; }
+        }
+
+        // Check to see if StaticIp property is set
+        internal bool IsSetStaticIp()
+        {
+            return this._staticIp.HasValue; 
         }
 
         /// <summary>

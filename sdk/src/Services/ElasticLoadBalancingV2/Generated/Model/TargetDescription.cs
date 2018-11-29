@@ -46,14 +46,22 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         ///  
         /// <para>
         /// This parameter is not supported if the target type of the target group is <code>instance</code>.
-        /// If the IP address is in a subnet of the VPC for the target group, the Availability
-        /// Zone is automatically detected and this parameter is optional. If the IP address is
-        /// outside the VPC, this parameter is required.
         /// </para>
         ///  
         /// <para>
-        /// With an Application Load Balancer, if the IP address is outside the VPC for the target
-        /// group, the only supported value is <code>all</code>.
+        /// If the target type is <code>ip</code> and the IP address is in a subnet of the VPC
+        /// for the target group, the Availability Zone is automatically detected and this parameter
+        /// is optional. If the IP address is outside the VPC, this parameter is required.
+        /// </para>
+        ///  
+        /// <para>
+        /// With an Application Load Balancer, if the target type is <code>ip</code> and the IP
+        /// address is outside the VPC for the target group, the only supported value is <code>all</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the target type is <code>lambda</code>, this parameter is optional and the only
+        /// supported value is <code>all</code>.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -73,6 +81,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// The ID of the target. If the target type of the target group is <code>instance</code>,
         /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address.
+        /// If the target type is <code>lambda</code>, specify the ARN of the Lambda function.
         /// </para>
         /// </summary>
         public string Id
