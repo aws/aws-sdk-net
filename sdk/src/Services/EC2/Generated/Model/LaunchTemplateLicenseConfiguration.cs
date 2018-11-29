@@ -28,28 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the MonitorInstances operation.
+    /// Describes a license configuration.
     /// </summary>
-    public partial class MonitorInstancesResponse : AmazonWebServiceResponse
+    public partial class LaunchTemplateLicenseConfiguration
     {
-        private List<InstanceMonitoring> _instanceMonitorings = new List<InstanceMonitoring>();
+        private string _licenseConfigurationArn;
 
         /// <summary>
-        /// Gets and sets the property InstanceMonitorings. 
+        /// Gets and sets the property LicenseConfigurationArn. 
         /// <para>
-        /// The monitoring information.
+        /// The Amazon Resource Name (ARN) of the license configuration.
         /// </para>
         /// </summary>
-        public List<InstanceMonitoring> InstanceMonitorings
+        public string LicenseConfigurationArn
         {
-            get { return this._instanceMonitorings; }
-            set { this._instanceMonitorings = value; }
+            get { return this._licenseConfigurationArn; }
+            set { this._licenseConfigurationArn = value; }
         }
 
-        // Check to see if InstanceMonitorings property is set
-        internal bool IsSetInstanceMonitorings()
+        // Check to see if LicenseConfigurationArn property is set
+        internal bool IsSetLicenseConfigurationArn()
         {
-            return this._instanceMonitorings != null && this._instanceMonitorings.Count > 0; 
+            return this._licenseConfigurationArn != null;
         }
 
     }

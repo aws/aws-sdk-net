@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of TerminateInstances.
+    /// This is the response object from the TerminateInstances operation.
     /// </summary>
     public partial class TerminateInstancesResponse : AmazonWebServiceResponse
     {

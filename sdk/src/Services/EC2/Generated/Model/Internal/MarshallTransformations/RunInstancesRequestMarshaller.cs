@@ -169,6 +169,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         publicRequestlistValueIndex++;
                     }
                 }
+                if(publicRequest.IsSetElasticInferenceAccelerators())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.ElasticInferenceAccelerators)
+                    {
+                        if(publicRequestlistValue.IsSetType())
+                        {
+                            request.Parameters.Add("ElasticInferenceAccelerator" + "." + publicRequestlistValueIndex + "." + "Type", StringUtils.FromString(publicRequestlistValue.Type));
+                        }
+                        publicRequestlistValueIndex++;
+                    }
+                }
+                if(publicRequest.IsSetHibernationOptions())
+                {
+                    if(publicRequest.HibernationOptions.IsSetConfigured())
+                    {
+                        request.Parameters.Add("HibernationOptions" + "." + "Configured", StringUtils.FromBool(publicRequest.HibernationOptions.Configured));
+                    }
+                }
                 if(publicRequest.IsSetIamInstanceProfile())
                 {
                     if(publicRequest.IamInstanceProfile.IsSetArn())
@@ -259,6 +278,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.LaunchTemplate.IsSetVersion())
                     {
                         request.Parameters.Add("LaunchTemplate" + "." + "Version", StringUtils.FromString(publicRequest.LaunchTemplate.Version));
+                    }
+                }
+                if(publicRequest.IsSetLicenseSpecifications())
+                {
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.LicenseSpecifications)
+                    {
+                        if(publicRequestlistValue.IsSetLicenseConfigurationArn())
+                        {
+                            request.Parameters.Add("LicenseSpecification" + "." + publicRequestlistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestlistValue.LicenseConfigurationArn));
+                        }
+                        publicRequestlistValueIndex++;
                     }
                 }
                 if(publicRequest.IsSetMaxCount())

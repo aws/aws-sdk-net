@@ -98,6 +98,19 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ElasticGpuSpecifications.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("elasticInferenceAcceleratorSet/item", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateElasticInferenceAcceleratorResponseUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ElasticInferenceAccelerators.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("hibernationOptions", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateHibernationOptionsUnmarshaller.Instance;
+                        unmarshalledObject.HibernationOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("iamInstanceProfile", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateIamInstanceProfileSpecificationUnmarshaller.Instance;
@@ -138,6 +151,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.KeyName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("licenseSet/item", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateLicenseConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LicenseSpecifications.Add(item);
                         continue;
                     }
                     if (context.TestExpression("monitoring", targetDepth))

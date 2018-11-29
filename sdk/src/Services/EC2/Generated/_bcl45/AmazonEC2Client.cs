@@ -16722,6 +16722,13 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
+        /// You can use the Stop action to hibernate an instance if the instance is <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
+        /// for hibernation</a> and it meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+        /// prerequisites</a>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+        /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
         /// We don't charge usage for a stopped instance, or data transfer fees; however, your
         /// root partition Amazon EBS volume remains and continues to persist your data, and you
         /// are charged for Amazon EBS volume usage. Every time you start your Windows instance,
@@ -16733,21 +16740,27 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can't start or stop Spot Instances, and you can't stop instance store-backed instances.
+        /// You can't start, stop, or hibernate Spot Instances, and you can't stop or hibernate
+        /// instance store-backed instances. For information about using hibernation for Spot
+        /// Instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
+        /// Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// When you stop an instance, we shut it down. You can restart your instance at any time.
-        /// Before stopping an instance, make sure it is in a state from which it can be restarted.
-        /// Stopping an instance does not preserve data stored in RAM.
+        /// When you stop or hibernate an instance, we shut it down. You can restart your instance
+        /// at any time. Before stopping or hibernating an instance, make sure it is in a state
+        /// from which it can be restarted. Stopping an instance does not preserve data stored
+        /// in RAM, but hibernating an instance does preserve data stored in RAM. If an instance
+        /// cannot hibernate successfully, a normal shutdown occurs.
         /// </para>
         ///  
         /// <para>
-        /// Stopping an instance is different to rebooting or terminating it. For example, when
-        /// you stop an instance, the root device and any other devices attached to the instance
-        /// persist. When you terminate an instance, the root device and any other devices attached
-        /// during the instance launch are automatically deleted. For more information about the
-        /// differences between rebooting, stopping, and terminating instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+        /// Stopping and hibernating an instance is different to rebooting or terminating it.
+        /// For example, when you stop or hibernate an instance, the root device and any other
+        /// devices attached to the instance persist. When you terminate an instance, the root
+        /// device and any other devices attached during the instance launch are automatically
+        /// deleted. For more information about the differences between rebooting, stopping, hibernating,
+        /// and terminating instances, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  

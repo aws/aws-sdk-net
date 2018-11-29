@@ -28,28 +28,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the MonitorInstances operation.
+    /// Indicates whether the instance is configured for hibernation. This parameter is valid
+    /// only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+    /// prerequisites</a>. Hibernation is currently supported only for Amazon Linux.
     /// </summary>
-    public partial class MonitorInstancesResponse : AmazonWebServiceResponse
+    public partial class LaunchTemplateHibernationOptionsRequest
     {
-        private List<InstanceMonitoring> _instanceMonitorings = new List<InstanceMonitoring>();
+        private bool? _configured;
 
         /// <summary>
-        /// Gets and sets the property InstanceMonitorings. 
+        /// Gets and sets the property Configured. 
         /// <para>
-        /// The monitoring information.
+        /// If you set this parameter to <code>true</code>, the instance is enabled for hibernation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
-        public List<InstanceMonitoring> InstanceMonitorings
+        public bool Configured
         {
-            get { return this._instanceMonitorings; }
-            set { this._instanceMonitorings = value; }
+            get { return this._configured.GetValueOrDefault(); }
+            set { this._configured = value; }
         }
 
-        // Check to see if InstanceMonitorings property is set
-        internal bool IsSetInstanceMonitorings()
+        // Check to see if Configured property is set
+        internal bool IsSetConfigured()
         {
-            return this._instanceMonitorings != null && this._instanceMonitorings.Count > 0; 
+            return this._configured.HasValue; 
         }
 
     }

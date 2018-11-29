@@ -110,10 +110,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ElasticGpuAssociations.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("elasticInferenceAcceleratorAssociationSet/item", targetDepth))
+                    {
+                        var unmarshaller = ElasticInferenceAcceleratorAssociationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.ElasticInferenceAcceleratorAssociations.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("enaSupport", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;
                         unmarshalledObject.EnaSupport = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("hibernationOptions", targetDepth))
+                    {
+                        var unmarshaller = HibernationOptionsUnmarshaller.Instance;
+                        unmarshalledObject.HibernationOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("hypervisor", targetDepth))
@@ -168,6 +181,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
                         unmarshalledObject.LaunchTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("licenseSet/item", targetDepth))
+                    {
+                        var unmarshaller = LicenseConfigurationUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.Licenses.Add(item);
                         continue;
                     }
                     if (context.TestExpression("monitoring", targetDepth))

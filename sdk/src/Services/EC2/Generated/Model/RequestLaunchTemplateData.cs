@@ -39,6 +39,8 @@ namespace Amazon.EC2.Model
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecifications = new List<ElasticGpuSpecification>();
+        private List<LaunchTemplateElasticInferenceAccelerator> _elasticInferenceAccelerators = new List<LaunchTemplateElasticInferenceAccelerator>();
+        private LaunchTemplateHibernationOptionsRequest _hibernationOptions;
         private LaunchTemplateIamInstanceProfileSpecificationRequest _iamInstanceProfile;
         private string _imageId;
         private ShutdownBehavior _instanceInitiatedShutdownBehavior;
@@ -46,6 +48,7 @@ namespace Amazon.EC2.Model
         private InstanceType _instanceType;
         private string _kernelId;
         private string _keyName;
+        private List<LaunchTemplateLicenseConfigurationRequest> _licenseSpecifications = new List<LaunchTemplateLicenseConfigurationRequest>();
         private LaunchTemplatesMonitoringRequest _monitoring;
         private List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest> _networkInterfaces = new List<LaunchTemplateInstanceNetworkInterfaceSpecificationRequest>();
         private LaunchTemplatePlacementRequest _placement;
@@ -85,7 +88,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CapacityReservationSpecification. 
         /// <para>
-        /// Information about the Capacity Reservation targeting option.
+        /// The Capacity Reservation targeting option.
         /// </para>
         /// </summary>
         public LaunchTemplateCapacityReservationSpecificationRequest CapacityReservationSpecification
@@ -194,6 +197,46 @@ namespace Amazon.EC2.Model
         internal bool IsSetElasticGpuSpecifications()
         {
             return this._elasticGpuSpecifications != null && this._elasticGpuSpecifications.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ElasticInferenceAccelerators. 
+        /// <para>
+        ///  The elastic inference accelerator for the instance. 
+        /// </para>
+        /// </summary>
+        public List<LaunchTemplateElasticInferenceAccelerator> ElasticInferenceAccelerators
+        {
+            get { return this._elasticInferenceAccelerators; }
+            set { this._elasticInferenceAccelerators = value; }
+        }
+
+        // Check to see if ElasticInferenceAccelerators property is set
+        internal bool IsSetElasticInferenceAccelerators()
+        {
+            return this._elasticInferenceAccelerators != null && this._elasticInferenceAccelerators.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HibernationOptions. 
+        /// <para>
+        /// Indicates whether an instance is enabled for hibernation. This parameter is valid
+        /// only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+        /// prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+        /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public LaunchTemplateHibernationOptionsRequest HibernationOptions
+        {
+            get { return this._hibernationOptions; }
+            set { this._hibernationOptions = value; }
+        }
+
+        // Check to see if HibernationOptions property is set
+        internal bool IsSetHibernationOptions()
+        {
+            return this._hibernationOptions != null;
         }
 
         /// <summary>
@@ -340,6 +383,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKeyName()
         {
             return this._keyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseSpecifications. 
+        /// <para>
+        /// The license configurations.
+        /// </para>
+        /// </summary>
+        public List<LaunchTemplateLicenseConfigurationRequest> LicenseSpecifications
+        {
+            get { return this._licenseSpecifications; }
+            set { this._licenseSpecifications = value; }
+        }
+
+        // Check to see if LicenseSpecifications property is set
+        internal bool IsSetLicenseSpecifications()
+        {
+            return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
         }
 
         /// <summary>

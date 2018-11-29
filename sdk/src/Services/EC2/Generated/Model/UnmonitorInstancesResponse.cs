@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of UnmonitorInstances.
+    /// This is the response object from the UnmonitorInstances operation.
     /// </summary>
     public partial class UnmonitorInstancesResponse : AmazonWebServiceResponse
     {

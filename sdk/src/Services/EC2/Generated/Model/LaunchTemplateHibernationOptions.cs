@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the MonitorInstances operation.
+    /// Indicates whether an instance is configured for hibernation.
     /// </summary>
-    public partial class MonitorInstancesResponse : AmazonWebServiceResponse
+    public partial class LaunchTemplateHibernationOptions
     {
-        private List<InstanceMonitoring> _instanceMonitorings = new List<InstanceMonitoring>();
+        private bool? _configured;
 
         /// <summary>
-        /// Gets and sets the property InstanceMonitorings. 
+        /// Gets and sets the property Configured. 
         /// <para>
-        /// The monitoring information.
+        /// If this parameter is set to <code>true</code>, the instance is enabled for hibernation;
+        /// otherwise, it is not enabled for hibernation.
         /// </para>
         /// </summary>
-        public List<InstanceMonitoring> InstanceMonitorings
+        public bool Configured
         {
-            get { return this._instanceMonitorings; }
-            set { this._instanceMonitorings = value; }
+            get { return this._configured.GetValueOrDefault(); }
+            set { this._configured = value; }
         }
 
-        // Check to see if InstanceMonitorings property is set
-        internal bool IsSetInstanceMonitorings()
+        // Check to see if Configured property is set
+        internal bool IsSetConfigured()
         {
-            return this._instanceMonitorings != null && this._instanceMonitorings.Count > 0; 
+            return this._configured.HasValue; 
         }
 
     }

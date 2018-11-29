@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The placement for the instance.
+    /// Describes the placement of an instance.
     /// </summary>
     public partial class LaunchTemplatePlacementRequest
     {

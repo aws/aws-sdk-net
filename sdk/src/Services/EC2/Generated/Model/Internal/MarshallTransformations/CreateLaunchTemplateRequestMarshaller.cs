@@ -167,6 +167,25 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             publicRequestLaunchTemplateDatalistValueIndex++;
                         }
                     }
+                    if(publicRequest.LaunchTemplateData.IsSetElasticInferenceAccelerators())
+                    {
+                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.ElasticInferenceAccelerators)
+                        {
+                            if(publicRequestLaunchTemplateDatalistValue.IsSetType())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "ElasticInferenceAccelerator" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "Type", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.Type));
+                            }
+                            publicRequestLaunchTemplateDatalistValueIndex++;
+                        }
+                    }
+                    if(publicRequest.LaunchTemplateData.IsSetHibernationOptions())
+                    {
+                        if(publicRequest.LaunchTemplateData.HibernationOptions.IsSetConfigured())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "HibernationOptions" + "." + "Configured", StringUtils.FromBool(publicRequest.LaunchTemplateData.HibernationOptions.Configured));
+                        }
+                    }
                     if(publicRequest.LaunchTemplateData.IsSetIamInstanceProfile())
                     {
                         if(publicRequest.LaunchTemplateData.IamInstanceProfile.IsSetArn())
@@ -227,6 +246,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if(publicRequest.LaunchTemplateData.IsSetKeyName())
                     {
                         request.Parameters.Add("LaunchTemplateData" + "." + "KeyName", StringUtils.FromString(publicRequest.LaunchTemplateData.KeyName));
+                    }
+                    if(publicRequest.LaunchTemplateData.IsSetLicenseSpecifications())
+                    {
+                        int publicRequestLaunchTemplateDatalistValueIndex = 1;
+                        foreach(var publicRequestLaunchTemplateDatalistValue in publicRequest.LaunchTemplateData.LicenseSpecifications)
+                        {
+                            if(publicRequestLaunchTemplateDatalistValue.IsSetLicenseConfigurationArn())
+                            {
+                                request.Parameters.Add("LaunchTemplateData" + "." + "LicenseSpecification" + "." + publicRequestLaunchTemplateDatalistValueIndex + "." + "LicenseConfigurationArn", StringUtils.FromString(publicRequestLaunchTemplateDatalistValue.LicenseConfigurationArn));
+                            }
+                            publicRequestLaunchTemplateDatalistValueIndex++;
+                        }
                     }
                     if(publicRequest.LaunchTemplateData.IsSetMonitoring())
                     {

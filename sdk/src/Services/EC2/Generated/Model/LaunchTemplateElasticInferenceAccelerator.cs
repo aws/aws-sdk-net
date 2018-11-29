@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the MonitorInstances operation.
+    /// Describes an elastic inference accelerator.
     /// </summary>
-    public partial class MonitorInstancesResponse : AmazonWebServiceResponse
+    public partial class LaunchTemplateElasticInferenceAccelerator
     {
-        private List<InstanceMonitoring> _instanceMonitorings = new List<InstanceMonitoring>();
+        private string _type;
 
         /// <summary>
-        /// Gets and sets the property InstanceMonitorings. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The monitoring information.
+        ///  The type of elastic inference accelerator. The possible values are eia1.medium, eia1.large,
+        /// and eia1.xlarge. 
         /// </para>
         /// </summary>
-        public List<InstanceMonitoring> InstanceMonitorings
+        public string Type
         {
-            get { return this._instanceMonitorings; }
-            set { this._instanceMonitorings = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if InstanceMonitorings property is set
-        internal bool IsSetInstanceMonitorings()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._instanceMonitorings != null && this._instanceMonitorings.Count > 0; 
+            return this._type != null;
         }
 
     }

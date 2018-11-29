@@ -62,6 +62,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("Force", StringUtils.FromBool(publicRequest.Force));
                 }
+                if(publicRequest.IsSetHibernate())
+                {
+                    request.Parameters.Add("Hibernate", StringUtils.FromBool(publicRequest.Hibernate));
+                }
                 if(publicRequest.IsSetInstanceIds())
                 {
                     int publicRequestlistValueIndex = 1;

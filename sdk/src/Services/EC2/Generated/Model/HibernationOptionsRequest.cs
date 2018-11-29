@@ -28,47 +28,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the GetConsoleScreenshot operation.
+    /// Indicates whether your instance is configured for hibernation. This parameter is valid
+    /// only if the instance meets the <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+    /// prerequisites</a>. Hibernation is currently supported only for Amazon Linux. For more
+    /// information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+    /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </summary>
-    public partial class GetConsoleScreenshotResponse : AmazonWebServiceResponse
+    public partial class HibernationOptionsRequest
     {
-        private string _imageData;
-        private string _instanceId;
+        private bool? _configured;
 
         /// <summary>
-        /// Gets and sets the property ImageData. 
+        /// Gets and sets the property Configured. 
         /// <para>
-        /// The data that comprises the image.
+        /// If you set this parameter to <code>true</code>, your instance is enabled for hibernation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>false</code> 
         /// </para>
         /// </summary>
-        public string ImageData
+        public bool Configured
         {
-            get { return this._imageData; }
-            set { this._imageData = value; }
+            get { return this._configured.GetValueOrDefault(); }
+            set { this._configured = value; }
         }
 
-        // Check to see if ImageData property is set
-        internal bool IsSetImageData()
+        // Check to see if Configured property is set
+        internal bool IsSetConfigured()
         {
-            return this._imageData != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InstanceId. 
-        /// <para>
-        /// The ID of the instance.
-        /// </para>
-        /// </summary>
-        public string InstanceId
-        {
-            get { return this._instanceId; }
-            set { this._instanceId = value; }
-        }
-
-        // Check to see if InstanceId property is set
-        internal bool IsSetInstanceId()
-        {
-            return this._instanceId != null;
+            return this._configured.HasValue; 
         }
 
     }

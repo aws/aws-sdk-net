@@ -105,6 +105,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon
         /// EC2 API.
         /// </para>

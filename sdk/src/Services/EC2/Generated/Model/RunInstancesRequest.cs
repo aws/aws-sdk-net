@@ -121,6 +121,8 @@ namespace Amazon.EC2.Model
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private List<ElasticGpuSpecification> _elasticGpuSpecification = new List<ElasticGpuSpecification>();
+        private List<ElasticInferenceAccelerator> _elasticInferenceAccelerators = new List<ElasticInferenceAccelerator>();
+        private HibernationOptionsRequest _hibernationOptions;
         private IamInstanceProfileSpecification _iamInstanceProfile;
         private string _imageId;
         private ShutdownBehavior _instanceInitiatedShutdownBehavior;
@@ -131,6 +133,7 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private LaunchTemplateSpecification _launchTemplate;
+        private List<LicenseConfigurationRequest> _licenseSpecifications = new List<LicenseConfigurationRequest>();
         private int? _maxCount;
         private int? _minCount;
         private bool? _monitoring;
@@ -357,6 +360,44 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ElasticInferenceAccelerators. 
+        /// <para>
+        ///  An elastic inference accelerator. 
+        /// </para>
+        /// </summary>
+        public List<ElasticInferenceAccelerator> ElasticInferenceAccelerators
+        {
+            get { return this._elasticInferenceAccelerators; }
+            set { this._elasticInferenceAccelerators = value; }
+        }
+
+        // Check to see if ElasticInferenceAccelerators property is set
+        internal bool IsSetElasticInferenceAccelerators()
+        {
+            return this._elasticInferenceAccelerators != null && this._elasticInferenceAccelerators.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HibernationOptions. 
+        /// <para>
+        /// Indicates whether an instance is enabled for hibernation. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+        /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        public HibernationOptionsRequest HibernationOptions
+        {
+            get { return this._hibernationOptions; }
+            set { this._hibernationOptions = value; }
+        }
+
+        // Check to see if HibernationOptions property is set
+        internal bool IsSetHibernationOptions()
+        {
+            return this._hibernationOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IamInstanceProfile. 
         /// <para>
         /// The IAM instance profile.
@@ -572,6 +613,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTemplate()
         {
             return this._launchTemplate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseSpecifications. 
+        /// <para>
+        /// The license configurations.
+        /// </para>
+        /// </summary>
+        public List<LicenseConfigurationRequest> LicenseSpecifications
+        {
+            get { return this._licenseSpecifications; }
+            set { this._licenseSpecifications = value; }
+        }
+
+        // Check to see if LicenseSpecifications property is set
+        internal bool IsSetLicenseSpecifications()
+        {
+            return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
         }
 
         /// <summary>

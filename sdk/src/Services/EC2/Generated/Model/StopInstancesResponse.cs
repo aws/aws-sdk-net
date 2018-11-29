@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of StopInstances.
+    /// This is the response object from the StopInstances operation.
     /// </summary>
     public partial class StopInstancesResponse : AmazonWebServiceResponse
     {

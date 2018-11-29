@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of GetConsoleOutput.
+    /// This is the response object from the GetConsoleOutput operation.
     /// </summary>
     public partial class GetConsoleOutputResponse : AmazonWebServiceResponse
     {

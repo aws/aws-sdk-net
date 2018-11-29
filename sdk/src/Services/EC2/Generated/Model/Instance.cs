@@ -41,7 +41,9 @@ namespace Amazon.EC2.Model
         private CpuOptions _cpuOptions;
         private bool? _ebsOptimized;
         private List<ElasticGpuAssociation> _elasticGpuAssociations = new List<ElasticGpuAssociation>();
+        private List<ElasticInferenceAcceleratorAssociation> _elasticInferenceAcceleratorAssociations = new List<ElasticInferenceAcceleratorAssociation>();
         private bool? _enaSupport;
+        private HibernationOptions _hibernationOptions;
         private HypervisorType _hypervisor;
         private IamInstanceProfile _iamInstanceProfile;
         private string _imageId;
@@ -51,6 +53,7 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private DateTime? _launchTime;
+        private List<LicenseConfiguration> _licenses = new List<LicenseConfiguration>();
         private Monitoring _monitoring;
         private List<InstanceNetworkInterface> _networkInterfaces = new List<InstanceNetworkInterface>();
         private Placement _placement;
@@ -241,6 +244,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ElasticInferenceAcceleratorAssociations. 
+        /// <para>
+        ///  The elastic inference accelerator associated with the instance. 
+        /// </para>
+        /// </summary>
+        public List<ElasticInferenceAcceleratorAssociation> ElasticInferenceAcceleratorAssociations
+        {
+            get { return this._elasticInferenceAcceleratorAssociations; }
+            set { this._elasticInferenceAcceleratorAssociations = value; }
+        }
+
+        // Check to see if ElasticInferenceAcceleratorAssociations property is set
+        internal bool IsSetElasticInferenceAcceleratorAssociations()
+        {
+            return this._elasticInferenceAcceleratorAssociations != null && this._elasticInferenceAcceleratorAssociations.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnaSupport. 
         /// <para>
         /// Specifies whether enhanced networking with ENA is enabled.
@@ -256,6 +277,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetEnaSupport()
         {
             return this._enaSupport.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HibernationOptions. 
+        /// <para>
+        /// Indicates whether the instance is enabled for hibernation.
+        /// </para>
+        /// </summary>
+        public HibernationOptions HibernationOptions
+        {
+            get { return this._hibernationOptions; }
+            set { this._hibernationOptions = value; }
+        }
+
+        // Check to see if HibernationOptions property is set
+        internal bool IsSetHibernationOptions()
+        {
+            return this._hibernationOptions != null;
         }
 
         /// <summary>
@@ -418,6 +457,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTime()
         {
             return this._launchTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Licenses. 
+        /// <para>
+        /// The license configurations.
+        /// </para>
+        /// </summary>
+        public List<LicenseConfiguration> Licenses
+        {
+            get { return this._licenses; }
+            set { this._licenses = value; }
+        }
+
+        // Check to see if Licenses property is set
+        internal bool IsSetLicenses()
+        {
+            return this._licenses != null && this._licenses.Count > 0; 
         }
 
         /// <summary>

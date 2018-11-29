@@ -122,6 +122,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>hibernation-options.configured</code> - A Boolean that indicates whether the
+        /// instance is enabled for hibernation. A value of <code>true</code> means that the instance
+        /// is enabled for hibernation. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>host-id</code> - The ID of the Dedicated Host on which the instance is running,
         /// if applicable.
         /// </para>

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of ConfirmProductInstance.
+    /// This is the response object from the ConfirmProductInstance operation.
     /// </summary>
     public partial class ConfirmProductInstanceResponse : AmazonWebServiceResponse
     {

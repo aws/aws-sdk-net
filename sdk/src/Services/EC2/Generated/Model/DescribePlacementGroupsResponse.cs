@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Contains the output of DescribePlacementGroups.
+    /// This is the response object from the DescribePlacementGroups operation.
     /// </summary>
     public partial class DescribePlacementGroupsResponse : AmazonWebServiceResponse
     {
