@@ -28,16 +28,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about an activity that successfully terminated during an execution.
+    /// Contains details about the start of connected service by a task state.
     /// </summary>
-    public partial class ActivitySucceededEventDetails
+    public partial class TaskSucceededEventDetails
     {
         private string _output;
+        private string _resource;
+        private string _resourceType;
 
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The JSON data output by the activity task.
+        /// The full JSON response from a connected service when a task has succeeded. This response
+        /// becomes the output of the related task.
         /// </para>
         /// </summary>
         public string Output
@@ -50,6 +53,42 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetOutput()
         {
             return this._output != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Resource. 
+        /// <para>
+        /// The service name of the connected service in a task state.
+        /// </para>
+        /// </summary>
+        public string Resource
+        {
+            get { return this._resource; }
+            set { this._resource = value; }
+        }
+
+        // Check to see if Resource property is set
+        internal bool IsSetResource()
+        {
+            return this._resource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The action of the connected service called by a task state.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
         }
 
     }

@@ -58,7 +58,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// An arbitrary error code that identifies the cause of the failure.
+        /// The error code of the failure.
         /// </para>
         /// </summary>
         public string Error

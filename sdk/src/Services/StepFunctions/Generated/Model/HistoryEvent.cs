@@ -53,6 +53,14 @@ namespace Amazon.StepFunctions.Model
         private long? _previousEventId;
         private StateEnteredEventDetails _stateEnteredEventDetails;
         private StateExitedEventDetails _stateExitedEventDetails;
+        private TaskFailedEventDetails _taskFailedEventDetails;
+        private TaskScheduledEventDetails _taskScheduledEventDetails;
+        private TaskStartedEventDetails _taskStartedEventDetails;
+        private TaskStartFailedEventDetails _taskStartFailedEventDetails;
+        private TaskSubmitFailedEventDetails _taskSubmitFailedEventDetails;
+        private TaskSubmittedEventDetails _taskSubmittedEventDetails;
+        private TaskSucceededEventDetails _taskSucceededEventDetails;
+        private TaskTimedOutEventDetails _taskTimedOutEventDetails;
         private DateTime? _timestamp;
         private HistoryEventType _type;
 
@@ -89,7 +97,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ActivityScheduleFailedEventDetails. 
         /// <para>
-        /// Contains details about an activity schedule event which failed during an execution.
+        /// Contains details about an activity schedule event that failed during an execution.
         /// </para>
         /// </summary>
         public ActivityScheduleFailedEventDetails ActivityScheduleFailedEventDetails
@@ -290,7 +298,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionStartFailedEventDetails. 
         /// <para>
-        /// Contains details about a lambda function which failed to start during an execution.
+        /// Contains details about a lambda function that failed to start during an execution.
         /// </para>
         /// </summary>
         public LambdaFunctionStartFailedEventDetails LambdaFunctionStartFailedEventDetails
@@ -308,7 +316,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionSucceededEventDetails. 
         /// <para>
-        /// Contains details about a lambda function which terminated successfully during an execution.
+        /// Contains details about a lambda function that terminated successfully during an execution.
         /// </para>
         /// </summary>
         public LambdaFunctionSucceededEventDetails LambdaFunctionSucceededEventDetails
@@ -387,9 +395,129 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TaskFailedEventDetails.
+        /// </summary>
+        public TaskFailedEventDetails TaskFailedEventDetails
+        {
+            get { return this._taskFailedEventDetails; }
+            set { this._taskFailedEventDetails = value; }
+        }
+
+        // Check to see if TaskFailedEventDetails property is set
+        internal bool IsSetTaskFailedEventDetails()
+        {
+            return this._taskFailedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskScheduledEventDetails.
+        /// </summary>
+        public TaskScheduledEventDetails TaskScheduledEventDetails
+        {
+            get { return this._taskScheduledEventDetails; }
+            set { this._taskScheduledEventDetails = value; }
+        }
+
+        // Check to see if TaskScheduledEventDetails property is set
+        internal bool IsSetTaskScheduledEventDetails()
+        {
+            return this._taskScheduledEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskStartedEventDetails.
+        /// </summary>
+        public TaskStartedEventDetails TaskStartedEventDetails
+        {
+            get { return this._taskStartedEventDetails; }
+            set { this._taskStartedEventDetails = value; }
+        }
+
+        // Check to see if TaskStartedEventDetails property is set
+        internal bool IsSetTaskStartedEventDetails()
+        {
+            return this._taskStartedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskStartFailedEventDetails.
+        /// </summary>
+        public TaskStartFailedEventDetails TaskStartFailedEventDetails
+        {
+            get { return this._taskStartFailedEventDetails; }
+            set { this._taskStartFailedEventDetails = value; }
+        }
+
+        // Check to see if TaskStartFailedEventDetails property is set
+        internal bool IsSetTaskStartFailedEventDetails()
+        {
+            return this._taskStartFailedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskSubmitFailedEventDetails.
+        /// </summary>
+        public TaskSubmitFailedEventDetails TaskSubmitFailedEventDetails
+        {
+            get { return this._taskSubmitFailedEventDetails; }
+            set { this._taskSubmitFailedEventDetails = value; }
+        }
+
+        // Check to see if TaskSubmitFailedEventDetails property is set
+        internal bool IsSetTaskSubmitFailedEventDetails()
+        {
+            return this._taskSubmitFailedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskSubmittedEventDetails.
+        /// </summary>
+        public TaskSubmittedEventDetails TaskSubmittedEventDetails
+        {
+            get { return this._taskSubmittedEventDetails; }
+            set { this._taskSubmittedEventDetails = value; }
+        }
+
+        // Check to see if TaskSubmittedEventDetails property is set
+        internal bool IsSetTaskSubmittedEventDetails()
+        {
+            return this._taskSubmittedEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskSucceededEventDetails.
+        /// </summary>
+        public TaskSucceededEventDetails TaskSucceededEventDetails
+        {
+            get { return this._taskSucceededEventDetails; }
+            set { this._taskSucceededEventDetails = value; }
+        }
+
+        // Check to see if TaskSucceededEventDetails property is set
+        internal bool IsSetTaskSucceededEventDetails()
+        {
+            return this._taskSucceededEventDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskTimedOutEventDetails.
+        /// </summary>
+        public TaskTimedOutEventDetails TaskTimedOutEventDetails
+        {
+            get { return this._taskTimedOutEventDetails; }
+            set { this._taskTimedOutEventDetails = value; }
+        }
+
+        // Check to see if TaskTimedOutEventDetails property is set
+        internal bool IsSetTaskTimedOutEventDetails()
+        {
+            return this._taskTimedOutEventDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The date the event occurred.
+        /// The date and time the event occurred.
         /// </para>
         /// </summary>
         public DateTime Timestamp

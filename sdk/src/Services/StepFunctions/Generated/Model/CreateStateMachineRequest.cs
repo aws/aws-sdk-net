@@ -43,7 +43,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The Amazon States Language definition of the state machine.
+        /// The Amazon States Language definition of the state machine. See <a href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+        /// States Language</a>.
         /// </para>
         /// </summary>
         public string Definition
@@ -61,10 +62,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the state machine. This name must be unique for your AWS account and region
-        /// for 90 days. For more information, see <a href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-        /// Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer
-        /// Guide</i>.
+        /// The name of the state machine. 
         /// </para>
         ///  
         /// <para>

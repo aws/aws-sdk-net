@@ -217,6 +217,22 @@ namespace Amazon.StepFunctions
         /// </summary>
         public static readonly HistoryEventType SucceedStateExited = new HistoryEventType("SucceedStateExited");
         /// <summary>
+        /// Constant TaskFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskFailed = new HistoryEventType("TaskFailed");
+        /// <summary>
+        /// Constant TaskScheduled for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskScheduled = new HistoryEventType("TaskScheduled");
+        /// <summary>
+        /// Constant TaskStarted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskStarted = new HistoryEventType("TaskStarted");
+        /// <summary>
+        /// Constant TaskStartFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskStartFailed = new HistoryEventType("TaskStartFailed");
+        /// <summary>
         /// Constant TaskStateAborted for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType TaskStateAborted = new HistoryEventType("TaskStateAborted");
@@ -228,6 +244,22 @@ namespace Amazon.StepFunctions
         /// Constant TaskStateExited for HistoryEventType
         /// </summary>
         public static readonly HistoryEventType TaskStateExited = new HistoryEventType("TaskStateExited");
+        /// <summary>
+        /// Constant TaskSubmitFailed for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskSubmitFailed = new HistoryEventType("TaskSubmitFailed");
+        /// <summary>
+        /// Constant TaskSubmitted for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskSubmitted = new HistoryEventType("TaskSubmitted");
+        /// <summary>
+        /// Constant TaskSucceeded for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskSucceeded = new HistoryEventType("TaskSucceeded");
+        /// <summary>
+        /// Constant TaskTimedOut for HistoryEventType
+        /// </summary>
+        public static readonly HistoryEventType TaskTimedOut = new HistoryEventType("TaskTimedOut");
         /// <summary>
         /// Constant WaitStateAborted for HistoryEventType
         /// </summary>

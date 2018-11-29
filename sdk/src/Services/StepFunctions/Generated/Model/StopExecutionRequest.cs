@@ -40,7 +40,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Cause. 
         /// <para>
-        /// A more detailed explanation of the cause of the termination.
+        /// A more detailed explanation of the cause of the failure.
         /// </para>
         /// </summary>
         public string Cause
@@ -58,7 +58,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// An arbitrary error code that identifies the cause of the termination.
+        /// The error code of the failure.
         /// </para>
         /// </summary>
         public string Error

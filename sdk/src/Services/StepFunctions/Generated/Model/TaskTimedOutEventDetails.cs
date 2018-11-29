@@ -28,12 +28,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about an activity schedule failure that occurred during an execution.
+    /// Contains details about a connected service timeout that occured during an execution.
     /// </summary>
-    public partial class ActivityScheduleFailedEventDetails
+    public partial class TaskTimedOutEventDetails
     {
         private string _cause;
         private string _error;
+        private string _resource;
+        private string _resourceType;
 
         /// <summary>
         /// Gets and sets the property Cause. 
@@ -69,6 +71,42 @@ namespace Amazon.StepFunctions.Model
         internal bool IsSetError()
         {
             return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Resource. 
+        /// <para>
+        /// The service name of the connected service in a task state.
+        /// </para>
+        /// </summary>
+        public string Resource
+        {
+            get { return this._resource; }
+            set { this._resource = value; }
+        }
+
+        // Check to see if Resource property is set
+        internal bool IsSetResource()
+        {
+            return this._resource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// The action of the connected service called by a task state.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
         }
 
     }

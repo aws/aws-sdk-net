@@ -30,6 +30,13 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Container for the parameters to the DescribeActivity operation.
     /// Describes an activity.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This operation is eventually consistent. The results are best effort and may not reflect
+    /// very recent updates and changes.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeActivityRequest : AmazonStepFunctionsRequest
     {

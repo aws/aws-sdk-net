@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the execution timeout which occurred during the execution.
+    /// Contains details about the execution timeout that occurred during the execution.
     /// </summary>
     public partial class ExecutionTimedOutEventDetails
     {

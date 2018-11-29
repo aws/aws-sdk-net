@@ -33,10 +33,18 @@ namespace Amazon.StepFunctions.Model
     /// 
     ///  
     /// <para>
-    /// If a <code>nextToken</code> is returned by a previous call, there are more results
-    /// available. To retrieve the next page of results, make the call again using the returned
-    /// token in <code>nextToken</code>. Keep all other arguments unchanged.
+    /// If <code>nextToken</code> is returned, there are more results available. The value
+    /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+    /// again using the returned token to retrieve the next page. Keep all other arguments
+    /// unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+    /// token will return an <i>HTTP 400 InvalidToken</i> error.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// This operation is eventually consistent. The results are best effort and may not reflect
+    /// very recent updates and changes.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListActivitiesRequest : AmazonStepFunctionsRequest
     {
@@ -48,7 +56,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The maximum number of results that are returned per call. You can use <code>nextToken</code>
         /// to obtain further pages of results. The default is 100 and the maximum allowed page
-        /// size is 100. A value of 0 uses the default.
+        /// size is 1000. A value of 0 uses the default.
         /// </para>
         ///  
         /// <para>
@@ -71,14 +79,11 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a <code>nextToken</code> is returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>nextToken</code>. Keep all other arguments unchanged.
-        /// </para>
-        ///  
-        /// <para>
-        /// The configured <code>maxResults</code> determines how many results can be returned
-        /// in a single call.
+        /// If <code>nextToken</code> is returned, there are more results available. The value
+        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
+        /// again using the returned token to retrieve the next page. Keep all other arguments
+        /// unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+        /// token will return an <i>HTTP 400 InvalidToken</i> error.
         /// </para>
         /// </summary>
         public string NextToken

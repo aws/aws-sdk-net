@@ -28,47 +28,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about an activity schedule failure that occurred during an execution.
+    /// Contains details about the start of a task during an execution.
     /// </summary>
-    public partial class ActivityScheduleFailedEventDetails
+    public partial class TaskStartedEventDetails
     {
-        private string _cause;
-        private string _error;
+        private string _resource;
+        private string _resourceType;
 
         /// <summary>
-        /// Gets and sets the property Cause. 
+        /// Gets and sets the property Resource. 
         /// <para>
-        /// A more detailed explanation of the cause of the failure.
+        /// The service name of the connected service in a task state.
         /// </para>
         /// </summary>
-        public string Cause
+        public string Resource
         {
-            get { return this._cause; }
-            set { this._cause = value; }
+            get { return this._resource; }
+            set { this._resource = value; }
         }
 
-        // Check to see if Cause property is set
-        internal bool IsSetCause()
+        // Check to see if Resource property is set
+        internal bool IsSetResource()
         {
-            return this._cause != null;
+            return this._resource != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Error. 
+        /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The error code of the failure.
+        /// The action of the connected service called by a task state.
         /// </para>
         /// </summary>
-        public string Error
+        public string ResourceType
         {
-            get { return this._error; }
-            set { this._error = value; }
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
         }
 
-        // Check to see if Error property is set
-        internal bool IsSetError()
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
         {
-            return this._error != null;
+            return this._resourceType != null;
         }
 
     }
