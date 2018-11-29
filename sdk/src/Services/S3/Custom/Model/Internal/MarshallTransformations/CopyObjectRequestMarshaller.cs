@@ -80,7 +80,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if(copyObjectRequest.IsSetObjectLockMode())
                 request.Headers.Add("x-amz-object-lock-mode", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockMode));        
             if(copyObjectRequest.IsSetObjectLockRetainUntilDate())
-                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockRetainUntilDate));
+                request.Headers.Add("x-amz-object-lock-retain-until-date", S3Transforms.ToStringValue(copyObjectRequest.ObjectLockRetainUntilDate, AWSSDKUtils.ISO8601DateFormat));
 
             if (copyObjectRequest.IsSetServerSideEncryptionMethod())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(copyObjectRequest.ServerSideEncryptionMethod));

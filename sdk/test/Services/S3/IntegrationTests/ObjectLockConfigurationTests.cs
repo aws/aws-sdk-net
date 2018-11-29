@@ -80,7 +80,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return putResponse;
         }
 
-        public string PutObject()
+        public string PutObject(DateTime? retainUntilDate = null)
         {
             var key = "contentBodyPut" + random.Next();
             var content = "This is the content body!";
@@ -89,9 +89,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 BucketName = bucketName,
                 Key = key,
                 ContentBody = content,
-                MD5Digest = AmazonS3Util.GenerateChecksumForContent(content, true)                
+                MD5Digest = AmazonS3Util.GenerateChecksumForContent(content, true),
             };
 
+            if (retainUntilDate.HasValue)
+            {
+                putObjectRequest.ObjectLockMode = ObjectLockMode.Governance;
+                putObjectRequest.ObjectLockRetainUntilDate = retainUntilDate.Value;
+            }
+            
             //Set the headers
             foreach (var kvp in headers)
             {
@@ -154,7 +160,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             };
 
             var getResponse = Client.GetObjectLegalHold(getRequest);
-            Assert.AreEqual(true, putResponse.HttpStatusCode == HttpStatusCode.OK);
+            Assert.AreEqual(true, getResponse.HttpStatusCode == HttpStatusCode.OK);
             Assert.AreEqual(status, getResponse.LegalHold.Status);
         }
 
@@ -202,10 +208,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 };
 
                 var getResponse = Client.GetObjectRetention(getRequest);
-                Assert.AreEqual(true, putResponse.HttpStatusCode == HttpStatusCode.OK);
+                Assert.AreEqual(true, getResponse.HttpStatusCode == HttpStatusCode.OK);
 
                 Assert.AreEqual(ObjectLockRetentionMode.Governance, getResponse.Retention.Mode);
                 Assert.AreEqual(date.ToString(), getResponse.Retention.RetainUntilDate.ToString());
+            }
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                DeleteObject(key);
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestObjectLockRetainUntilDate()
+        {
+            AddObjectLockConfiguration();
+
+            DateTime date = DateTime.Now.AddMinutes(1);
+            var key = PutObject(date);
+
+            try
+            {                
+                //Get the object
+                var getRequest = new GetObjectRequest
+                {
+                    BucketName = bucketName,
+                    Key = key,
+                    RequestPayer = RequestPayer.Requester
+                };
+
+                var getResponse = Client.GetObject(getRequest);
+                Assert.AreEqual(true, getResponse.HttpStatusCode == HttpStatusCode.OK);
+
+                Assert.AreEqual(date.ToUniversalTime().ToString(), getResponse.ObjectLockRetainUntilDate.ToString());                
             }
             catch
             {

@@ -58,10 +58,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         {
             return value.ToString(CultureInfo.InvariantCulture);
         }
-        internal static string ToStringValue(DateTime value)
+        internal static string ToStringValue(DateTime value, string dateFormat = AWSSDKUtils.RFC822DateFormat)
         {
-            return value.ToUniversalTime().ToString(AWSSDKUtils.RFC822DateFormat, CultureInfo.InvariantCulture);
-        }
+            return value.ToUniversalTime().ToString(dateFormat, CultureInfo.InvariantCulture);
+        }                
 
         [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
         internal static string ToStringValue(bool value)
