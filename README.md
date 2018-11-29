@@ -87,6 +87,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Application Auto Scaling is a general purpose Auto Scaling service for supported elastic AWS resources. With Application Auto Scaling, you can automatically scale your AWS resources, with an experience similar to that of Amazon EC2 Auto Scaling.
 * [AWSSDK.ApplicationDiscoveryService](https://www.nuget.org/packages/AWSSDK.ApplicationDiscoveryService/)
 	* AWS Application Discovery Service helps Systems Integrators quickly and reliably plan application migration projects by automatically identifying applications running in your data center, their associated dependencies, and their performance profile.
+* [AWSSDK.AppMesh](https://www.nuget.org/packages/AWSSDK.AppMesh/)
+	* AWS App Mesh is a service mesh that makes it easy to monitor and control communications between microservices of an application. AWS App Mesh APIs are available for preview in eu-west-1, us-east-1, us-east-2, and us-west-2 regions.
 * [AWSSDK.AppStream](https://www.nuget.org/packages/AWSSDK.AppStream/)
 	* Amazon AppStream is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to a web browser.
 * [AWSSDK.AppSync](https://www.nuget.org/packages/AWSSDK.AppSync/)
@@ -263,6 +265,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Lex is a service for building conversational interactions into any application using voice or text.
 * [AWSSDK.LexModelBuildingService](https://www.nuget.org/packages/AWSSDK.LexModelBuildingService/)
 	* Amazon Lex is a service for building conversational interfaces into any application using voice and text.
+* [AWSSDK.LicenseManager](https://www.nuget.org/packages/AWSSDK.LicenseManager/)
+	* AWS License Manager makes it easier to manage licenses in AWS and on premises when customers run applications using existing licenses from a variety of software vendors including Microsoft, SAP, Oracle, and IBM. AWS License Manager automatically tracks and controls license usage once administrators have created and enforced rules that emulate the terms of their licensing agreements. The capabilities of AWS License Manager are available through SDK and Tools, besides the management console and CLI.
 * [AWSSDK.Lightsail](https://www.nuget.org/packages/AWSSDK.Lightsail/)
 	* An extremely simplified VM creation and management service.
 * [AWSSDK.MachineLearning](https://www.nuget.org/packages/AWSSDK.MachineLearning/)

@@ -28,6 +28,7 @@
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/appmesh/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/appstream/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/appsync/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/athena/bin/Release/net45/</Directory>
@@ -116,6 +117,7 @@
       <Directory>$(ProjectDir)/src/Services/lambda/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lex/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lexmodelbuildingservice/bin/Release/net45/</Directory>
+      <Directory>$(ProjectDir)/src/Services/licensemanager/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/lightsail/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/machinelearning/bin/Release/net45/</Directory>
       <Directory>$(ProjectDir)/src/Services/macie/bin/Release/net45/</Directory>
@@ -193,6 +195,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AppMesh.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AppStream.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.AppSync.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Athena.dll" Analyze="True" AnalyzeAllChildren="True" />
@@ -281,6 +284,7 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lambda.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lex.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.LexModelBuildingService.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.LicenseManager.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Lightsail.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.MachineLearning.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net45\AWSSDK.Macie.dll" Analyze="True" AnalyzeAllChildren="True" />

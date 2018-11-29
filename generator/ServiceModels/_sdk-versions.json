@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.417.0",
+    "ProductVersion" : "3.3.418.0",
     "CoreVersion"    : "3.3.29.12",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.74.0",
+            "Version" : "3.3.75.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -617,7 +617,7 @@
             "InPreview"               : false
         },
         "Lightsail"                       : {
-            "Version" : "3.3.7.17",
+            "Version" : "3.3.8.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.15.2",
+            "Version" : "3.3.16.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -1025,7 +1025,7 @@
             "InPreview"               : false
         },
         "ServiceDiscovery"                : {
-            "Version" : "3.3.2.35",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.12"
@@ -1305,6 +1305,22 @@
             "InPreview"               : false
         },
         "SecurityHub"                     : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.12"
+            },
+            "InPreview"               : false
+        },
+        "LicenseManager"                  : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.12"
+            },
+            "InPreview"               : false
+        },
+        "AppMesh"                         : {
             "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
