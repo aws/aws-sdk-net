@@ -70,10 +70,34 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.Annotations = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AvailabilityZones", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AvailabilityZoneDetail, AvailabilityZoneDetailUnmarshaller>(AvailabilityZoneDetailUnmarshaller.Instance);
+                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Duration", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EntryPoint", targetDepth))
+                {
+                    var unmarshaller = ServiceIdUnmarshaller.Instance;
+                    unmarshalledObject.EntryPoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ErrorRootCauses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ErrorRootCause, ErrorRootCauseUnmarshaller>(ErrorRootCauseUnmarshaller.Instance);
+                    unmarshalledObject.ErrorRootCauses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FaultRootCauses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FaultRootCause, FaultRootCauseUnmarshaller>(FaultRootCauseUnmarshaller.Instance);
+                    unmarshalledObject.FaultRootCauses = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("HasError", targetDepth))
@@ -106,16 +130,40 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InstanceIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<InstanceIdDetail, InstanceIdDetailUnmarshaller>(InstanceIdDetailUnmarshaller.Instance);
+                    unmarshalledObject.InstanceIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsPartial", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IsPartial = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceARNs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResourceARNDetail, ResourceARNDetailUnmarshaller>(ResourceARNDetailUnmarshaller.Instance);
+                    unmarshalledObject.ResourceARNs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ResponseTime", targetDepth))
                 {
                     var unmarshaller = DoubleUnmarshaller.Instance;
                     unmarshalledObject.ResponseTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResponseTimeRootCauses", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ResponseTimeRootCause, ResponseTimeRootCauseUnmarshaller>(ResponseTimeRootCauseUnmarshaller.Instance);
+                    unmarshalledObject.ResponseTimeRootCauses = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Revision", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ServiceIds", targetDepth))

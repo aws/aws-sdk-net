@@ -33,14 +33,22 @@ namespace Amazon.XRay.Model
     public partial class TraceSummary
     {
         private Dictionary<string, List<ValueWithServiceIds>> _annotations = new Dictionary<string, List<ValueWithServiceIds>>();
+        private List<AvailabilityZoneDetail> _availabilityZones = new List<AvailabilityZoneDetail>();
         private double? _duration;
+        private ServiceId _entryPoint;
+        private List<ErrorRootCause> _errorRootCauses = new List<ErrorRootCause>();
+        private List<FaultRootCause> _faultRootCauses = new List<FaultRootCause>();
         private bool? _hasError;
         private bool? _hasFault;
         private bool? _hasThrottle;
         private Http _http;
         private string _id;
+        private List<InstanceIdDetail> _instanceIds = new List<InstanceIdDetail>();
         private bool? _isPartial;
+        private List<ResourceARNDetail> _resourceARNs = new List<ResourceARNDetail>();
         private double? _responseTime;
+        private List<ResponseTimeRootCause> _responseTimeRootCauses = new List<ResponseTimeRootCause>();
+        private int? _revision;
         private List<ServiceId> _serviceIds = new List<ServiceId>();
         private List<TraceUser> _users = new List<TraceUser>();
 
@@ -63,6 +71,24 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        /// A list of availability zones for any zone corresponding to the trace segments.
+        /// </para>
+        /// </summary>
+        public List<AvailabilityZoneDetail> AvailabilityZones
+        {
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
+        }
+
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
+        {
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
         /// The length of time in seconds between the start time of the root segment and the end
@@ -79,6 +105,60 @@ namespace Amazon.XRay.Model
         internal bool IsSetDuration()
         {
             return this._duration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntryPoint. 
+        /// <para>
+        /// The root of a trace.
+        /// </para>
+        /// </summary>
+        public ServiceId EntryPoint
+        {
+            get { return this._entryPoint; }
+            set { this._entryPoint = value; }
+        }
+
+        // Check to see if EntryPoint property is set
+        internal bool IsSetEntryPoint()
+        {
+            return this._entryPoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorRootCauses. 
+        /// <para>
+        /// A collection of ErrorRootCause structures corresponding to the trace segments.
+        /// </para>
+        /// </summary>
+        public List<ErrorRootCause> ErrorRootCauses
+        {
+            get { return this._errorRootCauses; }
+            set { this._errorRootCauses = value; }
+        }
+
+        // Check to see if ErrorRootCauses property is set
+        internal bool IsSetErrorRootCauses()
+        {
+            return this._errorRootCauses != null && this._errorRootCauses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FaultRootCauses. 
+        /// <para>
+        /// A collection of FaultRootCause structures corresponding to the the trace segments.
+        /// </para>
+        /// </summary>
+        public List<FaultRootCause> FaultRootCauses
+        {
+            get { return this._faultRootCauses; }
+            set { this._faultRootCauses = value; }
+        }
+
+        // Check to see if FaultRootCauses property is set
+        internal bool IsSetFaultRootCauses()
+        {
+            return this._faultRootCauses != null && this._faultRootCauses.Count > 0; 
         }
 
         /// <summary>
@@ -172,6 +252,24 @@ namespace Amazon.XRay.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
+        /// A list of EC2 instance IDs for any instance corresponding to the trace segments.
+        /// </para>
+        /// </summary>
+        public List<InstanceIdDetail> InstanceIds
+        {
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
+        }
+
+        // Check to see if InstanceIds property is set
+        internal bool IsSetInstanceIds()
+        {
+            return this._instanceIds != null && this._instanceIds.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IsPartial. 
         /// <para>
         /// One or more of the segment documents is in progress.
@@ -187,6 +285,24 @@ namespace Amazon.XRay.Model
         internal bool IsSetIsPartial()
         {
             return this._isPartial.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceARNs. 
+        /// <para>
+        /// A list of resource ARNs for any resource corresponding to the trace segments.
+        /// </para>
+        /// </summary>
+        public List<ResourceARNDetail> ResourceARNs
+        {
+            get { return this._resourceARNs; }
+            set { this._resourceARNs = value; }
+        }
+
+        // Check to see if ResourceARNs property is set
+        internal bool IsSetResourceARNs()
+        {
+            return this._resourceARNs != null && this._resourceARNs.Count > 0; 
         }
 
         /// <summary>
@@ -208,6 +324,42 @@ namespace Amazon.XRay.Model
         internal bool IsSetResponseTime()
         {
             return this._responseTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseTimeRootCauses. 
+        /// <para>
+        /// A collection of ResponseTimeRootCause structures corresponding to the trace segments.
+        /// </para>
+        /// </summary>
+        public List<ResponseTimeRootCause> ResponseTimeRootCauses
+        {
+            get { return this._responseTimeRootCauses; }
+            set { this._responseTimeRootCauses = value; }
+        }
+
+        // Check to see if ResponseTimeRootCauses property is set
+        internal bool IsSetResponseTimeRootCauses()
+        {
+            return this._responseTimeRootCauses != null && this._responseTimeRootCauses.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The revision number of a trace.
+        /// </para>
+        /// </summary>
+        public int Revision
+        {
+            get { return this._revision.GetValueOrDefault(); }
+            set { this._revision = value; }
+        }
+
+        // Check to see if Revision property is set
+        internal bool IsSetRevision()
+        {
+            return this._revision.HasValue; 
         }
 
         /// <summary>

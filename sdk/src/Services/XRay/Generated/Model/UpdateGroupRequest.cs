@@ -58,7 +58,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property GroupARN. 
         /// <para>
-        /// The ARN that was generated upon create.
+        /// The ARN that was generated upon creation.
         /// </para>
         /// </summary>
         public string GroupARN

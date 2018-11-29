@@ -41,9 +41,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ContainsOldGroupVersions. 
         /// <para>
-        /// A flag indicating whether or not the group's filter expression has been consistent,
-        /// or if the returned service graph may show traces from an older version of the group's
-        /// filter expression.
+        /// A flag indicating whether the group's filter expression has been consistent, or if
+        /// the returned service graph may show traces from an older version of the group's filter
+        /// expression.
         /// </para>
         /// </summary>
         public bool ContainsOldGroupVersions
