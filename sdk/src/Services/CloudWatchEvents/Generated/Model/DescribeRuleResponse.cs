@@ -35,6 +35,7 @@ namespace Amazon.CloudWatchEvents.Model
         private string _arn;
         private string _description;
         private string _eventPattern;
+        private string _managedBy;
         private string _name;
         private string _roleArn;
         private string _scheduleExpression;
@@ -93,6 +94,25 @@ namespace Amazon.CloudWatchEvents.Model
         internal bool IsSetEventPattern()
         {
             return this._eventPattern != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedBy. 
+        /// <para>
+        /// If this is a managed rule, created by an AWS service on your behalf, this field displays
+        /// the principal name of the AWS service that created the rule.
+        /// </para>
+        /// </summary>
+        public string ManagedBy
+        {
+            get { return this._managedBy; }
+            set { this._managedBy = value; }
+        }
+
+        // Check to see if ManagedBy property is set
+        internal bool IsSetManagedBy()
+        {
+            return this._managedBy != null;
         }
 
         /// <summary>

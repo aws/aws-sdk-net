@@ -46,8 +46,31 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class RemoveTargetsRequest : AmazonCloudWatchEventsRequest
     {
+        private bool? _force;
         private List<string> _ids = new List<string>();
         private string _rule;
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// If this is a managed rule, created by an AWS service on your behalf, you must specify
+        /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored
+        /// for rules that are not managed rules. You can check whether a rule is a managed rule
+        /// by using <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
+        /// field of the response.
+        /// </para>
+        /// </summary>
+        public bool Force
+        {
+            get { return this._force.GetValueOrDefault(); }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Ids. 

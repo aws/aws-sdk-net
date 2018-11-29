@@ -67,6 +67,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetForce())
+                {
+                    context.Writer.WritePropertyName("Force");
+                    context.Writer.Write(publicRequest.Force);
+                }
+
                 if(publicRequest.IsSetIds())
                 {
                     context.Writer.WritePropertyName("Ids");

@@ -32,7 +32,7 @@ namespace Amazon.CloudWatchEvents
     /// Amazon CloudWatch Events helps you to respond to state changes in your AWS resources.
     /// When your resources change state, they automatically send events into an event stream.
     /// You can create rules that match selected events in the stream and route them to targets
-    /// to take action. You can also use rules to take action on a pre-determined schedule.
+    /// to take action. You can also use rules to take action on a predetermined schedule.
     /// For example, you can configure rules to:
     /// 
     ///  <ul> <li> 
@@ -74,6 +74,13 @@ namespace Amazon.CloudWatchEvents
         /// When you delete a rule, incoming events might continue to match to the deleted rule.
         /// Allow a short period of time for changes to take effect.
         /// </para>
+        ///  
+        /// <para>
+        /// Managed rules are rules created and managed by another AWS service on your behalf.
+        /// These rules are created by those other AWS services to support functionality in those
+        /// services. You can delete these rules using the <code>Force</code> option, but you
+        /// should do so only if you are sure the other service is not still using that rule.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRule service method.</param>
         /// 
@@ -83,6 +90,13 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
+        /// This rule was created by an AWS service on behalf of your account. It is managed by
+        /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
+        /// you can use the <code>Force</code> parameter in those calls to delete the rule or
+        /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
+        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteRule">REST API Reference for DeleteRule Operation</seealso>
         DeleteRuleResponse DeleteRule(DeleteRuleRequest request);
@@ -237,6 +251,13 @@ namespace Amazon.CloudWatchEvents
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
+        /// This rule was created by an AWS service on behalf of your account. It is managed by
+        /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
+        /// you can use the <code>Force</code> parameter in those calls to delete the rule or
+        /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
+        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
         /// </exception>
@@ -291,6 +312,13 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
+        /// This rule was created by an AWS service on behalf of your account. It is managed by
+        /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
+        /// you can use the <code>Force</code> parameter in those calls to delete the rule or
+        /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
+        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -678,6 +706,13 @@ namespace Amazon.CloudWatchEvents
         /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
         /// You tried to create more rules or add more targets to a rule than is allowed.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
+        /// This rule was created by an AWS service on behalf of your account. It is managed by
+        /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
+        /// you can use the <code>Force</code> parameter in those calls to delete the rule or
+        /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
+        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutRule">REST API Reference for PutRule Operation</seealso>
         PutRuleResponse PutRule(PutRuleRequest request);
 
@@ -892,6 +927,13 @@ namespace Amazon.CloudWatchEvents
         /// <exception cref="Amazon.CloudWatchEvents.Model.LimitExceededException">
         /// You tried to create more rules or add more targets to a rule than is allowed.
         /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
+        /// This rule was created by an AWS service on behalf of your account. It is managed by
+        /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
+        /// you can use the <code>Force</code> parameter in those calls to delete the rule or
+        /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
+        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
+        /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
         /// </exception>
@@ -1005,6 +1047,13 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.InternalException">
         /// This exception occurs due to unexpected causes.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
+        /// This rule was created by an AWS service on behalf of your account. It is managed by
+        /// that service. If you see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>,
+        /// you can use the <code>Force</code> parameter in those calls to delete the rule or
+        /// remove targets from the rule. You cannot modify these managed rules by using <code>DisableRule</code>,
+        /// <code>EnableRule</code>, <code>PutTargets</code>, or <code>PutRule</code>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.

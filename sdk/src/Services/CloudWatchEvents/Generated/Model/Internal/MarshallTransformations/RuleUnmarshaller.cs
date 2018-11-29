@@ -82,6 +82,12 @@ namespace Amazon.CloudWatchEvents.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventPattern = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ManagedBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ManagedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
