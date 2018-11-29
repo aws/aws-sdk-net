@@ -275,6 +275,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Nodejs810 = new Runtime("nodejs8.10");
         /// <summary>
+        /// Constant Provided for Runtime
+        /// </summary>
+        public static readonly Runtime Provided = new Runtime("provided");
+        /// <summary>
         /// Constant Python27 for Runtime
         /// </summary>
         public static readonly Runtime Python27 = new Runtime("python2.7");
@@ -286,6 +290,10 @@ namespace Amazon.Lambda
         /// Constant Python37 for Runtime
         /// </summary>
         public static readonly Runtime Python37 = new Runtime("python3.7");
+        /// <summary>
+        /// Constant Ruby25 for Runtime
+        /// </summary>
+        public static readonly Runtime Ruby25 = new Runtime("ruby2.5");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

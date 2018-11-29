@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         private string _handler;
         private string _kmsKeyArn;
         private string _lastModified;
+        private List<Layer> _layers = new List<Layer>();
         private string _masterArn;
         private int? _memorySize;
         private string _revisionId;
@@ -219,7 +220,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property LastModified. 
         /// <para>
         /// The date and time that the function was last updated, in <a href="https://www.w3.org/TR/NOTE-datetime">ISO-8601
-        /// format</a> (YYYY-MM-DDThh:mm:ssTZD).
+        /// format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
         /// </para>
         /// </summary>
         public string LastModified
@@ -232,6 +233,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetLastModified()
         {
             return this._lastModified != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Layers. 
+        /// <para>
+        /// A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+        /// layers</a>.
+        /// </para>
+        /// </summary>
+        public List<Layer> Layers
+        {
+            get { return this._layers; }
+            set { this._layers = value; }
+        }
+
+        // Check to see if Layers property is set
+        internal bool IsSetLayers()
+        {
+            return this._layers != null && this._layers.Count > 0; 
         }
 
         /// <summary>

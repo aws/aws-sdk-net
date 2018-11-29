@@ -55,6 +55,7 @@ namespace Amazon.Lambda.Model
         private string _functionName;
         private string _handler;
         private string _kmsKeyArn;
+        private List<string> _layers = new List<string>();
         private int? _memorySize;
         private string _revisionId;
         private string _role;
@@ -123,7 +124,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the lambda function.
+        /// The name of the Lambda function.
         /// </para>
         ///  <p class="title"> <b>Name formats</b> 
         /// </para>
@@ -194,6 +195,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetKMSKeyArn()
         {
             return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Layers. 
+        /// <para>
+        /// A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+        /// layers</a> to add to the function's execution environment.
+        /// </para>
+        /// </summary>
+        public List<string> Layers
+        {
+            get { return this._layers; }
+            set { this._layers = value; }
+        }
+
+        // Check to see if Layers property is set
+        internal bool IsSetLayers()
+        {
+            return this._layers != null && this._layers.Count > 0; 
         }
 
         /// <summary>

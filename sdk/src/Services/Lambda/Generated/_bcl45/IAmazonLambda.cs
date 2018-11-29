@@ -47,6 +47,67 @@ namespace Amazon.Lambda
     {
 
         
+        #region  AddLayerVersionPermission
+
+
+        /// <summary>
+        /// Adds permissions to the resource-based policy of a version of a function layer. Use
+        /// this action to grant layer usage permission to other accounts. You can grant permission
+        /// to a single account, all AWS accounts, or all accounts in an organization.
+        /// 
+        ///  
+        /// <para>
+        /// To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement
+        /// ID that you specified when you added it.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AddLayerVersionPermission service method.</param>
+        /// 
+        /// <returns>The response from the AddLayerVersionPermission service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PolicyLengthExceededException">
+        /// Lambda function access policy is limited to 20 KB.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
+        /// the latest RevisionId for your resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
+        /// The resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
+        AddLayerVersionPermissionResponse AddLayerVersionPermission(AddLayerVersionPermissionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddLayerVersionPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddLayerVersionPermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
+        Task<AddLayerVersionPermissionResponse> AddLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AddPermission
 
 
@@ -397,7 +458,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -466,7 +527,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -548,6 +609,41 @@ namespace Amazon.Lambda
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionConcurrency">REST API Reference for DeleteFunctionConcurrency Operation</seealso>
         Task<DeleteFunctionConcurrencyResponse> DeleteFunctionConcurrencyAsync(DeleteFunctionConcurrencyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteLayerVersion
+
+
+        /// <summary>
+        /// Deletes a version of a function layer. Deleted versions can no longer be viewed or
+        /// added to functions. However, a copy of the version remains in Lambda until no functions
+        /// refer to it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLayerVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLayerVersion service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
+        DeleteLayerVersionResponse DeleteLayerVersion(DeleteLayerVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLayerVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLayerVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
+        Task<DeleteLayerVersionResponse> DeleteLayerVersionAsync(DeleteLayerVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -697,7 +793,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -776,7 +872,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -836,7 +932,7 @@ namespace Amazon.Lambda
         /// operation.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -917,7 +1013,7 @@ namespace Amazon.Lambda
         /// operation.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -952,6 +1048,91 @@ namespace Amazon.Lambda
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration">REST API Reference for GetFunctionConfiguration Operation</seealso>
         Task<GetFunctionConfigurationResponse> GetFunctionConfigurationAsync(GetFunctionConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLayerVersion
+
+
+        /// <summary>
+        /// Returns information about a version of a function layer, with a link to download the
+        /// layer archive that's valid for 10 minutes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetLayerVersion service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
+        GetLayerVersionResponse GetLayerVersion(GetLayerVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
+        Task<GetLayerVersionResponse> GetLayerVersionAsync(GetLayerVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLayerVersionPolicy
+
+
+        /// <summary>
+        /// Returns the permission policy for a layer version. For more information, see <a>AddLayerVersionPermission</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetLayerVersionPolicy service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
+        GetLayerVersionPolicyResponse GetLayerVersionPolicy(GetLayerVersionPolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
+        Task<GetLayerVersionPolicyResponse> GetLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1406,6 +1587,92 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListLayers
+
+
+        /// <summary>
+        /// Lists function layers and shows information about the latest version of each. Specify
+        /// a <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+        /// identifier</a> to list only layers that indicate that they're compatible with that
+        /// runtime.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLayers service method.</param>
+        /// 
+        /// <returns>The response from the ListLayers service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
+        ListLayersResponse ListLayers(ListLayersRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLayers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLayers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
+        Task<ListLayersResponse> ListLayersAsync(ListLayersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListLayerVersions
+
+
+        /// <summary>
+        /// Lists the versions of a function layer. Versions that have been deleted aren't listed.
+        /// Specify a <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+        /// identifier</a> to list only versions that indicate that they're compatible with that
+        /// runtime.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLayerVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListLayerVersions service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
+        ListLayerVersionsResponse ListLayerVersions(ListLayerVersionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLayerVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLayerVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
+        Task<ListLayerVersionsResponse> ListLayerVersionsAsync(ListLayerVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTags
 
 
@@ -1490,6 +1757,57 @@ namespace Amazon.Lambda
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction">REST API Reference for ListVersionsByFunction Operation</seealso>
         Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(ListVersionsByFunctionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PublishLayerVersion
+
+
+        /// <summary>
+        /// Creates a function layer from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
+        /// with the same version name, a new version is created.
+        /// 
+        ///  
+        /// <para>
+        /// Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishLayerVersion service method.</param>
+        /// 
+        /// <returns>The response from the PublishLayerVersion service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.CodeStorageExceededException">
+        /// You have exceeded your maximum total code size per account. <a href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
+        PublishLayerVersionResponse PublishLayerVersion(PublishLayerVersionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishLayerVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishLayerVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
+        Task<PublishLayerVersionResponse> PublishLayerVersionAsync(PublishLayerVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1592,6 +1910,54 @@ namespace Amazon.Lambda
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionConcurrency">REST API Reference for PutFunctionConcurrency Operation</seealso>
         Task<PutFunctionConcurrencyResponse> PutFunctionConcurrencyAsync(PutFunctionConcurrencyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RemoveLayerVersionPermission
+
+
+        /// <summary>
+        /// Removes a statement from the permissions policy for a layer version. For more information,
+        /// see <a>AddLayerVersionPermission</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RemoveLayerVersionPermission service method.</param>
+        /// 
+        /// <returns>The response from the RemoveLayerVersionPermission service method, as returned by Lambda.</returns>
+        /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
+        /// One of the parameters in the request is invalid. For example, if you provided an IAM
+        /// role for AWS Lambda to assume in the <code>CreateFunction</code> or the <code>UpdateFunctionConfiguration</code>
+        /// API, that AWS Lambda is unable to assume you will get this exception.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
+        /// The RevisionId provided does not match the latest RevisionId for the Lambda function
+        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve
+        /// the latest RevisionId for your resource.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
+        /// The resource (for example, a Lambda function or access policy statement) specified
+        /// in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.ServiceException">
+        /// The AWS Lambda service encountered an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.TooManyRequestsException">
+        /// Request throughput limit exceeded
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
+        RemoveLayerVersionPermissionResponse RemoveLayerVersionPermission(RemoveLayerVersionPermissionRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveLayerVersionPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveLayerVersionPermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
+        Task<RemoveLayerVersionPermissionResponse> RemoveLayerVersionPermissionAsync(RemoveLayerVersionPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

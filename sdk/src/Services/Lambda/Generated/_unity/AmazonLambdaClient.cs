@@ -188,6 +188,34 @@ namespace Amazon.Lambda
         #endregion
 
         
+        #region  AddLayerVersionPermission
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddLayerVersionPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddLayerVersionPermission operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
+        public virtual void AddLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request, AmazonServiceCallback<AddLayerVersionPermissionRequest, AddLayerVersionPermissionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
+            var unmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<AddLayerVersionPermissionRequest,AddLayerVersionPermissionResponse> responseObject 
+                            = new AmazonServiceResult<AddLayerVersionPermissionRequest,AddLayerVersionPermissionResponse>((AddLayerVersionPermissionRequest)req, (AddLayerVersionPermissionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<AddLayerVersionPermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  AddPermission
 
         /// <summary>
@@ -379,7 +407,7 @@ namespace Amazon.Lambda
         /// </para>
         /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value of this configuration option is AWSConfigs.HttpClientOption.UnityWWW
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -474,6 +502,39 @@ namespace Amazon.Lambda
                         callback(responseObject); 
                 };
             BeginInvoke<DeleteFunctionConcurrencyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  DeleteLayerVersion
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLayerVersion operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLayerVersion operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
+        public virtual void DeleteLayerVersionAsync(DeleteLayerVersionRequest request, AmazonServiceCallback<DeleteLayerVersionRequest, DeleteLayerVersionResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("DeleteLayerVersion is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = DeleteLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<DeleteLayerVersionRequest,DeleteLayerVersionResponse> responseObject 
+                            = new AmazonServiceResult<DeleteLayerVersionRequest,DeleteLayerVersionResponse>((DeleteLayerVersionRequest)req, (DeleteLayerVersionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<DeleteLayerVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -582,7 +643,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -661,7 +722,7 @@ namespace Amazon.Lambda
         /// operation.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
         /// <param name="options">
         ///     A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -715,6 +776,62 @@ namespace Amazon.Lambda
                         callback(responseObject); 
                 };
             BeginInvoke<GetFunctionConfigurationRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetLayerVersion
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersion operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
+        public virtual void GetLayerVersionAsync(GetLayerVersionRequest request, AmazonServiceCallback<GetLayerVersionRequest, GetLayerVersionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = GetLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetLayerVersionRequest,GetLayerVersionResponse> responseObject 
+                            = new AmazonServiceResult<GetLayerVersionRequest,GetLayerVersionResponse>((GetLayerVersionRequest)req, (GetLayerVersionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetLayerVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  GetLayerVersionPolicy
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionPolicy operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
+        public virtual void GetLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request, AmazonServiceCallback<GetLayerVersionPolicyRequest, GetLayerVersionPolicyResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
+            var unmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<GetLayerVersionPolicyRequest,GetLayerVersionPolicyResponse> responseObject 
+                            = new AmazonServiceResult<GetLayerVersionPolicyRequest,GetLayerVersionPolicyResponse>((GetLayerVersionPolicyRequest)req, (GetLayerVersionPolicyResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<GetLayerVersionPolicyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -931,6 +1048,62 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListLayers
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLayers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLayers operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
+        public virtual void ListLayersAsync(ListLayersRequest request, AmazonServiceCallback<ListLayersRequest, ListLayersResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = ListLayersRequestMarshaller.Instance;
+            var unmarshaller = ListLayersResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListLayersRequest,ListLayersResponse> responseObject 
+                            = new AmazonServiceResult<ListLayersRequest,ListLayersResponse>((ListLayersRequest)req, (ListLayersResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListLayersRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  ListLayerVersions
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLayerVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLayerVersions operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
+        public virtual void ListLayerVersionsAsync(ListLayerVersionsRequest request, AmazonServiceCallback<ListLayerVersionsRequest, ListLayerVersionsResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = ListLayerVersionsRequestMarshaller.Instance;
+            var unmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<ListLayerVersionsRequest,ListLayerVersionsResponse> responseObject 
+                            = new AmazonServiceResult<ListLayerVersionsRequest,ListLayerVersionsResponse>((ListLayerVersionsRequest)req, (ListLayerVersionsResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<ListLayerVersionsRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
         #region  ListTags
 
         /// <summary>
@@ -983,6 +1156,34 @@ namespace Amazon.Lambda
                         callback(responseObject); 
                 };
             BeginInvoke<ListVersionsByFunctionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  PublishLayerVersion
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishLayerVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishLayerVersion operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
+        public virtual void PublishLayerVersionAsync(PublishLayerVersionRequest request, AmazonServiceCallback<PublishLayerVersionRequest, PublishLayerVersionResponse> callback, AsyncOptions options = null)
+        {
+            options = options == null?new AsyncOptions():options;
+            var marshaller = PublishLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<PublishLayerVersionRequest,PublishLayerVersionResponse> responseObject 
+                            = new AmazonServiceResult<PublishLayerVersionRequest,PublishLayerVersionResponse>((PublishLayerVersionRequest)req, (PublishLayerVersionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<PublishLayerVersionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion
@@ -1044,6 +1245,39 @@ namespace Amazon.Lambda
                         callback(responseObject); 
                 };
             BeginInvoke<PutFunctionConcurrencyRequest>(request, marshaller, unmarshaller, options, callbackHelper);
+        }
+
+        #endregion
+        
+        #region  RemoveLayerVersionPermission
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveLayerVersionPermission operation.
+        /// This API is supported only when AWSConfigs.HttpClient is set to AWSConfigs.HttpClientOption.UnityWebRequest, the default value for this configuration option is AWSConfigs.HttpClientOption.UnityWWW
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveLayerVersionPermission operation on AmazonLambdaClient.</param>
+        /// <param name="callback">An Action delegate that is invoked when the operation completes.</param>
+        /// <param name="options">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
+        public virtual void RemoveLayerVersionPermissionAsync(RemoveLayerVersionPermissionRequest request, AmazonServiceCallback<RemoveLayerVersionPermissionRequest, RemoveLayerVersionPermissionResponse> callback, AsyncOptions options = null)
+        {
+            if (AWSConfigs.HttpClient == AWSConfigs.HttpClientOption.UnityWWW)
+            {
+                throw new InvalidOperationException("RemoveLayerVersionPermission is only allowed with AWSConfigs.HttpClientOption.UnityWebRequest API option");
+            }
+            options = options == null?new AsyncOptions():options;
+            var marshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
+            var unmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
+            Action<AmazonWebServiceRequest, AmazonWebServiceResponse, Exception, AsyncOptions> callbackHelper = null;
+            if(callback !=null )
+                callbackHelper = (AmazonWebServiceRequest req, AmazonWebServiceResponse res, Exception ex, AsyncOptions ao) => { 
+                    AmazonServiceResult<RemoveLayerVersionPermissionRequest,RemoveLayerVersionPermissionResponse> responseObject 
+                            = new AmazonServiceResult<RemoveLayerVersionPermissionRequest,RemoveLayerVersionPermissionResponse>((RemoveLayerVersionPermissionRequest)req, (RemoveLayerVersionPermissionResponse)res, ex , ao.State);    
+                        callback(responseObject); 
+                };
+            BeginInvoke<RemoveLayerVersionPermissionRequest>(request, marshaller, unmarshaller, options, callbackHelper);
         }
 
         #endregion

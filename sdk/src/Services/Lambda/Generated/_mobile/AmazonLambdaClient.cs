@@ -252,6 +252,38 @@ namespace Amazon.Lambda
         #endregion
 
         
+        #region  AddLayerVersionPermission
+
+        internal virtual AddLayerVersionPermissionResponse AddLayerVersionPermission(AddLayerVersionPermissionRequest request)
+        {
+            var marshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
+            var unmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
+
+            return Invoke<AddLayerVersionPermissionRequest,AddLayerVersionPermissionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AddLayerVersionPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AddLayerVersionPermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">REST API Reference for AddLayerVersionPermission Operation</seealso>
+        public virtual Task<AddLayerVersionPermissionResponse> AddLayerVersionPermissionAsync(AddLayerVersionPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = AddLayerVersionPermissionRequestMarshaller.Instance;
+            var unmarshaller = AddLayerVersionPermissionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AddLayerVersionPermissionRequest,AddLayerVersionPermissionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddPermission
 
         internal virtual AddPermissionResponse AddPermission(AddPermissionRequest request)
@@ -465,7 +497,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:DeleteFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -546,6 +578,38 @@ namespace Amazon.Lambda
             var unmarshaller = DeleteFunctionConcurrencyResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteFunctionConcurrencyRequest,DeleteFunctionConcurrencyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteLayerVersion
+
+        internal virtual DeleteLayerVersionResponse DeleteLayerVersion(DeleteLayerVersionRequest request)
+        {
+            var marshaller = DeleteLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLayerVersionRequest,DeleteLayerVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLayerVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLayerVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">REST API Reference for DeleteLayerVersion Operation</seealso>
+        public virtual Task<DeleteLayerVersionResponse> DeleteLayerVersionAsync(DeleteLayerVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = DeleteLayerVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLayerVersionRequest,DeleteLayerVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -676,7 +740,7 @@ namespace Amazon.Lambda
         /// This operation requires permission for the <code>lambda:GetFunction</code> action.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -757,7 +821,7 @@ namespace Amazon.Lambda
         /// operation.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name of the Lambda function. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> - <code>MyFunction</code>. </li> <li>  <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>. </li> <li>  <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>. </li> </ul> The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -803,6 +867,70 @@ namespace Amazon.Lambda
             var unmarshaller = GetFunctionConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetFunctionConfigurationRequest,GetFunctionConfigurationResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLayerVersion
+
+        internal virtual GetLayerVersionResponse GetLayerVersion(GetLayerVersionRequest request)
+        {
+            var marshaller = GetLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetLayerVersionRequest,GetLayerVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">REST API Reference for GetLayerVersion Operation</seealso>
+        public virtual Task<GetLayerVersionResponse> GetLayerVersionAsync(GetLayerVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = GetLayerVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLayerVersionRequest,GetLayerVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetLayerVersionPolicy
+
+        internal virtual GetLayerVersionPolicyResponse GetLayerVersionPolicy(GetLayerVersionPolicyRequest request)
+        {
+            var marshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
+            var unmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetLayerVersionPolicyRequest,GetLayerVersionPolicyResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLayerVersionPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLayerVersionPolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">REST API Reference for GetLayerVersionPolicy Operation</seealso>
+        public virtual Task<GetLayerVersionPolicyResponse> GetLayerVersionPolicyAsync(GetLayerVersionPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetLayerVersionPolicyRequestMarshaller.Instance;
+            var unmarshaller = GetLayerVersionPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetLayerVersionPolicyRequest,GetLayerVersionPolicyResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1043,6 +1171,70 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  ListLayers
+
+        internal virtual ListLayersResponse ListLayers(ListLayersRequest request)
+        {
+            var marshaller = ListLayersRequestMarshaller.Instance;
+            var unmarshaller = ListLayersResponseUnmarshaller.Instance;
+
+            return Invoke<ListLayersRequest,ListLayersResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLayers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLayers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">REST API Reference for ListLayers Operation</seealso>
+        public virtual Task<ListLayersResponse> ListLayersAsync(ListLayersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListLayersRequestMarshaller.Instance;
+            var unmarshaller = ListLayersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLayersRequest,ListLayersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListLayerVersions
+
+        internal virtual ListLayerVersionsResponse ListLayerVersions(ListLayerVersionsRequest request)
+        {
+            var marshaller = ListLayerVersionsRequestMarshaller.Instance;
+            var unmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListLayerVersionsRequest,ListLayerVersionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListLayerVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListLayerVersions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">REST API Reference for ListLayerVersions Operation</seealso>
+        public virtual Task<ListLayerVersionsResponse> ListLayerVersionsAsync(ListLayerVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListLayerVersionsRequestMarshaller.Instance;
+            var unmarshaller = ListLayerVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLayerVersionsRequest,ListLayerVersionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTags
 
         internal virtual ListTagsResponse ListTags(ListTagsRequest request)
@@ -1107,6 +1299,38 @@ namespace Amazon.Lambda
 
         #endregion
         
+        #region  PublishLayerVersion
+
+        internal virtual PublishLayerVersionResponse PublishLayerVersion(PublishLayerVersionRequest request)
+        {
+            var marshaller = PublishLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
+
+            return Invoke<PublishLayerVersionRequest,PublishLayerVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PublishLayerVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PublishLayerVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">REST API Reference for PublishLayerVersion Operation</seealso>
+        public virtual Task<PublishLayerVersionResponse> PublishLayerVersionAsync(PublishLayerVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PublishLayerVersionRequestMarshaller.Instance;
+            var unmarshaller = PublishLayerVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PublishLayerVersionRequest,PublishLayerVersionResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  PublishVersion
 
         internal virtual PublishVersionResponse PublishVersion(PublishVersionRequest request)
@@ -1166,6 +1390,38 @@ namespace Amazon.Lambda
             var unmarshaller = PutFunctionConcurrencyResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutFunctionConcurrencyRequest,PutFunctionConcurrencyResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RemoveLayerVersionPermission
+
+        internal virtual RemoveLayerVersionPermissionResponse RemoveLayerVersionPermission(RemoveLayerVersionPermissionRequest request)
+        {
+            var marshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
+            var unmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
+
+            return Invoke<RemoveLayerVersionPermissionRequest,RemoveLayerVersionPermissionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RemoveLayerVersionPermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RemoveLayerVersionPermission operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">REST API Reference for RemoveLayerVersionPermission Operation</seealso>
+        public virtual Task<RemoveLayerVersionPermissionResponse> RemoveLayerVersionPermissionAsync(RemoveLayerVersionPermissionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = RemoveLayerVersionPermissionRequestMarshaller.Instance;
+            var unmarshaller = RemoveLayerVersionPermissionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RemoveLayerVersionPermissionRequest,RemoveLayerVersionPermissionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

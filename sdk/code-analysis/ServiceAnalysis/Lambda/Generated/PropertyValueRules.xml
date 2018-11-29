@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.Action</property>
+    <pattern>lambda:GetLayerVersion</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.LayerName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.OrganizationId</property>
+    <pattern>o-[a-z0-9]{10,32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.Principal</property>
+    <pattern>\d{12}|\*|arn:(aws[a-zA-Z-]*):iam::\d{12}:root</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.AddLayerVersionPermissionRequest.StatementId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>([a-zA-Z0-9-_]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.AddPermissionRequest.Action</property>
     <pattern>(lambda:[*]|lambda:[a-zA-Z]+|[*])</pattern>
   </property-value-rule>
@@ -236,6 +260,12 @@
     <pattern>(arn:(aws[a-zA-Z-]*)?:lambda:)?([a-z]{2}(-gov)?-[a-z]+-\d{1}:)?(\d{12}:)?(function:)?([a-zA-Z0-9-_]+)(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.DeleteLayerVersionRequest.LayerName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.GetAliasRequest.FunctionName</property>
     <min>1</min>
     <max>140</max>
@@ -353,6 +383,39 @@
     <pattern>(\$LATEST|[0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.GetLayerVersionRequest.LayerName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetLayerVersionResponse.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetLayerVersionResponse.LayerArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetLayerVersionResponse.LayerVersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetLayerVersionResponse.LicenseInfo</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.GetLayerVersionPolicyRequest.LayerName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.GetPolicyRequest.FunctionName</property>
     <min>1</min>
     <max>170</max>
@@ -430,6 +493,22 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lambda.Model.ListLayersRequest.MaxItems</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ListLayerVersionsRequest.LayerName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.ListLayerVersionsRequest.MaxItems</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lambda.Model.ListTagsRequest.Resource</property>
     <pattern>arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_]+(:(\$LATEST|[a-zA-Z0-9-_]+))?</pattern>
   </property-value-rule>
@@ -443,6 +522,42 @@
     <property>Amazon.Lambda.Model.ListVersionsByFunctionRequest.MaxItems</property>
     <min>1</min>
     <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PublishLayerVersionRequest.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PublishLayerVersionRequest.LayerName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PublishLayerVersionRequest.LicenseInfo</property>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PublishLayerVersionResponse.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PublishLayerVersionResponse.LayerArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PublishLayerVersionResponse.LayerVersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.PublishLayerVersionResponse.LicenseInfo</property>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.PublishVersionRequest.Description</property>
@@ -515,6 +630,18 @@
   <property-value-rule>
     <property>Amazon.Lambda.Model.PutFunctionConcurrencyResponse.ReservedConcurrentExecutions</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.RemoveLayerVersionPermissionRequest.LayerName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.RemoveLayerVersionPermissionRequest.StatementId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>([a-zA-Z0-9-_]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lambda.Model.RemovePermissionRequest.FunctionName</property>
@@ -782,5 +909,54 @@
     <property>Amazon.Lambda.Model.FunctionCode.S3ObjectVersion</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.Layer.Arn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LayersListItem.LayerArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LayersListItem.LayerName</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>(arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+)|[a-zA-Z0-9-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LayerVersionContentInput.S3Bucket</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^[0-9A-Za-z\.\-_]*(?&lt;!\.)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LayerVersionContentInput.S3Key</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LayerVersionContentInput.S3ObjectVersion</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LayerVersionsListItem.Description</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LayerVersionsListItem.LayerVersionArn</property>
+    <min>1</min>
+    <max>140</max>
+    <pattern>arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lambda.Model.LayerVersionsListItem.LicenseInfo</property>
+    <max>512</max>
   </property-value-rule>
 </property-value-rules>

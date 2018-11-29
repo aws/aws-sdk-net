@@ -122,6 +122,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KMSKeyArn);
                 }
 
+                if(publicRequest.IsSetLayers())
+                {
+                    context.Writer.WritePropertyName("Layers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLayersListValue in publicRequest.Layers)
+                    {
+                            context.Writer.Write(publicRequestLayersListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetMemorySize())
                 {
                     context.Writer.WritePropertyName("MemorySize");

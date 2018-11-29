@@ -124,6 +124,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModified = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Layers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Layer, LayerUnmarshaller>(LayerUnmarshaller.Instance);
+                    unmarshalledObject.Layers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MasterArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
