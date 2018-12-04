@@ -32,7 +32,7 @@ namespace Amazon.FSx
     public partial class AmazonFSxConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.0.0");
+            InternalSDKUtils.BuildUserAgentString("3.3.0.1");
 
         private string _userAgent = UserAgentString;
 

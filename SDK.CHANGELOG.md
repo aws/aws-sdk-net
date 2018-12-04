@@ -1,3 +1,18 @@
+### 3.3.420.0 (2018-12-04 01:45 UTC)
+* DeviceFarm (3.3.11.0)
+	* Customers can now schedule runs without a need to create a Device Pool. They also get realtime information on public device availability.
+* MediaConvert (3.3.10.1)
+	* Documentation updates for mediaconvert
+* ServiceCatalog (3.3.13.3)
+	* Documentation updates for servicecatalog
+* StorageGateway (3.3.12.0)
+	* API list-local-disks returns a list of the gateway's local disks. This release adds a field DiskAttributeList to these disks.
+* Core 3.3.29.13
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.419.0 (2018-11-29 18:35 UTC)
 * CloudWatchEvents (3.3.8.0)
 	* Support for Managed Rules (rules that are created and maintained by the AWS services in your account) is added.
