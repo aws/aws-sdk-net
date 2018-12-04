@@ -106,6 +106,10 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// STACKSET
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>TEMPLATE</code> 
         /// </para>
         ///  </li> </ul>
