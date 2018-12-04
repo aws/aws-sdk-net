@@ -70,9 +70,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReservationPlanSettings. Details about the pricing plan
-        /// for your reserved queue. Required for reserved queues and not applicable to on-demand
-        /// queues.
+        /// Gets and sets the property ReservationPlanSettings. The new details of your pricing
+        /// plan for your reserved queue. When you set up a new pricing plan to replace an expired
+        /// one, you enter into another 12-month commitment. When you add capacity to your queue
+        /// by increasing the number of RTS, you extend the term of your commitment to 12 months
+        /// from when you add capacity. After you make these commitments, you can't cancel them.
         /// </summary>
         public ReservationPlanSettings ReservationPlanSettings
         {

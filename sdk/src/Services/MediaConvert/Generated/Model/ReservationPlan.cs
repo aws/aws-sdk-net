@@ -41,8 +41,8 @@ namespace Amazon.MediaConvert.Model
         private ReservationPlanStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Commitment. The length of time that you commit to when
-        /// you set up a pricing plan contract for a reserved queue.
+        /// Gets and sets the property Commitment. The length of the term of your reserved queue
+        /// pricing plan commitment.
         /// </summary>
         public Commitment Commitment
         {
@@ -57,8 +57,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpiresAt. The time stamp, in epoch seconds, for when the
-        /// pricing plan for this reserved queue expires.
+        /// Gets and sets the property ExpiresAt. The timestamp in epoch seconds for when the
+        /// current pricing plan term for this reserved queue expires.
         /// </summary>
         public DateTime ExpiresAt
         {
@@ -73,8 +73,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PurchasedAt. The time stamp in epoch seconds when the reserved
-        /// queue's reservation plan was created.
+        /// Gets and sets the property PurchasedAt. The timestamp in epoch seconds for when you
+        /// set up the current pricing plan for this reserved queue.
         /// </summary>
         public DateTime PurchasedAt
         {
@@ -89,9 +89,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RenewalType. Specifies whether the pricing plan contract
-        /// for your reserved queue automatically renews (AUTO_RENEW) or expires (EXPIRE) at the
-        /// end of the contract period.
+        /// Gets and sets the property RenewalType. Specifies whether the term of your reserved
+        /// queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the
+        /// end of the term.
         /// </summary>
         public RenewalType RenewalType
         {
@@ -108,8 +108,10 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property ReservedSlots. Specifies the number of reserved transcode
         /// slots (RTS) for this queue. The number of RTS determines how many jobs the queue can
-        /// process in parallel; each RTS can process one job at a time. To increase this number,
-        /// create a replacement contract through the AWS Elemental MediaConvert console.
+        /// process in parallel; each RTS can process one job at a time. When you increase this
+        /// number, you extend your existing commitment with a new 12-month commitment for a larger
+        /// number of RTS. The new commitment begins when you purchase the additional capacity.
+        /// You can't decrease the number of RTS in your reserved queue.
         /// </summary>
         public int ReservedSlots
         {

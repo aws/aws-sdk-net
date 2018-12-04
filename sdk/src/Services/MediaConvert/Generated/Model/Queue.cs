@@ -30,7 +30,7 @@ namespace Amazon.MediaConvert.Model
     /// <summary>
     /// You can use queues to manage the resources that are available to your AWS account
     /// for running multiple transcoding jobs at the same time. If you don't specify a queue,
-    /// the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/about-resource-allocation-and-job-prioritization.html.
+    /// the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
     /// </summary>
     public partial class Queue
     {
@@ -63,7 +63,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. The time stamp in epoch seconds for queue creation.
+        /// Gets and sets the property CreatedAt. The timestamp in epoch seconds for when you
+        /// created the queue.
         /// </summary>
         public DateTime CreatedAt
         {
@@ -94,8 +95,8 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastUpdated. The time stamp in epoch seconds when the queue
-        /// was last updated.
+        /// Gets and sets the property LastUpdated. The timestamp in epoch seconds for when you
+        /// most recently updated the queue.
         /// </summary>
         public DateTime LastUpdated
         {
@@ -127,10 +128,10 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property PricingPlan. Specifies whether the pricing plan for the
-        /// queue is On-demand or Reserved. The pricing plan for the queue determines whether
-        /// you pay On-demand or Reserved pricing for the transcoding jobs that you run through
-        /// the queue. For Reserved queue pricing, you must set up a contract. You can create
-        /// a Reserved queue contract through the AWS Elemental MediaConvert console.
+        /// queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments
+        /// of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+        /// regardless of how much or how little you use it. Reserved pricing requires a 12-month
+        /// commitment.
         /// </summary>
         public PricingPlan PricingPlan
         {
@@ -210,9 +211,9 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type. Specifies whether this queue is system or custom.
-        /// System queues are built in. You can't modify or delete system queues. You can create
-        /// and modify custom queues.
+        /// Gets and sets the property Type. Specifies whether this on-demand queue is system
+        /// or custom. System queues are built in. You can't modify or delete system queues. You
+        /// can create and modify custom queues.
         /// </summary>
         public Type Type
         {

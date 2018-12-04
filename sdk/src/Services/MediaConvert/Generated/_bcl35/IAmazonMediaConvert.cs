@@ -348,8 +348,8 @@ namespace Amazon.MediaConvert
 
 
         /// <summary>
-        /// Create a new transcoding queue. For information about job templates see the User Guide
-        /// at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+        /// Create a new transcoding queue. For information about queues, see Working With Queues
+        /// in the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
         /// 

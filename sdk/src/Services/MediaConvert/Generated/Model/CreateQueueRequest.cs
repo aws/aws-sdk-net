@@ -29,8 +29,8 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateQueue operation.
-    /// Create a new transcoding queue. For information about job templates see the User Guide
-    /// at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+    /// Create a new transcoding queue. For information about queues, see Working With Queues
+    /// in the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html
     /// </summary>
     public partial class CreateQueueRequest : AmazonMediaConvertRequest
     {
@@ -72,11 +72,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PricingPlan. Optional; default is on-demand. Specifies
-        /// whether the pricing plan for the queue is on-demand or reserved. The pricing plan
-        /// for the queue determines whether you pay on-demand or reserved pricing for the transcoding
-        /// jobs you run through the queue. For reserved queue pricing, you must set up a contract.
-        /// You can create a reserved queue contract through the AWS Elemental MediaConvert console.
+        /// Gets and sets the property PricingPlan. Specifies whether the pricing plan for the
+        /// queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments
+        /// of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue,
+        /// regardless of how much or how little you use it. Reserved pricing requires a 12-month
+        /// commitment. When you use the API to create a queue, the default is on-demand.
         /// </summary>
         public PricingPlan PricingPlan
         {
