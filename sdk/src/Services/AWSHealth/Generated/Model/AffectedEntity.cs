@@ -34,6 +34,7 @@ namespace Amazon.AWSHealth.Model
     {
         private string _awsAccountId;
         private string _entityArn;
+        private string _entityUrl;
         private string _entityValue;
         private string _eventArn;
         private DateTime? _lastUpdatedTime;
@@ -76,6 +77,21 @@ namespace Amazon.AWSHealth.Model
         internal bool IsSetEntityArn()
         {
             return this._entityArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EntityUrl.
+        /// </summary>
+        public string EntityUrl
+        {
+            get { return this._entityUrl; }
+            set { this._entityUrl = value; }
+        }
+
+        // Check to see if EntityUrl property is set
+        internal bool IsSetEntityUrl()
+        {
+            return this._entityUrl != null;
         }
 
         /// <summary>

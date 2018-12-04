@@ -76,6 +76,12 @@ namespace Amazon.AWSHealth.Model.Internal.MarshallTransformations
                     unmarshalledObject.EntityArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("entityUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EntityUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entityValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
