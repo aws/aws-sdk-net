@@ -1,3 +1,9 @@
+### 3.3.421.0 (2018-12-04 20:24 UTC)
+* AWSHealth (3.3.2.0)
+	* AWS Health API DescribeAffectedEntities operation now includes a field that returns the URL of the affected entity.
+* S3 (3.3.31.0)
+	* S3 Inventory reports can now be generated in Parquet format by setting the Destination Format to be 'Parquet'.
+
 ### 3.3.420.0 (2018-12-04 01:45 UTC)
 * DeviceFarm (3.3.11.0)
 	* Customers can now schedule runs without a need to create a Device Pool. They also get realtime information on public device availability.
