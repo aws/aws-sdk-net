@@ -70,6 +70,12 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("availability", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Availability = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("carrier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

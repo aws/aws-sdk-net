@@ -33,6 +33,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class Device
     {
         private string _arn;
+        private DeviceAvailability _availability;
         private string _carrier;
         private CPU _cpu;
         private string _fleetName;
@@ -69,6 +70,24 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Availability. 
+        /// <para>
+        /// Reflects how likely a device will be available for a test run.
+        /// </para>
+        /// </summary>
+        public DeviceAvailability Availability
+        {
+            get { return this._availability; }
+            set { this._availability = value; }
+        }
+
+        // Check to see if Availability property is set
+        internal bool IsSetAvailability()
+        {
+            return this._availability != null;
         }
 
         /// <summary>

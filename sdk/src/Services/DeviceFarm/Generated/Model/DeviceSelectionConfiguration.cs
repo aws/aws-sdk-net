@@ -28,43 +28,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDevices operation.
-    /// Gets information about unique device types.
+    /// Represents the device filters used in a test run as well as the maximum number of
+    /// devices to be included in the run. It is passed in as the deviceSelectionConfiguration
+    /// request parameter in <a>ScheduleRun</a>.
     /// </summary>
-    public partial class ListDevicesRequest : AmazonDeviceFarmRequest
+    public partial class DeviceSelectionConfiguration
     {
-        private string _arn;
         private List<DeviceFilter> _filters = new List<DeviceFilter>();
-        private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the project.
-        /// </para>
-        /// </summary>
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
+        private int? _maxDevices;
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Used to select a set of devices. A filter is made up of an attribute, an operator,
-        /// and one or more values.
+        /// Used to dynamically select a set of devices for a test run. A filter is made up of
+        /// an attribute, an operator, and one or more values.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Attribute: The aspect of a device such as platform or model used as the selction criteria
-        /// in a device filter.
+        /// Attribute: The aspect of a device such as platform or model used as the selection
+        /// criteria in a device filter.
         /// </para>
         ///  
         /// <para>
@@ -173,22 +155,21 @@ namespace Amazon.DeviceFarm.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property MaxDevices. 
         /// <para>
-        /// An identifier that was returned from the previous call to this operation, which can
-        /// be used to return the next set of items in the list.
+        /// The maximum number of devices to be included in a test run.
         /// </para>
         /// </summary>
-        public string NextToken
+        public int MaxDevices
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._maxDevices.GetValueOrDefault(); }
+            set { this._maxDevices = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if MaxDevices property is set
+        internal bool IsSetMaxDevices()
         {
-            return this._nextToken != null;
+            return this._maxDevices.HasValue; 
         }
 
     }
