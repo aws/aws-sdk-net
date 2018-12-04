@@ -56,6 +56,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (copyPartRequest.IsSetServerSideEncryptionCustomerMethod())
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerAlgorithmHeader, copyPartRequest.ServerSideEncryptionCustomerMethod);
+
             if (copyPartRequest.IsSetServerSideEncryptionCustomerProvidedKey())
             {
                 request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyHeader, copyPartRequest.ServerSideEncryptionCustomerProvidedKey);
@@ -64,8 +65,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 else
                     request.Headers.Add(HeaderKeys.XAmzSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyPartRequest.ServerSideEncryptionCustomerProvidedKey));
             }
+
             if (copyPartRequest.IsSetCopySourceServerSideEncryptionCustomerMethod())
                 request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerAlgorithmHeader, copyPartRequest.CopySourceServerSideEncryptionCustomerMethod);
+
             if (copyPartRequest.IsSetCopySourceServerSideEncryptionCustomerProvidedKey())
             {
                 request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyHeader, copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKey);
@@ -74,6 +77,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 else
                     request.Headers.Add(HeaderKeys.XAmzCopySourceSSECustomerKeyMD5Header, AmazonS3Util.ComputeEncodedMD5FromEncodedString(copyPartRequest.CopySourceServerSideEncryptionCustomerProvidedKey));
             }
+
+            if (copyPartRequest.IsSetServerSideEncryptionMethod())
+                request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionHeader, S3Transforms.ToStringValue(copyPartRequest.ServerSideEncryptionMethod));
+
             if (copyPartRequest.IsSetServerSideEncryptionKeyManagementServiceKeyId())
                 request.Headers.Add(HeaderKeys.XAmzServerSideEncryptionAwsKmsKeyIdHeader, copyPartRequest.ServerSideEncryptionKeyManagementServiceKeyId);
 
@@ -82,6 +89,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
             if (string.IsNullOrEmpty(copyPartRequest.DestinationBucket))
                 throw new System.ArgumentException("DestinationBucket is a required property and must be set before making this call.", "CopyPartRequest.DestinationBucket");
+
             if (string.IsNullOrEmpty(copyPartRequest.DestinationKey))
                 throw new System.ArgumentException("DestinationKey is a required property and must be set before making this call.", "CopyPartRequest.DestinationKey");
 
