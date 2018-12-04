@@ -76,6 +76,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
                     unmarshalledObject.DiskAllocationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DiskAttributeList", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DiskAttributeList = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DiskId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
