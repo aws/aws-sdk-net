@@ -38,7 +38,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for a tag.
+        /// The key for the tag.
         /// </para>
         /// </summary>
         public string Key
@@ -56,7 +56,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The specific value of a tag.
+        /// The specific value of the tag.
         /// </para>
         /// </summary>
         public List<string> Values

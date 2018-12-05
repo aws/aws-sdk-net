@@ -294,8 +294,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MinimumNormalizedUnitsUsedPerHour. 
         /// <para>
-        /// The minimum number of hours that you used in an hour during the historical period.
-        /// AWS uses this to calculate your recommended reservation purchases.
+        /// The minimum number of normalized units that you used in an hour during the historical
+        /// period. AWS uses this to calculate your recommended reservation purchases.
         /// </para>
         /// </summary>
         public string MinimumNormalizedUnitsUsedPerHour

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// One level of grouped data within the results.
+    /// One level of grouped data in the results.
     /// </summary>
     public partial class Group
     {

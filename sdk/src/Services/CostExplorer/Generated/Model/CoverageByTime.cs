@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The groups of instances that are covered by a reservation.
+        /// The groups of instances that the reservation covered.
         /// </para>
         /// </summary>
         public List<ReservationCoverageGroup> Groups
@@ -57,7 +57,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The period over which this coverage was used.
+        /// The period that this coverage was used over.
         /// </para>
         /// </summary>
         public DateInterval TimePeriod

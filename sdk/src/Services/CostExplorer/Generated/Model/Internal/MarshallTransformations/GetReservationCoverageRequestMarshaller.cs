@@ -100,6 +100,17 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMetrics())
+                {
+                    context.Writer.WritePropertyName("Metrics");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                    {
+                            context.Writer.Write(publicRequestMetricsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetNextPageToken())
                 {
                     context.Writer.WritePropertyName("NextPageToken");

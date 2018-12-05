@@ -29,7 +29,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetReservationCoverage operation.
-    /// Retrieves the reservation coverage for your account. This allows you to see how much
+    /// Retrieves the reservation coverage for your account. This enables you to see how much
     /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
     /// Service, or Amazon Redshift usage is covered by a reservation. An organization's master
     /// account can see the coverage of the associated member accounts. For any time period,
@@ -94,6 +94,7 @@ namespace Amazon.CostExplorer.Model
         private Expression _filter;
         private Granularity _granularity;
         private List<GroupDefinition> _groupBy = new List<GroupDefinition>();
+        private List<string> _metrics = new List<string>();
         private string _nextPageToken;
         private DateInterval _timePeriod;
 
@@ -152,10 +153,10 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>GetReservationCoverage</code> uses the same <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// </code> object as the other operations, but only <code>AND</code> is supported among
-        /// each dimension. You can nest only one level deep. If there are multiple values for
-        /// a dimension, they are OR'd together.
+        ///  <code>GetReservationCoverage</code> uses the same <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object as the other operations, but only <code>AND</code> is supported among each
+        /// dimension. You can nest only one level deep. If there are multiple values for a dimension,
+        /// they are OR'd together.
         /// </para>
         ///  
         /// <para>
@@ -185,6 +186,11 @@ namespace Amazon.CostExplorer.Model
         /// If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code>
         /// isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code>
         /// or <code>DAILY</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code>
+        /// and <code>MONTHLY</code> granularities.
         /// </para>
         /// </summary>
         public Granularity Granularity
@@ -263,6 +269,21 @@ namespace Amazon.CostExplorer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metrics.
+        /// </summary>
+        public List<string> Metrics
+        {
+            get { return this._metrics; }
+            set { this._metrics = value; }
+        }
+
+        // Check to see if Metrics property is set
+        internal bool IsSetMetrics()
+        {
+            return this._metrics != null && this._metrics.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
         /// The token to retrieve the next set of results. AWS provides the token when the response
@@ -284,11 +305,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The start and end dates of the period for which you want to retrieve data about reservation
-        /// coverage. You can retrieve data for a maximum of 13 months: the last 12 months and
-        /// the current month. The start date is inclusive, but the end date is exclusive. For
-        /// example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is
-        /// <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code>
+        /// The start and end dates of the period that you want to retrieve data about reservation
+        /// coverage for. You can retrieve data for a maximum of 13 months: the last 12 months
+        /// and the current month. The start date is inclusive, but the end date is exclusive.
+        /// For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
+        /// is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code>
         /// up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
         /// 
         /// </para>

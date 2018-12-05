@@ -37,7 +37,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EC2Specification. 
         /// <para>
-        /// The EC2 hardware specifications that you want AWS to provide recommendations for.
+        /// The Amazon EC2 hardware specifications that you want AWS to provide recommendations
+        /// for.
         /// </para>
         /// </summary>
         public EC2Specification EC2Specification

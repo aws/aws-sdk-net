@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property DimensionValues. 
         /// <para>
         /// The filters that you used to filter your request. Some dimensions are available only
-        /// for a specific context:
+        /// for a specific context.
         /// </para>
         ///  
         /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+        /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -81,7 +81,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+        /// PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -100,7 +100,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch
+        /// USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch
         /// – Alarms. The response for this operation includes a unit attribute.
         /// </para>
         ///  </li> <li> 
@@ -128,7 +128,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+        /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -137,7 +137,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+        /// PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -97,9 +97,9 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>GetReservationUtilization</code> uses the same <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// </code> object as the other operations, but only <code>AND</code> is supported among
-        /// each dimension, and nesting is supported up to only one level deep. If there are multiple
+        ///  <code>GetReservationUtilization</code> uses the same <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object as the other operations, but only <code>AND</code> is supported among each
+        /// dimension, and nesting is supported up to only one level deep. If there are multiple
         /// values for a dimension, they are OR'd together.
         /// </para>
         /// </summary>
@@ -122,6 +122,11 @@ namespace Amazon.CostExplorer.Model
         /// isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code>
         /// or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't
         /// set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code>
+        /// and <code>MONTHLY</code> granularities.
         /// </para>
         /// </summary>
         public Granularity Granularity
@@ -176,11 +181,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The
-        /// start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
-        /// is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
-        /// cost and usage data is retrieved from <code>2017-01-01</code> up to and including
-        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>. 
+        /// Sets the start and end dates for retrieving RI utilization. The start date is inclusive,
+        /// but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
+        /// and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
+        /// from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
+        /// <code>2017-05-01</code>. 
         /// </para>
         /// </summary>
         public DateInterval TimePeriod

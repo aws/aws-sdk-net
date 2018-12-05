@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Total. 
         /// <para>
-        /// The total amount of time that you utilized your RIs.
+        /// The total amount of time that you used your RIs.
         /// </para>
         /// </summary>
         public ReservationAggregates Total
@@ -76,7 +76,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UtilizationsByTime. 
         /// <para>
-        /// The amount of time that you utilized your RIs.
+        /// The amount of time that you used your RIs.
         /// </para>
         /// </summary>
         public List<UtilizationByTime> UtilizationsByTime

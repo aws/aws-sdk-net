@@ -65,6 +65,11 @@ namespace Amazon.CostExplorer.Model
         /// How granular you want the forecast to be. You can get 3 months of <code>DAILY</code>
         /// forecasts or 12 months of <code>MONTHLY</code> forecasts.
         /// </para>
+        ///  
+        /// <para>
+        /// The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+        /// granularities.
+        /// </para>
         /// </summary>
         public Granularity Granularity
         {

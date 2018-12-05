@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Coverage Object
+    /// Response Unmarshaller for CoverageNormalizedUnits Object
     /// </summary>  
-    public class CoverageUnmarshaller : IUnmarshaller<Coverage, XmlUnmarshallerContext>, IUnmarshaller<Coverage, JsonUnmarshallerContext>
+    public class CoverageNormalizedUnitsUnmarshaller : IUnmarshaller<CoverageNormalizedUnits, XmlUnmarshallerContext>, IUnmarshaller<CoverageNormalizedUnits, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Coverage IUnmarshaller<Coverage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CoverageNormalizedUnits IUnmarshaller<CoverageNormalizedUnits, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,39 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Coverage Unmarshall(JsonUnmarshallerContext context)
+        public CoverageNormalizedUnits Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Coverage unmarshalledObject = new Coverage();
+            CoverageNormalizedUnits unmarshalledObject = new CoverageNormalizedUnits();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CoverageCost", targetDepth))
+                if (context.TestExpression("CoverageNormalizedUnitsPercentage", targetDepth))
                 {
-                    var unmarshaller = CoverageCostUnmarshaller.Instance;
-                    unmarshalledObject.CoverageCost = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CoverageNormalizedUnitsPercentage = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CoverageHours", targetDepth))
+                if (context.TestExpression("OnDemandNormalizedUnits", targetDepth))
                 {
-                    var unmarshaller = CoverageHoursUnmarshaller.Instance;
-                    unmarshalledObject.CoverageHours = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OnDemandNormalizedUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CoverageNormalizedUnits", targetDepth))
+                if (context.TestExpression("ReservedNormalizedUnits", targetDepth))
                 {
-                    var unmarshaller = CoverageNormalizedUnitsUnmarshaller.Instance;
-                    unmarshalledObject.CoverageNormalizedUnits = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReservedNormalizedUnits = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TotalRunningNormalizedUnits", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TotalRunningNormalizedUnits = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +94,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static CoverageUnmarshaller _instance = new CoverageUnmarshaller();        
+        private static CoverageNormalizedUnitsUnmarshaller _instance = new CoverageNormalizedUnitsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CoverageUnmarshaller Instance
+        public static CoverageNormalizedUnitsUnmarshaller Instance
         {
             get
             {

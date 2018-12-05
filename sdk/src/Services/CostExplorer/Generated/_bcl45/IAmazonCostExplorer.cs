@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer
     /// <summary>
     /// Interface for accessing CostExplorer
     ///
-    /// The Cost Explorer API allows you to programmatically query your cost and usage data.
+    /// The Cost Explorer API enables you to programmatically query your cost and usage data.
     /// You can query for aggregated data such as total monthly costs or total daily usage.
     /// You can also query for granular data, such as the number of daily write operations
     /// for Amazon DynamoDB database tables in your production environment. 
@@ -46,7 +46,7 @@ namespace Amazon.CostExplorer
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// https://ce.us-east-1.amazonaws.com
+    ///  <code>https://ce.us-east-1.amazonaws.com</code> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -66,9 +66,9 @@ namespace Amazon.CostExplorer
         /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
         /// that you want the request to return. You can also filter and group your data by various
         /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-        /// For a complete list of valid dimensions, see the <code> <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-        /// </code> operation. Master accounts in an organization in AWS Organizations have access
-        /// to all member accounts.
+        /// For a complete list of valid dimensions, see the <a href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// operation. Master accounts in an organization in AWS Organizations have access to
+        /// all member accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCostAndUsage service method.</param>
         /// 
@@ -189,7 +189,7 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the reservation coverage for your account. This allows you to see how much
+        /// Retrieves the reservation coverage for your account. This enables you to see how much
         /// of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database
         /// Service, or Amazon Redshift usage is covered by a reservation. An organization's master
         /// account can see the coverage of the associated member accounts. For any time period,
@@ -297,13 +297,14 @@ namespace Amazon.CostExplorer
         /// </para>
         ///  
         /// <para>
-        /// For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and c4 family
-        /// usage in the US West (Oregon) Region and recommends that you buy size-flexible regional
-        /// reservations to apply to the c4 family usage. AWS recommends the smallest size instance
-        /// in an instance family. This makes it easier to purchase a size-flexible RI. AWS also
-        /// shows the equal number of normalized units so that you can purchase any instance size
-        /// that you want. For this example, your RI recommendation would be for <code>c4.large</code>,
-        /// because that is the smallest size instance in the c4 instance family.
+        /// For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and
+        /// c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible
+        /// regional reservations to apply to the c4 family usage. AWS recommends the smallest
+        /// size instance in an instance family. This makes it easier to purchase a size-flexible
+        /// RI. AWS also shows the equal number of normalized units so that you can purchase any
+        /// instance size that you want. For this example, your RI recommendation would be for
+        /// <code>c4.large</code> because that is the smallest size instance in the c4 instance
+        /// family.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservationPurchaseRecommendation service method.</param>

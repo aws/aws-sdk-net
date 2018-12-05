@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrentGeneration. 
         /// <para>
-        /// Whether the recommendation is for a current generation instance.
+        /// Whether the recommendation is for a current-generation instance.
         /// </para>
         /// </summary>
         public bool CurrentGeneration

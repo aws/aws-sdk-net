@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Estimated. 
         /// <para>
-        /// Whether this result is estimated.
+        /// Whether the result is estimated.
         /// </para>
         /// </summary>
         public bool Estimated
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The groups that are included in this time period.
+        /// The groups that this time period includes.
         /// </para>
         /// </summary>
         public List<Group> Groups
@@ -76,7 +76,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The time period covered by a result.
+        /// The time period that the result covers.
         /// </para>
         /// </summary>
         public DateInterval TimePeriod

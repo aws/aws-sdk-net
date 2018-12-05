@@ -47,8 +47,8 @@ namespace Amazon.CostExplorer.Model
         /// or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>.
         /// If the context is set to <code>RESERVATIONS</code>, the resulting dimension values
         /// can be used in the <code>GetReservationUtilization</code> operation. If the context
-        /// is set to <code>COST_AND_USAGE</code> the resulting dimension values can be used in
-        /// the <code>GetCostAndUsage</code> operation.
+        /// is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used
+        /// in the <code>GetCostAndUsage</code> operation.
         /// </para>
         ///  
         /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+        /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -88,7 +88,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+        /// PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch
+        /// USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch
         /// – Alarms. The response for this operation includes a unit attribute.
         /// </para>
         ///  </li> <li> 
@@ -135,7 +135,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE - The type of EC2 instance. An example is <code>m4.xlarge</code>.
+        /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,7 +144,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// PLATFORM - The EC2 operating system. Examples are Windows or Linux.
+        /// PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -180,8 +180,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Dimension. 
         /// <para>
-        /// The name of the dimension. Each <code>Dimension</code> is available for different
-        /// a <code>Context</code>. For more information, see <code>Context</code>.
+        /// The name of the dimension. Each <code>Dimension</code> is available for a different
+        /// <code>Context</code>. For more information, see <code>Context</code>.
         /// </para>
         /// </summary>
         public Dimension Dimension

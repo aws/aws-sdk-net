@@ -43,13 +43,14 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  
     /// <para>
-    /// For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and c4 family
-    /// usage in the US West (Oregon) Region and recommends that you buy size-flexible regional
-    /// reservations to apply to the c4 family usage. AWS recommends the smallest size instance
-    /// in an instance family. This makes it easier to purchase a size-flexible RI. AWS also
-    /// shows the equal number of normalized units so that you can purchase any instance size
-    /// that you want. For this example, your RI recommendation would be for <code>c4.large</code>,
-    /// because that is the smallest size instance in the c4 instance family.
+    /// For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and
+    /// c4 family usage in the US West (Oregon) Region and recommends that you buy size-flexible
+    /// regional reservations to apply to the c4 family usage. AWS recommends the smallest
+    /// size instance in an instance family. This makes it easier to purchase a size-flexible
+    /// RI. AWS also shows the equal number of normalized units so that you can purchase any
+    /// instance size that you want. For this example, your RI recommendation would be for
+    /// <code>c4.large</code> because that is the smallest size instance in the c4 instance
+    /// family.
     /// </para>
     /// </summary>
     public partial class GetReservationPurchaseRecommendationRequest : AmazonCostExplorerRequest
@@ -202,7 +203,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property ServiceSpecification. 
         /// <para>
         /// The hardware specifications for the service instances that you want recommendations
-        /// for, such as standard or convertible EC2 instances.
+        /// for, such as standard or convertible Amazon EC2 instances.
         /// </para>
         /// </summary>
         public ServiceSpecification ServiceSpecification

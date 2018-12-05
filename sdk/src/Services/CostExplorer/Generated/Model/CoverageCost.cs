@@ -28,48 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Represents a group when you specify a group by criteria or in the response to a query
-    /// with a specific grouping.
+    /// How much it cost to run an instance.
     /// </summary>
-    public partial class GroupDefinition
+    public partial class CoverageCost
     {
-        private string _key;
-        private GroupDefinitionType _type;
+        private string _onDemandCost;
 
         /// <summary>
-        /// Gets and sets the property Key. 
+        /// Gets and sets the property OnDemandCost. 
         /// <para>
-        /// The string that represents a key for a specified group.
+        /// How much an On-Demand instance cost.
         /// </para>
         /// </summary>
-        public string Key
+        public string OnDemandCost
         {
-            get { return this._key; }
-            set { this._key = value; }
+            get { return this._onDemandCost; }
+            set { this._onDemandCost = value; }
         }
 
-        // Check to see if Key property is set
-        internal bool IsSetKey()
+        // Check to see if OnDemandCost property is set
+        internal bool IsSetOnDemandCost()
         {
-            return this._key != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Type. 
-        /// <para>
-        /// The string that represents the type of group.
-        /// </para>
-        /// </summary>
-        public GroupDefinitionType Type
-        {
-            get { return this._type; }
-            set { this._type = value; }
-        }
-
-        // Check to see if Type property is set
-        internal bool IsSetType()
-        {
-            return this._type != null;
+            return this._onDemandCost != null;
         }
 
     }

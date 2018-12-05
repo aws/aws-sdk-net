@@ -39,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The groups that are included in this utilization result.
+        /// The groups that this utilization result uses.
         /// </para>
         /// </summary>
         public List<ReservationUtilizationGroup> Groups
@@ -57,7 +57,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The period of time over which this utilization was used.
+        /// The period of time that this utilization was used for.
         /// </para>
         /// </summary>
         public DateInterval TimePeriod
@@ -75,7 +75,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Total. 
         /// <para>
-        /// The total number of RI hours that were used.
+        /// The total number of reservation hours that were used.
         /// </para>
         /// </summary>
         public ReservationAggregates Total

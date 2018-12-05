@@ -32,12 +32,32 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class Coverage
     {
+        private CoverageCost _coverageCost;
         private CoverageHours _coverageHours;
+        private CoverageNormalizedUnits _coverageNormalizedUnits;
+
+        /// <summary>
+        /// Gets and sets the property CoverageCost. 
+        /// <para>
+        /// The amount of cost that the reservation covered.
+        /// </para>
+        /// </summary>
+        public CoverageCost CoverageCost
+        {
+            get { return this._coverageCost; }
+            set { this._coverageCost = value; }
+        }
+
+        // Check to see if CoverageCost property is set
+        internal bool IsSetCoverageCost()
+        {
+            return this._coverageCost != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CoverageHours. 
         /// <para>
-        /// The amount of instance usage that a reservation covered, in hours.
+        /// The amount of instance usage that the reservation covered, in hours.
         /// </para>
         /// </summary>
         public CoverageHours CoverageHours
@@ -50,6 +70,24 @@ namespace Amazon.CostExplorer.Model
         internal bool IsSetCoverageHours()
         {
             return this._coverageHours != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CoverageNormalizedUnits. 
+        /// <para>
+        /// The amount of instance usage that the reservation covered, in normalized units.
+        /// </para>
+        /// </summary>
+        public CoverageNormalizedUnits CoverageNormalizedUnits
+        {
+            get { return this._coverageNormalizedUnits; }
+            set { this._coverageNormalizedUnits = value; }
+        }
+
+        // Check to see if CoverageNormalizedUnits property is set
+        internal bool IsSetCoverageNormalizedUnits()
+        {
+            return this._coverageNormalizedUnits != null;
         }
 
     }

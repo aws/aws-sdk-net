@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The EC2 hardware specifications that you want AWS to provide recommendations for.
+    /// The Amazon EC2 hardware specifications that you want AWS to provide recommendations
+    /// for.
     /// </summary>
     public partial class EC2Specification
     {

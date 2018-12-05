@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Coverage Object
+    /// Response Unmarshaller for CoverageCost Object
     /// </summary>  
-    public class CoverageUnmarshaller : IUnmarshaller<Coverage, XmlUnmarshallerContext>, IUnmarshaller<Coverage, JsonUnmarshallerContext>
+    public class CoverageCostUnmarshaller : IUnmarshaller<CoverageCost, XmlUnmarshallerContext>, IUnmarshaller<CoverageCost, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Coverage IUnmarshaller<Coverage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CoverageCost IUnmarshaller<CoverageCost, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Coverage Unmarshall(JsonUnmarshallerContext context)
+        public CoverageCost Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Coverage unmarshalledObject = new Coverage();
+            CoverageCost unmarshalledObject = new CoverageCost();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CoverageCost", targetDepth))
+                if (context.TestExpression("OnDemandCost", targetDepth))
                 {
-                    var unmarshaller = CoverageCostUnmarshaller.Instance;
-                    unmarshalledObject.CoverageCost = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CoverageHours", targetDepth))
-                {
-                    var unmarshaller = CoverageHoursUnmarshaller.Instance;
-                    unmarshalledObject.CoverageHours = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CoverageNormalizedUnits", targetDepth))
-                {
-                    var unmarshaller = CoverageNormalizedUnitsUnmarshaller.Instance;
-                    unmarshalledObject.CoverageNormalizedUnits = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OnDemandCost = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
         }
 
 
-        private static CoverageUnmarshaller _instance = new CoverageUnmarshaller();        
+        private static CoverageCostUnmarshaller _instance = new CoverageCostUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CoverageUnmarshaller Instance
+        public static CoverageCostUnmarshaller Instance
         {
             get
             {

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Details about the RDS instances that AWS recommends that you purchase.
+    /// Details about the Amazon RDS instances that AWS recommends that you purchase.
     /// </summary>
     public partial class RDSInstanceDetails
     {
@@ -45,7 +45,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CurrentGeneration. 
         /// <para>
-        /// Whether the recommendation is for a current generation instance. 
+        /// Whether the recommendation is for a current-generation instance. 
         /// </para>
         /// </summary>
         public bool CurrentGeneration

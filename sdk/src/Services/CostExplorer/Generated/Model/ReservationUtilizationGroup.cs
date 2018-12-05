@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// A group of Reserved Instances (RIs) that share a set of attributes.
+    /// A group of reservations that share a set of attributes.
     /// </summary>
     public partial class ReservationUtilizationGroup
     {
@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attributes for this group of RIs.
+        /// The attributes for this group of reservations.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for a specific RI attribute.
+        /// The key for a specific reservation attribute.
         /// </para>
         /// </summary>
         public string Key
@@ -76,7 +76,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Utilization. 
         /// <para>
-        /// How much you used this group of RIs.
+        /// How much you used this group of reservations.
         /// </para>
         /// </summary>
         public ReservationAggregates Utilization
@@ -94,7 +94,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of a specific RI attribute.
+        /// The value of a specific reservation attribute.
         /// </para>
         /// </summary>
         public string Value

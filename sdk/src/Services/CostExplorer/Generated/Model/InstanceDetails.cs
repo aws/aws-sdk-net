@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property EC2InstanceDetails. 
         /// <para>
-        /// The EC2 instances that AWS recommends that you purchase.
+        /// The Amazon EC2 instances that AWS recommends that you purchase.
         /// </para>
         /// </summary>
         public EC2InstanceDetails EC2InstanceDetails
@@ -95,7 +95,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property RDSInstanceDetails. 
         /// <para>
-        /// The RDS instances that AWS recommends that you purchase.
+        /// The Amazon RDS instances that AWS recommends that you purchase.
         /// </para>
         /// </summary>
         public RDSInstanceDetails RDSInstanceDetails
