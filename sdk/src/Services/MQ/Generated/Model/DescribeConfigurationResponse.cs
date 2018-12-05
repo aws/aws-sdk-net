@@ -40,6 +40,7 @@ namespace Amazon.MQ.Model
         private string _id;
         private ConfigurationRevision _latestRevision;
         private string _name;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property Arn. Required. The ARN of the configuration.
@@ -105,6 +106,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property EngineVersion. Required. The version of the broker engine.
+        /// For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
         /// </summary>
         public string EngineVersion
         {
@@ -164,6 +166,21 @@ namespace Amazon.MQ.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. The list of all tags associated with this configuration.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

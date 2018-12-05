@@ -90,8 +90,8 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EngineVersion. The version of the broker engine. Note:
-        /// Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+        /// Gets and sets the property EngineVersion. The version of the broker engine. For a
+        /// list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
         /// </summary>
         public string EngineVersion
         {

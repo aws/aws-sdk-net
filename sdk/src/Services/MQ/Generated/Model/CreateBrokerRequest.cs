@@ -46,6 +46,7 @@ namespace Amazon.MQ.Model
         private bool? _publiclyAccessible;
         private List<string> _securityGroups = new List<string>();
         private List<string> _subnetIds = new List<string>();
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<User> _users = new List<User>();
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.MQ.Model
 
         /// <summary>
         /// Gets and sets the property EngineVersion. Required. The version of the broker engine.
-        /// Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+        /// For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
         /// </summary>
         public string EngineVersion
         {
@@ -258,6 +259,21 @@ namespace Amazon.MQ.Model
         internal bool IsSetSubnetIds()
         {
             return this._subnetIds != null && this._subnetIds.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. Create tags when creating the broker.
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

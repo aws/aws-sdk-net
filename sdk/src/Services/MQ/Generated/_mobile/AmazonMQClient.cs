@@ -309,6 +309,38 @@ namespace Amazon.MQ
 
         #endregion
         
+        #region  CreateTags
+
+        internal virtual CreateTagsResponse CreateTags(CreateTagsRequest request)
+        {
+            var marshaller = CreateTagsRequestMarshaller.Instance;
+            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTagsRequest,CreateTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/CreateTags">REST API Reference for CreateTags Operation</seealso>
+        public virtual Task<CreateTagsResponse> CreateTagsAsync(CreateTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateTagsRequestMarshaller.Instance;
+            var unmarshaller = CreateTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTagsRequest,CreateTagsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateUser
 
         internal virtual CreateUserResponse CreateUser(CreateUserRequest request)
@@ -368,6 +400,38 @@ namespace Amazon.MQ
             var unmarshaller = DeleteBrokerResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteBrokerRequest,DeleteBrokerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteTags
+
+        internal virtual DeleteTagsResponse DeleteTags(DeleteTagsRequest request)
+        {
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DeleteTags">REST API Reference for DeleteTags Operation</seealso>
+        public virtual Task<DeleteTagsResponse> DeleteTagsAsync(DeleteTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteTagsRequestMarshaller.Instance;
+            var unmarshaller = DeleteTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTagsRequest,DeleteTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -624,6 +688,38 @@ namespace Amazon.MQ
             var unmarshaller = ListConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConfigurationsRequest,ListConfigurationsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListTags
+
+        internal virtual ListTagsResponse ListTags(ListTagsRequest request)
+        {
+            var marshaller = ListTagsRequestMarshaller.Instance;
+            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+
+            return Invoke<ListTagsRequest,ListTagsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTags operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTags operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/ListTags">REST API Reference for ListTags Operation</seealso>
+        public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListTagsRequestMarshaller.Instance;
+            var unmarshaller = ListTagsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTagsRequest,ListTagsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateConfiguration Request Marshaller
+    /// CreateTags Request Marshaller
     /// </summary>       
-    public class CreateConfigurationRequestMarshaller : IMarshaller<IRequest, CreateConfigurationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateTagsRequestMarshaller : IMarshaller<IRequest, CreateTagsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateConfigurationRequest)input);
+            return this.Marshall((CreateTagsRequest)input);
         }
 
         /// <summary>
@@ -52,37 +52,22 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateConfigurationRequest publicRequest)
+        public IRequest Marshall(CreateTagsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MQ");
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
 
-            string uriResourcePath = "/v1/configurations";
+            string uriResourcePath = "/v1/tags/{resource-arn}";
+            if (!publicRequest.IsSetResourceArn())
+                throw new AmazonMQException("Request object does not have required field ResourceArn set");
+            uriResourcePath = uriResourcePath.Replace("{resource-arn}", StringUtils.FromStringWithSlashEncoding(publicRequest.ResourceArn));
             request.ResourcePath = uriResourcePath;
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEngineType())
-                {
-                    context.Writer.WritePropertyName("engineType");
-                    context.Writer.Write(publicRequest.EngineType);
-                }
-
-                if(publicRequest.IsSetEngineVersion())
-                {
-                    context.Writer.WritePropertyName("engineVersion");
-                    context.Writer.Write(publicRequest.EngineVersion);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");
@@ -106,9 +91,9 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateConfigurationRequestMarshaller _instance = new CreateConfigurationRequestMarshaller();        
+        private static CreateTagsRequestMarshaller _instance = new CreateTagsRequestMarshaller();        
 
-        internal static CreateConfigurationRequestMarshaller GetInstance()
+        internal static CreateTagsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +101,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateConfigurationRequestMarshaller Instance
+        public static CreateTagsRequestMarshaller Instance
         {
             get
             {

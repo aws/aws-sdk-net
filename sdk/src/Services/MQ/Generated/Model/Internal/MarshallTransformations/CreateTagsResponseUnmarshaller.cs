@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeConfiguration operation
+    /// Response Unmarshaller for CreateTags operation
     /// </summary>  
-    public class DescribeConfigurationResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateTagsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,67 +45,8 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeConfigurationResponse response = new DescribeConfigurationResponse();
+            CreateTagsResponse response = new CreateTagsResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("arn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("created", targetDepth))
-                {
-                    var unmarshaller = DateTimeUnmarshaller.Instance;
-                    response.Created = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("engineType", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EngineType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("engineVersion", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.EngineVersion = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("latestRevision", targetDepth))
-                {
-                    var unmarshaller = ConfigurationRevisionUnmarshaller.Instance;
-                    response.LatestRevision = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("name", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Name = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -139,9 +80,9 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
             return new AmazonMQException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static DescribeConfigurationResponseUnmarshaller _instance = new DescribeConfigurationResponseUnmarshaller();        
+        private static CreateTagsResponseUnmarshaller _instance = new CreateTagsResponseUnmarshaller();        
 
-        internal static DescribeConfigurationResponseUnmarshaller GetInstance()
+        internal static CreateTagsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -149,7 +90,7 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeConfigurationResponseUnmarshaller Instance
+        public static CreateTagsResponseUnmarshaller Instance
         {
             get
             {
