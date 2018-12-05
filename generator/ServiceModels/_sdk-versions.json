@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.421.0",
+    "ProductVersion" : "3.3.422.0",
     "CoreVersion"    : "3.3.29.13",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -857,7 +857,7 @@
             "InPreview"               : false
         },
         "CostExplorer"                    : {
-            "Version" : "3.3.8.1",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
@@ -905,7 +905,7 @@
             "InPreview"               : false
         },
         "MQ"                              : {
-            "Version" : "3.3.2.19",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
@@ -1129,7 +1129,7 @@
             "InPreview"               : false
         },
         "MediaTailor"                     : {
-            "Version" : "3.3.2.3",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
