@@ -30,29 +30,9 @@ namespace Amazon.MediaTailor.Model
     /// <summary>
     /// The configuration object for DASH content.
     /// </summary>
-    public partial class DashConfiguration
+    public partial class DashConfigurationForPut
     {
-        private string _manifestEndpointPrefix;
         private string _mpdLocation;
-
-        /// <summary>
-        /// Gets and sets the property ManifestEndpointPrefix. 
-        /// <para>
-        /// The URL that is used to initiate a playback session for devices that support DASH.
-        /// 
-        /// </para>
-        /// </summary>
-        public string ManifestEndpointPrefix
-        {
-            get { return this._manifestEndpointPrefix; }
-            set { this._manifestEndpointPrefix = value; }
-        }
-
-        // Check to see if ManifestEndpointPrefix property is set
-        internal bool IsSetManifestEndpointPrefix()
-        {
-            return this._manifestEndpointPrefix != null;
-        }
 
         /// <summary>
         /// Gets and sets the property MpdLocation. 

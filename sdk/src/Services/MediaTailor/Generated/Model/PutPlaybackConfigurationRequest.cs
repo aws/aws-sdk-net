@@ -35,6 +35,7 @@ namespace Amazon.MediaTailor.Model
     {
         private string _adDecisionServerUrl;
         private CdnConfiguration _cdnConfiguration;
+        private DashConfigurationForPut _dashConfiguration;
         private string _name;
         private string _slateAdUrl;
         private string _transcodeProfileName;
@@ -78,6 +79,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetCdnConfiguration()
         {
             return this._cdnConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DashConfiguration. 
+        /// <para>
+        /// The configuration object for DASH content. 
+        /// </para>
+        /// </summary>
+        public DashConfigurationForPut DashConfiguration
+        {
+            get { return this._dashConfiguration; }
+            set { this._dashConfiguration = value; }
+        }
+
+        // Check to see if DashConfiguration property is set
+        internal bool IsSetDashConfiguration()
+        {
+            return this._dashConfiguration != null;
         }
 
         /// <summary>

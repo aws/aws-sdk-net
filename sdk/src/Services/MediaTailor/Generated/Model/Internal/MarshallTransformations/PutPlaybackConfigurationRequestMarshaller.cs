@@ -82,6 +82,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetDashConfiguration())
+                {
+                    context.Writer.WritePropertyName("DashConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DashConfigurationForPutMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.DashConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");
