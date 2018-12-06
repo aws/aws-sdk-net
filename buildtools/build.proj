@@ -7,10 +7,10 @@
         <DisableUnitySupport Condition="'$(DisableUnitySupport)'==''">false</DisableUnitySupport>
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
         <RunCognitoAuthExtensionTests Condition="'$(RunCognitoAuthExtensionTests)'==''">false</RunCognitoAuthExtensionTests>
-        <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">false</TestBackwardCompatibility>
+        <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">true</TestBackwardCompatibility>
         <ServiceList Condition="'$(ServiceList)'==''"></ServiceList>
 
-		<VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">C:\Program Files (x86)\MSBuild\Microsoft\VisualStudio\v14.0</VSToolsPath>
 
         <GeneratorDisablePCLSupport Condition="'$(DisablePCLSupport)'=='true'">-disable.pcl-support</GeneratorDisablePCLSupport>
 
@@ -28,9 +28,9 @@
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
     <Import Project="common.targets" />
 
-	<PropertyGroup>
-		<GeneratorUnityPath>--unitypath &quot;$(unitypath)&quot;</GeneratorUnityPath>
-	</PropertyGroup>
+  <PropertyGroup>
+    <GeneratorUnityPath>--unitypath &quot;$(unitypath)&quot;</GeneratorUnityPath>
+  </PropertyGroup>
 
     <!-- properties used in documentation generation -->
     <PropertyGroup>
@@ -52,16 +52,16 @@
         </Otherwise>
     </Choose>
     <PropertyGroup>
-    <Net35SolutionsFile>AWSSDK.Net35.sln</Net35SolutionsFile>
-    <Net45SolutionsFile>AWSSDK.Net45.sln</Net45SolutionsFile>
-    <PCLSolutionsFile>AWSSDK.PCL.sln</PCLSolutionsFile>
-    <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
-    <CoreCLRSolutionFile>AWSSDK.CoreCLR.sln</CoreCLRSolutionFile>
-    <Net35UnitTestProject>AWSSDK.UnitTests.Net35.csproj</Net35UnitTestProject>
-    <Net45UnitTestProject>AWSSDK.UnitTests.Net45.csproj</Net45UnitTestProject>
-    <CoreCLRUnitTests>UnitTests.CoreCLR.csproj</CoreCLRUnitTests>
-    <ReferenceServiceDLLs>false</ReferenceServiceDLLs>
-    <GeneratorPartialBuildArgument></GeneratorPartialBuildArgument>
+      <Net35SolutionsFile>AWSSDK.Net35.sln</Net35SolutionsFile>
+      <Net45SolutionsFile>AWSSDK.Net45.sln</Net45SolutionsFile>
+      <PCLSolutionsFile>AWSSDK.PCL.sln</PCLSolutionsFile>
+      <UnitySolutionsFile>AWSSDK.Unity.sln</UnitySolutionsFile>
+      <CoreCLRSolutionFile>AWSSDK.CoreCLR.sln</CoreCLRSolutionFile>
+      <Net35UnitTestProject>AWSSDK.UnitTests.Net35.csproj</Net35UnitTestProject>
+      <Net45UnitTestProject>AWSSDK.UnitTests.Net45.csproj</Net45UnitTestProject>
+      <CoreCLRUnitTests>UnitTests.CoreCLR.csproj</CoreCLRUnitTests>
+      <ReferenceServiceDLLs>false</ReferenceServiceDLLs>
+      <GeneratorPartialBuildArgument></GeneratorPartialBuildArgument>
     </PropertyGroup>
     <Choose>
         <When Condition="'$(ServiceList)'==''">
@@ -202,11 +202,11 @@
     </Target>
 
 
-	<Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
-		<MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
-					Targets="Clean;Build"
-					Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
-	</Target>
+  <Target Name="build-code-analysis" DependsOnTargets="restore-nuget;run-generator">
+    <MSBuild Projects="..\sdk\AWSSDK.CodeAnalysis.sln"
+          Targets="Clean;Build"
+          Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation)" />
+  </Target>
 
     <Target Name="build-sdk-pcl" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisablePCLSupport)">
         <Message Text="Compile the Portable Class Library SDK"/>
@@ -222,12 +222,12 @@
         <Exec Command="dotnet build -c $(Configuration) --no-incremental $(CoreCLRSolutionFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true" WorkingDirectory="..\sdk"/>
     </Target>
 
-	<Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
-		<Message Text="Compile the Unity SDK"/>
-		<MSBuild Projects="..\sdk\$(UnitySolutionsFile)"
-			Targets="Clean;Build"
-			Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
-	</Target>
+  <Target Name="build-sdk-unity" DependsOnTargets="restore-nuget;run-generator" Condition="!$(DisableUnitySupport)">
+    <Message Text="Compile the Unity SDK"/>
+    <MSBuild Projects="..\sdk\$(UnitySolutionsFile)"
+      Targets="Clean;Build"
+      Properties="Configuration=$(Configuration);AWSKeyFile=$(CustomSnkFileLocation);ResolveNuGetPackages=false" />
+  </Target>
 
     <Target Name="test-sdk" DependsOnTargets="init;build-sdk;fxcop;run-smoke-tests;run-unit-tests;run-integ-tests;run-CSM-tests;test-backward-compatibility" />
 
@@ -448,72 +448,72 @@
 
     </Target>
 
-	<!-- DependsOnTargets="copy-assemblies" -->
-	<!-- Exists('$(pdb2mdbexe)') -->
-	<Target Name="pdb-mdb"  DependsOnTargets="copy-assemblies"  Condition="False">
-		<ItemGroup>
-			<DllFiles Include="$(Deployment)\assemblies\unity\*.dll"/>
-		</ItemGroup>
+  <!-- DependsOnTargets="copy-assemblies" -->
+  <!-- Exists('$(pdb2mdbexe)') -->
+  <Target Name="pdb-mdb"  DependsOnTargets="copy-assemblies"  Condition="False">
+    <ItemGroup>
+      <DllFiles Include="$(Deployment)\assemblies\unity\*.dll"/>
+    </ItemGroup>
 
-		<Exec LogStandardErrorAsError="true" Command="$(mono) $(pdb2mdb) %(DllFiles.Identity)" />
-	</Target>
+    <Exec LogStandardErrorAsError="true" Command="$(mono) $(pdb2mdb) %(DllFiles.Identity)" />
+  </Target>
 
-	<Target Name="update-unity-tests" DependsOnTargets="build-custom-tasks;build-sdk-unity" Condition="!$(DisableUnitySupport)">
+  <Target Name="update-unity-tests" DependsOnTargets="build-custom-tasks;build-sdk-unity" Condition="!$(DisableUnitySupport)">
 
-		<!-- delete the sdk folder and its contents -->
-		<RemoveDir Directories="..\sdk\test\Unity\Unity3DTests\Assets\SDK" />
-		<MakeDir Directories="..\sdk\test\Unity\Unity3DTests\Assets\SDK" />
+    <!-- delete the sdk folder and its contents -->
+    <RemoveDir Directories="..\sdk\test\Unity\Unity3DTests\Assets\SDK" />
+    <MakeDir Directories="..\sdk\test\Unity\Unity3DTests\Assets\SDK" />
 
-		<!-- copy all new assemblies to the test project -->
-		<ItemGroup>
-			<DllFiles Include="..\sdk\src\Core\bin\$(Configuration)\unity\AWSSDK.*.dll"/>
-			<PdbFiles Include="..\sdk\src\Core\bin\$(Configuration)\unity\AWSSDK.*.pdb"/>
+    <!-- copy all new assemblies to the test project -->
+    <ItemGroup>
+      <DllFiles Include="..\sdk\src\Core\bin\$(Configuration)\unity\AWSSDK.*.dll"/>
+      <PdbFiles Include="..\sdk\src\Core\bin\$(Configuration)\unity\AWSSDK.*.pdb"/>
 
-			<DllFiles Include="..\sdk\src\Services\**\bin\$(Configuration)\unity\AWSSDK.*.dll"/>
-			<PdbFiles Include="..\sdk\src\Services\**\bin\$(Configuration)\unity\AWSSDK.*.pdb"/>
-		</ItemGroup>
+      <DllFiles Include="..\sdk\src\Services\**\bin\$(Configuration)\unity\AWSSDK.*.dll"/>
+      <PdbFiles Include="..\sdk\src\Services\**\bin\$(Configuration)\unity\AWSSDK.*.pdb"/>
+    </ItemGroup>
 
-		<Copy
+    <Copy
             SourceFiles="@(DllFiles)"
             DestinationFolder="..\sdk\test\Unity\Unity3DTests\Assets\SDK"/>
-		<Copy
+    <Copy
             SourceFiles="@(PdbFiles)"
             DestinationFolder="..\sdk\test\Unity\Unity3DTests\Assets\SDK"/>
 
-		<!-- need to copy credentials as well -->
+    <!-- need to copy credentials as well -->
 
-	</Target>
+  </Target>
 
-	<Target Name="build-unity-test" DependsOnTargets="update-unity-tests" Condition="!$(DisableUnitySupport)">
+  <Target Name="build-unity-test" DependsOnTargets="update-unity-tests" Condition="!$(DisableUnitySupport)">
 
-		<!-- build the projects
-		<MakeDir Directories="$(Deployment)" />
-		<MakeDir Directories="$(Deployment)\unity" /> -->
-		<MakeDir Directories="$(Deployment)\unity\build" />
+    <!-- build the projects
+    <MakeDir Directories="$(Deployment)" />
+    <MakeDir Directories="$(Deployment)\unity" /> -->
+    <MakeDir Directories="$(Deployment)\unity\build" />
 
-		<UnityBuild
-			DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))"
-			UnityExe="$(unity)"
-			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
-			Platform="android"
-			/>
+    <UnityBuild
+      DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))"
+      UnityExe="$(unity)"
+      ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
+      Platform="android"
+      />
 
-		<UnityBuild
-			DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))"
-			UnityExe="$(unity)"
-			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
-			Platform="ios64"
-			/>
+    <UnityBuild
+      DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))"
+      UnityExe="$(unity)"
+      ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
+      Platform="ios64"
+      />
 
         <!-- ios mono requires nunit customization
-		<UnityBuild
-			DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))"
-			UnityExe="$(unity)"
-			ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
-			Platform="ios32"
-			/>
-		-->
-	</Target>
+    <UnityBuild
+      DeploymentPath="$([System.IO.Path]::GetFullPath(..\Deployment\))"
+      UnityExe="$(unity)"
+      ProjectPath="$([System.IO.Path]::GetFullPath(..\sdk\test\Unity\Unity3DTests\))"
+      Platform="ios32"
+      />
+    -->
+  </Target>
 
 
     <Target Name="build-netcore-extensions" >
@@ -522,9 +522,9 @@
         <Exec Command="dotnet clean AWSSDK.Extensions.sln"    WorkingDirectory="..\extensions"/>
         <Exec Command="dotnet build -c $(Configuration) AWSSDK.Extensions.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true"  WorkingDirectory="..\extensions"/>
 
-		<Message Text="Build and Test .NET Core Setup Extension"/>
-		<Exec Command="dotnet test -c $(Configuration) --no-build NETCore.SetupTests.csproj" WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>
-	</Target>
+    <Message Text="Build and Test .NET Core Setup Extension"/>
+    <Exec Command="dotnet test -c $(Configuration) --no-build NETCore.SetupTests.csproj" WorkingDirectory="..\extensions\test\NETCore.SetupTests"/>
+  </Target>
 
 
     <Target Name="build-cognito-auth-extension-coreCLR" >
@@ -569,10 +569,10 @@
 
     <Target Name="package-extensions" DependsOnTargets="init;package-netcore-extensions;package-cognito-auth-extension"/>
 
-	<Target Name="package-netcore-extensions" DependsOnTargets="build-netcore-extensions">
+  <Target Name="package-netcore-extensions" DependsOnTargets="build-netcore-extensions">
         <MakeDir Directories="..\Deployment\nuget" />
-		<Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
-	</Target>
+    <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack .\AWSSDK.Extensions.NETCore.Setup.nuspec -BasePath . -OutputDirectory ..\..\..\Deployment\nuget" WorkingDirectory="..\extensions\src\AWSSDK.Extensions.NETCore.Setup" />
+  </Target>
 
     <Target Name="package-cognito-auth-extension" DependsOnTargets="build-cognito-auth-extension-net45;build-cognito-auth-extension-coreCLR;test-cognito-auth-extension">
         <MakeDir Directories="..\Deployment\nuget" />
@@ -591,12 +591,12 @@
     <Target Name="copy-service-models" DependsOnTargets="copy-assemblies">
         <Message Text="Collating service models for downstream tooling" />
 
-		<ItemGroup>
-			<ServiceModels Include="..\generator\ServiceModels\**\*" />
-		</ItemGroup>
+    <ItemGroup>
+      <ServiceModels Include="..\generator\ServiceModels\**\*" />
+    </ItemGroup>
 
-		<Copy SourceFiles="@(ServiceModels)" DestinationFolder="$(Deployment)\models\%(RecursiveDir)" />
-	</Target>
+    <Copy SourceFiles="@(ServiceModels)" DestinationFolder="$(Deployment)\models\%(RecursiveDir)" />
+  </Target>
 
     <!-- TEST TARGETS/TASKS -->
 
@@ -643,10 +643,10 @@
             <PrivateKeyException Include="sdk\test\Services\CloudFront\UnitTests\Custom\EmbeddedResource\sample.rsa.private.key.txt" />
         </ItemGroup>
 
-		<ItemGroup>
-			<FileException Include="generator\ServiceModels\elasticbeanstalk\elasticbeanstalk.examples.json" />
-			<FileException Include="generator\ServiceClientGenerator\bin\Release\customizations\elasticbeanstalk.customizations.json" />
-		</ItemGroup>
+    <ItemGroup>
+      <FileException Include="generator\ServiceModels\elasticbeanstalk\elasticbeanstalk.examples.json" />
+      <FileException Include="generator\ServiceClientGenerator\bin\Release\customizations\elasticbeanstalk.customizations.json" />
+    </ItemGroup>
 
         <ItemGroup>
             <FolderException Include="generator\ServiceModels"/>
@@ -687,6 +687,14 @@
     
     <Target Name="test-backward-compatibility" Condition="Exists('$(InternalBuildTools)\references.targets') And '$(ServiceList)'=='' And $(TestBackwardCompatibility)">
         <Exec Command="dotnet build -c Release --no-incremental AssemblyComparer.sln" WorkingDirectory="$(InternalBuildTools)\AssemblyComparer"/>
-        <Exec Command="$(InternalBuildTools)\AssemblyComparer\AssemblyComparer\bin\Release\net46\AssemblyComparer.exe package-comparer --package-name AWSSDK.Core --download-folder ..\NuGetDownloads\ --nuspec ..\sdk\src\Core\AWSSDK.Core.nuspec -cf BinaryIncompatibility -cf SourceIncompatibility -cf Warning"/>
+        <!-- BackwardIncompatibilitiesToIgnore is a list of comma separated AssemblyComparer errors that should be ignored. Values can be expressed using the * wildcard. These are some examples of acceptable values:
+             NameSpace.ClassName/ErrorCode
+             NameSpace.*/ErrorCode
+             NameSpace.ClassName
+             NameSpace.ClassName+NestedClass
+             /ErrorCode
+             NameSpacePortion1.*.NameSpacePortion2.*
+             NameSpace.ClassNamePrefix* -->
+        <Exec Command='$(InternalBuildTools)\AssemblyComparer\AssemblyComparer\bin\Release\net46\AssemblyComparer.exe package-comparer --package-name AWSSDK.Core --download-folder ..\NuGetDownloads\ --nuspec ..\sdk\src\Core\AWSSDK.Core.nuspec -cf BinaryIncompatibility,SourceIncompatibility,Warning -ig "$(BackwardIncompatibilitiesToIgnore)"'/>
     </Target>
 </Project>
