@@ -6125,6 +6125,10 @@ namespace Amazon.MediaLive
     {
 
         /// <summary>
+        /// Constant MEDIACONNECT for InputType
+        /// </summary>
+        public static readonly InputType MEDIACONNECT = new InputType("MEDIACONNECT");
+        /// <summary>
         /// Constant MP4_FILE for InputType
         /// </summary>
         public static readonly InputType MP4_FILE = new InputType("MP4_FILE");

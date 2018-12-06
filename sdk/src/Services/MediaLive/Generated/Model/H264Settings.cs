@@ -104,9 +104,10 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required for VBR,
-        /// CBR, and ABR. For MS Smooth outputs, bitrates must be unique when rounded down to
-        /// the nearest multiple of 1000.
+        /// Gets and sets the property Bitrate. Average bitrate in bits/second. Required when
+        /// the rate control mode is VBR or CBR. Not used for QVBR. In an MS Smooth output group,
+        /// each output must have a unique value when its bitrate is rounded down to the nearest
+        /// multiple of 1000.
         /// </summary>
         public int Bitrate
         {
@@ -378,8 +379,9 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. Maximum bitrate in bits/second (for VBR and
-        /// QVBR modes only).Required when rateControlMode is "qvbr".
+        /// Gets and sets the property MaxBitrate. For QVBR: See the tooltip for Quality level
+        /// For VBR: Set the maximum bitrate in order to accommodate expected spikes in the complexity
+        /// of the video.
         /// </summary>
         public int MaxBitrate
         {
@@ -495,9 +497,12 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property QvbrQualityLevel. Target quality value. Applicable only
-        /// to QVBR mode. 1 is the lowest quality and 10 is thehighest and approaches lossless.
-        /// Typical levels for content distribution are between 6 and 8.
+        /// Gets and sets the property QvbrQualityLevel. Controls the target quality for the video
+        /// encode. Applies only when the rate control mode is QVBR. Set values for the QVBR quality
+        /// level field and Max bitrate field that suit your most important viewing devices. Recommended
+        /// values are:- Primary screen: Quality level: 8 to 10. Max bitrate: 4M- PC or tablet:
+        /// Quality level: 7. Max bitrate: 1.5M to 3M- Smartphone: Quality level: 6. Max bitrate:
+        /// 1M to 1.5M
         /// </summary>
         public int QvbrQualityLevel
         {
@@ -512,11 +517,13 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RateControlMode. Rate control mode. - CBR: Constant Bit
-        /// Rate- VBR: Variable Bit Rate- QVBR: Encoder dynamically controls the bitrate to meet
-        /// the desired quality (specifiedthrough the qvbrQualityLevel field). The bitrate will
-        /// not exceed the bitrate specified inthe maxBitrate field and will not fall below the
-        /// bitrate required to meet the desiredquality level.
+        /// Gets and sets the property RateControlMode. Rate control mode. QVBR: Quality will
+        /// match the specified quality level except when it is constrained by themaximum bitrate.
+        ///  Recommended if you or your viewers pay for bandwidth.VBR: Quality and bitrate vary,
+        /// depending on the video complexity. Recommended instead of QVBRif you want to maintain
+        /// a specific average bitrate over the duration of the channel.CBR: Quality varies, depending
+        /// on the video complexity. Recommended only if you distributeyour assets to devices
+        /// that cannot handle variable bitrates.
         /// </summary>
         public H264RateControlMode RateControlMode
         {

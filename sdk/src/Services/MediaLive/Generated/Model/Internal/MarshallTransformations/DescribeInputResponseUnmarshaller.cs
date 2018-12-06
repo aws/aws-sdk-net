@@ -75,10 +75,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     response.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("mediaConnectFlows", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MediaConnectFlow, MediaConnectFlowUnmarshaller>(MediaConnectFlowUnmarshaller.Instance);
+                    response.MediaConnectFlows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("roleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.RoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("securityGroups", targetDepth))

@@ -35,8 +35,10 @@ namespace Amazon.MediaLive.Model
     {
         private List<InputDestinationRequest> _destinations = new List<InputDestinationRequest>();
         private List<string> _inputSecurityGroups = new List<string>();
+        private List<MediaConnectFlowRequest> _mediaConnectFlows = new List<MediaConnectFlowRequest>();
         private string _name;
         private string _requestId;
+        private string _roleArn;
         private List<InputSourceRequest> _sources = new List<InputSourceRequest>();
         private InputType _type;
 
@@ -72,6 +74,25 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MediaConnectFlows. A list of the MediaConnect Flows that
+        /// you want to use in this input. You can specify as few as oneFlow and presently, as
+        /// many as two. The only requirement is when you have more than one is that each Flow
+        /// is in aseparate Availability Zone as this ensures your EML input is redundant to AZ
+        /// issues.
+        /// </summary>
+        public List<MediaConnectFlowRequest> MediaConnectFlows
+        {
+            get { return this._mediaConnectFlows; }
+            set { this._mediaConnectFlows = value; }
+        }
+
+        // Check to see if MediaConnectFlows property is set
+        internal bool IsSetMediaConnectFlows()
+        {
+            return this._mediaConnectFlows != null && this._mediaConnectFlows.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. Name of the input.
         /// </summary>
         public string Name
@@ -100,6 +121,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetRequestId()
         {
             return this._requestId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. The Amazon Resource Name (ARN) of the role this
+        /// input assumes during and after creation.
+        /// </summary>
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>

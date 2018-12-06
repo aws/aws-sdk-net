@@ -92,6 +92,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMediaConnectFlows())
+                {
+                    context.Writer.WritePropertyName("mediaConnectFlows");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMediaConnectFlowsListValue in publicRequest.MediaConnectFlows)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MediaConnectFlowRequestMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMediaConnectFlowsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -109,6 +125,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("requestId");
                     context.Writer.Write(Guid.NewGuid().ToString());                                                
                 }
+                if(publicRequest.IsSetRoleArn())
+                {
+                    context.Writer.WritePropertyName("roleArn");
+                    context.Writer.Write(publicRequest.RoleArn);
+                }
+
                 if(publicRequest.IsSetSources())
                 {
                     context.Writer.WritePropertyName("sources");

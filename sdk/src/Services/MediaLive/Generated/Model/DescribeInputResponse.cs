@@ -36,7 +36,9 @@ namespace Amazon.MediaLive.Model
         private List<string> _attachedChannels = new List<string>();
         private List<InputDestination> _destinations = new List<InputDestination>();
         private string _id;
+        private List<MediaConnectFlow> _mediaConnectFlows = new List<MediaConnectFlow>();
         private string _name;
+        private string _roleArn;
         private List<string> _securityGroups = new List<string>();
         private List<InputSource> _sources = new List<InputSource>();
         private InputState _state;
@@ -105,6 +107,22 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MediaConnectFlows. A list of MediaConnect Flows for this
+        /// input.
+        /// </summary>
+        public List<MediaConnectFlow> MediaConnectFlows
+        {
+            get { return this._mediaConnectFlows; }
+            set { this._mediaConnectFlows = value; }
+        }
+
+        // Check to see if MediaConnectFlows property is set
+        internal bool IsSetMediaConnectFlows()
+        {
+            return this._mediaConnectFlows != null && this._mediaConnectFlows.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. The user-assigned name (This is a mutable value).
         /// </summary>
         public string Name
@@ -117,6 +135,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. The Amazon Resource Name (ARN) of the role this
+        /// input assumes during and after creation.
+        /// </summary>
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>
