@@ -826,38 +826,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
-        #region  DescribeProvisionedCapacity
-
-        internal virtual DescribeProvisionedCapacityResponse DescribeProvisionedCapacity(DescribeProvisionedCapacityRequest request)
-        {
-            var marshaller = DescribeProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = DescribeProvisionedCapacityResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeProvisionedCapacityRequest,DescribeProvisionedCapacityResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeProvisionedCapacity operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedCapacity operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity">REST API Reference for DescribeProvisionedCapacity Operation</seealso>
-        public virtual Task<DescribeProvisionedCapacityResponse> DescribeProvisionedCapacityAsync(DescribeProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = DescribeProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = DescribeProvisionedCapacityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<DescribeProvisionedCapacityRequest,DescribeProvisionedCapacityResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
         #region  DescribeRules
 
         internal virtual DescribeRulesResponse DescribeRules(DescribeRulesRequest request)
@@ -1109,38 +1077,6 @@ namespace Amazon.ElasticLoadBalancingV2
             var unmarshaller = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyLoadBalancerAttributesRequest,ModifyLoadBalancerAttributesResponse>(request, marshaller, 
-                unmarshaller, cancellationToken);
-        }
-
-        #endregion
-        
-        #region  ModifyProvisionedCapacity
-
-        internal virtual ModifyProvisionedCapacityResponse ModifyProvisionedCapacity(ModifyProvisionedCapacityRequest request)
-        {
-            var marshaller = ModifyProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = ModifyProvisionedCapacityResponseUnmarshaller.Instance;
-
-            return Invoke<ModifyProvisionedCapacityRequest,ModifyProvisionedCapacityResponse>(request, marshaller, unmarshaller);
-        }
-
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ModifyProvisionedCapacity operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ModifyProvisionedCapacity operation.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity">REST API Reference for ModifyProvisionedCapacity Operation</seealso>
-        public virtual Task<ModifyProvisionedCapacityResponse> ModifyProvisionedCapacityAsync(ModifyProvisionedCapacityRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
-        {
-            var marshaller = ModifyProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = ModifyProvisionedCapacityResponseUnmarshaller.Instance;
-
-            return InvokeAsync<ModifyProvisionedCapacityRequest,ModifyProvisionedCapacityResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

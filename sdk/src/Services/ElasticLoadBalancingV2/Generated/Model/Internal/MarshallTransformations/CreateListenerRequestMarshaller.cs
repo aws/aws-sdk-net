@@ -178,10 +178,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "TokenEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.TokenEndpoint));
                             }
-                            if(publicRequestlistValue.AuthenticateOidcConfig.IsSetUseExistingClientSecret())
-                            {
-                                request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UseExistingClientSecret", StringUtils.FromBool(publicRequestlistValue.AuthenticateOidcConfig.UseExistingClientSecret));
-                            }
                             if(publicRequestlistValue.AuthenticateOidcConfig.IsSetUserInfoEndpoint())
                             {
                                 request.Parameters.Add("DefaultActions" + "." + "member" + "." + publicRequestlistValueIndex + "." + "AuthenticateOidcConfig" + "." + "UserInfoEndpoint", StringUtils.FromString(publicRequestlistValue.AuthenticateOidcConfig.UserInfoEndpoint));

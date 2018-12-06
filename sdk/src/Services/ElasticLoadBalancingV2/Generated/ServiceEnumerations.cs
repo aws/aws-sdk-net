@@ -195,84 +195,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
 
     /// <summary>
-    /// Constants used for properties of type HttpRequestMethodEnum.
-    /// </summary>
-    public class HttpRequestMethodEnum : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant CONNECT for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum CONNECT = new HttpRequestMethodEnum("CONNECT");
-        /// <summary>
-        /// Constant DELETE for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum DELETE = new HttpRequestMethodEnum("DELETE");
-        /// <summary>
-        /// Constant GET for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum GET = new HttpRequestMethodEnum("GET");
-        /// <summary>
-        /// Constant HEAD for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum HEAD = new HttpRequestMethodEnum("HEAD");
-        /// <summary>
-        /// Constant OPTIONS for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum OPTIONS = new HttpRequestMethodEnum("OPTIONS");
-        /// <summary>
-        /// Constant PATCH for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum PATCH = new HttpRequestMethodEnum("PATCH");
-        /// <summary>
-        /// Constant POST for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum POST = new HttpRequestMethodEnum("POST");
-        /// <summary>
-        /// Constant PUT for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum PUT = new HttpRequestMethodEnum("PUT");
-        /// <summary>
-        /// Constant TRACE for HttpRequestMethodEnum
-        /// </summary>
-        public static readonly HttpRequestMethodEnum TRACE = new HttpRequestMethodEnum("TRACE");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public HttpRequestMethodEnum(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static HttpRequestMethodEnum FindValue(string value)
-        {
-            return FindValue<HttpRequestMethodEnum>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator HttpRequestMethodEnum(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type IpAddressType.
     /// </summary>
     public class IpAddressType : ConstantClass
@@ -498,14 +420,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// Constant TCP for ProtocolEnum
         /// </summary>
         public static readonly ProtocolEnum TCP = new ProtocolEnum("TCP");
-        /// <summary>
-        /// Constant TLS for ProtocolEnum
-        /// </summary>
-        public static readonly ProtocolEnum TLS = new ProtocolEnum("TLS");
-        /// <summary>
-        /// Constant UDP for ProtocolEnum
-        /// </summary>
-        public static readonly ProtocolEnum UDP = new ProtocolEnum("UDP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -536,64 +450,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProtocolEnum(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
-    /// Constants used for properties of type ProvisionedCapacityStatus.
-    /// </summary>
-    public class ProvisionedCapacityStatus : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant Disabled for ProvisionedCapacityStatus
-        /// </summary>
-        public static readonly ProvisionedCapacityStatus Disabled = new ProvisionedCapacityStatus("disabled");
-        /// <summary>
-        /// Constant Pending for ProvisionedCapacityStatus
-        /// </summary>
-        public static readonly ProvisionedCapacityStatus Pending = new ProvisionedCapacityStatus("pending");
-        /// <summary>
-        /// Constant PreWarmed for ProvisionedCapacityStatus
-        /// </summary>
-        public static readonly ProvisionedCapacityStatus PreWarmed = new ProvisionedCapacityStatus("pre-warmed");
-        /// <summary>
-        /// Constant Provisioned for ProvisionedCapacityStatus
-        /// </summary>
-        public static readonly ProvisionedCapacityStatus Provisioned = new ProvisionedCapacityStatus("provisioned");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public ProvisionedCapacityStatus(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static ProvisionedCapacityStatus FindValue(string value)
-        {
-            return FindValue<ProvisionedCapacityStatus>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator ProvisionedCapacityStatus(string value)
         {
             return FindValue(value);
         }

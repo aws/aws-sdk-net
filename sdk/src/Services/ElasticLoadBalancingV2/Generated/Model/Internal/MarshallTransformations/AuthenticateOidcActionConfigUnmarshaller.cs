@@ -115,12 +115,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TokenEndpoint = unmarshaller.Unmarshall(context);
                         continue;
                     }
-                    if (context.TestExpression("UseExistingClientSecret", targetDepth))
-                    {
-                        var unmarshaller = BoolUnmarshaller.Instance;
-                        unmarshalledObject.UseExistingClientSecret = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
                     if (context.TestExpression("UserInfoEndpoint", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

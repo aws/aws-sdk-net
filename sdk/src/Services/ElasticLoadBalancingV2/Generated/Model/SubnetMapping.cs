@@ -33,7 +33,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class SubnetMapping
     {
         private string _allocationId;
-        private bool? _staticIp;
         private string _subnetId;
 
         /// <summary>
@@ -52,21 +51,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetAllocationId()
         {
             return this._allocationId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StaticIp.
-        /// </summary>
-        public bool StaticIp
-        {
-            get { return this._staticIp.GetValueOrDefault(); }
-            set { this._staticIp = value; }
-        }
-
-        // Check to see if StaticIp property is set
-        internal bool IsSetStaticIp()
-        {
-            return this._staticIp.HasValue; 
         }
 
         /// <summary>

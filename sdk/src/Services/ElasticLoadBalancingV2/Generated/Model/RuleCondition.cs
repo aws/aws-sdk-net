@@ -33,11 +33,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class RuleCondition
     {
         private string _field;
-        private HostHeaderConditionConfig _hostHeaderConfig;
-        private HttpHeaderConditionConfig _httpHeaderConfig;
-        private HttpRequestMethodConditionConfig _httpRequestMethodConfig;
-        private PathPatternConditionConfig _pathPatternConfig;
-        private QueryStringConditionConfig _queryStringConfig;
         private List<string> _values = new List<string>();
 
         /// <summary>
@@ -56,81 +51,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         internal bool IsSetField()
         {
             return this._field != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property HostHeaderConfig.
-        /// </summary>
-        public HostHeaderConditionConfig HostHeaderConfig
-        {
-            get { return this._hostHeaderConfig; }
-            set { this._hostHeaderConfig = value; }
-        }
-
-        // Check to see if HostHeaderConfig property is set
-        internal bool IsSetHostHeaderConfig()
-        {
-            return this._hostHeaderConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property HttpHeaderConfig.
-        /// </summary>
-        public HttpHeaderConditionConfig HttpHeaderConfig
-        {
-            get { return this._httpHeaderConfig; }
-            set { this._httpHeaderConfig = value; }
-        }
-
-        // Check to see if HttpHeaderConfig property is set
-        internal bool IsSetHttpHeaderConfig()
-        {
-            return this._httpHeaderConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property HttpRequestMethodConfig.
-        /// </summary>
-        public HttpRequestMethodConditionConfig HttpRequestMethodConfig
-        {
-            get { return this._httpRequestMethodConfig; }
-            set { this._httpRequestMethodConfig = value; }
-        }
-
-        // Check to see if HttpRequestMethodConfig property is set
-        internal bool IsSetHttpRequestMethodConfig()
-        {
-            return this._httpRequestMethodConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property PathPatternConfig.
-        /// </summary>
-        public PathPatternConditionConfig PathPatternConfig
-        {
-            get { return this._pathPatternConfig; }
-            set { this._pathPatternConfig = value; }
-        }
-
-        // Check to see if PathPatternConfig property is set
-        internal bool IsSetPathPatternConfig()
-        {
-            return this._pathPatternConfig != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property QueryStringConfig.
-        /// </summary>
-        public QueryStringConditionConfig QueryStringConfig
-        {
-            get { return this._queryStringConfig; }
-            set { this._queryStringConfig = value; }
-        }
-
-        // Check to see if QueryStringConfig property is set
-        internal bool IsSetQueryStringConfig()
-        {
-            return this._queryStringConfig != null;
         }
 
         /// <summary>

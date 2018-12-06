@@ -336,12 +336,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyCertificatesException">
         /// You've reached the limit on the number of certificates per load balancer.
         /// </exception>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedCertificateException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
-        /// The specified protocol is not supported.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/AddListenerCertificates">REST API Reference for AddListenerCertificates Operation</seealso>
         public virtual AddListenerCertificatesResponse AddListenerCertificates(AddListenerCertificatesRequest request)
         {
@@ -533,9 +527,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
-        /// </exception>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedCertificateException">
-        /// 
         /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
@@ -1533,62 +1524,6 @@ namespace Amazon.ElasticLoadBalancingV2
 
         #endregion
         
-        #region  DescribeProvisionedCapacity
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedCapacity service method.</param>
-        /// 
-        /// <returns>The response from the DescribeProvisionedCapacity service method, as returned by ElasticLoadBalancingV2.</returns>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
-        /// The specified load balancer does not exist.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity">REST API Reference for DescribeProvisionedCapacity Operation</seealso>
-        public virtual DescribeProvisionedCapacityResponse DescribeProvisionedCapacity(DescribeProvisionedCapacityRequest request)
-        {
-            var marshaller = DescribeProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = DescribeProvisionedCapacityResponseUnmarshaller.Instance;
-
-            return Invoke<DescribeProvisionedCapacityRequest,DescribeProvisionedCapacityResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DescribeProvisionedCapacity operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DescribeProvisionedCapacity operation on AmazonElasticLoadBalancingV2Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeProvisionedCapacity
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity">REST API Reference for DescribeProvisionedCapacity Operation</seealso>
-        public virtual IAsyncResult BeginDescribeProvisionedCapacity(DescribeProvisionedCapacityRequest request, AsyncCallback callback, object state)
-        {
-            var marshaller = DescribeProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = DescribeProvisionedCapacityResponseUnmarshaller.Instance;
-
-            return BeginInvoke<DescribeProvisionedCapacityRequest>(request, marshaller, unmarshaller,
-                callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DescribeProvisionedCapacity operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeProvisionedCapacity.</param>
-        /// 
-        /// <returns>Returns a  DescribeProvisionedCapacityResult from ElasticLoadBalancingV2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeProvisionedCapacity">REST API Reference for DescribeProvisionedCapacity Operation</seealso>
-        public virtual DescribeProvisionedCapacityResponse EndDescribeProvisionedCapacity(IAsyncResult asyncResult)
-        {
-            return EndInvoke<DescribeProvisionedCapacityResponse>(asyncResult);
-        }
-
-        #endregion
-        
         #region  DescribeRules
 
         /// <summary>
@@ -2033,9 +1968,6 @@ namespace Amazon.ElasticLoadBalancingV2
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.TooManyTargetsException">
         /// You've reached the limit on the number of targets.
         /// </exception>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedCertificateException">
-        /// 
-        /// </exception>
         /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.UnsupportedProtocolException">
         /// The specified protocol is not supported.
         /// </exception>
@@ -2146,74 +2078,6 @@ namespace Amazon.ElasticLoadBalancingV2
         public virtual ModifyLoadBalancerAttributesResponse EndModifyLoadBalancerAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyLoadBalancerAttributesResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  ModifyProvisionedCapacity
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ModifyProvisionedCapacity service method.</param>
-        /// 
-        /// <returns>The response from the ModifyProvisionedCapacity service method, as returned by ElasticLoadBalancingV2.</returns>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InsufficientCapacityException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.InvalidConfigurationRequestException">
-        /// The requested configuration is not valid.
-        /// </exception>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.LoadBalancerNotFoundException">
-        /// The specified load balancer does not exist.
-        /// </exception>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.MinimumLBCapacityUnitsDecreaseThrottlingException">
-        /// 
-        /// </exception>
-        /// <exception cref="Amazon.ElasticLoadBalancingV2.Model.MinimumLBCapacityUnitsLimitExceededException">
-        /// 
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity">REST API Reference for ModifyProvisionedCapacity Operation</seealso>
-        public virtual ModifyProvisionedCapacityResponse ModifyProvisionedCapacity(ModifyProvisionedCapacityRequest request)
-        {
-            var marshaller = ModifyProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = ModifyProvisionedCapacityResponseUnmarshaller.Instance;
-
-            return Invoke<ModifyProvisionedCapacityRequest,ModifyProvisionedCapacityResponse>(request, marshaller, unmarshaller);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the ModifyProvisionedCapacity operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the ModifyProvisionedCapacity operation on AmazonElasticLoadBalancingV2Client.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyProvisionedCapacity
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity">REST API Reference for ModifyProvisionedCapacity Operation</seealso>
-        public virtual IAsyncResult BeginModifyProvisionedCapacity(ModifyProvisionedCapacityRequest request, AsyncCallback callback, object state)
-        {
-            var marshaller = ModifyProvisionedCapacityRequestMarshaller.Instance;
-            var unmarshaller = ModifyProvisionedCapacityResponseUnmarshaller.Instance;
-
-            return BeginInvoke<ModifyProvisionedCapacityRequest>(request, marshaller, unmarshaller,
-                callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  ModifyProvisionedCapacity operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyProvisionedCapacity.</param>
-        /// 
-        /// <returns>Returns a  ModifyProvisionedCapacityResult from ElasticLoadBalancingV2.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyProvisionedCapacity">REST API Reference for ModifyProvisionedCapacity Operation</seealso>
-        public virtual ModifyProvisionedCapacityResponse EndModifyProvisionedCapacity(IAsyncResult asyncResult)
-        {
-            return EndInvoke<ModifyProvisionedCapacityResponse>(asyncResult);
         }
 
         #endregion

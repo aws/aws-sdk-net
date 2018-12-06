@@ -428,30 +428,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("ElasticLoadBalancingV2")]
-        public void DescribeProvisionedCapacityMarshallTest()
-        {
-            var operation = service_model.FindOperation("DescribeProvisionedCapacity");
-
-            var request = InstantiateClassGenerator.Execute<DescribeProvisionedCapacityRequest>();
-            var marshaller = new DescribeProvisionedCapacityRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DescribeProvisionedCapacityResponseUnmarshaller.Instance.Unmarshall(context)
-                as DescribeProvisionedCapacityResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("ElasticLoadBalancingV2")]
         public void DescribeRulesMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeRules");
@@ -635,30 +611,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ModifyLoadBalancerAttributesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyLoadBalancerAttributesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
-        }
-
-        
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Query")]
-        [TestCategory("ElasticLoadBalancingV2")]
-        public void ModifyProvisionedCapacityMarshallTest()
-        {
-            var operation = service_model.FindOperation("ModifyProvisionedCapacity");
-
-            var request = InstantiateClassGenerator.Execute<ModifyProvisionedCapacityRequest>();
-            var marshaller = new ModifyProvisionedCapacityRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
-
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = ModifyProvisionedCapacityResponseUnmarshaller.Instance.Unmarshall(context)
-                as ModifyProvisionedCapacityResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
