@@ -398,11 +398,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify this parameter when you create a Read Replica from an unencrypted DB
-        /// instance, the Read Replica is encrypted. 
-        /// </para>
-        ///  
-        /// <para>
         /// If you create an encrypted Read Replica in the same AWS Region as the source DB instance,
         /// then you do not have to specify a value for this parameter. The Read Replica is encrypted
         /// with the same KMS key as the source DB instance. 
@@ -413,6 +408,10 @@ namespace Amazon.RDS.Model
         /// a KMS key for the destination AWS Region. KMS encryption keys are specific to the
         /// AWS Region that they are created in, and you can't use encryption keys from one AWS
         /// Region in another AWS Region. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't create an encrypted Read Replica from an unencrypted DB instance. 
         /// </para>
         /// </summary>
         public string KmsKeyId

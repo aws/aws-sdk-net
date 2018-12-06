@@ -1011,6 +1011,11 @@ namespace Amazon.RDS.Model
         /// is shown. This output does not contain information about cross region Aurora Read
         /// Replicas.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Currently, each RDS DB instance can have only one Aurora Read Replica.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> ReadReplicaDBClusterIdentifiers
         {

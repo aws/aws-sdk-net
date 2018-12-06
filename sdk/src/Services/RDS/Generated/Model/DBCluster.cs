@@ -200,7 +200,16 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Capacity.
+        /// Gets and sets the property Capacity. 
+        /// <para>
+        /// The current capacity of an Aurora Serverless DB cluster. The capacity is 0 (zero)
+        /// when the cluster is paused.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about Aurora Serverless, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+        /// Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
         /// </summary>
         public int Capacity
         {
