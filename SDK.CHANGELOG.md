@@ -1,3 +1,13 @@
+### 3.3.423.0 (2018-12-06 20:15 UTC)
+* CodeBuild (3.3.19.0)
+	* Support personal access tokens for GitHub source and app passwords for Bitbucket source
+* ElasticLoadBalancingV2 (3.3.12.0)
+	* This release allows Application Load Balancers to route traffic to Lambda functions, in addition to instances and IP addresses.
+* MediaLive (3.3.13.0)
+	* This release enables the AWS Elemental MediaConnect input type in AWS Elemental MediaLive. This can then be used to automatically create and manage AWS Elemental MediaConnect Flow Outputs when you create a channel using those inputs.
+* RDS (3.3.37.2)
+	* Documentation updates for Amazon RDS
+
 ### 3.3.422.0 (2018-12-05 21:23 UTC)
 * CostExplorer (3.3.9.0)
 	* Add normalized unit support for both GetReservationUtilization and GetReservationCoverage API.

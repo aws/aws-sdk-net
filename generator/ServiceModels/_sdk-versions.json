@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.422.0",
+    "ProductVersion" : "3.3.423.0",
     "CoreVersion"    : "3.3.29.13",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -281,7 +281,7 @@
             "InPreview"               : false
         },
         "RDS"                  : {
-            "Version" : "3.3.37.1",
+            "Version" : "3.3.37.2",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
@@ -569,7 +569,7 @@
             "InPreview"               : false
         },
         "ElasticLoadBalancingV2"          : {
-            "Version" : "3.3.11.1",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
@@ -657,7 +657,7 @@
             "InPreview"               : false
         },
         "CodeBuild"                       : {
-            "Version" : "3.3.18.2",
+            "Version" : "3.3.19.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
@@ -873,7 +873,7 @@
             "InPreview"               : false
         },
         "MediaLive"                       : {
-            "Version" : "3.3.12.1",
+            "Version" : "3.3.13.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
