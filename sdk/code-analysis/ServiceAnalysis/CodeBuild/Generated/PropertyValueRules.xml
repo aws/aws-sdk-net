@@ -40,10 +40,30 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DeleteSourceCredentialsRequest.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.DeleteSourceCredentialsResponse.Arn</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CodeBuild.Model.DeleteWebhookRequest.ProjectName</property>
     <min>2</min>
     <max>255</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9\-_]{1,254}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ImportSourceCredentialsRequest.Token</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ImportSourceCredentialsRequest.Username</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.ImportSourceCredentialsResponse.Arn</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.InvalidateProjectCacheRequest.ProjectName</property>
@@ -200,6 +220,10 @@
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.ProjectSource.GitCloneDepth</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CodeBuild.Model.SourceCredentialsInfo.Arn</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CodeBuild.Model.Tag.Key</property>

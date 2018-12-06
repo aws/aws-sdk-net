@@ -126,6 +126,23 @@ namespace Amazon.CodeBuild
     ///  <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that
     /// are managed by AWS CodeBuild.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise,
+    /// or Bitbucket source credentials.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ImportSourceCredentials</code>: Imports the source repository credentials for
+    /// an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise,
+    /// or Bitbucket repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
+    /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
+    /// type, token ARN, and type of source provider for one set of credentials.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class AmazonCodeBuildClient : AmazonServiceClient, IAmazonCodeBuild
@@ -610,6 +627,51 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  DeleteSourceCredentials
+
+
+        /// <summary>
+        /// Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceCredentials service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">REST API Reference for DeleteSourceCredentials Operation</seealso>
+        public virtual DeleteSourceCredentialsResponse DeleteSourceCredentials(DeleteSourceCredentialsRequest request)
+        {
+            var marshaller = DeleteSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = DeleteSourceCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSourceCredentialsRequest,DeleteSourceCredentialsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceCredentials operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">REST API Reference for DeleteSourceCredentials Operation</seealso>
+        public virtual Task<DeleteSourceCredentialsResponse> DeleteSourceCredentialsAsync(DeleteSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = DeleteSourceCredentialsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSourceCredentialsRequest,DeleteSourceCredentialsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteWebhook
 
 
@@ -655,6 +717,52 @@ namespace Amazon.CodeBuild
             var unmarshaller = DeleteWebhookResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteWebhookRequest,DeleteWebhookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportSourceCredentials
+
+
+        /// <summary>
+        /// Imports the source repository credentials for an AWS CodeBuild project that has its
+        /// source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials service method.</param>
+        /// 
+        /// <returns>The response from the ImportSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An AWS service limit was exceeded for the calling AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">REST API Reference for ImportSourceCredentials Operation</seealso>
+        public virtual ImportSourceCredentialsResponse ImportSourceCredentials(ImportSourceCredentialsRequest request)
+        {
+            var marshaller = ImportSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = ImportSourceCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<ImportSourceCredentialsRequest,ImportSourceCredentialsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">REST API Reference for ImportSourceCredentials Operation</seealso>
+        public virtual Task<ImportSourceCredentialsResponse> ImportSourceCredentialsAsync(ImportSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ImportSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = ImportSourceCredentialsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ImportSourceCredentialsRequest,ImportSourceCredentialsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -870,6 +978,45 @@ namespace Amazon.CodeBuild
             var unmarshaller = ListProjectsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListProjectsRequest,ListProjectsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSourceCredentials
+
+
+        /// <summary>
+        /// Returns a list of <code>SourceCredentialsInfo</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceCredentials service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">REST API Reference for ListSourceCredentials Operation</seealso>
+        public virtual ListSourceCredentialsResponse ListSourceCredentials(ListSourceCredentialsRequest request)
+        {
+            var marshaller = ListSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = ListSourceCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSourceCredentialsRequest,ListSourceCredentialsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceCredentials operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">REST API Reference for ListSourceCredentials Operation</seealso>
+        public virtual Task<ListSourceCredentialsResponse> ListSourceCredentialsAsync(ListSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = ListSourceCredentialsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSourceCredentialsRequest,ListSourceCredentialsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

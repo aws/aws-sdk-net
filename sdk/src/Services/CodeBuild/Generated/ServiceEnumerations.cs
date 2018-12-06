@@ -179,6 +179,60 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type AuthType.
+    /// </summary>
+    public class AuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC_AUTH for AuthType
+        /// </summary>
+        public static readonly AuthType BASIC_AUTH = new AuthType("BASIC_AUTH");
+        /// <summary>
+        /// Constant OAUTH for AuthType
+        /// </summary>
+        public static readonly AuthType OAUTH = new AuthType("OAUTH");
+        /// <summary>
+        /// Constant PERSONAL_ACCESS_TOKEN for AuthType
+        /// </summary>
+        public static readonly AuthType PERSONAL_ACCESS_TOKEN = new AuthType("PERSONAL_ACCESS_TOKEN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthType FindValue(string value)
+        {
+            return FindValue<AuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BuildPhaseType.
     /// </summary>
     public class BuildPhaseType : ConstantClass
@@ -706,6 +760,60 @@ namespace Amazon.CodeBuild
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProjectSortByType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ServerType.
+    /// </summary>
+    public class ServerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BITBUCKET for ServerType
+        /// </summary>
+        public static readonly ServerType BITBUCKET = new ServerType("BITBUCKET");
+        /// <summary>
+        /// Constant GITHUB for ServerType
+        /// </summary>
+        public static readonly ServerType GITHUB = new ServerType("GITHUB");
+        /// <summary>
+        /// Constant GITHUB_ENTERPRISE for ServerType
+        /// </summary>
+        public static readonly ServerType GITHUB_ENTERPRISE = new ServerType("GITHUB_ENTERPRISE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServerType FindValue(string value)
+        {
+            return FindValue<ServerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServerType(string value)
         {
             return FindValue(value);
         }

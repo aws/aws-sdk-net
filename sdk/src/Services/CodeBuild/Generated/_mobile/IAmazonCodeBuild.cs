@@ -120,6 +120,23 @@ namespace Amazon.CodeBuild
     ///  <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that
     /// are managed by AWS CodeBuild.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise,
+    /// or Bitbucket source credentials.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ImportSourceCredentials</code>: Imports the source repository credentials for
+    /// an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise,
+    /// or Bitbucket repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
+    /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
+    /// type, token ARN, and type of source provider for one set of credentials.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonCodeBuild : IAmazonService, IDisposable
@@ -227,6 +244,23 @@ namespace Amazon.CodeBuild
 
         #endregion
                 
+        #region  DeleteSourceCredentials
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceCredentials operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">REST API Reference for DeleteSourceCredentials Operation</seealso>
+        Task<DeleteSourceCredentialsResponse> DeleteSourceCredentialsAsync(DeleteSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteWebhook
 
 
@@ -241,6 +275,23 @@ namespace Amazon.CodeBuild
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">REST API Reference for DeleteWebhook Operation</seealso>
         Task<DeleteWebhookResponse> DeleteWebhookAsync(DeleteWebhookRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ImportSourceCredentials
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">REST API Reference for ImportSourceCredentials Operation</seealso>
+        Task<ImportSourceCredentialsResponse> ImportSourceCredentialsAsync(ImportSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -326,6 +377,23 @@ namespace Amazon.CodeBuild
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">REST API Reference for ListProjects Operation</seealso>
         Task<ListProjectsResponse> ListProjectsAsync(ListProjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSourceCredentials
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceCredentials operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">REST API Reference for ListSourceCredentials Operation</seealso>
+        Task<ListSourceCredentialsResponse> ListSourceCredentialsAsync(ListSourceCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

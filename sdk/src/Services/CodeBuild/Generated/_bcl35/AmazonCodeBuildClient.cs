@@ -123,6 +123,23 @@ namespace Amazon.CodeBuild
     ///  <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that
     /// are managed by AWS CodeBuild.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise,
+    /// or Bitbucket source credentials.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ImportSourceCredentials</code>: Imports the source repository credentials for
+    /// an AWS CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise,
+    /// or Bitbucket repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code>
+    /// objects. Each <code>SourceCredentialsInfo</code> object includes the authentication
+    /// type, token ARN, and type of source provider for one set of credentials.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class AmazonCodeBuildClient : AmazonServiceClient, IAmazonCodeBuild
@@ -692,6 +709,65 @@ namespace Amazon.CodeBuild
 
         #endregion
         
+        #region  DeleteSourceCredentials
+
+        /// <summary>
+        /// Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceCredentials service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.ResourceNotFoundException">
+        /// The specified AWS resource cannot be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">REST API Reference for DeleteSourceCredentials Operation</seealso>
+        public virtual DeleteSourceCredentialsResponse DeleteSourceCredentials(DeleteSourceCredentialsRequest request)
+        {
+            var marshaller = DeleteSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = DeleteSourceCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSourceCredentialsRequest,DeleteSourceCredentialsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSourceCredentials operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSourceCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">REST API Reference for DeleteSourceCredentials Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSourceCredentials(DeleteSourceCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = DeleteSourceCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteSourceCredentialsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSourceCredentials.</param>
+        /// 
+        /// <returns>Returns a  DeleteSourceCredentialsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">REST API Reference for DeleteSourceCredentials Operation</seealso>
+        public virtual DeleteSourceCredentialsResponse EndDeleteSourceCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteSourceCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteWebhook
 
         /// <summary>
@@ -752,6 +828,66 @@ namespace Amazon.CodeBuild
         public virtual DeleteWebhookResponse EndDeleteWebhook(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteWebhookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ImportSourceCredentials
+
+        /// <summary>
+        /// Imports the source repository credentials for an AWS CodeBuild project that has its
+        /// source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials service method.</param>
+        /// 
+        /// <returns>The response from the ImportSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <exception cref="Amazon.CodeBuild.Model.AccountLimitExceededException">
+        /// An AWS service limit was exceeded for the calling AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeBuild.Model.InvalidInputException">
+        /// The input value that was provided is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">REST API Reference for ImportSourceCredentials Operation</seealso>
+        public virtual ImportSourceCredentialsResponse ImportSourceCredentials(ImportSourceCredentialsRequest request)
+        {
+            var marshaller = ImportSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = ImportSourceCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<ImportSourceCredentialsRequest,ImportSourceCredentialsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportSourceCredentials operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportSourceCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">REST API Reference for ImportSourceCredentials Operation</seealso>
+        public virtual IAsyncResult BeginImportSourceCredentials(ImportSourceCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ImportSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = ImportSourceCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ImportSourceCredentialsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportSourceCredentials.</param>
+        /// 
+        /// <returns>Returns a  ImportSourceCredentialsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">REST API Reference for ImportSourceCredentials Operation</seealso>
+        public virtual ImportSourceCredentialsResponse EndImportSourceCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportSourceCredentialsResponse>(asyncResult);
         }
 
         #endregion
@@ -1037,6 +1173,59 @@ namespace Amazon.CodeBuild
         public virtual ListProjectsResponse EndListProjects(IAsyncResult asyncResult)
         {
             return EndInvoke<ListProjectsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListSourceCredentials
+
+        /// <summary>
+        /// Returns a list of <code>SourceCredentialsInfo</code> objects.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceCredentials service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceCredentials service method, as returned by CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">REST API Reference for ListSourceCredentials Operation</seealso>
+        public virtual ListSourceCredentialsResponse ListSourceCredentials(ListSourceCredentialsRequest request)
+        {
+            var marshaller = ListSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = ListSourceCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSourceCredentialsRequest,ListSourceCredentialsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceCredentials operation on AmazonCodeBuildClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSourceCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">REST API Reference for ListSourceCredentials Operation</seealso>
+        public virtual IAsyncResult BeginListSourceCredentials(ListSourceCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListSourceCredentialsRequestMarshaller.Instance;
+            var unmarshaller = ListSourceCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListSourceCredentialsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSourceCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSourceCredentials.</param>
+        /// 
+        /// <returns>Returns a  ListSourceCredentialsResult from CodeBuild.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">REST API Reference for ListSourceCredentials Operation</seealso>
+        public virtual ListSourceCredentialsResponse EndListSourceCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListSourceCredentialsResponse>(asyncResult);
         }
 
         #endregion
