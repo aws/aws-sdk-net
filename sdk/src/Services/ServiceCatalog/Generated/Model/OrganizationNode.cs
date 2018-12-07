@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// 
+    /// Information about the organization node.
     /// </summary>
     public partial class OrganizationNode
     {
@@ -36,7 +36,10 @@ namespace Amazon.ServiceCatalog.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The organization node type.
+        /// </para>
         /// </summary>
         public OrganizationNodeType Type
         {
@@ -51,7 +54,10 @@ namespace Amazon.ServiceCatalog.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The identifier of the organization node.
+        /// </para>
         /// </summary>
         public string Value
         {

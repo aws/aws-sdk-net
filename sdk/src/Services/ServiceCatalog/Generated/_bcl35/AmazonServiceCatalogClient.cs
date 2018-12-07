@@ -2957,8 +2957,9 @@ namespace Amazon.ServiceCatalog
         /// 
         ///  
         /// <para>
-        /// By calling this API Service Catalog will use FAS credentials to call organizations:EnableAWSServiceAccess
-        /// so that your shares can be in sync with any changes in your AWS Organizations.
+        /// By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess
+        /// on your behalf so that your shares can be in sync with any changes in your AWS Organizations
+        /// structure.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableAWSOrganizationsAccess service method.</param>
