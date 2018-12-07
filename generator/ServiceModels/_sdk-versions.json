@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.423.0",
+    "ProductVersion" : "3.3.424.0",
     "CoreVersion"    : "3.3.29.13",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.75.1",
+            "Version" : "3.3.76.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
@@ -217,7 +217,7 @@
             "InPreview"               : false
         },
         "IdentityManagement"   : {
-            "Version" : "3.3.8.2",
+            "Version" : "3.3.9.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
@@ -561,7 +561,7 @@
             "InPreview"               : false
         },
         "ServiceCatalog"                  : {
-            "Version" : "3.3.13.3",
+            "Version" : "3.3.13.4",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"
@@ -1001,7 +1001,7 @@
             "InPreview"               : false
         },
         "AlexaForBusiness"                : {
-            "Version" : "3.3.6.15",
+            "Version" : "3.3.7.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.13"

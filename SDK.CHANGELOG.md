@@ -1,3 +1,13 @@
+### 3.3.424.0 (2018-12-07 19:57 UTC)
+* AlexaForBusiness (3.3.7.0)
+	* Alexa for Business now allows IT administrators to create ad-hoc or scheduled usage reports, which help customers understand how Alexa is used in their workplace. To learn how to create usage reports, see https://docs.aws.amazon.com/a4b/latest/ag/creating-reports.html
+* EC2 (3.3.76.0)
+	* You can now launch the larger-sized P3dn.24xlarge instance that features NVIDIA Tesla V100s with double the GPU memory, 100Gbps networking and local NVMe storage.
+* IdentityManagement (3.3.9.0)
+	* We are making it easier for you to manage your AWS Identity and Access Management (IAM) policy permissions by enabling you to retrieve the last timestamp when an IAM entity (e.g., user, role, or a group) accessed an AWS service. This feature also allows you to audit service access for your entities.
+* ServiceCatalog (3.3.13.4)
+	* Documentation updates for servicecatalog.
+
 ### 3.3.423.0 (2018-12-06 20:15 UTC)
 * CodeBuild (3.3.19.0)
 	* Support personal access tokens for GitHub source and app passwords for Bitbucket source
