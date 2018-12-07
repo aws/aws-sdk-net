@@ -520,6 +520,49 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  CreateBusinessReportSchedule
+
+
+        /// <summary>
+        /// Creates a recurring schedule for usage reports to deliver to the specified S3 location
+        /// with a specified daily or weekly interval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the CreateBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        public virtual CreateBusinessReportScheduleResponse CreateBusinessReportSchedule(CreateBusinessReportScheduleRequest request)
+        {
+            var marshaller = CreateBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = CreateBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBusinessReportScheduleRequest,CreateBusinessReportScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBusinessReportSchedule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        public virtual Task<CreateBusinessReportScheduleResponse> CreateBusinessReportScheduleAsync(CreateBusinessReportScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = CreateBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateBusinessReportScheduleRequest,CreateBusinessReportScheduleResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateConferenceProvider
 
 
@@ -836,6 +879,51 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = DeleteAddressBookResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAddressBookRequest,DeleteAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteBusinessReportSchedule
+
+
+        /// <summary>
+        /// Deletes the recurring report delivery schedule with the specified schedule ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        public virtual DeleteBusinessReportScheduleResponse DeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request)
+        {
+            var marshaller = DeleteBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = DeleteBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBusinessReportScheduleRequest,DeleteBusinessReportScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBusinessReportSchedule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        public virtual Task<DeleteBusinessReportScheduleResponse> DeleteBusinessReportScheduleAsync(DeleteBusinessReportScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DeleteBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = DeleteBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteBusinessReportScheduleRequest,DeleteBusinessReportScheduleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1833,6 +1921,45 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = GetSkillGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetSkillGroupRequest,GetSkillGroupResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListBusinessReportSchedules
+
+
+        /// <summary>
+        /// Lists the details of the schedules that a user configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessReportSchedules service method.</param>
+        /// 
+        /// <returns>The response from the ListBusinessReportSchedules service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        public virtual ListBusinessReportSchedulesResponse ListBusinessReportSchedules(ListBusinessReportSchedulesRequest request)
+        {
+            var marshaller = ListBusinessReportSchedulesRequestMarshaller.Instance;
+            var unmarshaller = ListBusinessReportSchedulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListBusinessReportSchedulesRequest,ListBusinessReportSchedulesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBusinessReportSchedules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessReportSchedules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        public virtual Task<ListBusinessReportSchedulesResponse> ListBusinessReportSchedulesAsync(ListBusinessReportSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListBusinessReportSchedulesRequestMarshaller.Instance;
+            var unmarshaller = ListBusinessReportSchedulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListBusinessReportSchedulesRequest,ListBusinessReportSchedulesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -2971,6 +3098,52 @@ namespace Amazon.AlexaForBusiness
             var unmarshaller = UpdateAddressBookResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAddressBookRequest,UpdateAddressBookResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateBusinessReportSchedule
+
+
+        /// <summary>
+        /// Updates the configuration of the report delivery schedule with the specified schedule
+        /// ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        public virtual UpdateBusinessReportScheduleResponse UpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request)
+        {
+            var marshaller = UpdateBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = UpdateBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBusinessReportScheduleRequest,UpdateBusinessReportScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBusinessReportSchedule operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        public virtual Task<UpdateBusinessReportScheduleResponse> UpdateBusinessReportScheduleAsync(UpdateBusinessReportScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = UpdateBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateBusinessReportScheduleRequest,UpdateBusinessReportScheduleResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

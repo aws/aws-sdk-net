@@ -25,6 +25,214 @@ namespace Amazon.AlexaForBusiness
 {
 
     /// <summary>
+    /// Constants used for properties of type BusinessReportFailureCode.
+    /// </summary>
+    public class BusinessReportFailureCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for BusinessReportFailureCode
+        /// </summary>
+        public static readonly BusinessReportFailureCode ACCESS_DENIED = new BusinessReportFailureCode("ACCESS_DENIED");
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for BusinessReportFailureCode
+        /// </summary>
+        public static readonly BusinessReportFailureCode INTERNAL_FAILURE = new BusinessReportFailureCode("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant NO_SUCH_BUCKET for BusinessReportFailureCode
+        /// </summary>
+        public static readonly BusinessReportFailureCode NO_SUCH_BUCKET = new BusinessReportFailureCode("NO_SUCH_BUCKET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BusinessReportFailureCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BusinessReportFailureCode FindValue(string value)
+        {
+            return FindValue<BusinessReportFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BusinessReportFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BusinessReportFormat.
+    /// </summary>
+    public class BusinessReportFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CSV for BusinessReportFormat
+        /// </summary>
+        public static readonly BusinessReportFormat CSV = new BusinessReportFormat("CSV");
+        /// <summary>
+        /// Constant CSV_ZIP for BusinessReportFormat
+        /// </summary>
+        public static readonly BusinessReportFormat CSV_ZIP = new BusinessReportFormat("CSV_ZIP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BusinessReportFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BusinessReportFormat FindValue(string value)
+        {
+            return FindValue<BusinessReportFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BusinessReportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BusinessReportInterval.
+    /// </summary>
+    public class BusinessReportInterval : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ONE_DAY for BusinessReportInterval
+        /// </summary>
+        public static readonly BusinessReportInterval ONE_DAY = new BusinessReportInterval("ONE_DAY");
+        /// <summary>
+        /// Constant ONE_WEEK for BusinessReportInterval
+        /// </summary>
+        public static readonly BusinessReportInterval ONE_WEEK = new BusinessReportInterval("ONE_WEEK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BusinessReportInterval(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BusinessReportInterval FindValue(string value)
+        {
+            return FindValue<BusinessReportInterval>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BusinessReportInterval(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BusinessReportStatus.
+    /// </summary>
+    public class BusinessReportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for BusinessReportStatus
+        /// </summary>
+        public static readonly BusinessReportStatus FAILED = new BusinessReportStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for BusinessReportStatus
+        /// </summary>
+        public static readonly BusinessReportStatus RUNNING = new BusinessReportStatus("RUNNING");
+        /// <summary>
+        /// Constant SUCCEEDED for BusinessReportStatus
+        /// </summary>
+        public static readonly BusinessReportStatus SUCCEEDED = new BusinessReportStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BusinessReportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BusinessReportStatus FindValue(string value)
+        {
+            return FindValue<BusinessReportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BusinessReportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CommsProtocol.
     /// </summary>
     public class CommsProtocol : ConstantClass

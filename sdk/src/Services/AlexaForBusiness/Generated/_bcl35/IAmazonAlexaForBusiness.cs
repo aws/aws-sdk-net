@@ -324,6 +324,50 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  CreateBusinessReportSchedule
+
+
+        /// <summary>
+        /// Creates a recurring schedule for usage reports to deliver to the specified S3 location
+        /// with a specified daily or weekly interval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the CreateBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        CreateBusinessReportScheduleResponse CreateBusinessReportSchedule(CreateBusinessReportScheduleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBusinessReportSchedule operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBusinessReportSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        IAsyncResult BeginCreateBusinessReportSchedule(CreateBusinessReportScheduleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBusinessReportSchedule.</param>
+        /// 
+        /// <returns>Returns a  CreateBusinessReportScheduleResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        CreateBusinessReportScheduleResponse EndCreateBusinessReportSchedule(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateConferenceProvider
 
 
@@ -649,6 +693,52 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  DeleteAddressBookResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
         DeleteAddressBookResponse EndDeleteAddressBook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteBusinessReportSchedule
+
+
+        /// <summary>
+        /// Deletes the recurring report delivery schedule with the specified schedule ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        DeleteBusinessReportScheduleResponse DeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBusinessReportSchedule operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBusinessReportSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        IAsyncResult BeginDeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBusinessReportSchedule.</param>
+        /// 
+        /// <returns>Returns a  DeleteBusinessReportScheduleResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        DeleteBusinessReportScheduleResponse EndDeleteBusinessReportSchedule(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1669,6 +1759,46 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  GetSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">REST API Reference for GetSkillGroup Operation</seealso>
         GetSkillGroupResponse EndGetSkillGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListBusinessReportSchedules
+
+
+        /// <summary>
+        /// Lists the details of the schedules that a user configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessReportSchedules service method.</param>
+        /// 
+        /// <returns>The response from the ListBusinessReportSchedules service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        ListBusinessReportSchedulesResponse ListBusinessReportSchedules(ListBusinessReportSchedulesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBusinessReportSchedules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessReportSchedules operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBusinessReportSchedules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        IAsyncResult BeginListBusinessReportSchedules(ListBusinessReportSchedulesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBusinessReportSchedules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBusinessReportSchedules.</param>
+        /// 
+        /// <returns>Returns a  ListBusinessReportSchedulesResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        ListBusinessReportSchedulesResponse EndListBusinessReportSchedules(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2834,6 +2964,53 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  UpdateAddressBookResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
         UpdateAddressBookResponse EndUpdateAddressBook(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateBusinessReportSchedule
+
+
+        /// <summary>
+        /// Updates the configuration of the report delivery schedule with the specified schedule
+        /// ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        UpdateBusinessReportScheduleResponse UpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBusinessReportSchedule operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBusinessReportSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        IAsyncResult BeginUpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBusinessReportSchedule.</param>
+        /// 
+        /// <returns>Returns a  UpdateBusinessReportScheduleResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        UpdateBusinessReportScheduleResponse EndUpdateBusinessReportSchedule(IAsyncResult asyncResult);
 
         #endregion
         

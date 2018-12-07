@@ -59,6 +59,32 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateBusinessReportScheduleRequest.ClientRequestToken</property>
+    <min>10</min>
+    <max>150</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateBusinessReportScheduleRequest.S3BucketName</property>
+    <pattern>[a-z0-9-\.]{3,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateBusinessReportScheduleRequest.S3KeyPrefix</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9!_\-\.\*'()/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateBusinessReportScheduleRequest.ScheduleName</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.CreateBusinessReportScheduleResponse.ScheduleArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.CreateConferenceProviderRequest.ClientRequestToken</property>
     <min>10</min>
     <max>150</max>
@@ -222,6 +248,10 @@
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.DeleteBusinessReportScheduleRequest.ScheduleArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.DeleteConferenceProviderRequest.ConferenceProviderArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -347,6 +377,21 @@
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.GetSkillGroupRequest.SkillGroupArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListBusinessReportSchedulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListBusinessReportSchedulesRequest.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.ListBusinessReportSchedulesResponse.NextToken</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.ListConferenceProvidersRequest.MaxResults</property>
@@ -690,6 +735,26 @@
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateBusinessReportScheduleRequest.S3BucketName</property>
+    <pattern>[a-z0-9-\.]{3,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateBusinessReportScheduleRequest.S3KeyPrefix</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9!_\-\.\*'()/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateBusinessReportScheduleRequest.ScheduleArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.UpdateBusinessReportScheduleRequest.ScheduleName</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AlexaForBusiness.Model.UpdateConferenceProviderRequest.ConferenceProviderArn</property>
     <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
   </property-value-rule>
@@ -820,6 +885,34 @@
     <property>Amazon.AlexaForBusiness.Model.AddressBookData.Name</property>
     <min>1</min>
     <max>100</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.BusinessReportRecurrence.StartDate</property>
+    <pattern>^\d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.BusinessReportS3Location.BucketName</property>
+    <pattern>[a-z0-9-\.]{3,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.BusinessReportSchedule.S3BucketName</property>
+    <pattern>[a-z0-9-\.]{3,63}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.BusinessReportSchedule.S3KeyPrefix</property>
+    <min>0</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9!_\-\.\*'()/]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.BusinessReportSchedule.ScheduleArn</property>
+    <pattern>arn:[a-z0-9-\.]{1,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[a-z0-9-\.]{0,63}:[^/].{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AlexaForBusiness.Model.BusinessReportSchedule.ScheduleName</property>
+    <min>0</min>
+    <max>64</max>
     <pattern>[\u0009\u000A\u000D\u0020-\u007E\u0085\u00A0-\uD7FF\uE000-\uFFFD\u10000-\u10FFFF]*</pattern>
   </property-value-rule>
   <property-value-rule>

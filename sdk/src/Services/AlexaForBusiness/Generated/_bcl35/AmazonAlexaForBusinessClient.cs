@@ -602,6 +602,63 @@ namespace Amazon.AlexaForBusiness
 
         #endregion
         
+        #region  CreateBusinessReportSchedule
+
+        /// <summary>
+        /// Creates a recurring schedule for usage reports to deliver to the specified S3 location
+        /// with a specified daily or weekly interval.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the CreateBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.AlreadyExistsException">
+        /// The resource being created already exists.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        public virtual CreateBusinessReportScheduleResponse CreateBusinessReportSchedule(CreateBusinessReportScheduleRequest request)
+        {
+            var marshaller = CreateBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = CreateBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateBusinessReportScheduleRequest,CreateBusinessReportScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateBusinessReportSchedule operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBusinessReportSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        public virtual IAsyncResult BeginCreateBusinessReportSchedule(CreateBusinessReportScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = CreateBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateBusinessReportScheduleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateBusinessReportSchedule.</param>
+        /// 
+        /// <returns>Returns a  CreateBusinessReportScheduleResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        public virtual CreateBusinessReportScheduleResponse EndCreateBusinessReportSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateBusinessReportScheduleResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateConferenceProvider
 
         /// <summary>
@@ -1017,6 +1074,65 @@ namespace Amazon.AlexaForBusiness
         public virtual DeleteAddressBookResponse EndDeleteAddressBook(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteAddressBookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteBusinessReportSchedule
+
+        /// <summary>
+        /// Deletes the recurring report delivery schedule with the specified schedule ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        public virtual DeleteBusinessReportScheduleResponse DeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request)
+        {
+            var marshaller = DeleteBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = DeleteBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteBusinessReportScheduleRequest,DeleteBusinessReportScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBusinessReportSchedule operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBusinessReportSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        public virtual IAsyncResult BeginDeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = DeleteBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteBusinessReportScheduleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteBusinessReportSchedule.</param>
+        /// 
+        /// <returns>Returns a  DeleteBusinessReportScheduleResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        public virtual DeleteBusinessReportScheduleResponse EndDeleteBusinessReportSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteBusinessReportScheduleResponse>(asyncResult);
         }
 
         #endregion
@@ -2336,6 +2452,59 @@ namespace Amazon.AlexaForBusiness
         public virtual GetSkillGroupResponse EndGetSkillGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<GetSkillGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListBusinessReportSchedules
+
+        /// <summary>
+        /// Lists the details of the schedules that a user configured.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessReportSchedules service method.</param>
+        /// 
+        /// <returns>The response from the ListBusinessReportSchedules service method, as returned by AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        public virtual ListBusinessReportSchedulesResponse ListBusinessReportSchedules(ListBusinessReportSchedulesRequest request)
+        {
+            var marshaller = ListBusinessReportSchedulesRequestMarshaller.Instance;
+            var unmarshaller = ListBusinessReportSchedulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListBusinessReportSchedulesRequest,ListBusinessReportSchedulesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListBusinessReportSchedules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListBusinessReportSchedules operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBusinessReportSchedules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        public virtual IAsyncResult BeginListBusinessReportSchedules(ListBusinessReportSchedulesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListBusinessReportSchedulesRequestMarshaller.Instance;
+            var unmarshaller = ListBusinessReportSchedulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListBusinessReportSchedulesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListBusinessReportSchedules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListBusinessReportSchedules.</param>
+        /// 
+        /// <returns>Returns a  ListBusinessReportSchedulesResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        public virtual ListBusinessReportSchedulesResponse EndListBusinessReportSchedules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListBusinessReportSchedulesResponse>(asyncResult);
         }
 
         #endregion
@@ -3852,6 +4021,66 @@ namespace Amazon.AlexaForBusiness
         public virtual UpdateAddressBookResponse EndUpdateAddressBook(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateAddressBookResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateBusinessReportSchedule
+
+        /// <summary>
+        /// Updates the configuration of the report delivery schedule with the specified schedule
+        /// ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBusinessReportSchedule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateBusinessReportSchedule service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
+        /// The resource is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        public virtual UpdateBusinessReportScheduleResponse UpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request)
+        {
+            var marshaller = UpdateBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = UpdateBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateBusinessReportScheduleRequest,UpdateBusinessReportScheduleResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateBusinessReportSchedule operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBusinessReportSchedule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        public virtual IAsyncResult BeginUpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateBusinessReportScheduleRequestMarshaller.Instance;
+            var unmarshaller = UpdateBusinessReportScheduleResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateBusinessReportScheduleRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateBusinessReportSchedule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateBusinessReportSchedule.</param>
+        /// 
+        /// <returns>Returns a  UpdateBusinessReportScheduleResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        public virtual UpdateBusinessReportScheduleResponse EndUpdateBusinessReportSchedule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateBusinessReportScheduleResponse>(asyncResult);
         }
 
         #endregion
