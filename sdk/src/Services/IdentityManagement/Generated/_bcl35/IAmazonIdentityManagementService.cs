@@ -135,8 +135,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -180,14 +180,14 @@ namespace Amazon.IdentityManagement
         /// can contain only one role, and this limit cannot be increased. You can remove the
         /// existing role and then add a different role to an instance profile. You must then
         /// wait for the change to appear across all of AWS because of <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
-        /// consistency</a>. To force the change, you must <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate
-        /// the instance profile</a> and then <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate
+        /// consistency</a>. To force the change, you must <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate
+        /// the instance profile</a> and then <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate
         /// the instance profile</a>, or you can stop your instance and then restart it.
         /// 
         ///  <note> 
         /// <para>
         /// The caller of this API must be granted the <code>PassRole</code> permission on the
-        /// IAM role by a permission policy.
+        /// IAM role by a permissions policy.
         /// </para>
         ///  </note> 
         /// <para>
@@ -207,8 +207,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -264,8 +264,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -330,8 +330,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
         /// The request failed because AWS service role policies can only be attached to the service-linked
@@ -404,8 +404,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
         /// The request failed because AWS service role policies can only be attached to the service-linked
@@ -480,8 +480,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
         /// The request failed because AWS service role policies can only be attached to the service-linked
@@ -552,8 +552,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PasswordPolicyViolationException">
         /// The request was rejected because the provided password did not meet the requirements
@@ -603,8 +603,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this operation works for access
-        /// keys under the AWS account, you can use this operation to manage AWS account root
+        /// the AWS access key ID signing the request. This operation works for access keys under
+        /// the AWS account. Consequently, you can use this operation to manage AWS account root
         /// user credentials. This is true even if the AWS account has no associated users.
         /// </para>
         ///  
@@ -628,8 +628,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -644,8 +644,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this operation works for access
-        /// keys under the AWS account, you can use this operation to manage AWS account root
+        /// the AWS access key ID signing the request. This operation works for access keys under
+        /// the AWS account. Consequently, you can use this operation to manage AWS account root
         /// user credentials. This is true even if the AWS account has no associated users.
         /// </para>
         ///  
@@ -670,8 +670,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -782,8 +782,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -897,8 +897,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PasswordPolicyViolationException">
         /// The request was rejected because the provided password did not meet the requirements
@@ -1136,8 +1136,8 @@ namespace Amazon.IdentityManagement
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1352,8 +1352,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1425,8 +1425,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceNotSupportedException">
         /// The specified service does not support service-specific credentials.
@@ -1494,8 +1494,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1608,8 +1608,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// For more information about creating and working with virtual MFA devices, go to <a
-        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using
-        /// a Virtual MFA Device</a> in the <i>IAM User Guide</i>.
+        /// href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Enabling
+        /// a Virtual Multi-factor Authentication (MFA) Device</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateMFADevice service method.</param>
@@ -1626,8 +1626,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1672,8 +1672,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this operation works for access
-        /// keys under the AWS account, you can use this operation to manage AWS account root
+        /// the AWS access key ID signing the request. This operation works for access keys under
+        /// the AWS account. Consequently, you can use this operation to manage AWS account root
         /// user credentials even if the AWS account has no associated users.
         /// </para>
         /// </summary>
@@ -1685,8 +1685,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1738,8 +1738,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1788,8 +1788,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1808,8 +1808,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1864,8 +1864,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1923,8 +1923,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1991,8 +1991,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2038,7 +2038,7 @@ namespace Amazon.IdentityManagement
         ///  <important> 
         /// <para>
         ///  Deleting a user's password does not prevent a user from accessing AWS through the
-        /// command line interface or the API. To prevent all user access you must also either
+        /// command line interface or the API. To prevent all user access, you must also either
         /// make any access keys inactive or delete them. For more information about making keys
         /// inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
         /// 
@@ -2059,8 +2059,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2122,8 +2122,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2168,8 +2168,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Before you can delete a managed policy, you must first detach the policy from all
-        /// users, groups, and roles that it is attached to. In addition you must delete all the
-        /// policy's versions. The following steps describe the process for deleting a managed
+        /// users, groups, and roles that it is attached to. In addition, you must delete all
+        /// the policy's versions. The following steps describe the process for deleting a managed
         /// policy:
         /// </para>
         ///  <ul> <li> 
@@ -2213,8 +2213,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2284,8 +2284,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2353,8 +2353,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2414,8 +2414,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the DeleteRolePermissionsBoundary service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2479,8 +2479,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2553,8 +2553,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2626,8 +2626,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2699,8 +2699,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2746,8 +2746,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the DeleteServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteServiceSpecificCredential">REST API Reference for DeleteServiceSpecificCredential Operation</seealso>
         DeleteServiceSpecificCredentialResponse DeleteServiceSpecificCredential(DeleteServiceSpecificCredentialRequest request);
@@ -2789,8 +2789,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this operation works for access
-        /// keys under the AWS account, you can use this operation to manage AWS account root
+        /// the AWS access key ID signing the request. This operation works for access keys under
+        /// the AWS account. Consequently, you can use this operation to manage AWS account root
         /// user credentials even if the AWS account has no associated IAM users.
         /// </para>
         /// </summary>
@@ -2802,8 +2802,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2857,8 +2857,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the DeleteSSHPublicKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/DeleteSSHPublicKey">REST API Reference for DeleteSSHPublicKey Operation</seealso>
         DeleteSSHPublicKeyResponse DeleteSSHPublicKey(DeleteSSHPublicKeyRequest request);
@@ -2896,7 +2896,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deletes the specified IAM user. The user must not belong to any groups or have any
-        /// access keys, signing certificates, or attached policies.
+        /// access keys, signing certificates, MFA devices enabled for AWS, or attached policies.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
@@ -2914,8 +2914,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2968,8 +2968,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the DeleteUserPermissionsBoundary service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3027,8 +3027,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3089,8 +3089,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3151,8 +3151,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3213,8 +3213,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3281,8 +3281,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3347,8 +3347,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3450,6 +3450,116 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GenerateServiceLastAccessedDetails
+
+
+        /// <summary>
+        /// Generates a request for a report that includes details about when an IAM resource
+        /// (user, group, role, or policy) was last used in an attempt to access AWS services.
+        /// Recent activity usually appears within four hours. IAM reports activity for the last
+        /// 365 days, or less if your region began supporting this feature within the last year.
+        /// For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions
+        /// Where Data Is Tracked</a>.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The service last accessed data includes all attempts to access an AWS API, not just
+        /// the successful ones. This includes all attempts that were made using the AWS Management
+        /// Console, the AWS API through any of the SDKs, or any of the command line tools. An
+        /// unexpected entry in the service last accessed data does not mean that your account
+        /// has been compromised, because the request might have been denied. Refer to your CloudTrail
+        /// logs as the authoritative source for information about all API calls and whether they
+        /// were successful or denied access. For more information, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html">Logging
+        /// IAM Events with CloudTrail</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// The <code>GenerateServiceLastAccessedDetails</code> operation returns a <code>JobId</code>.
+        /// Use this parameter in the following operations to retrieve the following details from
+        /// your report: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a>GetServiceLastAccessedDetails</a> – Use this operation for users, groups, roles,
+        /// or policies to list every AWS service that the resource could access using permissions
+        /// policies. For each service, the response includes information about the most recent
+        /// access attempt. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a>GetServiceLastAccessedDetailsWithEntities</a> – Use this operation for groups
+        /// and policies to list information about the associated entities (users or roles) that
+        /// attempted to access a specific AWS service. 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To check the status of the <code>GenerateServiceLastAccessedDetails</code> request,
+        /// use the <code>JobId</code> parameter in the same operations and test the <code>JobStatus</code>
+        /// response parameter.
+        /// </para>
+        ///  
+        /// <para>
+        /// For additional information about the permissions policies that allow an identity (user,
+        /// group, or role) to access specific services, use the <a>ListPoliciesGrantingServiceAccess</a>
+        /// operation.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Service last accessed data does not use other policy types when determining whether
+        /// a resource could access a service. These other policy types include resource-based
+        /// policies, access control lists, AWS Organizations policies, IAM permissions boundaries,
+        /// and AWS STS assume role policies. It only applies permissions policy logic. For more
+        /// about the evaluation of policy types, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information about service last accessed data, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html">Reducing
+        /// Policy Scope by Viewing User Activity</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GenerateServiceLastAccessedDetails service method.</param>
+        /// 
+        /// <returns>The response from the GenerateServiceLastAccessedDetails service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateServiceLastAccessedDetails">REST API Reference for GenerateServiceLastAccessedDetails Operation</seealso>
+        GenerateServiceLastAccessedDetailsResponse GenerateServiceLastAccessedDetails(GenerateServiceLastAccessedDetailsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateServiceLastAccessedDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateServiceLastAccessedDetails operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGenerateServiceLastAccessedDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateServiceLastAccessedDetails">REST API Reference for GenerateServiceLastAccessedDetails Operation</seealso>
+        IAsyncResult BeginGenerateServiceLastAccessedDetails(GenerateServiceLastAccessedDetailsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GenerateServiceLastAccessedDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGenerateServiceLastAccessedDetails.</param>
+        /// 
+        /// <returns>Returns a  GenerateServiceLastAccessedDetailsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateServiceLastAccessedDetails">REST API Reference for GenerateServiceLastAccessedDetails Operation</seealso>
+        GenerateServiceLastAccessedDetailsResponse EndGenerateServiceLastAccessedDetails(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetAccessKeyLastUsed
 
 
@@ -3462,8 +3572,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetAccessKeyLastUsed service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccessKeyLastUsed">REST API Reference for GetAccessKeyLastUsed Operation</seealso>
         GetAccessKeyLastUsedResponse GetAccessKeyLastUsed(GetAccessKeyLastUsedRequest request);
@@ -3567,8 +3677,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3585,8 +3695,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -3806,8 +3916,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(string policySourceArn);
@@ -3847,8 +3957,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(string policySourceArn, List<string> policyInputList);
@@ -3887,8 +3997,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         GetContextKeysForPrincipalPolicyResponse GetContextKeysForPrincipalPolicy(GetContextKeysForPrincipalPolicyRequest request);
@@ -4016,8 +4126,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetGroup service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4085,8 +4195,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetGroupPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4135,8 +4245,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetInstanceProfile service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4184,8 +4294,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetLoginProfile service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4236,8 +4346,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4304,8 +4414,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4385,8 +4495,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4445,8 +4555,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetRole service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4518,8 +4628,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetRolePolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4577,8 +4687,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4631,8 +4741,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetServerCertificate service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4668,6 +4778,181 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetServiceLastAccessedDetails
+
+
+        /// <summary>
+        /// After you generate a user, group, role, or policy report using the <code>GenerateServiceLastAccessedDetails</code>
+        /// operation, you can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetails</code>.
+        /// This operation retrieves the status of your report job and a list of AWS services
+        /// that the resource (user, group, role, or managed policy) can access.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Service last accessed data does not use other policy types when determining whether
+        /// a resource could access a service. These other policy types include resource-based
+        /// policies, access control lists, AWS Organizations policies, IAM permissions boundaries,
+        /// and AWS STS assume role policies. It only applies permissions policy logic. For more
+        /// about the evaluation of policy types, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For each service that the resource could access using permissions policies, the operation
+        /// returns details about the most recent access attempt. If there was no attempt, the
+        /// service is listed without details about the most recent attempt to access the service.
+        /// If the operation fails, the <code>GetServiceLastAccessedDetails</code> operation returns
+        /// the reason that it failed.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>GetServiceLastAccessedDetails</code> operation returns a list of services
+        /// that includes the number of entities that have attempted to access the service and
+        /// the date and time of the last attempt. It also returns the ARN of the following entity,
+        /// depending on the resource ARN that you used to generate the report:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>User</b> – Returns the user ARN that you used to generate the report
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Group</b> – Returns the ARN of the group member (user) that last attempted to
+        /// access the service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Role</b> – Returns the role ARN that you used to generate the report
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Policy</b> – Returns the ARN of the user or role that last used the policy to
+        /// attempt to access the service
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// By default, the list is sorted by service namespace.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLastAccessedDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceLastAccessedDetails service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetails">REST API Reference for GetServiceLastAccessedDetails Operation</seealso>
+        GetServiceLastAccessedDetailsResponse GetServiceLastAccessedDetails(GetServiceLastAccessedDetailsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceLastAccessedDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLastAccessedDetails operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceLastAccessedDetails
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetails">REST API Reference for GetServiceLastAccessedDetails Operation</seealso>
+        IAsyncResult BeginGetServiceLastAccessedDetails(GetServiceLastAccessedDetailsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceLastAccessedDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceLastAccessedDetails.</param>
+        /// 
+        /// <returns>Returns a  GetServiceLastAccessedDetailsResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetails">REST API Reference for GetServiceLastAccessedDetails Operation</seealso>
+        GetServiceLastAccessedDetailsResponse EndGetServiceLastAccessedDetails(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetServiceLastAccessedDetailsWithEntities
+
+
+        /// <summary>
+        /// After you generate a group or policy report using the <code>GenerateServiceLastAccessedDetails</code>
+        /// operation, you can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetailsWithEntities</code>.
+        /// This operation retrieves the status of your report job and a list of entities that
+        /// could have used group or policy permissions to access the specified service.
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>Group</b> – For a group report, this operation returns a list of users in the
+        /// group that could have used the group’s policies in an attempt to access the service.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Policy</b> – For a policy report, this operation returns a list of entities (users
+        /// or roles) that could have used the policy in an attempt to access the service.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can also use this operation for user or role reports to retrieve details about
+        /// those entities.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the operation fails, the <code>GetServiceLastAccessedDetailsWithEntities</code>
+        /// operation returns the reason that it failed.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, the list of associated entities is sorted by date, with the most recent
+        /// access listed first.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLastAccessedDetailsWithEntities service method.</param>
+        /// 
+        /// <returns>The response from the GetServiceLastAccessedDetailsWithEntities service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetailsWithEntities">REST API Reference for GetServiceLastAccessedDetailsWithEntities Operation</seealso>
+        GetServiceLastAccessedDetailsWithEntitiesResponse GetServiceLastAccessedDetailsWithEntities(GetServiceLastAccessedDetailsWithEntitiesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceLastAccessedDetailsWithEntities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLastAccessedDetailsWithEntities operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetServiceLastAccessedDetailsWithEntities
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetailsWithEntities">REST API Reference for GetServiceLastAccessedDetailsWithEntities Operation</seealso>
+        IAsyncResult BeginGetServiceLastAccessedDetailsWithEntities(GetServiceLastAccessedDetailsWithEntitiesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetServiceLastAccessedDetailsWithEntities operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetServiceLastAccessedDetailsWithEntities.</param>
+        /// 
+        /// <returns>Returns a  GetServiceLastAccessedDetailsWithEntitiesResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetailsWithEntities">REST API Reference for GetServiceLastAccessedDetailsWithEntities Operation</seealso>
+        GetServiceLastAccessedDetailsWithEntitiesResponse EndGetServiceLastAccessedDetailsWithEntities(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetServiceLinkedRoleDeletionStatus
 
 
@@ -4686,8 +4971,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4741,8 +5026,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetSSHPublicKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnrecognizedPublicKeyEncodingException">
         /// The request was rejected because the public key encoding format is unsupported or
@@ -4795,8 +5080,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetUser service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4818,8 +5103,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetUser service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4886,8 +5171,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetUserPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4928,7 +5213,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the access key IDs associated with the specified IAM user.
-        /// If there are none, the operation returns an empty list.
+        /// If there is none, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -4938,9 +5223,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this operation works
-        /// for access keys under the AWS account, you can use this operation to manage AWS account
-        /// root user credentials even if the AWS account has no associated users.
+        /// based on the AWS access key ID used to sign the request. This operation works for
+        /// access keys under the AWS account. Consequently, you can use this operation to manage
+        /// AWS account root user credentials even if the AWS account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4952,8 +5237,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListAccessKeys service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -4963,7 +5248,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the access key IDs associated with the specified IAM user.
-        /// If there are none, the operation returns an empty list.
+        /// If there is none, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -4973,9 +5258,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this operation works
-        /// for access keys under the AWS account, you can use this operation to manage AWS account
-        /// root user credentials even if the AWS account has no associated users.
+        /// based on the AWS access key ID used to sign the request. This operation works for
+        /// access keys under the AWS account. Consequently, you can use this operation to manage
+        /// AWS account root user credentials even if the AWS account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
@@ -4988,8 +5273,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListAccessKeys service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5113,8 +5398,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5180,8 +5465,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5247,8 +5532,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5312,8 +5597,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5373,8 +5658,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListGroupPolicies service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5492,8 +5777,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListGroupsForUser service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5620,8 +5905,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListInstanceProfilesForRole service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5675,8 +5960,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListMFADevices service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5700,8 +5985,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListMFADevices service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5873,6 +6158,101 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  ListPoliciesGrantingServiceAccess
+
+
+        /// <summary>
+        /// Retrieves a list of policies that the IAM identity (user, group, or role) can use
+        /// to access each specified service.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation does not use other policy types when determining whether a resource
+        /// could access a service. These other policy types include resource-based policies,
+        /// access control lists, AWS Organizations policies, IAM permissions boundaries, and
+        /// AWS STS assume role policies. It only applies permissions policy logic. For more about
+        /// the evaluation of policy types, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+        /// Policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The list of policies returned by the operation depends on the ARN of the identity
+        /// that you provide.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>User</b> – The list of policies includes the managed and inline policies that
+        /// are attached to the user directly. The list also includes any additional managed and
+        /// inline policies that are attached to the group to which the user belongs. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Group</b> – The list of policies includes only the managed and inline policies
+        /// that are attached to the group directly. Policies that are attached to the group’s
+        /// user are not included.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Role</b> – The list of policies includes only the managed and inline policies
+        /// that are attached to the role.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For each managed policy, this operation returns the ARN and policy name. For each
+        /// inline policy, it returns the policy name and the entity to which it is attached.
+        /// Inline policies do not have an ARN. For more information about these policy types,
+        /// see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+        /// Policies and Inline Policies</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Policies that are attached to users and roles as permissions boundaries are not returned.
+        /// To view which managed policy is currently used to set the permissions boundary for
+        /// a user or role, use the <a>GetUser</a> or <a>GetRole</a> operations.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPoliciesGrantingServiceAccess service method.</param>
+        /// 
+        /// <returns>The response from the ListPoliciesGrantingServiceAccess service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesGrantingServiceAccess">REST API Reference for ListPoliciesGrantingServiceAccess Operation</seealso>
+        ListPoliciesGrantingServiceAccessResponse ListPoliciesGrantingServiceAccess(ListPoliciesGrantingServiceAccessRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPoliciesGrantingServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPoliciesGrantingServiceAccess operation on AmazonIdentityManagementServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPoliciesGrantingServiceAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesGrantingServiceAccess">REST API Reference for ListPoliciesGrantingServiceAccess Operation</seealso>
+        IAsyncResult BeginListPoliciesGrantingServiceAccess(ListPoliciesGrantingServiceAccessRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPoliciesGrantingServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPoliciesGrantingServiceAccess.</param>
+        /// 
+        /// <returns>Returns a  ListPoliciesGrantingServiceAccessResult from IdentityManagementService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesGrantingServiceAccess">REST API Reference for ListPoliciesGrantingServiceAccess Operation</seealso>
+        ListPoliciesGrantingServiceAccessResponse EndListPoliciesGrantingServiceAccess(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListPolicyVersions
 
 
@@ -5894,8 +6274,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -5955,8 +6335,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListRolePolicies service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -6074,8 +6454,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListRoleTags service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -6264,7 +6644,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the service-specific credentials associated with the specified
-        /// IAM user. If there are none, the operation returns an empty list. The service-specific
+        /// IAM user. If none exists, the operation returns an empty list. The service-specific
         /// credentials returned by this operation are used only for authenticating the IAM user
         /// to a specific service. For more information about using service-specific credentials
         /// to authenticate to an AWS service, see <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set
@@ -6274,8 +6654,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListServiceSpecificCredentials service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceNotSupportedException">
         /// The specified service does not support service-specific credentials.
@@ -6316,7 +6696,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the signing certificates associated with the specified IAM
-        /// user. If there are none, the operation returns an empty list.
+        /// user. If there none exists, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -6326,8 +6706,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request for this API. Because this
-        /// operation works for access keys under the AWS account, you can use this operation
+        /// based on the AWS access key ID used to sign the request for this API. This operation
+        /// works for access keys under the AWS account. Consequently, you can use this operation
         /// to manage AWS account root user credentials even if the AWS account has no associated
         /// users.
         /// </para>
@@ -6335,8 +6715,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListSigningCertificates service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -6346,7 +6726,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the signing certificates associated with the specified IAM
-        /// user. If there are none, the operation returns an empty list.
+        /// user. If there none exists, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -6356,8 +6736,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request for this API. Because this
-        /// operation works for access keys under the AWS account, you can use this operation
+        /// based on the AWS access key ID used to sign the request for this API. This operation
+        /// works for access keys under the AWS account. Consequently, you can use this operation
         /// to manage AWS account root user credentials even if the AWS account has no associated
         /// users.
         /// </para>
@@ -6366,8 +6746,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListSigningCertificates service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -6408,7 +6788,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the SSH public keys associated with the specified IAM user.
-        /// If there are none, the operation returns an empty list.
+        /// If there none exists, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -6427,8 +6807,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListSSHPublicKeys service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListSSHPublicKeys">REST API Reference for ListSSHPublicKeys Operation</seealso>
         ListSSHPublicKeysResponse ListSSHPublicKeys(ListSSHPublicKeysRequest request);
@@ -6485,8 +6865,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListUserPolicies service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -6604,8 +6984,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListUserTags service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -6747,8 +7127,8 @@ namespace Amazon.IdentityManagement
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -6802,7 +7182,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies used as permissions boundaries do not provide permissions. You must also
         /// attach a permissions policy to the role. To learn how the effective permissions for
-        /// a role are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+        /// a role are evaluated, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
         /// JSON Policy Evaluation Logic</a> in the IAM User Guide. 
         /// </para>
         ///  </important>
@@ -6815,8 +7195,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
         /// The request failed because AWS service role policies can only be attached to the service-linked
@@ -6910,8 +7290,8 @@ namespace Amazon.IdentityManagement
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -6967,7 +7347,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies that are used as permissions boundaries do not provide permissions. You must
         /// also attach a permissions policy to the user. To learn how the effective permissions
-        /// for a user are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
+        /// for a user are evaluated, see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html">IAM
         /// JSON Policy Evaluation Logic</a> in the IAM User Guide. 
         /// </para>
         ///  </important>
@@ -6980,8 +7360,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PolicyNotAttachableException">
         /// The request failed because AWS service role policies can only be attached to the service-linked
@@ -7061,8 +7441,8 @@ namespace Amazon.IdentityManagement
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7119,8 +7499,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7184,8 +7564,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7241,8 +7621,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7290,8 +7670,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ResetServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ResetServiceSpecificCredential">REST API Reference for ResetServiceSpecificCredential Operation</seealso>
         ResetServiceSpecificCredentialResponse ResetServiceSpecificCredential(ResetServiceSpecificCredentialRequest request);
@@ -7349,8 +7729,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7417,8 +7797,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7580,8 +7960,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PolicyEvaluationException">
         /// The request failed because a provided policy could not be successfully evaluated.
@@ -7686,8 +8066,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7790,8 +8170,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7843,8 +8223,8 @@ namespace Amazon.IdentityManagement
         /// simultaneously. Wait a few minutes and submit your request again.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7896,8 +8276,8 @@ namespace Amazon.IdentityManagement
         /// simultaneously. Wait a few minutes and submit your request again.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -7943,9 +8323,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this operation works
-        /// for access keys under the AWS account, you can use this operation to manage AWS account
-        /// root user credentials even if the AWS account has no associated users.
+        /// based on the AWS access key ID used to sign the request. This operation works for
+        /// access keys under the AWS account. Consequently, you can use this operation to manage
+        /// AWS account root user credentials even if the AWS account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -7961,8 +8341,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8030,8 +8410,8 @@ namespace Amazon.IdentityManagement
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8069,8 +8449,8 @@ namespace Amazon.IdentityManagement
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8127,8 +8507,8 @@ namespace Amazon.IdentityManagement
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8205,8 +8585,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8269,8 +8649,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.PasswordPolicyViolationException">
         /// The request was rejected because the provided password did not meet the requirements
@@ -8331,8 +8711,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// Because trust for the OIDC provider is derived from the provider's certificate and
-        /// is validated by the thumbprint, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
+        /// Trust for the OIDC provider is derived from the provider's certificate and is validated
+        /// by the thumbprint. Therefore, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
         /// operation to highly privileged users.
         /// </para>
         ///  </note>
@@ -8345,8 +8725,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8392,8 +8772,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the UpdateRole service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8439,7 +8819,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Use instead.
+        /// Use <a>UpdateRole</a> instead.
         /// 
         ///  
         /// <para>
@@ -8451,8 +8831,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the UpdateRoleDescription service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8519,8 +8899,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8598,8 +8978,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8648,8 +9028,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the UpdateServiceSpecificCredential service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateServiceSpecificCredential">REST API Reference for UpdateServiceSpecificCredential Operation</seealso>
         UpdateServiceSpecificCredentialResponse UpdateServiceSpecificCredential(UpdateServiceSpecificCredentialRequest request);
@@ -8693,9 +9073,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this operation works
-        /// for access keys under the AWS account, you can use this operation to manage AWS account
-        /// root user credentials even if the AWS account has no associated users.
+        /// based on the AWS access key ID used to sign the request. This operation works for
+        /// access keys under the AWS account. Consequently, you can use this operation to manage
+        /// AWS account root user credentials even if the AWS account has no associated users.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSigningCertificate service method.</param>
@@ -8706,8 +9086,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8763,8 +9143,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the UpdateSSHPublicKey service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UpdateSSHPublicKey">REST API Reference for UpdateSSHPublicKey Operation</seealso>
         UpdateSSHPublicKeyResponse UpdateSSHPublicKey(UpdateSSHPublicKeyRequest request);
@@ -8841,8 +9221,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -8888,7 +9268,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// We recommend that you use <a href="https://aws.amazon.com/certificate-manager/">AWS
+        /// We recommend that you use <a href="http://docs.aws.amazon.com/certificate-manager/">AWS
         /// Certificate Manager</a> to provision, manage, and deploy your server certificates.
         /// With ACM you can request a certificate, deploy it to AWS resources, and let ACM handle
         /// certificate renewals for you. Certificates provided by ACM are free. For more information
@@ -8982,9 +9362,10 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the IAM user name is determined
-        /// implicitly based on the AWS access key ID used to sign the request. Because this operation
-        /// works for access keys under the AWS account, you can use this operation to manage
-        /// AWS account root user credentials even if the AWS account has no associated users.
+        /// implicitly based on the AWS access key ID used to sign the request. This operation
+        /// works for access keys under the AWS account. Consequently, you can use this operation
+        /// to manage AWS account root user credentials even if the AWS account has no associated
+        /// users.
         /// </para>
         ///  <note> 
         /// <para>
@@ -9019,8 +9400,8 @@ namespace Amazon.IdentityManagement
         /// message describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -9085,8 +9466,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.UnrecognizedPublicKeyEncodingException">
         /// The request was rejected because the public key encoding format is unsupported or

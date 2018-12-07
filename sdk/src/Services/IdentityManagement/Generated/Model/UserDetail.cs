@@ -146,7 +146,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// For more information about permissions boundaries, see <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
         /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>

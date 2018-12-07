@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the ListSigningCertificates operation.
     /// Returns information about the signing certificates associated with the specified IAM
-    /// user. If there are none, the operation returns an empty list.
+    /// user. If there none exists, the operation returns an empty list.
     /// 
     ///  
     /// <para>
@@ -40,8 +40,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-    /// based on the AWS access key ID used to sign the request for this API. Because this
-    /// operation works for access keys under the AWS account, you can use this operation
+    /// based on the AWS access key ID used to sign the request for this API. This operation
+    /// works for access keys under the AWS account. Consequently, you can use this operation
     /// to manage AWS account root user credentials even if the AWS account has no associated
     /// users.
     /// </para>
@@ -80,16 +80,17 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// (Optional) Use this only when paginating results to indicate the maximum number of
-        /// items you want in the response. If additional items exist beyond the maximum you specify,
-        /// the <code>IsTruncated</code> response element is <code>true</code>.
+        /// Use this only when paginating results to indicate the maximum number of items you
+        /// want in the response. If additional items exist beyond the maximum you specify, the
+        /// <code>IsTruncated</code> response element is <code>true</code>.
         /// </para>
         ///  
         /// <para>
-        /// If you do not include this parameter, it defaults to 100. Note that IAM might return
-        /// fewer results, even when there are more results available. In that case, the <code>IsTruncated</code>
-        /// response element returns <code>true</code> and <code>Marker</code> contains a value
-        /// to include in the subsequent call that tells the service where to continue from.
+        /// If you do not include this parameter, the number of items defaults to 100. Note that
+        /// IAM might return fewer results, even when there are more results available. In that
+        /// case, the <code>IsTruncated</code> response element returns <code>true</code>, and
+        /// <code>Marker</code> contains a value to include in the subsequent call that tells
+        /// the service where to continue from.
         /// </para>
         /// </summary>
         public int MaxItems
@@ -111,9 +112,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: _+=,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

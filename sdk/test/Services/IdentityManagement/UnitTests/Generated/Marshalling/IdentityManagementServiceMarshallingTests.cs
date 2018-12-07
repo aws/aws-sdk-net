@@ -1069,6 +1069,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void GenerateServiceLastAccessedDetailsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GenerateServiceLastAccessedDetails");
+
+            var request = InstantiateClassGenerator.Execute<GenerateServiceLastAccessedDetailsRequest>();
+            var marshaller = new GenerateServiceLastAccessedDetailsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GenerateServiceLastAccessedDetailsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GenerateServiceLastAccessedDetailsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void GetAccessKeyLastUsedMarshallTest()
         {
             var operation = service_model.FindOperation("GetAccessKeyLastUsed");
@@ -1501,6 +1525,54 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void GetServiceLastAccessedDetailsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetServiceLastAccessedDetails");
+
+            var request = InstantiateClassGenerator.Execute<GetServiceLastAccessedDetailsRequest>();
+            var marshaller = new GetServiceLastAccessedDetailsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetServiceLastAccessedDetailsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetServiceLastAccessedDetailsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void GetServiceLastAccessedDetailsWithEntitiesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetServiceLastAccessedDetailsWithEntities");
+
+            var request = InstantiateClassGenerator.Execute<GetServiceLastAccessedDetailsWithEntitiesRequest>();
+            var marshaller = new GetServiceLastAccessedDetailsWithEntitiesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = GetServiceLastAccessedDetailsWithEntitiesResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetServiceLastAccessedDetailsWithEntitiesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void GetServiceLinkedRoleDeletionStatusMarshallTest()
         {
             var operation = service_model.FindOperation("GetServiceLinkedRoleDeletionStatus");
@@ -1924,6 +1996,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
             var response = ListPoliciesResponseUnmarshaller.Instance.Unmarshall(context)
                 as ListPoliciesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
+        public void ListPoliciesGrantingServiceAccessMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListPoliciesGrantingServiceAccess");
+
+            var request = InstantiateClassGenerator.Execute<ListPoliciesGrantingServiceAccessRequest>();
+            var marshaller = new ListPoliciesGrantingServiceAccessRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListPoliciesGrantingServiceAccessResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListPoliciesGrantingServiceAccessResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

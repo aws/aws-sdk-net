@@ -37,7 +37,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SummaryMap. 
         /// <para>
-        /// A set of key value pairs containing information about IAM entity usage and IAM quotas.
+        /// A set of key–value pairs containing information about IAM entity usage and IAM quotas.
         /// </para>
         /// </summary>
         public Dictionary<string, int> SummaryMap

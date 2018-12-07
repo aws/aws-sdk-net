@@ -46,8 +46,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Because trust for the OIDC provider is derived from the provider's certificate and
-    /// is validated by the thumbprint, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
+    /// Trust for the OIDC provider is derived from the provider's certificate and is validated
+    /// by the thumbprint. Therefore, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
     /// operation to highly privileged users.
     /// </para>
     ///  </note>

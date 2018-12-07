@@ -37,9 +37,10 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// If the <code>UserName</code> field is not specified, the IAM user name is determined
-    /// implicitly based on the AWS access key ID used to sign the request. Because this operation
-    /// works for access keys under the AWS account, you can use this operation to manage
-    /// AWS account root user credentials even if the AWS account has no associated users.
+    /// implicitly based on the AWS access key ID used to sign the request. This operation
+    /// works for access keys under the AWS account. Consequently, you can use this operation
+    /// to manage AWS account root user credentials even if the AWS account has no associated
+    /// users.
     /// </para>
     ///  <note> 
     /// <para>
@@ -116,9 +117,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: _+=,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

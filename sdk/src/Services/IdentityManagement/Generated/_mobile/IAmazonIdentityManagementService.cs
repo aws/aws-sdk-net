@@ -240,8 +240,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If you do not specify a user name, IAM determines the user name implicitly based on
-        /// the AWS access key ID signing the request. Because this operation works for access
-        /// keys under the AWS account, you can use this operation to manage AWS account root
+        /// the AWS access key ID signing the request. This operation works for access keys under
+        /// the AWS account. Consequently, you can use this operation to manage AWS account root
         /// user credentials. This is true even if the AWS account has no associated users.
         /// </para>
         ///  
@@ -268,8 +268,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -580,8 +580,8 @@ namespace Amazon.IdentityManagement
         /// AWS account limits. The error message describes the limit exceeded.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1050,6 +1050,23 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  GenerateServiceLastAccessedDetails
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GenerateServiceLastAccessedDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GenerateServiceLastAccessedDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GenerateServiceLastAccessedDetails">REST API Reference for GenerateServiceLastAccessedDetails Operation</seealso>
+        Task<GenerateServiceLastAccessedDetailsResponse> GenerateServiceLastAccessedDetailsAsync(GenerateServiceLastAccessedDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetAccessKeyLastUsed
 
 
@@ -1098,8 +1115,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetAccountPasswordPolicy service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1245,8 +1262,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(string policySourceArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1289,8 +1306,8 @@ namespace Amazon.IdentityManagement
         /// an input parameter.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetContextKeysForPrincipalPolicy">REST API Reference for GetContextKeysForPrincipalPolicy Operation</seealso>
         Task<GetContextKeysForPrincipalPolicyResponse> GetContextKeysForPrincipalPolicyAsync(string policySourceArn, List<string> policyInputList, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1543,6 +1560,40 @@ namespace Amazon.IdentityManagement
 
         #endregion
                 
+        #region  GetServiceLastAccessedDetails
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceLastAccessedDetails operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLastAccessedDetails operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetails">REST API Reference for GetServiceLastAccessedDetails Operation</seealso>
+        Task<GetServiceLastAccessedDetailsResponse> GetServiceLastAccessedDetailsAsync(GetServiceLastAccessedDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetServiceLastAccessedDetailsWithEntities
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetServiceLastAccessedDetailsWithEntities operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceLastAccessedDetailsWithEntities operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetServiceLastAccessedDetailsWithEntities">REST API Reference for GetServiceLastAccessedDetailsWithEntities Operation</seealso>
+        Task<GetServiceLastAccessedDetailsWithEntitiesResponse> GetServiceLastAccessedDetailsWithEntitiesAsync(GetServiceLastAccessedDetailsWithEntitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetServiceLinkedRoleDeletionStatus
 
 
@@ -1596,8 +1647,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the GetUser service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1642,7 +1693,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the access key IDs associated with the specified IAM user.
-        /// If there are none, the operation returns an empty list.
+        /// If there is none, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -1652,9 +1703,9 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request. Because this operation works
-        /// for access keys under the AWS account, you can use this operation to manage AWS account
-        /// root user credentials even if the AWS account has no associated users.
+        /// based on the AWS access key ID used to sign the request. This operation works for
+        /// access keys under the AWS account. Consequently, you can use this operation to manage
+        /// AWS account root user credentials even if the AWS account has no associated users.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1669,8 +1720,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListAccessKeys service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -1946,8 +1997,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListMFADevices service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2035,6 +2086,23 @@ namespace Amazon.IdentityManagement
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPolicies">REST API Reference for ListPolicies Operation</seealso>
         Task<ListPoliciesResponse> ListPoliciesAsync(ListPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPoliciesGrantingServiceAccess
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPoliciesGrantingServiceAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPoliciesGrantingServiceAccess operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListPoliciesGrantingServiceAccess">REST API Reference for ListPoliciesGrantingServiceAccess Operation</seealso>
+        Task<ListPoliciesGrantingServiceAccessResponse> ListPoliciesGrantingServiceAccessAsync(ListPoliciesGrantingServiceAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2235,7 +2303,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns information about the signing certificates associated with the specified IAM
-        /// user. If there are none, the operation returns an empty list.
+        /// user. If there none exists, the operation returns an empty list.
         /// 
         ///  
         /// <para>
@@ -2245,8 +2313,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
-        /// based on the AWS access key ID used to sign the request for this API. Because this
-        /// operation works for access keys under the AWS account, you can use this operation
+        /// based on the AWS access key ID used to sign the request for this API. This operation
+        /// works for access keys under the AWS account. Consequently, you can use this operation
         /// to manage AWS account root user credentials even if the AWS account has no associated
         /// users.
         /// </para>
@@ -2257,8 +2325,8 @@ namespace Amazon.IdentityManagement
         /// 
         /// <returns>The response from the ListSigningCertificates service method, as returned by IdentityManagementService.</returns>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.
@@ -2751,8 +2819,8 @@ namespace Amazon.IdentityManagement
         /// describes the specific error.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
-        /// The request was rejected because it referenced an entity that does not exist. The
-        /// error message describes the entity.
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
         /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
         /// The request processing has failed because of an unknown error, exception or failure.

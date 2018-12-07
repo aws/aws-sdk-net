@@ -123,7 +123,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property MaxSessionDuration. 
         /// <para>
         /// The maximum session duration (in seconds) for the specified role. Anyone who uses
-        /// the AWS CLI or API to assume the role can specify the duration using the optional
+        /// the AWS CLI, or API to assume the role can specify the duration using the optional
         /// <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI parameter.
         /// </para>
         /// </summary>
@@ -165,7 +165,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// For more information about permissions boundaries, see <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
         /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>

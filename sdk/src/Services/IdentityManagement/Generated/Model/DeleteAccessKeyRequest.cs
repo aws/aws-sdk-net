@@ -34,8 +34,8 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// If you do not specify a user name, IAM determines the user name implicitly based on
-    /// the AWS access key ID signing the request. Because this operation works for access
-    /// keys under the AWS account, you can use this operation to manage AWS account root
+    /// the AWS access key ID signing the request. This operation works for access keys under
+    /// the AWS account. Consequently, you can use this operation to manage AWS account root
     /// user credentials even if the AWS account has no associated users.
     /// </para>
     /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteAccessKeyRequest with the parameterized properties
         /// </summary>
-        /// <param name="accessKeyId">The access key ID for the access key ID and secret access key you want to delete. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
+        /// <param name="accessKeyId">The access key ID for the access key ID and secret access key you want to delete. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</param>
         public DeleteAccessKeyRequest(string accessKeyId)
         {
             _accessKeyId = accessKeyId;
@@ -65,8 +65,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters that can consist of any upper or lowercased letter or digit.
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters that can consist of any upper or lowercased letter
+        /// or digit.
         /// </para>
         /// </summary>
         public string AccessKeyId
@@ -88,9 +89,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: _+=,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

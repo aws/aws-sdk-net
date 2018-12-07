@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     ///  <important> 
     /// <para>
     ///  Deleting a user's password does not prevent a user from accessing AWS through the
-    /// command line interface or the API. To prevent all user access you must also either
+    /// command line interface or the API. To prevent all user access, you must also either
     /// make any access keys inactive or delete them. For more information about making keys
     /// inactive or deleting them, see <a>UpdateAccessKey</a> and <a>DeleteAccessKey</a>.
     /// 
@@ -54,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates DeleteLoginProfileRequest with the parameterized properties
         /// </summary>
-        /// <param name="userName">The name of the user whose password you want to delete. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
+        /// <param name="userName">The name of the user whose password you want to delete. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
         public DeleteLoginProfileRequest(string userName)
         {
             _userName = userName;
@@ -67,9 +67,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: _+=,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string UserName

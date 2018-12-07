@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// We recommend that you use <a href="https://aws.amazon.com/certificate-manager/">AWS
+    /// We recommend that you use <a href="http://docs.aws.amazon.com/certificate-manager/">AWS
     /// Certificate Manager</a> to provision, manage, and deploy your server certificates.
     /// With ACM you can request a certificate, deploy it to AWS resources, and let ACM handle
     /// certificate renewals for you. Certificates provided by ACM are free. For more information
@@ -81,7 +81,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Instantiates UploadServerCertificateRequest with the parameterized properties
         /// </summary>
-        /// <param name="serverCertificateName">The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces. This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
+        /// <param name="serverCertificateName">The name for the server certificate. Do not include the path in this value. The name of the certificate cannot contain any spaces. This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</param>
         /// <param name="certificateBody">The contents of the public key certificate in PEM-encoded format. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (\u0020) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF) </li> <li> The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D) </li> </ul></param>
         /// <param name="privateKey">The contents of the private key in PEM-encoded format. The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a string of characters consisting of the following: <ul> <li> Any printable ASCII character ranging from the space character (\u0020) through the end of the ASCII character range </li> <li> The printable characters in the Basic Latin and Latin-1 Supplement character set (through \u00FF) </li> <li> The special characters tab (\u0009), line feed (\u000A), and carriage return (\u000D) </li> </ul></param>
         public UploadServerCertificateRequest(string serverCertificateName, string certificateBody, string privateKey)
@@ -177,7 +177,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// This parameter is optional. If it is not included, it defaults to a slash (/). This
-        /// parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+        /// parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of either a forward slash (/) by itself or a string
         /// that must begin and end with forward slashes. In addition, it can contain any ASCII
         /// character from the ! (\u0021) through the DEL character (\u007F), including most punctuation
@@ -250,9 +250,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: _+=,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public string ServerCertificateName

@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains information about the last time an AWS access key was used.
+    /// Contains information about the last time an AWS access key was used since IAM began
+    /// tracking this information on April 22, 2015.
     /// 
     ///  
     /// <para>
@@ -54,8 +55,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An access key exists but has never been used, at least not since IAM started tracking
-        /// this information on April 22nd, 2015.
+        /// An access key exists but has not been used since IAM began tracking this information.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -78,8 +78,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS region where this access key was most recently used. This field is displays
-        /// "N/A" in the following situations:
+        /// The AWS region where this access key was most recently used. The value for this field
+        /// is "N/A" in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -87,8 +87,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An access key exists but has never been used, at least not since IAM started tracking
-        /// this information on April 22nd, 2015.
+        /// An access key exists but has not been used since IAM began tracking this information.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -115,8 +114,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the AWS service with which this access key was most recently used. This
-        /// field displays "N/A" in the following situations:
+        /// The name of the AWS service with which this access key was most recently used. The
+        /// value of this field is "N/A" in the following situations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -124,8 +123,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An access key exists but has never been used, at least not since IAM started tracking
-        /// this information on April 22nd, 2015.
+        /// An access key exists but has not been used since IAM started tracking this information.
         /// </para>
         ///  </li> <li> 
         /// <para>

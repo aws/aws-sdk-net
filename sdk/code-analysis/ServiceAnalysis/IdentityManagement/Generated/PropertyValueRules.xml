@@ -517,6 +517,16 @@
     <pattern>[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsRequest.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsResponse.JobId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetAccessKeyLastUsedRequest.AccessKeyId</property>
     <min>16</min>
     <max>128</max>
@@ -690,6 +700,56 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest.JobId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsResponse.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest.JobId</property>
+    <min>36</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest.ServiceNamespace</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesResponse.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GetServiceLinkedRoleDeletionStatusRequest.DeletionTaskId</property>
@@ -1048,6 +1108,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPoliciesResponse.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessRequest.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessRequest.Marker</property>
+    <min>1</min>
+    <max>320</max>
+    <pattern>[\u0020-\u00FF]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessResponse.Marker</property>
     <min>1</min>
     <max>320</max>
     <pattern>[\u0020-\u00FF]+</pattern>
@@ -1856,6 +1933,29 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.EntityInfo.Arn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.EntityInfo.Id</property>
+    <min>16</min>
+    <max>128</max>
+    <pattern>[\w]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.EntityInfo.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.EntityInfo.Path</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EvaluationResult.EvalActionName</property>
     <min>3</min>
     <max>128</max>
@@ -1933,6 +2033,12 @@
     <min>1</min>
     <max>512</max>
     <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessEntry.ServiceNamespace</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.LoginProfile.UserName</property>
@@ -2038,6 +2144,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyDetail.PolicyName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PolicyGrantingServiceAccess.EntityName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PolicyGrantingServiceAccess.PolicyArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PolicyGrantingServiceAccess.PolicyName</property>
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
@@ -2205,6 +2328,17 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ServiceLastAccessed.LastAuthenticatedEntity</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.ServiceLastAccessed.ServiceNamespace</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[\w-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServiceSpecificCredential.ServiceSpecificCredentialId</property>

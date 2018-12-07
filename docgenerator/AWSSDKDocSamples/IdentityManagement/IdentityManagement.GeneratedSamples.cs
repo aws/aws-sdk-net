@@ -391,6 +391,20 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             #endregion
         }
 
+        public void IdentityManagementServiceGenerateServiceLastAccessedDetails()
+        {
+            #region generateaccessdata-policy-1541695178514
+
+            var response = client.GenerateServiceLastAccessedDetails(new GenerateServiceLastAccessedDetailsRequest 
+            {
+                Arn = "arn:aws:iam::123456789012:policy/ExamplePolicy1"
+            });
+
+            string jobId = response.JobId;
+
+            #endregion
+        }
+
         public void IdentityManagementServiceGetAccountPasswordPolicy()
         {
             #region 5e4598c7-c425-431f-8af1-19073b3c4a5f
@@ -455,6 +469,43 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             });
 
             Role role = response.Role;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceGetServiceLastAccessedDetails()
+        {
+            #region getserviceaccessdetails-policy-1541696298085
+
+            var response = client.GetServiceLastAccessedDetails(new GetServiceLastAccessedDetailsRequest 
+            {
+                JobId = "examplef-1305-c245-eba4-71fe298bcda7"
+            });
+
+            bool isTruncated = response.IsTruncated;
+            DateTime jobCompletionDate = response.JobCompletionDate;
+            DateTime jobCreationDate = response.JobCreationDate;
+            string jobStatus = response.JobStatus;
+            List<ServiceLastAccessed> servicesLastAccessed = response.ServicesLastAccessed;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceGetServiceLastAccessedDetailsWithEntities()
+        {
+            #region getserviceaccessdetailsentity-policy-1541697621384
+
+            var response = client.GetServiceLastAccessedDetailsWithEntities(new GetServiceLastAccessedDetailsWithEntitiesRequest 
+            {
+                JobId = "examplef-1305-c245-eba4-71fe298bcda7",
+                ServiceNamespace = "iam"
+            });
+
+            List<EntityDetails> entityDetailsList = response.EntityDetailsList;
+            bool isTruncated = response.IsTruncated;
+            DateTime jobCompletionDate = response.JobCompletionDate;
+            DateTime jobCreationDate = response.JobCreationDate;
+            string jobStatus = response.JobStatus;
 
             #endregion
         }
@@ -537,6 +588,25 @@ namespace AWSSDKDocSamples.Amazon.IdentityManagement.Generated
             });
 
             List<Group> groups = response.Groups;
+
+            #endregion
+        }
+
+        public void IdentityManagementServiceListPoliciesGrantingServiceAccess()
+        {
+            #region listpoliciesaccess-user-1541698749508
+
+            var response = client.ListPoliciesGrantingServiceAccess(new ListPoliciesGrantingServiceAccessRequest 
+            {
+                Arn = "arn:aws:iam::123456789012:user/ExampleUser01",
+                ServiceNamespaces = new List<string> {
+                    "iam",
+                    "ec2"
+                }
+            });
+
+            bool isTruncated = response.IsTruncated;
+            List<ListPoliciesGrantingServiceAccessEntry> policiesGrantingServiceAccess = response.PoliciesGrantingServiceAccess;
 
             #endregion
         }

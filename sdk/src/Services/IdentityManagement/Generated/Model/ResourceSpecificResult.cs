@@ -108,8 +108,8 @@ namespace Amazon.IdentityManagement.Model
         /// A list of the statements in the input policies that determine the result for this
         /// part of the simulation. Remember that even if multiple statements allow the operation
         /// on the resource, if <i>any</i> statement denies that operation, then the explicit
-        /// deny overrides any allow, and the deny statement is the only entry included in the
-        /// result.
+        /// deny overrides any allow. In addition, the deny statement is the only entry included
+        /// in the result.
         /// </para>
         /// </summary>
         public List<Statement> MatchedStatements

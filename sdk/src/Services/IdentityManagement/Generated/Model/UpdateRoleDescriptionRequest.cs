@@ -29,7 +29,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRoleDescription operation.
-    /// Use instead.
+    /// Use <a>UpdateRole</a> instead.
     /// 
     ///  
     /// <para>

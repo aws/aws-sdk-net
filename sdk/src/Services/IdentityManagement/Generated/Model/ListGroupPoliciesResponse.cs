@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// request parameter to retrieve more items. Note that IAM might return fewer than the
         /// <code>MaxItems</code> number of results even when there are more results available.
         /// We recommend that you check <code>IsTruncated</code> after every call to ensure that
-        /// you receive all of your results.
+        /// you receive all your results.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -86,9 +86,9 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-        /// a string of characters consisting of upper and lowercase alphanumeric characters with
-        /// no spaces. You can also include any of the following characters: _+=,.@-
+        /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+        /// pattern</a>) a string of characters consisting of upper and lowercase alphanumeric
+        /// characters with no spaces. You can also include any of the following characters: _+=,.@-
         /// </para>
         /// </summary>
         public List<string> PolicyNames

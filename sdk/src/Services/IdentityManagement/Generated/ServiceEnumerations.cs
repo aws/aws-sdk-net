@@ -339,6 +339,60 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type JobStatusType.
+    /// </summary>
+    public class JobStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for JobStatusType
+        /// </summary>
+        public static readonly JobStatusType COMPLETED = new JobStatusType("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for JobStatusType
+        /// </summary>
+        public static readonly JobStatusType FAILED = new JobStatusType("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for JobStatusType
+        /// </summary>
+        public static readonly JobStatusType IN_PROGRESS = new JobStatusType("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JobStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JobStatusType FindValue(string value)
+        {
+            return FindValue<JobStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JobStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PermissionsBoundaryAttachmentType.
     /// </summary>
     public class PermissionsBoundaryAttachmentType : ConstantClass
@@ -432,6 +486,60 @@ namespace Amazon.IdentityManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyEvaluationDecisionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyOwnerEntityType.
+    /// </summary>
+    public class PolicyOwnerEntityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUP for PolicyOwnerEntityType
+        /// </summary>
+        public static readonly PolicyOwnerEntityType GROUP = new PolicyOwnerEntityType("GROUP");
+        /// <summary>
+        /// Constant ROLE for PolicyOwnerEntityType
+        /// </summary>
+        public static readonly PolicyOwnerEntityType ROLE = new PolicyOwnerEntityType("ROLE");
+        /// <summary>
+        /// Constant USER for PolicyOwnerEntityType
+        /// </summary>
+        public static readonly PolicyOwnerEntityType USER = new PolicyOwnerEntityType("USER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyOwnerEntityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyOwnerEntityType FindValue(string value)
+        {
+            return FindValue<PolicyOwnerEntityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyOwnerEntityType(string value)
         {
             return FindValue(value);
         }
@@ -556,6 +664,56 @@ namespace Amazon.IdentityManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicySourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyType.
+    /// </summary>
+    public class PolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INLINE for PolicyType
+        /// </summary>
+        public static readonly PolicyType INLINE = new PolicyType("INLINE");
+        /// <summary>
+        /// Constant MANAGED for PolicyType
+        /// </summary>
+        public static readonly PolicyType MANAGED = new PolicyType("MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyType FindValue(string value)
+        {
+            return FindValue<PolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyType(string value)
         {
             return FindValue(value);
         }

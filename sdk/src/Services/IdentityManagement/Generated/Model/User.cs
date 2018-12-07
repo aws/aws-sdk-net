@@ -128,7 +128,7 @@ namespace Amazon.IdentityManagement.Model
         /// a list of AWS websites that capture a user's last sign-in time, see the <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
         /// Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than once
         /// in a five-minute span, only the first use is returned in this field. If the field
-        /// is null (no value) then it indicates that they never signed in with a password. This
+        /// is null (no value), then it indicates that they never signed in with a password. This
         /// can be because:
         /// </para>
         ///  <ul> <li> 
@@ -138,13 +138,13 @@ namespace Amazon.IdentityManagement.Model
         ///  </li> <li> 
         /// <para>
         /// A password exists but has not been used since IAM started tracking this information
-        /// on October 20th, 2014.
+        /// on October 20, 2014.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A null does not mean that the user <i>never</i> had a password. Also, if the user
-        /// does not currently have a password, but had one in the past, then this field contains
-        /// the date and time the most recent password was used.
+        /// A null valuedoes not mean that the user <i>never</i> had a password. Also, if the
+        /// user does not currently have a password, but had one in the past, then this field
+        /// contains the date and time the most recent password was used.
         /// </para>
         ///  
         /// <para>
@@ -190,7 +190,7 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// For more information about permissions boundaries, see <a href="IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
         /// Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>

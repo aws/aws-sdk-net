@@ -515,6 +515,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GenerateServiceLastAccessedDetails(Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GenerateServiceLastAccessedDetails(Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GenerateServiceLastAccessedDetailsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation generates a report for the policy: ExamplePolicy1
+                </para>
+                <code
+                    title="To generate a service last accessed data report for a policy"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="generateaccessdata-policy-1541695178514" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetAccountPasswordPolicy(Amazon.IdentityManagement.Model.GetAccountPasswordPolicyRequest)" />
             <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetAccountPasswordPolicy(Amazon.IdentityManagement.Model.GetAccountPasswordPolicyRequest)" />
             <member name="T:Amazon.IdentityManagement.Model.GetAccountPasswordPolicyRequest" />
@@ -605,6 +624,44 @@
                     title="To get information about an IAM role"
                     source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
                     region="5b7d03a6-340c-472d-aa77-56425950d8b0" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetServiceLastAccessedDetails(Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetServiceLastAccessedDetails(Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation gets details about the report with the job ID: examplef-1305-c245-eba4-71fe298bcda7
+                </para>
+                <code
+                    title="To get details from a previously-generated report"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="getserviceaccessdetails-policy-1541696298085" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.GetServiceLastAccessedDetailsWithEntities(Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.GetServiceLastAccessedDetailsWithEntities(Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.GetServiceLastAccessedDetailsWithEntitiesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation returns details about the entities that attempted to access the IAM service.
+                </para>
+                <code
+                    title="To get sntity details from a previously-generated report"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="getserviceaccessdetailsentity-policy-1541697621384" />
             </example>
         </value>
     </doc>
@@ -719,6 +776,25 @@
                     title="To list the groups that an IAM user belongs to"
                     source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
                     region="278ec2ee-fc28-4136-83fb-433af0ae46a2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.IdentityManagement.IAmazonIdentityManagementService.ListPoliciesGrantingServiceAccess(Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessRequest)" />
+            <member name="M:Amazon.IdentityManagement.AmazonIdentityManagementServiceClient.ListPoliciesGrantingServiceAccess(Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessRequest)" />
+            <member name="T:Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessRequest" />
+            <member name="T:Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following operation lists policies that allow ExampleUser01 to access IAM or EC2.
+                </para>
+                <code
+                    title="To list policies that allow access to a service"
+                    source=".\AWSSDKDocSamples\IdentityManagement\IdentityManagement.GeneratedSamples.cs"
+                    region="listpoliciesaccess-user-1541698749508" />
             </example>
         </value>
     </doc>
