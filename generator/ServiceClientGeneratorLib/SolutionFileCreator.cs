@@ -211,21 +211,6 @@ namespace ServiceClientGenerator
             // Include solutions that Travis CI can build
             GenerateVS2017Solution("AWSSDK.Net35.Travis.sln", false, true, net35ProjectConfigs);
             GenerateVS2017Solution("AWSSDK.Net45.Travis.sln", false, true, net45ProjectConfigs);
-
-            ICollection<string> projectsForPartialBuild = Options.PartialBuildList;
-            if (projectsForPartialBuild != null && projectsForPartialBuild.Count != 0)
-            {
-                // If we are explicitly rebuilding Core, all service projects must be rebuilt as well.
-                if (projectsForPartialBuild.Contains("Core", StringComparer.InvariantCultureIgnoreCase))
-                {
-                    projectsForPartialBuild = null;
-                }
-
-                GenerateVS2017Solution("Build.Net35.partial.sln", false, false, net35ProjectConfigs, projectsForPartialBuild);
-                GenerateVS2017Solution("Build.Net45.partial.sln", false, false, net45ProjectConfigs, projectsForPartialBuild);
-                GenerateCombinedSolution("Build.PCL.partial.sln", false, pclProjectConfigs, projectsForPartialBuild);
-                GenerateVS2017Solution("Build.CoreCLR.partial.sln", false, false, coreCLRProjectConfigs, projectsForPartialBuild);
-            }
         }
 
         // adds any necessary projects to the collection prior to generating the solution file(s)
@@ -909,74 +894,6 @@ namespace ServiceClientGenerator
                 }
             }
             return depsProjects;
-        }
-        private void GenerateBuildUnitTestSolution(string solutionFileName, IEnumerable<ProjectFileConfiguration> projectFileConfigurations, ICollection<string> serviceProjectsForPartialBuild = null)
-        {
-            var buildConfigurations = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-
-            // AllProjects
-            var solutionProjects = new Dictionary<string, ProjectFileCreator.ProjectConfigurationData>();
-
-            // CoreProjects
-            var coreProjects = new List<Project>();
-
-            // TestProjects
-            var testProjects = new List<Project>
-            {
-                GeneratorLibProject
-            };
-            foreach (var pfc in projectFileConfigurations)
-            {
-                var projectType = pfc.Name;
-                var sdkTestsFolder = Path.Combine(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername);
-
-                // Add partial project files
-                var projectTypeWildCard = string.Format("AWSSDK.*.{0}.partial.csproj", pfc.Name);
-                var testFolder = Path.Combine(sdkTestsFolder, GeneratorDriver.UnitTestsSubFoldername);
-                foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
-                {
-                    testProjects.Add(TestProjectFromFile(GeneratorDriver.UnitTestsSubFoldername, projectFile));
-
-                    var projectKey = Path.GetFileNameWithoutExtension(projectFile);
-                    solutionProjects.Add(projectKey, _allProjects[projectKey]);
-                    SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
-                }
-
-                // Add common test project files
-                projectTypeWildCard = string.Format("AWSSDK.*.{0}.csproj", pfc.Name);
-                testFolder = Path.Combine(sdkTestsFolder, GeneratorDriver.CommonTestSubFoldername);
-                foreach (var projectFile in Directory.GetFiles(testFolder, projectTypeWildCard, SearchOption.TopDirectoryOnly))
-                {
-                    testProjects.Add(TestProjectFromFile(GeneratorDriver.CommonTestSubFoldername, projectFile));
-
-                    var projectKey = Path.GetFileNameWithoutExtension(projectFile);
-                    solutionProjects.Add(projectKey, _allProjects[projectKey]);
-                    SelectBuildConfigurationsForProject(projectKey, buildConfigurations);
-                }
-
-                if (projectType.Equals(ProjectTypes.Net35, StringComparison.Ordinal) || projectType.Equals(ProjectTypes.Net45, StringComparison.Ordinal) &&
-                    !solutionProjects.ContainsKey(GeneratorLibProjectName))
-                {
-                    solutionProjects.Add(GeneratorLibProjectName, GeneratorLibProjectConfig);
-                    SelectBuildConfigurationsForProject(GeneratorLibProjectName, buildConfigurations);
-                }
-
-                AddExtraTestProjects(pfc, solutionProjects, testProjects);
-            }
-
-            var configurationsList = buildConfigurations.ToList();
-            configurationsList.Sort();
-
-            var session = new Dictionary<string, object>();
-            session["AllProjects"] = solutionProjects;
-            session["CoreProjects"] = coreProjects;
-            session["ServiceSolutionFolders"] = new List<ServiceSolutionFolder>();
-            session["TestProjects"] = testProjects;
-            session["Configurations"] = configurationsList;
-
-            var generator = new SolutionFileGenerator { Session = session };
-            var content = generator.TransformText();
-            GeneratorDriver.WriteFile(Options.SdkRootFolder, null, "Build.UnitTests.partial.sln", content, true, false);
         }
 
         private void AddExtraTestProjects(ProjectFileConfiguration projectConfig, Dictionary<string, ProjectFileCreator.ProjectConfigurationData> solutionProjects, List<Project> testProjects)

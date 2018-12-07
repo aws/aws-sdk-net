@@ -254,13 +254,6 @@ namespace ServiceClientGenerator
                 Parse = (arguments, argValue) => arguments.ParsedOptions.SelfServiceSigV4Name = argValue,
                 HasValue = true,
                 HelpText = "Sig V4 service signing name."
-            },
-            new ArgDeclaration
-            {
-                OptionName = "partial-build-list",
-                Parse = (arguments, argValue) => arguments.ParsedOptions.PartialBuildList  = argValue.Split(','),
-                HasValue = true,
-                HelpText = "A list of services to rebuild.  If the list contains Core, all services are included in the .partial.sln file."
             }
         };
 

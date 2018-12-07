@@ -675,11 +675,6 @@ namespace ServiceClientGenerator
         {
             Console.WriteLine("Updating unit test project files.");
             creator.Execute(unitTestRoot, serviceConfigurations, false);
-
-            if ((options.PartialBuildList != null) && (options.PartialBuildList.Count() != 0))
-            {
-                creator.Execute(unitTestRoot, serviceConfigurations, true);
-            }
         }
 
         public static void UpdateSolutionFiles(GenerationManifest manifest, GeneratorOptions options)
