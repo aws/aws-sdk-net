@@ -76,9 +76,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The current account setting for the resource name. If <code>ENABLED</code>, then the
+        /// The current account setting for the resource name. If <code>enabled</code>, then the
         /// resource will receive the new Amazon Resource Name (ARN) and resource identifier (ID)
-        /// format. If <code>DISABLED</code>, then the resource will receive the old Amazon Resource
+        /// format. If <code>disabled</code>, then the resource will receive the old Amazon Resource
         /// Name (ARN) and resource identifier (ID) format.
         /// </para>
         /// </summary>

@@ -86,8 +86,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The account setting value for the specified principal ARN. Accepted values are <code>ENABLED</code>
-        /// and <code>DISABLED</code>.
+        /// The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>
+        /// and <code>disabled</code>.
         /// </para>
         /// </summary>
         public string Value
