@@ -28,28 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
-    /// This is the response object from the GetCorsPolicy operation.
+    /// Container for the parameters to the DeleteLifecyclePolicy operation.
+    /// Removes an object lifecycle policy from a container.
     /// </summary>
-    public partial class GetCorsPolicyResponse : AmazonWebServiceResponse
+    public partial class DeleteLifecyclePolicyRequest : AmazonMediaStoreRequest
     {
-        private List<CorsRule> _corsPolicy = new List<CorsRule>();
+        private string _containerName;
 
         /// <summary>
-        /// Gets and sets the property CorsPolicy. 
+        /// Gets and sets the property ContainerName. 
         /// <para>
-        /// The CORS policy assigned to the container.
+        /// The name of the container that holds the object lifecycle policy.
         /// </para>
         /// </summary>
-        public List<CorsRule> CorsPolicy
+        public string ContainerName
         {
-            get { return this._corsPolicy; }
-            set { this._corsPolicy = value; }
+            get { return this._containerName; }
+            set { this._containerName = value; }
         }
 
-        // Check to see if CorsPolicy property is set
-        internal bool IsSetCorsPolicy()
+        // Check to see if ContainerName property is set
+        internal bool IsSetContainerName()
         {
-            return this._corsPolicy != null && this._corsPolicy.Count > 0; 
+            return this._containerName != null;
         }
 
     }

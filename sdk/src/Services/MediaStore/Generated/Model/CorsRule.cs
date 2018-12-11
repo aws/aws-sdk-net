@@ -72,7 +72,7 @@ namespace Amazon.MediaStore.Model
         /// </para>
         ///  
         /// <para>
-        /// Each CORS rule must contain at least one <code>AllowedMethod</code> and one <code>AllowedOrigin</code>
+        /// Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code>
         /// element.
         /// </para>
         /// </summary>
@@ -96,7 +96,7 @@ namespace Amazon.MediaStore.Model
         /// </para>
         ///  
         /// <para>
-        /// Each CORS rule must have at least one <code>AllowedOrigin</code> element. The string
+        /// Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string
         /// value can include only one wildcard character (*), for example, http://*.example.com.
         /// Additionally, you can specify only one wildcard character to allow cross-origin access
         /// for all origins.

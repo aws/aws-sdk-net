@@ -4,37 +4,43 @@
     <property>Amazon.MediaStore.Model.CreateContainerRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DeleteContainerRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DeleteContainerPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DeleteCorsPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.DeleteLifecyclePolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.DescribeContainerRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetContainerPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.GetContainerPolicyResponse.Policy</property>
@@ -46,7 +52,19 @@
     <property>Amazon.MediaStore.Model.GetCorsPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.GetLifecyclePolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.GetLifecyclePolicyResponse.LifecyclePolicy</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.ListContainersRequest.MaxResults</property>
@@ -69,7 +87,7 @@
     <property>Amazon.MediaStore.Model.PutContainerPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.PutContainerPolicyRequest.Policy</property>
@@ -81,7 +99,19 @@
     <property>Amazon.MediaStore.Model.PutCorsPolicyRequest.ContainerName</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.PutLifecyclePolicyRequest.ContainerName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\w-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaStore.Model.PutLifecyclePolicyRequest.LifecyclePolicy</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.ARN</property>
@@ -98,7 +128,7 @@
     <property>Amazon.MediaStore.Model.Container.Name</property>
     <min>1</min>
     <max>255</max>
-    <pattern>\w+</pattern>
+    <pattern>[\w-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaStore.Model.Container.Status</property>

@@ -28,29 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
-    /// This is the response object from the GetCorsPolicy operation.
+    /// This is the response object from the PutLifecyclePolicy operation.
     /// </summary>
-    public partial class GetCorsPolicyResponse : AmazonWebServiceResponse
+    public partial class PutLifecyclePolicyResponse : AmazonWebServiceResponse
     {
-        private List<CorsRule> _corsPolicy = new List<CorsRule>();
-
-        /// <summary>
-        /// Gets and sets the property CorsPolicy. 
-        /// <para>
-        /// The CORS policy assigned to the container.
-        /// </para>
-        /// </summary>
-        public List<CorsRule> CorsPolicy
-        {
-            get { return this._corsPolicy; }
-            set { this._corsPolicy = value; }
-        }
-
-        // Check to see if CorsPolicy property is set
-        internal bool IsSetCorsPolicy()
-        {
-            return this._corsPolicy != null && this._corsPolicy.Count > 0; 
-        }
 
     }
 }

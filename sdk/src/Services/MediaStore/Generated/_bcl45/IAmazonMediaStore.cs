@@ -49,7 +49,7 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the CreateContainer service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
-        /// Resource already exists or is being updated.
+        /// The container that you specified in the request already exists or is being updated.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
@@ -87,10 +87,10 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the DeleteContainer service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
-        /// Resource already exists or is being updated.
+        /// The container that you specified in the request already exists or is being updated.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
-        /// Could not perform an operation on a container that does not exist.
+        /// The container that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
@@ -123,16 +123,16 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the DeleteContainerPolicy service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
-        /// Resource already exists or is being updated.
+        /// The container that you specified in the request already exists or is being updated.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
-        /// Could not perform an operation on a container that does not exist.
+        /// The container that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
-        /// Could not perform an operation on a policy that does not exist.
+        /// The policy that you specified in the request does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteContainerPolicy">REST API Reference for DeleteContainerPolicy Operation</seealso>
         DeleteContainerPolicyResponse DeleteContainerPolicy(DeleteContainerPolicyRequest request);
@@ -170,13 +170,13 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the DeleteCorsPolicy service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
-        /// Resource already exists or is being updated.
+        /// The container that you specified in the request already exists or is being updated.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
-        /// Could not perform an operation on a container that does not exist.
+        /// The container that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.CorsPolicyNotFoundException">
-        /// Could not perform an operation on a policy that does not exist.
+        /// The CORS policy that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
@@ -199,6 +199,45 @@ namespace Amazon.MediaStore
 
         #endregion
         
+        #region  DeleteLifecyclePolicy
+
+
+        /// <summary>
+        /// Removes an object lifecycle policy from a container.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteLifecyclePolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        DeleteLifecyclePolicyResponse DeleteLifecyclePolicy(DeleteLifecyclePolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLifecyclePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy">REST API Reference for DeleteLifecyclePolicy Operation</seealso>
+        Task<DeleteLifecyclePolicyResponse> DeleteLifecyclePolicyAsync(DeleteLifecyclePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeContainer
 
 
@@ -214,7 +253,7 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the DescribeContainer service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
-        /// Could not perform an operation on a container that does not exist.
+        /// The container that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
@@ -249,16 +288,16 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the GetContainerPolicy service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
-        /// Resource already exists or is being updated.
+        /// The container that you specified in the request already exists or is being updated.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
-        /// Could not perform an operation on a container that does not exist.
+        /// The container that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
-        /// Could not perform an operation on a policy that does not exist.
+        /// The policy that you specified in the request does not exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetContainerPolicy">REST API Reference for GetContainerPolicy Operation</seealso>
         GetContainerPolicyResponse GetContainerPolicy(GetContainerPolicyRequest request);
@@ -295,13 +334,13 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the GetCorsPolicy service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
-        /// Resource already exists or is being updated.
+        /// The container that you specified in the request already exists or is being updated.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
-        /// Could not perform an operation on a container that does not exist.
+        /// The container that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.CorsPolicyNotFoundException">
-        /// Could not perform an operation on a policy that does not exist.
+        /// The CORS policy that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
@@ -321,6 +360,45 @@ namespace Amazon.MediaStore
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetCorsPolicy">REST API Reference for GetCorsPolicy Operation</seealso>
         Task<GetCorsPolicyResponse> GetCorsPolicyAsync(GetCorsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetLifecyclePolicy
+
+
+        /// <summary>
+        /// Retrieves the object lifecycle policy that is assigned to a container.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetLifecyclePolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.PolicyNotFoundException">
+        /// The policy that you specified in the request does not exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        GetLifecyclePolicyResponse GetLifecyclePolicy(GetLifecyclePolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetLifecyclePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">REST API Reference for GetLifecyclePolicy Operation</seealso>
+        Task<GetLifecyclePolicyResponse> GetLifecyclePolicyAsync(GetLifecyclePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -388,10 +466,10 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the PutContainerPolicy service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
-        /// Resource already exists or is being updated.
+        /// The container that you specified in the request already exists or is being updated.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
-        /// Could not perform an operation on a container that does not exist.
+        /// The container that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
@@ -436,10 +514,10 @@ namespace Amazon.MediaStore
         /// 
         /// <returns>The response from the PutCorsPolicy service method, as returned by MediaStore.</returns>
         /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
-        /// Resource already exists or is being updated.
+        /// The container that you specified in the request already exists or is being updated.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
-        /// Could not perform an operation on a container that does not exist.
+        /// The container that you specified in the request does not exist.
         /// </exception>
         /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
         /// The service is temporarily unavailable.
@@ -459,6 +537,43 @@ namespace Amazon.MediaStore
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy">REST API Reference for PutCorsPolicy Operation</seealso>
         Task<PutCorsPolicyResponse> PutCorsPolicyAsync(PutCorsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutLifecyclePolicy
+
+
+        /// <summary>
+        /// Writes an object lifecycle policy to a container. If the container already has an
+        /// object lifecycle policy, the service replaces the existing policy with the new policy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutLifecyclePolicy service method, as returned by MediaStore.</returns>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerInUseException">
+        /// The container that you specified in the request already exists or is being updated.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.ContainerNotFoundException">
+        /// The container that you specified in the request does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.MediaStore.Model.InternalServerErrorException">
+        /// The service is temporarily unavailable.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
+        PutLifecyclePolicyResponse PutLifecyclePolicy(PutLifecyclePolicyRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutLifecyclePolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutLifecyclePolicy operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">REST API Reference for PutLifecyclePolicy Operation</seealso>
+        Task<PutLifecyclePolicyResponse> PutLifecyclePolicyAsync(PutLifecyclePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
