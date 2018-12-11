@@ -50,8 +50,8 @@ namespace Amazon.Connect.Model
         /// for identity management. If Amazon Connect is unable to access the existing directory,
         /// you can use the <code>DirectoryUserId</code> to authenticate users. If you include
         /// the parameter, it is assumed that Amazon Connect cannot access the directory. If the
-        /// parameter is not included, the UserIdentityInfo is used to authenticate users from
-        /// your existing directory.
+        /// parameter is not included, the <code>UserIdentityInfo</code> is used to authenticate
+        /// users from your existing directory.
         /// </para>
         ///  
         /// <para>
@@ -154,8 +154,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PhoneConfig. 
         /// <para>
-        /// Specifies the phone settings for the user, including AfterContactWorkTimeLimit, AutoAccept,
-        /// DeskPhoneNumber, and PhoneType.
+        /// Specifies the phone settings for the user, including <code>AfterContactWorkTimeLimit</code>,
+        /// <code>AutoAccept</code>, <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.
         /// </para>
         /// </summary>
         public UserPhoneConfig PhoneConfig
@@ -209,7 +209,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The user name in Amazon Connect for the account to create.
+        /// The user name in Amazon Connect for the account to create. If you are using SAML for
+        /// identity management in your Amazon Connect, the value for <code>Username</code> can
+        /// include up to 64 characters from [a-zA-Z0-9_-.\@]+.
         /// </para>
         /// </summary>
         public string Username

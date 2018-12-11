@@ -37,6 +37,11 @@ namespace Amazon.Connect.Model
     /// If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
     /// action.
     /// </para>
+    ///  
+    /// <para>
+    /// There is a 60 second dialing timeout for this operation. If the call is not connected
+    /// after 60 seconds, the call fails.
+    /// </para>
     /// </summary>
     public partial class StartOutboundVoiceContactRequest : AmazonConnectRequest
     {
@@ -57,8 +62,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// There can be up to 32,768 UTF-8 bytes across all key-value pairs. Attribute keys can
-        /// include only alphanumeric, dash, and underscore characters.
+        /// There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute
+        /// keys can include only alphanumeric, dash, and underscore characters.
         /// </para>
         ///  
         /// <para>

@@ -36,8 +36,22 @@ namespace Amazon.Connect
     /// 
     ///  
     /// <para>
-    /// There is a throttling limit placed on usage of the Amazon Connect operations that
-    /// includes a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+    /// Throttling limits for the Amazon Connect API operations:
+    /// </para>
+    ///  
+    /// <para>
+    /// For the <code>GetMetricData</code> and <code>GetCurrentMetricData</code> operations,
+    /// a RateLimit of 5 per second, and a BurstLimit of 8 per second.
+    /// </para>
+    ///  
+    /// <para>
+    /// For all other operations, a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can request an increase to the throttling limits by submitting a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon
+    /// Connect service limits increase form</a>. You must be signed in to your AWS account
+    /// to access the form.
     /// </para>
     /// </summary>
     public partial interface IAmazonConnect : IAmazonService, IDisposable
@@ -325,6 +339,55 @@ namespace Amazon.Connect
         /// <returns>Returns a  DescribeUserHierarchyStructureResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyStructure">REST API Reference for DescribeUserHierarchyStructure Operation</seealso>
         DescribeUserHierarchyStructureResponse EndDescribeUserHierarchyStructure(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetContactAttributes
+
+
+        /// <summary>
+        /// Retrieves the contact attributes associated with a contact.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetContactAttributes service method.</param>
+        /// 
+        /// <returns>The response from the GetContactAttributes service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed due to an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">REST API Reference for GetContactAttributes Operation</seealso>
+        GetContactAttributesResponse GetContactAttributes(GetContactAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContactAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContactAttributes operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContactAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">REST API Reference for GetContactAttributes Operation</seealso>
+        IAsyncResult BeginGetContactAttributes(GetContactAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetContactAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetContactAttributes.</param>
+        /// 
+        /// <returns>Returns a  GetContactAttributesResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">REST API Reference for GetContactAttributes Operation</seealso>
+        GetContactAttributesResponse EndGetContactAttributes(IAsyncResult asyncResult);
 
         #endregion
         
@@ -746,6 +809,11 @@ namespace Amazon.Connect
         /// <para>
         /// If you are using an IAM account, it must have permission to the <code>connect:StartOutboundVoiceContact</code>
         /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// There is a 60 second dialing timeout for this operation. If the call is not connected
+        /// after 60 seconds, the call fails.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartOutboundVoiceContact service method.</param>

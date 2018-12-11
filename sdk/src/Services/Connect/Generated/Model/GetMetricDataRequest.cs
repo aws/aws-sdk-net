@@ -147,8 +147,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// For each historical metric you include in the request, you must include a <code>Unit</code>
-        /// and a <code>Statistic</code>. 
+        /// You must list each metric to retrieve data for in the request. For each historical
+        /// metric you include in the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
+        /// 
         /// </para>
         ///  
         /// <para>

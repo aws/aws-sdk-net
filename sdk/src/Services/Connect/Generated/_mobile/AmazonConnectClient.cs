@@ -44,8 +44,22 @@ namespace Amazon.Connect
     /// 
     ///  
     /// <para>
-    /// There is a throttling limit placed on usage of the Amazon Connect operations that
-    /// includes a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+    /// Throttling limits for the Amazon Connect API operations:
+    /// </para>
+    ///  
+    /// <para>
+    /// For the <code>GetMetricData</code> and <code>GetCurrentMetricData</code> operations,
+    /// a RateLimit of 5 per second, and a BurstLimit of 8 per second.
+    /// </para>
+    ///  
+    /// <para>
+    /// For all other operations, a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+    /// </para>
+    ///  
+    /// <para>
+    /// You can request an increase to the throttling limits by submitting a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon
+    /// Connect service limits increase form</a>. You must be signed in to your AWS account
+    /// to access the form.
     /// </para>
     /// </summary>
     public partial class AmazonConnectClient : AmazonServiceClient, IAmazonConnect
@@ -406,6 +420,38 @@ namespace Amazon.Connect
             var unmarshaller = DescribeUserHierarchyStructureResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeUserHierarchyStructureRequest,DescribeUserHierarchyStructureResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetContactAttributes
+
+        internal virtual GetContactAttributesResponse GetContactAttributes(GetContactAttributesRequest request)
+        {
+            var marshaller = GetContactAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetContactAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<GetContactAttributesRequest,GetContactAttributesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetContactAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetContactAttributes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">REST API Reference for GetContactAttributes Operation</seealso>
+        public virtual Task<GetContactAttributesResponse> GetContactAttributesAsync(GetContactAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetContactAttributesRequestMarshaller.Instance;
+            var unmarshaller = GetContactAttributesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetContactAttributesRequest,GetContactAttributesResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

@@ -51,7 +51,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property CurrentMetrics. 
         /// <para>
         /// A list of <code>CurrentMetric</code> objects for the metrics to retrieve. Each <code>CurrentMetric</code>
-        /// includes a name of a metric to retrieve and the unit to use for it.
+        /// includes a name of a metric to retrieve and the unit to use for it. You must list
+        /// each metric to retrieve data for in the request.
         /// </para>
         ///  
         /// <para>
@@ -153,7 +154,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// If no <code>Grouping</code> is included in the request, a summary of <code>CurrentMetrics</code>
-        /// is returned. 
+        /// is returned.
         /// </para>
         /// </summary>
         public List<string> Groupings

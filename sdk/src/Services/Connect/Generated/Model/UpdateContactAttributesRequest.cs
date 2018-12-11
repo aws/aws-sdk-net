@@ -67,7 +67,14 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The key-value pairs for the attribute to update.
+        /// Specify a custom key-value pair using an attribute map. The attributes are standard
+        /// Amazon Connect attributes, and can be accessed in contact flows just like any other
+        /// contact attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// There can be up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute
+        /// keys can include only alphanumeric, dash, and underscore characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

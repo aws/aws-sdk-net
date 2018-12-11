@@ -59,7 +59,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The statistic for the metric: SUM, MAX, or SUM.
+        /// The statistic for the metric.
         /// </para>
         /// </summary>
         public Statistic Statistic
@@ -95,7 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit for the metric: COUNT, PERCENT, or SECONDS.
+        /// The unit for the metric.
         /// </para>
         /// </summary>
         public Unit Unit
