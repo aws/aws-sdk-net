@@ -538,6 +538,18 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
+        public void DontReadBasicProfileFromIncompleteName()
+        {
+            // make sure that searching for "basic_pr" gives us nothing because the profile is really named "basic_profile"
+            using (var tester = new SharedCredentialsFileTestFixture(null, BasicProfileConfigText))
+            {
+                CredentialProfile profile = null;
+                Assert.IsFalse(tester.CredentialsFile.TryGetProfile("basic_pr", out profile));
+                Assert.IsNull(profile);
+            }
+        }
+
+        [TestMethod]
         public void ReadBasicProfileConfigInvalidGuid()
         {
             using (var tester = new SharedCredentialsFileTestFixture(null, BasicProfileConfigText.Replace(UniqueKey.ToString(), "blah")))

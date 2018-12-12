@@ -59,7 +59,7 @@ namespace Amazon.Runtime.Internal.Util
 
             if (!hasCredentialsProperties)
             {
-                var credentialSectionNameRegex = new Regex(ProfileMarker + "[ \t]+" + Regex.Escape(sectionName));
+                var credentialSectionNameRegex = new Regex("^" + ProfileMarker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
                 hasCredentialsProperties = this.TryGetSection(credentialSectionNameRegex, out properties);
             }
             return hasCredentialsProperties;
