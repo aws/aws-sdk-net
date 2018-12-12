@@ -288,9 +288,9 @@ namespace Amazon.EKS
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -376,9 +376,9 @@ namespace Amazon.EKS
         /// 
         /// <returns>The response from the DeleteCluster service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
         /// The specified resource is in use.
@@ -461,9 +461,9 @@ namespace Amazon.EKS
         /// 
         /// <returns>The response from the DescribeCluster service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
@@ -520,6 +520,81 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeUpdate
+
+        /// <summary>
+        /// Returns descriptive information about an update against your Amazon EKS cluster.
+        /// 
+        ///  
+        /// <para>
+        /// When the status of the update is <code>Succeeded</code>, the update is complete. If
+        /// an update fails, the status is <code>Failed</code>, and an error detail explains the
+        /// reason for the failure.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUpdate service method.</param>
+        /// 
+        /// <returns>The response from the DescribeUpdate service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
+        public virtual DescribeUpdateResponse DescribeUpdate(DescribeUpdateRequest request)
+        {
+            var marshaller = DescribeUpdateRequestMarshaller.Instance;
+            var unmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUpdateRequest,DescribeUpdateResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUpdate operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
+        public virtual IAsyncResult BeginDescribeUpdate(DescribeUpdateRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeUpdateRequestMarshaller.Instance;
+            var unmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeUpdateRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeUpdate.</param>
+        /// 
+        /// <returns>Returns a  DescribeUpdateResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
+        public virtual DescribeUpdateResponse EndDescribeUpdate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeUpdateResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListClusters
 
         /// <summary>
@@ -529,9 +604,9 @@ namespace Amazon.EKS
         /// 
         /// <returns>The response from the ListClusters service method, as returned by EKS.</returns>
         /// <exception cref="Amazon.EKS.Model.ClientException">
-        /// These errors are usually caused by a client action, such as using an action or resource
-        /// on behalf of a user that doesn't have permissions to use the action or resource, or
-        /// specifying an identifier that is not valid.
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
         /// The specified parameter is invalid. Review the available parameters for the API request.
@@ -583,6 +658,161 @@ namespace Amazon.EKS
         public virtual ListClustersResponse EndListClusters(IAsyncResult asyncResult)
         {
             return EndInvoke<ListClustersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListUpdates
+
+        /// <summary>
+        /// Lists the updates associated with an Amazon EKS cluster in your AWS account, in the
+        /// specified Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListUpdates service method.</param>
+        /// 
+        /// <returns>The response from the ListUpdates service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
+        public virtual ListUpdatesResponse ListUpdates(ListUpdatesRequest request)
+        {
+            var marshaller = ListUpdatesRequestMarshaller.Instance;
+            var unmarshaller = ListUpdatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListUpdatesRequest,ListUpdatesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUpdates operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListUpdates
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
+        public virtual IAsyncResult BeginListUpdates(ListUpdatesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListUpdatesRequestMarshaller.Instance;
+            var unmarshaller = ListUpdatesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListUpdatesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListUpdates.</param>
+        /// 
+        /// <returns>Returns a  ListUpdatesResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
+        public virtual ListUpdatesResponse EndListUpdates(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListUpdatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateClusterVersion
+
+        /// <summary>
+        /// Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues
+        /// to function during the update. The response output includes an update ID that you
+        /// can use to track the status of your cluster update with the <a>DescribeUpdate</a>
+        /// API operation.
+        /// 
+        ///  
+        /// <para>
+        /// Cluster updates are asynchronous, and they should finish within a few minutes. During
+        /// an update, the cluster status moves to <code>UPDATING</code> (this status transition
+        /// is eventually consistent). When the update is complete (either <code>Failed</code>
+        /// or <code>Successful</code>), the cluster status moves to <code>Active</code>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdateClusterVersion service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of a user that doesn't have permissions to use the action or
+        /// resource or specifying an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <a>ListClusters</a>. Amazon EKS clusters are Region-specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
+        public virtual UpdateClusterVersionResponse UpdateClusterVersion(UpdateClusterVersionRequest request)
+        {
+            var marshaller = UpdateClusterVersionRequestMarshaller.Instance;
+            var unmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterVersionRequest,UpdateClusterVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterVersion operation on AmazonEKSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateClusterVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
+        public virtual IAsyncResult BeginUpdateClusterVersion(UpdateClusterVersionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = UpdateClusterVersionRequestMarshaller.Instance;
+            var unmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<UpdateClusterVersionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateClusterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateClusterVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdateClusterVersionResult from EKS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
+        public virtual UpdateClusterVersionResponse EndUpdateClusterVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateClusterVersionResponse>(asyncResult);
         }
 
         #endregion

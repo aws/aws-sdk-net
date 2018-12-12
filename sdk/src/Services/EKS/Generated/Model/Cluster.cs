@@ -83,7 +83,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -101,7 +102,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix epoch time stamp in seconds for when the cluster was created.
+        /// The Unix epoch timestamp in seconds for when the cluster was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -155,7 +156,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PlatformVersion. 
         /// <para>
-        /// The platform version of your Amazon EKS cluster. For more information, see <a href="eks/latest/userguide/platform-versions.html">Platform
+        /// The platform version of your Amazon EKS cluster. For more information, see <a href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
         /// Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         /// </summary>

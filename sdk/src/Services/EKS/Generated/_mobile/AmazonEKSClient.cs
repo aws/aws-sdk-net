@@ -352,6 +352,38 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DescribeUpdate
+
+        internal virtual DescribeUpdateResponse DescribeUpdate(DescribeUpdateRequest request)
+        {
+            var marshaller = DescribeUpdateRequestMarshaller.Instance;
+            var unmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeUpdateRequest,DescribeUpdateResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeUpdate operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">REST API Reference for DescribeUpdate Operation</seealso>
+        public virtual Task<DescribeUpdateResponse> DescribeUpdateAsync(DescribeUpdateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = DescribeUpdateRequestMarshaller.Instance;
+            var unmarshaller = DescribeUpdateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeUpdateRequest,DescribeUpdateResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListClusters
 
         internal virtual ListClustersResponse ListClusters(ListClustersRequest request)
@@ -379,6 +411,70 @@ namespace Amazon.EKS
             var unmarshaller = ListClustersResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListClustersRequest,ListClustersResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListUpdates
+
+        internal virtual ListUpdatesResponse ListUpdates(ListUpdatesRequest request)
+        {
+            var marshaller = ListUpdatesRequestMarshaller.Instance;
+            var unmarshaller = ListUpdatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListUpdatesRequest,ListUpdatesResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListUpdates operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListUpdates operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">REST API Reference for ListUpdates Operation</seealso>
+        public virtual Task<ListUpdatesResponse> ListUpdatesAsync(ListUpdatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListUpdatesRequestMarshaller.Instance;
+            var unmarshaller = ListUpdatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListUpdatesRequest,ListUpdatesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateClusterVersion
+
+        internal virtual UpdateClusterVersionResponse UpdateClusterVersion(UpdateClusterVersionRequest request)
+        {
+            var marshaller = UpdateClusterVersionRequestMarshaller.Instance;
+            var unmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateClusterVersionRequest,UpdateClusterVersionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateClusterVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateClusterVersion operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">REST API Reference for UpdateClusterVersion Operation</seealso>
+        public virtual Task<UpdateClusterVersionResponse> UpdateClusterVersionAsync(UpdateClusterVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateClusterVersionRequestMarshaller.Instance;
+            var unmarshaller = UpdateClusterVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateClusterVersionRequest,UpdateClusterVersionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 

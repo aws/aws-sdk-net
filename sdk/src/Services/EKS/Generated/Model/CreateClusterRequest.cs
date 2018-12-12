@@ -72,7 +72,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Unique, case-sensitive identifier you provide to ensure the idempotency of the request.
+        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.
         /// </para>
         /// </summary>
         public string ClientRequestToken
@@ -113,8 +114,8 @@ namespace Amazon.EKS.Model
         /// information, see <a href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
         /// VPC Considerations</a> and <a href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
         /// Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must specify
-        /// at least two subnets. You may specify up to 5 security groups, but we recommend that
-        /// you use a dedicated security group for your cluster control plane.
+        /// at least two subnets. You may specify up to five security groups, but we recommend
+        /// that you use a dedicated security group for your cluster control plane.
         /// </para>
         /// </summary>
         public VpcConfigRequest ResourcesVpcConfig
