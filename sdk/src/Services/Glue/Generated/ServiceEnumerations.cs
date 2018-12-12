@@ -135,6 +135,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ConnectionPropertyKey CONFIG_FILES = new ConnectionPropertyKey("CONFIG_FILES");
         /// <summary>
+        /// Constant ENCRYPTED_PASSWORD for ConnectionPropertyKey
+        /// </summary>
+        public static readonly ConnectionPropertyKey ENCRYPTED_PASSWORD = new ConnectionPropertyKey("ENCRYPTED_PASSWORD");
+        /// <summary>
         /// Constant HOST for ConnectionPropertyKey
         /// </summary>
         public static readonly ConnectionPropertyKey HOST = new ConnectionPropertyKey("HOST");

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataCatalogEncryptionSettings Object
+    /// Response Unmarshaller for ConnectionPasswordEncryption Object
     /// </summary>  
-    public class DataCatalogEncryptionSettingsUnmarshaller : IUnmarshaller<DataCatalogEncryptionSettings, XmlUnmarshallerContext>, IUnmarshaller<DataCatalogEncryptionSettings, JsonUnmarshallerContext>
+    public class ConnectionPasswordEncryptionUnmarshaller : IUnmarshaller<ConnectionPasswordEncryption, XmlUnmarshallerContext>, IUnmarshaller<ConnectionPasswordEncryption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataCatalogEncryptionSettings IUnmarshaller<DataCatalogEncryptionSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ConnectionPasswordEncryption IUnmarshaller<ConnectionPasswordEncryption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DataCatalogEncryptionSettings Unmarshall(JsonUnmarshallerContext context)
+        public ConnectionPasswordEncryption Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataCatalogEncryptionSettings unmarshalledObject = new DataCatalogEncryptionSettings();
+            ConnectionPasswordEncryption unmarshalledObject = new ConnectionPasswordEncryption();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ConnectionPasswordEncryption", targetDepth))
+                if (context.TestExpression("AwsKmsKeyId", targetDepth))
                 {
-                    var unmarshaller = ConnectionPasswordEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionPasswordEncryption = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AwsKmsKeyId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EncryptionAtRest", targetDepth))
+                if (context.TestExpression("ReturnConnectionPasswordEncrypted", targetDepth))
                 {
-                    var unmarshaller = EncryptionAtRestUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionAtRest = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.ReturnConnectionPasswordEncrypted = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +82,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataCatalogEncryptionSettingsUnmarshaller _instance = new DataCatalogEncryptionSettingsUnmarshaller();        
+        private static ConnectionPasswordEncryptionUnmarshaller _instance = new ConnectionPasswordEncryptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataCatalogEncryptionSettingsUnmarshaller Instance
+        public static ConnectionPasswordEncryptionUnmarshaller Instance
         {
             get
             {

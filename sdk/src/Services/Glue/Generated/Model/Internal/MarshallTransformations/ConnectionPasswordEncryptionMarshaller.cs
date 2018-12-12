@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DataCatalogEncryptionSettings Marshaller
+    /// ConnectionPasswordEncryption Marshaller
     /// </summary>       
-    public class DataCatalogEncryptionSettingsMarshaller : IRequestMarshaller<DataCatalogEncryptionSettings, JsonMarshallerContext> 
+    public class ConnectionPasswordEncryptionMarshaller : IRequestMarshaller<ConnectionPasswordEncryption, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,28 +43,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(DataCatalogEncryptionSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(ConnectionPasswordEncryption requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetConnectionPasswordEncryption())
+            if(requestObject.IsSetAwsKmsKeyId())
             {
-                context.Writer.WritePropertyName("ConnectionPasswordEncryption");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ConnectionPasswordEncryptionMarshaller.Instance;
-                marshaller.Marshall(requestObject.ConnectionPasswordEncryption, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("AwsKmsKeyId");
+                context.Writer.Write(requestObject.AwsKmsKeyId);
             }
 
-            if(requestObject.IsSetEncryptionAtRest())
+            if(requestObject.IsSetReturnConnectionPasswordEncrypted())
             {
-                context.Writer.WritePropertyName("EncryptionAtRest");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EncryptionAtRestMarshaller.Instance;
-                marshaller.Marshall(requestObject.EncryptionAtRest, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("ReturnConnectionPasswordEncrypted");
+                context.Writer.Write(requestObject.ReturnConnectionPasswordEncrypted);
             }
 
         }
@@ -72,7 +62,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>  
-        public readonly static DataCatalogEncryptionSettingsMarshaller Instance = new DataCatalogEncryptionSettingsMarshaller();
+        public readonly static ConnectionPasswordEncryptionMarshaller Instance = new ConnectionPasswordEncryptionMarshaller();
 
     }
 }

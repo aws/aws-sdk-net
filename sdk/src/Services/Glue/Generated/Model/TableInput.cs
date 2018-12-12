@@ -160,6 +160,16 @@ namespace Amazon.Glue.Model
         /// A list of columns by which the table is partitioned. Only primitive types are supported
         /// as partition keys.
         /// </para>
+        ///  
+        /// <para>
+        /// When creating a table used by Athena, and you do not specify any <code>partitionKeys</code>,
+        /// you must at least set the value of <code>partitionKeys</code> to an empty list. For
+        /// example:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"PartitionKeys": []</code> 
+        /// </para>
         /// </summary>
         public List<Column> PartitionKeys
         {

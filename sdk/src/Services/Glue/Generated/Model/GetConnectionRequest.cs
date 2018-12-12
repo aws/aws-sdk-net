@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     public partial class GetConnectionRequest : AmazonGlueRequest
     {
         private string _catalogId;
+        private bool? _hidePassword;
         private string _name;
 
         /// <summary>
@@ -53,6 +54,28 @@ namespace Amazon.Glue.Model
         internal bool IsSetCatalogId()
         {
             return this._catalogId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HidePassword. 
+        /// <para>
+        /// Allow you to retrieve the connection metadata without displaying the password. For
+        /// instance, the AWS Glue console uses this flag to retrieve connections, since the console
+        /// does not display passwords. Set this parameter where the caller may not have permission
+        /// to use the KMS key to decrypt the password, but does have permission to access the
+        /// rest of the connection metadata (that is, the other connection properties).
+        /// </para>
+        /// </summary>
+        public bool HidePassword
+        {
+            get { return this._hidePassword.GetValueOrDefault(); }
+            set { this._hidePassword = value; }
+        }
+
+        // Check to see if HidePassword property is set
+        internal bool IsSetHidePassword()
+        {
+            return this._hidePassword.HasValue; 
         }
 
         /// <summary>

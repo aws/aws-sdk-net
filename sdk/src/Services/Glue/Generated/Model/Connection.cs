@@ -68,6 +68,12 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection
+        /// by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption
+        /// settings, this field stores the key you designate to encrypt the password.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that contains the
         /// JDBC driver to use.
         /// </para>
