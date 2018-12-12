@@ -84,6 +84,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Strategy);
             }
 
+            if(requestObject.IsSetTrainingJobEarlyStoppingType())
+            {
+                context.Writer.WritePropertyName("TrainingJobEarlyStoppingType");
+                context.Writer.Write(requestObject.TrainingJobEarlyStoppingType);
+            }
+
         }
 
         /// <summary>
