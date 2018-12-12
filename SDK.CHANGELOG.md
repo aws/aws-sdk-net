@@ -1,3 +1,16 @@
+### 3.3.425.0 (2018-12-11 23:12 UTC)
+* Connect (3.3.4.0)
+	* This update adds the GetContactAttributes operation to retrieve the attributes associated with a contact.
+* ECS (3.3.21.2)
+	* Documentation updates for Amazon ECS.
+* MediaStore (3.3.2.0)
+	* This release adds Delete Object Lifecycling to AWS MediaStore Containers.
+* Core 3.3.29.14
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.424.0 (2018-12-07 19:57 UTC)
 * AlexaForBusiness (3.3.7.0)
 	* Alexa for Business now allows IT administrators to create ad-hoc or scheduled usage reports, which help customers understand how Alexa is used in their workplace. To learn how to create usage reports, see https://docs.aws.amazon.com/a4b/latest/ag/creating-reports.html

@@ -32,7 +32,7 @@ namespace Amazon.ImportExport
     public partial class AmazonImportExportConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.0.61");
+            InternalSDKUtils.BuildUserAgentString("3.3.0.62");
 
         private string _userAgent = UserAgentString;
 
