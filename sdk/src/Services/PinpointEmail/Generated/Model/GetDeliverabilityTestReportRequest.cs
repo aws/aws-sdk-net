@@ -28,10 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
-    /// An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    /// Container for the parameters to the GetDeliverabilityTestReport operation.
+    /// Retrieve the results of a predictive inbox placement test.
     /// </summary>
-    public partial class PutDedicatedIpInPoolResponse : AmazonWebServiceResponse
+    public partial class GetDeliverabilityTestReportRequest : AmazonPinpointEmailRequest
     {
+        private string _reportId;
+
+        /// <summary>
+        /// Gets and sets the property ReportId. 
+        /// <para>
+        /// A unique string that identifies the predictive inbox placement test.
+        /// </para>
+        /// </summary>
+        public string ReportId
+        {
+            get { return this._reportId; }
+            set { this._reportId = value; }
+        }
+
+        // Check to see if ReportId property is set
+        internal bool IsSetReportId()
+        {
+            return this._reportId != null;
+        }
 
     }
 }

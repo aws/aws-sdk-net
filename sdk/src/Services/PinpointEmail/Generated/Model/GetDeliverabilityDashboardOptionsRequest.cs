@@ -28,9 +28,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
-    /// An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    /// Container for the parameters to the GetDeliverabilityDashboardOptions operation.
+    /// Show the status of the Deliverability dashboard. When the Deliverability dashboard
+    /// is enabled, you gain access to reputation metrics for the domains that you use to
+    /// send email using Amazon Pinpoint. You also gain the ability to perform predictive
+    /// inbox placement tests.
+    /// 
+    ///  
+    /// <para>
+    /// When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00,
+    /// in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable
+    /// the Deliverability dashboard after the first day of a calendar month, AWS prorates
+    /// the monthly charge based on how many days have elapsed in the current calendar month.
+    /// </para>
     /// </summary>
-    public partial class PutDedicatedIpInPoolResponse : AmazonWebServiceResponse
+    public partial class GetDeliverabilityDashboardOptionsRequest : AmazonPinpointEmailRequest
     {
 
     }

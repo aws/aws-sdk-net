@@ -40,9 +40,22 @@ namespace Amazon.PinpointEmail
     /// </para>
     ///  
     /// <para>
-    /// The Amazon Pinpoint API is available in the US East (N. Virginia) Region at the following
-    /// endpoint: <code>email.us-east-1.amazonaws.com</code> 
+    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon)
+    /// and the EU (Ireland) Regions at the following endpoints:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonPinpointEmail : IAmazonService, IDisposable
     {
@@ -92,6 +105,22 @@ namespace Amazon.PinpointEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<CreateDedicatedIpPoolResponse> CreateDedicatedIpPoolAsync(CreateDedicatedIpPoolRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateDeliverabilityTestReport
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDeliverabilityTestReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeliverabilityTestReport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<CreateDeliverabilityTestReportResponse> CreateDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -191,6 +220,22 @@ namespace Amazon.PinpointEmail
 
         #endregion
                 
+        #region  GetBlacklistReports
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlacklistReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlacklistReports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetBlacklistReportsResponse> GetBlacklistReportsAsync(GetBlacklistReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetConfigurationSet
 
 
@@ -255,6 +300,54 @@ namespace Amazon.PinpointEmail
 
         #endregion
                 
+        #region  GetDeliverabilityDashboardOptions
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeliverabilityDashboardOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityDashboardOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDeliverabilityDashboardOptionsResponse> GetDeliverabilityDashboardOptionsAsync(GetDeliverabilityDashboardOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDeliverabilityTestReport
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeliverabilityTestReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityTestReport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDeliverabilityTestReportResponse> GetDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDomainStatisticsReport
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainStatisticsReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainStatisticsReport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<GetDomainStatisticsReportResponse> GetDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetEmailIdentity
 
 
@@ -300,6 +393,22 @@ namespace Amazon.PinpointEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<ListDedicatedIpPoolsResponse> ListDedicatedIpPoolsAsync(ListDedicatedIpPoolsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDeliverabilityTestReports
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeliverabilityTestReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeliverabilityTestReports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<ListDeliverabilityTestReportsResponse> ListDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -444,6 +553,22 @@ namespace Amazon.PinpointEmail
         /// </param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task<PutDedicatedIpWarmupAttributesResponse> PutDedicatedIpWarmupAttributesAsync(PutDedicatedIpWarmupAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutDeliverabilityDashboardOption
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDeliverabilityDashboardOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDeliverabilityDashboardOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task<PutDeliverabilityDashboardOptionResponse> PutDeliverabilityDashboardOptionAsync(PutDeliverabilityDashboardOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

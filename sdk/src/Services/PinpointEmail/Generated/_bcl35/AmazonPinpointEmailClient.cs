@@ -43,9 +43,22 @@ namespace Amazon.PinpointEmail
     /// </para>
     ///  
     /// <para>
-    /// The Amazon Pinpoint API is available in the US East (N. Virginia) Region at the following
-    /// endpoint: <code>email.us-east-1.amazonaws.com</code> 
+    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon)
+    /// and the EU (Ireland) Regions at the following endpoints:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonPinpointEmailClient : AmazonServiceClient, IAmazonPinpointEmail
     {
@@ -455,6 +468,89 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  CreateDeliverabilityTestReport
+
+        /// <summary>
+        /// Create a new predictive inbox placement test. Predictive inbox placement tests can
+        /// help you predict how your messages will be handled by various email providers around
+        /// the world. When you perform a predictive inbox placement test, you provide a sample
+        /// message that contains the content that you plan to send to your customers. Amazon
+        /// Pinpoint then sends that message to special email addresses spread across several
+        /// major email providers. After about 24 hours, the test is complete, and you can use
+        /// the <code>GetDeliverabilityTestReport</code> operation to view the results of the
+        /// test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeliverabilityTestReport service method.</param>
+        /// 
+        /// <returns>The response from the CreateDeliverabilityTestReport service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.AccountSuspendedException">
+        /// The message can't be sent because the account's ability to send email has been permanently
+        /// restricted.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.MailFromDomainNotVerifiedException">
+        /// The message can't be sent because the sending domain isn't verified.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.MessageRejectedException">
+        /// The message can't be sent because it contains invalid content.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.SendingPausedException">
+        /// The message can't be sent because the account's ability to send email is currently
+        /// paused.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        public virtual CreateDeliverabilityTestReportResponse CreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request)
+        {
+            var marshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
+            var unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDeliverabilityTestReportRequest,CreateDeliverabilityTestReportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDeliverabilityTestReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeliverabilityTestReport operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDeliverabilityTestReport
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginCreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
+            var unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateDeliverabilityTestReportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDeliverabilityTestReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDeliverabilityTestReport.</param>
+        /// 
+        /// <returns>Returns a  CreateDeliverabilityTestReportResult from PinpointEmail.</returns>
+        public virtual CreateDeliverabilityTestReportResponse EndCreateDeliverabilityTestReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDeliverabilityTestReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateEmailIdentity
 
         /// <summary>
@@ -844,6 +940,65 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  GetBlacklistReports
+
+        /// <summary>
+        /// Retrieve a list of the blacklists that your dedicated IP addresses appear on.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlacklistReports service method.</param>
+        /// 
+        /// <returns>The response from the GetBlacklistReports service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        public virtual GetBlacklistReportsResponse GetBlacklistReports(GetBlacklistReportsRequest request)
+        {
+            var marshaller = GetBlacklistReportsRequestMarshaller.Instance;
+            var unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlacklistReportsRequest,GetBlacklistReportsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlacklistReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlacklistReports operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetBlacklistReports
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetBlacklistReports(GetBlacklistReportsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetBlacklistReportsRequestMarshaller.Instance;
+            var unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetBlacklistReportsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetBlacklistReports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetBlacklistReports.</param>
+        /// 
+        /// <returns>Returns a  GetBlacklistReportsResult from PinpointEmail.</returns>
+        public virtual GetBlacklistReportsResponse EndGetBlacklistReports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetBlacklistReportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetConfigurationSet
 
         /// <summary>
@@ -1100,6 +1255,195 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  GetDeliverabilityDashboardOptions
+
+        /// <summary>
+        /// Show the status of the Deliverability dashboard. When the Deliverability dashboard
+        /// is enabled, you gain access to reputation metrics for the domains that you use to
+        /// send email using Amazon Pinpoint. You also gain the ability to perform predictive
+        /// inbox placement tests.
+        /// 
+        ///  
+        /// <para>
+        /// When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00,
+        /// in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable
+        /// the Deliverability dashboard after the first day of a calendar month, AWS prorates
+        /// the monthly charge based on how many days have elapsed in the current calendar month.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityDashboardOptions service method.</param>
+        /// 
+        /// <returns>The response from the GetDeliverabilityDashboardOptions service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        public virtual GetDeliverabilityDashboardOptionsResponse GetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request)
+        {
+            var marshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
+            var unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeliverabilityDashboardOptionsRequest,GetDeliverabilityDashboardOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeliverabilityDashboardOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityDashboardOptions operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeliverabilityDashboardOptions
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
+            var unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDeliverabilityDashboardOptionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeliverabilityDashboardOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeliverabilityDashboardOptions.</param>
+        /// 
+        /// <returns>Returns a  GetDeliverabilityDashboardOptionsResult from PinpointEmail.</returns>
+        public virtual GetDeliverabilityDashboardOptionsResponse EndGetDeliverabilityDashboardOptions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDeliverabilityDashboardOptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDeliverabilityTestReport
+
+        /// <summary>
+        /// Retrieve the results of a predictive inbox placement test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityTestReport service method.</param>
+        /// 
+        /// <returns>The response from the GetDeliverabilityTestReport service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        public virtual GetDeliverabilityTestReportResponse GetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request)
+        {
+            var marshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
+            var unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeliverabilityTestReportRequest,GetDeliverabilityTestReportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeliverabilityTestReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityTestReport operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDeliverabilityTestReport
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
+            var unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDeliverabilityTestReportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDeliverabilityTestReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDeliverabilityTestReport.</param>
+        /// 
+        /// <returns>Returns a  GetDeliverabilityTestReportResult from PinpointEmail.</returns>
+        public virtual GetDeliverabilityTestReportResponse EndGetDeliverabilityTestReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDeliverabilityTestReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDomainStatisticsReport
+
+        /// <summary>
+        /// Retrieve inbox placement and engagement rates for the domains that you use to send
+        /// email.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainStatisticsReport service method.</param>
+        /// 
+        /// <returns>The response from the GetDomainStatisticsReport service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        public virtual GetDomainStatisticsReportResponse GetDomainStatisticsReport(GetDomainStatisticsReportRequest request)
+        {
+            var marshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
+            var unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainStatisticsReportRequest,GetDomainStatisticsReportResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainStatisticsReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainStatisticsReport operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDomainStatisticsReport
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginGetDomainStatisticsReport(GetDomainStatisticsReportRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
+            var unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+
+            return BeginInvoke<GetDomainStatisticsReportRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDomainStatisticsReport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDomainStatisticsReport.</param>
+        /// 
+        /// <returns>Returns a  GetDomainStatisticsReportResult from PinpointEmail.</returns>
+        public virtual GetDomainStatisticsReportResponse EndGetDomainStatisticsReport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDomainStatisticsReportResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetEmailIdentity
 
         /// <summary>
@@ -1279,6 +1623,67 @@ namespace Amazon.PinpointEmail
         public virtual ListDedicatedIpPoolsResponse EndListDedicatedIpPools(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDedicatedIpPoolsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDeliverabilityTestReports
+
+        /// <summary>
+        /// Show a list of the predictive inbox placement tests that you've performed, regardless
+        /// of their statuses. For predictive inbox placement tests that are complete, you can
+        /// use the <code>GetDeliverabilityTestReport</code> operation to view the results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDeliverabilityTestReports service method.</param>
+        /// 
+        /// <returns>The response from the ListDeliverabilityTestReports service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        public virtual ListDeliverabilityTestReportsResponse ListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request)
+        {
+            var marshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
+            var unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeliverabilityTestReportsRequest,ListDeliverabilityTestReportsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeliverabilityTestReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeliverabilityTestReports operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeliverabilityTestReports
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
+            var unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ListDeliverabilityTestReportsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDeliverabilityTestReports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDeliverabilityTestReports.</param>
+        /// 
+        /// <returns>Returns a  ListDeliverabilityTestReportsResult from PinpointEmail.</returns>
+        public virtual ListDeliverabilityTestReportsResponse EndListDeliverabilityTestReports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDeliverabilityTestReportsResponse>(asyncResult);
         }
 
         #endregion
@@ -1819,6 +2224,82 @@ namespace Amazon.PinpointEmail
         public virtual PutDedicatedIpWarmupAttributesResponse EndPutDedicatedIpWarmupAttributes(IAsyncResult asyncResult)
         {
             return EndInvoke<PutDedicatedIpWarmupAttributesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PutDeliverabilityDashboardOption
+
+        /// <summary>
+        /// Enable or disable the Deliverability dashboard. When you enable the Deliverability
+        /// dashboard, you gain access to reputation metrics for the domains that you use to send
+        /// email using Amazon Pinpoint. You also gain the ability to perform predictive inbox
+        /// placement tests.
+        /// 
+        ///  
+        /// <para>
+        /// When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00,
+        /// in addition to any other fees that you accrue by using Amazon Pinpoint. If you enable
+        /// the Deliverability dashboard after the first day of a calendar month, we prorate the
+        /// monthly charge based on how many days have elapsed in the current calendar month.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDeliverabilityDashboardOption service method.</param>
+        /// 
+        /// <returns>The response from the PutDeliverabilityDashboardOption service method, as returned by PinpointEmail.</returns>
+        /// <exception cref="Amazon.PinpointEmail.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.LimitExceededException">
+        /// There are too many instances of the specified resource type.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.PinpointEmail.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        public virtual PutDeliverabilityDashboardOptionResponse PutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request)
+        {
+            var marshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
+            var unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+
+            return Invoke<PutDeliverabilityDashboardOptionRequest,PutDeliverabilityDashboardOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDeliverabilityDashboardOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDeliverabilityDashboardOption operation on AmazonPinpointEmailClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDeliverabilityDashboardOption
+        ///         operation.</returns>
+        public virtual IAsyncResult BeginPutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
+            var unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke<PutDeliverabilityDashboardOptionRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutDeliverabilityDashboardOption operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDeliverabilityDashboardOption.</param>
+        /// 
+        /// <returns>Returns a  PutDeliverabilityDashboardOptionResult from PinpointEmail.</returns>
+        public virtual PutDeliverabilityDashboardOptionResponse EndPutDeliverabilityDashboardOption(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PutDeliverabilityDashboardOptionResponse>(asyncResult);
         }
 
         #endregion

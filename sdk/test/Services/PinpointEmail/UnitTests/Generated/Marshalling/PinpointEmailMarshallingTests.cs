@@ -140,6 +140,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("PinpointEmail")]
+        public void CreateDeliverabilityTestReportMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDeliverabilityTestReport");
+
+            var request = InstantiateClassGenerator.Execute<CreateDeliverabilityTestReportRequest>();
+            var marshaller = new CreateDeliverabilityTestReportRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateDeliverabilityTestReport", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as CreateDeliverabilityTestReportResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
         public void CreateEmailIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("CreateEmailIdentity");
@@ -332,6 +364,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("PinpointEmail")]
+        public void GetBlacklistReportsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBlacklistReports");
+
+            var request = InstantiateClassGenerator.Execute<GetBlacklistReportsRequest>();
+            var marshaller = new GetBlacklistReportsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetBlacklistReports", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetBlacklistReportsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
         public void GetConfigurationSetMarshallTest()
         {
             var operation = service_model.FindOperation("GetConfigurationSet");
@@ -460,6 +524,102 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("PinpointEmail")]
+        public void GetDeliverabilityDashboardOptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDeliverabilityDashboardOptions");
+
+            var request = InstantiateClassGenerator.Execute<GetDeliverabilityDashboardOptionsRequest>();
+            var marshaller = new GetDeliverabilityDashboardOptionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetDeliverabilityDashboardOptions", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDeliverabilityDashboardOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
+        public void GetDeliverabilityTestReportMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDeliverabilityTestReport");
+
+            var request = InstantiateClassGenerator.Execute<GetDeliverabilityTestReportRequest>();
+            var marshaller = new GetDeliverabilityTestReportRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetDeliverabilityTestReport", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDeliverabilityTestReportResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
+        public void GetDomainStatisticsReportMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDomainStatisticsReport");
+
+            var request = InstantiateClassGenerator.Execute<GetDomainStatisticsReportRequest>();
+            var marshaller = new GetDomainStatisticsReportRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetDomainStatisticsReport", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as GetDomainStatisticsReportResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
         public void GetEmailIdentityMarshallTest()
         {
             var operation = service_model.FindOperation("GetEmailIdentity");
@@ -548,6 +708,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as ListDedicatedIpPoolsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
+        public void ListDeliverabilityTestReportsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDeliverabilityTestReports");
+
+            var request = InstantiateClassGenerator.Execute<ListDeliverabilityTestReportsRequest>();
+            var marshaller = new ListDeliverabilityTestReportsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListDeliverabilityTestReports", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as ListDeliverabilityTestReportsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 
@@ -836,6 +1028,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             ResponseUnmarshaller unmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context)
                 as PutDedicatedIpWarmupAttributesResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
+        }
+
+        
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("PinpointEmail")]
+        public void PutDeliverabilityDashboardOptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutDeliverabilityDashboardOption");
+
+            var request = InstantiateClassGenerator.Execute<PutDeliverabilityDashboardOptionRequest>();
+            var marshaller = new PutDeliverabilityDashboardOptionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutDeliverabilityDashboardOption", request, internalRequest, service_model);            
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context)
+                as PutDeliverabilityDashboardOptionResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);               
         }
 

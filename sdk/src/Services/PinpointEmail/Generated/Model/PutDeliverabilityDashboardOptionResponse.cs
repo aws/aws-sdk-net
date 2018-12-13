@@ -28,9 +28,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
-    /// An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    /// A response that indicates whether the Deliverability dashboard is enabled for your
+    /// Amazon Pinpoint account.
     /// </summary>
-    public partial class PutDedicatedIpInPoolResponse : AmazonWebServiceResponse
+    public partial class PutDeliverabilityDashboardOptionResponse : AmazonWebServiceResponse
     {
 
     }

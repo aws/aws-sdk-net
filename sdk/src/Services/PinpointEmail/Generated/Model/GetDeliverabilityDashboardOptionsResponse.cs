@@ -28,10 +28,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
-    /// An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    /// An object that shows the status of the Deliverability dashboard for your Amazon Pinpoint
+    /// account.
     /// </summary>
-    public partial class PutDedicatedIpInPoolResponse : AmazonWebServiceResponse
+    public partial class GetDeliverabilityDashboardOptionsResponse : AmazonWebServiceResponse
     {
+        private bool? _dashboardEnabled;
+
+        /// <summary>
+        /// Gets and sets the property DashboardEnabled. 
+        /// <para>
+        /// Indicates whether the Deliverability dashboard is enabled. If the value is <code>true</code>,
+        /// then the dashboard is enabled.
+        /// </para>
+        /// </summary>
+        public bool DashboardEnabled
+        {
+            get { return this._dashboardEnabled.GetValueOrDefault(); }
+            set { this._dashboardEnabled = value; }
+        }
+
+        // Check to see if DashboardEnabled property is set
+        internal bool IsSetDashboardEnabled()
+        {
+            return this._dashboardEnabled.HasValue; 
+        }
 
     }
 }

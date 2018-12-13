@@ -28,10 +28,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
-    /// An HTTP 200 response if the request succeeds, or an error message if the request fails.
+    /// An object that contains information about blacklist events.
     /// </summary>
-    public partial class PutDedicatedIpInPoolResponse : AmazonWebServiceResponse
+    public partial class GetBlacklistReportsResponse : AmazonWebServiceResponse
     {
+        private Dictionary<string, List<BlacklistEntry>> _blacklistReport = new Dictionary<string, List<BlacklistEntry>>();
+
+        /// <summary>
+        /// Gets and sets the property BlacklistReport. 
+        /// <para>
+        /// An object that contains information about a blacklist that one of your dedicated IP
+        /// addresses appears on.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<BlacklistEntry>> BlacklistReport
+        {
+            get { return this._blacklistReport; }
+            set { this._blacklistReport = value; }
+        }
+
+        // Check to see if BlacklistReport property is set
+        internal bool IsSetBlacklistReport()
+        {
+            return this._blacklistReport != null && this._blacklistReport.Count > 0; 
+        }
 
     }
 }

@@ -46,9 +46,22 @@ namespace Amazon.PinpointEmail
     /// </para>
     ///  
     /// <para>
-    /// The Amazon Pinpoint API is available in the US East (N. Virginia) Region at the following
-    /// endpoint: <code>email.us-east-1.amazonaws.com</code> 
+    /// The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon)
+    /// and the EU (Ireland) Regions at the following endpoints:
     /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonPinpointEmailClient : AmazonServiceClient, IAmazonPinpointEmail
     {
@@ -346,6 +359,37 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  CreateDeliverabilityTestReport
+
+        internal virtual CreateDeliverabilityTestReportResponse CreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request)
+        {
+            var marshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
+            var unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDeliverabilityTestReportRequest,CreateDeliverabilityTestReportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDeliverabilityTestReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDeliverabilityTestReport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<CreateDeliverabilityTestReportResponse> CreateDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = CreateDeliverabilityTestReportRequestMarshaller.Instance;
+            var unmarshaller = CreateDeliverabilityTestReportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDeliverabilityTestReportRequest,CreateDeliverabilityTestReportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEmailIdentity
 
         internal virtual CreateEmailIdentityResponse CreateEmailIdentity(CreateEmailIdentityRequest request)
@@ -532,6 +576,37 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  GetBlacklistReports
+
+        internal virtual GetBlacklistReportsResponse GetBlacklistReports(GetBlacklistReportsRequest request)
+        {
+            var marshaller = GetBlacklistReportsRequestMarshaller.Instance;
+            var unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlacklistReportsRequest,GetBlacklistReportsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetBlacklistReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetBlacklistReports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetBlacklistReportsResponse> GetBlacklistReportsAsync(GetBlacklistReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetBlacklistReportsRequestMarshaller.Instance;
+            var unmarshaller = GetBlacklistReportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBlacklistReportsRequest,GetBlacklistReportsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetConfigurationSet
 
         internal virtual GetConfigurationSetResponse GetConfigurationSet(GetConfigurationSetRequest request)
@@ -656,6 +731,99 @@ namespace Amazon.PinpointEmail
 
         #endregion
         
+        #region  GetDeliverabilityDashboardOptions
+
+        internal virtual GetDeliverabilityDashboardOptionsResponse GetDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request)
+        {
+            var marshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
+            var unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeliverabilityDashboardOptionsRequest,GetDeliverabilityDashboardOptionsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeliverabilityDashboardOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityDashboardOptions operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetDeliverabilityDashboardOptionsResponse> GetDeliverabilityDashboardOptionsAsync(GetDeliverabilityDashboardOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetDeliverabilityDashboardOptionsRequestMarshaller.Instance;
+            var unmarshaller = GetDeliverabilityDashboardOptionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeliverabilityDashboardOptionsRequest,GetDeliverabilityDashboardOptionsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDeliverabilityTestReport
+
+        internal virtual GetDeliverabilityTestReportResponse GetDeliverabilityTestReport(GetDeliverabilityTestReportRequest request)
+        {
+            var marshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
+            var unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetDeliverabilityTestReportRequest,GetDeliverabilityTestReportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDeliverabilityTestReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDeliverabilityTestReport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetDeliverabilityTestReportResponse> GetDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetDeliverabilityTestReportRequestMarshaller.Instance;
+            var unmarshaller = GetDeliverabilityTestReportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDeliverabilityTestReportRequest,GetDeliverabilityTestReportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDomainStatisticsReport
+
+        internal virtual GetDomainStatisticsReportResponse GetDomainStatisticsReport(GetDomainStatisticsReportRequest request)
+        {
+            var marshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
+            var unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+
+            return Invoke<GetDomainStatisticsReportRequest,GetDomainStatisticsReportResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDomainStatisticsReport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDomainStatisticsReport operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<GetDomainStatisticsReportResponse> GetDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = GetDomainStatisticsReportRequestMarshaller.Instance;
+            var unmarshaller = GetDomainStatisticsReportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetDomainStatisticsReportRequest,GetDomainStatisticsReportResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetEmailIdentity
 
         internal virtual GetEmailIdentityResponse GetEmailIdentity(GetEmailIdentityRequest request)
@@ -744,6 +912,37 @@ namespace Amazon.PinpointEmail
             var unmarshaller = ListDedicatedIpPoolsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDedicatedIpPoolsRequest,ListDedicatedIpPoolsResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDeliverabilityTestReports
+
+        internal virtual ListDeliverabilityTestReportsResponse ListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request)
+        {
+            var marshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
+            var unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDeliverabilityTestReportsRequest,ListDeliverabilityTestReportsResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDeliverabilityTestReports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDeliverabilityTestReports operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<ListDeliverabilityTestReportsResponse> ListDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = ListDeliverabilityTestReportsRequestMarshaller.Instance;
+            var unmarshaller = ListDeliverabilityTestReportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDeliverabilityTestReportsRequest,ListDeliverabilityTestReportsResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
@@ -1023,6 +1222,37 @@ namespace Amazon.PinpointEmail
             var unmarshaller = PutDedicatedIpWarmupAttributesResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutDedicatedIpWarmupAttributesRequest,PutDedicatedIpWarmupAttributesResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutDeliverabilityDashboardOption
+
+        internal virtual PutDeliverabilityDashboardOptionResponse PutDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request)
+        {
+            var marshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
+            var unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+
+            return Invoke<PutDeliverabilityDashboardOptionRequest,PutDeliverabilityDashboardOptionResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDeliverabilityDashboardOption operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDeliverabilityDashboardOption operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public virtual Task<PutDeliverabilityDashboardOptionResponse> PutDeliverabilityDashboardOptionAsync(PutDeliverabilityDashboardOptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = PutDeliverabilityDashboardOptionRequestMarshaller.Instance;
+            var unmarshaller = PutDeliverabilityDashboardOptionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutDeliverabilityDashboardOptionRequest,PutDeliverabilityDashboardOptionResponse>(request, marshaller, 
                 unmarshaller, cancellationToken);
         }
 
