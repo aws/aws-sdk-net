@@ -1,3 +1,14 @@
+### 3.3.427.0 (2018-12-13 22:22 UTC)
+* Organizations (3.3.9.22)
+	* Documentation updates for AWS Organizations
+* PinpointEmail (3.3.1.0)
+	* This release adds new operations for the Amazon Pinpoint Deliverability Dashboard. You can use the Deliverability Dashboard to view response and inbox placement metrics for the domains that you use to send email. You can also perform tests on individual email messages to determine how often your messages are delivered to the inbox on several major email providers.
+* Core 3.3.29.15
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.426.0 (2018-12-12 22:38 UTC)
 * EKS (3.3.3.0)
 	* Added support for updating kubernetes version of Amazon EKS clusters.
