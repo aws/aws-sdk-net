@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.425.0",
+    "ProductVersion" : "3.3.426.0",
     "CoreVersion"    : "3.3.29.14",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -297,7 +297,7 @@
             "InPreview"               : false
         },
         "Route53"              : {
-            "Version" : "3.3.17.17",
+            "Version" : "3.3.18.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.14"
@@ -825,7 +825,7 @@
             "InPreview"               : false
         },
         "Glue"                            : {
-            "Version" : "3.3.15.18",
+            "Version" : "3.3.16.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.14"
@@ -945,7 +945,7 @@
             "InPreview"               : false
         },
         "SageMaker"                       : {
-            "Version" : "3.3.16.2",
+            "Version" : "3.3.17.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.14"
@@ -1137,7 +1137,7 @@
             "InPreview"               : false
         },
         "EKS"                             : {
-            "Version" : "3.3.2.11",
+            "Version" : "3.3.3.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.14"
