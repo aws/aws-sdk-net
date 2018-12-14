@@ -30,14 +30,14 @@ namespace Amazon.AlexaForBusiness
     /// Interface for accessing AlexaForBusiness
     ///
     /// Alexa for Business helps you use Alexa in your organization. Alexa for Business provides
-    /// the tools you to manage Alexa devices, enroll your users, and assign skills, at scale.
-    /// You can build your own context-aware voice skills using the Alexa Skills Kit and the
-    /// Alexa for Business API operations. You can also make these available as private skills
-    /// for your organization. Alexa for Business makes it efficient to voice-enable your
-    /// products and services, thus providing context-aware voice experiences for your customers.
-    /// In addition, Alexa for Business enables Alexa Voice Services (AVS) device manufacturers
-    /// to centrally deploy and manage their devices in Alexa for Business as shared devices
-    /// as a part of their existing management flow.
+    /// you with the tools to manage Alexa devices, enroll your users, and assign skills,
+    /// at scale. You can build your own context-aware voice skills using the Alexa Skills
+    /// Kit and the Alexa for Business API operations. You can also make these available as
+    /// private skills for your organization. Alexa for Business makes it efficient to voice-enable
+    /// your products and services, thus providing context-aware voice experiences for your
+    /// customers. Device makers building with the Alexa Voice Service (AVS) can create fully
+    /// integrated solutions, register their products with Alexa for Business, and manage
+    /// them as shared devices in their organization.
     /// </summary>
     public partial interface IAmazonAlexaForBusiness : IAmazonService, IDisposable
     {
@@ -247,6 +247,9 @@ namespace Amazon.AlexaForBusiness
         /// <exception cref="Amazon.AlexaForBusiness.Model.NotFoundException">
         /// The resource is not found.
         /// </exception>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.SkillNotLinkedException">
+        /// The skill must be linked to a third-party account.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
         AssociateSkillWithSkillGroupResponse AssociateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request);
 
@@ -275,6 +278,49 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  AssociateSkillWithSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
         AssociateSkillWithSkillGroupResponse EndAssociateSkillWithSkillGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateSkillWithUsers
+
+
+        /// <summary>
+        /// Makes a private skill available for enrolled users to enable on their devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSkillWithUsers service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSkillWithUsers service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        AssociateSkillWithUsersResponse AssociateSkillWithUsers(AssociateSkillWithUsersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSkillWithUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSkillWithUsers operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSkillWithUsers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        IAsyncResult BeginAssociateSkillWithUsers(AssociateSkillWithUsersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSkillWithUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSkillWithUsers.</param>
+        /// 
+        /// <returns>Returns a  AssociateSkillWithUsersResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        AssociateSkillWithUsersResponse EndAssociateSkillWithUsers(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1285,6 +1331,50 @@ namespace Amazon.AlexaForBusiness
         /// <returns>Returns a  DisassociateSkillFromSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
         DisassociateSkillFromSkillGroupResponse EndDisassociateSkillFromSkillGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateSkillFromUsers
+
+
+        /// <summary>
+        /// Makes a private skill unavailable for enrolled users and prevents them from enabling
+        /// it on their devices.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSkillFromUsers service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSkillFromUsers service method, as returned by AlexaForBusiness.</returns>
+        /// <exception cref="Amazon.AlexaForBusiness.Model.ConcurrentModificationException">
+        /// Concurrent modification of resources. HTTP Status Code: 400.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        DisassociateSkillFromUsersResponse DisassociateSkillFromUsers(DisassociateSkillFromUsersRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSkillFromUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSkillFromUsers operation on AmazonAlexaForBusinessClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSkillFromUsers
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        IAsyncResult BeginDisassociateSkillFromUsers(DisassociateSkillFromUsersRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSkillFromUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSkillFromUsers.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSkillFromUsersResult from AlexaForBusiness.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        DisassociateSkillFromUsersResponse EndDisassociateSkillFromUsers(IAsyncResult asyncResult);
 
         #endregion
         

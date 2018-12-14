@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AssociateSkillWithSkillGroup operation
+    /// Response Unmarshaller for AssociateSkillWithUsers operation
     /// </summary>  
-    public class AssociateSkillWithSkillGroupResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateSkillWithUsersResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            AssociateSkillWithSkillGroupResponse response = new AssociateSkillWithSkillGroupResponse();
+            AssociateSkillWithUsersResponse response = new AssociateSkillWithUsersResponse();
 
 
             return response;
@@ -65,20 +65,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
             {
                 return new ConcurrentModificationException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("NotFoundException"))
-            {
-                return new NotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("SkillNotLinkedException"))
-            {
-                return new SkillNotLinkedException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonAlexaForBusinessException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static AssociateSkillWithSkillGroupResponseUnmarshaller _instance = new AssociateSkillWithSkillGroupResponseUnmarshaller();        
+        private static AssociateSkillWithUsersResponseUnmarshaller _instance = new AssociateSkillWithUsersResponseUnmarshaller();        
 
-        internal static AssociateSkillWithSkillGroupResponseUnmarshaller GetInstance()
+        internal static AssociateSkillWithUsersResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -86,7 +78,7 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AssociateSkillWithSkillGroupResponseUnmarshaller Instance
+        public static AssociateSkillWithUsersResponseUnmarshaller Instance
         {
             get
             {

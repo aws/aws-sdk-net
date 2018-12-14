@@ -32,14 +32,14 @@ namespace Amazon.AlexaForBusiness
     /// Interface for accessing AlexaForBusiness
     ///
     /// Alexa for Business helps you use Alexa in your organization. Alexa for Business provides
-    /// the tools you to manage Alexa devices, enroll your users, and assign skills, at scale.
-    /// You can build your own context-aware voice skills using the Alexa Skills Kit and the
-    /// Alexa for Business API operations. You can also make these available as private skills
-    /// for your organization. Alexa for Business makes it efficient to voice-enable your
-    /// products and services, thus providing context-aware voice experiences for your customers.
-    /// In addition, Alexa for Business enables Alexa Voice Services (AVS) device manufacturers
-    /// to centrally deploy and manage their devices in Alexa for Business as shared devices
-    /// as a part of their existing management flow.
+    /// you with the tools to manage Alexa devices, enroll your users, and assign skills,
+    /// at scale. You can build your own context-aware voice skills using the Alexa Skills
+    /// Kit and the Alexa for Business API operations. You can also make these available as
+    /// private skills for your organization. Alexa for Business makes it efficient to voice-enable
+    /// your products and services, thus providing context-aware voice experiences for your
+    /// customers. Device makers building with the Alexa Voice Service (AVS) can create fully
+    /// integrated solutions, register their products with Alexa for Business, and manage
+    /// them as shared devices in their organization.
     /// </summary>
     public partial interface IAmazonAlexaForBusiness : IAmazonService, IDisposable
     {
@@ -126,6 +126,23 @@ namespace Amazon.AlexaForBusiness
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
         Task<AssociateSkillWithSkillGroupResponse> AssociateSkillWithSkillGroupAsync(AssociateSkillWithSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  AssociateSkillWithUsers
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSkillWithUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSkillWithUsers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        Task<AssociateSkillWithUsersResponse> AssociateSkillWithUsersAsync(AssociateSkillWithUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -500,6 +517,23 @@ namespace Amazon.AlexaForBusiness
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
         Task<DisassociateSkillFromSkillGroupResponse> DisassociateSkillFromSkillGroupAsync(DisassociateSkillFromSkillGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DisassociateSkillFromUsers
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSkillFromUsers operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSkillFromUsers operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        Task<DisassociateSkillFromUsersResponse> DisassociateSkillFromUsersAsync(DisassociateSkillFromUsersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
