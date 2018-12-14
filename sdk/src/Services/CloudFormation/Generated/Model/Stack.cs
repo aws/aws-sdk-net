@@ -177,7 +177,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Information on whether a stack's actual configuration differs, or has <i>drifted</i>,
         /// from it's expected configuration, as defined in the stack template and any values
-        /// specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// </para>
         /// </summary>
