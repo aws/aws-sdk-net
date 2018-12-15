@@ -1,3 +1,16 @@
+### 3.3.428.0 (2018-12-14 22:51 UTC)
+* AlexaForBusiness (3.3.8.0)
+	* Released new APIs for managing private skill access to Enrolled Users.  These API's are the equivalent of the A4B console for Private Skills checkbox "Available for Users".
+* CloudFormation (3.3.13.4)
+	* Documentation updates for cloudformation
+* Redshift (3.3.11.6)
+	* Documentation updates for Amazon Redshift
+* Core 3.3.29.16
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.427.0 (2018-12-13 22:22 UTC)
 * Organizations (3.3.9.22)
 	* Documentation updates for AWS Organizations
