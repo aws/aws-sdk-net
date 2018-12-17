@@ -63,6 +63,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     response.User = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("UserInvitationUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UserInvitationUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             response.Status = (int)context.ResponseData.StatusCode;
 

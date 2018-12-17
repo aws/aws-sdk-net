@@ -47,6 +47,16 @@ namespace Amazon.QuickSight.Model
     /// The condition keys are <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
     /// 
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default
+    /// -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat
+    /// </code> 
+    /// </para>
     /// </summary>
     public partial class RegisterUserRequest : AmazonQuickSightRequest
     {

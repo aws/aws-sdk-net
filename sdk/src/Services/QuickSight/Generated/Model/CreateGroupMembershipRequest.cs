@@ -48,6 +48,15 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// The response is the group member object.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default
+    /// --group-name=Sales --member-name=Pat </code> 
+    /// </para>
     /// </summary>
     public partial class CreateGroupMembershipRequest : AmazonQuickSightRequest
     {

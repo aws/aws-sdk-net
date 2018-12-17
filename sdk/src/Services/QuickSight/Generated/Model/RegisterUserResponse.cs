@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
         private string _requestId;
         private int? _status;
         private User _user;
+        private string _userInvitationUrl;
 
         /// <summary>
         /// Gets and sets the property RequestId. 
@@ -88,6 +89,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUser()
         {
             return this._user != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserInvitationUrl. 
+        /// <para>
+        /// The URL the user visits to complete registration and provide a password. This is returned
+        /// only for users with an identity type of <code>QUICKSIGHT</code>.
+        /// </para>
+        /// </summary>
+        public string UserInvitationUrl
+        {
+            get { return this._userInvitationUrl; }
+            set { this._userInvitationUrl = value; }
+        }
+
+        // Check to see if UserInvitationUrl property is set
+        internal bool IsSetUserInvitationUrl()
+        {
+            return this._userInvitationUrl != null;
         }
 
     }

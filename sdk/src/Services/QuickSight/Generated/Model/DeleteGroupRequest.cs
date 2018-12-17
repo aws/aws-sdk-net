@@ -36,6 +36,15 @@ namespace Amazon.QuickSight.Model
     /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
     /// </code>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight delete-group -\-aws-account-id=111122223333 -\-namespace=default
+    /// -\-group-name=Sales-Management </code> 
+    /// </para>
     /// </summary>
     public partial class DeleteGroupRequest : AmazonQuickSightRequest
     {

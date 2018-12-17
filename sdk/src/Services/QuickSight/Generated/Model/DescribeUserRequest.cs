@@ -41,6 +41,15 @@ namespace Amazon.QuickSight.Model
     /// The response is a user object that contains the user's Amazon Resource Name (ARN),
     /// AWS Identity and Access Management (IAM) role, and email address. 
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight describe-user --aws-account-id=111122223333 --namespace=default
+    /// --user-name=Pat </code> 
+    /// </para>
     /// </summary>
     public partial class DescribeUserRequest : AmazonQuickSightRequest
     {

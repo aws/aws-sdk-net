@@ -39,6 +39,15 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// The response is a list of group objects. 
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default
+    /// </code> 
+    /// </para>
     /// </summary>
     public partial class ListGroupsRequest : AmazonQuickSightRequest
     {

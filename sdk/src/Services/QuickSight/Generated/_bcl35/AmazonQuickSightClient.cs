@@ -36,10 +36,10 @@ namespace Amazon.QuickSight
     ///
     /// Amazon QuickSight API Reference 
     /// <para>
-    /// Amazon QuickSight is a fast, cloud-powered BI service that makes it easy to build
-    /// visualizations, perform ad hoc analysis, and quickly get business insights from your
-    /// data. This API interface reference contains documentation for a programming interface
-    /// that you can use to manage Amazon QuickSight. 
+    /// Amazon QuickSight is a fully managed, serverless, cloud business intelligence service
+    /// that makes it easy to extend data and insights to every user in your organization.
+    /// This API interface reference contains documentation for a programming interface that
+    /// you can use to manage Amazon QuickSight. 
     /// </para>
     /// </summary>
     public partial class AmazonQuickSightClient : AmazonServiceClient, IAmazonQuickSight
@@ -255,12 +255,25 @@ namespace Amazon.QuickSight
         /// <para>
         /// The response is a group object.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight create-group --aws-account-id=111122223333 --namespace=default
+        /// --group-name="Sales-Management" --description="Sales Management - Forecasting" </code>
+        /// 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroup service method.</param>
         /// 
         /// <returns>The response from the CreateGroup service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -278,7 +291,7 @@ namespace Amazon.QuickSight
         /// The resource specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -353,12 +366,24 @@ namespace Amazon.QuickSight
         /// <para>
         /// The response is the group member object.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default
+        /// --group-name=Sales --member-name=Pat </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroupMembership service method.</param>
         /// 
         /// <returns>The response from the CreateGroupMembership service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -370,7 +395,7 @@ namespace Amazon.QuickSight
         /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -433,12 +458,24 @@ namespace Amazon.QuickSight
         /// The permissions resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
         /// </code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight delete-group -\-aws-account-id=111122223333 -\-namespace=default
+        /// -\-group-name=Sales-Management </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteGroup service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -450,7 +487,7 @@ namespace Amazon.QuickSight
         /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -521,12 +558,24 @@ namespace Amazon.QuickSight
         /// <para>
         /// The condition key is <code>quicksight:UserName</code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight delete-group-membership --aws-account-id=111122223333 --namespace=default
+        /// --group-name=Sales-Management --member-name=Charlie </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupMembership service method.</param>
         /// 
         /// <returns>The response from the DeleteGroupMembership service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -538,7 +587,7 @@ namespace Amazon.QuickSight
         /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -603,12 +652,24 @@ namespace Amazon.QuickSight
         /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;
         /// </i> </code>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight delete-user --aws-account-id=111122223333 --namespace=default
+        /// --user-name=Pat </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
         /// <returns>The response from the DeleteUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -617,7 +678,7 @@ namespace Amazon.QuickSight
         /// One or more parameters don't have a valid value.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -684,12 +745,24 @@ namespace Amazon.QuickSight
         /// <para>
         /// The response is the group object. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default
+        /// -\-group-name=Sales </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroup service method.</param>
         /// 
         /// <returns>The response from the DescribeGroup service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -701,7 +774,7 @@ namespace Amazon.QuickSight
         /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -769,12 +842,24 @@ namespace Amazon.QuickSight
         /// The response is a user object that contains the user's Amazon Resource Name (ARN),
         /// AWS Identity and Access Management (IAM) role, and email address. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight describe-user --aws-account-id=111122223333 --namespace=default
+        /// --user-name=Pat </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUser service method.</param>
         /// 
         /// <returns>The response from the DescribeUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -783,7 +868,7 @@ namespace Amazon.QuickSight
         /// One or more parameters don't have a valid value.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -839,21 +924,67 @@ namespace Amazon.QuickSight
         #region  GetDashboardEmbedUrl
 
         /// <summary>
-        /// Generates an embedded URL and authorization code. Before this can work properly, you
-        /// need to configure the dashboards and user permissions first.
+        /// Generates a server-side embeddable URL and authorization code. Before this can work
+        /// properly, first you need to configure the dashboards and user permissions. For more
+        /// information, see <a href="https://docs.aws.amazon.com/en_us/quicksight/latest/user/embedding.html">
+        /// Embedding Amazon QuickSight Dashboards</a>.
+        /// 
+        ///  
+        /// <para>
+        /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
+        /// from the user’s browser.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Assume the role with permissions enabled for actions: <code>quickSight:RegisterUser</code>
+        /// and <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role, assume-role-with-web-identity,
+        /// or assume-role-with-saml. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws sts assume-role --role-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role"
+        /// --role-session-name embeddingsession</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// If the user does not exist in QuickSight, register the user:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight register-user --aws-account-id 111122223333 --namespace default
+        /// --identity-type IAM --iam-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role"
+        /// --user-role READER --session-name "embeddingsession" --email user123@example.com --region
+        /// us-east-1</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Get the URL for the embedded dashboard
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id
+        /// 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboardEmbedUrl service method.</param>
         /// 
         /// <returns>The response from the GetDashboardEmbedUrl service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.DomainNotWhitelistedException">
         /// The domain specified is not on the allowlist. All domains for embedded dashboards
         /// must be added to the approved list by an Amazon QuickSight admin.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.IdentityTypeNotSupportedException">
-        /// The identity type specified is not supported. Supported identity types include: IAM
+        /// The identity type specified is not supported. Supported identity types include IAM
         /// and QUICKSIGHT.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
@@ -866,28 +997,29 @@ namespace Amazon.QuickSight
         /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
-        /// The user is not found. This could happen in any operation that requires finding a
-        /// user based on the provided user name, such as DeleteUser, DescribeUser, and so on.
+        /// The user is not found. This error can happen in any operation that requires finding
+        /// a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>,
+        /// and so on.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.SessionLifetimeInMinutesInvalidException">
-        /// The number of minutes specified for the lifetime of a session is invalid. The session
-        /// lifetime must be between 15 and 600 minutes.
+        /// The number of minutes specified for the lifetime of a session is not valid. The session
+        /// lifetime must be from 15 to 600 minutes.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
-        /// Indicates that you are calling an operation on an Amazon QuickSight subscription where
-        /// the edition does not include support for that operation. Amazon QuickSight currently
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon QuickSight currently
         /// has Standard Edition and Enterprise Edition. Not every operation and capability is
         /// available in every edition.
         /// </exception>
@@ -950,12 +1082,24 @@ namespace Amazon.QuickSight
         /// <para>
         /// The response is a list of group member objects.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight list-group-memberships -\-aws-account-id=111122223333 -\-namespace=default
+        /// </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupMemberships service method.</param>
         /// 
         /// <returns>The response from the ListGroupMemberships service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -970,7 +1114,7 @@ namespace Amazon.QuickSight
         /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -1036,12 +1180,24 @@ namespace Amazon.QuickSight
         /// <para>
         /// The response is a list of group objects. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default
+        /// </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
         /// 
         /// <returns>The response from the ListGroups service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1056,7 +1212,7 @@ namespace Amazon.QuickSight
         /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -1112,13 +1268,35 @@ namespace Amazon.QuickSight
         #region  ListUserGroups
 
         /// <summary>
-        /// Lists the Amazon QuickSight groups that a user is part of.
+        /// Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
+        /// 
+        ///  
+        /// <para>
+        /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
+        /// </code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response is a one or more group objects. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight list-user-groups -\-user-name=Pat -\-aws-account-id=111122223333
+        /// -\-namespace=default -\-region=us-east-1 </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserGroups service method.</param>
         /// 
         /// <returns>The response from the ListUserGroups service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1127,7 +1305,7 @@ namespace Amazon.QuickSight
         /// One or more parameters don't have a valid value.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -1195,12 +1373,24 @@ namespace Amazon.QuickSight
         /// The response is a list of user objects, containing each user's Amazon Resource Name
         /// (ARN), AWS Identity and Access Management (IAM) role, and email address. 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default
+        /// </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
         /// 
         /// <returns>The response from the ListUsers service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1212,7 +1402,7 @@ namespace Amazon.QuickSight
         /// One or more parameters don't have a valid value.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -1286,12 +1476,25 @@ namespace Amazon.QuickSight
         /// The condition keys are <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
         /// 
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default
+        /// -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat
+        /// </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterUser service method.</param>
         /// 
         /// <returns>The response from the RegisterUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1309,7 +1512,7 @@ namespace Amazon.QuickSight
         /// The resource specified doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -1376,12 +1579,24 @@ namespace Amazon.QuickSight
         /// <para>
         /// The response is a group object.
         /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default
+        /// --group-name=Sales --description="Sales BI Dashboards" </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGroup service method.</param>
         /// 
         /// <returns>The response from the UpdateGroup service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1393,7 +1608,7 @@ namespace Amazon.QuickSight
         /// One or more preconditions aren't met.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.
@@ -1450,12 +1665,36 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates an Amazon QuickSight user.
+        /// 
+        ///  
+        /// <para>
+        /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
+        /// </code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The response is a user object that contains the user's Amazon QuickSight user name,
+        /// email address, active or inactive status in Amazon QuickSight, Amazon QuickSight role,
+        /// and Amazon Resource Name (ARN). 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>CLI Sample:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>aws quicksight update-user --user-name=Pat --role=ADMIN --email=new_address@amazon.com
+        /// --aws-account-id=111122223333 --namespace=default --region=us-east-1 </code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// 
         /// <returns>The response from the UpdateUser service method, as returned by QuickSight.</returns>
         /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
-        /// You don't have access to this.
+        /// You don't have access to this. The provided credentials couldn't be validated. You
+        /// might not be authorized to carry out the request. Ensure that your account is authorized
+        /// to use the Amazon QuickSight service, that your policies have the correct permissions,
+        /// and that you are using the correct access keys.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1464,7 +1703,7 @@ namespace Amazon.QuickSight
         /// One or more parameters don't have a valid value.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
-        /// One or more resources couldn't be found.
+        /// One or more resources can't be found.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceUnavailableException">
         /// This resource is currently unavailable.

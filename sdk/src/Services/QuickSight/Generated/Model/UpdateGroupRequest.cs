@@ -40,6 +40,15 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// The response is a group object.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default
+    /// --group-name=Sales --description="Sales BI Dashboards" </code> 
+    /// </para>
     /// </summary>
     public partial class UpdateGroupRequest : AmazonQuickSightRequest
     {

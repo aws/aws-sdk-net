@@ -38,6 +38,15 @@ namespace Amazon.QuickSight.Model
     /// The permission resource is <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;
     /// </i> </code>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight delete-user --aws-account-id=111122223333 --namespace=default
+    /// --user-name=Pat </code> 
+    /// </para>
     /// </summary>
     public partial class DeleteUserRequest : AmazonQuickSightRequest
     {

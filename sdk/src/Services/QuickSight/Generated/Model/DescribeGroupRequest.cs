@@ -40,6 +40,15 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// The response is the group object. 
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default
+    /// -\-group-name=Sales </code> 
+    /// </para>
     /// </summary>
     public partial class DescribeGroupRequest : AmazonQuickSightRequest
     {

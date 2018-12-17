@@ -44,6 +44,15 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// The condition key is <code>quicksight:UserName</code>.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>CLI Sample:</b> 
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>aws quicksight delete-group-membership --aws-account-id=111122223333 --namespace=default
+    /// --group-name=Sales-Management --member-name=Charlie </code> 
+    /// </para>
     /// </summary>
     public partial class DeleteGroupMembershipRequest : AmazonQuickSightRequest
     {
