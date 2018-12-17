@@ -28,36 +28,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateRepository operation.
-    /// Creates an image repository.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class CreateRepositoryRequest : AmazonECRRequest
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _repositoryName;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property RepositoryName. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The name to use for the repository. The repository name may be specified on its own
-        /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-        /// the repository into a category (such as <code>project-a/nginx-web-app</code>).
+        /// The tags for the resource.
         /// </para>
-        /// </summary>
-        public string RepositoryName
-        {
-            get { return this._repositoryName; }
-            set { this._repositoryName = value; }
-        }
-
-        // Check to see if RepositoryName property is set
-        internal bool IsSetRepositoryName()
-        {
-            return this._repositoryName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags.
         /// </summary>
         public List<Tag> Tags
         {

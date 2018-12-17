@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateRepository Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateRepositoryRequestMarshaller : IMarshaller<IRequest, CreateRepositoryRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateRepositoryRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -52,10 +52,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateRepositoryRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ECR");
-            string target = "AmazonEC2ContainerRegistry_V20150921.CreateRepository";
+            string target = "AmazonEC2ContainerRegistry_V20150921.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.HttpMethod = "POST";
@@ -67,10 +67,10 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetRepositoryName())
+                if(publicRequest.IsSetResourceArn())
                 {
-                    context.Writer.WritePropertyName("repositoryName");
-                    context.Writer.Write(publicRequest.RepositoryName);
+                    context.Writer.WritePropertyName("resourceArn");
+                    context.Writer.Write(publicRequest.ResourceArn);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -98,9 +98,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateRepositoryRequestMarshaller _instance = new CreateRepositoryRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateRepositoryRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -108,7 +108,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {

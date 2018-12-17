@@ -297,6 +297,10 @@ namespace Amazon.ECR
     {
 
         /// <summary>
+        /// Constant ANY for TagStatus
+        /// </summary>
+        public static readonly TagStatus ANY = new TagStatus("ANY");
+        /// <summary>
         /// Constant TAGGED for TagStatus
         /// </summary>
         public static readonly TagStatus TAGGED = new TagStatus("TAGGED");

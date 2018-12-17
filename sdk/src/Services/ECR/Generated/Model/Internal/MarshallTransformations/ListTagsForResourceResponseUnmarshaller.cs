@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateRepository operation
+    /// Response Unmarshaller for ListTagsForResource operation
     /// </summary>  
-    public class CreateRepositoryResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListTagsForResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateRepositoryResponse response = new CreateRepositoryResponse();
+            ListTagsForResourceResponse response = new ListTagsForResourceResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("repository", targetDepth))
+                if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = RepositoryUnmarshaller.Instance;
-                    response.Repository = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -76,32 +76,20 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 return new InvalidParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTagParameterException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryNotFoundException"))
             {
-                return new InvalidTagParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-            {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryAlreadyExistsException"))
-            {
-                return new RepositoryAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new RepositoryNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
             {
                 return new ServerException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyTagsException"))
-            {
-                return new TooManyTagsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
             return new AmazonECRException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateRepositoryResponseUnmarshaller _instance = new CreateRepositoryResponseUnmarshaller();        
+        private static ListTagsForResourceResponseUnmarshaller _instance = new ListTagsForResourceResponseUnmarshaller();        
 
-        internal static CreateRepositoryResponseUnmarshaller GetInstance()
+        internal static ListTagsForResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +97,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryResponseUnmarshaller Instance
+        public static ListTagsForResourceResponseUnmarshaller Instance
         {
             get
             {

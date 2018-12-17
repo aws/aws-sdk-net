@@ -46,7 +46,7 @@ namespace Amazon.ECR.Model
         /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>DescribeRepositories</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeRepositories</code>
+        /// value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code>
         /// returns up to 100 results and a <code>nextToken</code> value, if applicable. This
         /// option cannot be used when you specify repositories with <code>repositoryNames</code>.
         /// </para>

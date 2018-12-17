@@ -86,7 +86,7 @@ namespace Amazon.ECR.Model
         /// <code>nextToken</code>&#x2028; response element. The remaining results of the initial
         /// request can be seen by sending&#x2028; another <code>GetLifecyclePolicyPreviewRequest</code>
         /// request with the returned <code>nextToken</code>&#x2028; value. This value can be
-        /// between 1 and 100. If this&#x2028; parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code>
+        /// between 1 and 1000. If this&#x2028; parameter is not used, then <code>GetLifecyclePolicyPreviewRequest</code>
         /// returns up to&#x2028; 100 results and a <code>nextToken</code> value, if&#x2028; applicable.
         /// This option cannot be used when you specify images with <code>imageIds</code>.
         /// </para>

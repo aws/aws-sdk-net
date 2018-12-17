@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateRepository operation
+    /// Response Unmarshaller for TagResource operation
     /// </summary>  
-    public class CreateRepositoryResponseUnmarshaller : JsonResponseUnmarshaller
+    public class TagResourceResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateRepositoryResponse response = new CreateRepositoryResponse();
+            TagResourceResponse response = new TagResourceResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("repository", targetDepth))
-                {
-                    var unmarshaller = RepositoryUnmarshaller.Instance;
-                    response.Repository = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -80,13 +69,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             {
                 return new InvalidTagParameterException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+            if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryNotFoundException"))
             {
-                return new LimitExceededException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
-            }
-            if (errorResponse.Code != null && errorResponse.Code.Equals("RepositoryAlreadyExistsException"))
-            {
-                return new RepositoryAlreadyExistsException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+                return new RepositoryNotFoundException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
             }
             if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
             {
@@ -99,9 +84,9 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             return new AmazonECRException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
 
-        private static CreateRepositoryResponseUnmarshaller _instance = new CreateRepositoryResponseUnmarshaller();        
+        private static TagResourceResponseUnmarshaller _instance = new TagResourceResponseUnmarshaller();        
 
-        internal static CreateRepositoryResponseUnmarshaller GetInstance()
+        internal static TagResourceResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +94,7 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateRepositoryResponseUnmarshaller Instance
+        public static TagResourceResponseUnmarshaller Instance
         {
             get
             {

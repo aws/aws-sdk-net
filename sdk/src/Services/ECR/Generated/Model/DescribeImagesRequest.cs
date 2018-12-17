@@ -94,7 +94,7 @@ namespace Amazon.ECR.Model
         /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
         /// response element. The remaining results of the initial request can be seen by sending
         /// another <code>DescribeImages</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code>
+        /// value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code>
         /// returns up to 100 results and a <code>nextToken</code> value, if applicable. This
         /// option cannot be used when you specify images with <code>imageIds</code>.
         /// </para>
@@ -156,8 +156,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryName. 
         /// <para>
-        /// A list of repositories to describe. If this parameter is omitted, then all repositories
-        /// in a registry are described.
+        /// A list of repositories to describe.
         /// </para>
         /// </summary>
         public string RepositoryName

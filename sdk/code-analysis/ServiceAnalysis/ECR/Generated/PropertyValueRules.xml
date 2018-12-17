@@ -81,7 +81,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.DeleteLifecyclePolicyResponse.LifecyclePolicyText</property>
     <min>100</min>
-    <max>10240</max>
+    <max>30720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DeleteLifecyclePolicyResponse.RegistryId</property>
@@ -131,7 +131,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.DescribeImagesRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DescribeImagesRequest.RegistryId</property>
@@ -146,7 +146,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.DescribeRepositoriesRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.DescribeRepositoriesRequest.RegistryId</property>
@@ -183,7 +183,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.GetLifecyclePolicyResponse.LifecyclePolicyText</property>
     <min>100</min>
-    <max>10240</max>
+    <max>30720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.GetLifecyclePolicyResponse.RegistryId</property>
@@ -213,7 +213,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.GetLifecyclePolicyPreviewResponse.LifecyclePolicyText</property>
     <min>100</min>
-    <max>10240</max>
+    <max>30720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.GetLifecyclePolicyPreviewResponse.RegistryId</property>
@@ -271,7 +271,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.ListImagesRequest.MaxResults</property>
     <min>1</min>
-    <max>100</max>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.ListImagesRequest.RegistryId</property>
@@ -296,7 +296,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.PutLifecyclePolicyRequest.LifecyclePolicyText</property>
     <min>100</min>
-    <max>10240</max>
+    <max>30720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.PutLifecyclePolicyRequest.RegistryId</property>
@@ -311,7 +311,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.PutLifecyclePolicyResponse.LifecyclePolicyText</property>
     <min>100</min>
-    <max>10240</max>
+    <max>30720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.PutLifecyclePolicyResponse.RegistryId</property>
@@ -356,7 +356,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.StartLifecyclePolicyPreviewRequest.LifecyclePolicyText</property>
     <min>100</min>
-    <max>10240</max>
+    <max>30720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.StartLifecyclePolicyPreviewRequest.RegistryId</property>
@@ -371,7 +371,7 @@
   <property-value-rule>
     <property>Amazon.ECR.Model.StartLifecyclePolicyPreviewResponse.LifecyclePolicyText</property>
     <min>100</min>
-    <max>10240</max>
+    <max>30720</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ECR.Model.StartLifecyclePolicyPreviewResponse.RegistryId</property>

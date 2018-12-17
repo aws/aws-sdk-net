@@ -28,36 +28,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECR.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateRepository operation.
-    /// Creates an image repository.
+    /// Container for the parameters to the TagResource operation.
+    /// Adds specified tags to a resource with the specified ARN. Existing tags on a resource
+    /// are not changed if they are not specified in the request parameters.
     /// </summary>
-    public partial class CreateRepositoryRequest : AmazonECRRequest
+    public partial class TagResourceRequest : AmazonECRRequest
     {
-        private string _repositoryName;
+        private string _resourceArn;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property RepositoryName. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The name to use for the repository. The repository name may be specified on its own
-        /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-        /// the repository into a category (such as <code>project-a/nginx-web-app</code>).
+        /// The Amazon Resource Name (ARN) of the the resource to which to add tags. Currently,
+        /// the only supported resource is an Amazon ECR repository.
         /// </para>
         /// </summary>
-        public string RepositoryName
+        public string ResourceArn
         {
-            get { return this._repositoryName; }
-            set { this._repositoryName = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if RepositoryName property is set
-        internal bool IsSetRepositoryName()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._repositoryName != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to add to the resource. A tag is an array of key-value pairs. Tag keys can
+        /// have a maximum character length of 128 characters, and tag values can have a maximum
+        /// length of 256 characters.
+        /// </para>
         /// </summary>
         public List<Tag> Tags
         {
