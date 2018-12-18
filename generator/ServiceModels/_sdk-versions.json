@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.428.0",
+    "ProductVersion" : "3.3.429.0",
     "CoreVersion"    : "3.3.29.16",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -489,7 +489,7 @@
             "InPreview"               : false
         },
         "ECR"                             : {
-            "Version" : "3.3.3.43",
+            "Version" : "3.3.4.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.16"
@@ -1225,7 +1225,7 @@
             "InPreview"               : false
         },
         "QuickSight"                      : {
-            "Version" : "3.3.0.4",
+            "Version" : "3.3.1.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.16"

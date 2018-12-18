@@ -1,3 +1,9 @@
+### 3.3.429.0 (2018-12-17 23:00 UTC)
+* ECR (3.3.4.0)
+	* This release adds support for ECR repository tagging.
+* QuickSight (3.3.1.0)
+	* Amazon QuickSight's RegisterUser API now generates a user invitation URL when registering a user with the QuickSight identity type. This URL can then be used by the registered QuickSight user to complete the user registration process. This release also corrects some HTTP return status codes.
+
 ### 3.3.428.0 (2018-12-14 22:51 UTC)
 * AlexaForBusiness (3.3.8.0)
 	* Released new APIs for managing private skill access to Enrolled Users.  These API's are the equivalent of the A4B console for Private Skills checkbox "Available for Users".
