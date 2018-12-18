@@ -349,6 +349,114 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AssociatedNetworkType.
+    /// </summary>
+    public class AssociatedNetworkType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Vpc for AssociatedNetworkType
+        /// </summary>
+        public static readonly AssociatedNetworkType Vpc = new AssociatedNetworkType("vpc");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociatedNetworkType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociatedNetworkType FindValue(string value)
+        {
+            return FindValue<AssociatedNetworkType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociatedNetworkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociationStatusCode.
+    /// </summary>
+    public class AssociationStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Associated for AssociationStatusCode
+        /// </summary>
+        public static readonly AssociationStatusCode Associated = new AssociationStatusCode("associated");
+        /// <summary>
+        /// Constant Associating for AssociationStatusCode
+        /// </summary>
+        public static readonly AssociationStatusCode Associating = new AssociationStatusCode("associating");
+        /// <summary>
+        /// Constant AssociationFailed for AssociationStatusCode
+        /// </summary>
+        public static readonly AssociationStatusCode AssociationFailed = new AssociationStatusCode("association-failed");
+        /// <summary>
+        /// Constant Disassociated for AssociationStatusCode
+        /// </summary>
+        public static readonly AssociationStatusCode Disassociated = new AssociationStatusCode("disassociated");
+        /// <summary>
+        /// Constant Disassociating for AssociationStatusCode
+        /// </summary>
+        public static readonly AssociationStatusCode Disassociating = new AssociationStatusCode("disassociating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationStatusCode FindValue(string value)
+        {
+            return FindValue<AssociationStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AttachmentStatus.
     /// </summary>
     public class AttachmentStatus : ConstantClass
@@ -1124,6 +1232,338 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CapacityReservationTenancy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientCertificateRevocationListStatusCode.
+    /// </summary>
+    public class ClientCertificateRevocationListStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ClientCertificateRevocationListStatusCode
+        /// </summary>
+        public static readonly ClientCertificateRevocationListStatusCode Active = new ClientCertificateRevocationListStatusCode("active");
+        /// <summary>
+        /// Constant Pending for ClientCertificateRevocationListStatusCode
+        /// </summary>
+        public static readonly ClientCertificateRevocationListStatusCode Pending = new ClientCertificateRevocationListStatusCode("pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientCertificateRevocationListStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientCertificateRevocationListStatusCode FindValue(string value)
+        {
+            return FindValue<ClientCertificateRevocationListStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientCertificateRevocationListStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientVpnAuthenticationType.
+    /// </summary>
+    public class ClientVpnAuthenticationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CertificateAuthentication for ClientVpnAuthenticationType
+        /// </summary>
+        public static readonly ClientVpnAuthenticationType CertificateAuthentication = new ClientVpnAuthenticationType("certificate-authentication");
+        /// <summary>
+        /// Constant DirectoryServiceAuthentication for ClientVpnAuthenticationType
+        /// </summary>
+        public static readonly ClientVpnAuthenticationType DirectoryServiceAuthentication = new ClientVpnAuthenticationType("directory-service-authentication");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnAuthenticationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnAuthenticationType FindValue(string value)
+        {
+            return FindValue<ClientVpnAuthenticationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnAuthenticationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientVpnAuthorizationRuleStatusCode.
+    /// </summary>
+    public class ClientVpnAuthorizationRuleStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ClientVpnAuthorizationRuleStatusCode
+        /// </summary>
+        public static readonly ClientVpnAuthorizationRuleStatusCode Active = new ClientVpnAuthorizationRuleStatusCode("active");
+        /// <summary>
+        /// Constant Authorizing for ClientVpnAuthorizationRuleStatusCode
+        /// </summary>
+        public static readonly ClientVpnAuthorizationRuleStatusCode Authorizing = new ClientVpnAuthorizationRuleStatusCode("authorizing");
+        /// <summary>
+        /// Constant Failed for ClientVpnAuthorizationRuleStatusCode
+        /// </summary>
+        public static readonly ClientVpnAuthorizationRuleStatusCode Failed = new ClientVpnAuthorizationRuleStatusCode("failed");
+        /// <summary>
+        /// Constant Revoking for ClientVpnAuthorizationRuleStatusCode
+        /// </summary>
+        public static readonly ClientVpnAuthorizationRuleStatusCode Revoking = new ClientVpnAuthorizationRuleStatusCode("revoking");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnAuthorizationRuleStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnAuthorizationRuleStatusCode FindValue(string value)
+        {
+            return FindValue<ClientVpnAuthorizationRuleStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnAuthorizationRuleStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientVpnConnectionStatusCode.
+    /// </summary>
+    public class ClientVpnConnectionStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ClientVpnConnectionStatusCode
+        /// </summary>
+        public static readonly ClientVpnConnectionStatusCode Active = new ClientVpnConnectionStatusCode("active");
+        /// <summary>
+        /// Constant FailedToTerminate for ClientVpnConnectionStatusCode
+        /// </summary>
+        public static readonly ClientVpnConnectionStatusCode FailedToTerminate = new ClientVpnConnectionStatusCode("failed-to-terminate");
+        /// <summary>
+        /// Constant Terminated for ClientVpnConnectionStatusCode
+        /// </summary>
+        public static readonly ClientVpnConnectionStatusCode Terminated = new ClientVpnConnectionStatusCode("terminated");
+        /// <summary>
+        /// Constant Terminating for ClientVpnConnectionStatusCode
+        /// </summary>
+        public static readonly ClientVpnConnectionStatusCode Terminating = new ClientVpnConnectionStatusCode("terminating");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnConnectionStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnConnectionStatusCode FindValue(string value)
+        {
+            return FindValue<ClientVpnConnectionStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnConnectionStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientVpnEndpointStatusCode.
+    /// </summary>
+    public class ClientVpnEndpointStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for ClientVpnEndpointStatusCode
+        /// </summary>
+        public static readonly ClientVpnEndpointStatusCode Available = new ClientVpnEndpointStatusCode("available");
+        /// <summary>
+        /// Constant Deleted for ClientVpnEndpointStatusCode
+        /// </summary>
+        public static readonly ClientVpnEndpointStatusCode Deleted = new ClientVpnEndpointStatusCode("deleted");
+        /// <summary>
+        /// Constant Deleting for ClientVpnEndpointStatusCode
+        /// </summary>
+        public static readonly ClientVpnEndpointStatusCode Deleting = new ClientVpnEndpointStatusCode("deleting");
+        /// <summary>
+        /// Constant PendingAssociate for ClientVpnEndpointStatusCode
+        /// </summary>
+        public static readonly ClientVpnEndpointStatusCode PendingAssociate = new ClientVpnEndpointStatusCode("pending-associate");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnEndpointStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnEndpointStatusCode FindValue(string value)
+        {
+            return FindValue<ClientVpnEndpointStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnEndpointStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ClientVpnRouteStatusCode.
+    /// </summary>
+    public class ClientVpnRouteStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ClientVpnRouteStatusCode
+        /// </summary>
+        public static readonly ClientVpnRouteStatusCode Active = new ClientVpnRouteStatusCode("active");
+        /// <summary>
+        /// Constant Creating for ClientVpnRouteStatusCode
+        /// </summary>
+        public static readonly ClientVpnRouteStatusCode Creating = new ClientVpnRouteStatusCode("creating");
+        /// <summary>
+        /// Constant Deleting for ClientVpnRouteStatusCode
+        /// </summary>
+        public static readonly ClientVpnRouteStatusCode Deleting = new ClientVpnRouteStatusCode("deleting");
+        /// <summary>
+        /// Constant Failed for ClientVpnRouteStatusCode
+        /// </summary>
+        public static readonly ClientVpnRouteStatusCode Failed = new ClientVpnRouteStatusCode("failed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ClientVpnRouteStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ClientVpnRouteStatusCode FindValue(string value)
+        {
+            return FindValue<ClientVpnRouteStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ClientVpnRouteStatusCode(string value)
         {
             return FindValue(value);
         }
@@ -8029,6 +8469,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type TransportProtocol.
+    /// </summary>
+    public class TransportProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Tcp for TransportProtocol
+        /// </summary>
+        public static readonly TransportProtocol Tcp = new TransportProtocol("tcp");
+        /// <summary>
+        /// Constant Udp for TransportProtocol
+        /// </summary>
+        public static readonly TransportProtocol Udp = new TransportProtocol("udp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransportProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransportProtocol FindValue(string value)
+        {
+            return FindValue<TransportProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransportProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UnsuccessfulInstanceCreditSpecificationErrorCode.
     /// </summary>
     public class UnsuccessfulInstanceCreditSpecificationErrorCode : ConstantClass
@@ -8922,6 +9412,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpnEcmpSupportValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpnProtocol.
+    /// </summary>
+    public class VpnProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Openvpn for VpnProtocol
+        /// </summary>
+        public static readonly VpnProtocol Openvpn = new VpnProtocol("openvpn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpnProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpnProtocol FindValue(string value)
+        {
+            return FindValue<VpnProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpnProtocol(string value)
         {
             return FindValue(value);
         }

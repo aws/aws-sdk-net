@@ -4,7 +4,7 @@
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.VersionDescription</property>
@@ -14,7 +14,7 @@
     <property>Amazon.EC2.Model.CreateLaunchTemplateVersionRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateVersionRequest.VersionDescription</property>
@@ -24,13 +24,13 @@
     <property>Amazon.EC2.Model.DeleteLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DeleteLaunchTemplateVersionsRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeByoipCidrsRequest.MaxResults</property>
@@ -39,6 +39,81 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeByoipCidrsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnAuthorizationRulesRequest.MaxResults</property>
+    <min>5</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnAuthorizationRulesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnAuthorizationRulesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnConnectionsRequest.MaxResults</property>
+    <min>5</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnConnectionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnConnectionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnEndpointsRequest.MaxResults</property>
+    <min>5</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnEndpointsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnEndpointsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnRoutesRequest.MaxResults</property>
+    <min>5</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnRoutesRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnRoutesResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnTargetNetworksRequest.MaxResults</property>
+    <min>5</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnTargetNetworksRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeClientVpnTargetNetworksResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -76,7 +151,7 @@
     <property>Amazon.EC2.Model.DescribeLaunchTemplateVersionsRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribePublicIpv4PoolsRequest.MaxResults</property>
@@ -152,7 +227,7 @@
     <property>Amazon.EC2.Model.ModifyLaunchTemplateRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.SearchTransitGatewayRoutesRequest.MaxResults</property>
@@ -163,25 +238,25 @@
     <property>Amazon.EC2.Model.FleetLaunchTemplateSpecification.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.FleetLaunchTemplateSpecificationRequest.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplate.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplateVersion.LaunchTemplateName</property>
     <min>3</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9\(\)\.-/_]+</pattern>
+    <pattern>[a-zA-Z0-9\(\)\.\-/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.LaunchTemplateVersion.VersionDescription</property>

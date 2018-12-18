@@ -409,6 +409,35 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ApplySecurityGroupsToClientVpnTargetNetwork
+
+
+        /// <summary>
+        /// Applies a security group to the association between the target network and the Client
+        /// VPN endpoint. This action replaces the existing security groups with the specified
+        /// security groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToClientVpnTargetNetwork service method.</param>
+        /// 
+        /// <returns>The response from the ApplySecurityGroupsToClientVpnTargetNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork">REST API Reference for ApplySecurityGroupsToClientVpnTargetNetwork Operation</seealso>
+        ApplySecurityGroupsToClientVpnTargetNetworkResponse ApplySecurityGroupsToClientVpnTargetNetwork(ApplySecurityGroupsToClientVpnTargetNetworkRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplySecurityGroupsToClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToClientVpnTargetNetwork operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork">REST API Reference for ApplySecurityGroupsToClientVpnTargetNetwork Operation</seealso>
+        Task<ApplySecurityGroupsToClientVpnTargetNetworkResponse> ApplySecurityGroupsToClientVpnTargetNetworkAsync(ApplySecurityGroupsToClientVpnTargetNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssignIpv6Addresses
 
 
@@ -547,6 +576,36 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">REST API Reference for AssociateAddress Operation</seealso>
         Task<AssociateAddressResponse> AssociateAddressAsync(AssociateAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateClientVpnTargetNetwork
+
+
+        /// <summary>
+        /// Associates a target network with a Client VPN endpoint. A target network is a subnet
+        /// in a VPC. You can associate multiple subnets from the same VPC with a Client VPN endpoint.
+        /// You can associate only one subnet in each Availability Zone. We recommend that you
+        /// associate at least two subnets to provide Availability Zone redundancy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateClientVpnTargetNetwork service method.</param>
+        /// 
+        /// <returns>The response from the AssociateClientVpnTargetNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">REST API Reference for AssociateClientVpnTargetNetwork Operation</seealso>
+        AssociateClientVpnTargetNetworkResponse AssociateClientVpnTargetNetwork(AssociateClientVpnTargetNetworkRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateClientVpnTargetNetwork operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">REST API Reference for AssociateClientVpnTargetNetwork Operation</seealso>
+        Task<AssociateClientVpnTargetNetworkResponse> AssociateClientVpnTargetNetworkAsync(AssociateClientVpnTargetNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -948,6 +1007,35 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">REST API Reference for AttachVpnGateway Operation</seealso>
         Task<AttachVpnGatewayResponse> AttachVpnGatewayAsync(AttachVpnGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AuthorizeClientVpnIngress
+
+
+        /// <summary>
+        /// Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization
+        /// rules act as firewall rules that grant access to networks. You must configure ingress
+        /// authorization rules to enable clients to access resources in AWS or on-premises networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeClientVpnIngress service method.</param>
+        /// 
+        /// <returns>The response from the AuthorizeClientVpnIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">REST API Reference for AuthorizeClientVpnIngress Operation</seealso>
+        AuthorizeClientVpnIngressResponse AuthorizeClientVpnIngress(AuthorizeClientVpnIngressRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeClientVpnIngress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeClientVpnIngress operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">REST API Reference for AuthorizeClientVpnIngress Operation</seealso>
+        Task<AuthorizeClientVpnIngressResponse> AuthorizeClientVpnIngressAsync(AuthorizeClientVpnIngressRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1556,6 +1644,64 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">REST API Reference for CreateCapacityReservation Operation</seealso>
         Task<CreateCapacityReservationResponse> CreateCapacityReservationAsync(CreateCapacityReservationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateClientVpnEndpoint
+
+
+        /// <summary>
+        /// Creates a Client VPN endpoint. A Client VPN endpoint is the resource you create and
+        /// configure to enable and manage client VPN sessions. It is the destination endpoint
+        /// at which all client VPN sessions are terminated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClientVpnEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateClientVpnEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint">REST API Reference for CreateClientVpnEndpoint Operation</seealso>
+        CreateClientVpnEndpointResponse CreateClientVpnEndpoint(CreateClientVpnEndpointRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateClientVpnEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint">REST API Reference for CreateClientVpnEndpoint Operation</seealso>
+        Task<CreateClientVpnEndpointResponse> CreateClientVpnEndpointAsync(CreateClientVpnEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateClientVpnRoute
+
+
+        /// <summary>
+        /// Adds a route to a network to a Client VPN endpoint. Each Client VPN endpoint has a
+        /// route table that describes the available destination network routes. Each route in
+        /// the route table specifies the path for traﬃc to speciﬁc resources or networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClientVpnRoute service method.</param>
+        /// 
+        /// <returns>The response from the CreateClientVpnRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute">REST API Reference for CreateClientVpnRoute Operation</seealso>
+        CreateClientVpnRouteResponse CreateClientVpnRoute(CreateClientVpnRouteRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateClientVpnRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateClientVpnRoute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute">REST API Reference for CreateClientVpnRoute Operation</seealso>
+        Task<CreateClientVpnRouteResponse> CreateClientVpnRouteAsync(CreateClientVpnRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3364,6 +3510,64 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteClientVpnEndpoint
+
+
+        /// <summary>
+        /// Deletes the specified Client VPN endpoint. You must disassociate all target networks
+        /// before you can delete a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint">REST API Reference for DeleteClientVpnEndpoint Operation</seealso>
+        DeleteClientVpnEndpointResponse DeleteClientVpnEndpoint(DeleteClientVpnEndpointRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint">REST API Reference for DeleteClientVpnEndpoint Operation</seealso>
+        Task<DeleteClientVpnEndpointResponse> DeleteClientVpnEndpointAsync(DeleteClientVpnEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteClientVpnRoute
+
+
+        /// <summary>
+        /// Deletes a route from a Client VPN endpoint. You can only delete routes that you manually
+        /// added using the <b>CreateClientVpnRoute</b> action. You cannot delete routes that
+        /// were automatically added when associating a subnet. To remove routes that have been
+        /// automatically added, disassociate the target subnet from the Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnRoute service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute">REST API Reference for DeleteClientVpnRoute Operation</seealso>
+        DeleteClientVpnRouteResponse DeleteClientVpnRoute(DeleteClientVpnRouteRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteClientVpnRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnRoute operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute">REST API Reference for DeleteClientVpnRoute Operation</seealso>
+        Task<DeleteClientVpnRouteResponse> DeleteClientVpnRouteAsync(DeleteClientVpnRouteRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteCustomerGateway
 
 
@@ -5028,6 +5232,142 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClassicLinkInstances">REST API Reference for DescribeClassicLinkInstances Operation</seealso>
         Task<DescribeClassicLinkInstancesResponse> DescribeClassicLinkInstancesAsync(DescribeClassicLinkInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeClientVpnAuthorizationRules
+
+
+        /// <summary>
+        /// Describes the authorization rules for a specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnAuthorizationRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnAuthorizationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules">REST API Reference for DescribeClientVpnAuthorizationRules Operation</seealso>
+        DescribeClientVpnAuthorizationRulesResponse DescribeClientVpnAuthorizationRules(DescribeClientVpnAuthorizationRulesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnAuthorizationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnAuthorizationRules operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules">REST API Reference for DescribeClientVpnAuthorizationRules Operation</seealso>
+        Task<DescribeClientVpnAuthorizationRulesResponse> DescribeClientVpnAuthorizationRulesAsync(DescribeClientVpnAuthorizationRulesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeClientVpnConnections
+
+
+        /// <summary>
+        /// Describes active client connections and connections that have been terminated within
+        /// the last 60 minutes for the specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnConnections service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections">REST API Reference for DescribeClientVpnConnections Operation</seealso>
+        DescribeClientVpnConnectionsResponse DescribeClientVpnConnections(DescribeClientVpnConnectionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnConnections operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections">REST API Reference for DescribeClientVpnConnections Operation</seealso>
+        Task<DescribeClientVpnConnectionsResponse> DescribeClientVpnConnectionsAsync(DescribeClientVpnConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeClientVpnEndpoints
+
+
+        /// <summary>
+        /// Describes one or more Client VPN endpoints in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints">REST API Reference for DescribeClientVpnEndpoints Operation</seealso>
+        DescribeClientVpnEndpointsResponse DescribeClientVpnEndpoints(DescribeClientVpnEndpointsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnEndpoints operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints">REST API Reference for DescribeClientVpnEndpoints Operation</seealso>
+        Task<DescribeClientVpnEndpointsResponse> DescribeClientVpnEndpointsAsync(DescribeClientVpnEndpointsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeClientVpnRoutes
+
+
+        /// <summary>
+        /// Describes the routes for the specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnRoutes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes">REST API Reference for DescribeClientVpnRoutes Operation</seealso>
+        DescribeClientVpnRoutesResponse DescribeClientVpnRoutes(DescribeClientVpnRoutesRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnRoutes operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes">REST API Reference for DescribeClientVpnRoutes Operation</seealso>
+        Task<DescribeClientVpnRoutesResponse> DescribeClientVpnRoutesAsync(DescribeClientVpnRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeClientVpnTargetNetworks
+
+
+        /// <summary>
+        /// Describes the target networks associated with the specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnTargetNetworks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnTargetNetworks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks">REST API Reference for DescribeClientVpnTargetNetworks Operation</seealso>
+        DescribeClientVpnTargetNetworksResponse DescribeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnTargetNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnTargetNetworks operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks">REST API Reference for DescribeClientVpnTargetNetworks Operation</seealso>
+        Task<DescribeClientVpnTargetNetworksResponse> DescribeClientVpnTargetNetworksAsync(DescribeClientVpnTargetNetworksRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9470,6 +9810,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateClientVpnTargetNetwork
+
+
+        /// <summary>
+        /// Disassociates a target network from the specified Client VPN endpoint. When you disassociate
+        /// the last target network from a Client VPN, the following happens:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The route that was automatically added for the VPC is deleted
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All active client connections are terminated
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// New client connections are disallowed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Client VPN endpoint's status changes to <code>pending-associate</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateClientVpnTargetNetwork service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateClientVpnTargetNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork">REST API Reference for DisassociateClientVpnTargetNetwork Operation</seealso>
+        DisassociateClientVpnTargetNetworkResponse DisassociateClientVpnTargetNetwork(DisassociateClientVpnTargetNetworkRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateClientVpnTargetNetwork operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork">REST API Reference for DisassociateClientVpnTargetNetwork Operation</seealso>
+        Task<DisassociateClientVpnTargetNetworkResponse> DisassociateClientVpnTargetNetworkAsync(DisassociateClientVpnTargetNetworkRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DisassociateIamInstanceProfile
 
 
@@ -9775,6 +10161,62 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">REST API Reference for EnableVpcClassicLinkDnsSupport Operation</seealso>
         Task<EnableVpcClassicLinkDnsSupportResponse> EnableVpcClassicLinkDnsSupportAsync(EnableVpcClassicLinkDnsSupportRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ExportClientVpnClientCertificateRevocationList
+
+
+        /// <summary>
+        /// Downloads the client certificate revocation list for the specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportClientVpnClientCertificateRevocationList service method.</param>
+        /// 
+        /// <returns>The response from the ExportClientVpnClientCertificateRevocationList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList">REST API Reference for ExportClientVpnClientCertificateRevocationList Operation</seealso>
+        ExportClientVpnClientCertificateRevocationListResponse ExportClientVpnClientCertificateRevocationList(ExportClientVpnClientCertificateRevocationListRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportClientVpnClientCertificateRevocationList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportClientVpnClientCertificateRevocationList operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList">REST API Reference for ExportClientVpnClientCertificateRevocationList Operation</seealso>
+        Task<ExportClientVpnClientCertificateRevocationListResponse> ExportClientVpnClientCertificateRevocationListAsync(ExportClientVpnClientCertificateRevocationListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ExportClientVpnClientConfiguration
+
+
+        /// <summary>
+        /// Downloads the contents of the client configuration file for the specified Client VPN
+        /// endpoint. The client configuration file includes the Client VPN endpoint and certificate
+        /// information clients need to establish a connection with the Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportClientVpnClientConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ExportClientVpnClientConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">REST API Reference for ExportClientVpnClientConfiguration Operation</seealso>
+        ExportClientVpnClientConfigurationResponse ExportClientVpnClientConfiguration(ExportClientVpnClientConfigurationRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportClientVpnClientConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportClientVpnClientConfiguration operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">REST API Reference for ExportClientVpnClientConfiguration Operation</seealso>
+        Task<ExportClientVpnClientConfigurationResponse> ExportClientVpnClientConfigurationAsync(ExportClientVpnClientConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10115,6 +10557,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ImportClientVpnClientCertificateRevocationList
+
+
+        /// <summary>
+        /// Uploads a client certificate revocation list to the specified Client VPN endpoint.
+        /// Uploading a client certificate revocation list overwrites the existing client certificate
+        /// revocation list.
+        /// 
+        ///  
+        /// <para>
+        /// Uploading a client certificate revocation list resets existing client connections.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportClientVpnClientCertificateRevocationList service method.</param>
+        /// 
+        /// <returns>The response from the ImportClientVpnClientCertificateRevocationList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList">REST API Reference for ImportClientVpnClientCertificateRevocationList Operation</seealso>
+        ImportClientVpnClientCertificateRevocationListResponse ImportClientVpnClientCertificateRevocationList(ImportClientVpnClientCertificateRevocationListRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportClientVpnClientCertificateRevocationList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportClientVpnClientCertificateRevocationList operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList">REST API Reference for ImportClientVpnClientCertificateRevocationList Operation</seealso>
+        Task<ImportClientVpnClientCertificateRevocationListResponse> ImportClientVpnClientCertificateRevocationListAsync(ImportClientVpnClientCertificateRevocationListRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ImportImage
 
 
@@ -10307,6 +10783,35 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyCapacityReservation">REST API Reference for ModifyCapacityReservation Operation</seealso>
         Task<ModifyCapacityReservationResponse> ModifyCapacityReservationAsync(ModifyCapacityReservationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyClientVpnEndpoint
+
+
+        /// <summary>
+        /// Modifies the specified Client VPN endpoint. You can only modify an endpoint's server
+        /// certificate information, client connection logging information, DNS server, and description.
+        /// Modifying the DNS server resets existing client connections.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyClientVpnEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
+        ModifyClientVpnEndpointResponse ModifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpoint operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
+        Task<ModifyClientVpnEndpointResponse> ModifyClientVpnEndpointAsync(ModifyClientVpnEndpointRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -12368,6 +12873,33 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RevokeClientVpnIngress
+
+
+        /// <summary>
+        /// Removes an ingress authorization rule from a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeClientVpnIngress service method.</param>
+        /// 
+        /// <returns>The response from the RevokeClientVpnIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">REST API Reference for RevokeClientVpnIngress Operation</seealso>
+        RevokeClientVpnIngressResponse RevokeClientVpnIngress(RevokeClientVpnIngressRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeClientVpnIngress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeClientVpnIngress operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">REST API Reference for RevokeClientVpnIngress Operation</seealso>
+        Task<RevokeClientVpnIngressResponse> RevokeClientVpnIngressAsync(RevokeClientVpnIngressRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RevokeSecurityGroupEgress
 
 
@@ -12765,6 +13297,35 @@ namespace Amazon.EC2
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">REST API Reference for StopInstances Operation</seealso>
         Task<StopInstancesResponse> StopInstancesAsync(StopInstancesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TerminateClientVpnConnections
+
+
+        /// <summary>
+        /// Terminates active Client VPN endpoint connections. This action can be used to terminate
+        /// a specific client connection, or up to five connections established by a specific
+        /// user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateClientVpnConnections service method.</param>
+        /// 
+        /// <returns>The response from the TerminateClientVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections">REST API Reference for TerminateClientVpnConnections Operation</seealso>
+        TerminateClientVpnConnectionsResponse TerminateClientVpnConnections(TerminateClientVpnConnectionsRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateClientVpnConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateClientVpnConnections operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections">REST API Reference for TerminateClientVpnConnections Operation</seealso>
+        Task<TerminateClientVpnConnectionsResponse> TerminateClientVpnConnectionsAsync(TerminateClientVpnConnectionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

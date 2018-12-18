@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DeleteTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="resources">The IDs of one or more resources, separated by spaces.</param>
+        /// <param name="resources">The IDs of one or more resources, separated by spaces. Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.</param>
         public DeleteTagsRequest(List<string> resources)
         {
             _resources = resources;
@@ -61,6 +61,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Resources. 
         /// <para>
         /// The IDs of one or more resources, separated by spaces.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller
+        /// batches.
         /// </para>
         /// </summary>
         public List<string> Resources

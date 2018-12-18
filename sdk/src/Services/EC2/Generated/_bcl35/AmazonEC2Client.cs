@@ -759,6 +759,61 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ApplySecurityGroupsToClientVpnTargetNetwork
+
+        /// <summary>
+        /// Applies a security group to the association between the target network and the Client
+        /// VPN endpoint. This action replaces the existing security groups with the specified
+        /// security groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToClientVpnTargetNetwork service method.</param>
+        /// 
+        /// <returns>The response from the ApplySecurityGroupsToClientVpnTargetNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork">REST API Reference for ApplySecurityGroupsToClientVpnTargetNetwork Operation</seealso>
+        public virtual ApplySecurityGroupsToClientVpnTargetNetworkResponse ApplySecurityGroupsToClientVpnTargetNetwork(ApplySecurityGroupsToClientVpnTargetNetworkRequest request)
+        {
+            var marshaller = ApplySecurityGroupsToClientVpnTargetNetworkRequestMarshaller.Instance;
+            var unmarshaller = ApplySecurityGroupsToClientVpnTargetNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<ApplySecurityGroupsToClientVpnTargetNetworkRequest,ApplySecurityGroupsToClientVpnTargetNetworkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ApplySecurityGroupsToClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ApplySecurityGroupsToClientVpnTargetNetwork operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApplySecurityGroupsToClientVpnTargetNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork">REST API Reference for ApplySecurityGroupsToClientVpnTargetNetwork Operation</seealso>
+        public virtual IAsyncResult BeginApplySecurityGroupsToClientVpnTargetNetwork(ApplySecurityGroupsToClientVpnTargetNetworkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ApplySecurityGroupsToClientVpnTargetNetworkRequestMarshaller.Instance;
+            var unmarshaller = ApplySecurityGroupsToClientVpnTargetNetworkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ApplySecurityGroupsToClientVpnTargetNetworkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ApplySecurityGroupsToClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginApplySecurityGroupsToClientVpnTargetNetwork.</param>
+        /// 
+        /// <returns>Returns a  ApplySecurityGroupsToClientVpnTargetNetworkResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork">REST API Reference for ApplySecurityGroupsToClientVpnTargetNetwork Operation</seealso>
+        public virtual ApplySecurityGroupsToClientVpnTargetNetworkResponse EndApplySecurityGroupsToClientVpnTargetNetwork(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ApplySecurityGroupsToClientVpnTargetNetworkResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssignIpv6Addresses
 
         /// <summary>
@@ -974,6 +1029,62 @@ namespace Amazon.EC2
         public virtual AssociateAddressResponse EndAssociateAddress(IAsyncResult asyncResult)
         {
             return EndInvoke<AssociateAddressResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AssociateClientVpnTargetNetwork
+
+        /// <summary>
+        /// Associates a target network with a Client VPN endpoint. A target network is a subnet
+        /// in a VPC. You can associate multiple subnets from the same VPC with a Client VPN endpoint.
+        /// You can associate only one subnet in each Availability Zone. We recommend that you
+        /// associate at least two subnets to provide Availability Zone redundancy.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateClientVpnTargetNetwork service method.</param>
+        /// 
+        /// <returns>The response from the AssociateClientVpnTargetNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">REST API Reference for AssociateClientVpnTargetNetwork Operation</seealso>
+        public virtual AssociateClientVpnTargetNetworkResponse AssociateClientVpnTargetNetwork(AssociateClientVpnTargetNetworkRequest request)
+        {
+            var marshaller = AssociateClientVpnTargetNetworkRequestMarshaller.Instance;
+            var unmarshaller = AssociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateClientVpnTargetNetworkRequest,AssociateClientVpnTargetNetworkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateClientVpnTargetNetwork operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateClientVpnTargetNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">REST API Reference for AssociateClientVpnTargetNetwork Operation</seealso>
+        public virtual IAsyncResult BeginAssociateClientVpnTargetNetwork(AssociateClientVpnTargetNetworkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AssociateClientVpnTargetNetworkRequestMarshaller.Instance;
+            var unmarshaller = AssociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AssociateClientVpnTargetNetworkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateClientVpnTargetNetwork.</param>
+        /// 
+        /// <returns>Returns a  AssociateClientVpnTargetNetworkResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork">REST API Reference for AssociateClientVpnTargetNetwork Operation</seealso>
+        public virtual AssociateClientVpnTargetNetworkResponse EndAssociateClientVpnTargetNetwork(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateClientVpnTargetNetworkResponse>(asyncResult);
         }
 
         #endregion
@@ -1661,6 +1772,61 @@ namespace Amazon.EC2
         public virtual AttachVpnGatewayResponse EndAttachVpnGateway(IAsyncResult asyncResult)
         {
             return EndInvoke<AttachVpnGatewayResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  AuthorizeClientVpnIngress
+
+        /// <summary>
+        /// Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization
+        /// rules act as firewall rules that grant access to networks. You must configure ingress
+        /// authorization rules to enable clients to access resources in AWS or on-premises networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeClientVpnIngress service method.</param>
+        /// 
+        /// <returns>The response from the AuthorizeClientVpnIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">REST API Reference for AuthorizeClientVpnIngress Operation</seealso>
+        public virtual AuthorizeClientVpnIngressResponse AuthorizeClientVpnIngress(AuthorizeClientVpnIngressRequest request)
+        {
+            var marshaller = AuthorizeClientVpnIngressRequestMarshaller.Instance;
+            var unmarshaller = AuthorizeClientVpnIngressResponseUnmarshaller.Instance;
+
+            return Invoke<AuthorizeClientVpnIngressRequest,AuthorizeClientVpnIngressResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AuthorizeClientVpnIngress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AuthorizeClientVpnIngress operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAuthorizeClientVpnIngress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">REST API Reference for AuthorizeClientVpnIngress Operation</seealso>
+        public virtual IAsyncResult BeginAuthorizeClientVpnIngress(AuthorizeClientVpnIngressRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = AuthorizeClientVpnIngressRequestMarshaller.Instance;
+            var unmarshaller = AuthorizeClientVpnIngressResponseUnmarshaller.Instance;
+
+            return BeginInvoke<AuthorizeClientVpnIngressRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AuthorizeClientVpnIngress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAuthorizeClientVpnIngress.</param>
+        /// 
+        /// <returns>Returns a  AuthorizeClientVpnIngressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress">REST API Reference for AuthorizeClientVpnIngress Operation</seealso>
+        public virtual AuthorizeClientVpnIngressResponse EndAuthorizeClientVpnIngress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AuthorizeClientVpnIngressResponse>(asyncResult);
         }
 
         #endregion
@@ -2685,6 +2851,116 @@ namespace Amazon.EC2
         public virtual CreateCapacityReservationResponse EndCreateCapacityReservation(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateCapacityReservationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateClientVpnEndpoint
+
+        /// <summary>
+        /// Creates a Client VPN endpoint. A Client VPN endpoint is the resource you create and
+        /// configure to enable and manage client VPN sessions. It is the destination endpoint
+        /// at which all client VPN sessions are terminated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClientVpnEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the CreateClientVpnEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint">REST API Reference for CreateClientVpnEndpoint Operation</seealso>
+        public virtual CreateClientVpnEndpointResponse CreateClientVpnEndpoint(CreateClientVpnEndpointRequest request)
+        {
+            var marshaller = CreateClientVpnEndpointRequestMarshaller.Instance;
+            var unmarshaller = CreateClientVpnEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClientVpnEndpointRequest,CreateClientVpnEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateClientVpnEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClientVpnEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint">REST API Reference for CreateClientVpnEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginCreateClientVpnEndpoint(CreateClientVpnEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateClientVpnEndpointRequestMarshaller.Instance;
+            var unmarshaller = CreateClientVpnEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateClientVpnEndpointRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClientVpnEndpoint.</param>
+        /// 
+        /// <returns>Returns a  CreateClientVpnEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint">REST API Reference for CreateClientVpnEndpoint Operation</seealso>
+        public virtual CreateClientVpnEndpointResponse EndCreateClientVpnEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateClientVpnEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateClientVpnRoute
+
+        /// <summary>
+        /// Adds a route to a network to a Client VPN endpoint. Each Client VPN endpoint has a
+        /// route table that describes the available destination network routes. Each route in
+        /// the route table specifies the path for traﬃc to speciﬁc resources or networks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateClientVpnRoute service method.</param>
+        /// 
+        /// <returns>The response from the CreateClientVpnRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute">REST API Reference for CreateClientVpnRoute Operation</seealso>
+        public virtual CreateClientVpnRouteResponse CreateClientVpnRoute(CreateClientVpnRouteRequest request)
+        {
+            var marshaller = CreateClientVpnRouteRequestMarshaller.Instance;
+            var unmarshaller = CreateClientVpnRouteResponseUnmarshaller.Instance;
+
+            return Invoke<CreateClientVpnRouteRequest,CreateClientVpnRouteResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateClientVpnRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateClientVpnRoute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateClientVpnRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute">REST API Reference for CreateClientVpnRoute Operation</seealso>
+        public virtual IAsyncResult BeginCreateClientVpnRoute(CreateClientVpnRouteRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = CreateClientVpnRouteRequestMarshaller.Instance;
+            var unmarshaller = CreateClientVpnRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke<CreateClientVpnRouteRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateClientVpnRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateClientVpnRoute.</param>
+        /// 
+        /// <returns>Returns a  CreateClientVpnRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute">REST API Reference for CreateClientVpnRoute Operation</seealso>
+        public virtual CreateClientVpnRouteResponse EndCreateClientVpnRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateClientVpnRouteResponse>(asyncResult);
         }
 
         #endregion
@@ -5543,6 +5819,116 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteClientVpnEndpoint
+
+        /// <summary>
+        /// Deletes the specified Client VPN endpoint. You must disassociate all target networks
+        /// before you can delete a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint">REST API Reference for DeleteClientVpnEndpoint Operation</seealso>
+        public virtual DeleteClientVpnEndpointResponse DeleteClientVpnEndpoint(DeleteClientVpnEndpointRequest request)
+        {
+            var marshaller = DeleteClientVpnEndpointRequestMarshaller.Instance;
+            var unmarshaller = DeleteClientVpnEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClientVpnEndpointRequest,DeleteClientVpnEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClientVpnEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint">REST API Reference for DeleteClientVpnEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginDeleteClientVpnEndpoint(DeleteClientVpnEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteClientVpnEndpointRequestMarshaller.Instance;
+            var unmarshaller = DeleteClientVpnEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteClientVpnEndpointRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClientVpnEndpoint.</param>
+        /// 
+        /// <returns>Returns a  DeleteClientVpnEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint">REST API Reference for DeleteClientVpnEndpoint Operation</seealso>
+        public virtual DeleteClientVpnEndpointResponse EndDeleteClientVpnEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteClientVpnEndpointResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteClientVpnRoute
+
+        /// <summary>
+        /// Deletes a route from a Client VPN endpoint. You can only delete routes that you manually
+        /// added using the <b>CreateClientVpnRoute</b> action. You cannot delete routes that
+        /// were automatically added when associating a subnet. To remove routes that have been
+        /// automatically added, disassociate the target subnet from the Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnRoute service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClientVpnRoute service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute">REST API Reference for DeleteClientVpnRoute Operation</seealso>
+        public virtual DeleteClientVpnRouteResponse DeleteClientVpnRoute(DeleteClientVpnRouteRequest request)
+        {
+            var marshaller = DeleteClientVpnRouteRequestMarshaller.Instance;
+            var unmarshaller = DeleteClientVpnRouteResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClientVpnRouteRequest,DeleteClientVpnRouteResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteClientVpnRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClientVpnRoute operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClientVpnRoute
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute">REST API Reference for DeleteClientVpnRoute Operation</seealso>
+        public virtual IAsyncResult BeginDeleteClientVpnRoute(DeleteClientVpnRouteRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DeleteClientVpnRouteRequestMarshaller.Instance;
+            var unmarshaller = DeleteClientVpnRouteResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DeleteClientVpnRouteRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteClientVpnRoute operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClientVpnRoute.</param>
+        /// 
+        /// <returns>Returns a  DeleteClientVpnRouteResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute">REST API Reference for DeleteClientVpnRoute Operation</seealso>
+        public virtual DeleteClientVpnRouteResponse EndDeleteClientVpnRoute(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteClientVpnRouteResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteCustomerGateway
 
         /// <summary>
@@ -8295,6 +8681,272 @@ namespace Amazon.EC2
         public virtual DescribeClassicLinkInstancesResponse EndDescribeClassicLinkInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<DescribeClassicLinkInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeClientVpnAuthorizationRules
+
+        /// <summary>
+        /// Describes the authorization rules for a specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnAuthorizationRules service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnAuthorizationRules service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules">REST API Reference for DescribeClientVpnAuthorizationRules Operation</seealso>
+        public virtual DescribeClientVpnAuthorizationRulesResponse DescribeClientVpnAuthorizationRules(DescribeClientVpnAuthorizationRulesRequest request)
+        {
+            var marshaller = DescribeClientVpnAuthorizationRulesRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnAuthorizationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClientVpnAuthorizationRulesRequest,DescribeClientVpnAuthorizationRulesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnAuthorizationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnAuthorizationRules operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClientVpnAuthorizationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules">REST API Reference for DescribeClientVpnAuthorizationRules Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClientVpnAuthorizationRules(DescribeClientVpnAuthorizationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeClientVpnAuthorizationRulesRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnAuthorizationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeClientVpnAuthorizationRulesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClientVpnAuthorizationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClientVpnAuthorizationRules.</param>
+        /// 
+        /// <returns>Returns a  DescribeClientVpnAuthorizationRulesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules">REST API Reference for DescribeClientVpnAuthorizationRules Operation</seealso>
+        public virtual DescribeClientVpnAuthorizationRulesResponse EndDescribeClientVpnAuthorizationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClientVpnAuthorizationRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeClientVpnConnections
+
+        /// <summary>
+        /// Describes active client connections and connections that have been terminated within
+        /// the last 60 minutes for the specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnConnections service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections">REST API Reference for DescribeClientVpnConnections Operation</seealso>
+        public virtual DescribeClientVpnConnectionsResponse DescribeClientVpnConnections(DescribeClientVpnConnectionsRequest request)
+        {
+            var marshaller = DescribeClientVpnConnectionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClientVpnConnectionsRequest,DescribeClientVpnConnectionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnConnections operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClientVpnConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections">REST API Reference for DescribeClientVpnConnections Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClientVpnConnections(DescribeClientVpnConnectionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeClientVpnConnectionsRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnConnectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeClientVpnConnectionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClientVpnConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClientVpnConnections.</param>
+        /// 
+        /// <returns>Returns a  DescribeClientVpnConnectionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections">REST API Reference for DescribeClientVpnConnections Operation</seealso>
+        public virtual DescribeClientVpnConnectionsResponse EndDescribeClientVpnConnections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClientVpnConnectionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeClientVpnEndpoints
+
+        /// <summary>
+        /// Describes one or more Client VPN endpoints in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnEndpoints service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnEndpoints service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints">REST API Reference for DescribeClientVpnEndpoints Operation</seealso>
+        public virtual DescribeClientVpnEndpointsResponse DescribeClientVpnEndpoints(DescribeClientVpnEndpointsRequest request)
+        {
+            var marshaller = DescribeClientVpnEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnEndpointsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClientVpnEndpointsRequest,DescribeClientVpnEndpointsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnEndpoints operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClientVpnEndpoints
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints">REST API Reference for DescribeClientVpnEndpoints Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClientVpnEndpoints(DescribeClientVpnEndpointsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeClientVpnEndpointsRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnEndpointsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeClientVpnEndpointsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClientVpnEndpoints operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClientVpnEndpoints.</param>
+        /// 
+        /// <returns>Returns a  DescribeClientVpnEndpointsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints">REST API Reference for DescribeClientVpnEndpoints Operation</seealso>
+        public virtual DescribeClientVpnEndpointsResponse EndDescribeClientVpnEndpoints(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClientVpnEndpointsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeClientVpnRoutes
+
+        /// <summary>
+        /// Describes the routes for the specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnRoutes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes">REST API Reference for DescribeClientVpnRoutes Operation</seealso>
+        public virtual DescribeClientVpnRoutesResponse DescribeClientVpnRoutes(DescribeClientVpnRoutesRequest request)
+        {
+            var marshaller = DescribeClientVpnRoutesRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnRoutesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClientVpnRoutesRequest,DescribeClientVpnRoutesResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnRoutes operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClientVpnRoutes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes">REST API Reference for DescribeClientVpnRoutes Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClientVpnRoutes(DescribeClientVpnRoutesRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeClientVpnRoutesRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnRoutesResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeClientVpnRoutesRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClientVpnRoutes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClientVpnRoutes.</param>
+        /// 
+        /// <returns>Returns a  DescribeClientVpnRoutesResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes">REST API Reference for DescribeClientVpnRoutes Operation</seealso>
+        public virtual DescribeClientVpnRoutesResponse EndDescribeClientVpnRoutes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClientVpnRoutesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeClientVpnTargetNetworks
+
+        /// <summary>
+        /// Describes the target networks associated with the specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnTargetNetworks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeClientVpnTargetNetworks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks">REST API Reference for DescribeClientVpnTargetNetworks Operation</seealso>
+        public virtual DescribeClientVpnTargetNetworksResponse DescribeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest request)
+        {
+            var marshaller = DescribeClientVpnTargetNetworksRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnTargetNetworksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeClientVpnTargetNetworksRequest,DescribeClientVpnTargetNetworksResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeClientVpnTargetNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeClientVpnTargetNetworks operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeClientVpnTargetNetworks
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks">REST API Reference for DescribeClientVpnTargetNetworks Operation</seealso>
+        public virtual IAsyncResult BeginDescribeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DescribeClientVpnTargetNetworksRequestMarshaller.Instance;
+            var unmarshaller = DescribeClientVpnTargetNetworksResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DescribeClientVpnTargetNetworksRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeClientVpnTargetNetworks operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeClientVpnTargetNetworks.</param>
+        /// 
+        /// <returns>Returns a  DescribeClientVpnTargetNetworksResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks">REST API Reference for DescribeClientVpnTargetNetworks Operation</seealso>
+        public virtual DescribeClientVpnTargetNetworksResponse EndDescribeClientVpnTargetNetworks(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeClientVpnTargetNetworksResponse>(asyncResult);
         }
 
         #endregion
@@ -14474,6 +15126,78 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateClientVpnTargetNetwork
+
+        /// <summary>
+        /// Disassociates a target network from the specified Client VPN endpoint. When you disassociate
+        /// the last target network from a Client VPN, the following happens:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The route that was automatically added for the VPC is deleted
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// All active client connections are terminated
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// New client connections are disallowed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The Client VPN endpoint's status changes to <code>pending-associate</code> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateClientVpnTargetNetwork service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateClientVpnTargetNetwork service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork">REST API Reference for DisassociateClientVpnTargetNetwork Operation</seealso>
+        public virtual DisassociateClientVpnTargetNetworkResponse DisassociateClientVpnTargetNetwork(DisassociateClientVpnTargetNetworkRequest request)
+        {
+            var marshaller = DisassociateClientVpnTargetNetworkRequestMarshaller.Instance;
+            var unmarshaller = DisassociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateClientVpnTargetNetworkRequest,DisassociateClientVpnTargetNetworkResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateClientVpnTargetNetwork operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateClientVpnTargetNetwork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork">REST API Reference for DisassociateClientVpnTargetNetwork Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateClientVpnTargetNetwork(DisassociateClientVpnTargetNetworkRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = DisassociateClientVpnTargetNetworkRequestMarshaller.Instance;
+            var unmarshaller = DisassociateClientVpnTargetNetworkResponseUnmarshaller.Instance;
+
+            return BeginInvoke<DisassociateClientVpnTargetNetworkRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateClientVpnTargetNetwork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateClientVpnTargetNetwork.</param>
+        /// 
+        /// <returns>Returns a  DisassociateClientVpnTargetNetworkResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork">REST API Reference for DisassociateClientVpnTargetNetwork Operation</seealso>
+        public virtual DisassociateClientVpnTargetNetworkResponse EndDisassociateClientVpnTargetNetwork(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateClientVpnTargetNetworkResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateIamInstanceProfile
 
         /// <summary>
@@ -15038,6 +15762,114 @@ namespace Amazon.EC2
         public virtual EnableVpcClassicLinkDnsSupportResponse EndEnableVpcClassicLinkDnsSupport(IAsyncResult asyncResult)
         {
             return EndInvoke<EnableVpcClassicLinkDnsSupportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExportClientVpnClientCertificateRevocationList
+
+        /// <summary>
+        /// Downloads the client certificate revocation list for the specified Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportClientVpnClientCertificateRevocationList service method.</param>
+        /// 
+        /// <returns>The response from the ExportClientVpnClientCertificateRevocationList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList">REST API Reference for ExportClientVpnClientCertificateRevocationList Operation</seealso>
+        public virtual ExportClientVpnClientCertificateRevocationListResponse ExportClientVpnClientCertificateRevocationList(ExportClientVpnClientCertificateRevocationListRequest request)
+        {
+            var marshaller = ExportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
+            var unmarshaller = ExportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
+
+            return Invoke<ExportClientVpnClientCertificateRevocationListRequest,ExportClientVpnClientCertificateRevocationListResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportClientVpnClientCertificateRevocationList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportClientVpnClientCertificateRevocationList operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportClientVpnClientCertificateRevocationList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList">REST API Reference for ExportClientVpnClientCertificateRevocationList Operation</seealso>
+        public virtual IAsyncResult BeginExportClientVpnClientCertificateRevocationList(ExportClientVpnClientCertificateRevocationListRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ExportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
+            var unmarshaller = ExportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ExportClientVpnClientCertificateRevocationListRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportClientVpnClientCertificateRevocationList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportClientVpnClientCertificateRevocationList.</param>
+        /// 
+        /// <returns>Returns a  ExportClientVpnClientCertificateRevocationListResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList">REST API Reference for ExportClientVpnClientCertificateRevocationList Operation</seealso>
+        public virtual ExportClientVpnClientCertificateRevocationListResponse EndExportClientVpnClientCertificateRevocationList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportClientVpnClientCertificateRevocationListResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ExportClientVpnClientConfiguration
+
+        /// <summary>
+        /// Downloads the contents of the client configuration file for the specified Client VPN
+        /// endpoint. The client configuration file includes the Client VPN endpoint and certificate
+        /// information clients need to establish a connection with the Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ExportClientVpnClientConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the ExportClientVpnClientConfiguration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">REST API Reference for ExportClientVpnClientConfiguration Operation</seealso>
+        public virtual ExportClientVpnClientConfigurationResponse ExportClientVpnClientConfiguration(ExportClientVpnClientConfigurationRequest request)
+        {
+            var marshaller = ExportClientVpnClientConfigurationRequestMarshaller.Instance;
+            var unmarshaller = ExportClientVpnClientConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<ExportClientVpnClientConfigurationRequest,ExportClientVpnClientConfigurationResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ExportClientVpnClientConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ExportClientVpnClientConfiguration operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExportClientVpnClientConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">REST API Reference for ExportClientVpnClientConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginExportClientVpnClientConfiguration(ExportClientVpnClientConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ExportClientVpnClientConfigurationRequestMarshaller.Instance;
+            var unmarshaller = ExportClientVpnClientConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ExportClientVpnClientConfigurationRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ExportClientVpnClientConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExportClientVpnClientConfiguration.</param>
+        /// 
+        /// <returns>Returns a  ExportClientVpnClientConfigurationResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">REST API Reference for ExportClientVpnClientConfiguration Operation</seealso>
+        public virtual ExportClientVpnClientConfigurationResponse EndExportClientVpnClientConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ExportClientVpnClientConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -15639,6 +16471,66 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ImportClientVpnClientCertificateRevocationList
+
+        /// <summary>
+        /// Uploads a client certificate revocation list to the specified Client VPN endpoint.
+        /// Uploading a client certificate revocation list overwrites the existing client certificate
+        /// revocation list.
+        /// 
+        ///  
+        /// <para>
+        /// Uploading a client certificate revocation list resets existing client connections.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportClientVpnClientCertificateRevocationList service method.</param>
+        /// 
+        /// <returns>The response from the ImportClientVpnClientCertificateRevocationList service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList">REST API Reference for ImportClientVpnClientCertificateRevocationList Operation</seealso>
+        public virtual ImportClientVpnClientCertificateRevocationListResponse ImportClientVpnClientCertificateRevocationList(ImportClientVpnClientCertificateRevocationListRequest request)
+        {
+            var marshaller = ImportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
+            var unmarshaller = ImportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
+
+            return Invoke<ImportClientVpnClientCertificateRevocationListRequest,ImportClientVpnClientCertificateRevocationListResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ImportClientVpnClientCertificateRevocationList operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ImportClientVpnClientCertificateRevocationList operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndImportClientVpnClientCertificateRevocationList
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList">REST API Reference for ImportClientVpnClientCertificateRevocationList Operation</seealso>
+        public virtual IAsyncResult BeginImportClientVpnClientCertificateRevocationList(ImportClientVpnClientCertificateRevocationListRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ImportClientVpnClientCertificateRevocationListRequestMarshaller.Instance;
+            var unmarshaller = ImportClientVpnClientCertificateRevocationListResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ImportClientVpnClientCertificateRevocationListRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ImportClientVpnClientCertificateRevocationList operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginImportClientVpnClientCertificateRevocationList.</param>
+        /// 
+        /// <returns>Returns a  ImportClientVpnClientCertificateRevocationListResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList">REST API Reference for ImportClientVpnClientCertificateRevocationList Operation</seealso>
+        public virtual ImportClientVpnClientCertificateRevocationListResponse EndImportClientVpnClientCertificateRevocationList(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ImportClientVpnClientCertificateRevocationListResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ImportImage
 
         /// <summary>
@@ -15986,6 +16878,61 @@ namespace Amazon.EC2
         public virtual ModifyCapacityReservationResponse EndModifyCapacityReservation(IAsyncResult asyncResult)
         {
             return EndInvoke<ModifyCapacityReservationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ModifyClientVpnEndpoint
+
+        /// <summary>
+        /// Modifies the specified Client VPN endpoint. You can only modify an endpoint's server
+        /// certificate information, client connection logging information, DNS server, and description.
+        /// Modifying the DNS server resets existing client connections.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpoint service method.</param>
+        /// 
+        /// <returns>The response from the ModifyClientVpnEndpoint service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
+        public virtual ModifyClientVpnEndpointResponse ModifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request)
+        {
+            var marshaller = ModifyClientVpnEndpointRequestMarshaller.Instance;
+            var unmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyClientVpnEndpointRequest,ModifyClientVpnEndpointResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyClientVpnEndpoint operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyClientVpnEndpoint
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
+        public virtual IAsyncResult BeginModifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = ModifyClientVpnEndpointRequestMarshaller.Instance;
+            var unmarshaller = ModifyClientVpnEndpointResponseUnmarshaller.Instance;
+
+            return BeginInvoke<ModifyClientVpnEndpointRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyClientVpnEndpoint operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyClientVpnEndpoint.</param>
+        /// 
+        /// <returns>Returns a  ModifyClientVpnEndpointResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint">REST API Reference for ModifyClientVpnEndpoint Operation</seealso>
+        public virtual ModifyClientVpnEndpointResponse EndModifyClientVpnEndpoint(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ModifyClientVpnEndpointResponse>(asyncResult);
         }
 
         #endregion
@@ -19452,6 +20399,59 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  RevokeClientVpnIngress
+
+        /// <summary>
+        /// Removes an ingress authorization rule from a Client VPN endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeClientVpnIngress service method.</param>
+        /// 
+        /// <returns>The response from the RevokeClientVpnIngress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">REST API Reference for RevokeClientVpnIngress Operation</seealso>
+        public virtual RevokeClientVpnIngressResponse RevokeClientVpnIngress(RevokeClientVpnIngressRequest request)
+        {
+            var marshaller = RevokeClientVpnIngressRequestMarshaller.Instance;
+            var unmarshaller = RevokeClientVpnIngressResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeClientVpnIngressRequest,RevokeClientVpnIngressResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RevokeClientVpnIngress operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RevokeClientVpnIngress operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeClientVpnIngress
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">REST API Reference for RevokeClientVpnIngress Operation</seealso>
+        public virtual IAsyncResult BeginRevokeClientVpnIngress(RevokeClientVpnIngressRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = RevokeClientVpnIngressRequestMarshaller.Instance;
+            var unmarshaller = RevokeClientVpnIngressResponseUnmarshaller.Instance;
+
+            return BeginInvoke<RevokeClientVpnIngressRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RevokeClientVpnIngress operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRevokeClientVpnIngress.</param>
+        /// 
+        /// <returns>Returns a  RevokeClientVpnIngressResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress">REST API Reference for RevokeClientVpnIngress Operation</seealso>
+        public virtual RevokeClientVpnIngressResponse EndRevokeClientVpnIngress(IAsyncResult asyncResult)
+        {
+            return EndInvoke<RevokeClientVpnIngressResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  RevokeSecurityGroupEgress
 
         /// <summary>
@@ -20030,6 +21030,61 @@ namespace Amazon.EC2
         public virtual StopInstancesResponse EndStopInstances(IAsyncResult asyncResult)
         {
             return EndInvoke<StopInstancesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  TerminateClientVpnConnections
+
+        /// <summary>
+        /// Terminates active Client VPN endpoint connections. This action can be used to terminate
+        /// a specific client connection, or up to five connections established by a specific
+        /// user.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TerminateClientVpnConnections service method.</param>
+        /// 
+        /// <returns>The response from the TerminateClientVpnConnections service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections">REST API Reference for TerminateClientVpnConnections Operation</seealso>
+        public virtual TerminateClientVpnConnectionsResponse TerminateClientVpnConnections(TerminateClientVpnConnectionsRequest request)
+        {
+            var marshaller = TerminateClientVpnConnectionsRequestMarshaller.Instance;
+            var unmarshaller = TerminateClientVpnConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<TerminateClientVpnConnectionsRequest,TerminateClientVpnConnectionsResponse>(request, marshaller, unmarshaller);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TerminateClientVpnConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TerminateClientVpnConnections operation on AmazonEC2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTerminateClientVpnConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections">REST API Reference for TerminateClientVpnConnections Operation</seealso>
+        public virtual IAsyncResult BeginTerminateClientVpnConnections(TerminateClientVpnConnectionsRequest request, AsyncCallback callback, object state)
+        {
+            var marshaller = TerminateClientVpnConnectionsRequestMarshaller.Instance;
+            var unmarshaller = TerminateClientVpnConnectionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke<TerminateClientVpnConnectionsRequest>(request, marshaller, unmarshaller,
+                callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TerminateClientVpnConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTerminateClientVpnConnections.</param>
+        /// 
+        /// <returns>Returns a  TerminateClientVpnConnectionsResult from EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections">REST API Reference for TerminateClientVpnConnections Operation</seealso>
+        public virtual TerminateClientVpnConnectionsResponse EndTerminateClientVpnConnections(IAsyncResult asyncResult)
+        {
+            return EndInvoke<TerminateClientVpnConnectionsResponse>(asyncResult);
         }
 
         #endregion
