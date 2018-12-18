@@ -39,8 +39,13 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property FlowLogsEnabled. 
         /// <para>
-        /// Indicates whether flow logs are enabled. The value is true or false. The default value
-        /// is false. If the value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+        /// Indicates whether flow logs are enabled. The default value is false. If the value
+        /// is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+        /// Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         public bool FlowLogsEnabled
@@ -58,9 +63,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property FlowLogsS3Bucket. 
         /// <para>
-        /// The name of the Amazon S3 bucket for the flow logs. This attribute is required if
-        /// flow logs are enabled. The bucket must exist and have a bucket policy that grants
-        /// AWS Global Accelerator permission to write to the bucket.
+        /// The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+        /// is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS
+        /// Global Accelerator permission to write to the bucket.
         /// </para>
         /// </summary>
         public string FlowLogsS3Bucket
@@ -78,8 +83,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property FlowLogsS3Prefix. 
         /// <para>
-        /// The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t
-        /// specify a prefix, the flow logs are stored in the root of the bucket.
+        /// The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is
+        /// required if <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify
+        /// a prefix, the flow logs are stored in the root of the bucket.
         /// </para>
         /// </summary>
         public string FlowLogsS3Prefix

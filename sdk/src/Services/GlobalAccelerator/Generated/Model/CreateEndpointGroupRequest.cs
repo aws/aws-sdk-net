@@ -29,7 +29,7 @@ namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEndpointGroup operation.
-    /// Create an endpoint group for the specified accelerator. An endpoint group is a collection
+    /// Create an endpoint group for the specified listener. An endpoint group is a collection
     /// of endpoints in one AWS Region. To see an AWS CLI example of creating an endpoint
     /// group, scroll down to <b>Example</b>.
     /// </summary>
@@ -86,8 +86,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
-        /// The time, in seconds, between each health check for an endpoint. The default value
-        /// is 30.
+        /// The time—10 seconds or 30 seconds—between each health check for an endpoint. The default
+        /// value is 30.
         /// </para>
         /// </summary>
         public int HealthCheckIntervalSeconds

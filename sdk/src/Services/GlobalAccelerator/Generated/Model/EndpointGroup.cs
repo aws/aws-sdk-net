@@ -100,7 +100,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property HealthCheckIntervalSeconds. 
         /// <para>
-        /// The elapsed time, in seconds, between health checks for each endpoint. The default
+        /// The time—10 seconds or 30 seconds—between health checks for each endpoint. The default
         /// value is 30.
         /// </para>
         /// </summary>

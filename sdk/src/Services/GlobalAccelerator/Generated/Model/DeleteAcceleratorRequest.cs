@@ -30,7 +30,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// <summary>
     /// Container for the parameters to the DeleteAccelerator operation.
     /// Delete an accelerator. Note: before you can delete an accelerator, you must disable
-    /// it.
+    /// it and remove all dependent resources (listeners and endpoint groups).
     /// </summary>
     public partial class DeleteAcceleratorRequest : AmazonGlobalAcceleratorRequest
     {

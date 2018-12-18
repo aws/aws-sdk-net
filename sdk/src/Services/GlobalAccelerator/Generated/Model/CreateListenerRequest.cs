@@ -72,7 +72,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <para>
         /// AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal
         /// endpoint for a connection. If client affinity is <code>NONE</code>, Global Accelerator
-        /// uses the "five-tuple" (5-tuple) properties—client IP address, client port, destination
+        /// uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination
         /// IP address, destination port, and protocol—to select the hash value, and then chooses
         /// the best endpoint. However, with this setting, if someone uses different ports to
         /// connect to Global Accelerator, their connections might not be always routed to the
@@ -81,10 +81,9 @@ namespace Amazon.GlobalAccelerator.Model
         ///  
         /// <para>
         /// If you want a given client to always be routed to the same endpoint, set client affinity
-        /// to <code>CLIENT_IP</code> instead. When you use the <code>CLIENT_IP</code> setting,
-        /// Global Accelerator uses the "two-tuple" (2-tuple) properties— client IP address and
-        /// destination IP address—to select the hash value. For UDP, Global Accelerator always
-        /// uses two-tuple properties to select the hash value.
+        /// to <code>SOURCE_IP</code> instead. When you use the <code>SOURCE_IP</code> setting,
+        /// Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address
+        /// and destination IP address—to select the hash value.
         /// </para>
         ///  
         /// <para>
