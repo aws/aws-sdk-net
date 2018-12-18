@@ -23,6 +23,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Amplify.CodeAnalysis" Path="|AWSSDK.Amplify.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.APIGateway.CodeAnalysis" Path="|AWSSDK.APIGateway.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.APIGateway.CodeAnalysis" Path="|AWSSDK.APIGateway.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ApiGatewayManagementApi.CodeAnalysis" Path="|AWSSDK.ApiGatewayManagementApi.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ApiGatewayManagementApi.CodeAnalysis" Path="|AWSSDK.ApiGatewayManagementApi.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ApplicationAutoScaling.CodeAnalysis" Path="|AWSSDK.ApplicationAutoScaling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.ApplicationAutoScaling.CodeAnalysis" Path="|AWSSDK.ApplicationAutoScaling.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.ApplicationDiscoveryService.CodeAnalysis" Path="|AWSSDK.ApplicationDiscoveryService.CodeAnalysis|"/>

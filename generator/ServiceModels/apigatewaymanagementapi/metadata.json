@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "This is the initial SDK release for the Amazon API Gateway Management API, which allows you to directly manage runtime aspects of your APIs. This release makes it easy to send data directly to clients connected to your WebSocket-based APIs.",
+  "generate-client-constructors": true
+}

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.Amplify.CodeAnalysis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.APIGateway.CodeAnalysis", "code-analysis\ServiceAnalysis\APIGateway\AWSSDK.APIGateway.CodeAnalysis.csproj", "{EB2C1C17-AE9B-423E-B67C-23085200E6F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ApiGatewayManagementApi.CodeAnalysis", "code-analysis\ServiceAnalysis\ApiGatewayManagementApi\AWSSDK.ApiGatewayManagementApi.CodeAnalysis.csproj", "{294027A7-E786-4044-ADD7-D02EA726BFB2}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ApplicationAutoScaling.CodeAnalysis", "code-analysis\ServiceAnalysis\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.CodeAnalysis.csproj", "{1DD966D7-EC7C-49C5-B22C-2526016306DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWSSDK.ApplicationDiscoveryService.CodeAnalysis", "code-analysis\ServiceAnalysis\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.CodeAnalysis.csproj", "{1707A0B9-C421-4504-A887-EF27A459B440}"
@@ -353,6 +355,7 @@ Global
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{7ee289b8-fe3b-4bb9-b670-8b131271ef36}*SharedItemsImports = 4
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{c90c7a29-1b9d-4451-9f58-0b9e75896517}*SharedItemsImports = 4
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{eb2c1c17-ae9b-423e-b67c-23085200e6f5}*SharedItemsImports = 4
+		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{294027a7-e786-4044-add7-d02ea726bfb2}*SharedItemsImports = 4
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{1dd966d7-ec7c-49c5-b22c-2526016306df}*SharedItemsImports = 4
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{1707a0b9-c421-4504-a887-ef27a459b440}*SharedItemsImports = 4
 		code-analysis\SharedAnalysisCode\SharedAnalysisCode.projitems*{51779681-17d6-43bf-b4e3-c57d3c22283e}*SharedItemsImports = 4
@@ -539,6 +542,10 @@ Global
 		{EB2C1C17-AE9B-423E-B67C-23085200E6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB2C1C17-AE9B-423E-B67C-23085200E6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB2C1C17-AE9B-423E-B67C-23085200E6F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{294027A7-E786-4044-ADD7-D02EA726BFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{294027A7-E786-4044-ADD7-D02EA726BFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{294027A7-E786-4044-ADD7-D02EA726BFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{294027A7-E786-4044-ADD7-D02EA726BFB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1DD966D7-EC7C-49C5-B22C-2526016306DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1DD966D7-EC7C-49C5-B22C-2526016306DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DD966D7-EC7C-49C5-B22C-2526016306DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -1208,6 +1215,7 @@ Global
 		{7EE289B8-FE3B-4BB9-B670-8B131271EF36} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
 		{C90C7A29-1B9D-4451-9F58-0B9E75896517} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
 		{EB2C1C17-AE9B-423E-B67C-23085200E6F5} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
+		{294027A7-E786-4044-ADD7-D02EA726BFB2} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
 		{1DD966D7-EC7C-49C5-B22C-2526016306DF} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
 		{1707A0B9-C421-4504-A887-EF27A459B440} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}
 		{51779681-17D6-43BF-B4E3-C57D3C22283E} = {1523203C-CD16-4B4A-8F9D-8ECCA3A327AA}

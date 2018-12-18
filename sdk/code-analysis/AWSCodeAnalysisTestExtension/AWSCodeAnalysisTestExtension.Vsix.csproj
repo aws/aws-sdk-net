@@ -68,6 +68,10 @@
       <Project>{EB2C1C17-AE9B-423E-B67C-23085200E6F5}</Project>
       <Name>AWSSDK.APIGateway.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/ApiGatewayManagementApi/AWSSDK.ApiGatewayManagementApi.CodeAnalysis.csproj">
+      <Project>{294027A7-E786-4044-ADD7-D02EA726BFB2}</Project>
+      <Name>AWSSDK.ApiGatewayManagementApi.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/ApplicationAutoScaling/AWSSDK.ApplicationAutoScaling.CodeAnalysis.csproj">
       <Project>{1DD966D7-EC7C-49C5-B22C-2526016306DF}</Project>
       <Name>AWSSDK.ApplicationAutoScaling.CodeAnalysis</Name>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.ApiGatewayManagementApi.Model.PostToConnectionRequest.Data</property>
+    <max>131072</max>
+  </property-value-rule>
+</property-value-rules>
