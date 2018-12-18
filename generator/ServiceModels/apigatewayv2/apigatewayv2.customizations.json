@@ -1,0 +1,11 @@
+{
+    "shapeModifiers": {
+        "DomainName": {
+            "modify": [
+                {
+                    "DomainName": { "emitPropertyName": "Name" }
+                }
+            ]
+        }
+    }
+}
