@@ -36,6 +36,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentName;
         private List<Instance> _instances = new List<Instance>();
         private List<LaunchConfiguration> _launchConfigurations = new List<LaunchConfiguration>();
+        private List<LaunchTemplate> _launchTemplates = new List<LaunchTemplate>();
         private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
         private List<Queue> _queues = new List<Queue>();
         private List<Trigger> _triggers = new List<Trigger>();
@@ -115,6 +116,24 @@ namespace Amazon.ElasticBeanstalk.Model
         internal bool IsSetLaunchConfigurations()
         {
             return this._launchConfigurations != null && this._launchConfigurations.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplates. 
+        /// <para>
+        /// The Amazon EC2 launch templates in use by this environment.
+        /// </para>
+        /// </summary>
+        public List<LaunchTemplate> LaunchTemplates
+        {
+            get { return this._launchTemplates; }
+            set { this._launchTemplates = value; }
+        }
+
+        // Check to see if LaunchTemplates property is set
+        internal bool IsSetLaunchTemplates()
+        {
+            return this._launchTemplates != null && this._launchTemplates.Count > 0; 
         }
 
         /// <summary>

@@ -81,6 +81,13 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                         unmarshalledObject.LaunchConfigurations.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("LaunchTemplates/member", targetDepth))
+                    {
+                        var unmarshaller = LaunchTemplateUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LaunchTemplates.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("LoadBalancers/member", targetDepth))
                     {
                         var unmarshaller = LoadBalancerUnmarshaller.Instance;

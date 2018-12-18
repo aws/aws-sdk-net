@@ -286,7 +286,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         ///  <code>Grey</code>: Default health for a new environment. The environment is not fully
         /// launched and health checks have not started or health checks are suspended during
-        /// an <code>UpdateEnvironment</code> or <code>RestartEnvironement</code> request.
+        /// an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.
         /// </para>
         ///  </li> </ul> 
         /// <para>

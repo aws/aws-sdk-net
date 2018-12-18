@@ -41,6 +41,19 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The name of this environment tier.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <i>Web server tier</i> – <code>WebServer</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <i>Worker tier</i> – <code>Worker</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Name
         {
@@ -59,6 +72,19 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <para>
         /// The type of this environment tier.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For <i>Web server tier</i> – <code>Standard</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <i>Worker tier</i> – <code>SQS/HTTP</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Type
         {

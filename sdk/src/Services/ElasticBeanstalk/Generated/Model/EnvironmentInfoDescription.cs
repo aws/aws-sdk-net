@@ -81,7 +81,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The retrieved information.
+        /// The retrieved information. Currently contains a presigned Amazon S3 URL. The files
+        /// are deleted after 15 minutes.
+        /// </para>
+        ///  
+        /// <para>
+        /// Anyone in possession of this URL can access the files before they are deleted. Make
+        /// the URL available only to trusted parties.
         /// </para>
         /// </summary>
         public string Message
