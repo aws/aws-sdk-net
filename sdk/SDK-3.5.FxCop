@@ -26,6 +26,8 @@
       <Directory>$(ProjectDir)/src/Services/alexaforbusiness/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/amplify/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/apigateway/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/apigatewaymanagementapi/bin/Release/net35/</Directory>
+      <Directory>$(ProjectDir)/src/Services/apigatewayv2/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationautoscaling/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/applicationdiscoveryservice/bin/Release/net35/</Directory>
       <Directory>$(ProjectDir)/src/Services/appmesh/bin/Release/net35/</Directory>
@@ -194,6 +196,8 @@
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AlexaForBusiness.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.Amplify.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.APIGateway.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApiGatewayManagementApi.dll" Analyze="True" AnalyzeAllChildren="True" />
+    <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApiGatewayV2.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApplicationAutoScaling.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.ApplicationDiscoveryService.dll" Analyze="True" AnalyzeAllChildren="True" />
     <Target Name="$(ProjectDir)\..\Deployment\assemblies\net35\AWSSDK.AppMesh.dll" Analyze="True" AnalyzeAllChildren="True" />

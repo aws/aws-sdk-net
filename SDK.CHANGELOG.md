@@ -1,3 +1,15 @@
+### 3.3.430.0 (2018-12-18 23:00 UTC)
+* ApiGatewayManagementApi (3.3.0.0)
+	* This is the initial SDK release for the Amazon API Gateway Management API, which allows you to directly manage runtime aspects of your APIs. This release makes it easy to send data directly to clients connected to your WebSocket-based APIs.
+* ApiGatewayV2 (3.3.0.0)
+	* This is the initial SDK release for the Amazon API Gateway v2 APIs. This SDK will allow you to manage and configure APIs in Amazon API Gateway; this first release provides the capabilities that allow you to programmatically setup and manage WebSocket APIs end to end. 
+* EC2 (3.3.77.0)
+	* Client VPN, is a client-based VPN service. With Client VPN, you can securely access resources in AWS as well as access resources in on-premises from any location using OpenVPN based devices. With Client VPN, you can set network based firewall rules that can restrict access to networks based on Active Directory groups.
+* ElasticBeanstalk (3.3.12.0)
+	* This release adds a new resource that Elastic Beanstalk will soon support, EC2 launch template, to environment resource descriptions.
+* GlobalAccelerator (3.3.0.5)
+	* Documentation updates for Ubiquity
+
 ### 3.3.429.0 (2018-12-17 23:00 UTC)
 * ECR (3.3.4.0)
 	* This release adds support for ECR repository tagging.

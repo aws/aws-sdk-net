@@ -36,6 +36,7 @@
     <ProjectReference Include="..\..\src\Services\Amplify\AWSSDK.Amplify.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\APIGateway\AWSSDK.APIGateway.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ApiGatewayManagementApi\AWSSDK.ApiGatewayManagementApi.Net45.csproj"/>
+    <ProjectReference Include="..\..\src\Services\ApiGatewayV2\AWSSDK.ApiGatewayV2.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ApplicationAutoScaling\AWSSDK.ApplicationAutoScaling.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\ApplicationDiscoveryService\AWSSDK.ApplicationDiscoveryService.Net45.csproj"/>
     <ProjectReference Include="..\..\src\Services\AppMesh\AWSSDK.AppMesh.Net45.csproj"/>

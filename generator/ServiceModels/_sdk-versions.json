@@ -1,6 +1,6 @@
 
 {
-    "ProductVersion" : "3.3.429.0",
+    "ProductVersion" : "3.3.430.0",
     "CoreVersion"    : "3.3.29.16",
     "DefaultToPreview" : false,
     "ServiceVersions"  : {
@@ -151,7 +151,7 @@
             "InPreview"               : false
         },
         "EC2"               : {
-            "Version" : "3.3.76.3",
+            "Version" : "3.3.77.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.16"
@@ -175,7 +175,7 @@
             "InPreview"               : false
         },
         "ElasticBeanstalk"  : {
-            "Version" : "3.3.11.18",
+            "Version" : "3.3.12.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.16"
@@ -1265,7 +1265,7 @@
             "InPreview"               : false
         },
         "GlobalAccelerator"               : {
-            "Version" : "3.3.0.4",
+            "Version" : "3.3.0.5",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.16"
@@ -1330,6 +1330,22 @@
         },
         "Kafka"                           : {
             "Version" : "3.3.0.4",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.16"
+            },
+            "InPreview"               : false
+        },
+        "ApiGatewayManagementApi"         : {
+            "Version" : "3.3.0.0",
+            "AssemblyVersionOverride" : null,
+            "Dependencies"            : {
+                "Core" : "3.3.29.16"
+            },
+            "InPreview"               : false
+        },
+        "ApiGatewayV2"                    : {
+            "Version" : "3.3.0.0",
             "AssemblyVersionOverride" : null,
             "Dependencies"            : {
                 "Core" : "3.3.29.16"
