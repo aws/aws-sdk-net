@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Contains data such as the inputs and targeted instance types that are used in the
+    /// Contains data, such as the inputs and targeted instance types that are used in the
     /// process of validating the model package.
     /// 
     ///  

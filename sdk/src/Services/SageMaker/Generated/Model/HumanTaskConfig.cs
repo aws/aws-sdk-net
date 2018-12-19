@@ -107,6 +107,121 @@ namespace Amazon.SageMaker.Model
         /// is sent to a human worker. Use this function to provide input to a custom labeling
         /// job.
         /// </para>
+        ///  
+        /// <para>
+        /// For the built-in bounding box, image classification, semantic segmentation, and text
+        /// classification task types, Amazon SageMaker Ground Truth provides the following Lambda
+        /// functions:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>US East (Northern Virginia) (us-east-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>US East (Ohio) (us-east-2):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>US West (Oregon) (us-west-2):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>EU (Ireland) (eu-west-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Asia Pacific (Tokyo (ap-northeast-1):</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+        /// 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string PreHumanTaskLambdaArn
         {

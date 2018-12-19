@@ -29,8 +29,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLabelingJob operation.
-    /// Creates a job that uses human workers to label the data objects in your input dataset.
-    /// You can use the labeled data to train machine learning models
+    /// Creates a job that uses workers to label the data objects in your input dataset. You
+    /// can use the labeled data to train machine learning models.
     /// 
     ///  
     /// <para>
@@ -39,14 +39,13 @@ namespace Amazon.SageMaker.Model
     ///  <ul> <li> 
     /// <para>
     /// A private workforce that you create. It can include employees, contractors, and outside
-    /// experts. Use a private workforce when the data is highly confidential or a specific
-    /// set of skills is required.
+    /// experts. Use a private workforce when want the data to stay within your organization
+    /// or when a specific set of skills is required.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// One or more vendors that you select from the Amazon Marketplace. Vendors provide expertise
-    /// in specific areas. Vendors are selected by AWS and meet a minimum standard of data
-    /// security requirements.
+    /// One or more vendors that you select from the AWS Marketplace. Vendors provide expertise
+    /// in specific areas. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -59,7 +58,8 @@ namespace Amazon.SageMaker.Model
     /// You can also use <i>automated data labeling</i> to reduce the number of data objects
     /// that need to be labeled by a human. Automated data labeling uses <i>active learning</i>
     /// to determine if a data object can be labeled by machine or if it needs to be sent
-    /// to a human worker.
+    /// to a human worker. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+    /// Automated Data Labeling</a>.
     /// </para>
     ///  
     /// <para>
@@ -129,7 +129,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The attribute name to use for the label in the output manifest file. This is the key
         /// for the key/value pair formed with the label that a worker assigns to the object.
-        /// The name can't end with "-metadata" or "-ref".
+        /// The name can't end with "-metadata". If you are running a semantic segmentation labeling
+        /// job, the attribute name must end with "-ref". If you are running any other kind of
+        /// labeling job, the attribute name must not end with "-ref".
         /// </para>
         /// </summary>
         public string LabelAttributeName
@@ -148,6 +150,70 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LabelCategoryConfigS3Uri. 
         /// <para>
         /// The S3 URL of the file that defines the categories used to label the data objects.
+        /// </para>
+        ///  
+        /// <para>
+        /// The file is a JSON structure in the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "document-version": "2018-11-28"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "labels": [</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "label": "<i>label 1</i>"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> },</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "label": "<i>label 2</i>"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> },</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> ...</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "label": "<i>label n</i>"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> }</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> ]</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>}</code> 
         /// </para>
         /// </summary>
         public string LabelCategoryConfigS3Uri

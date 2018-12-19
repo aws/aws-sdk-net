@@ -28,7 +28,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A suggestion query for retrieving property names.
+    /// A type of <code>SuggestionQuery</code>. A suggestion query for retrieving property
+    /// names that match the specified hint.
     /// </summary>
     public partial class PropertyNameQuery
     {
@@ -37,8 +38,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PropertyNameHint. 
         /// <para>
-        /// The hyperparameter, metric, and tag key property names that begin with the specified
-        /// hint.
+        /// Text that is part of a property's name. The property names of hyperparameter, metric,
+        /// and tag key names that begin with the specified text in the <code>PropertyNameHint</code>.
         /// </para>
         /// </summary>
         public string PropertyNameHint

@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ValidationStatuses. 
         /// <para>
-        /// The status of the validation of the model package.
+        /// The validation status of the model package.
         /// </para>
         /// </summary>
         public List<ModelPackageStatusItem> ValidationStatuses

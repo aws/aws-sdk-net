@@ -77,18 +77,16 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for
-        /// Amazon S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-        /// Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i> 
+        /// If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon
+        /// S3 for your role's account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+        /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> 
         /// </para>
-        ///  <note> 
+        ///  
         /// <para>
         /// The KMS key policy must grant permission to the IAM role that you specify in your
-        /// <code>CreateTrainingJob</code> request. <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+        /// <code>CreateTramsformJob</code> request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
         /// Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
-        /// 
         /// </para>
-        ///  </note>
         /// </summary>
         public string KmsKeyId
         {

@@ -45,8 +45,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmSpecification. 
         /// <para>
-        /// The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm
-        /// to use for the training jobs that the tuning job launches.
+        /// The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource
+        /// algorithm to use for the training jobs that the tuning job launches.
         /// </para>
         /// </summary>
         public HyperParameterAlgorithmSpecification AlgorithmSpecification
@@ -67,7 +67,7 @@ namespace Amazon.SageMaker.Model
         /// Isolates the training container. No inbound or outbound network calls can be made,
         /// except for calls between peers within a training cluster for distributed training.
         /// If network isolation is used for training jobs that are configured to use a VPC, Amazon
-        /// SageMaker downloads and uploads customer data and model artifacts through the specifed
+        /// SageMaker downloads and uploads customer data and model artifacts through the specified
         /// VPC, but the training container does not have network access.
         /// </para>
         ///  <note> 

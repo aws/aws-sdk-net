@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Branch. 
         /// <para>
-        /// The default brach for the git repository.
+        /// The default beach for the git repository.
         /// </para>
         /// </summary>
         public string Branch

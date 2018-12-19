@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the algorithm.&gt;
+        /// The Amazon Resource Name (ARN) of the algorithm.
         /// </para>
         /// </summary>
         public string AlgorithmArn

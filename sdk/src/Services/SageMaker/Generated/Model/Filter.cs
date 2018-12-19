@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker
-    /// uses the equals operator as a default.
+    /// uses the equals operator as the default.
     /// </para>
     ///  
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </dd> <dt>HyperParameters</dt> <dd> 
     /// <para>
-    /// To define a hyperparameter filter, enter a value with the form <code>"HyperParamters.&lt;name&gt;"</code>.
+    /// To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>.
     /// Decimal hyperparameter values are treated as a decimal in a comparison if the specified
     /// <code>Value</code> is also a decimal value. If the specified <code>Value</code> is
     /// an integer, the decimal hyperparameter values are treated as integers. For example,
@@ -118,8 +118,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A property name. For example, <code>TrainingJobName</code>. See <a>TrainingJob</a>
-        /// properties for the list of valid property names for each supported resource.
+        /// A property name. For example, <code>TrainingJobName</code>. For the list of valid
+        /// property names returned in a search result for each supported resource, see <a>TrainingJob</a>
+        /// properties. You must specify a valid property name for the resource.
         /// </para>
         /// </summary>
         public string Name
@@ -173,7 +174,10 @@ namespace Amazon.SageMaker.Model
         /// Only supported for text-based properties. The word-list of the property contains the
         /// specified <code>Value</code>.
         /// </para>
-        ///  </dd> </dl>
+        ///  </dd> </dl> 
+        /// <para>
+        /// If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
+        /// </para>
         /// </summary>
         public Operator Operator
         {
@@ -190,9 +194,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A value used with <code>Resource</code> and <code>Operator</code> to determin if objects
-        /// statisfy the filter's condition. For numerical properties, <code>Value</code> must
-        /// be an integer or floating-point decimal. For timestamp properties, <code>Value</code>
+        /// A value used with <code>Resource</code> and <code>Operator</code> to determine if
+        /// objects satisfy the filter's condition. For numerical properties, <code>Value</code>
+        /// must be an integer or floating-point decimal. For timestamp properties, <code>Value</code>
         /// must be an ISO 8601 date-time string of the following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.
         /// </para>
         /// </summary>

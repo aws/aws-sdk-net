@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CompilationJobStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CompilationStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CompilationStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CompilationTargetDevice", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

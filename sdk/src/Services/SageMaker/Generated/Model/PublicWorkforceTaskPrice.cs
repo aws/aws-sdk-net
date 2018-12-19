@@ -29,8 +29,159 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Defines the amount of money paid to an Amazon Mechanical Turk worker for each task
-    /// performed. For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-public-payment.html">
-    /// Public Workforce Task Price</a>.
+    /// performed. 
+    /// 
+    ///  
+    /// <para>
+    /// Use one of the following prices for bounding box tasks. Prices are in US dollars.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 0.036
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.048
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.060
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.072
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.120
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.240
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.360
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.480
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.600
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.720
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.840
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.960
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.080
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.200
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Use one of the following prices for image classification, text classification, and
+    /// custom tasks. Prices are in US dollars.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 0.012
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.024
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.036
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.048
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.060
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.072
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.120
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.240
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.360
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.480
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.600
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.720
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.840
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.960
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.080
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.200
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Use one of the following prices for semantic segmentation tasks. Prices are in US
+    /// dollars.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// 0.840
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 0.960
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.080
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// 1.200
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class PublicWorkforceTaskPrice
     {

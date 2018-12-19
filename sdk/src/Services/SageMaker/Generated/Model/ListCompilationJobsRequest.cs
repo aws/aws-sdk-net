@@ -46,6 +46,8 @@ namespace Amazon.SageMaker.Model
         private int? _maxResults;
         private string _nameContains;
         private string _nextToken;
+        private ListCompilationJobsSortBy _sortBy;
+        private SortOrder _sortOrder;
         private CompilationJobStatus _statusEquals;
 
         /// <summary>
@@ -178,6 +180,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The field by which to sort results. The default is <code>CreationTime</code>.
+        /// </para>
+        /// </summary>
+        public ListCompilationJobsSortBy SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortOrder. 
+        /// <para>
+        /// The sort order for results. The default is <code>Ascending</code>.
+        /// </para>
+        /// </summary>
+        public SortOrder SortOrder
+        {
+            get { return this._sortOrder; }
+            set { this._sortOrder = value; }
+        }
+
+        // Check to see if SortOrder property is set
+        internal bool IsSetSortOrder()
+        {
+            return this._sortOrder != null;
         }
 
         /// <summary>

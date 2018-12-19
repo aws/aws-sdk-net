@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for failure, if the overall status is a failed state.
+        /// if the overall status is <code>Failed</code>, the reason for the failure.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the algorithm for which the overall status is being repoorted.
+        /// The name of the algorithm for which the overall status is being reported.
         /// </para>
         /// </summary>
         public string Name

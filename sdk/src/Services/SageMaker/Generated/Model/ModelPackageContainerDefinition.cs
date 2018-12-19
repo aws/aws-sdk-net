@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Image. 
         /// <para>
-        /// The Amazon EC2 Container Registry path where inference code is stored.
+        /// The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.
         /// </para>
         ///  
         /// <para>
@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The ID of the model package.
+        /// The AWS Marketplace product ID of the model package.
         /// </para>
         /// </summary>
         public string ProductId

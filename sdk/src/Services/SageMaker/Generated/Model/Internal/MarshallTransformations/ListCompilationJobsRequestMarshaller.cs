@@ -109,6 +109,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetSortBy())
+                {
+                    context.Writer.WritePropertyName("SortBy");
+                    context.Writer.Write(publicRequest.SortBy);
+                }
+
+                if(publicRequest.IsSetSortOrder())
+                {
+                    context.Writer.WritePropertyName("SortOrder");
+                    context.Writer.Write(publicRequest.SortOrder);
+                }
+
                 if(publicRequest.IsSetStatusEquals())
                 {
                     context.Writer.WritePropertyName("StatusEquals");

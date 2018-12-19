@@ -1398,8 +1398,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.GitConfig.RepositoryUrl</property>
-    <max>1024</max>
-    <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
+    <pattern>^https://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.GitConfig.SecretArn</property>

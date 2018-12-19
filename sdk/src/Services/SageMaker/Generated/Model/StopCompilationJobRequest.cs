@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     ///  To stop a job, Amazon SageMaker sends the algorithm the SIGTERM signal. This gracefully
-    /// shuts the job down. If the job hasn’t stopped, it sends the SIGKILL signal.
+    /// shuts the job down. If the job hasn't stopped, it sends the SIGKILL signal.
     /// </para>
     ///  
     /// <para>

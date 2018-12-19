@@ -37,8 +37,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PropertyNameQuery. 
         /// <para>
-        /// Defines a property name hint. Only property names that match the specified hint are
-        /// included in the response.
+        /// A type of <code>SuggestionQuery</code>. Defines a property name hint. Only property
+        /// names that match the specified hint are included in the response.
         /// </para>
         /// </summary>
         public PropertyNameQuery PropertyNameQuery

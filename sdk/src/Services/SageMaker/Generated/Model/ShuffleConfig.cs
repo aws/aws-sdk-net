@@ -52,7 +52,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Seed. 
         /// <para>
-        /// Determines the shuffling order in <code>ShuffleConfig</code>. value.
+        /// Determines the shuffling order in <code>ShuffleConfig</code> value.
         /// </para>
         /// </summary>
         public long Seed

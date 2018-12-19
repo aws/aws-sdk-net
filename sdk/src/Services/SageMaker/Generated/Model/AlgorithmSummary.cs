@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmDescription. 
         /// <para>
-        /// A brief statement describing the algorithm.
+        /// A brief description of the algorithm.
         /// </para>
         /// </summary>
         public string AlgorithmDescription
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmName. 
         /// <para>
-        /// The name of the algorithm which is described by the summary.
+        /// The name of the algorithm that is described by the summary.
         /// </para>
         /// </summary>
         public string AlgorithmName

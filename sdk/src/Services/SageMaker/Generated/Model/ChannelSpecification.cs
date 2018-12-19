@@ -78,7 +78,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the channel./sagemaker/eia
+        /// The name of the channel.
         /// </para>
         /// </summary>
         public string Name

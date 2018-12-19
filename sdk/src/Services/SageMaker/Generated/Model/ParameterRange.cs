@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Defines the possible values for categorical, continous, and integer hyperparameters
+    /// Defines the possible values for categorical, continuous, and integer hyperparameters
     /// to be used by an algorithm.
     /// </summary>
     public partial class ParameterRange

@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
         private string _compilationJobArn;
         private string _compilationJobName;
         private CompilationJobStatus _compilationJobStatus;
+        private DateTime? _compilationStartTime;
         private TargetDevice _compilationTargetDevice;
         private DateTime? _creationTime;
         private DateTime? _lastModifiedTime;
@@ -110,6 +111,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCompilationJobStatus()
         {
             return this._compilationJobStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompilationStartTime. 
+        /// <para>
+        /// The time when the model compilation job started.
+        /// </para>
+        /// </summary>
+        public DateTime CompilationStartTime
+        {
+            get { return this._compilationStartTime.GetValueOrDefault(); }
+            set { this._compilationStartTime = value; }
+        }
+
+        // Check to see if CompilationStartTime property is set
+        internal bool IsSetCompilationStartTime()
+        {
+            return this._compilationStartTime.HasValue; 
         }
 
         /// <summary>

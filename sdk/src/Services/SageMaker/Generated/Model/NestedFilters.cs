@@ -28,10 +28,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A <code>NestedFilter</code> is defined by using a resource name under <code>NestedPropertyName</code>,
-    /// which entries in a list that properties must match to be included in the results.
-    /// To satisfy the conditions specified in the <code>NestedFilters</code> call, each object
-    /// in the list must satisfy the conditions of all of the filters.
+    /// Defines a list of <code>NestedFilter</code> objects. To satisfy the conditions specified
+    /// in the <code>NestedFilters</code> call, a resource must satisfy the conditions of
+    /// all of the filters.
     /// 
     ///  
     /// <para>
@@ -42,9 +41,9 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// A <code>NestedFilters</code> object contains multiple filters. For example, to find
-    /// all training jobs that have <code>train</code> in their name, and have <code>cat/data</code>
-    /// in their<code/> <code>S3Uri</code> (under <code>InputDataConfig</code>), you need
-    /// to create a <code>NestedFilters</code> object that specfies the <code>InputDataConfig</code>
+    /// all training jobs whose name contains <code>train</code> and that have <code>cat/data</code>
+    /// in their <code>S3Uri</code> (specified in <code>InputDataConfig</code>), you need
+    /// to create a <code>NestedFilters</code> object that specifies the <code>InputDataConfig</code>
     /// property with the following <code>Filter</code> objects:
     /// </para>
     ///  <ul> <li> 
@@ -67,8 +66,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code>
-        /// call might include a filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
+        /// A list of filters. Each filter acts on a property. Filters must contain at least one
+        /// <code>Filters</code> value. For example, a <code>NestedFilters</code> call might include
+        /// a filter on the <code>PropertyName</code> parameter of the <code>InputDataConfig</code>
         /// property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
         /// </para>
         /// </summary>
@@ -87,7 +87,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NestedPropertyName. 
         /// <para>
-        /// .The name of the property used in the nested filters.
+        /// The name of the property to use in the nested filters. The value must match a listed
+        /// property name, such as <code>InputDataConfig</code>.
         /// </para>
         /// </summary>
         public string NestedPropertyName

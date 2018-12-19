@@ -134,7 +134,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FinalMetricDataList. 
         /// <para>
-        /// A list of final metric values that are set when the Training Job completes. Used only
+        /// A list of final metric values that are set when the training job completes. Used only
         /// if the training job was configured to use metrics.
         /// </para>
         /// </summary>

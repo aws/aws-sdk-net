@@ -62,8 +62,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmName. 
         /// <para>
-        /// The name of the algorithm. The name must have 1 to 63 characters. Valid characters
-        /// are a-z, A-Z, 0-9, and - (hyphen).
+        /// The name of the algorithm.
         /// </para>
         /// </summary>
         public string AlgorithmName

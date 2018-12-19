@@ -166,6 +166,70 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The S3 location of the JSON file that defines the categories used to label data objects.
         /// </para>
+        ///  
+        /// <para>
+        /// The file is a JSON structure in the following format:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>{</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "document-version": "2018-11-28"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "labels": [</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "label": "<i>label 1</i>"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> },</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "label": "<i>label 2</i>"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> },</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> ...</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> {</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> "label": "<i>label n</i>"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> }</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code> ]</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>}</code> 
+        /// </para>
         /// </summary>
         public string LabelCategoryConfigS3Uri
         {

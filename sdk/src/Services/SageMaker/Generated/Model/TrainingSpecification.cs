@@ -100,8 +100,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SupportedTuningJobObjectiveMetrics. 
         /// <para>
-        /// A list of the metrics that the alogorithm emits that can be used as the objective
-        /// metric in a hyperparameter tuning job.
+        /// A list of the metrics that the algorithm emits that can be used as the objective metric
+        /// in a hyperparameter tuning job.
         /// </para>
         /// </summary>
         public List<HyperParameterTuningJobObjective> SupportedTuningJobObjectiveMetrics

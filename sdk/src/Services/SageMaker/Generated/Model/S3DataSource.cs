@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Don't choose more ML compute instances for training than available S3 objects. If
         /// you do, some nodes won't get any data and you will pay for nodes that aren't getting
-        /// any training data. This applies in both File and Pipemodes. Keep this in mind when
+        /// any training data. This applies in both File and Pipe modes. Keep this in mind when
         /// developing algorithms. 
         /// </para>
         ///  
@@ -183,7 +183,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> 
+        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> 
         /// </para>
         ///  
         /// <para>

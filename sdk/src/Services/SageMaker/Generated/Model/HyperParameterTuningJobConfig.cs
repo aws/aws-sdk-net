@@ -118,7 +118,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingJobEarlyStoppingType. 
         /// <para>
         /// Specifies whether to use early stopping for training jobs launched by the hyperparameter
-        /// tuning job. One of the following values:
+        /// tuning job. This can be one of the following values (the default value is <code>OFF</code>):
         /// </para>
         ///  <dl> <dt>OFF</dt> <dd> 
         /// <para>
@@ -127,7 +127,9 @@ namespace Amazon.SageMaker.Model
         ///  </dd> <dt>AUTO</dt> <dd> 
         /// <para>
         /// Amazon SageMaker stops training jobs launched by the hyperparameter tuning job when
-        /// they are no longer improving as measured by the objective metric of the tuning job.
+        /// they are unlikely to perform better than previously completed training jobs. For more
+        /// information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">Stop
+        /// Training Jobs Early</a>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

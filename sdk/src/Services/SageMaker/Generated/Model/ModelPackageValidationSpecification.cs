@@ -57,7 +57,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ValidationRole. 
         /// <para>
-        /// The IAM roles to be used for the validation of a model package.
+        /// The IAM roles to be used for the validation of the model package.
         /// </para>
         /// </summary>
         public string ValidationRole

@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the Search operation.
     /// Finds Amazon SageMaker resources that match a search query. Matching resource objects
-    /// are returned as a list of <code>SearchResult</code> objects in the response. The search
-    /// results can be sorted by any resrouce property in a ascending or descending order.
+    /// are returned as a list of <code>SearchResult</code> objects in the response. You can
+    /// sort the search results by any resource property in a ascending or descending order.
     /// 
     ///  
     /// <para>
@@ -109,7 +109,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SearchExpression. 
         /// <para>
         /// A Boolean conditional statement. Resource objects must satisfy this condition to be
-        /// included in search results.
+        /// included in search results. You must provide at least one subexpression, filter, or
+        /// nested filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>,
+        /// and <code>Filters</code> that can be included in a <code>SearchExpression</code> object
+        /// is 50.
         /// </para>
         /// </summary>
         public SearchExpression SearchExpression
@@ -127,7 +130,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The name of the resource property used to sort the <code>SearchResults</code>.
+        /// The name of the resource property used to sort the <code>SearchResults</code>. The
+        /// default is <code>LastModifiedTime</code>.
         /// </para>
         /// </summary>
         public string SortBy
@@ -146,7 +150,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SortOrder. 
         /// <para>
         /// How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code>
-        /// or <code>Descending</code>.
+        /// or <code>Descending</code>. The default is <code>Descending</code>.
         /// </para>
         /// </summary>
         public SearchSortOrder SortOrder

@@ -118,7 +118,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelPackageDescription. 
         /// <para>
-        /// A brief summary about the model package.
+        /// A brief summary of the model package.
         /// </para>
         /// </summary>
         public string ModelPackageDescription
