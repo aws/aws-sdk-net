@@ -36,7 +36,9 @@ namespace Amazon.EC2.Model
     /// <para>
     /// A <code>cluster</code> placement group is a logical grouping of instances within a
     /// single Availability Zone that benefit from low network latency, high network throughput.
-    /// A <code>spread</code> placement group places instances on distinct hardware.
+    /// A <code>spread</code> placement group places instances on distinct hardware. A <code>partition</code>
+    /// placement group places groups of instances in different partitions, where instances
+    /// in one partition do not share the same hardware with instances in another partition.
     /// </para>
     ///  
     /// <para>
@@ -47,6 +49,7 @@ namespace Amazon.EC2.Model
     public partial class CreatePlacementGroupRequest : AmazonEC2Request
     {
         private string _groupName;
+        private int? _partitionCount;
         private PlacementStrategy _strategy;
 
         /// <summary>
@@ -57,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CreatePlacementGroupRequest with the parameterized properties
         /// </summary>
-        /// <param name="groupName">A name for the placement group. Must be unique within the scope of your account for the region. Constraints: Up to 255 ASCII characters</param>
+        /// <param name="groupName">A name for the placement group. Must be unique within the scope of your account for the Region. Constraints: Up to 255 ASCII characters</param>
         /// <param name="strategy">The placement strategy.</param>
         public CreatePlacementGroupRequest(string groupName, PlacementStrategy strategy)
         {
@@ -69,7 +72,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// A name for the placement group. Must be unique within the scope of your account for
-        /// the region.
+        /// the Region.
         /// </para>
         ///  
         /// <para>
@@ -86,6 +89,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionCount. 
+        /// <para>
+        /// The number of partitions. Valid only when <b>Strategy</b> is set to <code>partition</code>.
+        /// </para>
+        /// </summary>
+        public int PartitionCount
+        {
+            get { return this._partitionCount.GetValueOrDefault(); }
+            set { this._partitionCount = value; }
+        }
+
+        // Check to see if PartitionCount property is set
+        internal bool IsSetPartitionCount()
+        {
+            return this._partitionCount.HasValue; 
         }
 
         /// <summary>

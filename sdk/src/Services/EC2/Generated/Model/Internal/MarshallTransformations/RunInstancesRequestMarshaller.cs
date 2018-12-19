@@ -403,6 +403,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         request.Parameters.Add("Placement" + "." + "HostId", StringUtils.FromString(publicRequest.Placement.HostId));
                     }
+                    if(publicRequest.Placement.IsSetPartitionNumber())
+                    {
+                        request.Parameters.Add("Placement" + "." + "PartitionNumber", StringUtils.FromInt(publicRequest.Placement.PartitionNumber));
+                    }
                     if(publicRequest.Placement.IsSetSpreadDomain())
                     {
                         request.Parameters.Add("Placement" + "." + "SpreadDomain", StringUtils.FromString(publicRequest.Placement.SpreadDomain));

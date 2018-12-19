@@ -358,6 +358,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>partition-number</code> - The partition in which the instance is located.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>placement-group-name</code> - The name of the placement group for the instance.
         /// </para>
         ///  </li> <li> 

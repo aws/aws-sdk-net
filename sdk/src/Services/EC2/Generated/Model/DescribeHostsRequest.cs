@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// The results describe only the Dedicated Hosts in the region you're currently using.
+    /// The results describe only the Dedicated Hosts in the Region you're currently using.
     /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that
     /// have recently been released are listed with the state <code>released</code>.
     /// </para>

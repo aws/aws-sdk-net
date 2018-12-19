@@ -74,6 +74,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
                 }
+                if(publicRequest.IsSetPartitionNumber())
+                {
+                    request.Parameters.Add("PartitionNumber", StringUtils.FromInt(publicRequest.PartitionNumber));
+                }
                 if(publicRequest.IsSetTenancy())
                 {
                     request.Parameters.Add("Tenancy", StringUtils.FromString(publicRequest.Tenancy));

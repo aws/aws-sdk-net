@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Describes the authentication method to be used by a Client VPN endpoint. Client VPN
     /// supports Active Directory and mutual authentication. For more information, see <a
-    /// href="vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Athentication</a>
+    /// href="vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a>
     /// in the <i>AWS Client VPN Admin Guide</i>.
     /// </summary>
     public partial class ClientVpnAuthenticationRequest

@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientConfiguration. 
         /// <para>
-        /// the contents of the client configuration file.
+        /// The contents of the Client VPN endpoint configuration file.
         /// </para>
         /// </summary>
         public string ClientConfiguration

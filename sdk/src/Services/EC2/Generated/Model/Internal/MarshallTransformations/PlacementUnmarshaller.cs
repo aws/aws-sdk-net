@@ -78,6 +78,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("partitionNumber", targetDepth))
+                    {
+                        var unmarshaller = IntUnmarshaller.Instance;
+                        unmarshalledObject.PartitionNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("spreadDomain", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

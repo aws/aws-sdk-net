@@ -33,6 +33,7 @@ namespace Amazon.EC2.Model
     public partial class PlacementGroup
     {
         private string _groupName;
+        private int? _partitionCount;
         private PlacementGroupState _state;
         private PlacementStrategy _strategy;
 
@@ -66,6 +67,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetGroupName()
         {
             return this._groupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionCount. 
+        /// <para>
+        /// The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+        /// </para>
+        /// </summary>
+        public int PartitionCount
+        {
+            get { return this._partitionCount.GetValueOrDefault(); }
+            set { this._partitionCount = value; }
+        }
+
+        // Check to see if PartitionCount property is set
+        internal bool IsSetPartitionCount()
+        {
+            return this._partitionCount.HasValue; 
         }
 
         /// <summary>

@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>strategy</code> - The strategy of the placement group (<code>cluster</code>
-        /// | <code>spread</code>).
+        /// | <code>spread</code> | <code>partition</code>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

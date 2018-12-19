@@ -29,9 +29,10 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportClientVpnClientConfiguration operation.
-    /// Downloads the contents of the client configuration file for the specified Client VPN
-    /// endpoint. The client configuration file includes the Client VPN endpoint and certificate
-    /// information clients need to establish a connection with the Client VPN endpoint.
+    /// Downloads the contents of the Client VPN endpoint configuration file for the specified
+    /// Client VPN endpoint. The Client VPN endpoint configuration file includes the Client
+    /// VPN endpoint and certificate information clients need to establish a connection with
+    /// the Client VPN endpoint.
     /// </summary>
     public partial class ExportClientVpnClientConfigurationRequest : AmazonEC2Request
     {

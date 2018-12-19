@@ -60,8 +60,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// To modify the host ID, tenancy, or placement group for an instance, the instance must
-    /// be in the <code>stopped</code> state.
+    /// To modify the host ID, tenancy, placement group, or partition for an instance, the
+    /// instance must be in the <code>stopped</code> state.
     /// </para>
     /// </summary>
     public partial class ModifyInstancePlacementRequest : AmazonEC2Request
@@ -70,6 +70,7 @@ namespace Amazon.EC2.Model
         private string _groupName;
         private string _hostId;
         private string _instanceId;
+        private int? _partitionNumber;
         private HostTenancy _tenancy;
 
         /// <summary>
@@ -94,8 +95,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// The name of the placement group in which to place the instance. For spread placement
-        /// groups, the instance must have a tenancy of <code>default</code>. For cluster placement
-        /// groups, the instance must have a tenancy of <code>default</code> or <code>dedicated</code>.
+        /// groups, the instance must have a tenancy of <code>default</code>. For cluster and
+        /// partition placement groups, the instance must have a tenancy of <code>default</code>
+        /// or <code>dedicated</code>.
         /// </para>
         ///  
         /// <para>
@@ -148,6 +150,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PartitionNumber. 
+        /// <para>
+        /// Reserved for future use.
+        /// </para>
+        /// </summary>
+        public int PartitionNumber
+        {
+            get { return this._partitionNumber.GetValueOrDefault(); }
+            set { this._partitionNumber = value; }
+        }
+
+        // Check to see if PartitionNumber property is set
+        internal bool IsSetPartitionNumber()
+        {
+            return this._partitionNumber.HasValue; 
         }
 
         /// <summary>
