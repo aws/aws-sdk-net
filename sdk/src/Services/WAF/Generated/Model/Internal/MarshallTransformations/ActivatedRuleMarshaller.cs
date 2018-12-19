@@ -56,6 +56,22 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetExcludedRules())
+            {
+                context.Writer.WritePropertyName("ExcludedRules");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectExcludedRulesListValue in requestObject.ExcludedRules)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ExcludedRuleMarshaller.Instance;
+                    marshaller.Marshall(requestObjectExcludedRulesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetOverrideAction())
             {
                 context.Writer.WritePropertyName("OverrideAction");

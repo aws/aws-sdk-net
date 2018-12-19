@@ -43,6 +43,7 @@ namespace Amazon.WAF.Model
     public partial class ActivatedRule
     {
         private WafAction _action;
+        private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
         private WafOverrideAction _overrideAction;
         private int? _priority;
         private string _ruleId;
@@ -72,7 +73,7 @@ namespace Amazon.WAF.Model
         ///  </li> </ul> 
         /// <para>
         ///  <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-        /// <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.
+        /// <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>.
         /// For all other update requests, <code>ActivatedRule|Action</code> is used instead of
         /// <code>ActivatedRule|OverrideAction</code>.
         /// </para>
@@ -87,6 +88,70 @@ namespace Amazon.WAF.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExcludedRules. 
+        /// <para>
+        /// An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code>
+        /// refers to a <code>RuleGroup</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Sometimes it is necessary to troubleshoot rule groups that are blocking traffic unexpectedly
+        /// (false positives). One troubleshooting technique is to identify the specific rule
+        /// within the rule group that is blocking the legitimate traffic and then disable (exclude)
+        /// that particular rule. You can exclude rules from both your own rule groups and AWS
+        /// Marketplace rule groups that have been associated with a web ACL.
+        /// </para>
+        ///  
+        /// <para>
+        /// Specifying <code>ExcludedRules</code> does not remove those rules from the rule group.
+        /// Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests
+        /// that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code>
+        /// owner will receive COUNT metrics for each <code>ExcludedRule</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to exclude rules from a rule group that is already associated with a web
+        /// ACL, perform the following steps:
+        /// </para>
+        ///  <ol> <li> 
+        /// <para>
+        /// Use the AWS WAF logs to identify the IDs of the rules that you want to exclude. For
+        /// more information about the logs, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+        /// Web ACL Traffic Information</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Submit an <a>UpdateWebACL</a> request that has two actions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The first action deletes the existing rule group from the web ACL. That is, in the
+        /// <a>UpdateWebACL</a> request, the first <code>Updates:Action</code> should be <code>DELETE</code>
+        /// and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
+        /// the rules that you want to exclude.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The second action inserts the same rule group back in, but specifying the rules to
+        /// exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>,
+        /// <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed,
+        /// and <code>ExcludedRules</code> should contain the rules that you want to exclude.
+        /// </para>
+        ///  </li> </ul> </li> </ol>
+        /// </summary>
+        public List<ExcludedRule> ExcludedRules
+        {
+            get { return this._excludedRules; }
+            set { this._excludedRules = value; }
+        }
+
+        // Check to see if ExcludedRules property is set
+        internal bool IsSetExcludedRules()
+        {
+            return this._excludedRules != null && this._excludedRules.Count > 0; 
         }
 
         /// <summary>

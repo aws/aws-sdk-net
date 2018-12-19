@@ -1445,6 +1445,10 @@ namespace Amazon.WAF
         /// </summary>
         public static readonly ParameterExceptionField RATE_KEY = new ParameterExceptionField("RATE_KEY");
         /// <summary>
+        /// Constant RESOURCE_ARN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField RESOURCE_ARN = new ParameterExceptionField("RESOURCE_ARN");
+        /// <summary>
         /// Constant RULE_TYPE for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField RULE_TYPE = new ParameterExceptionField("RULE_TYPE");
@@ -1506,6 +1510,10 @@ namespace Amazon.WAF
     public class ParameterExceptionReason : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ILLEGAL_ARGUMENT for ParameterExceptionReason
+        /// </summary>
+        public static readonly ParameterExceptionReason ILLEGAL_ARGUMENT = new ParameterExceptionReason("ILLEGAL_ARGUMENT");
         /// <summary>
         /// Constant ILLEGAL_COMBINATION for ParameterExceptionReason
         /// </summary>

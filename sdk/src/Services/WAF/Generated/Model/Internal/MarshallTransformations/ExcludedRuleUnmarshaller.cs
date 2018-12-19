@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ActivatedRule Object
+    /// Response Unmarshaller for ExcludedRule Object
     /// </summary>  
-    public class ActivatedRuleUnmarshaller : IUnmarshaller<ActivatedRule, XmlUnmarshallerContext>, IUnmarshaller<ActivatedRule, JsonUnmarshallerContext>
+    public class ExcludedRuleUnmarshaller : IUnmarshaller<ExcludedRule, XmlUnmarshallerContext>, IUnmarshaller<ExcludedRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ActivatedRule IUnmarshaller<ActivatedRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ExcludedRule IUnmarshaller<ExcludedRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,51 +53,21 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ActivatedRule Unmarshall(JsonUnmarshallerContext context)
+        public ExcludedRule Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ActivatedRule unmarshalledObject = new ActivatedRule();
+            ExcludedRule unmarshalledObject = new ExcludedRule();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Action", targetDepth))
-                {
-                    var unmarshaller = WafActionUnmarshaller.Instance;
-                    unmarshalledObject.Action = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ExcludedRules", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ExcludedRule, ExcludedRuleUnmarshaller>(ExcludedRuleUnmarshaller.Instance);
-                    unmarshalledObject.ExcludedRules = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("OverrideAction", targetDepth))
-                {
-                    var unmarshaller = WafOverrideActionUnmarshaller.Instance;
-                    unmarshalledObject.OverrideAction = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Priority", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("RuleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RuleId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -106,12 +76,12 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         }
 
 
-        private static ActivatedRuleUnmarshaller _instance = new ActivatedRuleUnmarshaller();        
+        private static ExcludedRuleUnmarshaller _instance = new ExcludedRuleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ActivatedRuleUnmarshaller Instance
+        public static ExcludedRuleUnmarshaller Instance
         {
             get
             {

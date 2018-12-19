@@ -198,12 +198,12 @@ namespace Amazon.WAF
 
 
         /// <summary>
-        /// Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow
-        /// or block based on the IP addresses that the requests originate from. For example,
-        /// if you're receiving a lot of requests from one or more individual IP addresses or
-        /// one or more ranges of IP addresses and you want to block the requests, you can create
-        /// an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF
-        /// to block the requests. 
+        /// Creates an <a>IPSet</a>, which you use to specify which web requests that you want
+        /// to allow or block based on the IP addresses that the requests originate from. For
+        /// example, if you're receiving a lot of requests from one or more individual IP addresses
+        /// or one or more ranges of IP addresses and you want to block the requests, you can
+        /// create an <code>IPSet</code> that contains those IP addresses and then configure AWS
+        /// WAF to block the requests. 
         /// 
         ///  
         /// <para>
@@ -386,8 +386,8 @@ namespace Amazon.WAF
         /// Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code>
         /// objects, and other predicates that identify the requests that you want to block. If
         /// you add more than one predicate to a <code>Rule</code>, a request must match all of
-        /// the specifications to be allowed or blocked. For example, suppose you add the following
-        /// to a <code>Rule</code>:
+        /// the specifications to be allowed or blocked. For example, suppose that you add the
+        /// following to a <code>Rule</code>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -447,7 +447,7 @@ namespace Amazon.WAF
         /// </summary>
         /// <param name="name">A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
-        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you create the <code>Rule</code>.</param>
+        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of the metric after you create the <code>Rule</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2757,8 +2757,8 @@ namespace Amazon.WAF
         /// object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
         /// specifies the web requests that you want to allow, block, or count. If you add more
         /// than one predicate to a <code>Rule</code>, a request must match all of the specifications
-        /// to be allowed, blocked, or counted. For example, suppose you add the following to
-        /// a <code>Rule</code>: 
+        /// to be allowed, blocked, or counted. For example, suppose that you add the following
+        /// to a <code>Rule</code>: 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -3042,8 +3042,8 @@ namespace Amazon.WAF
         ///  </li> </ul> 
         /// <para>
         /// You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests
-        /// you want to allow, block, or count. For example, if you're receiving requests that
-        /// contain snippets of SQL code in the query string and you want to block the requests,
+        /// that you want to allow, block, or count. For example, if you're receiving requests
+        /// that contain snippets of SQL code in the query string and you want to block the requests,
         /// you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
         /// then configure AWS WAF to block the requests. 
         /// </para>

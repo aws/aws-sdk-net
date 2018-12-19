@@ -129,8 +129,8 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property MetricName. 
         /// <para>
         /// A friendly name or description for the metrics for this <code>WebACL</code>. The name
-        /// can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace.
-        /// You can't change <code>MetricName</code> after you create the <code>WebACL</code>.
+        /// can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white
+        /// space. You can't change <code>MetricName</code> after you create the <code>WebACL</code>.
         /// </para>
         /// </summary>
         public string MetricName

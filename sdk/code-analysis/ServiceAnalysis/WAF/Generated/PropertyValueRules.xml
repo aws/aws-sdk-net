@@ -833,6 +833,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAF.Model.ExcludedRule.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAF.Model.GeoMatchSet.GeoMatchSetId</property>
     <min>1</min>
     <max>128</max>
@@ -1058,6 +1063,11 @@
     <property>Amazon.WAF.Model.WebACL.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAF.Model.WebACL.WebACLArn</property>
+    <min>1</min>
+    <max>1224</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAF.Model.WebACL.WebACLId</property>
