@@ -858,6 +858,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFRegional.Model.ExcludedRule.RuleId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFRegional.Model.GeoMatchSet.GeoMatchSetId</property>
     <min>1</min>
     <max>128</max>

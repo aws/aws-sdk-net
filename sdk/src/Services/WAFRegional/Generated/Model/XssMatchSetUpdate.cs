@@ -40,8 +40,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>.
-        /// Use <code>DELETE</code> to remove a <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+        /// Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>.
+        /// Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
         /// </para>
         /// </summary>
         public ChangeAction Action

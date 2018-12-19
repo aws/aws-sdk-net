@@ -29,7 +29,8 @@ namespace Amazon.WAFRegional.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateWebACL operation.
-    /// Associates a web ACL with a resource.
+    /// Associates a web ACL with a resource, either an application load balancer or Amazon
+    /// API Gateway stage.
     /// </summary>
     public partial class AssociateWebACLRequest : AmazonWAFRegionalRequest
     {
@@ -39,8 +40,24 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) of the resource to be protected.
+        /// The ARN (Amazon Resource Name) of the resource to be protected, either an application
+        /// load balancer or Amazon API Gateway stage. 
         /// </para>
+        ///  
+        /// <para>
+        /// The ARN should be in one of the following formats:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+        /// </code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i>
+        /// </code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ResourceArn
         {
@@ -57,7 +74,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property WebACLId. 
         /// <para>
-        /// A unique identifier (ID) for the web ACL.
+        /// A unique identifier (ID) for the web ACL. 
         /// </para>
         /// </summary>
         public string WebACLId

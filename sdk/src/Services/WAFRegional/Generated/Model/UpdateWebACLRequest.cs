@@ -41,9 +41,9 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>Rules</code> that you want to add and/or delete. If you want to replace
-    /// one <code>Rule</code> with another, you delete the existing <code>Rule</code> and
-    /// add the new one.
+    /// The <code>Rules</code> that you want to add or delete. If you want to replace one
+    /// <code>Rule</code> with another, you delete the existing <code>Rule</code> and add
+    /// the new one.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.WAFRegional.Model
     /// If you add more than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates
     /// each request against the <code>Rules</code> in order based on the value of <code>Priority</code>.
     /// (The <code>Rule</code> that has the lowest value for <code>Priority</code> is evaluated
-    /// first.) When a web request matches all of the predicates (such as <code>ByteMatchSets</code>
+    /// first.) When a web request matches all the predicates (such as <code>ByteMatchSets</code>
     /// and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the corresponding
     /// action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
     /// in the <code>WebACL</code>, if any. 
@@ -90,6 +90,18 @@ namespace Amazon.WAFRegional.Model
     /// Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that
     /// you want to include in the <code>WebACL</code>, to specify the default action, and
     /// to associate the <code>WebACL</code> with a CloudFront distribution. 
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as
+    /// your <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
+    /// request to exclude certain rules from that rule group, you must first remove the rule
+    /// group from the web ACL, the re-insert it again, specifying the excluded rules. For
+    /// details, see <a>ActivatedRule$ExcludedRules</a>. 
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -169,7 +181,7 @@ namespace Amazon.WAFRegional.Model
         ///  <a>ActivatedRule</a>: Contains <code>Action</code>, <code>OverrideAction</code>,
         /// <code>Priority</code>, <code>RuleId</code>, and <code>Type</code>. <code>ActivatedRule|OverrideAction</code>
         /// applies only when updating or adding a <code>RuleGroup</code> to a <code>WebACL</code>.
-        /// In this case you do not use <code>ActivatedRule|Action</code>. For all other update
+        /// In this case, you do not use <code>ActivatedRule|Action</code>. For all other update
         /// requests, <code>ActivatedRule|Action</code> is used instead of <code>ActivatedRule|OverrideAction</code>.
         /// 
         /// </para>

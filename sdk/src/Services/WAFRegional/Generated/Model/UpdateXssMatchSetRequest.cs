@@ -35,7 +35,7 @@ namespace Amazon.WAFRegional.Model
     ///  <ul> <li> 
     /// <para>
     ///  <code>Action</code>: Whether to insert the object into or delete the object from
-    /// the array. To change a <code>XssMatchTuple</code>, you delete the existing object
+    /// the array. To change an <code>XssMatchTuple</code>, you delete the existing object
     /// and add a new one.
     /// </para>
     ///  </li> <li> 
@@ -55,11 +55,11 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You use <code>XssMatchSet</code> objects to specify which CloudFront requests you
-    /// want to allow, block, or count. For example, if you're receiving requests that contain
-    /// cross-site scripting attacks in the request body and you want to block the requests,
-    /// you can create an <code>XssMatchSet</code> with the applicable settings, and then
-    /// configure AWS WAF to block the requests. 
+    /// You use <code>XssMatchSet</code> objects to specify which CloudFront requests that
+    /// you want to allow, block, or count. For example, if you're receiving requests that
+    /// contain cross-site scripting attacks in the request body and you want to block the
+    /// requests, you can create an <code>XssMatchSet</code> with the applicable settings,
+    /// and then configure AWS WAF to block the requests. 
     /// </para>
     ///  
     /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Updates. 
         /// <para>
         /// An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or
-        /// delete from a <a>XssMatchSet</a>. For more information, see the applicable data types:
+        /// delete from an <a>XssMatchSet</a>. For more information, see the applicable data types:
         /// </para>
         ///  <ul> <li> 
         /// <para>

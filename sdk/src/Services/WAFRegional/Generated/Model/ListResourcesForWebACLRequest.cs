@@ -39,7 +39,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to list, either and application load balancer or Amazon API Gateway.
+        /// The type of resource to list, either an application load balancer or Amazon API Gateway.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

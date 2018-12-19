@@ -248,7 +248,8 @@ namespace Amazon.WAFRegional
 
 
         /// <summary>
-        /// Associates a web ACL with a resource.
+        /// Associates a web ACL with a resource, either an application load balancer or Amazon
+        /// API Gateway stage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateWebACL service method.</param>
         /// 
@@ -884,12 +885,12 @@ namespace Amazon.WAFRegional
 
 
         /// <summary>
-        /// Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow
-        /// or block based on the IP addresses that the requests originate from. For example,
-        /// if you're receiving a lot of requests from one or more individual IP addresses or
-        /// one or more ranges of IP addresses and you want to block the requests, you can create
-        /// an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF
-        /// to block the requests. 
+        /// Creates an <a>IPSet</a>, which you use to specify which web requests that you want
+        /// to allow or block based on the IP addresses that the requests originate from. For
+        /// example, if you're receiving a lot of requests from one or more individual IP addresses
+        /// or one or more ranges of IP addresses and you want to block the requests, you can
+        /// create an <code>IPSet</code> that contains those IP addresses and then configure AWS
+        /// WAF to block the requests. 
         /// 
         ///  
         /// <para>
@@ -1005,12 +1006,12 @@ namespace Amazon.WAFRegional
 
 
         /// <summary>
-        /// Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow
-        /// or block based on the IP addresses that the requests originate from. For example,
-        /// if you're receiving a lot of requests from one or more individual IP addresses or
-        /// one or more ranges of IP addresses and you want to block the requests, you can create
-        /// an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF
-        /// to block the requests. 
+        /// Creates an <a>IPSet</a>, which you use to specify which web requests that you want
+        /// to allow or block based on the IP addresses that the requests originate from. For
+        /// example, if you're receiving a lot of requests from one or more individual IP addresses
+        /// or one or more ranges of IP addresses and you want to block the requests, you can
+        /// create an <code>IPSet</code> that contains those IP addresses and then configure AWS
+        /// WAF to block the requests. 
         /// 
         ///  
         /// <para>
@@ -1125,12 +1126,12 @@ namespace Amazon.WAFRegional
 
 
         /// <summary>
-        /// Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow
-        /// or block based on the IP addresses that the requests originate from. For example,
-        /// if you're receiving a lot of requests from one or more individual IP addresses or
-        /// one or more ranges of IP addresses and you want to block the requests, you can create
-        /// an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF
-        /// to block the requests. 
+        /// Creates an <a>IPSet</a>, which you use to specify which web requests that you want
+        /// to allow or block based on the IP addresses that the requests originate from. For
+        /// example, if you're receiving a lot of requests from one or more individual IP addresses
+        /// or one or more ranges of IP addresses and you want to block the requests, you can
+        /// create an <code>IPSet</code> that contains those IP addresses and then configure AWS
+        /// WAF to block the requests. 
         /// 
         ///  
         /// <para>
@@ -1660,8 +1661,8 @@ namespace Amazon.WAFRegional
         /// Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code>
         /// objects, and other predicates that identify the requests that you want to block. If
         /// you add more than one predicate to a <code>Rule</code>, a request must match all of
-        /// the specifications to be allowed or blocked. For example, suppose you add the following
-        /// to a <code>Rule</code>:
+        /// the specifications to be allowed or blocked. For example, suppose that you add the
+        /// following to a <code>Rule</code>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1721,7 +1722,7 @@ namespace Amazon.WAFRegional
         /// </summary>
         /// <param name="name">A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
-        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you create the <code>Rule</code>.</param>
+        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of the metric after you create the <code>Rule</code>.</param>
         /// 
         /// <returns>The response from the CreateRule service method, as returned by WAFRegional.</returns>
         /// <exception cref="Amazon.WAFRegional.Model.WAFDisallowedNameException">
@@ -1804,8 +1805,8 @@ namespace Amazon.WAFRegional
         /// Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code>
         /// objects, and other predicates that identify the requests that you want to block. If
         /// you add more than one predicate to a <code>Rule</code>, a request must match all of
-        /// the specifications to be allowed or blocked. For example, suppose you add the following
-        /// to a <code>Rule</code>:
+        /// the specifications to be allowed or blocked. For example, suppose that you add the
+        /// following to a <code>Rule</code>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1945,8 +1946,8 @@ namespace Amazon.WAFRegional
         /// Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code>
         /// objects, and other predicates that identify the requests that you want to block. If
         /// you add more than one predicate to a <code>Rule</code>, a request must match all of
-        /// the specifications to be allowed or blocked. For example, suppose you add the following
-        /// to a <code>Rule</code>:
+        /// the specifications to be allowed or blocked. For example, suppose that you add the
+        /// following to a <code>Rule</code>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -2006,7 +2007,7 @@ namespace Amazon.WAFRegional
         /// </summary>
         /// <param name="name">A friendly name or description of the <a>Rule</a>. You can't change the name of a <code>Rule</code> after you create it.</param>
         /// <param name="changeToken">The value returned by the most recent call to <a>GetChangeToken</a>.</param>
-        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change the name of the metric after you create the <code>Rule</code>.</param>
+        /// <param name="metricName">A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change the name of the metric after you create the <code>Rule</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5514,7 +5515,8 @@ namespace Amazon.WAFRegional
 
 
         /// <summary>
-        /// Removes a web ACL from the specified resource.
+        /// Removes a web ACL from the specified resource, either an application load balancer
+        /// or Amazon API Gateway stage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateWebACL service method.</param>
         /// 
@@ -6968,7 +6970,8 @@ namespace Amazon.WAFRegional
 
 
         /// <summary>
-        /// Returns the web ACL for the specified resource.
+        /// Returns the web ACL for the specified resource, either an application load balancer
+        /// or Amazon API Gateway stage.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWebACLForResource service method.</param>
         /// 
@@ -10449,8 +10452,8 @@ namespace Amazon.WAFRegional
         /// object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
         /// specifies the web requests that you want to allow, block, or count. If you add more
         /// than one predicate to a <code>Rule</code>, a request must match all of the specifications
-        /// to be allowed, blocked, or counted. For example, suppose you add the following to
-        /// a <code>Rule</code>: 
+        /// to be allowed, blocked, or counted. For example, suppose that you add the following
+        /// to a <code>Rule</code>: 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -10665,8 +10668,8 @@ namespace Amazon.WAFRegional
         /// object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
         /// specifies the web requests that you want to allow, block, or count. If you add more
         /// than one predicate to a <code>Rule</code>, a request must match all of the specifications
-        /// to be allowed, blocked, or counted. For example, suppose you add the following to
-        /// a <code>Rule</code>: 
+        /// to be allowed, blocked, or counted. For example, suppose that you add the following
+        /// to a <code>Rule</code>: 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -10878,8 +10881,8 @@ namespace Amazon.WAFRegional
         /// object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
         /// specifies the web requests that you want to allow, block, or count. If you add more
         /// than one predicate to a <code>Rule</code>, a request must match all of the specifications
-        /// to be allowed, blocked, or counted. For example, suppose you add the following to
-        /// a <code>Rule</code>: 
+        /// to be allowed, blocked, or counted. For example, suppose that you add the following
+        /// to a <code>Rule</code>: 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -11589,8 +11592,8 @@ namespace Amazon.WAFRegional
         ///  </li> </ul> 
         /// <para>
         /// You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests
-        /// you want to allow, block, or count. For example, if you're receiving requests that
-        /// contain snippets of SQL code in the query string and you want to block the requests,
+        /// that you want to allow, block, or count. For example, if you're receiving requests
+        /// that contain snippets of SQL code in the query string and you want to block the requests,
         /// you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
         /// then configure AWS WAF to block the requests. 
         /// </para>
@@ -11789,8 +11792,8 @@ namespace Amazon.WAFRegional
         ///  </li> </ul> 
         /// <para>
         /// You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests
-        /// you want to allow, block, or count. For example, if you're receiving requests that
-        /// contain snippets of SQL code in the query string and you want to block the requests,
+        /// that you want to allow, block, or count. For example, if you're receiving requests
+        /// that contain snippets of SQL code in the query string and you want to block the requests,
         /// you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
         /// then configure AWS WAF to block the requests. 
         /// </para>
@@ -11986,8 +11989,8 @@ namespace Amazon.WAFRegional
         ///  </li> </ul> 
         /// <para>
         /// You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests
-        /// you want to allow, block, or count. For example, if you're receiving requests that
-        /// contain snippets of SQL code in the query string and you want to block the requests,
+        /// that you want to allow, block, or count. For example, if you're receiving requests
+        /// that contain snippets of SQL code in the query string and you want to block the requests,
         /// you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
         /// then configure AWS WAF to block the requests. 
         /// </para>
@@ -12197,9 +12200,9 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Rules</code> that you want to add and/or delete. If you want to replace
-        /// one <code>Rule</code> with another, you delete the existing <code>Rule</code> and
-        /// add the new one.
+        /// The <code>Rules</code> that you want to add or delete. If you want to replace one
+        /// <code>Rule</code> with another, you delete the existing <code>Rule</code> and add
+        /// the new one.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12212,7 +12215,7 @@ namespace Amazon.WAFRegional
         /// If you add more than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates
         /// each request against the <code>Rules</code> in order based on the value of <code>Priority</code>.
         /// (The <code>Rule</code> that has the lowest value for <code>Priority</code> is evaluated
-        /// first.) When a web request matches all of the predicates (such as <code>ByteMatchSets</code>
+        /// first.) When a web request matches all the predicates (such as <code>ByteMatchSets</code>
         /// and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the corresponding
         /// action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
         /// in the <code>WebACL</code>, if any. 
@@ -12246,6 +12249,18 @@ namespace Amazon.WAFRegional
         /// Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that
         /// you want to include in the <code>WebACL</code>, to specify the default action, and
         /// to associate the <code>WebACL</code> with a CloudFront distribution. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as
+        /// your <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
+        /// request to exclude certain rules from that rule group, you must first remove the rule
+        /// group from the web ACL, the re-insert it again, specifying the excluded rules. For
+        /// details, see <a>ActivatedRule$ExcludedRules</a>. 
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -12446,7 +12461,7 @@ namespace Amazon.WAFRegional
         ///  <ul> <li> 
         /// <para>
         ///  <code>Action</code>: Whether to insert the object into or delete the object from
-        /// the array. To change a <code>XssMatchTuple</code>, you delete the existing object
+        /// the array. To change an <code>XssMatchTuple</code>, you delete the existing object
         /// and add a new one.
         /// </para>
         ///  </li> <li> 
@@ -12466,11 +12481,11 @@ namespace Amazon.WAFRegional
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You use <code>XssMatchSet</code> objects to specify which CloudFront requests you
-        /// want to allow, block, or count. For example, if you're receiving requests that contain
-        /// cross-site scripting attacks in the request body and you want to block the requests,
-        /// you can create an <code>XssMatchSet</code> with the applicable settings, and then
-        /// configure AWS WAF to block the requests. 
+        /// You use <code>XssMatchSet</code> objects to specify which CloudFront requests that
+        /// you want to allow, block, or count. For example, if you're receiving requests that
+        /// contain cross-site scripting attacks in the request body and you want to block the
+        /// requests, you can create an <code>XssMatchSet</code> with the applicable settings,
+        /// and then configure AWS WAF to block the requests. 
         /// </para>
         ///  
         /// <para>
