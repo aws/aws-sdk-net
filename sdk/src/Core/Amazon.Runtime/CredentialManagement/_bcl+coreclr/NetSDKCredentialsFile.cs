@@ -22,6 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Amazon.Runtime.CredentialManagement
 {
@@ -177,6 +178,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// Add the profile to this store, if it's valid.
         /// </summary>
         /// <param name="profile">The profile to add.</param>
+        [SuppressMessage("Microsoft.Globalization", "CA1308", Justification = "Value is not surfaced to user. Booleans have been lowercased by SDK precedent.")]
         public void RegisterProfile(CredentialProfile profile)
         {
             if (profile.CanCreateAWSCredentials || profile.Options.IsEmpty)
