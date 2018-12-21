@@ -41,7 +41,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The JSON data passed to the connected service referenced in a task state.
+        /// The JSON data passed to the resource referenced in a task state.
         /// </para>
         /// </summary>
         public string Parameters
@@ -57,7 +57,10 @@ namespace Amazon.StepFunctions.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Region.
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// The region of the scheduled task
+        /// </para>
         /// </summary>
         public string Region
         {
@@ -74,7 +77,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The service name of the connected service in a task state.
+        /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
         public string Resource
@@ -92,7 +95,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The action of the connected service called by a task state.
+        /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
         public string ResourceType

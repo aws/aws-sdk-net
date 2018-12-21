@@ -223,6 +223,11 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ListTagsForResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.SendTaskFailureRequest.Cause</property>
     <min>0</min>
     <max>32768</max>
@@ -282,6 +287,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StopExecutionRequest.ExecutionArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TagResourceRequest.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
@@ -469,6 +484,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.StepFunctions.Model.ResourceNotFound.ResourceName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateEnteredEventDetails.Input</property>
     <max>32768</max>
   </property-value-rule>
@@ -494,6 +514,16 @@
   <property-value-rule>
     <property>Amazon.StepFunctions.Model.StateMachineListItem.StateMachineArn</property>
     <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.Tag.Value</property>
+    <min>0</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
@@ -633,5 +663,10 @@
     <property>Amazon.StepFunctions.Model.TaskTimedOutEventDetails.ResourceType</property>
     <min>1</min>
     <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.StepFunctions.Model.TooManyTags.ResourceName</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
 </property-value-rules>

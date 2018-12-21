@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the start of a task during an execution.
+    /// Tags are key-value pairs that can be associated with Step Functions state machines
+    /// and activities.
     /// </summary>
-    public partial class TaskStartedEventDetails
+    public partial class Tag
     {
-        private string _resource;
-        private string _resourceType;
+        private string _key;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property Resource. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The service name of the resource in a task state.
+        /// The key of a tag.
         /// </para>
         /// </summary>
-        public string Resource
+        public string Key
         {
-            get { return this._resource; }
-            set { this._resource = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if Resource property is set
-        internal bool IsSetResource()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._resource != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// The action of the resource called by a task state.
+        /// The value of a tag.
         /// </para>
         /// </summary>
-        public string ResourceType
+        public string Value
         {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._resourceType != null;
+            return this._value != null;
         }
 
     }

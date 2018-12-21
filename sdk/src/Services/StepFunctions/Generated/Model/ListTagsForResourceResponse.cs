@@ -28,47 +28,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the start of a task during an execution.
+    /// This is the response object from the ListTagsForResource operation.
     /// </summary>
-    public partial class TaskStartedEventDetails
+    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
-        private string _resource;
-        private string _resourceType;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property Resource. 
+        /// Gets and sets the property Tags. 
         /// <para>
-        /// The service name of the resource in a task state.
+        /// An array of tags associated with the resource.
         /// </para>
         /// </summary>
-        public string Resource
+        public List<Tag> Tags
         {
-            get { return this._resource; }
-            set { this._resource = value; }
+            get { return this._tags; }
+            set { this._tags = value; }
         }
 
-        // Check to see if Resource property is set
-        internal bool IsSetResource()
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
         {
-            return this._resource != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceType. 
-        /// <para>
-        /// The action of the resource called by a task state.
-        /// </para>
-        /// </summary>
-        public string ResourceType
-        {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
-        }
-
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
-        {
-            return this._resourceType != null;
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

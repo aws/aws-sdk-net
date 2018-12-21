@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the start of connected service by a task state.
+    /// Contains details about the successful completion of a task state.
     /// </summary>
     public partial class TaskSucceededEventDetails
     {
@@ -39,8 +39,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The full JSON response from a connected service when a task has succeeded. This response
-        /// becomes the output of the related task.
+        /// The full JSON response from a resource when a task has succeeded. This response becomes
+        /// the output of the related task.
         /// </para>
         /// </summary>
         public string Output
@@ -58,7 +58,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The service name of the connected service in a task state.
+        /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
         public string Resource
@@ -76,7 +76,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The action of the connected service called by a task state.
+        /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
         public string ResourceType

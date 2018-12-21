@@ -28,47 +28,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the start of a task during an execution.
+    /// Container for the parameters to the UntagResource operation.
+    /// Remove a tag from a Step Functions resource
     /// </summary>
-    public partial class TaskStartedEventDetails
+    public partial class UntagResourceRequest : AmazonStepFunctionsRequest
     {
-        private string _resource;
-        private string _resourceType;
+        private string _resourceArn;
+        private List<string> _tagKeys = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property Resource. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The service name of the resource in a task state.
+        /// The Amazon Resource Name (ARN) for the Step Functions state machine or activity.
         /// </para>
         /// </summary>
-        public string Resource
+        public string ResourceArn
         {
-            get { return this._resource; }
-            set { this._resource = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Resource property is set
-        internal bool IsSetResource()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._resource != null;
+            return this._resourceArn != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceType. 
+        /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The action of the resource called by a task state.
+        /// The list of tags to remove from the resource.
         /// </para>
         /// </summary>
-        public string ResourceType
+        public List<string> TagKeys
         {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
+            get { return this._tagKeys; }
+            set { this._tagKeys = value; }
         }
 
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
+        // Check to see if TagKeys property is set
+        internal bool IsSetTagKeys()
         {
-            return this._resourceType != null;
+            return this._tagKeys != null && this._tagKeys.Count > 0; 
         }
 
     }

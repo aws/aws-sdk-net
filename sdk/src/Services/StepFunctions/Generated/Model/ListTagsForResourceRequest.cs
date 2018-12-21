@@ -28,47 +28,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about the start of a task during an execution.
+    /// Container for the parameters to the ListTagsForResource operation.
+    /// List tags for a given resource.
     /// </summary>
-    public partial class TaskStartedEventDetails
+    public partial class ListTagsForResourceRequest : AmazonStepFunctionsRequest
     {
-        private string _resource;
-        private string _resourceType;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Resource. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The service name of the resource in a task state.
+        /// The Amazon Resource Name (ARN) for the Step Functions state machine or activity.
         /// </para>
         /// </summary>
-        public string Resource
+        public string ResourceArn
         {
-            get { return this._resource; }
-            set { this._resource = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Resource property is set
-        internal bool IsSetResource()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._resource != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ResourceType. 
-        /// <para>
-        /// The action of the resource called by a task state.
-        /// </para>
-        /// </summary>
-        public string ResourceType
-        {
-            get { return this._resourceType; }
-            set { this._resourceType = value; }
-        }
-
-        // Check to see if ResourceType property is set
-        internal bool IsSetResourceType()
-        {
-            return this._resourceType != null;
+            return this._resourceArn != null;
         }
 
     }

@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// 
+    /// Contains details about a task submitted to a resource .
     /// </summary>
     public partial class TaskSubmittedEventDetails
     {
@@ -39,7 +39,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// The response from a connected service when a task has started.
+        /// The response from a resource when a task has started.
         /// </para>
         /// </summary>
         public string Output
@@ -57,7 +57,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The service name of the connected service in a task state.
+        /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
         public string Resource
@@ -75,7 +75,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The action of the connected service called by a task state.
+        /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
         public string ResourceType

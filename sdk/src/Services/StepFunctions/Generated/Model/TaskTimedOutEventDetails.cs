@@ -28,7 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Contains details about a connected service timeout that occured during an execution.
+    /// Contains details about a resource timeout that occurred during an execution.
     /// </summary>
     public partial class TaskTimedOutEventDetails
     {
@@ -76,7 +76,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The service name of the connected service in a task state.
+        /// The service name of the resource in a task state.
         /// </para>
         /// </summary>
         public string Resource
@@ -94,7 +94,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The action of the connected service called by a task state.
+        /// The action of the resource called by a task state.
         /// </para>
         /// </summary>
         public string ResourceType
