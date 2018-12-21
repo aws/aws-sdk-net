@@ -1,3 +1,8 @@
+### 3.3.433.0 (2018-12-21 05:51 UTC)
+* Core 3.3.30.0
+	* Added support for endpoint discovery.
+	* All services packages updated to require new Core
+
 ### 3.3.432.0 (2018-12-21 01:24 UTC)
 * CognitoIdentityProvider (3.3.12.0)
 	* Amazon Cognito now has API support for updating the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.
