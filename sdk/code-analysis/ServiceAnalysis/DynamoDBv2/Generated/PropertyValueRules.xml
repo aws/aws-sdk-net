@@ -240,6 +240,11 @@
     <max>1283</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DynamoDBv2.Model.TransactWriteItemsRequest.ClientRequestToken</property>
+    <min>1</min>
+    <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DynamoDBv2.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1283</max>
