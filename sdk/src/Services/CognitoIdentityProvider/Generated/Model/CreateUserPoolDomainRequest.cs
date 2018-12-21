@@ -45,7 +45,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Provide this parameter only if you want to use own custom domain for your user pool.
+        /// Provide this parameter only if you want to use a custom domain for your user pool.
         /// Otherwise, you can exclude this parameter and use the Amazon Cognito hosted domain
         /// instead.
         /// </para>

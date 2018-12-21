@@ -3229,6 +3229,38 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  UpdateUserPoolDomain
+
+        internal virtual UpdateUserPoolDomainResponse UpdateUserPoolDomain(UpdateUserPoolDomainRequest request)
+        {
+            var marshaller = UpdateUserPoolDomainRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserPoolDomainResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateUserPoolDomainRequest,UpdateUserPoolDomainResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolDomain operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">REST API Reference for UpdateUserPoolDomain Operation</seealso>
+        public virtual Task<UpdateUserPoolDomainResponse> UpdateUserPoolDomainAsync(UpdateUserPoolDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = UpdateUserPoolDomainRequestMarshaller.Instance;
+            var unmarshaller = UpdateUserPoolDomainResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateUserPoolDomainRequest,UpdateUserPoolDomainResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
         #region  VerifySoftwareToken
 
         internal virtual VerifySoftwareTokenResponse VerifySoftwareToken(VerifySoftwareTokenRequest request)

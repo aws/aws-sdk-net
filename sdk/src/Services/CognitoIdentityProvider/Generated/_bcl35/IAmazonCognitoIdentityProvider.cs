@@ -6426,6 +6426,104 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  UpdateUserPoolDomain
+
+
+        /// <summary>
+        /// Updates the Secure Sockets Layer (SSL) certificate for the custom domain for your
+        /// user pool.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to provide the Amazon Resource Name (ARN) of a new certificate
+        /// to Amazon Cognito. You cannot use it to change the domain for a user pool.
+        /// </para>
+        ///  
+        /// <para>
+        /// A custom domain is used to host the Amazon Cognito hosted UI, which provides sign-up
+        /// and sign-in pages for your application. When you set up a custom domain, you provide
+        /// a certificate that you manage with AWS Certificate Manager (ACM). When necessary,
+        /// you can use this operation to change the certificate that you applied to your custom
+        /// domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// Usually, this is unnecessary following routine certificate renewal with ACM. When
+        /// you renew your existing certificate in ACM, the ARN for your certificate remains the
+        /// same, and your custom domain uses the new certificate automatically.
+        /// </para>
+        ///  
+        /// <para>
+        /// However, if you replace your existing certificate with a new one, ACM gives the new
+        /// certificate a new ARN. To apply the new certificate to your custom domain, you must
+        /// provide this ARN to Amazon Cognito.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you add your new certificate in ACM, you must choose US East (N. Virginia) as
+        /// the AWS Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you submit your request, Amazon Cognito requires up to 1 hour to distribute
+        /// your new certificate to your custom domain.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about adding a custom domain to your user pool, see <a href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+        /// Your Own Domain for the Hosted UI</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolDomain service method.</param>
+        /// 
+        /// <returns>The response from the UpdateUserPoolDomain service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user is not authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service cannot find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">REST API Reference for UpdateUserPoolDomain Operation</seealso>
+        UpdateUserPoolDomainResponse UpdateUserPoolDomain(UpdateUserPoolDomainRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateUserPoolDomain operation on AmazonCognitoIdentityProviderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateUserPoolDomain
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">REST API Reference for UpdateUserPoolDomain Operation</seealso>
+        IAsyncResult BeginUpdateUserPoolDomain(UpdateUserPoolDomainRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateUserPoolDomain operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateUserPoolDomain.</param>
+        /// 
+        /// <returns>Returns a  UpdateUserPoolDomainResult from CognitoIdentityProvider.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">REST API Reference for UpdateUserPoolDomain Operation</seealso>
+        UpdateUserPoolDomainResponse EndUpdateUserPoolDomain(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  VerifySoftwareToken
 
 
