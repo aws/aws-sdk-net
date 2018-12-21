@@ -137,7 +137,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.RequestFailedException">
         /// The request has failed for an unspecified reason.
@@ -206,7 +206,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
         /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
@@ -269,8 +269,8 @@ namespace Amazon.ACMPCA
         ///  </li> <li> 
         /// <para>
         ///  <code>DELETED</code> - Your private CA is within the restoration period, after which
-        /// it will be permanently deleted. The length of time remaining in the CA's restoration
-        /// period will also be included in this operation's output.
+        /// it is permanently deleted. The length of time remaining in the CA's restoration period
+        /// is also included in this operation's output.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -361,7 +361,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.RequestFailedException">
         /// The request has failed for an unspecified reason.
@@ -406,7 +406,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
         /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
@@ -448,7 +448,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.RequestFailedException">
         /// The request has failed for an unspecified reason.
@@ -521,7 +521,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.MalformedCertificateException">
         /// One or more fields in the certificate are invalid.
@@ -579,7 +579,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.LimitExceededException">
         /// An ACM PCA limit has been exceeded. See the exception message returned to determine
@@ -705,7 +705,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
         /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
@@ -750,7 +750,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.RequestAlreadyProcessedException">
         /// Your request has already been completed.
@@ -803,7 +803,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidTagException">
         /// The tag associated with the CA is not valid. The invalid argument is contained in
@@ -853,7 +853,7 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidTagException">
         /// The tag associated with the CA is not valid. The invalid argument is contained in
@@ -907,7 +907,7 @@ namespace Amazon.ACMPCA
         /// and write to the bucket and find the bucket location.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
-        /// The private CA is in a state during which a report cannot be generated.
+        /// The private CA is in a state during which a report or certificate cannot be generated.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.ResourceNotFoundException">
         /// A resource such as a private CA, S3 bucket, certificate, or audit report cannot be
