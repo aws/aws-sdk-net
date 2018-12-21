@@ -270,8 +270,8 @@ namespace Amazon.MediaLive.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SegmentationMode. When set to useInputSegmentation, the
-        /// output segment or fragment points are set by the RAI markers from the input streams.
+        /// Gets and sets the property SegmentationMode. useInputSegmentation has been deprecated.
+        /// The configured segment size is always used.
         /// </summary>
         public SmoothGroupSegmentationMode SegmentationMode
         {

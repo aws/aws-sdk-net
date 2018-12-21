@@ -262,6 +262,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.SpatialAq = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subgopLength", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubgopLength = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("syntax", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

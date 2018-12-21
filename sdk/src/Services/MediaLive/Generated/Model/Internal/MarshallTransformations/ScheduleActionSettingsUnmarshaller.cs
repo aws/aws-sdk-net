@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("hlsTimedMetadataSettings", targetDepth))
+                {
+                    var unmarshaller = HlsTimedMetadataScheduleActionSettingsUnmarshaller.Instance;
+                    unmarshalledObject.HlsTimedMetadataSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("inputSwitchSettings", targetDepth))
                 {
                     var unmarshaller = InputSwitchScheduleActionSettingsUnmarshaller.Instance;

@@ -32,12 +32,28 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ScheduleActionSettings
     {
+        private HlsTimedMetadataScheduleActionSettings _hlsTimedMetadataSettings;
         private InputSwitchScheduleActionSettings _inputSwitchSettings;
         private Scte35ReturnToNetworkScheduleActionSettings _scte35ReturnToNetworkSettings;
         private Scte35SpliceInsertScheduleActionSettings _scte35SpliceInsertSettings;
         private Scte35TimeSignalScheduleActionSettings _scte35TimeSignalSettings;
         private StaticImageActivateScheduleActionSettings _staticImageActivateSettings;
         private StaticImageDeactivateScheduleActionSettings _staticImageDeactivateSettings;
+
+        /// <summary>
+        /// Gets and sets the property HlsTimedMetadataSettings. Settings to emit HLS metadata
+        /// </summary>
+        public HlsTimedMetadataScheduleActionSettings HlsTimedMetadataSettings
+        {
+            get { return this._hlsTimedMetadataSettings; }
+            set { this._hlsTimedMetadataSettings = value; }
+        }
+
+        // Check to see if HlsTimedMetadataSettings property is set
+        internal bool IsSetHlsTimedMetadataSettings()
+        {
+            return this._hlsTimedMetadataSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InputSwitchSettings. Settings to switch an input

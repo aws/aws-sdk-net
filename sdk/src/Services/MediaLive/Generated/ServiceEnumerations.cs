@@ -4171,6 +4171,56 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type H264SubGopLength.
+    /// </summary>
+    public class H264SubGopLength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DYNAMIC for H264SubGopLength
+        /// </summary>
+        public static readonly H264SubGopLength DYNAMIC = new H264SubGopLength("DYNAMIC");
+        /// <summary>
+        /// Constant FIXED for H264SubGopLength
+        /// </summary>
+        public static readonly H264SubGopLength FIXED = new H264SubGopLength("FIXED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public H264SubGopLength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static H264SubGopLength FindValue(string value)
+        {
+            return FindValue<H264SubGopLength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator H264SubGopLength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type H264Syntax.
     /// </summary>
     public class H264Syntax : ConstantClass

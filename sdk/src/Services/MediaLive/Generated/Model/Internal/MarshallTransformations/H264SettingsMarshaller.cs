@@ -243,6 +243,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SpatialAq);
             }
 
+            if(requestObject.IsSetSubgopLength())
+            {
+                context.Writer.WritePropertyName("subgopLength");
+                context.Writer.Write(requestObject.SubgopLength);
+            }
+
             if(requestObject.IsSetSyntax())
             {
                 context.Writer.WritePropertyName("syntax");

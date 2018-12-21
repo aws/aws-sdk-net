@@ -65,6 +65,7 @@ namespace Amazon.MediaLive.Model
         private int? _slices;
         private int? _softness;
         private H264SpatialAq _spatialAq;
+        private H264SubGopLength _subgopLength;
         private H264Syntax _syntax;
         private H264TemporalAq _temporalAq;
         private H264TimecodeInsertionBehavior _timecodeInsertion;
@@ -619,6 +620,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSpatialAq()
         {
             return this._spatialAq != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubgopLength. If set to fixed, use gopNumBFrames B-frames
+        /// per sub-GOP. If set to dynamic, optimize the number of B-frames used for each sub-GOP
+        /// to improve visual quality.
+        /// </summary>
+        public H264SubGopLength SubgopLength
+        {
+            get { return this._subgopLength; }
+            set { this._subgopLength = value; }
+        }
+
+        // Check to see if SubgopLength property is set
+        internal bool IsSetSubgopLength()
+        {
+            return this._subgopLength != null;
         }
 
         /// <summary>

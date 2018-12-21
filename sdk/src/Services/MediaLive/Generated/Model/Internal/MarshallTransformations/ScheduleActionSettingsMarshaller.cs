@@ -45,6 +45,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduleActionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetHlsTimedMetadataSettings())
+            {
+                context.Writer.WritePropertyName("hlsTimedMetadataSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HlsTimedMetadataScheduleActionSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.HlsTimedMetadataSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetInputSwitchSettings())
             {
                 context.Writer.WritePropertyName("inputSwitchSettings");
