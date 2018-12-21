@@ -1,3 +1,18 @@
+### 3.3.434.0 (2018-12-21 22:22 UTC)
+* ACMPCA (3.3.2.0)
+	* This release marks the introduction of waiters in ACM PCA, which allow you to control the progression of your code based on the presence or state of certain resources. Waiters can be implemented in the DescribeCertificateAuthorityAuditReport, GetCertificate, and GetCertificateAuthorityCsr API operations.
+* DynamoDBv2 (3.3.16.0)
+	* Added provisionedThroughPut exception on the request level for transaction APIs.
+* PinpointSMSVoice (3.3.1.0)
+	* Configuration sets can now use Amazon SNS as an event destination.
+* StepFunctions (3.3.4.0)
+	* This release adds support for cost allocation tagging. You can now create, delete, and list tags for AWS Step Functions activity and state machine resources. For more information about tagging, see AWS Tagging Strategies.
+* Core 3.3.30.2
+	* Updating endpoints.json file
+
+
+	* All services packages updated to require new Core
+
 ### 3.3.433.1 (2018-12-21 09:12 UTC)
 * Core 3.3.30.1
 	* Fix Regex for matching profile names in the ~/.aws/config file. Fixes bug where partial profile name would match a profile in the ~/.aws/config file.

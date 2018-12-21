@@ -32,7 +32,7 @@ namespace Amazon.Cloud9
     public partial class AmazonCloud9Config : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.3.0.42");
+            InternalSDKUtils.BuildUserAgentString("3.3.0.43");
 
         private string _userAgent = UserAgentString;
 
