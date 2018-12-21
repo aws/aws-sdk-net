@@ -28,9 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides information about a custom vocabulary. Note that vocabularies for en-AU,
-    /// en-UK, and fr-CA languages that are in preview are not available. In the console,
-    /// the vocabulary section will be greyed-out and SDK will return error message.
+    /// Provides information about a custom vocabulary.
     /// </summary>
     public partial class VocabularyInfo
     {

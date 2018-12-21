@@ -30,9 +30,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Container for the parameters to the CreateVocabulary operation.
     /// Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
-    /// handles transcription of an audio file. Note that vocabularies for en-AU, en-UK, and
-    /// fr-CA languages that are in preview are not available. In the console, the vocabulary
-    /// section will be greyed-out and SDK will return error message.
+    /// handles transcription of an audio file.
     /// </summary>
     public partial class CreateVocabularyRequest : AmazonTranscribeServiceRequest
     {

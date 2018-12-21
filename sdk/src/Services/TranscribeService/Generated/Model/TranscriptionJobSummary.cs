@@ -28,8 +28,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides a summary of information about a transcription job. Note that en-AU, en-UK,
-    /// and fr-CA languages are in preview and are only available to whitelisted customers.
+    /// Provides a summary of information about a transcription job. .
     /// </summary>
     public partial class TranscriptionJobSummary
     {

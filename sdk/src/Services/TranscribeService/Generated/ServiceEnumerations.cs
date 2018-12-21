@@ -59,6 +59,10 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly LanguageCode FrFR = new LanguageCode("fr-FR");
         /// <summary>
+        /// Constant ItIT for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode ItIT = new LanguageCode("it-IT");
+        /// <summary>
         /// Constant PtBR for LanguageCode
         /// </summary>
         public static readonly LanguageCode PtBR = new LanguageCode("pt-BR");

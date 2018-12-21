@@ -239,9 +239,7 @@ namespace Amazon.TranscribeService
 
         /// <summary>
         /// Creates a new custom vocabulary that you can use to change the way Amazon Transcribe
-        /// handles transcription of an audio file. Note that vocabularies for en-AU, en-UK, and
-        /// fr-CA languages that are in preview are not available. In the console, the vocabulary
-        /// section will be greyed-out and SDK will return error message.
+        /// handles transcription of an audio file.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVocabulary service method.</param>
         /// 
@@ -522,9 +520,7 @@ namespace Amazon.TranscribeService
         #region  GetVocabulary
 
         /// <summary>
-        /// Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK, and
-        /// fr-CA languages that are in preview are not available. In the console, the vocabulary
-        /// section will be greyed-out and SDK will return error message.
+        /// Gets information about a vocabulary.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVocabulary service method.</param>
         /// 
@@ -723,8 +719,7 @@ namespace Amazon.TranscribeService
         #region  StartTranscriptionJob
 
         /// <summary>
-        /// Starts an asynchronous job to transcribe speech to text. Note that en-AU, en-UK, and
-        /// fr-CA languages are in preview and are only available to whitelisted customers.
+        /// Starts an asynchronous job to transcribe speech to text.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTranscriptionJob service method.</param>
         /// 
@@ -802,9 +797,7 @@ namespace Amazon.TranscribeService
         /// <summary>
         /// Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code>
         /// operation overwrites all of the existing information with the values that you provide
-        /// in the request. Note that vocabularies for en-AU, en-UK, and fr-CA languages that
-        /// are in preview are not available. In the console, the vocabulary section will be greyed-out
-        /// and SDK will return error message.
+        /// in the request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateVocabulary service method.</param>
         /// 
