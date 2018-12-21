@@ -123,7 +123,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property IndexRotationPeriod. 
         /// <para>
-        /// The Elasticsearch index rotation period. Index rotation appends a time stamp to the
+        /// The Elasticsearch index rotation period. Index rotation appends a timestamp to the
         /// <code>IndexName</code> to facilitate the expiration of old data. For more information,
         /// see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
         /// Rotation for the Amazon ES Destination</a>. The default value is <code>OneDay</code>.

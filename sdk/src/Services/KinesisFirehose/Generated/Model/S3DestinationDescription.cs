@@ -37,6 +37,7 @@ namespace Amazon.KinesisFirehose.Model
         private CloudWatchLoggingOptions _cloudWatchLoggingOptions;
         private CompressionFormat _compressionFormat;
         private EncryptionConfiguration _encryptionConfiguration;
+        private string _errorOutputPrefix;
         private string _prefix;
         private string _roleARN;
 
@@ -130,6 +131,25 @@ namespace Amazon.KinesisFirehose.Model
         internal bool IsSetEncryptionConfiguration()
         {
             return this._encryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorOutputPrefix. 
+        /// <para>
+        /// A prefix that Kinesis Data Firehose evaluates and adds to failed records before writing
+        /// them to S3. This prefix appears immediately following the bucket name.
+        /// </para>
+        /// </summary>
+        public string ErrorOutputPrefix
+        {
+            get { return this._errorOutputPrefix; }
+            set { this._errorOutputPrefix = value; }
+        }
+
+        // Check to see if ErrorOutputPrefix property is set
+        internal bool IsSetErrorOutputPrefix()
+        {
+            return this._errorOutputPrefix != null;
         }
 
         /// <summary>

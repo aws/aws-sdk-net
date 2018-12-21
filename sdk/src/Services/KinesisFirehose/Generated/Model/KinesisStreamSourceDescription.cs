@@ -41,7 +41,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property DeliveryStartTimestamp. 
         /// <para>
         /// Kinesis Data Firehose starts retrieving records from the Kinesis data stream starting
-        /// with this time stamp.
+        /// with this timestamp.
         /// </para>
         /// </summary>
         public DateTime DeliveryStartTimestamp

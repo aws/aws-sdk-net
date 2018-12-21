@@ -101,6 +101,12 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetErrorOutputPrefix())
+            {
+                context.Writer.WritePropertyName("ErrorOutputPrefix");
+                context.Writer.Write(requestObject.ErrorOutputPrefix);
+            }
+
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");

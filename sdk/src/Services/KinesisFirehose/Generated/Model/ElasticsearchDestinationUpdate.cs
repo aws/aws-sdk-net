@@ -46,7 +46,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BufferingHints. 
         /// <para>
-        /// The buffering options. If no value is specified, <b>ElasticsearchBufferingHints</b>
+        /// The buffering options. If no value is specified, <code>ElasticsearchBufferingHints</code>
         /// object default values are used. 
         /// </para>
         /// </summary>
@@ -85,7 +85,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// The ARN of the Amazon ES domain. The IAM role must have permissions for <code>DescribeElasticsearchDomain</code>,
         /// <code>DescribeElasticsearchDomains</code>, and <code>DescribeElasticsearchDomainConfig</code> after
-        /// assuming the IAM role specified in <b>RoleARN</b>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// assuming the IAM role specified in <code>RoleARN</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs) and AWS Service Namespaces</a>.
         /// </para>
         /// </summary>
@@ -122,7 +123,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property IndexRotationPeriod. 
         /// <para>
-        /// The Elasticsearch index rotation period. Index rotation appends a time stamp to <code>IndexName</code>
+        /// The Elasticsearch index rotation period. Index rotation appends a timestamp to <code>IndexName</code>
         /// to facilitate the expiration of old data. For more information, see <a href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
         /// Rotation for the Amazon ES Destination</a>. Default value is <code>OneDay</code>.
         /// </para>
