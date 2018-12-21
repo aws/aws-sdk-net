@@ -16,6 +16,7 @@
 using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Util;
+using AWSSDK_DotNet.IntegrationTests.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Net;
 
@@ -28,14 +29,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
     public class PublicAccessBlockTests : TestBase<AmazonS3Client>
     {
         private static string bucketName;
-        private static IAmazonS3 s3Client = null;
+        private static IAmazonS3 s3Client = null;        
 
         [ClassInitialize()]
         public static void Initialize(TestContext a)
         {
             var config = new AmazonS3Config();
             s3Client = new AmazonS3Client(config);
-            bucketName = S3TestUtils.CreateBucket(s3Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
         }
 
         [ClassCleanup]
@@ -46,19 +47,20 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             BaseClean();
         }
                 
-        private PutPublicAccessBlockResponse Call_PutPublicAccessBlock(IAmazonS3 client, string bucketName, bool blockPublicAcls = true, 
-            bool blockPublicPolicy = true, bool ignorePublicAcls = true, bool restrictPublicBucket = true)
+        private PutPublicAccessBlockResponse Call_PutPublicAccessBlock(IAmazonS3 client, string bucketName, out PublicAccessBlockConfiguration configuration)
         {
+            configuration = new PublicAccessBlockConfiguration
+            {
+                BlockPublicAcls = true,
+                BlockPublicPolicy = true,
+                IgnorePublicAcls = true,
+                RestrictPublicBuckets = true
+            };
+
             PutPublicAccessBlockRequest putRequest = new PutPublicAccessBlockRequest
             {
                 BucketName = bucketName,
-                PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
-                {
-                    BlockPublicAcls = true,
-                    BlockPublicPolicy = true,
-                    IgnorePublicAcls = true,
-                    RestrictPublicBuckets = true
-                }
+                PublicAccessBlockConfiguration = configuration
             };
 
             var putResponse = client.PutPublicAccessBlock(putRequest);
@@ -67,16 +69,38 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             return putResponse;
         }
 
-        private GetPublicAccessBlockResponse Call_GetPublicAccessBlock(IAmazonS3 client, string bucketName)
+        private GetPublicAccessBlockResponse Call_GetPublicAccessBlock(IAmazonS3 client, string bucketName, PublicAccessBlockConfiguration expectedConfiguration)
         {
             var getRequest = new GetPublicAccessBlockRequest
             {
                 BucketName = bucketName
             };
 
-            var getResponse = client.GetPublicAccessBlock(getRequest);
-            Assert.AreEqual(true, getResponse.HttpStatusCode == HttpStatusCode.OK);
+            GetPublicAccessBlockResponse getResponse = null;
 
+            var sleeper = new UtilityMethods.ListSleeper(500, 1000, 2000, 5000, 10000, 15000);
+            UtilityMethods.WaitUntil(() =>
+            {
+                getResponse = client.GetPublicAccessBlock(getRequest);
+                if (expectedConfiguration == null)
+                {
+                        //If expectedConfiguration is null then we want GetPublicAccessBlock to throw an exception because the configuration was removed.
+                        //Wait until the configuration was removed / until an exception is thrown.
+                        return false;
+                }
+
+                return getResponse.HttpStatusCode == HttpStatusCode.OK
+                    && expectedConfiguration.BlockPublicAcls == getResponse.PublicAccessBlockConfiguration.BlockPublicAcls
+                    && expectedConfiguration.BlockPublicPolicy == getResponse.PublicAccessBlockConfiguration.BlockPublicPolicy
+                    && expectedConfiguration.IgnorePublicAcls == getResponse.PublicAccessBlockConfiguration.IgnorePublicAcls
+                    && expectedConfiguration.RestrictPublicBuckets == getResponse.PublicAccessBlockConfiguration.RestrictPublicBuckets;
+            }, sleeper, 30);
+
+            Assert.AreEqual(true, getResponse != null && getResponse.HttpStatusCode == HttpStatusCode.OK);
+            Assert.AreEqual(expectedConfiguration.BlockPublicAcls, getResponse.PublicAccessBlockConfiguration.BlockPublicAcls);
+            Assert.AreEqual(expectedConfiguration.BlockPublicPolicy, getResponse.PublicAccessBlockConfiguration.BlockPublicPolicy);
+            Assert.AreEqual(expectedConfiguration.IgnorePublicAcls, getResponse.PublicAccessBlockConfiguration.IgnorePublicAcls);
+            Assert.AreEqual(expectedConfiguration.RestrictPublicBuckets, getResponse.PublicAccessBlockConfiguration.RestrictPublicBuckets);
             return getResponse;
         }
 
@@ -88,10 +112,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             try
             {
                 //Add public access block configuration
-                Call_PutPublicAccessBlock(s3Client, bucketName);
+                PublicAccessBlockConfiguration configuration;
+                Call_PutPublicAccessBlock(s3Client, bucketName, out configuration);
 
                 //Verify the configuration exists            
-                Call_GetPublicAccessBlock(s3Client, bucketName);
+                Call_GetPublicAccessBlock(s3Client, bucketName, configuration);
 
                 //Delete the configuration
                 var deleteRequest = new DeletePublicAccessBlockRequest
@@ -102,7 +127,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 Assert.AreEqual(true, deleteResponse.HttpStatusCode == HttpStatusCode.NoContent);
 
                 //Verify the configuration was deleted. This call will throw a public access block configuration was not found message.
-                Call_GetPublicAccessBlock(s3Client, bucketName);
+                Call_GetPublicAccessBlock(s3Client, bucketName, null);
             }
             catch (AmazonS3Exception ex)
             {
@@ -115,7 +140,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [TestCategory("S3")]
         public void TestPutPublicAccessBlock()
         {
-            Call_PutPublicAccessBlock(s3Client, bucketName);            
+            PublicAccessBlockConfiguration configuration;
+            Call_PutPublicAccessBlock(s3Client, bucketName, out configuration);            
         }
 
         [TestMethod]
@@ -133,29 +159,27 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             //Set each property in PublicAccessBlockConfiguration, do the put, then do the get to test that the value was set.
             foreach (string propertyName in testProperties)
             {
+                var configuration = new PublicAccessBlockConfiguration
+                {
+                    BlockPublicAcls = false,
+                    BlockPublicPolicy = false,
+                    IgnorePublicAcls = false,
+                    RestrictPublicBuckets = false
+                };
+
                 var putRequest = new PutPublicAccessBlockRequest
                 {
                     BucketName = bucketName,
-                    PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
-                    {
-                        BlockPublicAcls = false,
-                        BlockPublicPolicy = false,
-                        IgnorePublicAcls = false,
-                        RestrictPublicBuckets = false
-                    }
+                    PublicAccessBlockConfiguration = configuration
                 };
 
                 System.Reflection.PropertyInfo property = putRequest.PublicAccessBlockConfiguration.GetType().GetProperty(propertyName);
-                property.SetValue(putRequest.PublicAccessBlockConfiguration, true);
+                property.SetValue(configuration, true);
 
                 var putResponse = s3Client.PutPublicAccessBlock(putRequest);
                 Assert.AreEqual(true, putResponse.HttpStatusCode == HttpStatusCode.OK);
 
-                var getResponse = Call_GetPublicAccessBlock(s3Client, bucketName);
-                Assert.AreEqual(putRequest.PublicAccessBlockConfiguration.BlockPublicAcls, getResponse.PublicAccessBlockConfiguration.BlockPublicAcls);
-                Assert.AreEqual(putRequest.PublicAccessBlockConfiguration.BlockPublicPolicy, getResponse.PublicAccessBlockConfiguration.BlockPublicPolicy);
-                Assert.AreEqual(putRequest.PublicAccessBlockConfiguration.IgnorePublicAcls, getResponse.PublicAccessBlockConfiguration.IgnorePublicAcls);
-                Assert.AreEqual(putRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets, getResponse.PublicAccessBlockConfiguration.RestrictPublicBuckets);
+                Call_GetPublicAccessBlock(s3Client, bucketName, configuration);                
             }
         }
         
