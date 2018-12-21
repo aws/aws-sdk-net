@@ -1,3 +1,8 @@
+### 3.3.433.1 (2018-12-21 09:12 UTC)
+* Core 3.3.30.1
+	* Fix Regex for matching profile names in the ~/.aws/config file. Fixes bug where partial profile name would match a profile in the ~/.aws/config file.
+
+
 ### 3.3.433.0 (2018-12-21 05:51 UTC)
 * Core 3.3.30.0
 	* Added support for endpoint discovery.
