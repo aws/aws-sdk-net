@@ -1,3 +1,15 @@
+### 3.3.432.0 (2018-12-21 01:24 UTC)
+* CognitoIdentityProvider (3.3.12.0)
+	* Amazon Cognito now has API support for updating the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.
+* Comprehend (3.3.6.0)
+	* This SDK release adds functionality to stop training Custom Document Classifier or Custom Entity Recognizer in Amazon Comprehend.
+* KinesisFirehose (3.3.8.0)
+	* Support for specifying customized s3 keys and supplying a separate prefix for failed-records
+* MediaLive (3.3.14.0)
+	* This release provides support for ID3 tags and video quality setting for subgop_length.
+* TranscribeService (3.3.7.0)
+	* With this release, Amazon Transcribe now supports transcriptions from audio sources in Italian (it-IT).
+
 ### 3.3.431.0 (2018-12-19 22:44 UTC)
 * EC2 (3.3.78.0)
 	* This release adds support for specifying partition as a strategy for EC2 Placement Groups. This new strategy allows one to launch instances into partitions that do not share certain underlying hardware between partitions, to assist with building and deploying highly available replicated applications. 
