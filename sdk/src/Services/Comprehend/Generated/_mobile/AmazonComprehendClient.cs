@@ -1525,5 +1525,69 @@ namespace Amazon.Comprehend
 
         #endregion
         
+        #region  StopTrainingDocumentClassifier
+
+        internal virtual StopTrainingDocumentClassifierResponse StopTrainingDocumentClassifier(StopTrainingDocumentClassifierRequest request)
+        {
+            var marshaller = StopTrainingDocumentClassifierRequestMarshaller.Instance;
+            var unmarshaller = StopTrainingDocumentClassifierResponseUnmarshaller.Instance;
+
+            return Invoke<StopTrainingDocumentClassifierRequest,StopTrainingDocumentClassifierResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTrainingDocumentClassifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTrainingDocumentClassifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier">REST API Reference for StopTrainingDocumentClassifier Operation</seealso>
+        public virtual Task<StopTrainingDocumentClassifierResponse> StopTrainingDocumentClassifierAsync(StopTrainingDocumentClassifierRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopTrainingDocumentClassifierRequestMarshaller.Instance;
+            var unmarshaller = StopTrainingDocumentClassifierResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopTrainingDocumentClassifierRequest,StopTrainingDocumentClassifierResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopTrainingEntityRecognizer
+
+        internal virtual StopTrainingEntityRecognizerResponse StopTrainingEntityRecognizer(StopTrainingEntityRecognizerRequest request)
+        {
+            var marshaller = StopTrainingEntityRecognizerRequestMarshaller.Instance;
+            var unmarshaller = StopTrainingEntityRecognizerResponseUnmarshaller.Instance;
+
+            return Invoke<StopTrainingEntityRecognizerRequest,StopTrainingEntityRecognizerResponse>(request, marshaller, unmarshaller);
+        }
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTrainingEntityRecognizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTrainingEntityRecognizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer">REST API Reference for StopTrainingEntityRecognizer Operation</seealso>
+        public virtual Task<StopTrainingEntityRecognizerResponse> StopTrainingEntityRecognizerAsync(StopTrainingEntityRecognizerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var marshaller = StopTrainingEntityRecognizerRequestMarshaller.Instance;
+            var unmarshaller = StopTrainingEntityRecognizerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StopTrainingEntityRecognizerRequest,StopTrainingEntityRecognizerResponse>(request, marshaller, 
+                unmarshaller, cancellationToken);
+        }
+
+        #endregion
+        
     }
 }

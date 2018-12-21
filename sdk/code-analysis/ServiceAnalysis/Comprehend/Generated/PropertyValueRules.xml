@@ -432,6 +432,16 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Comprehend.Model.StopTrainingDocumentClassifierRequest.DocumentClassifierArn</property>
+    <max>256</max>
+    <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:document-classifier/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Comprehend.Model.StopTrainingEntityRecognizerRequest.EntityRecognizerArn</property>
+    <max>256</max>
+    <pattern>arn:aws:comprehend:[a-zA-Z0-9-]*:[0-9]{12}:entity-recognizer/[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Comprehend.Model.BatchItemError.ErrorCode</property>
     <min>1</min>
   </property-value-rule>

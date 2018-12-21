@@ -274,7 +274,7 @@ namespace Amazon.Comprehend
         /// Creates a new document classifier that you can use to categorize documents. To create
         /// a classifier you provide a set of training documents that labeled with the categories
         /// that you want to use. After the classifier is trained you can use it to categorize
-        /// a set of labeled documents into the categories.
+        /// a set of labeled documents into the categories. For more information, see <a>how-document-classification</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocumentClassifier service method.</param>
         /// 
@@ -1795,6 +1795,102 @@ namespace Amazon.Comprehend
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopSentimentDetectionJob">REST API Reference for StopSentimentDetectionJob Operation</seealso>
         Task<StopSentimentDetectionJobResponse> StopSentimentDetectionJobAsync(StopSentimentDetectionJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopTrainingDocumentClassifier
+
+
+        /// <summary>
+        /// Stops a document classifier training job while in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the training job state is <code>TRAINING</code>, the job is marked for termination
+        /// and put into the <code>STOP_REQUESTED</code> state. If the training job completes
+        /// before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training
+        /// job is stopped and put into the <code>STOPPED</code> state and the service sends back
+        /// an HTTP 200 response with an empty HTTP body. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTrainingDocumentClassifier service method.</param>
+        /// 
+        /// <returns>The response from the StopTrainingDocumentClassifier service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier">REST API Reference for StopTrainingDocumentClassifier Operation</seealso>
+        StopTrainingDocumentClassifierResponse StopTrainingDocumentClassifier(StopTrainingDocumentClassifierRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTrainingDocumentClassifier operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTrainingDocumentClassifier operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier">REST API Reference for StopTrainingDocumentClassifier Operation</seealso>
+        Task<StopTrainingDocumentClassifierResponse> StopTrainingDocumentClassifierAsync(StopTrainingDocumentClassifierRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StopTrainingEntityRecognizer
+
+
+        /// <summary>
+        /// Stops an entity recognizer training job while in progress.
+        /// 
+        ///  
+        /// <para>
+        /// If the training job state is <code>TRAINING</code>, the job is marked for termination
+        /// and put into the <code>STOP_REQUESTED</code> state. If the training job completes
+        /// before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training
+        /// job is stopped and putted into the <code>STOPPED</code> state and the service sends
+        /// back an HTTP 200 response with an empty HTTP body.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTrainingEntityRecognizer service method.</param>
+        /// 
+        /// <returns>The response from the StopTrainingEntityRecognizer service method, as returned by Comprehend.</returns>
+        /// <exception cref="Amazon.Comprehend.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.InvalidRequestException">
+        /// The request is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
+        /// The specified resource ARN was not found. Check the ARN and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer">REST API Reference for StopTrainingEntityRecognizer Operation</seealso>
+        StopTrainingEntityRecognizerResponse StopTrainingEntityRecognizer(StopTrainingEntityRecognizerRequest request);
+
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopTrainingEntityRecognizer operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopTrainingEntityRecognizer operation.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer">REST API Reference for StopTrainingEntityRecognizer Operation</seealso>
+        Task<StopTrainingEntityRecognizerResponse> StopTrainingEntityRecognizerAsync(StopTrainingEntityRecognizerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

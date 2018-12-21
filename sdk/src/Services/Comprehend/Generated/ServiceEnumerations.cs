@@ -299,6 +299,14 @@ namespace Amazon.Comprehend
         /// </summary>
         public static readonly ModelStatus IN_ERROR = new ModelStatus("IN_ERROR");
         /// <summary>
+        /// Constant STOP_REQUESTED for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus STOP_REQUESTED = new ModelStatus("STOP_REQUESTED");
+        /// <summary>
+        /// Constant STOPPED for ModelStatus
+        /// </summary>
+        public static readonly ModelStatus STOPPED = new ModelStatus("STOPPED");
+        /// <summary>
         /// Constant SUBMITTED for ModelStatus
         /// </summary>
         public static readonly ModelStatus SUBMITTED = new ModelStatus("SUBMITTED");
